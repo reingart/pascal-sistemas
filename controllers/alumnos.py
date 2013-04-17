@@ -5,3 +5,7 @@ def index(): return plugin_flatpage()
 def horarios():
     "Listado de horarios por materia"
     return {}
+    
+def inasistencias():
+    "Listado con inasistencias del alumno"
+    return {}

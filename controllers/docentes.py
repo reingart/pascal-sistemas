@@ -7,3 +7,6 @@ def asistencias():
 def horarios():
     ""
     return {}
+    
+def examenes_finales():
+    return{}

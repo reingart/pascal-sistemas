@@ -9,3 +9,7 @@ def horarios():
 def inasistencias():
     "Listado con inasistencias del alumno"
     return {}
+    
+def finales():
+    "Listado de Examenes Rendidos"
+    return {}

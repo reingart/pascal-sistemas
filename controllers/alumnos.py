@@ -13,3 +13,7 @@ def inasistencias():
 def finales():
     "Listado de Examenes Rendidos"
     return {}
+    
+def examen_f():
+    "formulario inscripcion a examen final"
+    return {}

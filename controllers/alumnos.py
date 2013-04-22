@@ -17,3 +17,7 @@ def finales():
 def examen_f():
     "formulario inscripcion a examen final"
     return {}
+    
+def parcial():
+    "listado de examenes cuatrimestrales rendidos"
+    return{}

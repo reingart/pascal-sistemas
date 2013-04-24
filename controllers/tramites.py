@@ -1,14 +1,15 @@
 # coding: utf8
 # try something like
 def index(): return plugin_flatpage()
-def constancia():
+
+def iniciar():
     return{}
-def certificado():
+
+def consultar():
     "Listado de certificados"
     return {}
-def titulo():
-    "Listado de Titulos en Tramite"
+
+def actualizar():
+    # agrega comentarios o cambia estado del tramite
     return {}
-def tramites_varios():
-    "Listado de Tramites Varios"
-    return {}
+

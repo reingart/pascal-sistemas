@@ -10,11 +10,11 @@ def inasistencias():
     "Listado con inasistencias del alumno"
     return {}
     
-def finales():
+def examenes():
     "Listado de Examenes Rendidos"
     return {}
     
-def examen_f():
+def final():
     "formulario inscripcion a examen final"
     return {}
     

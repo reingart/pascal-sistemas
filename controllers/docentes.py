@@ -8,7 +8,7 @@ def horarios():
     ""
     return {}
     
-def examenes_finales():
+def finales():
     return{}
     
 def examenes_cuatrimestrales():

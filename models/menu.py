@@ -31,7 +31,11 @@ response.menu = [
             [T('Radiología'), False, URL(request.application,'carreras','salud/radiologia'), []],
         ]],
     ]],
-    [T('Docentes'), False, URL(request.application,'docentes','index'), []],
+    [T('Docentes'), False, URL(request.application,'docentes','index'), [ 
+    [T('Asistencias'), False, URL(request.application,'docentes','asistencias'), []],
+    [T('Horarios'), False, URL(request.application,'docentes','horarios'), []],
+    [T('Finales'), False, URL(request.application,'docentes','finales'), []],
+    [T('Parciales'), False, URL(request.application,'docentes','parciales'), []],]],
     [T('Alumnos'), False, URL(request.application,'alumnos','index'), []],
     [T('Graduados'), False, URL(request.application,'graduados','index'), []],
     [T('Extensión Terciaria'), False, URL(request.application,'extension','index'), [

@@ -14,7 +14,7 @@ def finales():
     "Listado de Examenes Rendidos"
     return {}
     
-def examen_f():
+def final():
     "formulario inscripcion a examen final"
     return {}
     

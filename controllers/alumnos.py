@@ -21,3 +21,6 @@ def examen_f():
 def parcial():
     "listado de examenes cuatrimestrales rendidos"
     return{}
+def inscripciones():
+    "Listado de inscripciones"
+    return {}

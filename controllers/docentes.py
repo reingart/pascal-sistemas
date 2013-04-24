@@ -11,5 +11,5 @@ def horarios():
 def finales():
     return{}
     
-def examenes_cuatrimestrales():
+def parciales():
     return{}

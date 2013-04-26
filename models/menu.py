@@ -40,7 +40,7 @@ response.menu = [
     [T('Alumnos'), False, URL(request.application,'alumnos','index'), [
         [T('Horario'), False, URL(request.application,'alumnos','horarios'), []],
         [T('Parciales'), False, URL(request.application,'alumnos','index'),[
-            [T('Cuatrimentrales'), False, URL(request.application,'alumnos','parcial'),[]],
+            [T('Cuatrimentrales'), False, URL(request.application,'alumnos','parciales'),[]],
             [T('Finales'), False, URL(request.application,'alumnos','examenes'),[]],
             ]], 
         [T('Inscripciones'), False, URL(request.application,'alumnos','index'),[

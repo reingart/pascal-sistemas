@@ -1,0 +1,26 @@
+{{extend 'layout.html'}}
+<h1>Actualización De Tramites Del Instituto Superior Blaise Pascal</h1>
+{{=BEAUTIFY(response._vars)}}
+<html>
+<p><b> Estados:</b></p>
+<select> 
+	<option> Iniciado </option>
+	<option> Confeccionado </option>
+	<option> Autenticado</option>
+	<option> Listo para entregar </option>
+	<option> Finalizado </option>
+</select>
+<p><b> Comentarios:</b></p>
+<form name=myform>
+<textarea name=mytextarea  cols=45 rows=8>
+</textarea>
+</form>
+<p><b> Ubicacion:</b></p>
+<select> 
+        
+    <option> Dto. Alumnos </option>
+	<option> Secretaria </option>
+	<option> Ministerio </option>
+	
+</select>
+</html>

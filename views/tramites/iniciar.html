@@ -1,3 +1,20 @@
 {{extend 'layout.html'}}
-<h1>constancias de alumnos </h1>
+<h1>Seleccion De Tramites Del Instituto Superior Blaise Pascal</h1> 
 {{=BEAUTIFY(response._vars)}}
+<html>
+ 
+    
+<select>
+	<option> Constancia de alumno regular </option>
+	<option> Reincorporación de alumno </option>
+	<option> Certificados de materias aprobadas </option>
+	<option> Titulo en tramite </option>
+</select>
+
+<p><b> Comentarios: </b></p> 
+<form name=myform>
+<textarea name=mytextarea  cols=45 rows=8>
+</textarea>
+</form>
+<input type="button" name=myButton value="Enviar">
+</html>

@@ -1,23 +1,27 @@
 {{extend 'layout.html'}}
-<h1> <B>Inscripcion a examenes Finales</B> </h1>
+<h2> <p align= 'right'> Año 2013  </h2>
+<h1> <center> Inscripcion a examenes Finales </center></h1>
+<h3> Alumno: Lucas González </h3>
+<h3> Dni: 37.987.234 </h3>
+
 {{=BEAUTIFY(response._vars)}}
 
 
 <TABLE style="border: 1px solid white">
-    <tr style="border: 1px solid white"><td style="border: 1px solid white"> Año</td><td style="border: 1px solid white"> Materia</td><td style="border: 1px solid white"> Condición</td><td style="border: 1px solid white"> Fecha</td></tr>
-    <tr style="border: 1px solid white"><td> 1° </td> <td style="border: 1px solid white"> EDI I</td><td style="border: 1px solid white"> <input type="radio" name="edi i" value="1" checked>Regular <input type="radio" name="edi i" value="2" checked>Libre </td><td style="border: 1px solid white"> 17/12/13</td></tr>
+    <tr style="border: 1px solid white"><td style="border: 1px solid white"> Año</td><td style="border: 1px solid white"> Materia</td><td style="border: 1px solid white"> Docente</td><td style="border: 1px solid white"> Condición</td><td style="border: 1px solid white"> Fecha y Hora</td><td style="border: 1px solid white">Inscribir </td></tr>
+    <tr style="border: 1px solid white"><td> 1° </td> <td style="border: 1px solid white"> EDI I</td><td style="border: 1px solid white"> A. Bravo</td><td style="border: 1px solid white"> Libre </td><td style="border: 1px solid white"> 17/12/13 19hs </td><td style="border: 1px solid white"><input type="checkbox" name="edi i">EDI I</td></tr>
     
-    <tr><td style="border: 1px solid white"> 2° </td> <td style="border: 1px solid white"> Base de datos </td> <td style="border: 1px solid white"> <input type="radio" name="bd" value="1" checked>Regular <input type="radio" name="bd" value="2" checked>Libre </td> <td style="border: 1px solid white"> 15/12/13 </td></tr>
+    <tr><td style="border: 1px solid white"> 2° </td> <td style="border: 1px solid white"> Base de datos </td><td style="border: 1px solid white"> M. Reingart</td> <td style="border: 1px solid white"> Regular </td> <td style="border: 1px solid white"> 15/12/13 19hs</td><td style="border: 1px solid white"><input type="checkbox" name="bd">Base de datos</td></tr>
     
-    <tr style="border: 1px solid white"><td style="border: 1px solid white"> 2° </td> <td style="border: 1px solid white"> EDI II </td> <td style="border: 1px solid white"> <input type="radio" name="edi ii" value="1" checked>Regular <input type="radio" name="edi ii" value="2" checked>Libre </td> <td style="border: 1px solid white"> 15/12/13 </td></tr>
-    <tr style="border: 1px solid white"><td style="border: 1px solid white"> 3° </td> <td style="border: 1px solid white"> Sist. Inf. II </td> <td style="border: 1px solid white"> <input type="radio" name="sist inf" value="1" checked>Regular <input type="radio" name="sist inf" value="2" checked>Libre </td> <td style="border: 1px solid white"> 15/12/13 </td></tr>
-    <tr style="border: 1px solid white"><td style="border: 1px solid white"> 3° </td> <td style="border: 1px solid white"> Teleinformatica </td> <td style="border: 1px solid white"> <input type="radio" name="teleinfo" value="1" checked>Regular <input type="radio" name="teleinfo" value="2" checked>Libre </td> <td style="border: 1px solid white"> 17/12/13 </td></tr>
-    <tr style="border: 1px solid white"><td style="border: 1px solid white"> 3° </td> <td style="border: 1px solid white"> Economia E.</td> <td style="border: 1px solid white"> <input type="radio" name="economia" value="1" checked>Regular <input type="radio" name="economia" value="2" checked>Libre </td> <td style="border: 1px solid white"> 22/12/13 </td></tr>
+    <tr style="border: 1px solid white"><td style="border: 1px solid white"> 2° </td> <td style="border: 1px solid white"> EDI II </td><td style="border: 1px solid white"> A. Bravo</td> <td style="border: 1px solid white"> Libre </td> <td style="border: 1px solid white"> 15/12/13 20:30hs</td><td style="border: 1px solid white"><input type="checkbox" name="edi 2">EDI II</td></tr>
+    <tr style="border: 1px solid white"><td style="border: 1px solid white"> 3° </td> <td style="border: 1px solid white"> Sist. Inf. II </td><td style="border: 1px solid white"> A. Bravo</td> <td style="border: 1px solid white"> Regular </td> <td style="border: 1px solid white"> 15/12/13 19:30hs</td><td style="border: 1px solid white"><input type="checkbox" name="sist 2">Sist. Inf. II</td></tr>
+    <tr style="border: 1px solid white"><td style="border: 1px solid white"> 3° </td> <td style="border: 1px solid white"> Teleinformatica </td><td style="border: 1px solid white"> A. Bravo</td> <td> Regular </td> <td style="border: 1px solid white"> 17/12/13 20:30hs</td><td style="border: 1px solid white"><input type="checkbox" name="teleinfo">Teleinformatica</td></tr>
+    <tr style="border: 1px solid white"><td style="border: 1px solid white"> 3° </td> <td style="border: 1px solid white"> Economia E.</td><td style="border: 1px solid white"> S. Vargas</td> <td> Regular </td> <td style="border: 1px solid white"> 22/12/13 19hs</td><td style="border: 1px solid white"><input type="checkbox" name="economia">Economia E.</td></tr>
 
 </TABLE>
 
 	<form>
     <br>
     <br>
-    <input type="submit" value="Guardar">
+    <input type="submit" value="Guardar"> <input type="reset" value="Cancelar"> <input type="submit" value="Imprimir">
 	</form>

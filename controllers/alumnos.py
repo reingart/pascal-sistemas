@@ -18,7 +18,7 @@ def final():
     "formulario inscripcion a examen final"
     return {}
     
-def parcial():
+def parciales():
     "listado de examenes cuatrimestrales rendidos"
     return{}
 def inscripciones():

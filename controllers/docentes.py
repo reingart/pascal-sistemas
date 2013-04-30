@@ -13,3 +13,12 @@ def finales():
     
 def parciales():
     return{}
+    
+    
+def planificaciones():
+    ""
+    return {}
+    
+def apuntes():
+    ""
+    return {}

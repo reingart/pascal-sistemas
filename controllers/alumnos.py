@@ -24,3 +24,7 @@ def parciales():
 def inscripciones():
     "Listado de inscripciones"
     return {}
+    
+def archivos():
+    "descarga de archivos pedagogicos subidos por docentes"
+    return {}

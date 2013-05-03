@@ -251,6 +251,7 @@
 'record does not exist': 'el registro no existe',
 'record id': 'id de registro',
 'Record ID': 'ID de Registro',
+'Recursos Didácticos': 'Recursos Didácticos',
 'Recursos Humanos': 'Recursos Humanos',
 'register': 'registrarse',
 'Register': 'Registrese',

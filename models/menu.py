@@ -36,6 +36,8 @@ response.menu = [
        [T('Horarios'), False, URL(request.application,'docentes','horarios'), []],
        [T('Finales'), False, URL(request.application,'docentes','finales'), []],
        [T('Parciales'), False, URL(request.application,'docentes','parciales'), []],
+       [T('Planificaciones'), False, URL(request.application,'docentes','planificaciones'), []],
+       [T('Apuntes'), False, URL(request.application,'docentes','apuntes'), []],
     ]],
     [T('Alumnos'), False, URL(request.application,'alumnos','index'), [
         [T('Horario'), False, URL(request.application,'alumnos','horarios'), []],

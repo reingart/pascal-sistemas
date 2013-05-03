@@ -38,6 +38,7 @@ response.menu = [
        [T('Parciales'), False, URL(request.application,'docentes','parciales'), []],
        [T('Planificaciones'), False, URL(request.application,'docentes','planificaciones'), []],
        [T('Apuntes'), False, URL(request.application,'docentes','apuntes'), []],
+       [T('Recursos Didácticos'), False, URL(request.application,'docentes','recursos'), []],
     ]],
     [T('Alumnos'), False, URL(request.application,'alumnos','index'), [
         [T('Horario'), False, URL(request.application,'alumnos','horarios'), []],
@@ -50,7 +51,7 @@ response.menu = [
             [T('Finales'), False, URL(request.application,'alumnos','final'),[]],
             ]],
         [T('Inasistencias'), False, URL(request.application,'alumnos','inasistencias'),[]],
-        [T('Aula'), False, URL(request.application,'alumnos','archivos'), []],
+        [T('Material de Estudio'), False, URL(request.application,'alumnos','archivos'), []],
     ]],
     [T('Graduados'), False, URL(request.application,'graduados','index'), []],
     [T('Extensión Terciaria'), False, URL(request.application,'extension','index'), [

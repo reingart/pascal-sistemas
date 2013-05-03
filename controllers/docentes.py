@@ -22,3 +22,7 @@ def planificaciones():
 def apuntes():
     ""
     return {}
+
+def recursos():
+    ""
+    return{}

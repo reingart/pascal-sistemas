@@ -38,6 +38,7 @@
 'ATTENTION: Login requires a secure (HTTPS) connection or running on localhost.': 'ATENCION: Inicio de sesión requiere una conexión segura (HTTPS) o localhost.',
 'ATTENTION: TESTING IS NOT THREAD SAFE SO DO NOT PERFORM MULTIPLE TESTS CONCURRENTLY.': 'ATENCION: NO EJECUTE VARIAS PRUEBAS SIMULTANEAMENTE, NO SON THREAD SAFE.',
 'ATTENTION: you cannot edit the running application!': 'ATENCION: no puede modificar la aplicación que se ejecuta!',
+'Aula': 'Aula',
 'Authentication': 'Autenticación',
 'Available databases and tables': 'Bases de datos y tablas disponibles',
 'Body': 'Cuerpo',

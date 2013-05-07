@@ -15,7 +15,7 @@ def examenes():
     return {}
     
 def final():
-    "formulario inscripcion a examen final"
+    "formulario inscripcion a examen finales aptos para el alumno"
     return {}
     
 def parciales():

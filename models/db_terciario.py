@@ -1,6 +1,6 @@
 ##db = DAL("postgres://reingart:clave@localhost:5432/terciario", pool_size=10)
 
-migrate = False
+migrate = True
 
 db.define_table('alumnos',
     Field('alumnoid', type='id'),

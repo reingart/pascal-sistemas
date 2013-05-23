@@ -1,5 +1,6 @@
 # coding: utf8
 # try something like
+#como hacer funcar esto
 def index(): return plugin_flatpage()
 def asistencias():
     return{}

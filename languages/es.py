@@ -160,6 +160,7 @@
 'Index': 'Indice',
 'Ingresar': 'Ingresar',
 'Iniciar': 'Iniciar',
+'Inicio de sesión': 'Inicio de sesión',
 'Inscripciones': 'Inscripciones',
 'Inscripción': 'Inscripción',
 'Inserción Laboral': 'Inserción Laboral',

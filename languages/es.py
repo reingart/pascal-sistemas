@@ -118,6 +118,7 @@
 'Email verification': 'Verificación por correo',
 'En Curso': 'En Curso',
 'Enfermería': 'Enfermería',
+'enter a number between %(min)g and %(max)g': 'enter a number between %(min)g and %(max)g',
 'enter an integer between %(min)g and %(max)g': 'enter an integer between %(min)g and %(max)g',
 'Error logs for "%(app)s"': 'Bitácora de errores en "%(app)s"',
 'errors': 'errores',

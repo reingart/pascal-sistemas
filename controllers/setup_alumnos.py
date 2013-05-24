@@ -57,3 +57,21 @@ def insert_ciclo():
                             hasta= fila['hasta'] )
         
     return {'filas': filas}
+    
+def insert_division():
+    
+    filas= db1.executesql('SELECT * FROM divisiones', as_dict= True)
+    
+    for fila in filas:
+    
+        db.divisiones.insert(divisionid= fila['divisionid'], 
+                            division= fila['division'], 
+                            codigo= fila['codigo'], 
+                            cursoid= fila['cursoid'], 
+                            cicloid= fila['cicloid'], 
+                            numero= fila['numero'], 
+                            letra= fila['letra'], 
+                            turno= fila['turno'], 
+                            anio= fila['año'] )
+        
+    return {'filas': filas}

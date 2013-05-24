@@ -25,3 +25,35 @@ def insert_alumnos():
                             cp= fila['cp'])
         
     return {'filas': filas}
+    
+def insert_curso():
+    
+    filas= db1.executesql('SELECT * FROM cursos', as_dict= True)
+    
+    for fila in filas:
+    
+        db.cursos.insert(cursoid= fila['cursoid'], 
+                            curso= fila['curso'],
+                            codigo= fila['codigo'],
+                            nivel= fila['nivel'],
+                            anio= fila['año'],
+                            seccion= fila['seccion'],
+                            division= fila['seccion'],
+                            orden= fila['orden'] )
+        
+    return {'filas': filas}
+    
+def insert_ciclo():
+    
+    filas= db1.executesql('SELECT * FROM ciclos', as_dict= True)
+    
+    for fila in filas:
+    
+        db.ciclos.insert(cicloid= fila['cicloid'], 
+                            ciclo= fila['ciclo'], 
+                            anio= fila['año'], 
+                            detalle= fila['detalle'], 
+                            desde= fila['desde'], 
+                            hasta= fila['hasta'] )
+        
+    return {'filas': filas}

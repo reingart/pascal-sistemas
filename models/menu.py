@@ -49,7 +49,9 @@ response.menu = [
             [T('Finales'), False, URL(request.application,'alumnos','final'),[]],
             ]],
         [T('Inasistencias'), False, URL(request.application,'alumnos','inasistencias'),[]],
+        [T('Material de estudio'), False, URL(request.application,'alumnos','archivos'),[]],
     ]],
+    
     [T('Graduados'), False, URL(request.application,'graduados','index'), []],
     [T('Extensión Terciaria'), False, URL(request.application,'extension','index'), [
         [T('FLISOL 2010'), False, URL("flisol2010",'default','index'), []],

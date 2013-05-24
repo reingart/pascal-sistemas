@@ -202,6 +202,7 @@
 'Lost Password': 'Contraseña perdida',
 'lost password': 'contraseña olvidada',
 'Main Menu': 'Menú principal',
+'Material de estudio': 'Material de estudio',
 'Menu Model': 'Modelo "menu"',
 'merge': 'combinar',
 'Models': 'Modelos',

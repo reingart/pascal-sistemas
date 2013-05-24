@@ -89,3 +89,43 @@ def insert_niveles():
                             personalid= fila['personalid'] )
         
     return {'filas': filas}
+    
+def insert_materias():
+    
+    filas= db1.executesql('SELECT * FROM materias', as_dict= True)
+    
+    for fila in filas:
+    
+        db.materias.insert(materiaid= fila['materiaid'], 
+                            materia= fila['materia'], 
+                            resumen= fila['resumen'], 
+                            cursoid= fila['cursoid'], 
+                            catedraid= fila['catedraid'], 
+                            codigo= fila['codigo'], 
+                            orden= fila['orden'], 
+                            optativa= fila['optativa'], 
+                            analitico= fila['analitico'], 
+                            requerida= fila['requerida'] )
+        
+    return {'filas': filas}
+    
+def insert_catedra():
+    
+    filas= db1.executesql('SELECT * FROM catedras', as_dict= True)
+    
+    for fila in filas:
+    
+        db.catedras.insert(catedraid= fila['catedraid'], 
+                            catedra= fila['catedra'], 
+                            informe= fila['informe'], 
+                            boletin= fila['boletin'], 
+                            analitico= fila['analítico'], 
+                            espacio= fila['espacio'], 
+                            abr= fila['abr'], 
+                            calificacion= fila['calificacion'], 
+                            horas= fila['horas'], 
+                            minutos= fila['minutos'], 
+                            nivelid= fila['nivelid'], 
+                            codigo= fila['codigo'] )
+        
+    return {'filas': filas}

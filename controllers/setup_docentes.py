@@ -99,6 +99,7 @@ def cargar_materias():
     
     
     
+    
 def cargar_revista():
     # Antes de insertar borramos los registros de la tabla    
     db(db.revistas.revistaid>0).delete()  
@@ -109,3 +110,29 @@ def cargar_revista():
     response.view="generic.html"
     # Devuelvo una consulta del contenido de la tabla
     return {'filas': db(db.revistas.revistaid>0).select()}
+    
+    
+    
+    
+def cargar_inasistencias():
+    # Antes de insertar borramos los registros de la tabla    
+    db(db.inasistencias.inasistenciaid>0).delete()  
+
+    # Insertamos los cursos correspondientes
+    db.inasistencias.insert(inasistenciaid=1, inasistencia="p",tarde=False)
+    
+    response.view="generic.html"
+    # Devuelvo una consulta del contenido de la tabla
+    return {'filas': db(db.inasistencias.inasistenciaid>0).select()}
+    
+    
+def cargar_horas():
+    # Antes de insertar borramos los registros de la tabla    
+    db(db.horas.horaid>0).delete()  
+
+    # Insertamos los cursos correspondientes
+    db.horas.insert(horaid=1, hora="20",desde="",hasta="",nivelid=1)
+    
+    response.view="generic.html"
+    # Devuelvo una consulta del contenido de la tabla
+    return {'filas': db(db.horas.horaid>0).select()}

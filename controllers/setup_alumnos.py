@@ -129,3 +129,95 @@ def insert_catedra():
                             codigo= fila['codigo'] )
         
     return {'filas': filas}
+    
+def insert_carrera():
+    
+    filas= db1.executesql('SELECT * FROM carreras', as_dict= True)
+    
+    for fila in filas:
+    
+        db.carreras.insert(carreraid= fila['carreraid'], 
+                            carrera= fila['carrera'] )
+                            
+        
+    return {'filas': filas}
+    
+def insert_planestudio():
+    
+    filas= db1.executesql('SELECT * FROM planesestudio', as_dict= True)
+    
+    for fila in filas:
+    
+        db.planesestudio.insert(planestudioid= fila['planestudioid'], 
+                            planestudio= fila['planestudio'], 
+                            aprobadopor= fila['aprobadopor'], 
+                            carreraid= fila['carreraid'], 
+                            desde= fila['desde'], 
+                            hasta= fila['hasta'] )
+        
+    return {'filas': filas}
+    
+def insert_asignaturas():
+    
+    filas= db1.executesql('SELECT * FROM asignaturas', as_dict= True)
+    
+    for fila in filas:
+    
+        db.asignaturas.insert(asignaturaid= fila['asignaturaid'], 
+                            asignatura= fila['asignatura'], 
+                            materiaid= fila['materiaid'], 
+                            cursoid= fila['cursoid'], 
+                            carreraid= fila['carreraid'], 
+                            planestudioid= fila['planestudioid'], 
+                            orden= fila['orden'], 
+                            horas= fila['horas'], 
+                            teorica= fila['teorica'], 
+                            practica= fila['práctica'], 
+                            optativa= fila['optativa'], 
+                            faltas1r= fila['faltas1r'],
+                            faltaslibre= fila['faltaslibre'], 
+                            faltasrecursa= fila['faltasrecursa'], 
+                            cicloid= fila['cicloid'] )
+        
+    return {'filas': filas}
+    
+def insert_calendario():
+    
+    filas= db1.executesql('SELECT * FROM calendario', as_dict= True)
+    
+    for fila in filas:
+    
+        db.calendario.insert(id= fila['id'], 
+                            fecha= fila['fecha'], 
+                            feriado= fila['feriado'], 
+                            mensaje= fila['mensaje'] )
+        
+    return {'filas': filas}
+    
+def insert_calificacion():
+    
+    filas= db1.executesql('SELECT * FROM calificaciones', as_dict= True)
+    
+    for fila in filas:
+    
+        db.calificaciones.insert(calificacionid= fila['calificacionid'], 
+                            calificacion= fila['calificacion'], 
+                            codigo= fila['codigo'], 
+                            id= fila['id'], 
+                            condicion= fila['condicion'], 
+                            ayuda= fila['ayuda'], 
+                            equivalencia= fila['equivalencia'], 
+                            previa= fila['previa'] )
+        
+    return {'filas': filas}
+    
+def insert_cargos():
+    
+    filas= db1.executesql('SELECT * FROM cargos', as_dict= True)
+    
+    for fila in filas:
+    
+        db.cargos.insert(cargoid= fila['cargoid'], 
+                            cargo= fila['cargo'] )
+        
+    return {'filas': filas}

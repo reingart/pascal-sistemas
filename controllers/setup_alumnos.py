@@ -221,3 +221,81 @@ def insert_cargos():
                             cargo= fila['cargo'] )
         
     return {'filas': filas}
+    
+def insert_periodo():
+    
+    filas= db1.executesql('SELECT * FROM periodos', as_dict= True)
+    
+    for fila in filas:
+    
+        db.periodos.insert(periodoid= fila['periodoid'], 
+                            periodo= fila['periodo'], 
+                            nivelid= fila['nivelid'], 
+                            cicloid= fila['cicloid'], 
+                            mes= fila['mes'], 
+                            anio= fila['anio'], 
+                            trimestre= fila['trimestre'], 
+                            condicion= fila['condicion'], 
+                            cuatrimestre= fila['cuatrimestre'], 
+                            semestre= fila['semestre'], 
+                            orden= fila['orden'], 
+                            codigo= fila['codigo'],
+                            inicio= fila['inicio'], 
+                            cierre= fila['cierre'], 
+                            tipo= fila['tipo'],
+                            dias= fila['dias'],
+                            id= fila['id'], 
+                            secuencia= fila['secuencia'], 
+                            notaminima= fila['notaminima'] )
+        
+    return {'filas': filas}
+    
+def insert_titulos():
+    
+    filas= db1.executesql('SELECT * FROM titulos', as_dict= True)
+    
+    for fila in filas:
+    
+        db.titulos.insert(tituloid= fila['tituloid'], 
+                            titulo= fila['titulo'], 
+                            planestudioid= fila['planestudioid'], 
+                            carreraid= fila['carreraid'], 
+                            cursoid= fila['cursoid'] )
+        
+    return {'filas': filas}
+    
+def insert_revista():
+    
+    filas= db1.executesql('SELECT * FROM revistas', as_dict= True)
+    
+    for fila in filas:
+    
+        db.revistas.insert(revistaid= fila['revistaid'], 
+                            revista= fila['revista'] )
+        
+    return {'filas': filas}
+    
+def insert_nota():
+    
+    filas= db1.executesql('SELECT * FROM notas', as_dict= True)
+    
+    for fila in filas:
+    
+        db.notas.insert(notaid= fila['notaid'], 
+                            alumnoid= fila['alumnoid'], 
+                            materiaid= fila['materiaid'], 
+                            periodoid= fila['periodoid'], 
+                            calificacionid= fila['calificacionid'], 
+                            nota= fila['nota'], 
+                            descripcion= fila['descripcion'], 
+                            establecimiento= fila['establecimiento'],
+                            observaciones= fila['observaciones'], 
+                            fecha= fila['fecha'], 
+                            libro= fila['libro'], 
+                            folio= fila['folio'], 
+                            alta= fila['alta'], 
+                            id= fila['id'], 
+                            web= fila['web'],
+                            turno= fila['turno'] )
+        
+    return {'filas': filas}

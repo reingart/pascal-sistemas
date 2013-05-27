@@ -299,3 +299,76 @@ def insert_nota():
                             turno= fila['turno'] )
         
     return {'filas': filas}
+    
+def insert_correlativas():
+    
+    filas= db1.executesql('SELECT * FROM correlativas', as_dict= True)
+    
+    for fila in filas:
+    
+        db.correlativas.insert(correlativaid= fila['correlativaid'], 
+                            materiaid1= fila['materiaid1'], 
+                            materiaid2= fila['materiaid2'], 
+                            planestudioid= fila['planestudioid'] )
+        
+    return {'filas': filas}
+    
+def insert_horas():
+    
+    filas= db1.executesql('SELECT * FROM horas', as_dict= True)
+    
+    for fila in filas:
+    
+        db.horas.insert(horaid= fila['horaid'], 
+                            hora= fila['hora'], 
+                            desde= fila['desde'], 
+                            hasta= fila['hasta'], 
+                            nivelid= fila['nivelid'] )
+        
+    return {'filas': filas}
+    
+def insert_inasistencias():
+    
+    filas= db1.executesql('SELECT * FROM inasistencias', as_dict= True)
+    
+    for fila in filas:
+    
+        db.inasistencias.insert(inasistenciaid= fila['inasistenciaid'], 
+                            inasistencia= fila['inasistencia'], 
+                            tarde= fila['tarde'] )
+        
+    return {'filas': filas}
+    
+def insert_comision():
+    
+    filas= db1.executesql('SELECT * FROM comisiones', as_dict= True)
+    
+    for fila in filas:
+    
+        db.comisiones.insert(comisionid= fila['comisionid'], 
+                            comision= fila['comision'], 
+                            divisionid= fila['divisionid'], 
+                            periodoid= fila['periodoid'], 
+                            materiaid= fila['materiaid'], 
+                            faltas1r= fila['faltas1r'], 
+                            faltas2r= fila['faltas2r'], 
+                            faltaslibre= fila['faltaslibre'], 
+                            faltasrecursa= fila['faltasrecursa'], 
+                            id= fila['id'] )
+        
+    return {'filas': filas}
+    
+def insert_inscripcioncomision():
+    
+    filas= db1.executesql('SELECT * FROM inscripcionescomision', as_dict= True)
+    
+    for fila in filas:
+    
+        db.inscripcionescomision.insert(inscripcionid= fila['inscripcionid'], 
+                            alumnoid= fila['alumnoid'], 
+                            comisionid= fila['comisionid'], 
+                            alta= fila['alta'], 
+                            baja= fila['baja'], 
+                            condicion= fila['condicion'] )
+        
+    return {'filas': filas}

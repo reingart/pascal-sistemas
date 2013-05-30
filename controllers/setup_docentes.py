@@ -137,7 +137,7 @@ def cargar_horas():
     # Devuelvo una consulta del contenido de la tabla
    return {'filas': db(db.horas.horaid>0).select()}
 
-
+import os
 def backup():
     ruta = os.path.join (request.folder, "private" , "backup.csv") 
     arch = open (ruta, "wb")

@@ -163,8 +163,8 @@ def cargar_examenes():
     db(db.examenes.examenid>0).delete()  
 
     # Insertamos los cursos correspondientes
-    db.examenes.insert(examenid=1, materiaid=2,periodoid=3,llamado=1,turno= "Noche",fecha="",hora=20,personalid1=1,personalid2=2,personalid3=4,)
-    db.examenes.insert(examenid=2, materiaid=3,periodoid=4,llamado=2,turno= "Noche",fecha="",hora=19,personalid1=1,personalid2=2,personalid3=3,)
+    db.examenes.insert(examenid=1, materiaid=2,periodoid=3,llamado=1,turno= "Noche",fecha="",hora="",personalid1=1,personalid2=2,personalid3=4)
+    db.examenes.insert(examenid=2, materiaid=3,periodoid=4,llamado=2,turno= "Noche",fecha="",hora="",personalid1=1,personalid2=2,personalid3=3)
 
     response.view="generic.html"
     # Devuelvo una consulta del contenido de la tabla

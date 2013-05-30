@@ -128,11 +128,44 @@ def cargar_inasistencias():
     
 def cargar_horas():
     # Antes de insertar borramos los registros de la tabla    
-    db(db.horas.horaid>0).delete()  
+   db(db.horas.horaid>0).delete()  
 
     # Insertamos los cursos correspondientes
-    db.horas.insert(horaid=1, hora="20",desde="",hasta="",nivelid=1)
+   db.horas.insert(horaid=1, hora="20",desde="",hasta="",nivelid=1)
     
+   response.view="generic.html"
+    # Devuelvo una consulta del contenido de la tabla
+   return {'filas': db(db.horas.horaid>0).select()}
+
+
+def backup():
+    ruta = os.path.join (request.folder, "private" , "backup.csv") 
+    arch = open (ruta, "wb")
+    db.export_to_csv_file (arch)
+    arch.close()
+    return 'OK'
+    
+def restauracion():
+   db.import_form_csv(arch)
+   return 'ok'
+   
+   
+   
+   
+  
+   
+   
+   
+   
+ 
+def cargar_examenes():
+    # Antes de insertar borramos los registros de la tabla    
+    db(db.examenes.examenid>0).delete()  
+
+    # Insertamos los cursos correspondientes
+    db.examenes.insert(examenid=1, materiaid=2,periodoid=3,llamado=1,turno= "Noche",fecha="",hora=20,personalid1=1,personalid2=2,personalid3=4,)
+    db.examenes.insert(examenid=2, materiaid=3,periodoid=4,llamado=2,turno= "Noche",fecha="",hora=19,personalid1=1,personalid2=2,personalid3=3,)
+
     response.view="generic.html"
     # Devuelvo una consulta del contenido de la tabla
-    return {'filas': db(db.horas.horaid>0).select()}
+    return {'filas': db(db.examenes.examenid>0).select()}

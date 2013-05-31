@@ -227,7 +227,7 @@ def insert_periodo():
     filas= db1.executesql('SELECT * FROM periodos', as_dict= True)
     
     for fila in filas:
-    
+        print fila
         db.periodos.insert(periodoid= fila['periodoid'], 
                             periodo= fila['periodo'], 
                             nivelid= fila['nivelid'], 
@@ -399,5 +399,20 @@ def insert_inscripcionexamen():
                             baja= fila['baja'], 
                             confirmar= fila['confirmar'], 
                             valido= fila['valido'] )
+        
+    return {'filas': filas}
+
+def insert_inscripciondivision():
+    
+    filas= db1.executesql('SELECT * FROM inscripcionesdivision', as_dict= True)
+    
+    for fila in filas:
+    
+        db.inscripcionesdivision.insert(inscripcionid= fila['inscripcionid'], 
+                            alumnoid= fila['alumnoid'], 
+                            divisionid= fila['divisionid'], 
+                            alta= fila['alta'], 
+                            baja= fila['baja'], 
+                            condicion= fila['condicion'] )
         
     return {'filas': filas}

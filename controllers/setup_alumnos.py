@@ -372,3 +372,32 @@ def insert_inscripcioncomision():
                             condicion= fila['condicion'] )
         
     return {'filas': filas}
+    
+def insert_situaciones():
+    
+    filas= db1.executesql('SELECT * FROM situaciones', as_dict= True)
+    
+    for fila in filas:
+    
+        db.situaciones.insert(situacionid= fila['situacionid'], 
+                            situacion= fila['situacion'] )
+                            
+        
+    return {'filas': filas}
+    
+def insert_inscripcionexamen():
+    
+    filas= db1.executesql('SELECT * FROM inscripcionesexamen', as_dict= True)
+    
+    for fila in filas:
+    
+        db.inscripcionesexamen.insert(inscripcionid= fila['inscripcionid'], 
+                            alumnoid= fila['alumnoid'], 
+                            examenid= fila['examenid'], 
+                            condicion= fila['condicion'], 
+                            alta= fila['alta'], 
+                            baja= fila['baja'], 
+                            confirmar= fila['confirmar'], 
+                            valido= fila['valido'] )
+        
+    return {'filas': filas}

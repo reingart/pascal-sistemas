@@ -180,6 +180,9 @@ def cargar_materias():
     db.materias.insert(materiaid= 2, materia="Algebra",resumen="",cursoid=1,catedraid=1,
     codigo="c1m01",orden=2,optativa=False,analitico="",requerida=True)
     
+    db.materias.insert(materiaid= 3, materia="Ingels tecnico",resumen="",cursoid=1,catedraid=1,
+    codigo="c1m03",orden=2,optativa=False,analitico="",requerida=True)
+    
     response.view="generic.html"
     
     # Devuelvo una consulta del contenido de la tabla

@@ -7,47 +7,47 @@ def cargar_docentes():
     # Insertamos los nombres de los profesores
     
     db.personal.insert(personalid=2, nombre="Reingart Mariano",dni=111111,nacimiento= "",
-    domicilio="no tengo idea",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
+    domicilio="Necochea 1132",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=7899765,titulos="ingenieria en sistemas",otorgadospor="pepe alberto",fechaotorgamiento="",
     apto="nose",nombramiento="",cuil=1234577,cargoid=1,seccionid=2)
     
     db.personal.insert(personalid=3, nombre="Amarilla Hector",dni=434343,nacimiento="",
-    domicilio="no tengo idea",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
+    domicilio="Laprida 4567",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=8568899,titulos="ingenieria en sistemas",otorgadospor="Jose Rodriguez",fechaotorgamiento="",
     apto="nose",nombramiento="",cuil=8799999,cargoid=2,seccionid=2)
     
     db.personal.insert(personalid=4, nombre="Vargas Claudia",dni=4545,nacimiento="",
-    domicilio="no tengo idea",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
+    domicilio="San Juan 1122",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=7899765,titulos="Contaduria",otorgadospor="Juan Repeto",fechaotorgamiento="",
     apto="nose",nombramiento="",cuil=7876669,cargoid=2,seccionid=2)
     
     db.personal.insert(personalid=5, nombre="Bravo Angel",dni=9897,nacimiento="",
-    domicilio="no tengo idea",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
+    domicilio="Rivas 1450",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=7899765,titulos="ingenieria en sistemas",otorgadospor="Norberto Gonzalez",fechaotorgamiento="",
     apto="nose",nombramiento="",cuil=76969989,cargoid=1,seccionid=2)
     
     db.personal.insert(personalid=6, nombre="Aguirre Elena",dni=57865,nacimiento="",
-    domicilio="no tengo idea",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
+    domicilio="Sarmiento 1120",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=6888899,titulos="Psicopedagoga",otorgadospor="Norma Villanueva",fechaotorgamiento="",
     apto="nose",nombramiento="",cuil=545465456,cargoid=2,seccionid=2)
     
     db.personal.insert(personalid=7, nombre="Media Luz",dni=754645657,nacimiento="",
-    domicilio="no tengo idea",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
+    domicilio="Claudia Sifre 1112",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=436777,titulos="Analisis de sistemas",otorgadospor="Angel Bravo",fechaotorgamiento="",
     apto="nose",nombramiento="",cuil=9679679,cargoid=1,seccionid=2)
     
     db.personal.insert(personalid=8, nombre="Gonzalez Jose",dni=79588,nacimiento="",
-    domicilio="no tengo idea",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
+    domicilio="Lasalle 456",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=5474868787,titulos="Profesor matematica",otorgadospor="Ruben Olmedo",fechaotorgamiento="",
     apto="nose",nombramiento="",cuil=7896969,cargoid=1,seccionid=2)
     
     db.personal.insert(personalid=9, nombre="Profe de Ingles",dni=545353,nacimiento="",
-    domicilio="no tengo idea",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
+    domicilio="Melian  567",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=6576765757,titulos="Profesora de  ingles",otorgadospor="Josefa Rosales",fechaotorgamiento="",
     apto="nose",nombramiento="",cuil=5476476475,cargoid=1,seccionid=2)
     
     db.personal.insert(personalid=10, nombre="Profe de Historia",dni=6465464,nacimiento="",
-    domicilio="no tengo idea",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
+    domicilio="Rivera Indarte 567",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=5474755,titulos="Profesor de historia",otorgadospor="Alberto Pepeto",fechaotorgamiento="",
     apto="nose",nombramiento="",cuil=6587568,cargoid=2,seccionid=2)
 
@@ -68,7 +68,9 @@ def cargar_cursos():
 
     # Insertamos los cursos correspondientes
     
-    db.cursos.insert(cursoid= 1, curso="sistemas", codigo=3, nivel=3, anio=2013, seccion="sistemas", division=3, orden=2)
+    db.cursos.insert(cursoid= 1, curso="Primer año", codigo=1, nivel="Terciario", anio=2013, seccion="A", division=4, orden=1)
+    db.cursos.insert(cursoid= 2, curso="Segundo año", codigo=2, nivel="Terciario", anio=2013, seccion="B", division=3, orden=2)
+    db.cursos.insert(cursoid= 3, curso="Tercer año", codigo=3, nivel="Terciario", anio=2013, seccion="C", division=3, orden=3)
     
 
     response.view="generic.html"
@@ -128,11 +130,11 @@ def cargar_cargos():
     # Antes de insertar borramos los registros de la tabla
     
     db(db.cargos.cargoid>0).delete()  
-
     # Insertamos los cursos correspondientes
     
-    db.cargos.insert(cargoid= 1, cargo="titular")
-    db.cargos.insert(cargoid= 2, cargo="suplente")
+    db.cargos.insert(cargoid= 1, cargo="Administrativo")
+    db.cargos.insert(cargoid= 2, cargo="Profesor")
+    db.cargos.insert(cargoid= 3, cargo="Porteria")
    
 
     response.view="generic.html"
@@ -150,12 +152,12 @@ def cargar_horarios():
 
     # Insertamos los cursos correspondientes
     
-    db.horarios.insert(horarioid= 1, horaid=20,dia="martes",materiaid=1,detalle="")
-    db.horarios.insert(horarioid= 2, horaid=20,dia="miercoles",materiaid=2,detalle="")
-    db.horarios.insert(horarioid= 3, horaid=18,dia="lunes",materiaid=3,detalle="")
-    db.horarios.insert(horarioid= 4, horaid=17,dia="martes",materiaid=4,detalle=" ")
-    db.horarios.insert(horarioid= 5, horaid=20,dia="viernes",materiaid=5,detalle="")
-    db.horarios.insert(horarioid= 6, horaid=19,dia="jueves",materiaid=6,detalle="")
+    db.horarios.insert(horarioid= 1, horaid=18,dia="Lunes",materiaid=1,detalle="")
+    db.horarios.insert(horarioid= 2, horaid=17,dia="Martes",materiaid=2,detalle="")
+    db.horarios.insert(horarioid= 3, horaid=18,dia="Miercoles",materiaid=3,detalle="")
+    db.horarios.insert(horarioid= 4, horaid=17,dia="Jueves",materiaid=4,detalle=" ")
+    db.horarios.insert(horarioid= 5, horaid=18,dia="viernes",materiaid=5,detalle="")
+  
    
 
     response.view="generic.html"
@@ -171,8 +173,12 @@ def cargar_materias():
     db(db.materias.materiaid>0).delete()  
     
     # Insertamos los cursos correspondientes
-    db.materias.insert(materiaid= 1, materia="Matematica",resumen="",cursoid=1,catedraid=1,
-    codigo="",orden=False,optativa=False,analitico="",requerida=True)
+    
+    db.materias.insert(materiaid= 1, materia=" Analisis Matematico",resumen="",cursoid=1,catedraid=1,
+    codigo="c1m02",orden=1,optativa=False,analitico="",requerida=True)
+    
+    db.materias.insert(materiaid= 2, materia="Algebra",resumen="",cursoid=1,catedraid=1,
+    codigo="c1m01",orden=2,optativa=False,analitico="",requerida=True)
     
     response.view="generic.html"
     
@@ -191,7 +197,8 @@ def cargar_revista():
 
     # Insertamos los cursos correspondientes
     
-    db.revistas.insert(revistaid=1, revista="")
+    db.revistas.insert(revistaid=1, revista="Titular")
+    db.revistas.insert(revistaid=2, revista="Suplente")
     
     response.view="generic.html"
     

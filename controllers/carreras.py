@@ -1,8 +1,12 @@
 # coding: utf8
 # try something like
-def index(): return plugin_flatpage()
+def index(): 
+    q=db.carreras.carrerasid>0
+    carreras=db(q).select()
+    return{'carrerras':carreras}
 
 def carreras():
+    
     return{}
 
 def sistemas(): 

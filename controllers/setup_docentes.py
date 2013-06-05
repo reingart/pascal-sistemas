@@ -68,9 +68,9 @@ def cargar_cursos():
 
     # Insertamos los cursos correspondientes
     
-    db.cursos.insert(cursoid= 1, curso="Primer aÃ±o", codigo=1, nivel=3, anio=2013, seccion="A", division=4, orden=1)
-    db.cursos.insert(cursoid= 2, curso="Segundo aÃ±o", codigo=2, nivel=3, anio=2013, seccion="B", division=3, orden=2)
-    db.cursos.insert(cursoid= 3, curso="Tercer aÃ±o", codigo=3, nivel=3, anio=2013, seccion="C", division=3, orden=3)
+    db.cursos.insert(cursoid= 1, curso="Primer año", codigo=1, nivel=3, anio=2013, seccion="A", division=4, orden=1)
+    db.cursos.insert(cursoid= 2, curso="Segundo año", codigo=2, nivel=3, anio=2013, seccion="B", division=3, orden=2)
+    db.cursos.insert(cursoid= 3, curso="Tercer año", codigo=3, nivel=3, anio=2013, seccion="C", division=3, orden=3)
     
 
     response.view="generic.html"

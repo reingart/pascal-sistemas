@@ -7,3 +7,5 @@ cache/*
 databases/*
 sessions/*
 errors/*
+languages/*
+

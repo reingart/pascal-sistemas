@@ -11,7 +11,7 @@ def inasistencias():
     return {}
     
 def examenes():
-    "Listado de Examenes finales Rendidos"
+    "Listado de Examenes finales Rendi"
     return {}
     
 def final():

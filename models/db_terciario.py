@@ -92,7 +92,7 @@ db.define_table('calendario',
     migrate=migrate)
 
 db.define_table('calificaciones',
-    Field('calificacionid', type='integer', default=0),
+    Field('calificacionid', type='id'),
     Field('calificacion', type='string', length=50),
     Field('codigo', type='string', length=1),
     Field('id', type='string', length=1),
@@ -109,7 +109,7 @@ db.define_table('cargos',
     migrate=migrate)
 
 db.define_table('carreras',
-    Field('carreraid', type='integer', default=0),
+    Field('carreraid', type='id'),
     Field('carrera', type='string', length=250),
     primarykey=['carreraid'],
     migrate=migrate)
@@ -179,7 +179,7 @@ db.define_table('cursos',
     migrate=migrate)
 
 db.define_table('divisiones',
-    Field('divisionid', type='integer', default=0),
+    Field('divisionid', type='id'),
     Field('division', type='string', length=50),
     Field('codigo', type='string', length=5),
     Field('cursoid', type='integer'),

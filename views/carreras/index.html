@@ -1,0 +1,6 @@
+{{extend 'layout.html'}}
+<ul>
+    {{for carrera in carreras: }}
+    <li>{{=A(carrera.carrera,_href=URL(f='materia',carreras=[carreras.carreraid]))}} </li>
+    {{pass}} 
+</ul>

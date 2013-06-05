@@ -2,17 +2,10 @@
 # try something like
 #como hacer funcar esto
 
-def index(): 
-    q=db.inasistencias.inasistenciaid>0
-    inasistencias=dbq().select()
-    return{'inasistencias':inasistencias}
-
-def asistencias():
-     
-       inasistenciaid=request.args[0]
-       q= db.asistencias.inasistenciaid=inasistenciaid
-       q &=db.inasistencias.inasistenciaid==
-    return{}
+def index():
+    q=db.personal.personalid>0
+    docentes=db(q).select()
+    return{'docentes':docentes}
 
 def horarios():
     ""

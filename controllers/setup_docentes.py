@@ -130,6 +130,7 @@ def cargar_cargos():
     # Antes de insertar borramos los registros de la tabla
     
     db(db.cargos.cargoid>0).delete()  
+
     # Insertamos los cursos correspondientes
     
     db.cargos.insert(cargoid= 1, cargo="Administrativo")
@@ -152,12 +153,12 @@ def cargar_horarios():
 
     # Insertamos los cursos correspondientes
     
-    db.horarios.insert(horarioid= 1, horaid=18,dia="Lunes",materiaid=1,detalle="")
-    db.horarios.insert(horarioid= 2, horaid=17,dia="Martes",materiaid=2,detalle="")
-    db.horarios.insert(horarioid= 3, horaid=18,dia="Miercoles",materiaid=3,detalle="")
-    db.horarios.insert(horarioid= 4, horaid=17,dia="Jueves",materiaid=4,detalle=" ")
-    db.horarios.insert(horarioid= 5, horaid=18,dia="viernes",materiaid=5,detalle="")
-  
+    db.horarios.insert(horarioid= 1, horaid=20,dia="martes",materiaid=1,detalle="")
+    db.horarios.insert(horarioid= 2, horaid=20,dia="miercoles",materiaid=2,detalle="")
+    db.horarios.insert(horarioid= 3, horaid=18,dia="lunes",materiaid=3,detalle="")
+    db.horarios.insert(horarioid= 4, horaid=17,dia="martes",materiaid=4,detalle=" ")
+    db.horarios.insert(horarioid= 5, horaid=20,dia="viernes",materiaid=5,detalle="")
+    db.horarios.insert(horarioid= 6, horaid=19,dia="jueves",materiaid=6,detalle="")
    
 
     response.view="generic.html"
@@ -173,12 +174,20 @@ def cargar_materias():
     db(db.materias.materiaid>0).delete()  
     
     # Insertamos los cursos correspondientes
+    db.materias.insert(materiaid= 1, materia="Matematica",resumen="",cursoid=1,catedraid=1,
+    codigo="",orden=False,optativa=False,analitico="",requerida=True)
     
     db.materias.insert(materiaid= 1, materia=" Analisis Matematico",resumen="",cursoid=1,catedraid=1,
     codigo="c1m02",orden=1,optativa=False,analitico="",requerida=True)
     
     db.materias.insert(materiaid= 2, materia="Algebra",resumen="",cursoid=1,catedraid=1,
     codigo="c1m01",orden=2,optativa=False,analitico="",requerida=True)
+    
+    db.materias.insert(materiaid= 3, materia="Ingels tecnico",resumen="",cursoid=1,catedraid=1,
+    codigo="c1m03",orden=2,optativa=False,analitico="",requerida=True)
+    
+    db.materias.insert(materiaid= 3, materia="Administracion de las organizaciones",resumen="",cursoid=1,catedraid=1,
+    codigo="c1m04",orden=2,optativa=False,analitico="",requerida=True)
     
     response.view="generic.html"
     
@@ -197,8 +206,7 @@ def cargar_revista():
 
     # Insertamos los cursos correspondientes
     
-    db.revistas.insert(revistaid=1, revista="Titular")
-    db.revistas.insert(revistaid=2, revista="Suplente")
+    db.revistas.insert(revistaid=1, revista="")
     
     response.view="generic.html"
     
@@ -255,11 +263,12 @@ def backup():
 def restauracion():
    
    # Restaura la base de datos de seguridad
+    ruta = os.path.join (request.folder, "private" , "backup.csv") 
+    arch = open (ruta, "rb")
    
-   db.import_form_csv(arch)
+    db.import_from_csv_file(arch)
    
-   return 'ok'
-   
+    return 'ok'
    
    
    

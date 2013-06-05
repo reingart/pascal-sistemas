@@ -128,6 +128,7 @@
 'extends': 'extiende',
 'Extensión Terciaria': 'Extensión Terciaria',
 'failed to reload module': 'recarga del módulo ha fallado',
+'Fecha': 'Fecha',
 'Fecha De Entrega': 'Fecha De Entrega',
 'Fecha De Inicio': 'Fecha De Inicio',
 'file "%(filename)s" created': 'archivo "%(filename)s" creado',

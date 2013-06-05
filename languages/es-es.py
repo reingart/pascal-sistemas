@@ -120,6 +120,7 @@
 'extends': 'extiende',
 'Extensión Terciaria': 'Extensión Terciaria',
 'failed to reload module': 'recarga del módulo ha fallado',
+'Fecha': 'Fecha',
 'file "%(filename)s" created': 'archivo "%(filename)s" creado',
 'file "%(filename)s" deleted': 'archivo "%(filename)s" eliminado',
 'file "%(filename)s" uploaded': 'archivo "%(filename)s" subido',

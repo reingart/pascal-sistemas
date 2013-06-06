@@ -68,9 +68,9 @@ def cargar_cursos():
 
     # Insertamos los cursos correspondientes
     
-    db.cursos.insert(cursoid= 1, curso="Primer año", codigo=1, nivel=3, anio=2013, seccion="A", division=4, orden=1)
-    db.cursos.insert(cursoid= 2, curso="Segundo año", codigo=2, nivel=3, anio=2013, seccion="B", division=3, orden=2)
-    db.cursos.insert(cursoid= 3, curso="Tercer año", codigo=3, nivel=3, anio=2013, seccion="C", division=3, orden=3)
+    db.cursos.insert(cursoid= 1, nombre="Primer aï¿½o", codigo=1, nivel=3, anio=2013, seccion="A", division=4, orden=1)
+    db.cursos.insert(cursoid= 2, nombre="Segundo aï¿½o", codigo=2, nivel=3, anio=2013, seccion="B", division=3, orden=2)
+    db.cursos.insert(cursoid= 3, nombre="Tercer aï¿½o", codigo=3, nivel=3, anio=2013, seccion="C", division=3, orden=3)
     
 
     response.view="generic.html"
@@ -133,9 +133,9 @@ def cargar_cargos():
 
     # Insertamos los cursos correspondientes
     
-    db.cargos.insert(cargoid= 1, cargo="Administrativo")
-    db.cargos.insert(cargoid= 2, cargo="Profesor")
-    db.cargos.insert(cargoid= 3, cargo="Porteria")
+    db.cargos.insert(cargoid= 1, descrippcion="Administrativo")
+    db.cargos.insert(cargoid= 2, descripcion="Profesor")
+    db.cargos.insert(cargoid= 3, descripcion="Porteria")
    
 
     response.view="generic.html"
@@ -167,33 +167,7 @@ def cargar_horarios():
     
     return {'filas': db(db.horarios.horarioid>0).select()}
     
-def cargar_materias():
-    
-    # Antes de insertar borramos los registros de la tabla
-    
-    db(db.materias.materiaid>0).delete()  
-    
-    # Insertamos los cursos correspondientes
-    db.materias.insert(materiaid= 1, materia="Matematica",resumen="",cursoid=1,catedraid=1,
-    codigo="",orden=False,optativa=False,analitico="",requerida=True)
-    
-    db.materias.insert(materiaid= 1, materia=" Analisis Matematico",resumen="",cursoid=1,catedraid=1,
-    codigo="c1m02",orden=1,optativa=False,analitico="",requerida=True)
-    
-    db.materias.insert(materiaid= 2, materia="Algebra",resumen="",cursoid=1,catedraid=1,
-    codigo="c1m01",orden=2,optativa=False,analitico="",requerida=True)
-    
-    db.materias.insert(materiaid= 3, materia="Ingels tecnico",resumen="",cursoid=1,catedraid=1,
-    codigo="c1m03",orden=2,optativa=False,analitico="",requerida=True)
-    
-    db.materias.insert(materiaid= 3, materia="Administracion de las organizaciones",resumen="",cursoid=1,catedraid=1,
-    codigo="c1m04",orden=2,optativa=False,analitico="",requerida=True)
-    
-    response.view="generic.html"
-    
-    # Devuelvo una consulta del contenido de la tabla
-    
-    return {'filas': db(db.materias.materiaid>0).select()}
+
     
     
     
@@ -206,7 +180,8 @@ def cargar_revista():
 
     # Insertamos los cursos correspondientes
     
-    db.revistas.insert(revistaid=1, revista="")
+    db.revistas.insert(revistaid=1, nombre="Titular")
+    db.revistas.insert(revistaid=1, nombre="Suplente")
     
     response.view="generic.html"
     
@@ -225,7 +200,8 @@ def cargar_inasistencias():
 
     # Insertamos los cursos correspondientes
     
-    db.inasistencias.insert(inasistenciaid=1, inasistencia="p",tarde=False)
+    db.inasistencias.insert(inasistenciaid=1, descripcion="Presente",tarde=False)
+    db.inasistencias.insert(inasistenciaid=2, descripcion="Media falta",tarde=True)
     
     response.view="generic.html"
     
@@ -242,7 +218,8 @@ def cargar_horas():
 
     # Insertamos los cursos correspondientes
    
-   db.horas.insert(horaid=1, hora="20",desde="",hasta="",nivelid=1)
+   db.horas.insert(horaid=1, hora="1",desde="18:00",hasta="20:15",nivelid=1)
+   db.horas.insert(horaid=2, hora="2",desde="20:15",hasta="22:15",nivelid=1)
     
    response.view="generic.html"
    
@@ -250,34 +227,7 @@ def cargar_horas():
    
    return {'filas': db(db.horas.horaid>0).select()}
 
-import os
-def backup():
-    # Copia de seguridad de la base de datos
-    
-    ruta = os.path.join (request.folder, "private" , "backup.csv") 
-    arch = open (ruta, "wb")
-    db.export_to_csv_file (arch)
-    arch.close()
-    return 'OK'
-    
-def restauracion():
-   
-   # Restaura la base de datos de seguridad
-    ruta = os.path.join (request.folder, "private" , "backup.csv") 
-    arch = open (ruta, "rb")
-   
-    db.import_from_csv_file(arch)
-   
-    return 'ok'
-   
-   
-   
-  
-   
-   
-   
-   
- 
+
 def cargar_examenes():
     # Antes de insertar borramos los registros de la tabla    
     

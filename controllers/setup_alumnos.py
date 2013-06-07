@@ -22,7 +22,12 @@ def insert_alumnos():
                             nacionalidad= fila['nacionalidad'], 
                             direccion= fila['direccion'], 
                             localidad= fila['localidad'], 
-                            cp= fila['cp'])
+                            cp= fila['cp'],
+                            telefonos= fila['telefonos'], 
+                            email1= fila['email1'], 
+                            email2= fila['email2'], 
+                            ingreso= fila['ingreso'], 
+                            egreso= fila['egreso'])
         
     return {'filas': filas}
     

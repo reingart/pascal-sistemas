@@ -20,35 +20,7 @@ db.define_table('alumnos',
     Field('email2', type='string', length=100),
     Field('ingreso', type='date'),
     Field('egreso', type='date'),
-    Field('emergencias', type='string', length=200),
-    Field('nivelestudio', type='string', length=1),
-    Field('estudioscompletos', type='boolean', default=False),
-    Field('estudioscursadosen', type='string', length=50),
-    Field('titulo', type='string', length=200),
-    Field('faltasolicitudinscripcion', type='boolean', default=False),
-    Field('faltareglamentoreservavacante', type='boolean', default=False),
-    Field('faltafotos', type='boolean', default=False),
-    Field('faltaaptofisico', type='boolean', default=False),
-    Field('faltavencimientoapto', type='boolean', default=False),
-    Field('faltadni', type='boolean', default=False),
-    Field('faltapartidanacimiento', type='boolean', default=False),
-    Field('faltatitulosecundariolegalizado', type='boolean', default=False),
-    Field('faltaanaliticopase', type='boolean', default=False),
-    Field('faltaconstaciatitulotramite', type='boolean', default=False),
-    Field('faltavencimientoconstanciatitulotramite', type='boolean', default=False),
-    Field('faltaconstaciapasetramite', type='boolean', default=False),
-    Field('faltavencimientoconstanciapasetramite', type='boolean', default=False),
-    Field('faltaconstaciamateriasaprobadas', type='boolean', default=False),
-    Field('faltavencimientoconstanciamateriasaprobadas', type='boolean', default=False),
-    Field('faltaautorizacionretiroalumno', type='boolean', default=False),
-    Field('faltafichamedica', type='boolean', default=False),
-    Field('faltavacunas', type='boolean', default=False),
-    Field('faltacertificadobucodental', type='boolean', default=False),
-    Field('faltainformenivelinicial', type='boolean', default=False),
-    Field('faltaboletin', type='boolean', default=False),
-    Field('folmat', type='string', length=50),
-    Field('baja', type='date'),
-    format= "%(alumnoid)s [%('nombre')s]",
+    format= "%(alumnoid)s [%(nombre)s]",
     migrate=migrate)
     
 db.define_table('cursos',
@@ -60,26 +32,26 @@ db.define_table('cursos',
     Field('seccion', type='string', length=2),
     Field('division', type='string', length=3),
     Field('orden', type='integer', default=0),
-    format= "%(cursoid)s [%('nombre')s]",
+    format= "%(cursoid)s [%(nombre)s]",
     migrate=migrate)
     
 db.define_table('revistas',
     Field('revistaid', type='id'),
     Field('nombre', type='string', length=50),
-    format= "%(revistaid)s [%('nombre')s]",
+    format= "%(revistaid)s [%(nombre)s]",
     migrate=migrate)
     
 db.define_table('cargos',
     Field('cargoid', type='id'),
     Field('descripcion', type='string', length=50),
-    format= "%(cargoid)s [%('descripcion')s]",
+    format= "%(cargoid)s [%(descripcion)s]",
     migrate=migrate)
     
     
 db.define_table('secciones',
     Field('seccionid', type='id'),
     Field('descripcion', type='string', length=50),
-    format= "%(seccionid)s [%('descripcion')s]",
+    format= "%(seccionid)s [%(descripcion)s]",
     migrate=migrate)
     
 db.define_table('personal',
@@ -100,7 +72,7 @@ db.define_table('personal',
     Field('cuil', type='string', length=50),
     Field('cargoid', db.cargos),
     Field('seccionid', db.secciones),
-    format= "%(personalid)s [%('nombre')s]",
+    format= "%(personalid)s [%(nombre)s]",
     migrate=migrate)
     
 db.define_table('niveles',
@@ -109,13 +81,13 @@ db.define_table('niveles',
     Field('ciclo', type='integer', default=0),
     Field('tipo', type='integer', default=0),
     Field('personalid', db.personal),
-    format= "%(nivelid)s [%('descripcion')s]",
+    format= "%(nivelid)s [%(descripcion)s]",
     migrate=migrate)
     
 db.define_table('carreras',
     Field('carreraid', type='id'),
     Field('nombre', type='string', length=250),
-    format= "%(carreraid)s [%('nombre')s]",
+    format= "%(carreraid)s [%(nombre)s]",
     migrate=migrate)
     
 db.define_table('planesestudio',
@@ -125,7 +97,7 @@ db.define_table('planesestudio',
     Field('carreraid', db.carreras),
     Field('desde', type='date'),
     Field('hasta', type='date'),
-    format= "%(planestudioid)s [%('descripcion')s]",
+    format= "%(planestudioid)s [%(descripcion)s]",
     migrate=migrate)
     
 db.define_table('ciclos',
@@ -135,7 +107,7 @@ db.define_table('ciclos',
     Field('detalle', type='string', length=100),
     Field('desde', type='date'),
     Field('hasta', type='date'),
-    format= "%(cicloid)s [%('nombre')s]",
+    format= "%(cicloid)s [%(nombre)s]",
     migrate=migrate)
 
 db.define_table('catedras',
@@ -150,7 +122,7 @@ db.define_table('catedras',
     Field('horas', type='integer', default=0),
     Field('minutos', type='integer', default=0),
     Field('nivelid', db.niveles),
-    format= "%(catedraid)s [%('nombre')s]",
+    format= "%(catedraid)s [%(nombre)s]",
     migrate=migrate)
     
 db.define_table('materias',
@@ -164,7 +136,7 @@ db.define_table('materias',
     Field('optativa', type='boolean', default=False),
     Field('analitico', type='string', length=250),
     Field('requerida', type='boolean', default=False),
-    format= "%(materiaid)s [%('nombre')s]",
+    format= "%(materiaid)s [%(nombre)s]",
     migrate=migrate)
 
 
@@ -179,7 +151,7 @@ db.define_table('divisiones',
     Field('letra', type='string', length=1),
     Field('turno', type='string', length=1),
     Field('anio', type='integer'),
-    format= "%(divisionid)s [%('descripcion')s]",
+    format= "%(divisionid)s [%(descripcion)s]",
     migrate=migrate)
 
 db.define_table('asignaturas',
@@ -198,7 +170,7 @@ db.define_table('asignaturas',
     Field('faltaslibre', type='integer', default=0),
     Field('faltasrecursa', type='integer', default=0),
     Field('cicloid', db.ciclos),
-    format= "%(asignaturaid)s [%('nombre')s]",
+    format= "%(asignaturaid)s [%(nombre)s]",
     migrate= migrate )
 
 
@@ -208,7 +180,7 @@ db.define_table('calendarios',
     Field('fecha', type='date'),
     Field('feriado', type='boolean', default=False),
     Field('mensaje', type='string', length=50),
-    format= "%(calendarioidid)s [%('fecha')s]",
+    format= "%(calendarioidid)s [%(fecha)s]",
     migrate=migrate)
 
 db.define_table('calificaciones',
@@ -218,7 +190,7 @@ db.define_table('calificaciones',
     Field('ayuda', type='text'),
     Field('equivalencia', type='boolean', default=False),
     Field('previa', type='boolean', default=False),
-    format= "%(calificacionid)s [%('descripcion')s]",
+    format= "%(calificacionid)s [%(descripcion)s]",
     migrate=migrate)
 
 
@@ -227,16 +199,16 @@ db.define_table('correlativas',
     Field('materiaid1', db.materias),
     Field('materiaid2', db.materias),
     Field('planestudioid', db.planesestudio),
-    format= "%(correlativaid)s [%('materiaid1')s]",
+    format= "%(correlativaid)s [%(materiaid1)s]",
     migrate=migrate)
 
 db.define_table('horas',
     Field('horaid', type='id'),
     Field('hora', type='string', length=25),
-    Field('desde', type='date'),
-    Field('hasta', type='date'),
+    Field('desde', type='string'),
+    Field('hasta', type='string'),
     Field('nivelid', db.niveles),
-    format= "%(horaid)s [%('hora')s]",
+    format= "%(horaid)s [%(hora)s]",
     migrate=migrate)
 
 db.define_table('horarios',
@@ -245,7 +217,7 @@ db.define_table('horarios',
     Field('dia', type='string', length=1),
     Field('materiaid', db.materias),
     Field('detalle', type='string', length=25),
-    format= "%(horarioid)s [%('detalle')s]",
+    format= "%(horarioid)s [%(detalle)s]",
     migrate=migrate)
 
 
@@ -254,7 +226,7 @@ db.define_table('inasistencias',
     Field('inasistenciaid', type='id'),
     Field('descripcion', type='string', length=50),
     Field('tarde', type='boolean', default=False),
-    format= "%(inasistenciaid)s [%('descripcion')s]",
+    format= "%(inasistenciaid)s [%(descripcion)s]",
     migrate=migrate)
 
 
@@ -278,7 +250,7 @@ db.define_table('periodos',
     Field('dias', type='integer', default=0),
     Field('secuencia', type='integer'),
     Field('notaminima', type='double'),
-    format= "%(periodoid)s [%('descripcion')s]",
+    format= "%(periodoid)s [%(descripcion)s]",
     migrate=migrate)
 
 
@@ -298,7 +270,7 @@ db.define_table('notas',
     Field('alta', type='date', default=request.now),
     Field('web', type='boolean', default=False),
     Field('turno', type='string', length=1),
-    format= "%(notaid)s [%('nota')s]",
+    format= "%(notaid)s [%(nota)s]",
     migrate=migrate)
 
 
@@ -309,7 +281,21 @@ db.define_table('titulos',
     Field('planestudioid', db.planesestudio),
     Field('carreraid', db.carreras),
     Field('cursoid', db.cursos),
-    format= "%(tituloidid)s [%('nombre')s]",
+    format= "%(tituloidid)s [%(nombre)s]",
+    migrate=migrate)
+    
+db.define_table('comisiones',
+    Field('comisionid', type='id'),
+    Field('nombre', type='string', length=200),
+    Field('divisionid', db.divisiones),
+    Field('periodoid', db.periodos),
+    Field('materiaid', db.materias),
+    Field('personalid', db.personal),
+    Field('faltas1r', type='double'),
+    Field('faltas2r', type='double'),
+    Field('faltaslibre', type='double'),
+    Field('faltasrecursa', type='double'),
+    format= "%(comisionid)s [%(nombre)s]",
     migrate=migrate)
 
 db.define_table('profesores',
@@ -321,7 +307,7 @@ db.define_table('profesores',
     Field('licencia', type='boolean', default=False),
     Field('detalle', type='string', length=50),
     Field('ref', type='string', length=1),
-    format= "%(profesorid)s [%('detalle')s]",
+    format= "%(profesorid)s [%(detalle)s]",
     migrate=migrate)
 
 
@@ -334,7 +320,7 @@ db.define_table('sanciones',
     Field('tipo', type='string', length=1),
     Field('detalle', type='text'),
     Field('parte', type='integer', default=0),
-    format= "%(sancionid)s [%('detalle')s]",
+    format= "%(sancionid)s [%(detalle)s]",
     migrate=migrate)
 
 
@@ -342,22 +328,10 @@ db.define_table('sanciones',
 db.define_table('situaciones',
     Field('situacionid', type='id'),
     Field('detalle', type='string', length=30),
-    format= "%(situacionid)s [%('detalle')s]",
+    format= "%(situacionid)s [%(detalle)s]",
     migrate=migrate)
 
-db.define_table('comisiones',
-    Field('comisionid', type='id'),
-    Field('nombre', type='string', length=200),
-    Field('divisionid', db.divisiones),
-    Field('periodoid', db.periodos),
-    Field('materiaid', db.materias),
-    Field('personalid', db.personal),
-    Field('faltas1r', type='double'),
-    Field('faltas2r', type='double'),
-    Field('faltaslibre', type='double'),
-    Field('faltasrecursa', type='double'),
-    format= "%(comisionid)s [%('nombre')s]",
-    migrate=migrate)
+
     
 db.define_table('faltas',
     Field('faltaid', type='id'),
@@ -369,7 +343,7 @@ db.define_table('faltas',
     Field('justificado', type='boolean', default=False),
     Field('detalle', type='string', length=50),
     Field('web', type='boolean', default=False),
-    format= "%(faltaid)s [%('detalle')s]",
+    format= "%(faltaid)s [%(detalle)s]",
     migrate=migrate)
     
 db.define_table('examenes',
@@ -383,7 +357,7 @@ db.define_table('examenes',
     Field('personalid1', db.personal),
     Field('personalid2', db.personal),
     Field('personalid3', db.personal),
-    format= "%(examenid)s [%('llamado')s]",
+    format= "%(examenid)s [%(llamado)s]",
     migrate=migrate)
 
 db.define_table('inscripcionescomision',

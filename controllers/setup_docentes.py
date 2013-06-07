@@ -133,7 +133,7 @@ def cargar_cargos():
 
     # Insertamos los cursos correspondientes
     
-    db.cargos.insert(cargoid= 1, descrippcion="Administrativo")
+    db.cargos.insert(cargoid= 1, descripcion="Administrativo")
     db.cargos.insert(cargoid= 2, descripcion="Profesor")
     db.cargos.insert(cargoid= 3, descripcion="Porteria")
    
@@ -218,8 +218,8 @@ def cargar_horas():
 
     # Insertamos los cursos correspondientes
    
-   db.horas.insert(horaid=1, hora="1",desde="18:00",hasta="20:15",nivelid=1)
-   db.horas.insert(horaid=2, hora="2",desde="20:15",hasta="22:15",nivelid=1)
+   db.horas.insert(horaid=1, hora="1",desde="18",hasta="20",nivelid=1)
+   db.horas.insert(horaid=2, hora="2",desde="20",hasta="22",nivelid=1)
     
    response.view="generic.html"
    

@@ -351,3 +351,50 @@ def insert_inscripciondivision():
                             condicion= fila['condicion'] )
         
     return {'filas': filas}
+    
+def insert_faltas():
+    
+    filas= db1.executesql('SELECT * FROM faltas', as_dict= True)
+    
+    for fila in filas:
+    
+        db.faltas.insert(faltaid= fila['faltaid'], 
+                            alumnoid= fila['alumnoid'], 
+                            comisionid= fila['comisionid'], 
+                            inasistenciaid= fila['inasistenciaid'], 
+                            fecha= fila['fecha'], 
+                            cantidad= fila['cantidad'], 
+                            justificado= fila['justificado'], 
+                            detalle= fila['detalle'], 
+                            web= fila['web'])
+        
+    return {'filas': filas}
+    
+def insert_sancion():
+    
+    filas= db1.executesql('SELECT * FROM sanciones', as_dict= True)
+    
+    for fila in filas:
+    
+        db.sanciones.insert(sancionid= fila['sancionid'], 
+                            alumnoid= fila['alumnoid'], 
+                            fecha= fila['fecha'], 
+                            cantidad= fila['cantidad'], 
+                            tipo= fila['tipo'], 
+                            detalle= fila['detalle'], 
+                            parte= fila['parte'])
+        
+    return {'filas': filas}
+    
+
+def insert_secciones():
+    
+    filas= db1.executesql('SELECT * FROM secciones', as_dict= True)
+    
+    for fila in filas:
+    
+        db.secciones.insert(seccionid= fila['seccionid'], 
+                            descripcion= fila['seccion'] )
+                            
+        
+    return {'filas': filas}

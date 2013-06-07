@@ -10,7 +10,7 @@ db.define_table('constancia_modelo',
 
 db.define_table('constancia',
     Field('id', type='id'),
-    Field("modeloid", db.constancia_modelo),
+    Field("modeloid", db.constancia_modelo.id),
     Field('alumnoid', db.alumnos, label=T('Alumno')),
     Field('materias', type='text', length=200,label=T('porcentaje de materias aprobadas')),
     Field('texto', type='string', length=500, label=T('tipo de certificado')),

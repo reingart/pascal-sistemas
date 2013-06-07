@@ -120,29 +120,6 @@ materias.materiaid,materias.nombre,materias.resumen,materias.cursoid,materias.ca
 
 TABLE divisiones
 divisiones.divisionid,divisiones.descripcion,divisiones.codigo,divisiones.cursoid,divisiones.cicloid,divisiones.numero,divisiones.letra,divisiones.turno,divisiones.anio
-1,1º A 2006,1A06,1,1,1,A,N,<NULL>
-2,1º B 2006,1B06,1,2,1,B,N,<NULL>
-3,1º C 2006,1C06,1,1,1,C,N,<NULL>
-4,2º A 2006,2A06,2,3,2,A,N,<NULL>
-5,2º B 2006,2B06,2,2,2,B,N,<NULL>
-6,3º A 2006,3A06,3,2,3,A,N,<NULL>
-7,3º B 2006,3B06,3,4,3,B,N,<NULL>
-70001,1º A TM 2007,<NULL>,1,3,1,A,N,<NULL>
-70002,1º B TM 2007,<NULL>,1,2,1,B,N,<NULL>
-70003,1º C TT 2007,<NULL>,1,2,1,C,N,<NULL>
-70004,2º A TM 2007,<NULL>,2,2,2,A,N,<NULL>
-70005,2º B TT 2007,<NULL>,2,2,2,B,T,<NULL>
-70006,3º A TM 2007,<NULL>,3,1,3,A,N,<NULL>
-70007,3º B TT 2007,<NULL>,3,1,3,B,T,<NULL>
-80001,1º A TM 2008,<NULL>,1,3,1,A,N,<NULL>
-80002,1º B TM 2008,<NULL>,1,3,1,B,N,<NULL>
-80003,1º C TT 2008,<NULL>,1,3,1,C,T,<NULL>
-80004,2º A TM 2008,<NULL>,2,1,2,A,N,<NULL>
-80005,2º B TT 2008,<NULL>,2,1,2,B,T,<NULL>
-80006,3º A TM 2008,<NULL>,3,3,3,A,N,<NULL>
-80007,3º B TT 2008,<NULL>,3,3,3,B,T,<NULL>
-80008,4º A TM 2008,<NULL>,4,3,4,A,N,<NULL>
-80009,4º B TT 2008,<NULL>,4,4,4,B,T,<NULL>
 
 
 TABLE asignaturas

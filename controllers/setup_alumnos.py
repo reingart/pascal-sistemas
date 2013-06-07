@@ -12,7 +12,7 @@ def insert_alumnos():
     for fila in filas:
     
         db.alumnos.insert(alumnoid= fila['alumnoid'], 
-                            alumno= fila['alumno'], 
+                            nombre= fila['alumno'], 
                             codigo= fila['codigo'], 
                             dni= fila['dni'], 
                             sexo= fila['sexo'], 
@@ -26,22 +26,6 @@ def insert_alumnos():
         
     return {'filas': filas}
     
-def insert_curso():
-    
-    filas= db1.executesql('SELECT * FROM cursos', as_dict= True)
-    
-    for fila in filas:
-    
-        db.cursos.insert(cursoid= fila['cursoid'], 
-                            curso= fila['curso'],
-                            codigo= fila['codigo'],
-                            nivel= fila['nivel'],
-                            anio= fila['año'],
-                            seccion= fila['seccion'],
-                            division= fila['seccion'],
-                            orden= fila['orden'] )
-        
-    return {'filas': filas}
     
 def insert_ciclo():
     
@@ -50,7 +34,7 @@ def insert_ciclo():
     for fila in filas:
     
         db.ciclos.insert(cicloid= fila['cicloid'], 
-                            ciclo= fila['ciclo'], 
+                            nombre= fila['ciclo'], 
                             anio= fila['año'], 
                             detalle= fila['detalle'], 
                             desde= fila['desde'], 
@@ -65,7 +49,7 @@ def insert_division():
     for fila in filas:
     
         db.divisiones.insert(divisionid= fila['divisionid'], 
-                            division= fila['division'], 
+                            descripcion= fila['division'], 
                             codigo= fila['codigo'], 
                             cursoid= fila['cursoid'], 
                             cicloid= fila['cicloid'], 
@@ -83,7 +67,7 @@ def insert_niveles():
     for fila in filas:
     
         db.niveles.insert(nivelid= fila['nivelid'], 
-                            nivel= fila['nivel'], 
+                            descripcion= fila['nivel'], 
                             ciclo= fila['ciclo'], 
                             tipo= fila['tipo'], 
                             personalid= fila['personalid'] )
@@ -97,7 +81,7 @@ def insert_materias():
     for fila in filas:
     
         db.materias.insert(materiaid= fila['materiaid'], 
-                            materia= fila['materia'], 
+                            nombre= fila['materia'], 
                             resumen= fila['resumen'], 
                             cursoid= fila['cursoid'], 
                             catedraid= fila['catedraid'], 
@@ -116,7 +100,7 @@ def insert_catedra():
     for fila in filas:
     
         db.catedras.insert(catedraid= fila['catedraid'], 
-                            catedra= fila['catedra'], 
+                            nombre= fila['catedra'], 
                             informe= fila['informe'], 
                             boletin= fila['boletin'], 
                             analitico= fila['analítico'], 
@@ -125,8 +109,7 @@ def insert_catedra():
                             calificacion= fila['calificacion'], 
                             horas= fila['horas'], 
                             minutos= fila['minutos'], 
-                            nivelid= fila['nivelid'], 
-                            codigo= fila['codigo'] )
+                            nivelid= fila['nivelid'])
         
     return {'filas': filas}
     
@@ -137,7 +120,7 @@ def insert_carrera():
     for fila in filas:
     
         db.carreras.insert(carreraid= fila['carreraid'], 
-                            carrera= fila['carrera'] )
+                            nombre= fila['carrera'] )
                             
         
     return {'filas': filas}
@@ -149,7 +132,7 @@ def insert_planestudio():
     for fila in filas:
     
         db.planesestudio.insert(planestudioid= fila['planestudioid'], 
-                            planestudio= fila['planestudio'], 
+                            descripcion= fila['planestudio'], 
                             aprobadopor= fila['aprobadopor'], 
                             carreraid= fila['carreraid'], 
                             desde= fila['desde'], 
@@ -164,7 +147,7 @@ def insert_asignaturas():
     for fila in filas:
     
         db.asignaturas.insert(asignaturaid= fila['asignaturaid'], 
-                            asignatura= fila['asignatura'], 
+                            nombre= fila['asignatura'], 
                             materiaid= fila['materiaid'], 
                             cursoid= fila['cursoid'], 
                             carreraid= fila['carreraid'], 
@@ -187,7 +170,7 @@ def insert_calendario():
     
     for fila in filas:
     
-        db.calendario.insert(id= fila['id'], 
+        db.calendarios.insert(calendarioid= fila['id'], 
                             fecha= fila['fecha'], 
                             feriado= fila['feriado'], 
                             mensaje= fila['mensaje'] )
@@ -201,9 +184,7 @@ def insert_calificacion():
     for fila in filas:
     
         db.calificaciones.insert(calificacionid= fila['calificacionid'], 
-                            calificacion= fila['calificacion'], 
-                            codigo= fila['codigo'], 
-                            id= fila['id'], 
+                            descripcion= fila['calificacion'],   
                             condicion= fila['condicion'], 
                             ayuda= fila['ayuda'], 
                             equivalencia= fila['equivalencia'], 
@@ -211,16 +192,6 @@ def insert_calificacion():
         
     return {'filas': filas}
     
-def insert_cargos():
-    
-    filas= db1.executesql('SELECT * FROM cargos', as_dict= True)
-    
-    for fila in filas:
-    
-        db.cargos.insert(cargoid= fila['cargoid'], 
-                            cargo= fila['cargo'] )
-        
-    return {'filas': filas}
     
 def insert_periodo():
     
@@ -229,7 +200,7 @@ def insert_periodo():
     for fila in filas:
         print fila
         db.periodos.insert(periodoid= fila['periodoid'], 
-                            periodo= fila['periodo'], 
+                            descripcion= fila['periodo'], 
                             nivelid= fila['nivelid'], 
                             cicloid= fila['cicloid'], 
                             mes= fila['mes'], 
@@ -244,7 +215,6 @@ def insert_periodo():
                             cierre= fila['cierre'], 
                             tipo= fila['tipo'],
                             dias= fila['dias'],
-                            id= fila['id'], 
                             secuencia= fila['secuencia'], 
                             notaminima= fila['notaminima'] )
         
@@ -257,23 +227,14 @@ def insert_titulos():
     for fila in filas:
     
         db.titulos.insert(tituloid= fila['tituloid'], 
-                            titulo= fila['titulo'], 
+                            nombre= fila['titulo'], 
                             planestudioid= fila['planestudioid'], 
                             carreraid= fila['carreraid'], 
                             cursoid= fila['cursoid'] )
         
     return {'filas': filas}
     
-def insert_revista():
-    
-    filas= db1.executesql('SELECT * FROM revistas', as_dict= True)
-    
-    for fila in filas:
-    
-        db.revistas.insert(revistaid= fila['revistaid'], 
-                            revista= fila['revista'] )
-        
-    return {'filas': filas}
+
     
 def insert_nota():
     
@@ -294,7 +255,6 @@ def insert_nota():
                             libro= fila['libro'], 
                             folio= fila['folio'], 
                             alta= fila['alta'], 
-                            id= fila['id'], 
                             web= fila['web'],
                             turno= fila['turno'] )
         
@@ -313,31 +273,7 @@ def insert_correlativas():
         
     return {'filas': filas}
     
-def insert_horas():
     
-    filas= db1.executesql('SELECT * FROM horas', as_dict= True)
-    
-    for fila in filas:
-    
-        db.horas.insert(horaid= fila['horaid'], 
-                            hora= fila['hora'], 
-                            desde= fila['desde'], 
-                            hasta= fila['hasta'], 
-                            nivelid= fila['nivelid'] )
-        
-    return {'filas': filas}
-    
-def insert_inasistencias():
-    
-    filas= db1.executesql('SELECT * FROM inasistencias', as_dict= True)
-    
-    for fila in filas:
-    
-        db.inasistencias.insert(inasistenciaid= fila['inasistenciaid'], 
-                            inasistencia= fila['inasistencia'], 
-                            tarde= fila['tarde'] )
-        
-    return {'filas': filas}
     
 def insert_comision():
     
@@ -346,15 +282,14 @@ def insert_comision():
     for fila in filas:
     
         db.comisiones.insert(comisionid= fila['comisionid'], 
-                            comision= fila['comision'], 
+                            nombre= fila['comision'], 
                             divisionid= fila['divisionid'], 
                             periodoid= fila['periodoid'], 
                             materiaid= fila['materiaid'], 
                             faltas1r= fila['faltas1r'], 
                             faltas2r= fila['faltas2r'], 
                             faltaslibre= fila['faltaslibre'], 
-                            faltasrecursa= fila['faltasrecursa'], 
-                            id= fila['id'] )
+                            faltasrecursa= fila['faltasrecursa'] )
         
     return {'filas': filas}
     
@@ -380,7 +315,7 @@ def insert_situaciones():
     for fila in filas:
     
         db.situaciones.insert(situacionid= fila['situacionid'], 
-                            situacion= fila['situacion'] )
+                            detalle= fila['situacion'] )
                             
         
     return {'filas': filas}

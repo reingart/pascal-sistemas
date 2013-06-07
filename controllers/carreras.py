@@ -5,7 +5,14 @@ def index():
     carreras=db(q).select()
     return{'carreras':carreras}
 
-def carreras():
+def materias():
+    carrerasid=request.args[0]
+    q= db.asignaturas.carreraid==carreraid
+    q &= db.asignaturas.carreraid==db.materias.materiaid
+    q &=db.asiganturas.cursoid==db.cursos.cursoid
+
+    filas=db(q).select()
+    return{'filas':filas}
 
     return{}
 

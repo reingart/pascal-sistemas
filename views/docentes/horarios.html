@@ -74,3 +74,9 @@
     </tr>
 
 </table>
+
+<ul>
+    {{for horario  in horarios: }}
+    <li>{{=A(horario.dia,_href=URL(f='dia',args=[horario.horarioid]))}} </li>
+    {{pass}} 
+</ul>

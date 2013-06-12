@@ -1,0 +1,6 @@
+{{extend 'layout.html'}}
+<ul>
+    {{for docente in docentes: }}
+    <li>{{=A(docente.nombre,_href=URL(f='detalle',args=[docente.personalid]))}} </li>
+    {{pass}} 
+</ul>

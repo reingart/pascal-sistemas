@@ -15,7 +15,7 @@ def index():
         else:
             response.flash = "Alumno no encontrado"
     response.view = "generic.html"  # HACER una vista de verdad
-    return {'form': form}
+    return {"form ": form}
     
 def cargar():
     # obtengo el parámetro pasado por variable en la url

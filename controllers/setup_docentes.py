@@ -169,6 +169,32 @@ def cargar_horarios():
     
 
     
+    # Antes de insertar borramos los registros de la tabla
+    
+    db(db.materias.materiaid>0).delete()  
+    
+    # Insertamos los cursos correspondientes
+    db.materias.insert(materiaid= 1, materia="Matematica",resumen="",cursoid=1,catedraid=1,
+    codigo="",orden=False,optativa=False,analitico="",requerida=True)
+    
+    db.materias.insert(materiaid= 1, materia=" Analisis Matematico",resumen="",cursoid=1,catedraid=1,
+    codigo="c1m02",orden=1,optativa=False,analitico="",requerida=True)
+    
+    db.materias.insert(materiaid= 2, materia="Algebra",resumen="",cursoid=1,catedraid=1,
+    codigo="c1m01",orden=2,optativa=False,analitico="",requerida=True)
+    
+    db.materias.insert(materiaid= 3, materia="Ingels tecnico",resumen="",cursoid=1,catedraid=1,
+    codigo="c1m03",orden=2,optativa=False,analitico="",requerida=True)
+    
+    db.materias.insert(materiaid= 3, materia="Administracion de las organizaciones",resumen="",cursoid=1,catedraid=1,
+    codigo="c1m04",orden=2,optativa=False,analitico="",requerida=True)
+    
+    response.view="generic.html"
+    
+    # Devuelvo una consulta del contenido de la tabla
+    
+    return {'filas': db(db.materias.materiaid>0).select()}
+    
     
     
     

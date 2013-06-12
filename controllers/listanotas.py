@@ -1,4 +1,8 @@
-# controlador de ejemplo para carga inicial / consulta de notas por alumno
+# coding: utf8
+# intente algo como
+def index(): return dict(message="hello from listanotas.py")
+
+
 
 def index():
     # armo un formulario para buscar alumno por su dni

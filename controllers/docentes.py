@@ -8,8 +8,10 @@ def index():
     return{'docentes':docentes}
 
 def horarios():
-    ""
-    return {}
+    q=db.horarios.horarioid>0
+    horarios=db(q).select()
+    return{'horarios':horarios}
+    
     
 def finales():
     ""

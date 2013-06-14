@@ -15,13 +15,13 @@ def index():
         alumno = db(q).select().first()
         if alumno:
             # encontrado, redirigo a cargar notas por 
-            redirect(URL(f=cargar, vars={'alumnoid': alumno.alumnoid}))
+            redirect(URL(f=listar, vars={'alumnoid': alumno.alumnoid}))
         else:
             response.flash = "Alumno no encontrado"
     response.view = "generic.html"  # HACER una vista de verdad
     return {'form': form}
     
-def cargar():
+def listar():
     # obtengo el parámetro pasado por variable en la url
     alumnoid = request.vars['alumnoid']
     # busco el alumno
@@ -54,12 +54,9 @@ def cargar():
             TR(
                 TD(materia.materiaid),
                 TD(materia.nombre), 
-                TD(INPUT(requires=IS_EMPTY_OR(IS_INT_IN_RANGE(0,11)),
-                              _name='nota.%s' % (materia.materiaid), 
-                              _value=notas.get((materia.materiaid), ""), 
-                              _size="3", _style="width: 30px;")
+                TD(notas.get(materia.materiaid) or "...")
                 )
-            )])
+            ])
     filas.append(TR(TD(INPUT(_type="submit"), _colspan=3, 
                               _style="text-align: center;")))
     

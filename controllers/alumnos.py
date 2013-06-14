@@ -23,7 +23,7 @@ def busqueda():
 
 def index(): 
     "menu alumno"
-    return plugin_flatpage()
+    return {}
 
 def horarios():
     "Listado de horarios por materia"

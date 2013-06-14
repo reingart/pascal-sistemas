@@ -1,0 +1,21 @@
+{{extend 'layout.html'}}
+<h1>Menu Alumnos</h1>
+<ul>
+    <li> <a href="horarios.html">Horarios</a></li>
+	Permite ver el horario completo de la carrera cursada por el alumno.
+    <li> <a href="inasistencias.html">Inasistencias</a></li>
+    Permite ver el conteo de inasistencias del alumno en la cursada de la carrera.
+    <li> <a href="examenes.html">Finales</a></li>
+    Lista las notas de los examenes finales rendidos.
+    <li> <a href="parciales.html">Parciales</a></li>
+    Lista las notas de los parciales cuatrimestrales rendidos.
+    <li> <a href="inscripciones.html">Inscripción a comisiónes</a></li>
+    Permite inscribir a comisión/division de un curso con registro de modalidad de cursada.
+    <li> <a href="final.html">Inscripción a Exámenes</a></li>
+    Permite inscribir a examenen final con informacion detallada de la mesa de examen.
+    <li> <a href="http://127.0.0.1:8000/pascal/tramites/consultar">Consulta de Tramites</a></li>
+    Muestra el estado de los tramites iniciados.
+
+</ul>
+
+{{=BEAUTIFY(response._vars)}}

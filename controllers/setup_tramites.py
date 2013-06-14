@@ -32,3 +32,24 @@ def cargar_ubicaciones():
     # Devuelvo una consulta del contenido de la tabla
    
     return {'filas': db(db.ubicaciones.ubicacionid>0).select()}
+    
+
+    
+     
+def cargar_expedientes():
+    
+    db(db.expedientes.expedienteid>0).delete()  
+
+    # Insertamos los expedientes requeridos
+    
+    db.expedientes.insert(alumnoid=1, tramiteid=1, estadoid=1, mensaje="Certificado de Alumno Regular")
+    db.expedientes.insert(alumnoid=1, tramiteid=1, estadoid=1, mensaje="Certificado de Titulo en Tramite")
+    db.expedientes.insert(alumnoid=1, tramiteid=1, estadoid=1, mensaje="Certificado de Reincorporacion")
+    db.expedientes.insert(alumnoid=1, tramiteid=1, estadoid=1, mensaje="Certificado de Materias Aprobadas")
+    
+    
+    response.view="generic.html"
+    
+    # Devuelvo una consulta del contenido de la tabla
+   
+    return {'filas': db(db.expedientes.expedienteid>0).select()}

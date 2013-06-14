@@ -1,6 +1,7 @@
 {{extend 'layout.html'}}
 <h1>Consulta De Tramites Del Instituto Superior Blaise Pascal</h1> 
 {{=BEAUTIFY(response._vars)}}
+
 <table style="border:black">
     <caption> Carrera: Analista de sistemas</caption>
     
@@ -8,65 +9,23 @@
 <b>
     <td></td>
 
-    <td style="border: 1px solid white"><b><center>ID Tramite</center></b></td>
+    <td style="border: 1px solid white"><b><center>ID Expediente</center></b></td>
 <td style="border: 1px solid white"><b><center>Fecha de Inicio</center></b></td>
 <td style="border: 1px solid white"><b><center>Tipo</center></b></td>
 <td style="border: 1px solid white"><b><center></center>Estado</b></td>
 <td style="border: 1px solid white"><b><center></center>Departamento</b></td>
 </b>
 </tr>
+{{for reg in regs:}}
 <tr style="border: 1px solid white">
      <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"> 1 </td>
+    <td style="border: 1px solid white">{{=reg.expediente.expedienteid}}</td>
     <td style="border: 1px solid white">25/03/2013</td>
-    <td style="border: 1px solid white">Certificado de Alumno Regular</td>
-    <td style="border: 1px solid white">Iniciado</td>
+    <td style="border: 1px solid white">{{=reg.tramites.descripcion}}</td>
+    <td style="border: 1px solid white">{{=reg.estado.descripcion}}</td>
     <td style="border: 1px solid white">Dirección</td>
         </tr>
-<tr style="border: 1px solid white">
-<td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white">1</td>
-    <td style="border: 1px solid white">18/04/2013</td>
-    <td style="border: 1px solid white">Certificado de Titulo en Tramite</td>
-    <td style="border: 1px solid white">Confeccionado</td>
-    <td style="border: 1px solid white">Secretaria</td>
-    
-
-
-
-
-</tr>
-<tr style="border: 1px solid white">
- <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white">3</td>
-    <td style="border: 1px solid white">15/05/2013</td>
-    <td style="border: 1px solid white">Certificado de Porcentaje de Materias Aprobadas</td>
-    <td style="border: 1px solid white">Finalizado</td>
-    <td style="border: 1px solid white">Secretaria</td>
-
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white">4</td>
-        <td style="border: 1px solid white">05/05/2013</td>
-        <td style="border: 1px solid white">Certificado de Titulo en Tramite</td>
-        <td style="border: 1px solid white">Iniciado</td>
-        <td style="border: 1px solid white">Dirección</td>
-
-
-
-
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white">5</td>
-        <td style="border: 1px solid white">14/07/2013</td>
-    <td style="border: 1px solid white">Certificado de Alumno Regular</td>
-        <td style="border: 1px solid white">Autenticado</td>
-        <td style="border: 1px solid white">Ministerio</td>
-    
-    </tr>
-
+{{pass}}
 </table>
 
 

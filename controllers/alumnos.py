@@ -26,7 +26,15 @@ def index():
     return {}
 
 def horarios():
-    "Listado de horarios por materia"
+    hora= horarios.horarioid>0
+    if form.vars.horarioid:
+        q= db.horarios.horarioid.select()
+        form.vars.horarioid
+        form.vars.dia
+        q&= db.horarios.horaid== db.horas.horaid
+    
+    
+    
     return {}
     
 def inasistencias():

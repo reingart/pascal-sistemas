@@ -74,3 +74,23 @@ def cargar_estados():
     # Devuelvo una consulta del contenido de la tabla
    
     return {'filas': db(db.estados.estadoid>0).select()}
+    
+
+def cargar_seguimientos():
+    
+    db(db.seguimientos.seguimientoid>0).delete()  
+
+    # Insertamos los seguimientos requeridos
+    
+    db.seguimientos.insert(seguimientoid=1, expedienteid=1, personalid=2, ubicacionid=1, fecha="2013-02-04", comentario="administrador del sistema")
+    db.seguimientos.insert(seguimientoid=2, expedienteid=2, personalid=3, ubicacionid=2, fecha="2013-03-02", comentario="administrador del sistema")
+    db.seguimientos.insert(seguimientoid=3, expedienteid=3, personalid=4, ubicacionid=3, fecha="2013-02-02", comentario="administrador del sistema")
+    db.seguimientos.insert(seguimientoid=4, expedienteid=4, personalid=5, ubicacionid=4, fecha="2013-03-12", comentario="administrador del sistema")
+    
+    
+    
+    response.view="generic.html"
+    
+    # Devuelvo una consulta del contenido de la tabla
+   
+    return {'filas': db(db.seguimientos.seguimientoid>0).select()}

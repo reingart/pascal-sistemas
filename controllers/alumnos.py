@@ -26,12 +26,12 @@ def index():
     return {}
 
 def horarios():
-    hora= horarios.horarioid>0
-    if form.vars.horarioid:
-        q= db.horarios.horarioid.select()
-        form.vars.horarioid
-        form.vars.dia
-        q&= db.horarios.horaid== db.horas.horaid
+    q= db.horarios.horaid==db.horas.horaid
+    q &= db.horarios.comisionid== db.comisiones.comisionid
+    q &= db.comisiones.personalid== db.personal.personalid
+    q &= db.comisiones.materiaid== db.materias.materiaid
+    filas= db(q).select(db.horarios.horas, db.personal.nombre, db.materias.nombre, db.horarios.dia)
+    
     
     
     

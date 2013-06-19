@@ -86,3 +86,10 @@
 </table>
     <INPUT type="submit" name="GRABAR" value="GUARDAR">
 </FORM>
+
+
+<ul>
+    {{for nota  in notas: }}
+    <li>{{=A(nota.alumnoid,nota.nota,_href=URL(f='nota',args=[nota.notaid]))}} </li>
+    {{pass}} 
+</ul>

@@ -23,12 +23,11 @@ response.menu = [
     ]],
     [T('Carreras'), False, URL(request.application,'carreras','index'), [
         [T('Analista de Sistemas'), False, URL(request.application,'carreras','sistemas'), []],
-        [T('Recursos Humanos'), False, URL(request.application,'carreras','rrhh'), []],
         [T('Salud'), False, URL(request.application,'carreras','salud'), [
-            [T('Enfermería'), False, URL(request.application,'carreras','salud/enfermeria'), []],
-            [T('Instrumentación'), False, URL(request.application,'carreras','salud/instrumentacion'), []],
-            [T('Análisis Clínicos'), False, URL(request.application,'carreras','salud/laboratorio'), []],
-            [T('Radiología'), False, URL(request.application,'carreras','salud/radiologia'), []],
+            [T('Enfermería'), False, URL(request.application,'carreras','salud_enfermeria'), []],
+            [T('Instrumentación'), False, URL(request.application,'carreras','salud_instrumentacion'), []],
+            [T('Análisis Clínicos'), False, URL(request.application,'carreras','salud_laboratorio'), []],
+            [T('Radiología'), False, URL(request.application,'carreras','salud_radiologia'), []],
         ]],
     ]],
     [T('Docentes'), False, URL(request.application,'docentes','index'), [ 

@@ -57,3 +57,7 @@ def apuntes():
 def recursos():
     ""
     return{}
+    
+def asistencias():
+    ""
+    return{}

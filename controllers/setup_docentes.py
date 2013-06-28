@@ -9,7 +9,7 @@ def cargar_docentes():
     db.personal.insert(personalid=2, nombre="Reingart Mariano",dni=111111,nacimiento= "",
     domicilio="Necochea 1132",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=7899765,titulos="ingenieria en sistemas",otorgadospor="pepe alberto",fechaotorgamiento="",
-    apto="nose",nombramiento="",cuil=1234577,cargoid=1,seccionid=2)
+    apto="nose",nombramiento="",cuil=1234577,cargoid=1,seccionid=2,foto='mariano')
     
     db.personal.insert(personalid=3, nombre="Amarilla Hector",dni=434343,nacimiento="",
     domicilio="Laprida 4567",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
@@ -269,3 +269,28 @@ def cargar_examenes():
     # Devuelvo una consulta del contenido de la tabla
     
     return {'filas': db(db.examenes.examenid>0).select()}
+
+
+
+
+def cargar_faltas():
+    
+    # Antes de insertar borramos los registros de la tabla
+    
+    db(db.faltas.faltaid>0).delete()  
+
+    # Insertamos los cursos correspondientes
+    
+    db.faltas.insert(faltaid= 1, alumnoid=1, comisionid=1, inasistenciaid=1, fecha="", cantidad=1.2, justificado=True, detalle="")
+    db.faltas.insert(faltaid= 2, alumnoid=2, comisionid=2, inasistenciaid=2, fecha="", cantidad=1.4, justificado=False, detalle="")
+    db.faltas.insert(faltaid= 3, alumnoid=3, comisionid=3, inasistenciaid=3, fecha="", cantidad=2.8, justificado=True, detalle="")
+    db.faltas.insert(faltaid= 4, alumnoid=4, comisionid=4, inasistenciaid=4, fecha="", cantidad=2.8, justificado=True, detalle="")
+    db.faltas.insert(faltaid= 5, alumnoid=5, comisionid=5, inasistenciaid=5, fecha="", cantidad=2.8, justificado=True, detalle="")
+
+    
+
+    response.view="generic.html"
+    
+    # Devuelvo una consulta del contenido de la tabla
+    
+    return {'filas': db(db.faltas.faltaid>0).select()}

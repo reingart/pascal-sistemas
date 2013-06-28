@@ -70,8 +70,9 @@ db.define_table('personal',
     Field('apto', type='string', length=50),
     Field('nombramiento', type='date'),
     Field('cuil', type='string', length=50),
+    Field('foto', type='upload', length=50),
     Field('cargoid', db.cargos),
-    Field('seccionid', db.secciones),
+##    Field('seccionid', db.secciones),
     format= "%(personalid)s [%(nombre)s]",
     migrate=migrate)
     

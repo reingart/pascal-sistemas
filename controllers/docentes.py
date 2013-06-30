@@ -95,7 +95,7 @@ def asistencias():
     
 def ficha():
     # obtengo el id de la url (primer argumento por posicion):
-    docenteid = request.args[0]
+    personalid = request.args[0]
     # obtengo el registro del docente
-    docente = db.personal[docenteid]
-    return {'docente': docente}
+    docente = db.personal[personalid]
+    return {'docente':docente}

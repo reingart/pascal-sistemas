@@ -33,9 +33,15 @@ response.menu = [
     [T('Docentes'), False, URL(request.application,'docentes','index'), [ 
        [T('Asistencias'), False, URL(request.application,'docentes','asistencias'), []],
        [T('Horarios'), False, URL(request.application,'docentes','horarios'), []],
-       [T('Finales'), False, URL(request.application,'docentes','finales'), []],
-       [T('Parciales'), False, URL(request.application,'docentes','parciales'), []],
+       [T('calificaciones'), False, URL(request.application,'docentes','index'),[
+                [T('Parciales'), False, URL(request.application,'docentes','parciales'), []],
+                [T('Finales'), False, URL(request.application,'docentes','finales'), []],
+                ]],
+       
        [T('Apuntes'), False, URL(request.application,'docentes','apuntes'), []],
+       [T('Recursos'), False, URL(request.application,'docentes','recursos'), []],
+      
+
     ]],
     [T('Alumnos'), False, URL(request.application,'alumnos','index'), [
         [T('Horario'), False, URL(request.application,'alumnos','horarios'), []],

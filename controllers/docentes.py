@@ -59,39 +59,9 @@ def recursos():
     return{}
     
 def asistencias():
+    ""
     
-    i=0
-    asistencias = db().select (db.faltas.ALL, distinct = True)
-     
-    listado=[]
-    listado.append(TABLE(TR(
-           
-           TH('ALUMNO',_style='width:200px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
-           TH('COMISION',_style='width:200px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
-           TH('INASISTENCIAID',_style='width:200px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
-           TH('FECHA',_style='width:200px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
-           TH('CANTIDAD',_style='width:200px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
-           TH('JUSTIFICADO',_style='width:200px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
-           TH('DETALLE',_style='width:200px; color:#000; background: #99f; border: 2px solid #cdcdcd')
-           )))  
-    
-    
-    
-    for x in asistencias:
-        listado.append(TABLE(TR(
-           
-           TD(x.alumnoid,_style='width:205px;background: #eef; border: 2px solid #cdcdcd'),
-           TD(x.comisionid,_style='width:205px;background: #eef; border: 2px solid #cdcdcd'),
-           TD(x.inasistenciaid,_style='width:205px;background: #eef; border: 2px solid #cdcdcd'),
-           TD(x.fecha,_style='width:205px;background: #eef; border: 2px solid #cdcdcd'),
-           TD(x.cantidad,_style='width:205px;background: #eef; border: 2px solid #cdcdcd'),
-           TD(x.justificado,_style='width:205px;background: #eef; border: 2px solid #cdcdcd'),
-           TD(x.detalle,_style='width:205px;background: #eef; border: 2px solid #cdcdcd')
-           ))) 
-
-    a = DIV(listado)
-    
-    return dict(a=a)
+    return{}
     
 def ficha():
     # obtengo el id de la url (primer argumento por posicion):

@@ -32,16 +32,24 @@ def horarios():
     q &= db.comisiones.materiaid== db.materias.materiaid
     filas= db(q).select(db.horas.hora, db.personal.nombre, db.materias.nombre, db.horarios.dia)
     
-    return dict (filas= filas)
-    
     horarios={'lunes':{},'martes':{},'miercoles':{},'jueves':{},'viernes':{}}
     for fila in filas:
         horarios[fila.dia][fila.hora]=fila
         
+    return dict (filas= filas)
+    
+   
+        
     
 def inasistencias():
-    "Listado con inasistencias del alumno"
-    return {}
+    q= db.faltas()
+    q &= db.faltas.inasistenciaid== db.inasistencias.inasistenciaid
+    q &= db.faltas.alumnoid== db.alumnos.alumnoid
+    q &= db.faltas.comisionid== db.comisiones.comisionid
+    faltas= db(q).select(db.alumno.nombre, db.comision.nombre)
+    
+    
+    return {'falta', 'faltas'}
     
 def examenes():
     "Listado de Examenes finales Rendi"

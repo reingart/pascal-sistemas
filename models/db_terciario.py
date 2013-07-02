@@ -212,14 +212,7 @@ db.define_table('horas',
     format= "%(horaid)s [%(hora)s]",
     migrate=migrate)
 
-db.define_table('horarios',
-    Field('horarioid', type='id'),
-    Field('horaid', db.horas),
-    Field('dia', type='string', length=1),
-    Field('materiaid', db.materias),
-    Field('detalle', type='string', length=25),
-    format= "%(horarioid)s [%(detalle)s]",
-    migrate=migrate)
+
 
 
 
@@ -297,6 +290,16 @@ db.define_table('comisiones',
     Field('faltaslibre', type='double'),
     Field('faltasrecursa', type='double'),
     format= "%(comisionid)s [%(nombre)s]",
+    migrate=migrate)
+    
+db.define_table('horarios',
+    Field('horarioid', type='id'),
+    Field('horaid', db.horas),
+    Field('comisionid', db.comisiones),
+    Field('dia', type='string', length=1),
+    Field('materiaid', db.materias),
+    Field('detalle', type='string', length=25),
+    format= "%(horarioid)s [%(detalle)s]",
     migrate=migrate)
 
 db.define_table('profesores',

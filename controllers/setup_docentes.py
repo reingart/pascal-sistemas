@@ -153,12 +153,12 @@ def cargar_horarios():
 
     # Insertamos los cursos correspondientes
     
-    db.horarios.insert(horarioid= 1, horaid=20,dia="martes",comisionid=1,detalle="")
-    db.horarios.insert(horarioid= 2, horaid=20,dia="miercoles",comisionid=2,detalle="")
-    db.horarios.insert(horarioid= 3, horaid=18,dia="lunes",comisionid=3,detalle="")
-    db.horarios.insert(horarioid= 4, horaid=17,dia="martes",comisionid=4,detalle=" ")
-    db.horarios.insert(horarioid= 5, horaid=20,dia="viernes",comisionid=5,detalle="")
-    db.horarios.insert(horarioid= 6, horaid=19,dia="jueves",comisionid=6,detalle="")
+    db.horarios.insert(horarioid= 1, horaid=1,dia="martes",comisionid=1,detalle="")
+    db.horarios.insert(horarioid= 2, horaid=2,dia="miercoles",comisionid=2,detalle="")
+    db.horarios.insert(horarioid= 3, horaid=1,dia="lunes",comisionid=3,detalle="")
+    db.horarios.insert(horarioid= 4, horaid=1,dia="martes",comisionid=4,detalle=" ")
+    db.horarios.insert(horarioid= 5, horaid=1,dia="viernes",comisionid=5,detalle="")
+    db.horarios.insert(horarioid= 6, horaid=2,dia="jueves",comisionid=6,detalle="")
    
 
     response.view="generic.html"

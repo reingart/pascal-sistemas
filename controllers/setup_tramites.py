@@ -21,10 +21,12 @@ def cargar_ubicaciones():
 
     # Insertamos las ubicaciones requeridas
     
-    db.ubicaciones.insert(ubicacionid="1",descripcion="Certificado de Alumno Regular", telefono="456783",email="jose@hotmail.com")
-    db.ubicaciones.insert(ubicacionid="2",descripcion="Certificado de Titulo en Tramite", telefono="439827",email="juan@hotmail.com")
-    db.ubicaciones.insert(ubicacionid="3",descripcion="Certificado de Reincorporacion", telefono="459382",email="mario@hotmail.com")
-    db.ubicaciones.insert(ubicacionid="4",descripcion="Certificado de Materias Aprobadas", telefono="438297",email="martin@hotmail.com")
+    db.ubicaciones.insert(ubicacionid="1",descripcion="Secretaria Academica", telefono="456783",email="jose@hotmail.com")
+    db.ubicaciones.insert(ubicacionid="2",descripcion="Secretaría Administrativa", telefono="439827",email="juan@hotmail.com")
+    db.ubicaciones.insert(ubicacionid="3",descripcion="Direccion", telefono="459382",email="mario@hotmail.com")
+    db.ubicaciones.insert(ubicacionid="4",descripcion="Jefatura de Inspeccion", telefono="438297",email="martin@hotmail.com")
+    db.ubicaciones.insert(ubicacionid="5",descripcion="Dirección Provincial de ...", telefono="438297",email="martin@hotmail.com")
+    db.ubicaciones.insert(ubicacionid="6",descripcion="Ministerio de Educación", telefono="438297",email="martin@hotmail.com")
     
     
     response.view="generic.html"

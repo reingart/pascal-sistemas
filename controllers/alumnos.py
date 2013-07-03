@@ -36,7 +36,7 @@ def horarios():
     # horario es una estructura cuya clave es el dia y el valor es otro diccionario....
     #  {'lunes': {1: fila} ... }
     for fila in filas:
-        horario[fila.dia][fila.hora]=fila
+        horario[fila.horarios.dia][fila.horas.hora]=fila
         
     return dict (horario=horario)
     

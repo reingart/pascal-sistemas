@@ -6,50 +6,50 @@ def cargar_docentes():
 
     # Insertamos los nombres de los profesores
     
-    db.personal.insert(personalid=2, nombre="Reingart Mariano",dni=111111,nacimiento= "",
+    db.personal.insert(personalid=2,E_mail='reingart@gmail.com',facebook='Mariano Reingart', nombre="Reingart Mariano",dni=111111,nacimiento= "",
     domicilio="Necochea 1132",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=7899765,titulos="ingenieria en sistemas",otorgadospor="pepe alberto",fechaotorgamiento="",
-    apto="nose",nombramiento="",cuil=1234577,cargoid=1,seccionid=2,foto='mariano')
+    apto="nose",nombramiento="",cuil=1234577,cargoid=1,foto='mariano')
     
-    db.personal.insert(personalid=3, nombre="Amarilla Hector",dni=434343,nacimiento="",
+    db.personal.insert(personalid=3,E_mail='HectorAmarilla@gmail.com',facebook='Hector Amarilla', nombre="Amarilla Hector",dni=434343,nacimiento="",
     domicilio="Laprida 4567",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=8568899,titulos="ingenieria en sistemas",otorgadospor="Jose Rodriguez",fechaotorgamiento="",
-    apto="nose",nombramiento="",cuil=8799999,cargoid=2,seccionid=2)
+    apto="nose",nombramiento="",cuil=8799999,cargoid=2)
     
-    db.personal.insert(personalid=4, nombre="Vargas Claudia",dni=4545,nacimiento="",
+    db.personal.insert(personalid=4,E_mail='vargasclaudia@gmail.com',facebook='Maria Claudi Vargas', nombre="Vargas Claudia",dni=4545,nacimiento="",
     domicilio="San Juan 1122",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=7899765,titulos="Contaduria",otorgadospor="Juan Repeto",fechaotorgamiento="",
-    apto="nose",nombramiento="",cuil=7876669,cargoid=2,seccionid=2)
+    apto="nose",nombramiento="",cuil=7876669,cargoid=2)
     
-    db.personal.insert(personalid=5, nombre="Bravo Angel",dni=9897,nacimiento="",
+    db.personal.insert(personalid=5,E_mail='Angelbravo@gmail.com',facebook='Angel Bravo', nombre="Bravo Angel",dni=9897,nacimiento="",
     domicilio="Rivas 1450",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=7899765,titulos="ingenieria en sistemas",otorgadospor="Norberto Gonzalez",fechaotorgamiento="",
-    apto="nose",nombramiento="",cuil=76969989,cargoid=1,seccionid=2)
+    apto="nose",nombramiento="",cuil=76969989,cargoid=1)
     
-    db.personal.insert(personalid=6, nombre="Aguirre Elena",dni=57865,nacimiento="",
+    db.personal.insert(personalid=6, E_mail='Aguihelena@gmail.com',facebook='Aguirre Helena',nombre="Aguirre Elena",dni=57865,nacimiento="",
     domicilio="Sarmiento 1120",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=6888899,titulos="Psicopedagoga",otorgadospor="Norma Villanueva",fechaotorgamiento="",
-    apto="nose",nombramiento="",cuil=545465456,cargoid=2,seccionid=2)
+    apto="nose",nombramiento="",cuil=545465456,cargoid=2)
     
-    db.personal.insert(personalid=7, nombre="Media Luz",dni=754645657,nacimiento="",
+    db.personal.insert(personalid=7,E_mail='Medinaluz@gmail.com',facebook='Luz Medina', nombre="Media Luz",dni=754645657,nacimiento="",
     domicilio="Claudia Sifre 1112",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=436777,titulos="Analisis de sistemas",otorgadospor="Angel Bravo",fechaotorgamiento="",
-    apto="nose",nombramiento="",cuil=9679679,cargoid=1,seccionid=2)
+    apto="nose",nombramiento="",cuil=9679679,cargoid=1)
     
-    db.personal.insert(personalid=8, nombre="Gonzalez Jose",dni=79588,nacimiento="",
+    db.personal.insert(personalid=8, E_mail='Josegonzalez@gmail.com',facebook='Jose Gonzalez',nombre="Gonzalez Jose",dni=79588,nacimiento="",
     domicilio="Lasalle 456",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=5474868787,titulos="Profesor matematica",otorgadospor="Ruben Olmedo",fechaotorgamiento="",
-    apto="nose",nombramiento="",cuil=7896969,cargoid=1,seccionid=2)
+    apto="nose",nombramiento="",cuil=7896969,cargoid=1)
     
-    db.personal.insert(personalid=9, nombre="Profe de Ingles",dni=545353,nacimiento="",
+    db.personal.insert(personalid=9, E_mail='roselli@gmail.com',facebook='Andrea Roselli',nombre="Andrea Roselli ",dni=545353,nacimiento="",
     domicilio="Melian  567",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=6576765757,titulos="Profesora de  ingles",otorgadospor="Josefa Rosales",fechaotorgamiento="",
-    apto="nose",nombramiento="",cuil=5476476475,cargoid=1,seccionid=2)
+    apto="nose",nombramiento="",cuil=5476476475,cargoid=1)
     
-    db.personal.insert(personalid=10, nombre="Profe de Historia",dni=6465464,nacimiento="",
+    db.personal.insert(personalid=10,E_mail='adriana@gmail.com',facebook='Adriana ', nombre="Adriana",dni=6465464,nacimiento="",
     domicilio="Rivera Indarte 567",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=5474755,titulos="Profesor de historia",otorgadospor="Alberto Pepeto",fechaotorgamiento="",
-    apto="nose",nombramiento="",cuil=6587568,cargoid=2,seccionid=2)
+    apto="nose",nombramiento="",cuil=6587568,cargoid=2)
 
     response.view="generic.html"
     
@@ -153,12 +153,12 @@ def cargar_horarios():
 
     # Insertamos los cursos correspondientes
     
-    db.horarios.insert(horarioid= 1, horaid=20,dia="martes",materiaid=1,detalle="")
-    db.horarios.insert(horarioid= 2, horaid=20,dia="miercoles",materiaid=2,detalle="")
-    db.horarios.insert(horarioid= 3, horaid=18,dia="lunes",materiaid=3,detalle="")
-    db.horarios.insert(horarioid= 4, horaid=17,dia="martes",materiaid=4,detalle=" ")
-    db.horarios.insert(horarioid= 5, horaid=20,dia="viernes",materiaid=5,detalle="")
-    db.horarios.insert(horarioid= 6, horaid=19,dia="jueves",materiaid=6,detalle="")
+    db.horarios.insert(horarioid= 1, personalid=7,horaid=20,dia="martes",materiaid=1,detalle="")
+    db.horarios.insert(horarioid= 2,personalid=2, horaid=20,dia="miercoles",materiaid=2,detalle="")
+    db.horarios.insert(horarioid= 3,personalid=3 ,horaid=18,dia="lunes",materiaid=3,detalle="")
+    db.horarios.insert(horarioid= 4,personalid=7, horaid=17,dia="martes",materiaid=4,detalle=" ")
+    db.horarios.insert(horarioid= 5, personalid=4,horaid=20,dia="viernes",materiaid=5,detalle="")
+    db.horarios.insert(horarioid= 6,personalid=5, horaid=19,dia="jueves",materiaid=6,detalle="")
    
 
     response.view="generic.html"

@@ -18,6 +18,7 @@ def busqueda():
         if docente:
             # encontrado, redirigo a cargar notas por 
             redirect(URL(f=index, vars={'personalid': docente.personal.personalid}))
+            
         else:
             response.flash = "docente no encontrado"
     #response.view = "generic.html"  # HACER una vista de verdad
@@ -28,6 +29,7 @@ def index():
     if request.vars:
         # si me pasan en la URL el docente, lo filtro 
         q=db.personal.personalid == request.vars['personalid']
+        redirect(URL(f=ficha, vars={'personalid': docente.personal.personalid}))
     else:
         # sino, busco todos los docentes
         q=db.personal.personalid>0
@@ -65,7 +67,10 @@ def asistencias():
     
 def ficha():
     # obtengo el id de la url (primer argumento por posicion):
+   
     personalid = request.args[0]
+        
     # obtengo el registro del docente
     docente = db.personal[personalid]
+    
     return {'docente':docente}

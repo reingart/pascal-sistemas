@@ -56,6 +56,8 @@ db.define_table('secciones',
     
 db.define_table('personal',
     Field('personalid', type='id'),
+    Field('E_mail', type='string',length=50),
+    Field('facebook', type='string',length=50),
     Field('nombre', type='string', length=50),
     Field('dni', type='integer', length=50),
     Field('nacimiento', type='date'),
@@ -72,6 +74,7 @@ db.define_table('personal',
     Field('cuil', type='string', length=50),
     Field('foto', type='upload', length=50),
     Field('cargoid', db.cargos),
+    
 ##    Field('seccionid', db.secciones),
     format= "%(personalid)s [%(nombre)s]",
     migrate=migrate)

@@ -291,6 +291,7 @@ def insert_comision():
                             divisionid= fila['divisionid'], 
                             periodoid= fila['periodoid'], 
                             materiaid= fila['materiaid'], 
+                            personalid= fila['personalid'],
                             faltas1r= fila['faltas1r'], 
                             faltas2r= fila['faltas2r'], 
                             faltaslibre= fila['faltaslibre'], 

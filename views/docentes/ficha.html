@@ -6,16 +6,8 @@
 <h5>E-mail: {{=docente.E_mail}} </h5>
 <h5> Facebook: {{=docente.facebook}} </h5>
 Localidad: {{=docente.localidad}}<br>
-<table border=2>
-<ul>
-<table border=2>
-{{for comision in comisiones:}}
-<tr><td>
-<li>Materia que dicta:{{=comision.nombre}}</li>
-    </td></tr>
-    {{pass}}
-{{for comision in comisiones:}}
-<ul>
+
+
 <table border=2>
 {{for comision in comisiones:}}
 <tr><td>
@@ -23,12 +15,5 @@ Localidad: {{=docente.localidad}}<br>
     </td></tr>
     {{pass}}
     </table>
-</ul>
-<tr><td>
-<li>Materia que dicta:{{=comision.nombre}}</li>
-    </td></tr>
-    {{pass}}
-    </table>
-</ul>
-    </table>
-</ul>
+<br></br>    
+<a href="http://127.0.0.1:8000/practica/docentes/index">VOLVER</a>

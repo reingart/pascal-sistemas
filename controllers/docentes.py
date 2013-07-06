@@ -15,6 +15,8 @@ def busqueda():
         if form.vars.nombre:    
             q &= db.personal.nombre.contains(form.vars.nombre)
         docente = db(q).select().first()
+        
+        
         if docente:
             # encontrado, redirigo a cargar notas por 
             redirect(URL(f=index, vars={'personalid': docente.personal.personalid}))
@@ -73,4 +75,7 @@ def ficha():
     # obtengo el registro del docente
     docente = db.personal[personalid]
     
-    return {'docente':docente}
+    q = db.comisiones.personalid == personalid
+    comisiones = db(q).select()
+  
+    return {'docente':docente, 'comisiones':comisiones}

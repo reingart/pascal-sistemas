@@ -1,10 +1,44 @@
 {{extend 'layout.html'}}
 
-<table> 
+<h2> <p align= 'right'> Año 2013  </h2>
+<h1> <center> Horarios: Analista de sistemas </center></h1>
+<h3> Alumno: Lucas González </h3>
+<h3> Dni: 37.987.234 </h3>
+{{=BEAUTIFY(response._vars)}}
+
+<h2><b> Primer Año</b></h2>
+<TABLE style="border: 1px solid white"> 
     {{for hora in ['1','2','3','4']:}}
-    	<tr>
+    	<tr style="border: 1px solid white">
     	{{for dia in ['lunes','martes','miercoles','jueves','viernes']:}}
-    		<td>
+    		<td style="border: 1px solid white">
+			{{f=horario.get(dia, {}).get(hora, None)}}
+			{{if f:}}
+				{{=f.personal.nombre}}
+				{{=f.materias.nombre}} 
+        	{{pass}}
+            </td>
+    	{{pass}}
+    {{for hora in ['1','2','3','4']:}}
+    	{{for dia in ['lunes','martes','miercoles','jueves','viernes']:}}
+    		<td style="border: 1px solid white">
+			{{f=horario.get(dia, {}).get(hora, None)}}
+			{{if f:}}
+				{{=f.personal.nombre}}
+				{{=f.materias.nombre}} 
+        	{{pass}}
+            </td>
+    	{{pass}}
+    {{for hora in ['1','2','3','4']:}}
+    <td style="border: 1px solid white">  </td>
+    <td style="border: 1px solid white">  </td>
+    <td style="border: 1px solid white"> <center>Interconect.<br>(Reingart)</td>
+    <td style="border: 1px solid white"> </td>
+    <td style="border: 1px solid white"> <center>Interconect. <br>( Reingart) </center></td>
+    </tr>
+    <tr style="border: 1px solid white">
+    <td style="border: 1px solid white"><center>18:00 a 19:00</td>
+    		<td style="border: 1px solid white">
 			{{f=horario.get(dia, {}).get(hora, None)}}
 			{{if f:}}
 				{{=f.personal.nombre}}
@@ -14,191 +48,5 @@
     	{{pass}}
     	</tr>
 	{{pass}}
-</table>
 	
-
-<h2> <p align= 'right'> Año 2013  </h2>
-<h1> <center> Horarios: Analista de sistemas </center></h1>
-<h3> Alumno: Lucas González </h3>
-<h3> Dni: 37.987.234 </h3>
-{{=BEAUTIFY(response._vars)}}
-
-<h2><b> Primer Año</b></h2>
-<TABLE style="border: 1px solid white">
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><B><center>Horarios</center></B></td>
-    <td style="border: 1px solid white"><B><center>Lunes </center></B></td>
-    <td style="border: 1px solid white"><B><center>Martes </center></B></td>
-    <td style="border: 1px solid white"><B><center>Miercoles </center></B></td>
-    <td style="border: 1px solid white"><B><center>Jueves </center></B></td>
-    <td style="border: 1px solid white"><B><center>Viernes </center></B></td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>17:00 a 18:00</td>
-    <td style="border: 1px solid white"><center>Edi I<br>(Bravo)  </td>
-    <td style="border: 1px solid white"><center>Int.a la fisica<br>(Gonzalez) </td>
-    <td style="border: 1px solid white">  </td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"> </td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white">18:00 a 19:00</td>
-    <td style="border: 1px solid white"><center>Edi I <br>(Bravo) </td>
-    <td style="border: 1px solid white"><center>Analisis I<br>(Gonzalez) </td>
-    <td style="border: 1px solid white"><center>Metodologia de la inv. <br>(Aguirre) </td>
-    <td style="border: 1px solid white"><center>Ingles I<br>(Roselli) </td>
-    <td style="border: 1px solid white"><center>Administraccion de las org.<br>(Vargas) </td>
-    </tr>
-    <tr style="border: 1px solid white">
-     <td style="border: 1px solid white"><center>19:00 a 20:00</td>
-     <td style="border: 1px solid white"><center> Arq. del computador<br>(Bravo) </td>
-     <td style="border: 1px solid white"><center>Analisis I <br>(Gonzalez) </td>
-     <td style="border: 1px solid white"><center>Metodologia de la inv.<br>(Aguirre) </td>
-     <td style="border: 1px solid white"><center>Ingles I<br>(Roselli) </td>
-      <td style="border: 1px solid white"><center>Administracion de las org.<br>( Vargas) </td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>Receso</td>
-    <td style="border: 1px solid white">  </td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"> </td>
-     <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"> </td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>20:15 a 21:15</td>
-    <td style="border: 1px solid white"><center>Programacion I<br>(Amarilla) </td>
-    <td style="border: 1px solid white"><center>Arq. del computador<br>(Bravo) </td>
-    <td style="border: 1px solid white"><center>Intr. Sist. Informacion<br>(Medina) </td>
-     <td style="border: 1px solid white"><center>Programacion I<br>(Amarilla) </td>
-    <td style="border: 1px solid white"><center>Algebra<br>(Gonzalez) </td>
-    </tr>
-	<tr style="border: 1px solid white">
-        <td style="border: 1px solid white"><center>21:15 a 22:15</td>
-    <td style="border: 1px solid white"><center>Programacio I<br>(Amarilla) </td>
-    <td style="border: 1px solid white"><center>Arq. del computador<br>(Bravo) </td>
-    <td style="border: 1px solid white"><center>Intr. Sist. Informacion<br>(Medina) </td>
-     <td style="border: 1px solid white"><center>Programacion I<br>(Amarilla) </td>
-    <td style="border: 1px solid white"><center>Algebra<br>(Gonzalez) </td>
-    </tr>
 </TABLE>
-
-<h2><b> Segundo Año</b></h2>
-<TABLE style="border: 1px solid white">
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><B><center>Horarios</center></B></td>
-    <td style="border: 1px solid white"><B><center>Lunes </center></B></td>
-    <td style="border: 1px solid white"><B><center>Martes </center></B></td>
-    <td style="border: 1px solid white"><B><center>Miercoles </center></B></td>
-    <td style="border: 1px solid white"><B><center>Jueves </center></B></td>
-    <td style="border: 1px solid white"><B><center>Viernes </center></B></td>
-    </tr>
-    <tr style="border: 1px solid white">
-        <td style="border: 1px solid white"><center>17:00 a 18:00</td>
-    <td style="border: 1px solid white">  </td>
-    <td style="border: 1px solid white">  </td>
-    <td style="border: 1px solid white"> <center>Interconect.<br>(Reingart)</td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"> <center>Interconect. <br>( Reingart) </center></td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>18:00 a 19:00</td>
-    <td style="border: 1px solid white"><center>Programacion II<br>(Amarilla) </td>
-    <td style="border: 1px solid white"><center>Instalacion de redes<br>(Bravo)  </td>
-    <td style="border: 1px solid white"><center>Sist. de informacion I<br>(Medina) </center></td>
-    <td style="border: 1px solid white"> <center>Programacion II<br>(Amarilla)</td>
-    <td style="border: 1px solid white"> <center>Probalidad y estadistica <br>(Gonzalez) </center> </td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>19:00 a 20:00</td>
-    <td style="border: 1px solid white"><center>Programacion II<br>(Amarilla) </td>
-    <td style="border: 1px solid white"><center>Instalacion de redes<br> (Bravo) </center></td>
-    <td style="border: 1px solid white"><center>Sist. de informacion<br>(Medina) </center></td>
-    <td style="border: 1px solid white"><center>Programacion II<br>(Amarilla) </center></td>
-    <td style="border: 1px solid white"><center>Probabilidad y estadistica<br>(Gonzalez) </center></td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>Receso</td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"> </td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>20:15 a 21:15</td>
-    <td style="border: 1px solid white"><center>Edi II: POW<br>(Bravo) </td>
-    <td style="border: 1px solid white"><center>Analisis matematico<br>(Gonzalez) </td>
-    <td style="border: 1px solid white"><center>Base de datos<br>(Reingart) </td>
-    <td style="border: 1px solid white"><center>Ingles II<br>(Roseli) </td>
-    <td style="border: 1px solid white"><center>Sist. Operativos<br>(Reingart) </td>
-    </tr>
-    <tr style="border: 1px solid white">
-        <td style="border: 1px solid white"><center>21:15 a 22:15</td>
-            <td style="border: 1px solid white"><center>Edi II:POW<br>(Bravo) </td>
-    <td style="border: 1px solid white"><center>Analisis matematico<br>(Gonzalez) </td>
-    <td style="border: 1px solid white"><center>Base de datos<br>(Reingart) </td>
-    <td style="border: 1px solid white"><center>Ingles II<br>(Roselli) </td>
-    <td style="border: 1px solid white">Sist. Operativos<br>(Reingart) </td>
-    </tr>
-       
-</TABLE>
-<h2><b> Tercer Año</b></h2>
-<TABLE style="border: 1px solid white">
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><B><center>Horarios</center></B></td>
-    <td style="border: 1px solid white"><B><center>Lunes </center></B></td>
-    <td style="border: 1px solid white"><B><center>Martes </center></B></td>
-    <td style="border: 1px solid white"><B><center>Miercoles </center></B></td>
-    <td style="border: 1px solid white"><B><center>Jueves </center></B></td>
-    <td style="border: 1px solid white"><B><center>Viernes </center></B></td>
-    </tr>
-    <tr style="border: 1px solid white">
-        <td style="border: 1px solid white"><center>17:00 a 18:00</td>
-    <td style="border: 1px solid white">  </td>
-    <td style="border: 1px solid white">  </td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"><center> Inst.y config.</td>
-    <td style="border: 1px solid white"> </td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>18:00 a 19:00</td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"><center>Practica profecional<br>(Reingart) </center></td>
-    <td style="border: 1px solid white"> <center>Sist. informacion II<br>(Bravo)</td>
-    <td style="border: 1px solid white"> <center>Practica profecional <br>(Reingart) </center> </td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>19:00 a 20:00</td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"><center>Practica profecional<br>(Reingart) </center></td>
-    <td style="border: 1px solid white"><center>Sist. informacion II<br>(Bravo) </center></td>
-    <td style="border: 1px solid white"><center>Practica profecional<br>(Reingart) </center></td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>Receso</td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"> </td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>20:15 a 21:15</td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"><center>Investigacion operativa<br>(Medina) </td>
-    <td style="border: 1px solid white"><center>EDI III:POO<br>(Aguirre) </td>
-    <td style="border: 1px solid white"><center>Teleinformatica<br>(Bravo) </td>
-    <td style="border: 1px solid white"><center>Econ. Empresarial<br>(Vargas) </td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>21:15 a 22:15</td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"><center>Investigacion operativa<br>(Medina) </td>
-    <td style="border: 1px solid white"><center>EDI III:POO<br>(Aguirre) </td>
-    <td style="border: 1px solid white"><center>Teleinformatica<br>(Bravo) </td>
-    <td style="border: 1px solid white"><center>Econ. Empresarial<br>(Vargas) </td>
-    </tr>
- </TABLE>

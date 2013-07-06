@@ -153,12 +153,12 @@ def cargar_horarios():
 
     # Insertamos los cursos correspondientes
     
-    db.horarios.insert(horarioid= 1, personalid=7,horaid=20,dia="martes",materiaid=1,detalle="")
-    db.horarios.insert(horarioid= 2,personalid=2, horaid=20,dia="miercoles",materiaid=2,detalle="")
-    db.horarios.insert(horarioid= 3,personalid=3 ,horaid=18,dia="lunes",materiaid=3,detalle="")
-    db.horarios.insert(horarioid= 4,personalid=7, horaid=17,dia="martes",materiaid=4,detalle=" ")
-    db.horarios.insert(horarioid= 5, personalid=4,horaid=20,dia="viernes",materiaid=5,detalle="")
-    db.horarios.insert(horarioid= 6,personalid=5, horaid=19,dia="jueves",materiaid=6,detalle="")
+    db.horarios.insert(horarioid= 1, horaid=20,dia="martes",materiaid=1,detalle="")
+    db.horarios.insert(horarioid= 2, horaid=20,dia="miercoles",materiaid=2,detalle="")
+    db.horarios.insert(horarioid= 3, horaid=18,dia="lunes",materiaid=3,detalle="")
+    db.horarios.insert(horarioid= 4, horaid=17,dia="martes",materiaid=4,detalle=" ")
+    db.horarios.insert(horarioid= 5, horaid=20,dia="viernes",materiaid=5,detalle="")
+    db.horarios.insert(horarioid= 6, horaid=19,dia="jueves",materiaid=6,detalle="")
    
 
     response.view="generic.html"
@@ -214,6 +214,35 @@ def cargar_revista():
     # Devuelvo una consulta del contenido de la tabla
     
     return {'filas': db(db.revistas.revistaid>0).select()}
+    
+    
+def cargar_comision():
+    
+    # Antes de insertar borramos los registros de la tabla    
+    
+    db(db.comisiones.comisionid>0).delete()  
+
+    # Insertamos los cursos correspondientes
+    
+    db.comisiones.insert(comisionid=1, nombre="Analisis Matematico", divisionid=1, periodoid="", materiaid= 2, personalid= 8)
+    db.comisiones.insert(comisionid=2, nombre="Algebra", divisionid=1, periodoid="", materiaid= 1, personalid= 8)
+    
+    db.comisiones.insert(comisionid=3, nombre="Introduccion a los sistemas de informacion", divisionid=1, periodoid="", materiaid= 7, personalid= 5)
+    
+    db.comisiones.insert(comisionid=4, nombre="Arquitectura", divisionid=1, periodoid="", materiaid= 8, personalid= 5)
+    
+    db.comisiones.insert(comisionid=5, nombre="EDI ", divisionid=1, periodoid="", materiaid= 9, personalid= 5)
+    
+    db.comisiones.insert(comisionid=6, nombre="Programacion", divisionid=1, periodoid="", materiaid= 6, personalid= 3)
+    
+    db.comisiones.insert(comisionid=7, nombre="Ingles", divisionid=1, periodoid="", materiaid= 3, personalid= 9)
+    
+    
+    response.view="generic.html"
+    
+    # Devuelvo una consulta del contenido de la tabla
+    
+    return {'filas': db(db.comisiones.comisionid>0).select()}
     
     
     

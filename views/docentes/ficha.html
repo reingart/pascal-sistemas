@@ -5,4 +5,30 @@
 <br> 
 <h5>E-mail: {{=docente.E_mail}} </h5>
 <h5> Facebook: {{=docente.facebook}} </h5>
-Titulos: {{=docente.titulos}}<br>
+Localidad: {{=docente.localidad}}<br>
+<table border=2>
+<ul>
+<table border=2>
+{{for comision in comisiones:}}
+<tr><td>
+<li>Materia que dicta:{{=comision.nombre}}</li>
+    </td></tr>
+    {{pass}}
+{{for comision in comisiones:}}
+<ul>
+<table border=2>
+{{for comision in comisiones:}}
+<tr><td>
+<li>Materia que dicta:{{=comision.nombre}}</li>
+    </td></tr>
+    {{pass}}
+    </table>
+</ul>
+<tr><td>
+<li>Materia que dicta:{{=comision.nombre}}</li>
+    </td></tr>
+    {{pass}}
+    </table>
+</ul>
+    </table>
+</ul>

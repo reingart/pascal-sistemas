@@ -1,8 +1,17 @@
 {{extend 'layout.html'}}
 <h1>Ficha del docente: {{=docente.nombre}}</h1>
 
-{{=IMG(_src=URL(c='default',f='download',args=docente.Foto))}}
+{{=IMG(_src=URL(c='default',f='download',args=docente.foto))}}
 <br> 
 Direccion: {{=docente.domicilio}}<br>
 Telefono:  {{=docente.telefono}}<br>
-Localidad: {{=docente.localidad}}
+Localidad: {{=docente.localidad}}<br>
+<ul>
+<table border=2>
+{{for comision in comisiones:}}
+<tr><td>
+<li>Materia que dicta:{{=comision.nombre}}</li>
+    </td></tr>
+    {{pass}}
+    </table>
+</ul>

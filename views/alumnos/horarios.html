@@ -1,54 +1,38 @@
 {{extend 'layout.html'}}
 
 <h2> <p align= 'right'> Año 2013  </h2>
-<h1> <center> Horarios: Analista de sistemas </center></h1>
+<h1> Horarios: Analista de sistemas </h1>
 <h3> Alumno: Lucas González </h3>
 <h3> Dni: 37.987.234 </h3>
 
 
-<h2><b> Primer Año</b></h2>
+
 <TABLE style="border: 1px solid white"> 
-    {{for hora in ['1','2','3','4']:}}
-    	<tr style="border: 1px solid white">
-    	{{for dia in ['lunes','martes','miercoles','jueves','viernes']:}}
-    		<td style="border: 1px solid white">
-			{{f=horario.get(dia, {}).get(hora, None)}}
-			{{if f:}}
-				{{=f.personal.nombre}}
-				{{=f.materias.nombre}} 
-        	{{pass}}
-            </td>
-    	{{pass}}
-    {{pass}}
-    {{for hora in ['1','2','3','4']:}}
-    	{{for dia in ['lunes','martes','miercoles','jueves','viernes']:}}
-    		<td style="border: 1px solid white">
-			{{f=horario.get(dia, {}).get(hora, None)}}
-			{{if f:}}
-				{{=f.personal.nombre}}
-				{{=f.materias.nombre}} 
-        	{{pass}}
-            </td>
-    	{{pass}}
-   	{{pass}}
-    {{for hora in ['1','2','3','4']:}}
-    <td style="border: 1px solid white">  </td>
-    <td style="border: 1px solid white">  </td>
-    <td style="border: 1px solid white"> <center>Interconect.<br>(Reingart)</td>
-    <td style="border: 1px solid white"> </td>
-    <td style="border: 1px solid white"> <center>Interconect. <br>( Reingart) </center></td>
+    
+        
+    <tr style="border: 1px solid white"> 
+        <td style="border: 1px solid white"> LUNES </td>
+        <td style="border: 1px solid white"> MARTES </td>
+        <td style="border: 1px solid white"> MIERCOLES </td>
+        <td style="border: 1px solid white"> JUEVES </td>
+        <td style="border: 1px solid white"> VIERNES </td>
     </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>18:00 a 19:00</td>
-    		<td style="border: 1px solid white">
+    {{for hora in ['1','2','3','4']:}}
+    	
+    	<tr style="border: 1px solid white"> 
+           
+    	{{for dia in ['lunes','martes','miercoles','jueves','viernes']:}}
+            
+    		<td style="border: 1px solid white"> 
+            {{d= horario.get(dia)}}
 			{{f=horario.get(dia, {}).get(hora, None)}}
 			{{if f:}}
 				{{=f.personal.nombre}}
 				{{=f.materias.nombre}} 
+                
         	{{pass}}
             </td>
-    			{{pass}}
-    	</tr>
-	{{pass}}
-	
-</TABLE>
+    	{{pass}}
+    </tr>
+    {{pass}}
+    </TABLE>

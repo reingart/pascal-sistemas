@@ -51,7 +51,7 @@ def inasistencias():
     q &= db.faltas.alumnoid== db.alumnos.alumnoid
 
     
-    falta= db(q).select(db.alumnos.nombre, db.materias.nombre, db.personal.nombre, db.faltas.cantidad, db.faltas.fecha,)
+    falta= db(q).select(db.alumnos.nombre, db.materias.nombre, db.personal.nombre, db.faltas.cantidad, db.faltas.fecha)
    
     
     return dict (falta=falta)

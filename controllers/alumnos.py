@@ -44,16 +44,17 @@ def horarios():
         
     
 def inasistencias():
-
-    q= db.comisiones.comisionid== db.comisiones.comisionid
+    
+    q= db.faltas.faltaid== db.faltas.faltaid
     q &= db.comisiones.materiaid== db.materias.materiaid
     q &= db.comisiones.personalid== db.personal.personalid
-    q &= db.inasistencias.inasistenciaid== db.inasistencias.inasistenciaid
-    q &= db.alumnos.alumnoid== db.alumnos.alumnoid
-    falta= db(q).select(db.alumnos.nombre, db.comisiones.nombre, db.personal.nombre, db.inasistencias. descripcion)
+    q &= db.faltas.alumnoid== db.alumnos.alumnoid
+
     
+    falta= db(q).select(db.alumnos.nombre, db.materias.nombre, db.personal.nombre, db.faltas.cantidad, db.faltas.fecha,)
+   
     
-    return dict (falta= falta)
+    return dict (falta=falta)
     
 def examenes():
     "Listado de Examenes finales Rendi"

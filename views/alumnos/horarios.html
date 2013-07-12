@@ -4,7 +4,7 @@
 <h1> <center> Horarios: Analista de sistemas </center></h1>
 <h3> Alumno: Lucas González </h3>
 <h3> Dni: 37.987.234 </h3>
-{{=BEAUTIFY(response._vars)}}
+
 
 <h2><b> Primer Año</b></h2>
 <TABLE style="border: 1px solid white"> 
@@ -19,6 +19,7 @@
         	{{pass}}
             </td>
     	{{pass}}
+    {{pass}}
     {{for hora in ['1','2','3','4']:}}
     	{{for dia in ['lunes','martes','miercoles','jueves','viernes']:}}
     		<td style="border: 1px solid white">
@@ -29,6 +30,7 @@
         	{{pass}}
             </td>
     	{{pass}}
+   	{{pass}}
     {{for hora in ['1','2','3','4']:}}
     <td style="border: 1px solid white">  </td>
     <td style="border: 1px solid white">  </td>
@@ -45,7 +47,7 @@
 				{{=f.materias.nombre}} 
         	{{pass}}
             </td>
-    	{{pass}}
+    			{{pass}}
     	</tr>
 	{{pass}}
 	

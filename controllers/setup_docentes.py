@@ -207,7 +207,7 @@ def cargar_revista():
     # Insertamos los cursos correspondientes
     
     db.revistas.insert(revistaid=1, nombre="Titular")
-    db.revistas.insert(revistaid=1, nombre="Suplente")
+    db.revistas.insert(revistaid=2, nombre="Suplente")
     
     response.view="generic.html"
     
@@ -323,3 +323,20 @@ def cargar_faltas():
     # Devuelvo una consulta del contenido de la tabla
     
     return {'filas': db(db.faltas.faltaid>0).select()}
+    
+def cargar_niveles():
+    
+    # Antes de insertar borramos los registros de la tabla
+    
+    db(db.niveles.nivelid>0).delete()  
+
+    # Insertamos los cursos correspondientes
+    
+    db.niveles.insert(nivelid= 1, descripcion= 'Terciario', ciclo= 2, tipo= "", personalid= "")
+    db.niveles.insert(nivelid= 2, descripcion= 'Secundario', ciclo= 2, tipo= "", personalid= "")
+                            
+    response.view="generic.html"
+    
+    # Devuelvo una consulta del contenido de la tabla
+    
+    return {'filas': db(db.niveles.nivelid>0).select()}

@@ -37,6 +37,9 @@ cursos.cursoid,cursos.nombre,cursos.codigo,cursos.nivel,cursos.anio,cursos.secci
 
 
 TABLE revistas
+revistas.revistaid,revistas.nombre
+1,Titular
+2,Suplente
 
 
 TABLE cargos
@@ -53,21 +56,22 @@ secciones.seccionid,secciones.descripcion
 
 
 TABLE personal
-personal.personalid,personal.nombre,personal.dni,personal.nacimiento,personal.domicilio,personal.localidad,personal.cp,personal.provincia,personal.telefono,personal.titulos,personal.otorgadospor,personal.fechaotorgamiento,personal.apto,personal.nombramiento,personal.cuil,personal.foto,personal.cargoid
-2,Reingart Mariano,111111,<NULL>,Necochea 1132,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,pepe alberto,,nose,<NULL>,1234577,<NULL>,1
-3,Amarilla Hector,434343,<NULL>,Laprida 4567,gonzalez catan,1759,Buenos Aires,8568899,ingenieria en sistemas,Jose Rodriguez,,nose,<NULL>,8799999,<NULL>,2
-4,Vargas Claudia,4545,<NULL>,San Juan 1122,gonzalez catan,1759,Buenos Aires,7899765,Contaduria,Juan Repeto,,nose,<NULL>,7876669,<NULL>,2
-5,Bravo Angel,9897,<NULL>,Rivas 1450,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,Norberto Gonzalez,,nose,<NULL>,76969989,<NULL>,1
-6,Aguirre Elena,57865,<NULL>,Sarmiento 1120,gonzalez catan,1759,Buenos Aires,6888899,Psicopedagoga,Norma Villanueva,,nose,<NULL>,545465456,<NULL>,2
-7,Media Luz,754645657,<NULL>,Claudia Sifre 1112,gonzalez catan,1759,Buenos Aires,436777,Analisis de sistemas,Angel Bravo,,nose,<NULL>,9679679,<NULL>,1
-8,Gonzalez Jose,79588,<NULL>,Lasalle 456,gonzalez catan,1759,Buenos Aires,5474868787,Profesor matematica,Ruben Olmedo,,nose,<NULL>,7896969,<NULL>,1
-9,Profe de Ingles,545353,<NULL>,Melian  567,gonzalez catan,1759,Buenos Aires,6576765757,Profesora de  ingles,Josefa Rosales,,nose,<NULL>,5476476475,<NULL>,1
-10,Profe de Historia,6465464,<NULL>,Rivera Indarte 567,gonzalez catan,1759,Buenos Aires,5474755,Profesor de historia,Alberto Pepeto,,nose,<NULL>,6587568,<NULL>,2
+personal.personalid,personal.E_mail,personal.facebook,personal.nombre,personal.dni,personal.nacimiento,personal.domicilio,personal.localidad,personal.cp,personal.provincia,personal.telefono,personal.titulos,personal.otorgadospor,personal.fechaotorgamiento,personal.apto,personal.nombramiento,personal.cuil,personal.foto,personal.cargoid
+2,<NULL>,<NULL>,Reingart Mariano,111111,<NULL>,Necochea 1132,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,pepe alberto,,nose,<NULL>,1234577,<NULL>,1
+3,<NULL>,<NULL>,Amarilla Hector,434343,<NULL>,Laprida 4567,gonzalez catan,1759,Buenos Aires,8568899,ingenieria en sistemas,Jose Rodriguez,,nose,<NULL>,8799999,<NULL>,2
+4,<NULL>,<NULL>,Vargas Claudia,4545,<NULL>,San Juan 1122,gonzalez catan,1759,Buenos Aires,7899765,Contaduria,Juan Repeto,,nose,<NULL>,7876669,<NULL>,2
+5,<NULL>,<NULL>,Bravo Angel,9897,<NULL>,Rivas 1450,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,Norberto Gonzalez,,nose,<NULL>,76969989,<NULL>,1
+6,<NULL>,<NULL>,Aguirre Elena,57865,<NULL>,Sarmiento 1120,gonzalez catan,1759,Buenos Aires,6888899,Psicopedagoga,Norma Villanueva,,nose,<NULL>,545465456,<NULL>,2
+7,<NULL>,<NULL>,Media Luz,754645657,<NULL>,Claudia Sifre 1112,gonzalez catan,1759,Buenos Aires,436777,Analisis de sistemas,Angel Bravo,,nose,<NULL>,9679679,<NULL>,1
+8,<NULL>,<NULL>,Gonzalez Jose,79588,<NULL>,Lasalle 456,gonzalez catan,1759,Buenos Aires,5474868787,Profesor matematica,Ruben Olmedo,,nose,<NULL>,7896969,<NULL>,1
+9,<NULL>,<NULL>,Profe de Ingles,545353,<NULL>,Melian  567,gonzalez catan,1759,Buenos Aires,6576765757,Profesora de  ingles,Josefa Rosales,,nose,<NULL>,5476476475,<NULL>,1
+10,<NULL>,<NULL>,Profe de Historia,6465464,<NULL>,Rivera Indarte 567,gonzalez catan,1759,Buenos Aires,5474755,Profesor de historia,Alberto Pepeto,,nose,<NULL>,6587568,<NULL>,2
 
 
 TABLE niveles
 niveles.nivelid,niveles.descripcion,niveles.ciclo,niveles.tipo,niveles.personalid
-2,Secundario,2,0,0
+1,Terciario,2,<NULL>,<NULL>
+2,Secundario,2,<NULL>,<NULL>
 
 
 TABLE carreras
@@ -99,6 +103,9 @@ ciclos.cicloid,ciclos.nombre,ciclos.anio,ciclos.detalle,ciclos.desde,ciclos.hast
 
 
 TABLE catedras
+catedras.catedraid,catedras.nombre,catedras.informe,catedras.boletin,catedras.analitico,catedras.espacio,catedras.abr,catedras.calificacion,catedras.horas,catedras.minutos,catedras.nivelid
+1,saraza,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,7,80,4800,1
+2,programacion,saraza,<NULL>,234,<NULL>,<NULL>,5,10,600,1
 
 
 TABLE materias
@@ -133,7 +140,6 @@ divisiones.divisionid,divisiones.descripcion,divisiones.codigo,divisiones.cursoi
 1,1º A 2013,1A06,1,1,1,A,N,<NULL>
 2,1º B 2013,1B06,1,2,1,B,N,<NULL>
 3,1º C 2013,1C06,1,1,1,C,N,<NULL>
-
 
 
 TABLE asignaturas
@@ -193,6 +199,17 @@ calificaciones.calificacionid,calificaciones.descripcion,calificaciones.condicio
 
 
 TABLE correlativas
+correlativas.correlativaid,correlativas.materiaid1,correlativas.materiaid2,correlativas.planestudioid
+2,16,1,1
+3,31,16,1
+4,17,1,1
+6,32,1,1
+7,19,4,1
+8,34,18,1
+10,35,3,1
+12,21,6,1
+15,22,7,1
+17,23,8,1
 
 
 TABLE horas
@@ -338,12 +355,26 @@ situaciones.situacionid,situaciones.detalle
 
 
 TABLE faltas
+faltas.faltaid,faltas.alumnoid,faltas.comisionid,faltas.inasistenciaid,faltas.fecha,faltas.cantidad,faltas.justificado,faltas.detalle,faltas.web
+1,2,5,5,2011-03-23,5.0,True,<NULL>,False
+2,3,4,1,2011-04-10,3.0,True,<NULL>,False
+3,4,4,1,2011-04-12,3.0,True,<NULL>,False
+4,5,6,2,2011-04-23,3.0,True,<NULL>,False
+5,6,6,2,2011-05-21,1.0,True,<NULL>,False
 
 
 TABLE examenes
+examenes.examenid,examenes.materiaid,examenes.periodoid,examenes.llamado,examenes.turno,examenes.fecha,examenes.hora,examenes.personalid1,examenes.personalid2,examenes.personalid3
+1,2,3,1,Noche,<NULL>,<NULL>,1,2,4
+2,3,4,2,Noche,<NULL>,<NULL>,1,2,3
 
 
 TABLE inscripcionescomision
+inscripcionescomision.inscripcionid,inscripcionescomision.alumnoid,inscripcionescomision.comisionid,inscripcionescomision.alta,inscripcionescomision.baja,inscripcionescomision.condicion
+3,1,3,2012-02-25,<NULL>,r
+4,2,6,2012-03-12,<NULL>,r
+5,3,5,2012-04-30,<NULL>,r
+6,4,2,2012-05-23,<NULL>,r
 
 
 TABLE inscripcionesdivision
@@ -351,13 +382,18 @@ inscripcionesdivision.inscripcionid,inscripcionesdivision.alumnoid,inscripciones
 1,1,1,2011-03-12,<NULL>,R
 2,2,2,2011-04-12,<NULL>,R
 3,3,3,2011-05-30,<NULL>,R
-4,4,4,2011-03-18,<NULL>,R
-5,5,5,2011-03-20,<NULL>,R
-6,6,6,2011-03-10,<NULL>,R
-7,7,7,2012-03-18,<NULL>,R
+4,4,1,2011-03-18,<NULL>,R
+5,5,1,2011-03-20,<NULL>,R
+6,6,2,2011-03-10,<NULL>,R
+7,7,3,2012-03-18,<NULL>,R
 
 
 TABLE inscripcionesexamen
+inscripcionesexamen.inscripcionid,inscripcionesexamen.alumnoid,inscripcionesexamen.examenid,inscripcionesexamen.condicion,inscripcionesexamen.alta,inscripcionesexamen.baja,inscripcionesexamen.confirmar,inscripcionesexamen.valido
+1,4,1,R,2011-02-25,2011-02-25,False,False
+2,4,2,R,2011-02-25,2011-02-25,False,False
+3,4,1,R,2012-02-25,<NULL>,False,False
+4,4,2,R,2012-02-25,2012-02-25,False,False
 
 
 TABLE tramites

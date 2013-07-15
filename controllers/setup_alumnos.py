@@ -65,19 +65,7 @@ def insert_division():
         
     return {'filas': filas}
     
-def insert_niveles():
-    
-    filas= db1.executesql('SELECT * FROM niveles', as_dict= True)
-    
-    for fila in filas:
-    
-        db.niveles.insert(nivelid= fila['nivelid'], 
-                            descripcion= fila['nivel'], 
-                            ciclo= fila['ciclo'], 
-                            tipo= fila['tipo'], 
-                            personalid= fila['personalid'] )
-        
-    return {'filas': filas}
+
     
 def insert_materias():
     

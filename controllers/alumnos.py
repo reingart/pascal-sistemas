@@ -14,14 +14,18 @@ def busqueda():
         q&= db.alumnos.nombre == form.vars.nombre
         alumno = db(q).select().first()
         if alumno:
-            # encontrado, redirigo a cargar notas por 
+            # encontrado, redirigo al menu alumnos en index 
             redirect(URL(f=index, vars={'alumnoid': alumno.alumnoid}))
+            redirect(URL(f=examenes, vars={'alumnoid': alumno.alumnoid}))
+            redirect(URL(f=parciales, vars={'alumnoid': alumno.alumnoid}))
+            
         else:
             response.flash = "Alumno no encontrado"
     #response.view = "generic.html"  # HACER una vista de verdad
     return dict (form = form)
 
 def index(): 
+    
     "menu alumno"
     return {}
 
@@ -57,18 +61,51 @@ def inasistencias():
     return dict (falta=falta)
     
 def examenes():
-    "Listado de Examenes finales Rendi"
-    return {}
+    # obtengo el parámetro pasado por variable en la url
+    alumnoid = request.vars['alumnoid']
+    # busco el alumno
+    alumno = db.alumnos[alumnoid]
+    # obtengo la carrera / plan de estudio
+    #carreraid = alumno.carreraid ...
+    
+    # busco las materias:
+    q = db.materias.materiaid>0  # HACER: filtrar por carrera/plan de estudio
+    orden = db.materias.materiaid    # HACER: mejorar el orden (por ej. curso)
+    materias = db(q).select(orderby=orden)
+    
+    # obtengo las notas
+    q = db.notas.alumnoid == db.alumnos.alumnoid
+    q &= db.notas.materiaid == db.materias.materiaid
+    q &= db.notas.calificacionid == 5  # filtrar solo finales
+    #q &= db.notas.periodoid == ...     # HACER: filtrar otros campos
+    notas = db(q).select(db.alumnos.nombre, db.materias.nombre, db.notas.nota, db.notas.alta)
+    
+    return dict (notas= notas)
     
 def final():
     "formulario inscripcion a examen finales aptos para el alumno"
     return {}
     
 def parciales():
-    "listado de examenes cuatrimestrales rendidos"
-    return{}
+    # obtengo el parámetro pasado por variable en la url
+    alumnoid = request.vars['alumnoid']
+    # busco el alumno
+    alumno = db.alumnos[alumnoid]
+    # obtengo la carrera / plan de estudio
+    #carreraid = alumno.carreraid ...
+    
+    # obtengo las notas
+    q = db.notas.alumnoid == db.alumnos.alumnoid
+    q &= db.notas.materiaid == db.materias.materiaid
+    q &= db.notas.calificacionid == 3  # filtrar solo cuatrimestrales
+    q &= db.notas.periodoid == db.periodos.periodoid     # HACER: filtrar otros campos
+    notas = db(q).select(db.alumnos.nombre, db.materias.nombre, 
+    db.notas.nota, db.periodos.descripcion, db.notas.fecha)
+    
+    return dict (notas= notas)
+    
 def inscripciones():
-    "Listado de inscripciones"
+    "Listado de inscripciones a curso"
     return {}
     
 def archivos():

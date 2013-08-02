@@ -1,6 +1,12 @@
 {{extend 'layout.html'}}
-<ul>
+
+
+
+<table style="border: 1px solid white">
+<td style="border: 1px solid white"><ul>
     {{for docente in docentes: }}
     <li>{{=A(docente.nombre,_href=URL(f='ficha',args=[docente.personalid]))}} </li>
     {{pass}}
-</ul>
+</ul> 
+</td>
+</table>

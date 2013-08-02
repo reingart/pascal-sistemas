@@ -35,7 +35,7 @@ def index():
     else:
         # sino, busco todos los docentes
         q=db.personal.personalid>0
-    docentes=db(q).select()
+    docentes=db(q).select(orderby=db.personal.nombre)
     return{'docentes':docentes}
 
 def horarios():

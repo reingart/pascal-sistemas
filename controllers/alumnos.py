@@ -83,7 +83,8 @@ def examenes():
     return dict (notas= notas)
     
 def final():
-    "formulario inscripcion a examen finales aptos para el alumno"
+    #realizo alta de inscrip examenes finales
+    
     return {}
     
 def parciales():

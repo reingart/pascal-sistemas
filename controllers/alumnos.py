@@ -83,8 +83,21 @@ def examenes():
     return dict (notas= notas)
     
 def final():
+<<<<<<< local
+    "formulario inscripcion a examen finales aptos para el alumno"
+    form=SQLFORM(db.inscripcionesexamen)
+    if form.accepts(request.vars,session):
+        response.flash='Examen  Agregado'
+    elif form.errors:
+        response.flash='Hay un error en el formulario'
+    else:
+        response.flash='Por favor,complete el formulario'
+    return dict (form=form)
+
+=======
     #realizo alta de inscrip examenes finales
     
+>>>>>>> other
     return {}
     
 def parciales():

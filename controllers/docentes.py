@@ -31,16 +31,33 @@ def index():
     if request.vars:
         # si me pasan en la URL el docente, lo filtro 
         q=db.personal.personalid == request.vars['personalid']
+
         redirect(URL(f=ficha, vars={'personalid': docente.personal.personalid}))
+
+        
     else:
         # sino, busco todos los docentes
         q=db.personal.personalid>0
-    docentes=db(q).select()
+    docentes=db(q).select(orderby=db.personal.nombre)
     return{'docentes':docentes}
+    
+
+ 
 
 def horarios():
-    q=db.horarios.horarioid>0
-    horarios=db(q).select()
+    q= db.horarios.horaid==db.horas.horaid
+    q &= db.horarios.comisionid== db.comisiones.comisionid
+    q &= db.comisiones.personalid== db.personal.personalid
+    q &= db.comisiones.materiaid== db.materias.materiaid
+    filas= db(q).select(db.horas.hora, db.personal.nombre, db.materias.nombre, db.horarios.dia)
+    
+    horario = {'lunes':{},'martes':{},'miercoles':{},'jueves':{},'viernes':{}}
+    # horario es una estructura cuya clave es el dia y el valor es otro diccionario....
+    #  {'lunes': {1: fila} ... }
+    for fila in filas:
+        horario[fila.horarios.dia][fila.horas.hora]=fila
+        
+    return dict (horario=horario)
     return{'horarios':horarios}
     
     
@@ -63,18 +80,20 @@ def recursos():
     return{}
     
 def asistencias():
-    ""
     
-    return{}
+    ""
+  
+    return {}
     
 def ficha():
     # obtengo el id de la url (primer argumento por posicion):
    
     personalid = request.args[0]
+    
         
     # obtengo el registro del docente
     docente = db.personal[personalid]
-    
+
     q = db.comisiones.personalid == personalid
     comisiones = db(q).select()
   

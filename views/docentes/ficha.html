@@ -9,14 +9,93 @@ Localidad: {{=docente.localidad}}<br>
 Titulos: {{=docente.titulos}}<br>
 
 
-
-
+<br></br>
+<h5>*click en la materia para tomar asistencias*</h5>
+<BR></BR>
 {{for comision in comisiones:}}
 
-<li>Materia que dicta:{{=comision.nombre}}</li>
-  
+<li>Materia que dicta:<a href="http://127.0.0.1:8000/practica/docentes/asistencias">{{=comision.nombre}}</a></li>
 {{pass}}
- 
+
+
+
     
 <br></br>    
+
+
+
+<li><b><u><h3> HORARIOS EN QUE DICTA MATERIAS</h3></u></b></li>
+
+<br></br>
+<table style="border:black">
+    
+<tr style="border: 1px solid white">
+<b>
+    <td></td>
+
+    <td style="border: 1px solid white"><b><center>Lunes</center></b></td>
+<td style="border: 1px solid white"><b><center>Martes</center></b></td>
+<td style="border: 1px solid white"><b><center>Miercoles</center></b></td>
+<td style="border: 1px solid white"><b><center>Jueves</center></b></td>
+<td style="border: 1px solid white"><b><center>Viernes</center></b></td>
+</b>
+</tr>
+
+
+<tr style="border: 1px solid white">
+<td style="border: 1px solid white">17:00 hs </td>
+    <td style="border: 1px solid white"> materia </td>
+    <td style="border: 1px solid white">materia</td>
+    <td style="border: 1px solid white">materia</td>
+    <td style="border: 1px solid white">materia</td>
+    <td style="border: 1px solid white">materia</td>
+    </tr>
+    
+    
+<tr style="border: 1px solid white">
+<td style="border: 1px solid white">18:00 hs </td>
+    <td style="border: 1px solid white">materia</td>
+    <td style="border: 1px solid white">materia</td>
+    <td style="border: 1px solid white">materia </td>
+    <td style="border: 1px solid white"materia>materia</td>
+    <td style="border: 1px solid white">materia</td>
+    </tr>
+    
+    
+<tr style="border: 1px solid white">
+<td style="border: 1px solid white">19:00 hs </td>  
+    <td style="border: 1px solid white">materia</td>
+    <td style="border: 1px solid white">materia</td>
+    <td style="border: 1px solid white">materia</td>
+ 	<td style="border: 1px solid white">materia</td>
+    <td style="border: 1px solid white">materia</td>
+    </tr>
+    
+    
+<tr style="border: 1px solid white">
+<td style="border: 1px solid white">20:00 hs </td>
+    <td style="border: 1px solid white">materia</td>
+    <td style="border: 1px solid white">materia</td>
+    <td style="border: 1px solid white">materia</td>
+    <td style="border: 1px solid white">materia</td>
+    <td style="border: 1px solid white">materia</td>
+	</tr>
+	
+	
+<tr style="border: 1px solid white">
+    <td style="border: 1px solid white">21:00 hs </td>
+    <td style="border: 1px solid white">materia</td>
+	<td style="border: 1px solid white">materia</td>
+    <td style="border: 1px solid white">materia</td>
+    <td style="border: 1px solid white">materia</td>
+    <td style="border: 1px solid white">materia</td>
+    
+    </tr>
+
+</table>
+
+
+
+
+<br></br>
 <a href="http://127.0.0.1:8000/practica/docentes/index">VOLVER</a>

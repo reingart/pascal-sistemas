@@ -83,10 +83,17 @@ def examenes():
     return dict (notas= notas)
     
 def final():
-    #realizo alta de inscrip examenes finales
-    
-    return {}
-    
+
+    "formulario inscripcion a examen finales aptos para el alumno"
+    form=SQLFORM(db.inscripcionesexamen)
+    if form.accepts(request.vars,session):
+        response.flash='Examen  Agregado'
+    elif form.errors:
+        response.flash='Hay un error en el formulario'
+    else:
+        response.flash='Por favor,complete el formulario'
+    return dict (form=form)
+        
 def parciales():
     # obtengo el parámetro pasado por variable en la url
     alumnoid = request.vars['alumnoid']

@@ -253,6 +253,7 @@
 'Por que elegirnos': 'Por que elegirnos',
 'porcentaje de materias aprobadas': 'porcentaje de materias aprobadas',
 'Powered by': 'Este sitio usa',
+'Presione en el enlace http://127.0.0.1:8000/pascal/default/user/verify_email/%(key)s para verificar su cuenta de correo electrónico.': 'Presione en el enlace http://127.0.0.1:8000/pascal/default/user/verify_email/%(key)s para verificar su cuenta de correo electrónico.',
 'Presione en el enlace http://127.0.0.1:8000/practica/default/user/verify_email/%(key)s para verificar su cuenta de correo electrónico.': 'Presione en el enlace http://127.0.0.1:8000/practica/default/user/verify_email/%(key)s para verificar su cuenta de correo electrónico.',
 'Presione en el enlace http://www.institutopascal.edu.ar/welcome/default/user/reset_password/%(key)s para reestablecer su contraseña': 'Presione en el enlace http://www.institutopascal.edu.ar/welcome/default/user/reset_password/%(key)s para reestablecer su contraseña',
 'Presione en el enlace http://www.institutopascal.edu.ar/welcome/default/user/verify_email/%(key)s para verificar su cuenta de correo electrónico.': 'Presione en el enlace http://www.institutopascal.edu.ar/welcome/default/user/verify_email/%(key)s para verificar su cuenta de correo electrónico.',

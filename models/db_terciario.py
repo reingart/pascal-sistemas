@@ -20,6 +20,7 @@ db.define_table('alumnos',
     Field('email2', type='string', length=100),
     Field('ingreso', type='date'),
     Field('egreso', type='date'),
+    Field('user_id', db.auth_user, readable= False, writable= False),
     format= "%(alumnoid)s [%(nombre)s]",
     migrate=migrate)
     

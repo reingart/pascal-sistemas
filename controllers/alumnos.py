@@ -1,6 +1,20 @@
 # coding: utf8
 # try something like
 
+#@auth.requires_membershig(role= 'alumnos')
+def ingreso():
+    db.alumnos.user_id.default= auth.user_id
+    subtitulo= T ('Complete el formulario por favor...')
+    form=SQLFORM(db.alumnos)
+    if form.accepts(request.vars,session):
+        response.flash='Usted fue agregado como alumno...'
+    elif form.errors: 
+        response.flash='Hay errores en el formulario!'
+    else:
+        response.flash='Por favor, complete el formulario!'
+    return dict (form=form, sub=subtitulo)
+    
+
 def busqueda():
     # armo un formulario para buscar alumno por su dni
     form = SQLFORM.factory(

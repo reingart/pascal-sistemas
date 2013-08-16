@@ -73,8 +73,8 @@ mail.settings.server='localhost:25'    # your SMTP server
 mail.settings.sender='info@institutopascal.edu.ar'         # your email
 # mail.settings.login='username:password'      # your credentials or None
 auth.settings.mailer=mail                    # for user email verification
-auth.settings.registration_requires_verification = True
-auth.settings.registration_requires_approval = True
+auth.settings.registration_requires_verification = False
+auth.settings.registration_requires_approval = False
 auth.messages.verify_email = 'Presione en el enlace http://'+request.env.http_host+URL(r=request,c='default',f='user',args=['verify_email'])+'/%(key)s para verificar su cuenta de correo electrónico.'
 auth.settings.reset_password_requires_verification = True
 auth.messages.reset_password = 'Presione en el enlace http://'+request.env.http_host+URL(r=request,c='default',f='user',args=['reset_password'])+'/%(key)s para reestablecer su contraseña'

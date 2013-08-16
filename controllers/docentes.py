@@ -41,6 +41,23 @@ def index():
     docentes=db(q).select(orderby=db.personal.nombre)
     return{'docentes':docentes}
     
+def alumnoXcomision():
+    form=SQLFORM.factory (
+               Field('fecha', 'date', default=request.now.date()),
+               )
+    if request.vars:
+        # si me pasan en la URL el docente, lo filtro 
+        q=db.alumnos.alumnoid == request.vars['alumnoid']
+
+        #redirect(URL(f=ficha, vars={'personalid': docente.personal.personalid}))
+
+        
+    else:
+        # sino, busco todos los docentes
+        q=db.alumnos.alumnoid>0
+    alumnos=db(q).select(orderby=db.alumnos.nombre)
+    return{'alumnos':alumnos, 'form': form}
+    
 
  
 

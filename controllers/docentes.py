@@ -115,3 +115,17 @@ def ficha():
     comisiones = db(q).select()
   
     return {'docente':docente, 'comisiones':comisiones}
+    
+    
+    
+def ingreso():
+    db.personal.user_id.default= auth.user_id
+    subtitulo= T ('Complete el formulario por favor...')
+    form=SQLFORM(db.personal)
+    if form.accepts(request.vars,session):
+        response.flash='Usted fue agregado como docente...'
+    elif form.errors: 
+        response.flash='Hay errores en el formulario!'
+    else:
+        response.flash='Por favor, complete el formulario!'
+    return dict (form=form, sub=subtitulo)

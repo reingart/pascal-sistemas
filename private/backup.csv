@@ -1,32 +1,55 @@
 TABLE auth_user
+auth_user.id,auth_user.first_name,auth_user.last_name,auth_user.email,auth_user.password,auth_user.registration_key,auth_user.reset_password_key,auth_user.registration_id
+1,lucas,gonzalez,luka.jesu12@gmail.com,sha512$ac8b7839cc4d39b9$7bc8eb2f90f6b4083b478292091a4fe1e1768e44f287c8fe969aa504e4e615b3cf7664e37fe10494d77d5a86b6e562223d650b7901c9fa32626478269d64dbf8,,,
 
 
 TABLE auth_group
+auth_group.id,auth_group.role,auth_group.description
+1,alumnos1,grupo de alumnos
+2,alumnos,grupo de alumnos
 
 
 TABLE auth_membership
+auth_membership.id,auth_membership.user_id,auth_membership.group_id
+1,1,1
 
 
 TABLE auth_permission
 
 
 TABLE auth_event
+auth_event.id,auth_event.time_stamp,auth_event.client_ip,auth_event.user_id,auth_event.origin,auth_event.description
+1,2013-08-16 19:46:09,127.0.0.1,<NULL>,auth,Grupo 1 creado
+2,2013-08-16 19:46:09,127.0.0.1,1,auth,Usuario 1 Registrado
+3,2013-08-19 23:28:19,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+4,2013-08-19 23:28:50,127.0.0.1,1,auth,User 1 Logged-out
+5,2013-08-19 23:39:37,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+6,2013-08-19 23:40:53,127.0.0.1,1,auth,User 1 Logged-out
+7,2013-08-20 15:55:23,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+8,2013-08-20 15:58:15,127.0.0.1,1,auth,User 1 Logged-out
+9,2013-08-20 16:16:41,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+10,2013-08-20 16:58:11,127.0.0.1,1,auth,User 1 Logged-out
+11,2013-08-20 17:21:39,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+12,2013-08-20 17:45:15,127.0.0.1,1,auth,User 1 Logged-out
+13,2013-08-20 17:50:32,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+14,2013-08-20 17:55:11,127.0.0.1,1,auth,User 1 Logged-out
 
 
 TABLE auth_cas
 
 
 TABLE alumnos
-alumnos.alumnoid,alumnos.nombre,alumnos.codigo,alumnos.dni,alumnos.sexo,alumnos.fechanacimiento,alumnos.lugarnacimiento,alumnos.estadocivil,alumnos.nacionalidad,alumnos.direccion,alumnos.localidad,alumnos.cp,alumnos.telefonos,alumnos.email1,alumnos.email2,alumnos.ingreso,alumnos.egreso
-1,armando paredes,1,123144,M,1989-02-13,almagro,soltero,argentino,corrientes 345,almagro,234,3453543,<NULL>,<NULL>,2011-03-30,<NULL>
-2,leonor taboada,2,123144,F,1990-06-03,pontevedra,soltera,argentina,nose 234,pontevedra,3456,2352552,<NULL>,<NULL>,2011-04-10,<NULL>
-3,camila aguirre,3,12314,F,1992-09-23,laferrere,casada,argentina,flores 345,laferrere,3456,8273482,<NULL>,<NULL>,2011-04-15,<NULL>
-4,roberto ocampo,4,45666,M,1991-01-12,gonzalez catan,soltero,franco argentino,suipacha 345,gonzalez catan,4356,4352652,<NULL>,<NULL>,2013-03-30,<NULL>
-5,lorenzino herrera,5,232532,M,1986-05-12,san justo,casado,argentino,arieta 341,san justo,2341,14314,<NULL>,<NULL>,2010-03-15,<NULL>
-6,cacho buenavida,6,213425,M,1983-09-29,cañuelas,divorciado,argentino,campos 234,cañuelas,9273,124151,<NULL>,<NULL>,2012-04-20,<NULL>
-7,maria britos,7,897263,F,1990-04-10,gonzalez catan,soltera,argentina,tranway 213,gonzalez catan,1759,1451121,<NULL>,<NULL>,2013-03-18,<NULL>
-8,marcos pan y agua,8,82364,M,1989-02-16,laferrere,soltero,argentino,luro 345,laferrere,8932,234211,<NULL>,<NULL>,2011-04-30,<NULL>
-9,melina bravo,9,782634,F,1991-12-27,gonzalez catan,soltera,argentina,larre 341,gonzalez catan,1759,2137864,<NULL>,<NULL>,2012-03-18,<NULL>
+alumnos.alumnoid,alumnos.nombre,alumnos.dni,alumnos.sexo,alumnos.fechanacimiento,alumnos.lugarnacimiento,alumnos.estadocivil,alumnos.nacionalidad,alumnos.direccion,alumnos.localidad,alumnos.cp,alumnos.telefono,alumnos.email1,alumnos.email2,alumnos.ingreso,alumnos.egreso,alumnos.foto,alumnos.user_id
+1,armando paredes,123144,M,1989-02-13,almagro,soltero,argentino,corrientes 345,almagro,234,<NULL>,<NULL>,<NULL>,2011-03-30,<NULL>,<NULL>,<NULL>
+2,leonor taboada,123144,F,1990-06-03,pontevedra,soltera,argentina,nose 234,pontevedra,3456,<NULL>,<NULL>,<NULL>,2011-04-10,<NULL>,<NULL>,<NULL>
+3,camila aguirre,12314,F,1992-09-23,laferrere,casada,argentina,flores 345,laferrere,3456,<NULL>,<NULL>,<NULL>,2011-04-15,<NULL>,<NULL>,<NULL>
+4,roberto ocampo,45666,M,1991-01-12,gonzalez catan,soltero,franco argentino,suipacha 345,gonzalez catan,4356,<NULL>,<NULL>,<NULL>,2013-03-30,<NULL>,<NULL>,<NULL>
+5,lorenzino herrera,232532,M,1986-05-12,san justo,casado,argentino,arieta 341,san justo,2341,<NULL>,<NULL>,<NULL>,2010-03-15,<NULL>,<NULL>,<NULL>
+6,cacho buenavida,213425,M,1983-09-29,cañuelas,divorciado,argentino,campos 234,cañuelas,9273,<NULL>,<NULL>,<NULL>,2012-04-20,<NULL>,<NULL>,<NULL>
+7,maria britos,897263,F,1990-04-10,gonzalez catan,soltera,argentina,tranway 213,gonzalez catan,1759,<NULL>,<NULL>,<NULL>,2013-03-18,<NULL>,<NULL>,<NULL>
+8,marcos pan y agua,82364,M,1989-02-16,laferrere,soltero,argentino,luro 345,laferrere,8932,<NULL>,<NULL>,<NULL>,2011-04-30,<NULL>,<NULL>,<NULL>
+9,melina bravo,782634,F,1991-12-27,gonzalez catan,soltera,argentina,larre 341,gonzalez catan,1759,<NULL>,<NULL>,<NULL>,2012-03-18,<NULL>,<NULL>,<NULL>
+10,lucas,34456756,m,1992-09-23,gonzalez catan,soltero,argentino,bordoy 1123,gonzalez catan,1759,5678-9876,luka.jesu12@gmail.com,luks_chizzo@hotmail.com,2011-03-14,<NULL>,alumnos.foto.90039a4598bcd7e8.313030323937335f.jpg,1
 
 
 TABLE cursos
@@ -214,8 +237,10 @@ correlativas.correlativaid,correlativas.materiaid1,correlativas.materiaid2,corre
 
 TABLE horas
 horas.horaid,horas.hora,horas.desde,horas.hasta,horas.nivelid
-1,1,18,20,1
-2,2,20,22,1
+1,1,18,19,1
+2,2,19,20:10,1
+3,3,20:20,21,1
+4,4,21,22:30,1
 
 
 TABLE inasistencias
@@ -302,6 +327,11 @@ notas.notaid,notas.alumnoid,notas.materiaid,notas.periodoid,notas.calificacionid
 44,1,31,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
 45,1,32,<NULL>,5,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
 46,1,33,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
+47,1,1,20,3,8.0,examen final cuatrimestre,istbp,,2012-06-20,,<NULL>,2013-07-17,False,N
+48,1,6,20,3,6.0,,istbp,,2012-06-12,,<NULL>,2013-07-17,False,N
+49,2,8,20,3,5.0,,istbp,,2012-07-02,,<NULL>,2013-07-17,False,
+50,7,19,20,3,8.0,,istbp,,2012-07-19,,<NULL>,2013-07-17,False,
+51,7,7,18,5,8.0,examen final ,istbp,,2012-12-17,,<NULL>,2013-07-17,False,
 
 
 TABLE titulos
@@ -327,12 +357,24 @@ comisiones.comisionid,comisiones.nombre,comisiones.divisionid,comisiones.periodo
 
 TABLE horarios
 horarios.horarioid,horarios.horaid,horarios.comisionid,horarios.dia,horarios.detalle
-1,1,1,martes,
-2,2,2,miercoles,
-3,1,3,lunes,
-4,1,4,martes, 
-5,1,5,viernes,
-6,2,6,jueves,
+1,1,6,lunes,
+2,2,6,lunes,
+3,3,2,lunes,
+4,4,2,lunes,
+5,1,4,martes,
+6,2,4,martes,
+7,3,5,martes,
+8,4,5,martes,
+9,1,1,miercoles,
+10,2,1,miercoles,
+11,1,6,jueves,
+12,2,6,jueves,
+13,3,3,jueves,
+14,4,3,jueves,
+15,1,1,viernes,
+16,2,1,viernes,
+17,3,7,viernes,
+18,4,7,viernes,
 
 
 TABLE profesores

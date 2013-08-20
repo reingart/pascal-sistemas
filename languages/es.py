@@ -352,6 +352,7 @@
 'User %(id)s Verification email sent': 'User %(id)s Verification email sent',
 'User ID': 'ID de Usuario',
 'Usuarios': 'Usuarios',
+'value already in database or empty': 'value already in database or empty',
 'value not in database': 'value not in database',
 'Verify Password': 'Verificar contraseña',
 'versioning': 'versiones',

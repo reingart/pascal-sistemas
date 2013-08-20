@@ -1,7 +1,28 @@
 # coding: utf8
 # try something like
 
-@auth.requires_membership(role= 'alumnos')
+#@auth.add_group('alumnos1', 'grupo de alumnos')
+
+
+@auth.requires_login()
+
+def index(): 
+    "menu alumnos"
+    return dict ()
+
+def ficha():
+           
+    # obtengo el registro de los alumnos
+    q= db.alumnos.id>0
+    alumno= db(q).select(db.alumnos.nombre, db.alumnos.sexo, 
+                         db.alumnos.foto, db.alumnos.email1,
+                         db.alumnos.localidad)
+                         
+    return dict (alumno=alumno)
+    
+@auth.requires_login()
+@auth.requires_membership(role='alumnos1')
+
 
 def ingreso():
     db.alumnos.user_id.default= auth.user_id
@@ -38,11 +59,6 @@ def busqueda():
             response.flash = "Alumno no encontrado"
     #response.view = "generic.html"  # HACER una vista de verdad
     return dict (form = form)
-
-def index(): 
-    
-    "menu alumno"
-    return {}
 
 def horarios():
     q= db.horarios.horaid==db.horas.horaid

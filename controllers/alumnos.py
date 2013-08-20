@@ -1,7 +1,8 @@
 # coding: utf8
 # try something like
 
-#@auth.requires_membershig(role= 'alumnos')
+@auth.requires_membership(role= 'alumnos')
+
 def ingreso():
     db.alumnos.user_id.default= auth.user_id
     subtitulo= T ('Complete el formulario por favor...')

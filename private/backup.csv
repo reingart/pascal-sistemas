@@ -33,6 +33,10 @@ auth_event.id,auth_event.time_stamp,auth_event.client_ip,auth_event.user_id,auth
 12,2013-08-20 17:45:15,127.0.0.1,1,auth,User 1 Logged-out
 13,2013-08-20 17:50:32,127.0.0.1,1,auth,Usuario 1 sesión iniciada
 14,2013-08-20 17:55:11,127.0.0.1,1,auth,User 1 Logged-out
+15,2013-08-20 18:38:38,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+16,2013-08-20 18:40:22,127.0.0.1,1,auth,User 1 Logged-out
+17,2013-08-21 18:29:23,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+18,2013-08-21 19:00:25,127.0.0.1,1,auth,User 1 Logged-out
 
 
 TABLE auth_cas
@@ -50,6 +54,15 @@ alumnos.alumnoid,alumnos.nombre,alumnos.dni,alumnos.sexo,alumnos.fechanacimiento
 8,marcos pan y agua,82364,M,1989-02-16,laferrere,soltero,argentino,luro 345,laferrere,8932,<NULL>,<NULL>,<NULL>,2011-04-30,<NULL>,<NULL>,<NULL>
 9,melina bravo,782634,F,1991-12-27,gonzalez catan,soltera,argentina,larre 341,gonzalez catan,1759,<NULL>,<NULL>,<NULL>,2012-03-18,<NULL>,<NULL>,<NULL>
 10,lucas,34456756,m,1992-09-23,gonzalez catan,soltero,argentino,bordoy 1123,gonzalez catan,1759,5678-9876,luka.jesu12@gmail.com,luks_chizzo@hotmail.com,2011-03-14,<NULL>,alumnos.foto.90039a4598bcd7e8.313030323937335f.jpg,1
+11,yanina alarcon,35678345,f,1984-11-13,gonzalez catan,casada,argentina,achupalla 2345,gonzalez catan,1759,5675335,yani_alarcon@gmail.com,,2011-03-07,<NULL>,,1
+12,sofia ramirez,37456234,f,1991-08-06,gonzalez catan,soltera,argentina,equiza 123,gonzalez catan,1759,4567345,sofia_ramirez@gmail.com,,2011-03-07,<NULL>,,<NULL>
+13,ivana santillo,2345672,f,1992-08-03,gonzalez catan,soltera,argentina,tranway 456,gonzalez catan,1759,456723,ivana_santillo@gmail.com,,2011-04-27,<NULL>,,<NULL>
+15,hector calvo,3423123,m,1975-08-13,pontevedra,casado,argentino,barrientos 234,gonzalez catan,1759,235267,hector.calvo@gmail.com,,2011-03-07,<NULL>,,<NULL>
+16,ezequiel villalba,785334,m,1992-08-18,casanova,soltero,argentino,marconi 3456,casanova,1767,9865123,eze_villalba@gmail.com,,2011-03-07,<NULL>,,<NULL>
+17,elias sosa,2345672,m,1991-10-11,laferrere,soltero,argentino,luro 123,laferrere,1745,112355423,elias_sosa@gmail.com,,2010-03-08,<NULL>,,<NULL>
+18,nahuel cosentino,3456712,m,1991-07-08,gonzalez catan,soltero,argentino,arrecifes 563,gonzalez catan,1759,2134125,nahuel_cosentino@gmail.com,,2010-04-05,<NULL>,,<NULL>
+19,matias portales,2342565,m,1991-05-05,gonzalez catan,soltero,argentino,larre 543,gonzalez catan,1759,4567232,matias_portales@gmail.com,,2010-04-12,<NULL>,,<NULL>
+20,mauro schiavone,3265246,m,1991-08-16,gonzalez catan,soltero,argentino,simon perez,gonzalez catan,1759,456723,mauro_schiavone@gmail.com,,2010-04-12,<NULL>,,<NULL>
 
 
 TABLE cursos
@@ -409,6 +422,18 @@ TABLE examenes
 examenes.examenid,examenes.materiaid,examenes.periodoid,examenes.llamado,examenes.turno,examenes.fecha,examenes.hora,examenes.personalid1,examenes.personalid2,examenes.personalid3
 1,2,3,1,Noche,<NULL>,<NULL>,1,2,4
 2,3,4,2,Noche,<NULL>,<NULL>,1,2,3
+3,1,22,1,N,2013-12-18,<NULL>,8,3,4
+4,2,22,1,N,2013-12-19,<NULL>,8,4,3
+5,3,22,1,N,2013-12-17,<NULL>,9,7,3
+6,4,22,1,N,2013-12-23,<NULL>,4,6,8
+7,5,22,1,N,2013-12-26,<NULL>,4,7,4
+8,6,22,1,N,2013-12-24,<NULL>,3,2,5
+9,31,22,1,N,2013-12-18,<NULL>,7,3,5
+10,32,22,1,N,2013-12-19,<NULL>,4,6,7
+11,33,22,1,N,2013-12-19,<NULL>,5,3,2
+12,34,22,1,N,2013-12-18,<NULL>,5,7,3
+13,35,22,1,N,2013-12-17,<NULL>,6,7,5
+14,45,22,1,N,2013-12-19,<NULL>,2,3,6
 
 
 TABLE inscripcionescomision

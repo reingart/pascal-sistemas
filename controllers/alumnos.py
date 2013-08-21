@@ -1,10 +1,10 @@
 # coding: utf8
 # try something like
 
-#@auth.add_group('alumnos1', 'grupo de alumnos')
 
 
-@auth.requires_login()
+
+#@auth.requires_login()
 
 def index(): 
     "menu alumnos"
@@ -20,21 +20,25 @@ def ficha():
                          
     return dict (alumno=alumno)
     
-@auth.requires_login()
-@auth.requires_membership(role='alumnos1')
+#@auth.requires_login()
+#@auth.requires_membership(role='alumnos1')
 
 
 def ingreso():
     db.alumnos.user_id.default= auth.user_id
     subtitulo= T ('Complete el formulario por favor...')
     form=SQLFORM(db.alumnos)
+    #db.auth_membership.insert(auth_membership.user_id== db.auth_id, auth_membership.group_id== auth_group.id)
     if form.accepts(request.vars,session):
         response.flash='Usted fue agregado como alumno...'
     elif form.errors: 
         response.flash='Hay errores en el formulario!'
     else:
         response.flash='Por favor, complete el formulario!'
+        
     return dict (form=form, sub=subtitulo)
+    
+    
     
 
 def busqueda():

@@ -4,6 +4,7 @@
 <h1> Horarios: Analista de sistemas </h1>
 
 
+{{for divisionid in (1, 2, 3): }}
 
 
 <TABLE style="border: 1px solid white"> 
@@ -26,7 +27,7 @@
           
     		<td style="border: 1px solid white"> 
                 
-			{{f=horario.get(dia, {}).get(hora, None)}}
+			{{f=horario.get(dia, {}).get(hora, None).get(divisionid)}}
 			{{if f:}}
                 
                 {{=f.materias.nombre}} <br>
@@ -37,4 +38,8 @@
     	{{pass}}
     </tr>
     {{pass}}
+    <br>
+    <br>
     </TABLE>
+
+{{pass}}

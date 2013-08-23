@@ -45,3 +45,5 @@ def salud_radiologia():
 
 def redes():
     return {}
+def salud_cardiologia():
+    return {}

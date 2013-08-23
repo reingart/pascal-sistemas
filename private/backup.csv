@@ -173,9 +173,9 @@ materias.materiaid,materias.nombre,materias.resumen,materias.cursoid,materias.ca
 
 TABLE divisiones
 divisiones.divisionid,divisiones.descripcion,divisiones.codigo,divisiones.cursoid,divisiones.cicloid,divisiones.numero,divisiones.letra,divisiones.turno,divisiones.anio
-1,1º A 2013,1A06,1,1,1,A,N,<NULL>
-2,1º B 2013,1B06,1,2,1,B,N,<NULL>
-3,1º C 2013,1C06,1,1,1,C,N,<NULL>
+1,1º ,1A06,1,4,1,A,N,2013
+2,2°,2B06,2,4,2,B,N,2013
+3,3º,3C06,3,4,3,C,N,2013
 
 
 TABLE asignaturas

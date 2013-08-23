@@ -1,6 +1,8 @@
 TABLE auth_user
 auth_user.id,auth_user.first_name,auth_user.last_name,auth_user.email,auth_user.password,auth_user.registration_key,auth_user.reset_password_key,auth_user.registration_id
 1,lucas,gonzalez,luka.jesu12@gmail.com,sha512$ac8b7839cc4d39b9$7bc8eb2f90f6b4083b478292091a4fe1e1768e44f287c8fe969aa504e4e615b3cf7664e37fe10494d77d5a86b6e562223d650b7901c9fa32626478269d64dbf8,,,
+2,sofia,ramirez,sofia-ramirez91@hotmail.es,sha512$9ecb7de42191e932$edcc77434f3b545fe4c95850f0c57748e848a16a92268323f1e77da32f3dade5d8826bebfed020160b42de87173e771028f3ceecc16561c7aceffb065dd3024b,sofia,sofia,sfia
+3,yanina,alarcon,yani.alarcon@yahoo.com.ar,sha512$94a31eb8c6cc26a8$844cf20e951e147b63cc06612985d4ab1d8798b1811e999eeb76835ad70aeebbbb68e26ed6a3c1f1eb4be155b9b7e21ec326625d8642930100ed16d54564e520,yani1331,yani1331,yani1331
 
 
 TABLE auth_group
@@ -54,8 +56,8 @@ alumnos.alumnoid,alumnos.nombre,alumnos.dni,alumnos.sexo,alumnos.fechanacimiento
 8,marcos pan y agua,82364,M,1989-02-16,laferrere,soltero,argentino,luro 345,laferrere,8932,<NULL>,<NULL>,<NULL>,2011-04-30,<NULL>,<NULL>,<NULL>
 9,melina bravo,782634,F,1991-12-27,gonzalez catan,soltera,argentina,larre 341,gonzalez catan,1759,<NULL>,<NULL>,<NULL>,2012-03-18,<NULL>,<NULL>,<NULL>
 10,lucas,34456756,m,1992-09-23,gonzalez catan,soltero,argentino,bordoy 1123,gonzalez catan,1759,5678-9876,luka.jesu12@gmail.com,luks_chizzo@hotmail.com,2011-03-14,<NULL>,alumnos.foto.90039a4598bcd7e8.313030323937335f.jpg,1
-11,yanina alarcon,35678345,f,1984-11-13,gonzalez catan,casada,argentina,achupalla 2345,gonzalez catan,1759,5675335,yani_alarcon@gmail.com,,2011-03-07,<NULL>,,1
-12,sofia ramirez,37456234,f,1991-08-06,gonzalez catan,soltera,argentina,equiza 123,gonzalez catan,1759,4567345,sofia_ramirez@gmail.com,,2011-03-07,<NULL>,,<NULL>
+11,yanina alarcon,35678345,f,1984-11-13,gonzalez catan,casada,argentina,achupalla 2345,gonzalez catan,1759,5675335,yani.alarcon@yahoo.com,,2011-03-07,<NULL>,,3
+12,sofia ramirez,37456234,f,1991-08-06,gonzalez catan,soltera,argentina,equiza 123,gonzalez catan,1759,4567345,sofia-ramirez91@hotmail.es,,2011-03-07,<NULL>,,2
 13,ivana santillo,2345672,f,1992-08-03,gonzalez catan,soltera,argentina,tranway 456,gonzalez catan,1759,456723,ivana_santillo@gmail.com,,2011-04-27,<NULL>,,<NULL>
 15,hector calvo,3423123,m,1975-08-13,pontevedra,casado,argentino,barrientos 234,gonzalez catan,1759,235267,hector.calvo@gmail.com,,2011-03-07,<NULL>,,<NULL>
 16,ezequiel villalba,785334,m,1992-08-18,casanova,soltero,argentino,marconi 3456,casanova,1767,9865123,eze_villalba@gmail.com,,2011-03-07,<NULL>,,<NULL>

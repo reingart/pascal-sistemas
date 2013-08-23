@@ -3,69 +3,36 @@
 <h1> <center> Inscripción a Parciales Finales </center></h1>
 
 
-{{=BEAUTIFY(response._vars)}}
-{{=form}}
 
 <TABLE style="border: 1px solid white">
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"> <b> Año</b></td>
-    <td style="border: 1px solid white"> <b>Materia</b></td>
-    <td style="border: 1px solid white"><b> Docente</b></td>
-    <td style="border: 1px solid white"> <b>Condición</b></td>
-    <td style="border: 1px solid white"><b> Fecha y Hora</b></td>
-    <td style="border: 1px solid white"><b>Inscribir</b> </td></tr>
-    <tr style="border: 1px solid white"><td> 1° </td> 
-    <td style="border: 1px solid white"> EDI I</td>
-    <td style="border: 1px solid white"> A. Bravo</td>
-    <td style="border: 1px solid white"> Libre </td>
-    <td style="border: 1px solid white"> 17/12/13 19hs </td>
-    <td style="border: 1px solid white"><input type="checkbox" name="edi i">EDI I</td>
-    </tr>
+        <TR style="border: 1px solid white">
+            <TD style="border: 1px solid white"> <center>MATERIA</center> </TD>
+            <TD style="border: 1px solid white"> DOCENTE </TD>
+            <TD style="border: 1px solid white"> FECHA </TD>
+            <TD style="border: 1px solid white"> HORA </TD>
+        </TR>
     
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"> 2° </td>
-     <td style="border: 1px solid white"> Base de datos </td>
-     <td style="border: 1px solid white"> M. Reingart</td>
-     <td style="border: 1px solid white"> Regular </td> 
-     <td style="border: 1px solid white"> 15/12/13 19hs</td>
-     <td style="border: 1px solid white"><input type="checkbox" name="bd">Base de datos</td></tr>
-    
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"> 2° </td> 
-    <td style="border: 1px solid white"> EDI II </td>
-    <td style="border: 1px solid white"> A. Bravo</td> 
-    <td style="border: 1px solid white"> Libre </td> 
-    <td style="border: 1px solid white"> 15/12/13 20:30hs</td>
-    <td style="border: 1px solid white"><input type="checkbox" name="edi 2">EDI II</td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"> 3° </td> 
-    <td style="border: 1px solid white"> Sist. Inf. II </td>
-    <td style="border: 1px solid white"> A. Bravo</td> 
-    <td style="border: 1px solid white"> Regular </td> 
-    <td style="border: 1px solid white"> 15/12/13 19:30hs</td>
-    <td style="border: 1px solid white"><input type="checkbox" name="sist 2">Sist. Inf. II</td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"> 3° </td> 
-    <td style="border: 1px solid white"> Teleinformatica </td>
-    <td style="border: 1px solid white"> A. Bravo</td> 
-    <td style="border: 1px solid white"> Regular </td> 
-    <td style="border: 1px solid white"> 17/12/13 20:30hs</td>
-    <td style="border: 1px solid white"><input type="checkbox" name="teleinfo">Teleinformatica</td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"> 3° </td> 
-    <td style="border: 1px solid white"> Economia E.</td>
-    <td style="border: 1px solid white"> C. Vargas</td> 
-    <td style="border: 1px solid white"> Regular </td> 
-    <td style="border: 1px solid white"> 22/12/13 19hs</td>
-    <td style="border: 1px solid white"><input type="checkbox" name="economia">Economia E.</td>
-    </tr>
+       {{ f=final}}
+        
+        {{for final in f:}}
+            <TR style="border: 1px solid white">
+        	<TD style="border: 1px solid white"> 
+        	 {{ =final.materias.nombre}}
+        	</TD>
+            <TD style="border: 1px solid white">
+             {{ =final.personal.nombre}}
+             </TD>
+             <TD style="border: 1px solid white">
+             {{ =final.examenes.fecha}}
+             </TD>
+             <TD style="border: 1px solid white">
+             {{ =final.examenes.hora}}
+             </TD>
+        {{pass}}
+    		 </TR>
+    </TABLE>
 
-</TABLE>
-
-	<form>
+ 	<form>
     <br>
     <br>
     <input type="submit" value="Guardar"> <input type="reset" value="Cancelar"> <input type="submit" value="Imprimir">

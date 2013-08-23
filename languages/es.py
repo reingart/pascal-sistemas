@@ -270,6 +270,7 @@
 'Registration needs verification': 'Registration needs verification',
 'Remember me (for 30 days)': 'Recordarme (por 30 days)',
 'remove compiled': 'eliminar compiladas',
+'Request reset password': 'Request reset password',
 'Reset Password key': 'Reestablecer clave de contraseña',
 'Resolve Conflict file': 'archivo Resolución de Conflicto',
 'restore': 'restaurar',

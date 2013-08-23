@@ -118,16 +118,20 @@ def examenes():
     return dict (notas= notas)
     
 def final():
+     # a = db().select(db.examenes.ALL)#lista todos
+   q= db.examenes.examenid>0
+   q &= db.examenes.materiaid== db.materias.materiaid
+   q &= db.examenes.personalid1== db.personal.personalid
+    
 
-    "formulario inscripcion a examen finales aptos para el alumno"
-    form=SQLFORM(db.inscripcionesexamen)
-    if form.accepts(request.vars,session):
-        response.flash='Examen  Agregado'
-    elif form.errors:
-        response.flash='Hay un error en el formulario'
-    else:
-        response.flash='Por favor,complete el formulario'
-    return dict (form=form)
+    
+   final= db(q).select(db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)
+  
+   return dict (final=final) 
+  
+            
+         
+###################################################################################
         
 def parciales():
     # obtengo el parámetro pasado por variable en la url

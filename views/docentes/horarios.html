@@ -27,19 +27,6 @@
     <td style="border: 1px solid white">Interconectividad 2do</td>
         </tr>
 <tr style="border: 1px solid white">
-<td style="border: 1px solid white">18:00 hs </td>
-    <td style="border: 1px solid white"></td>
-    <td style="border: 1px solid white"></td>
-    <td style="border: 1px solid white">Práctica Profesional</td>
-    <td style="border: 1px solid white"></td>
-    <td style="border: 1px solid white">Práctica Profesional</td>
-    
-
-
-
-
-</tr>
-<tr style="border: 1px solid white">
 <td style="border: 1px solid white">19:00 hs </td>  
     <td style="border: 1px solid white"></td>
     <td style="border: 1px solid white"></td>
@@ -76,7 +63,64 @@
 </table>
 
 <ul>
-    {{for horario  in horarios: }}
-    <li>{{=A(horario.dia,_href=URL(f='dia',args=[horario.horarioid]))}} </li>
+<table style="border:black">
+    <caption> Carrera: Analista de sistemas</caption>
+    
+<tr style="border: 1px solid white">
+<b>
+    <td></td>
+
+    <td style="border: 1px solid white"><b><center>Lunes</center></b></td>
+<td style="border: 1px solid white"><b><center>Martes</center></b></td>
+<td style="border: 1px solid white"><b><center>Miercoles</center></b></td>
+<td style="border: 1px solid white"><b><center>Jueves</center></b></td>
+
+    
+          
+
+
+<tr style="border: 1px solid white">
+<td style="border: 1px solid white">
+
+ </td>
+    <td style="border: 1px solid white">  </td>
+    <td style="border: 1px solid white"></td>
+    <td style="border: 1px solid white">Interconectividad 2do</td>
+    <td style="border: 1px solid white"></td>
+    <td style="border: 1px solid white">Interconectividad 2do</td>
+        </tr>
+<tr style="border: 1px solid white">
+<td style="border: 1px solid white">18:00 hs </td>
+    <td style="border: 1px solid white"></td>
+    <td style="border: 1px solid white"></td>
+    <td style="border: 1px solid white">Práctica Profesional</td>
+    <td style="border: 1px solid white"></td>
+    <td style="border: 1px solid white">Práctica Profesional</td>
+    
+
+
+
+
+</tr>
+
+
+  {{for horario  in horarios: }}
+
+<table >
+<caption>Título de la tabla</caption>
+<tr>
+<td>
+    <li>{{=A(horario.dia,_href=URL(f='dia',args=[horario.horarioid]))}} </li></td>
+<td style="border: 1px solid white">Contenido 2</td>
+<td style="border: 1px solid white">Contenido 3</td>
+</tr>
+<tr>
+<td style="border: 1px solid white">Contenido 4</td>
+<td> style="border: 1px solid white"Contenido 5</td>
+<td>Contenido 6</td>
+</tr>
+</table>
+
+
     {{pass}} 
 </ul>

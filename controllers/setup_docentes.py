@@ -151,29 +151,76 @@ def cargar_horarios():
     
     db(db.horarios.horarioid>0).delete()  
 
-    # Insertamos los cursos correspondientes
-    db.horarios.insert(horarioid= 1, horaid=1, dia="lunes", comisionid=6,detalle="")
-    db.horarios.insert(horarioid= 2, horaid=2, dia="lunes", comisionid=6,detalle="")
-    db.horarios.insert(horarioid= 3, horaid=3, dia="lunes", comisionid=2,detalle="")
-    db.horarios.insert(horarioid= 4, horaid=4, dia="lunes", comisionid=2,detalle="")
+    # Insertamos los horarios correspondientes
+    ###################################### PRIMER AÑO ###########################
+    db.horarios.insert(horarioid= 1, horaid=1, dia="lunes", comisionid=16,detalle="")
+    db.horarios.insert(horarioid= 2, horaid=2, dia="lunes", comisionid=15,detalle="")
+    db.horarios.insert(horarioid= 3, horaid=3, dia="lunes", comisionid=13,detalle="")
+    db.horarios.insert(horarioid= 4, horaid=4, dia="lunes", comisionid=13,detalle="")
     
-    db.horarios.insert(horarioid= 5, horaid=1,dia="martes",comisionid=4,detalle="")
-    db.horarios.insert(horarioid= 6, horaid=2,dia="martes",comisionid=4,detalle="")
-    db.horarios.insert(horarioid= 7, horaid=3,dia="martes",comisionid=5,detalle="")
-    db.horarios.insert(horarioid= 8, horaid=4,dia="martes",comisionid=5,detalle="")
+    db.horarios.insert(horarioid= 5, horaid=1,dia="martes",comisionid=10,detalle="")
+    db.horarios.insert(horarioid= 6, horaid=2,dia="martes",comisionid=10,detalle="")
+    db.horarios.insert(horarioid= 7, horaid=3,dia="martes",comisionid=15,detalle="")
+    db.horarios.insert(horarioid= 8, horaid=4,dia="martes",comisionid=15,detalle="")
     
-    db.horarios.insert(horarioid= 9, horaid=1,dia="miercoles",comisionid=1,detalle="")
-    db.horarios.insert(horarioid= 10, horaid=2,dia="miercoles",comisionid=1,detalle="")
+    db.horarios.insert(horarioid= 9, horaid=1,dia="miercoles",comisionid=12,detalle="")
+    db.horarios.insert(horarioid= 10, horaid=2,dia="miercoles",comisionid=12,detalle="")
+    db.horarios.insert(horarioid= 11, horaid=3,dia="miercoles",comisionid=14,detalle="")
+    db.horarios.insert(horarioid= 12, horaid=4,dia="miercoles",comisionid=14,detalle="")
     
-    db.horarios.insert(horarioid= 11, horaid=1,dia="jueves",comisionid=6,detalle="")
-    db.horarios.insert(horarioid= 12, horaid=2,dia="jueves",comisionid=6,detalle="")
-    db.horarios.insert(horarioid= 13, horaid=3,dia="jueves",comisionid=3,detalle="")
-    db.horarios.insert(horarioid= 14, horaid=4,dia="jueves",comisionid=3,detalle="")
+    db.horarios.insert(horarioid= 13, horaid=1,dia="jueves",comisionid=9,detalle="")
+    db.horarios.insert(horarioid= 14, horaid=2,dia="jueves",comisionid=9,detalle="")
+    db.horarios.insert(horarioid= 15, horaid=3,dia="jueves",comisionid=13,detalle="")
+    db.horarios.insert(horarioid= 16, horaid=4,dia="jueves",comisionid=13,detalle="")
     
-    db.horarios.insert(horarioid= 15, horaid=1,dia="viernes",comisionid=1,detalle="")
-    db.horarios.insert(horarioid= 16, horaid=2,dia="viernes",comisionid=1,detalle="")
-    db.horarios.insert(horarioid= 17, horaid=3,dia="viernes",comisionid=7,detalle="")
-    db.horarios.insert(horarioid= 18, horaid=4,dia="viernes",comisionid=7,detalle="")
+    db.horarios.insert(horarioid= 17, horaid=1,dia="viernes",comisionid=11,detalle="")
+    db.horarios.insert(horarioid= 18, horaid=2,dia="viernes",comisionid=11,detalle="")
+    db.horarios.insert(horarioid= 19, horaid=3,dia="viernes",comisionid=8,detalle="")
+    db.horarios.insert(horarioid= 20, horaid=4,dia="viernes",comisionid=8,detalle="")
+    
+    ###################################### SEGUNDO AÑO ###########################
+    db.horarios.insert(horarioid= 21, horaid=1, dia="lunes", comisionid=21,detalle="")
+    db.horarios.insert(horarioid= 22, horaid=2, dia="lunes", comisionid=21,detalle="")
+    db.horarios.insert(horarioid= 23, horaid=3, dia="lunes", comisionid=24,detalle="")
+    db.horarios.insert(horarioid= 24, horaid=4, dia="lunes", comisionid=24,detalle="")
+    
+    db.horarios.insert(horarioid= 25, horaid=3,dia="martes",comisionid=19,detalle="")
+    db.horarios.insert(horarioid= 26, horaid=4,dia="martes",comisionid=19,detalle="")
+    
+    db.horarios.insert(horarioid= 27, horaid=1,dia="miercoles",comisionid=20,detalle="")
+    db.horarios.insert(horarioid= 28, horaid=2,dia="miercoles",comisionid=20,detalle="")
+    db.horarios.insert(horarioid= 29, horaid=3,dia="miercoles",comisionid=23,detalle="")
+    db.horarios.insert(horarioid= 30, horaid=4,dia="miercoles",comisionid=23,detalle="")
+    
+    db.horarios.insert(horarioid= 31, horaid=1,dia="jueves",comisionid=21,detalle="")
+    db.horarios.insert(horarioid= 32, horaid=2,dia="jueves",comisionid=21,detalle="")
+    db.horarios.insert(horarioid= 33, horaid=3,dia="jueves",comisionid=18,detalle="")
+    db.horarios.insert(horarioid= 34, horaid=4,dia="jueves",comisionid=18,detalle="")
+    
+    db.horarios.insert(horarioid= 35, horaid=1,dia="viernes",comisionid=17,detalle="")
+    db.horarios.insert(horarioid= 36, horaid=2,dia="viernes",comisionid=17,detalle="")
+    db.horarios.insert(horarioid= 37, horaid=3,dia="viernes",comisionid=22,detalle="")
+    db.horarios.insert(horarioid= 38, horaid=4,dia="viernes",comisionid=22,detalle="")
+    
+    #################################### TERCER AÑO #########################
+    
+    db.horarios.insert(horarioid= 39, horaid=3,dia="martes",comisionid=25,detalle="")
+    db.horarios.insert(horarioid= 40, horaid=4,dia="martes",comisionid=25,detalle="")
+    
+    db.horarios.insert(horarioid= 41, horaid=1,dia="miercoles",comisionid=30,detalle="")
+    db.horarios.insert(horarioid= 42, horaid=2,dia="miercoles",comisionid=30,detalle="")
+    db.horarios.insert(horarioid= 43, horaid=3,dia="miercoles",comisionid=29,detalle="")
+    db.horarios.insert(horarioid= 44, horaid=4,dia="miercoles",comisionid=29,detalle="")
+    
+    db.horarios.insert(horarioid= 45, horaid=1,dia="jueves",comisionid=27,detalle="")
+    db.horarios.insert(horarioid= 46, horaid=2,dia="jueves",comisionid=27,detalle="")
+    db.horarios.insert(horarioid= 47, horaid=3,dia="jueves",comisionid=28,detalle="")
+    db.horarios.insert(horarioid= 48, horaid=4,dia="jueves",comisionid=28,detalle="")
+    
+    db.horarios.insert(horarioid= 49, horaid=1,dia="viernes",comisionid=30,detalle="")
+    db.horarios.insert(horarioid= 50, horaid=2,dia="viernes",comisionid=30,detalle="")
+    db.horarios.insert(horarioid= 51, horaid=3,dia="viernes",comisionid=26,detalle="")
+    db.horarios.insert(horarioid= 52, horaid=4,dia="viernes",comisionid=26,detalle="")
 
     response.view="generic.html"
     
@@ -306,8 +353,8 @@ def cargar_examenes():
 
     # Insertamos los cursos correspondientes
     
-    db.examenes.insert(examenid=1, materiaid=2,periodoid=3,llamado=1,turno= "Noche",fecha="",hora="",personalid1=1,personalid2=2,personalid3=4)
-    db.examenes.insert(examenid=2, materiaid=3,periodoid=4,llamado=2,turno= "Noche",fecha="",hora="",personalid1=1,personalid2=2,personalid3=3)
+    db.examenes.insert(examenid=1, materiaid=1,periodoid=24,llamado=1,turno= "Noche",fecha="2013-12-10",hora="19:00",personalid1=8,personalid2=3,personalid3=5)
+    db.examenes.insert(examenid=2, materiaid=2,periodoid=24,llamado=1,turno= "Noche",fecha="2013-12-11",hora="19:00",personalid1=8,personalid2=3,personalid3=5)
 
     response.view="generic.html"
     

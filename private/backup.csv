@@ -98,9 +98,9 @@ personal.personalid,personal.E_mail,personal.facebook,personal.nombre,personal.d
 4,<NULL>,<NULL>,Vargas Claudia,4545,<NULL>,San Juan 1122,gonzalez catan,1759,Buenos Aires,7899765,Contaduria,Juan Repeto,,nose,<NULL>,7876669,<NULL>,2
 5,<NULL>,<NULL>,Bravo Angel,9897,<NULL>,Rivas 1450,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,Norberto Gonzalez,,nose,<NULL>,76969989,<NULL>,1
 6,<NULL>,<NULL>,Aguirre Elena,57865,<NULL>,Sarmiento 1120,gonzalez catan,1759,Buenos Aires,6888899,Psicopedagoga,Norma Villanueva,,nose,<NULL>,545465456,<NULL>,2
-7,<NULL>,<NULL>,Media Luz,754645657,<NULL>,Claudia Sifre 1112,gonzalez catan,1759,Buenos Aires,436777,Analisis de sistemas,Angel Bravo,,nose,<NULL>,9679679,<NULL>,1
+7,,,Medina Luz,754645657,<NULL>,Claudia Sifre 1112,gonzalez catan,1759,Buenos Aires,436777,Analisis de sistemas,Angel Bravo,,nose,<NULL>,9679679,,1
 8,<NULL>,<NULL>,Gonzalez Jose,79588,<NULL>,Lasalle 456,gonzalez catan,1759,Buenos Aires,5474868787,Profesor matematica,Ruben Olmedo,,nose,<NULL>,7896969,<NULL>,1
-9,<NULL>,<NULL>,Profe de Ingles,545353,<NULL>,Melian  567,gonzalez catan,1759,Buenos Aires,6576765757,Profesora de  ingles,Josefa Rosales,,nose,<NULL>,5476476475,<NULL>,1
+9,,,Roselli,545353,<NULL>,Melian  567,gonzalez catan,1759,Buenos Aires,6576765757,Profesora de  ingles,Josefa Rosales,,nose,<NULL>,5476476475,,1
 10,<NULL>,<NULL>,Profe de Historia,6465464,<NULL>,Rivera Indarte 567,gonzalez catan,1759,Buenos Aires,5474755,Profesor de historia,Alberto Pepeto,,nose,<NULL>,6587568,<NULL>,2
 
 
@@ -359,35 +359,85 @@ titulos.tituloid,titulos.nombre,titulos.planestudioid,titulos.carreraid,titulos.
 
 TABLE comisiones
 comisiones.comisionid,comisiones.nombre,comisiones.divisionid,comisiones.periodoid,comisiones.materiaid,comisiones.personalid,comisiones.faltas1r,comisiones.faltas2r,comisiones.faltaslibre,comisiones.faltasrecursa
-1,Analisis Matematico,1,<NULL>,2,8,<NULL>,<NULL>,<NULL>,<NULL>
-2,Algebra,1,<NULL>,1,8,<NULL>,<NULL>,<NULL>,<NULL>
-3,Introduccion a los sistemas de informacion,1,<NULL>,7,5,<NULL>,<NULL>,<NULL>,<NULL>
-4,Arquitectura,1,<NULL>,8,5,<NULL>,<NULL>,<NULL>,<NULL>
-5,EDI ,1,<NULL>,9,5,<NULL>,<NULL>,<NULL>,<NULL>
-6,Programacion,1,<NULL>,6,3,<NULL>,<NULL>,<NULL>,<NULL>
-7,Ingles,1,<NULL>,3,9,<NULL>,<NULL>,<NULL>,<NULL>
+8,Algebra,1,22,1,8,<NULL>,<NULL>,<NULL>,<NULL>
+9,Análisis Matemático,1,22,2,8,<NULL>,<NULL>,<NULL>,<NULL>
+10,Inglés Técnico,1,22,3,9,<NULL>,<NULL>,<NULL>,<NULL>
+11,Administración de las Organizaciones,1,22,4,4,<NULL>,<NULL>,<NULL>,<NULL>
+12,Metodología de la Investigación ,1,22,5,6,<NULL>,<NULL>,<NULL>,<NULL>
+13,Programación I ,1,22,6,3,<NULL>,<NULL>,<NULL>,<NULL>
+14,Introducción a los sistemas de información ,1,22,7,7,<NULL>,<NULL>,<NULL>,<NULL>
+15,Arquitectura de Computadores,1,22,8,5,<NULL>,<NULL>,<NULL>,<NULL>
+16,EDI I,1,22,9,5,<NULL>,<NULL>,<NULL>,<NULL>
+17,Probabilidad y Estadisticas,2,22,16,8,<NULL>,<NULL>,<NULL>,<NULL>
+18,Análisis Matemático II,2,22,17,8,<NULL>,<NULL>,<NULL>,<NULL>
+19,Ingles Técnico II,2,22,18,9,<NULL>,<NULL>,<NULL>,<NULL>
+20,Sistemas de Información I,2,22,19,7,<NULL>,<NULL>,<NULL>,<NULL>
+21,Programación II,2,22,20,3,<NULL>,<NULL>,<NULL>,<NULL>
+22,Sistemas Operativos,2,22,21,2,<NULL>,<NULL>,<NULL>,<NULL>
+23,Base de Datos,2,22,22,2,<NULL>,<NULL>,<NULL>,<NULL>
+24,EDI II,2,22,23,5,<NULL>,<NULL>,<NULL>,<NULL>
+25,Investigación Operativa,3,22,31,7,<NULL>,<NULL>,<NULL>,<NULL>
+26,Economía Empresarial,3,22,32,4,<NULL>,<NULL>,<NULL>,<NULL>
+27,Teleinformatica,3,22,33,5,<NULL>,<NULL>,<NULL>,<NULL>
+28,Sistemas de Información II,3,22,34,5,<NULL>,<NULL>,<NULL>,<NULL>
+29,EDI III,3,22,35,6,<NULL>,<NULL>,<NULL>,<NULL>
+30,Practica Profesional,3,22,45,2,<NULL>,<NULL>,<NULL>,<NULL>
 
 
 TABLE horarios
 horarios.horarioid,horarios.horaid,horarios.comisionid,horarios.dia,horarios.detalle
-1,1,6,lunes,
-2,2,6,lunes,
-3,3,2,lunes,
-4,4,2,lunes,
-5,1,4,martes,
-6,2,4,martes,
-7,3,5,martes,
-8,4,5,martes,
-9,1,1,miercoles,
-10,2,1,miercoles,
-11,1,6,jueves,
-12,2,6,jueves,
-13,3,3,jueves,
-14,4,3,jueves,
-15,1,1,viernes,
-16,2,1,viernes,
-17,3,7,viernes,
-18,4,7,viernes,
+1,1,16,lunes,
+2,2,15,lunes,
+3,3,13,lunes,
+4,4,13,lunes,
+5,1,10,martes,
+6,2,10,martes,
+7,3,15,martes,
+8,4,15,martes,
+9,1,12,miercoles,
+10,2,12,miercoles,
+11,3,14,miercoles,
+12,4,14,miercoles,
+13,1,9,jueves,
+14,2,9,jueves,
+15,3,13,jueves,
+16,4,13,jueves,
+17,1,11,viernes,
+18,2,11,viernes,
+19,3,8,viernes,
+20,4,8,viernes,
+21,1,21,lunes,
+22,2,21,lunes,
+23,3,24,lunes,
+24,4,24,lunes,
+25,3,19,martes,
+26,4,19,martes,
+27,1,20,miercoles,
+28,2,20,miercoles,
+29,3,23,miercoles,
+30,4,23,miercoles,
+31,1,21,jueves,
+32,2,21,jueves,
+33,3,18,jueves,
+34,4,18,jueves,
+35,1,17,viernes,
+36,2,17,viernes,
+37,3,22,viernes,
+38,4,22,viernes,
+39,3,25,martes,
+40,4,25,martes,
+41,1,30,miercoles,
+42,2,30,miercoles,
+43,3,29,miercoles,
+44,4,29,miercoles,
+45,1,27,jueves,
+46,2,27,jueves,
+47,3,28,jueves,
+48,4,28,jueves,
+49,1,30,viernes,
+50,2,30,viernes,
+51,3,26,viernes,
+52,4,26,viernes,
 
 
 TABLE profesores
@@ -410,38 +460,14 @@ situaciones.situacionid,situaciones.detalle
 
 
 TABLE faltas
-faltas.faltaid,faltas.alumnoid,faltas.comisionid,faltas.inasistenciaid,faltas.fecha,faltas.cantidad,faltas.justificado,faltas.detalle,faltas.web
-1,2,5,5,2011-03-23,5.0,True,<NULL>,False
-2,3,4,1,2011-04-10,3.0,True,<NULL>,False
-3,4,4,1,2011-04-12,3.0,True,<NULL>,False
-4,5,6,2,2011-04-23,3.0,True,<NULL>,False
-5,6,6,2,2011-05-21,1.0,True,<NULL>,False
 
 
 TABLE examenes
 examenes.examenid,examenes.materiaid,examenes.periodoid,examenes.llamado,examenes.turno,examenes.fecha,examenes.hora,examenes.personalid1,examenes.personalid2,examenes.personalid3
-1,2,3,1,Noche,<NULL>,<NULL>,1,2,4
-2,3,4,2,Noche,<NULL>,<NULL>,1,2,3
-3,1,22,1,N,2013-12-18,<NULL>,8,3,4
-4,2,22,1,N,2013-12-19,<NULL>,8,4,3
-5,3,22,1,N,2013-12-17,<NULL>,9,7,3
-6,4,22,1,N,2013-12-23,<NULL>,4,6,8
-7,5,22,1,N,2013-12-26,<NULL>,4,7,4
-8,6,22,1,N,2013-12-24,<NULL>,3,2,5
-9,31,22,1,N,2013-12-18,<NULL>,7,3,5
-10,32,22,1,N,2013-12-19,<NULL>,4,6,7
-11,33,22,1,N,2013-12-19,<NULL>,5,3,2
-12,34,22,1,N,2013-12-18,<NULL>,5,7,3
-13,35,22,1,N,2013-12-17,<NULL>,6,7,5
-14,45,22,1,N,2013-12-19,<NULL>,2,3,6
+23,1,24,1,Noche,2013-12-10,<NULL>,8,3,5
 
 
 TABLE inscripcionescomision
-inscripcionescomision.inscripcionid,inscripcionescomision.alumnoid,inscripcionescomision.comisionid,inscripcionescomision.alta,inscripcionescomision.baja,inscripcionescomision.condicion
-3,1,3,2012-02-25,<NULL>,r
-4,2,6,2012-03-12,<NULL>,r
-5,3,5,2012-04-30,<NULL>,r
-6,4,2,2012-05-23,<NULL>,r
 
 
 TABLE inscripcionesdivision
@@ -456,11 +482,6 @@ inscripcionesdivision.inscripcionid,inscripcionesdivision.alumnoid,inscripciones
 
 
 TABLE inscripcionesexamen
-inscripcionesexamen.inscripcionid,inscripcionesexamen.alumnoid,inscripcionesexamen.examenid,inscripcionesexamen.condicion,inscripcionesexamen.alta,inscripcionesexamen.baja,inscripcionesexamen.confirmar,inscripcionesexamen.valido
-1,4,1,R,2011-02-25,2011-02-25,False,False
-2,4,2,R,2011-02-25,2011-02-25,False,False
-3,4,1,R,2012-02-25,<NULL>,False,False
-4,4,2,R,2012-02-25,2012-02-25,False,False
 
 
 TABLE tramites

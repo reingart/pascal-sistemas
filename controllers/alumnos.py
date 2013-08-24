@@ -10,10 +10,12 @@ def index():
     "menu alumnos"
     return dict ()
 
+@auth.requires_login()
 def ficha():
            
-    # obtengo el registro de los alumnos
-    q= db.alumnos.id>0
+    # obtengo el registro del alumno ya registrado como usuario 
+    
+    q = db.alumnos.user_id== auth.user_id
     alumno= db(q).select(db.alumnos.nombre, db.alumnos.sexo, 
                          db.alumnos.foto, db.alumnos.email1,
                          db.alumnos.localidad)

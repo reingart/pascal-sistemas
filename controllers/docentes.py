@@ -62,19 +62,8 @@ def alumnoXcomision():
  
 
 def horarios():
-    q= db.horarios.horaid==db.horas.horaid
-    q &= db.horarios.comisionid== db.comisiones.comisionid
-    q &= db.comisiones.personalid== db.personal.personalid
-    q &= db.comisiones.materiaid== db.materias.materiaid
-    filas= db(q).select(db.horas.hora, db.personal.nombre, db.materias.nombre, db.horarios.dia)
-    
-    horario = {'lunes':{},'martes':{},'miercoles':{},'jueves':{},'viernes':{}}
-    # horario es una estructura cuya clave es el dia y el valor es otro diccionario....
-    #  {'lunes': {1: fila} ... }
-    for fila in filas:
-        horario[fila.horarios.dia][fila.horas.hora]=fila
-        
-    return dict (horario=horario)
+    q=db.horarios.horarioid>0
+    horarios=db(q).select()
     return{'horarios':horarios}
     
     
@@ -102,6 +91,25 @@ def asistencias():
   
     return {}
     
+    form = SQLFORM.factory(
+        Field("materia","string"),
+        )
+        q = db.faltas.id>0
+        q &= db.faltas.comisionid == db.comisiones.comisionid
+        
+        if form.accepts(request.vars, session):
+        
+        
+        
+        q = db.comisiones.comisionid==form.vars.nombre
+        q &= db.faltas.alumnoid==db.alumnos.alumnoid    
+        asistencias=db(q).select(db.comisiones.nombre, db.alumnos.nombre)
+        else :
+              response.flash="materia no encontrada"
+        
+        return{'asistencias':asistencias}
+
+        
 def ficha():
     # obtengo el id de la url (primer argumento por posicion):
    
@@ -110,7 +118,7 @@ def ficha():
         
     # obtengo el registro del docente
     docente = db.personal[personalid]
-
+    
     q = db.comisiones.personalid == personalid
     comisiones = db(q).select()
   

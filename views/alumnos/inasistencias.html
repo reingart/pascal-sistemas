@@ -3,36 +3,21 @@
 
 <h2> <p align= 'right'> Año 2013  </h2>
 <h1> <center><u> Consulta de Inasistencias</u> </center></h1>
+<h3> Alumno: Lucas González </h3>
+<h3> Dni: 37.987.234 </h3>
+<h3> Carrera: Analista de Sistemas </h3>
 
+{{=falta}}
 
+{{=BEAUTIFY(response._vars)}}
 
+    
 <TABLE style="border: 1px solid white">
-        <TR style="border: 1px solid white">
-            <TD style="border: 1px solid white"> <center>ALUMNO</center></TD>
-            <TD style="border: 1px solid white"> <center>MATERIA</center> </TD>
-            <TD style="border: 1px solid white"> DOCENTE </TD>
-            <TD style="border: 1px solid white"> FALTAS </TD>
-            <TD style="border: 1px solid white"> FECHA </TD>
-        </TR>
-        {{ f=falta}}
-        
-        {{for faltas in f:}}
-            <TR style="border: 1px solid white">
-        	<TD style="border: 1px solid white"> 
-        	 {{ =faltas.alumnos.nombre}}
-        	</TD>
-            <TD style="border: 1px solid white">
-             {{ =faltas.materias.nombre}}
-             </TD>
-             <TD style="border: 1px solid white">
-             {{ =faltas.personal.nombre}}
-             </TD>
-             <TD style="border: 1px solid white">
-             {{ =faltas.faltas.cantidad}}
-             </TD>
-             <TD style="border: 1px solid white">
-             {{ =faltas.faltas.fecha}}
-        {{pass}}
-        	 </TD>
-    		 </TR>
-    </TABLE>
+    <TR style="border: 1px solid white"><TD style="border: 1px solid white"> <B>Materias</B></TD><TD style="border: 1px solid white"> <B>Inasistencias</B></TD> <TD style="border: 1px solid white"> <B>Porcentaje</B></TD> <TD style="border: 1px solid white"> <B> Condición </B> </TD> </TR>
+    <TR style="border: 1px solid white"><TD style="border: 1px solid white"> Prac Profesional</TD><TD style="border: 1px solid white"> <center> 0</center></TD> <TD style="border: 1px solid white"><center> 0%</center> </TD> <TD style="border: 1px solid white"><center> Regular </center></TD> </TR>
+    <TR><TD style="border: 1px solid white"> Inv Operativa</TD><TD style="border: 1px solid white"><center> 3</center></TD> <TD style="border: 1px solid white"> <center>25% </center></TD> <TD style="border: 1px solid white"><center> Regular</center> </TD> </TR>
+    <TR style="border: 1px solid white"><TD style="border: 1px solid white"> Sist Información II</TD><TD style="border: 1px solid white"><center> 1 </center></TD> <TD style="border: 1px solid white"> <center>10% </center></TD> <TD style="border: 1px solid white"><center> Regular </center></TD> </TR>
+    <TR style="border: 1px solid white"><TD style="border: 1px solid white"> Teleinformatica</TD><TD style="border: 1px solid white"> <center>1 </center></TD> <TD style="border: 1px solid white"><center> 10% </center></TD> <TD style="border: 1px solid white"> <center>Regular </center></TD> </TR>
+    <TR style="border: 1px solid white"><TD style="border: 1px solid white"> Economia E.</TD><TD style="border: 1px solid white"> <center> 4</center> </TD> <TD vstyle="border: 1px solid white"><center> 30% </center></TD> <TD style="border: 1px solid white"><center> Regular</center> </TD> </TR>
+    <TR style="border: 1px solid white"><TD style="border: 1px solid white"> EDI III</TD><TD style="border: 1px solid white"><center> 0 </center></TD> <TD style="border: 1px solid white"> <center>0%</center> </TD> <TD style="border: 1px solid white"> <center>Libre </center></TD> </TR>
+</TABLE>

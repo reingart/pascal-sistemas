@@ -1,105 +1,36 @@
 {{extend 'layout.html'}}
-
-<h1>Asistencias   3ro Analisis en sistemas</h1>
-
-<h3> Semana del 22 al 26 de Abril</h3>
+<h1>Carrera</h1>
+<h2>  MATERIA:  </h2>
+<h3> Comision:</h3>
 <FORM ACTION="">
 <TABLE style="border: 1px solid white">
     <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><B><center>Alumno</center></B></td>
-    <td style="border: 1px solid white"><B><center>Lunes</B></td>
-    <td style="border: 1px solid white"><B><center>Martes</B></td>
-    <td style="border: 1px solid white"><B><center>Miercoles</B></td>
-    <td style="border: 1px solid white"><B><center>Jueves</B></td>
-    <td style="border: 1px solid white"><B><center>Viernes</B></td>
+    <td style="border: 1px solid white"><B><center>Materia</center></B></td>
+    <td style="border: 1px solid white"><B><center>Alumno</B></td>
+    <td style="border: 1px solid white"><B><center>Asistencia</B></td>
     </tr>
+    {{asis=asistencias}}
+    
+    {{for asistencias in asis:}}
     <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>Hector Calvo</center></B></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0" checked> </td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>Yanina Alarcon</center></B></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"> </td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>Lucas Gonzalez</center></B></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"> </td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>Yvana Santillo</center></B></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"> </td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    </tr>
-     <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>Sofia Ramirez</center></B></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0" checked> </td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>Elias Sosa</center></B></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"> </td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>Ezequiel Villalba</center></B></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"> </td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>Matias Portales</center></B></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"> </td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    </tr>
-     <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>Nahuel Cosentino</center></B></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0" checked> </td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>Mauro Schiavoni</center></B></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"> </td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
-    <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>
+    <td style="border: 1px solid white">
+     
+        {{=asistencias.comisiones.nombre}}   
+      
+    </td>
+    <td style="border: 1px solid white">
+    
+        {{=asistencias.alumnos.nombre}}
+       
+    </td>
+      <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="PRESENTE" size="0"></td>   
+        
+        {{pass}}
     </tr>
    
 </table>
 <INPUT type="submit" name="GRABAR" value="GUARDAR">
 </FORM>
 
-    <b><a href="http://127.0.0.1:8000/practica/docentes/asistencias"><--SEMANA ANTERIOR </a></b>
-<br></br>                
-    <b><a href="http://127.0.0.1:8000/practica/docentes/asistencias">SIGUIENTE SEMANA --></a></b>
-<br></br>
-<a href="http://127.0.0.1:8000/practica/docentes/index">VOLVER</a>
+<a href="http://127.0.0.1:8000/practica/docentes/asistencias"> ... SEMANA ANTERIOR </a>                 
+<a href="http://127.0.0.1:8000/practica/docentes/asistencias">SIGUIENTE SEMANA >>></a>

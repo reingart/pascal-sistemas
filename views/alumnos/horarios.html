@@ -12,6 +12,7 @@
         
     <tr style="border: 1px solid white"> 
         
+        
         <td style="border: 1px solid white"> LUNES </td>
         <td style="border: 1px solid white"> MARTES </td>
         <td style="border: 1px solid white"> MIERCOLES </td>
@@ -21,13 +22,15 @@
   
     {{for hora in ['1','2','3','4']:}}
     	
+    	
     	<tr style="border: 1px solid white"> 
-             
+            
     	{{for dia in ['lunes','martes','miercoles','jueves','viernes']:}}
           
     		<td style="border: 1px solid white"> 
                 
 			{{f=horario.get(dia, {}).get(hora, None).get(divisionid)}}
+			
 			{{if f:}}
                 
                 {{=f.materias.nombre}} <br>

@@ -87,7 +87,7 @@ def horarios():
         
     
 def inasistencias():
-    
+    alumno= db.alumnos.user_id== auth.user_id
     q= db.faltas.faltaid== db.faltas.faltaid
     q &= db.comisiones.materiaid== db.materias.materiaid
     q &= db.comisiones.personalid== db.personal.personalid

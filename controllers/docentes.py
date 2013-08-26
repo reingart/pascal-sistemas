@@ -87,13 +87,8 @@ def recursos():
     
 def asistencias():
     
-    ""
-  
-    return {}
-    
-    form = SQLFORM.factory(
-        Field("materia","string"),
-        )
+        form = SQLFORM.factory(
+        Field("materia","string"),)
         q = db.faltas.id>0
         q &= db.faltas.comisionid == db.comisiones.comisionid
         
@@ -101,9 +96,9 @@ def asistencias():
         
         
         
-        q = db.comisiones.comisionid==form.vars.nombre
-        q &= db.faltas.alumnoid==db.alumnos.alumnoid    
-        asistencias=db(q).select(db.comisiones.nombre, db.alumnos.nombre)
+              q = db.comisiones.comisionid==form.vars.nombre
+              q &= db.faltas.alumnoid==db.alumnos.alumnoid    
+              asistencias=db(q).select(db.comisiones.nombre, db.alumnos.nombre)
         else :
               response.flash="materia no encontrada"
         

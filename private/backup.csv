@@ -292,12 +292,9 @@ horas.horaid,horas.hora,horas.desde,horas.hasta,horas.nivelid
 
 
 TABLE inasistencias
-inasistencias.inasistenciaid,inasistencias.descripcion,inasistencias.tarde
-1,Presente,False
-2,Media falta,True
-3,Media falta,True
-4,Presente,True
-5,Media falta,False
+inasistencias.inasistenciaid,inasistencias.descripcion
+6,Media falta
+7,Ausente
 
 
 TABLE periodos
@@ -495,6 +492,10 @@ situaciones.situacionid,situaciones.detalle
 
 
 TABLE faltas
+faltas.faltaid,faltas.alumnoid,faltas.comisionid,faltas.inasistenciaid,faltas.fecha,faltas.cantidad,faltas.justificado,faltas.detalle
+1,22,25,7,2013-08-27,1.0,True,Falta medica
+2,10,26,6,2013-08-23,1.0,False,tarde
+3,22,27,7,2013-08-15,1.0,False,
 
 
 TABLE examenes
@@ -525,6 +526,9 @@ examenes.examenid,examenes.materiaid,examenes.periodoid,examenes.llamado,examene
 
 
 TABLE inscripcionescomision
+inscripcionescomision.inscripcionid,inscripcionescomision.alumnoid,inscripcionescomision.comisionid,inscripcionescomision.alta,inscripcionescomision.baja,inscripcionescomision.condicion
+1,10,30,2013-03-11,<NULL>,R
+2,22,30,2013-03-11,<NULL>,R
 
 
 TABLE inscripcionesdivision

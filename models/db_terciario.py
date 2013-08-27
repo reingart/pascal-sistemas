@@ -223,7 +223,6 @@ db.define_table('horas',
 db.define_table('inasistencias',
     Field('inasistenciaid', type='id'),
     Field('descripcion', type='string', length=50),
-    Field('tarde', type='boolean', default=False),
     format= "%(inasistenciaid)s [%(descripcion)s]",
     migrate=migrate)
 
@@ -346,10 +345,9 @@ db.define_table('faltas',
     Field('comisionid', db.comisiones),
     Field('inasistenciaid', db.inasistencias),
     Field('fecha', type='date'),
-    Field('cantidad', type='double', default=0),
+    Field('cantidad', type='double', default=1),
     Field('justificado', type='boolean', default=False),
     Field('detalle', type='string', length=50),
-    Field('web', type='boolean', default=False),
     format= "%(faltaid)s [%(detalle)s]",
     migrate=migrate)
     

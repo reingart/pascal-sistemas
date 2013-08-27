@@ -31,7 +31,9 @@ response.menu = [
             [T('Instrumentación'), False, URL(request.application,'carreras','salud_instrumentacion'), []],
             [T('Análisis Clínicos'), False, URL(request.application,'carreras','salud_laboratorio'), []],
             [T('Radiología'), False, URL(request.application,'carreras','salud_radiologia'), []],
+            [T('Cardiología'), False, URL(request.application, 'carreras','salud_cardiologia'),[]],
         ]],
+        
     ]],
     [T('Docentes'), False, URL(request.application,'docentes','index'), [ 
        [T('Finales'), False, URL(request.application,'docentes','finales'), []],

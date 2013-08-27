@@ -539,6 +539,8 @@ inscripcionesdivision.inscripcionid,inscripcionesdivision.alumnoid,inscripciones
 
 
 TABLE inscripcionesexamen
+inscripcionesexamen.inscripcionid,inscripcionesexamen.alumnoid,inscripcionesexamen.examenid,inscripcionesexamen.condicion,inscripcionesexamen.alta,inscripcionesexamen.baja,inscripcionesexamen.confirmar,inscripcionesexamen.valido
+1,10,45,R,2013-12-09,<NULL>,True,False
 
 
 TABLE tramites

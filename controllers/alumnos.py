@@ -11,27 +11,30 @@ def index():
     return dict ()
 
 @auth.requires_login()
+@auth.requires_membership(role='alumnos')
 def ficha():
            
     # obtengo el registro del alumno ya registrado como usuario 
-    
+  
     q = db.alumnos.user_id== auth.user_id
+ 
     alumno= db(q).select(db.alumnos.nombre, db.alumnos.sexo, 
                          db.alumnos.foto, db.alumnos.email1,
                          db.alumnos.localidad)
                          
-    return dict (alumno=alumno)
+    return dict (alumno=alumno, q=q)
     
 #@auth.requires_login()
-#@auth.requires_membership(role='alumnos1')
 
 
+@auth.requires_login()
 def ingreso():
     db.alumnos.user_id.default= auth.user_id
     subtitulo= T ('Complete el formulario por favor...')
     form=SQLFORM(db.alumnos)
     #db.auth_membership.insert(auth_membership.user_id== db.auth_id, auth_membership.group_id== auth_group.id)
     if form.accepts(request.vars,session):
+        db.auth_membership.insert( auth_membership.user_id== auth.user_id, auth_membership.group_id== 'alumnos')
         response.flash='Usted fue agregado como alumno...'
     elif form.errors: 
         response.flash='Hay errores en el formulario!'

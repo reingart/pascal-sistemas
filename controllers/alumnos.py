@@ -95,9 +95,9 @@ def inasistencias():
     q &= db.comisiones.materiaid== db.materias.materiaid
     q &= db.comisiones.personalid== db.personal.personalid
     q &= db.faltas.alumnoid== db.alumnos.alumnoid
-
+    q &= db.faltas.inasistenciaid== db.inasistencias.inasistenciaid
     
-    falta= db(q).select(db.alumnos.nombre, db.materias.nombre, db.personal.nombre, db.faltas.cantidad, db.faltas.fecha)
+    falta= db(q).select(db.alumnos.nombre, db.materias.nombre, db.faltas.cantidad, db.inasistencias.descripcion, db.faltas.fecha)
    
     
     return dict (falta=falta)

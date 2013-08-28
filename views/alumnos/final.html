@@ -1,39 +1,8 @@
 {{extend 'layout.html'}}
 <h2> <p align= 'right'> Año 2013  </h2>
-<h1> <center> Inscripción a Parciales Finales </center></h1>
+<h1> <center> Inscripción a Examenes Finales </center></h1>
 
-
-
-<TABLE style="border: 1px solid white">
-        <TR style="border: 1px solid white">
-            <TD style="border: 1px solid white"> <center>MATERIA</center> </TD>
-            <TD style="border: 1px solid white"> DOCENTE </TD>
-            <TD style="border: 1px solid white"> FECHA </TD>
-            <TD style="border: 1px solid white"> HORA </TD>
-        </TR>
-    
-       {{ f=final}}
-        
-        {{for final in f:}}
-            <TR style="border: 1px solid white">
-        	<TD style="border: 1px solid white"> 
-        	 {{ =final.materias.nombre}}
-        	</TD>
-            <TD style="border: 1px solid white">
-             {{ =final.personal.nombre}}
-             </TD>
-             <TD style="border: 1px solid white">
-             {{ =final.examenes.fecha}}
-             </TD>
-             <TD style="border: 1px solid white">
-             {{ =final.examenes.hora}}
-             </TD>
-        {{pass}}
-    		 </TR>
-    </TABLE>
-
- 	<form>
-    <br>
-    <br>
-    <input type="submit" value="Guardar"> <input type="reset" value="Cancelar"> <input type="submit" value="Imprimir">
-	</form>
+{{for f in final:}}
+	
+	<input type="checkbox" name="MATERIAS">{{=f.materias.nombre}} <br>
+{{pass}}

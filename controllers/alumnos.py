@@ -18,11 +18,11 @@ def ficha():
   
     q = db.alumnos.user_id== auth.user_id
  
-    alumno= db(q).select(db.alumnos.nombre, db.alumnos.sexo, 
+    alumno= db(q).select(db.alumnos.alumnoid== db.alumnos.user_id, db.alumnos.nombre, db.alumnos.sexo, 
                          db.alumnos.foto, db.alumnos.email1,
                          db.alumnos.localidad)
                          
-    return dict (alumno=alumno, q=q)
+    return dict (alumno=alumno)
     
 #@auth.requires_login()
 
@@ -125,18 +125,14 @@ def examenes():
     return dict (notas= notas)
     
 def final():
-     # a = db().select(db.examenes.ALL)#lista todos
-   q= db.examenes.examenid>0
-   q &= db.examenes.materiaid== db.materias.materiaid
-   q &= db.examenes.personalid1== db.personal.personalid
-    
-
-    
-   final= db(q).select(db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)
+     
   
-   return dict (final=final) 
+    q = db.examenes.examenid>0
+    q &= db.examenes.materiaid== db.materias.materiaid
+    q &= db.examenes.personalid1== db.personal.personalid
+    final= db(q).select(db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)
   
-            
+    return dict (final= final) 
          
 ###################################################################################
         

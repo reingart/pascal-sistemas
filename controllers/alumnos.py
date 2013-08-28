@@ -36,6 +36,7 @@ def ingreso():
     if form.accepts(request.vars,session):
         grupo_id = db(db.auth_group.name=='alumnos').first().id
         db.auth_membership.insert(user_id=auth.user_id, group_id=grupo_id)
+        #agrego al alumno y su id de registro en el grupo alumnos
         response.flash='Usted fue agregado como alumno...'
     elif form.errors: 
         response.flash='Hay errores en el formulario'

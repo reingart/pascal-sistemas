@@ -72,6 +72,15 @@ auth_event.id,auth_event.time_stamp,auth_event.client_ip,auth_event.user_id,auth
 47,2013-08-27 16:41:22,127.0.0.1,1,auth,User 1 Logged-out
 48,2013-08-27 17:00:53,127.0.0.1,4,auth,Usuario 4 sesión iniciada
 49,2013-08-27 17:01:10,127.0.0.1,4,auth,User 4 Logged-out
+50,2013-08-28 17:28:34,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+51,2013-08-28 17:50:25,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+52,2013-08-28 18:44:53,127.0.0.1,5,auth,User 5 Logged-out
+53,2013-08-28 18:45:39,127.0.0.1,4,auth,Usuario 4 sesión iniciada
+54,2013-08-28 18:46:59,127.0.0.1,4,auth,User 4 Logged-out
+55,2013-08-28 18:56:31,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+56,2013-08-28 19:23:29,127.0.0.1,5,auth,User 5 Logged-out
+57,2013-08-28 19:24:43,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+58,2013-08-28 19:30:37,127.0.0.1,1,auth,User 1 Logged-out
 
 
 TABLE auth_cas
@@ -79,25 +88,9 @@ TABLE auth_cas
 
 TABLE alumnos
 alumnos.alumnoid,alumnos.nombre,alumnos.dni,alumnos.sexo,alumnos.fechanacimiento,alumnos.lugarnacimiento,alumnos.estadocivil,alumnos.nacionalidad,alumnos.direccion,alumnos.localidad,alumnos.cp,alumnos.telefono,alumnos.email1,alumnos.email2,alumnos.ingreso,alumnos.egreso,alumnos.foto,alumnos.user_id
-1,armando paredes,123144,M,1989-02-13,almagro,soltero,argentino,corrientes 345,almagro,234,<NULL>,<NULL>,<NULL>,2011-03-30,<NULL>,<NULL>,<NULL>
-2,leonor taboada,123144,F,1990-06-03,pontevedra,soltera,argentina,nose 234,pontevedra,3456,<NULL>,<NULL>,<NULL>,2011-04-10,<NULL>,<NULL>,<NULL>
-3,camila aguirre,12314,F,1992-09-23,laferrere,casada,argentina,flores 345,laferrere,3456,<NULL>,<NULL>,<NULL>,2011-04-15,<NULL>,<NULL>,<NULL>
-4,roberto ocampo,45666,M,1991-01-12,gonzalez catan,soltero,franco argentino,suipacha 345,gonzalez catan,4356,<NULL>,<NULL>,<NULL>,2013-03-30,<NULL>,<NULL>,<NULL>
-5,lorenzino herrera,232532,M,1986-05-12,san justo,casado,argentino,arieta 341,san justo,2341,<NULL>,<NULL>,<NULL>,2010-03-15,<NULL>,<NULL>,<NULL>
-6,cacho buenavida,213425,M,1983-09-29,cañuelas,divorciado,argentino,campos 234,cañuelas,9273,<NULL>,<NULL>,<NULL>,2012-04-20,<NULL>,<NULL>,<NULL>
-7,maria britos,897263,F,1990-04-10,gonzalez catan,soltera,argentina,tranway 213,gonzalez catan,1759,<NULL>,<NULL>,<NULL>,2013-03-18,<NULL>,<NULL>,<NULL>
-8,marcos pan y agua,82364,M,1989-02-16,laferrere,soltero,argentino,luro 345,laferrere,8932,<NULL>,<NULL>,<NULL>,2011-04-30,<NULL>,<NULL>,<NULL>
-9,melina bravo,782634,F,1991-12-27,gonzalez catan,soltera,argentina,larre 341,gonzalez catan,1759,<NULL>,<NULL>,<NULL>,2012-03-18,<NULL>,<NULL>,<NULL>
-10,lucas,34456756,m,1992-09-23,gonzalez catan,soltero,argentino,bordoy 1123,gonzalez catan,1759,5678-9876,luka.jesu12@gmail.com,luks_chizzo@hotmail.com,2011-03-14,<NULL>,alumnos.foto.90039a4598bcd7e8.313030323937335f.jpg,1
-13,ivana santillo,2345672,f,1992-08-03,gonzalez catan,soltera,argentina,tranway 456,gonzalez catan,1759,456723,ivana_santillo@gmail.com,,2011-04-27,<NULL>,,<NULL>
-15,hector calvo,3423123,m,1975-08-13,pontevedra,casado,argentino,barrientos 234,gonzalez catan,1759,235267,hector.calvo@gmail.com,,2011-03-07,<NULL>,,<NULL>
-16,ezequiel villalba,785334,m,1992-08-18,casanova,soltero,argentino,marconi 3456,casanova,1767,9865123,eze_villalba@gmail.com,,2011-03-07,<NULL>,,<NULL>
-17,elias sosa,2345672,m,1991-10-11,laferrere,soltero,argentino,luro 123,laferrere,1745,112355423,elias_sosa@gmail.com,,2010-03-08,<NULL>,,<NULL>
-18,nahuel cosentino,3456712,m,1991-07-08,gonzalez catan,soltero,argentino,arrecifes 563,gonzalez catan,1759,2134125,nahuel_cosentino@gmail.com,,2010-04-05,<NULL>,,<NULL>
-19,matias portales,2342565,m,1991-05-05,gonzalez catan,soltero,argentino,larre 543,gonzalez catan,1759,4567232,matias_portales@gmail.com,,2010-04-12,<NULL>,,<NULL>
-20,mauro schiavone,3265246,m,1991-08-16,gonzalez catan,soltero,argentino,simon perez,gonzalez catan,1759,456723,mauro_schiavone@gmail.com,,2010-04-12,<NULL>,,<NULL>
-21,sofia ramirez,4534523,f,1991-12-20,gonzalez catan,soltera,argentina,dragones 3456,gonzalez catan,1759,4567345,sofia-ramirez91@hotmail.es,,2011-03-14,<NULL>,,4
-22,yanina alarcon,6753246,f,1985-10-16,gonzalez catan,casada,argentina,achupalla 2345,gonzalez catan,1759,456723,yani.alarcon@yahoo.com,,2011-03-14,<NULL>,,5
+10,Lucas Gonzalez,34456756,m,1992-09-23,gonzalez catan,soltero,argentino,bordoy 1123,gonzalez catan,1759,5678-9876,luka.jesu12@gmail.com,luks_chizzo@hotmail.com,2011-03-14,<NULL>,alumnos.foto.90039a4598bcd7e8.313030323937335f.jpg,1
+21,Sofia Ramirez,4534523,f,1991-12-20,gonzalez catan,soltera,argentina,dragones 3456,gonzalez catan,1759,4567345,sofia-ramirez91@hotmail.es,,2011-03-14,<NULL>,,4
+22,Yanina Alarcon,6753246,f,1985-10-16,gonzalez catan,casada,argentina,achupalla 2345,gonzalez catan,1759,456723,yani.alarcon@yahoo.com,,2011-03-14,<NULL>,,5
 
 
 TABLE cursos
@@ -285,10 +278,10 @@ correlativas.correlativaid,correlativas.materiaid1,correlativas.materiaid2,corre
 
 TABLE horas
 horas.horaid,horas.hora,horas.desde,horas.hasta,horas.nivelid
-1,1,18,19,1
-2,2,19,20:10,1
-3,3,20:20,21,1
-4,4,21,22:30,1
+1,1,18:00,19:00,1
+2,2,19:00,20:00,1
+3,3,20:15,21:15,1
+4,4,21:15,22:15,1
 
 
 TABLE inasistencias
@@ -349,34 +342,6 @@ notas.notaid,notas.alumnoid,notas.materiaid,notas.periodoid,notas.calificacionid
 21,<NULL>,31,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
 22,<NULL>,32,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
 23,<NULL>,33,<NULL>,5,3.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-24,1,8,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-25,1,9,<NULL>,5,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-26,1,4,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-27,1,5,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-28,1,6,<NULL>,5,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-29,1,7,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-30,1,1,<NULL>,5,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-31,1,2,<NULL>,5,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-32,1,3,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-33,1,45,<NULL>,5,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-34,1,23,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-35,1,22,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-36,1,21,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-37,1,20,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-38,1,16,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-39,1,17,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-40,1,18,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-41,1,19,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-42,1,34,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-43,1,35,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-44,1,31,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-45,1,32,<NULL>,5,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-46,1,33,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-47,1,1,20,3,8.0,examen final cuatrimestre,istbp,,2012-06-20,,<NULL>,2013-07-17,False,N
-48,1,6,20,3,6.0,,istbp,,2012-06-12,,<NULL>,2013-07-17,False,N
-49,2,8,20,3,5.0,,istbp,,2012-07-02,,<NULL>,2013-07-17,False,
-50,7,19,20,3,8.0,,istbp,,2012-07-19,,<NULL>,2013-07-17,False,
-51,7,7,18,5,8.0,examen final ,istbp,,2012-12-17,,<NULL>,2013-07-17,False,
 
 
 TABLE titulos
@@ -478,9 +443,6 @@ profesores.profesorid,profesores.personalid,profesores.comisionid,profesores.car
 
 
 TABLE sanciones
-sanciones.sancionid,sanciones.alumnoid,sanciones.fecha,sanciones.cantidad,sanciones.tipo,sanciones.detalle,sanciones.parte
-1,5,2012-05-12,2.0,<NULL>,faltas,2
-2,2,2012-04-12,1.0,<NULL>,faltas,1
 
 
 TABLE situaciones
@@ -496,6 +458,9 @@ faltas.faltaid,faltas.alumnoid,faltas.comisionid,faltas.inasistenciaid,faltas.fe
 1,22,25,7,2013-08-27,1.0,True,Falta medica
 2,10,26,6,2013-08-23,1.0,False,tarde
 3,22,27,7,2013-08-15,1.0,False,
+4,21,29,6,2013-08-28,1.0,False,
+5,22,25,6,2013-08-21,1.0,False,
+6,10,30,7,2013-08-28,1.0,False,
 
 
 TABLE examenes
@@ -529,17 +494,11 @@ TABLE inscripcionescomision
 inscripcionescomision.inscripcionid,inscripcionescomision.alumnoid,inscripcionescomision.comisionid,inscripcionescomision.alta,inscripcionescomision.baja,inscripcionescomision.condicion
 1,10,30,2013-03-11,<NULL>,R
 2,22,30,2013-03-11,<NULL>,R
+3,22,25,2013-08-28,<NULL>,R
+4,21,26,2013-08-28,<NULL>,R
 
 
 TABLE inscripcionesdivision
-inscripcionesdivision.inscripcionid,inscripcionesdivision.alumnoid,inscripcionesdivision.divisionid,inscripcionesdivision.alta,inscripcionesdivision.baja,inscripcionesdivision.condicion
-1,1,1,2011-03-12,<NULL>,R
-2,2,2,2011-04-12,<NULL>,R
-3,3,3,2011-05-30,<NULL>,R
-4,4,1,2011-03-18,<NULL>,R
-5,5,1,2011-03-20,<NULL>,R
-6,6,2,2011-03-10,<NULL>,R
-7,7,3,2012-03-18,<NULL>,R
 
 
 TABLE inscripcionesexamen

@@ -92,14 +92,15 @@ def horarios():
         
     
 def inasistencias():
-    alumno= db.alumnos.user_id== auth.user_id
-    q= db.faltas.faltaid== db.faltas.faltaid
-    q &= db.comisiones.materiaid== db.materias.materiaid
-    q &= db.comisiones.personalid== db.personal.personalid
+    q = db.alumnos.user_id== auth.user_id
     q &= db.faltas.alumnoid== db.alumnos.alumnoid
+    q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
+    q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
+    q &= db.faltas.comisionid== db.comisiones.comisionid
+    q &= db.comisiones.personalid== db.personal.personalid
     q &= db.faltas.inasistenciaid== db.inasistencias.inasistenciaid
     
-    falta= db(q).select(db.alumnos.nombre, db.materias.nombre, db.faltas.cantidad, db.inasistencias.descripcion, db.faltas.fecha)
+    falta= db(q).select(db.alumnos.nombre, db.comisiones.nombre, db.faltas.cantidad, db.inasistencias.descripcion, db.faltas.fecha)
    
     
     return dict (falta=falta)

@@ -77,14 +77,16 @@ def horarios():
     q &= db.comisiones.divisionid== db.divisiones.divisionid
     filas= db(q).select(db.horas.hora, db.personal.nombre, db.materias.nombre, db.divisiones.divisionid, db.horarios.dia)
     
-    
     horario = {'lunes':{},'martes':{},'miercoles':{},'jueves':{},'viernes':{}}
     # horario es una estructura cuya clave es el dia y el valor es otro diccionario....
     #  {'lunes': {1: fila} ... }
     for fila in filas:
         horario[fila.horarios.dia].setdefault(fila.horas.hora, {})[fila.divisiones.divisionid]= fila
+
+    filas = db(db.horas.id>0).select()
+    horas=dict ([(hora.hora, hora) for hora in filas]) 
         
-    return dict (horario=horario)
+    return dict (horario=horario, horas=horas)
     
    
         

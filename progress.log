@@ -1,3 +1,9 @@
+<<<<<<< local
+[2013-06-07 18:14:03] START
+[2013-06-07 18:14:03] CREATE setup_tramites.py: 0
+[2013-06-07 18:14:14] EDIT pascal/controllers/setup_tramites.py: 9
+[2013-08-21 19:28:50] EDIT pascal/models/menu.py: -7
+=======
 [2013-04-26 19:06:10] START
 [2013-04-26 19:06:10] EDIT pascal/views/tramites/iniciar.html: 15
 [2013-04-26 19:06:17] EDIT pascal/views/tramites/iniciar.html: 0
@@ -223,3 +229,4 @@
 [2013-07-05 19:18:25] EDIT pascal/controllers/listar_tramites.py: 0
 [2013-07-05 19:18:25] EDIT pascal/controllers/listar_tramites.py: 0
 [2013-07-05 19:18:25] EDIT pascal/controllers/listar_tramites.py: 0
+>>>>>>> other

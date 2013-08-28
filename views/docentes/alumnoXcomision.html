@@ -1,10 +1,13 @@
 {{extend 'layout.html'}}
-{{=form}}
+<FORM ACTION = "" method="POST">
+    <INPUT type="text" name="fecha" >
+    
 
 
 
 <table style="border: 1px solid white">
     <td style="border: 1px solid white"><center> DNI</center>  </td> <td style="border: 1px solid white"> <center>nombre</center> </td> <td style="border: 1px solid white"> presente</td>
+    
 <tr>
 <td style="border: 1px solid white"><ul>
     
@@ -30,7 +33,6 @@
     
     {{for alumno in alumnos: }}
      
-        <FORM ACTION="">
             <center>{{=INPUT (_type="checkbox", _name="falta_%s" %(alumno.id))}}</center>
 
     {{pass}}
@@ -40,6 +42,5 @@
 
 </table>
 <br></br>
-<FORM ACTION="">
 <INPUT type="submit" name="grabar" value="GUARDAR">
 </FORM>

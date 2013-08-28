@@ -43,24 +43,20 @@ def index():
     
 def alumnoXcomision():
     
-    form=SQLFORM.factory (
-               Field('fecha', 'date', default=request.now.date()),
-               )
-               
-        #cuando hago click en el boton guardar
+   
+     #cuando hago click en el boton guardar
     if request.vars.grabar=="GUARDAR":
             #en k tenemos el nombre del checkbox
         for _name,_value in request.vars.items():
             if _name.startswith ("falta"):
                 alumno_id = int(_name[_name.index('_')+1:])
                 comision_id = int(_name[_name.index('_')+1:])
-                inasistencia_id = int(_name[_name.index('_')+1:])
-                fecha = request.now.date()
-
+                inasistencia_id = 5
+                fecha = request.vars.fecha
 
 
                 if _value == "on":
-                    db.faltas.insert ( alumnoid= alumno_id, comisionid= comision_id,inasistenciaid=inasistencia_id,cantidad=1)
+                    db.faltas.insert ( alumnoid= alumno_id, comisionid= comision_id,inasistenciaid=inasistencia_id, fecha= fecha,cantidad=1)
 
             
             
@@ -75,7 +71,7 @@ def alumnoXcomision():
     alumnos=db(q).select(orderby=db.alumnos.nombre)
     #db.faltas.insert(alumnoid= 5, comisionid=1,inasistenciaid="martes",fecha=10)
 
-    return{'alumnos':alumnos, 'form': form}
+    return{'alumnos':alumnos}
     
 
  

@@ -38,9 +38,9 @@ def ingreso():
         db.auth_membership.insert(user_id=auth.user_id, group_id=grupo_id)
         response.flash='Usted fue agregado como alumno...'
     elif form.errors: 
-        response.flash='Hay errores en el formulario!'
+        response.flash='Hay errores en el formulario..'
     else:
-        response.flash='Por favor, complete el formulario!'
+        response.flash='Por favor, complete el formulario..'
         
     return dict (form=form, sub=subtitulo)
     

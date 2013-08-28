@@ -15,14 +15,14 @@ def index():
 def ficha():
            
     # obtengo el registro del alumno ya registrado como usuario 
-  
+    
     q = db.alumnos.user_id== auth.user_id
- 
-    alumno= db(q).select(db.alumnos.alumnoid== db.alumnos.user_id, db.alumnos.nombre, db.alumnos.sexo, 
-                         db.alumnos.foto, db.alumnos.email1,
-                         db.alumnos.localidad)
+    
+    fila = db(q).select( db.alumnos.nombre, db.alumnos.fechanacimiento, db.alumnos.estadocivil,
+                         db.alumnos.foto, db.alumnos.email1, db.alumnos.ingreso,
+                         db.alumnos.localidad).first()
                          
-    return dict (alumno=alumno)
+    return dict (alumno=fila)
     
 #@auth.requires_login()
 

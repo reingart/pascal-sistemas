@@ -15,14 +15,14 @@ def index():
 def ficha():
            
     # obtengo el registro del alumno ya registrado como usuario 
-  
+    
     q = db.alumnos.user_id== auth.user_id
- 
-    alumno= db(q).select(db.alumnos.nombre, db.alumnos.sexo, 
-                         db.alumnos.foto, db.alumnos.email1,
-                         db.alumnos.localidad)
+    
+    fila = db(q).select( db.alumnos.nombre, db.alumnos.fechanacimiento, db.alumnos.estadocivil,
+                         db.alumnos.foto, db.alumnos.email1, db.alumnos.ingreso,
+                         db.alumnos.localidad).first()
                          
-    return dict (alumno=alumno, q=q)
+    return dict (alumno=fila)
     
 #@auth.requires_login()
 
@@ -95,9 +95,9 @@ def inasistencias():
     q &= db.comisiones.materiaid== db.materias.materiaid
     q &= db.comisiones.personalid== db.personal.personalid
     q &= db.faltas.alumnoid== db.alumnos.alumnoid
-
+    q &= db.faltas.inasistenciaid== db.inasistencias.inasistenciaid
     
-    falta= db(q).select(db.alumnos.nombre, db.materias.nombre, db.personal.nombre, db.faltas.cantidad, db.faltas.fecha)
+    falta= db(q).select(db.alumnos.nombre, db.materias.nombre, db.faltas.cantidad, db.inasistencias.descripcion, db.faltas.fecha)
    
     
     return dict (falta=falta)
@@ -125,18 +125,14 @@ def examenes():
     return dict (notas= notas)
     
 def final():
-     # a = db().select(db.examenes.ALL)#lista todos
-   q= db.examenes.examenid>0
-   q &= db.examenes.materiaid== db.materias.materiaid
-   q &= db.examenes.personalid1== db.personal.personalid
-    
-
-    
-   final= db(q).select(db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)
+     
   
-   return dict (final=final) 
+    q = db.examenes.examenid>0
+    q &= db.examenes.materiaid== db.materias.materiaid
+    q &= db.examenes.personalid1== db.personal.personalid
+    final= db(q).select(db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)
   
-            
+    return dict (final= final) 
          
 ###################################################################################
         

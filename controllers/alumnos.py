@@ -34,7 +34,8 @@ def ingreso():
     form=SQLFORM(db.alumnos)
     #db.auth_membership.insert(auth_membership.user_id== db.auth_id, auth_membership.group_id== auth_group.id)
     if form.accepts(request.vars,session):
-        db.auth_membership.insert( auth_membership.user_id== auth.user_id, auth_membership.group_id== 'alumnos')
+        grupo_id = db(db.auth_group.name=='alumnos').first().id
+        db.auth_membership.insert(user_id=auth.user_id, group_id=grupo_id)
         response.flash='Usted fue agregado como alumno...'
     elif form.errors: 
         response.flash='Hay errores en el formulario!'

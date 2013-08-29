@@ -38,9 +38,21 @@ def index():
     return{'docentes':docentes}
     
 def alumnoXcomision():
-    form=SQLFORM.factory (
-               Field('fecha', 'date', default=request.now.date()),
-               )
+     #cuando hago click en el boton guardar
+    if request.vars.grabar=="GUARDAR":
+            #en _name tenemos el nombre del checkbox
+        for _name,_value in request.vars.items():
+            if _name.startswith ("falta"):
+                alumno_id = int(_name[_name.index('_')+1:])
+                comision_id = int(_name[_name.index('_')+1:])
+                inasistencia_id = int(_name[_name.index('_')+1:])
+                fecha = request.vars.fecha
+
+
+
+                if _value == "on":
+                    db.faltas.insert (alumnoid= alumno_id, comisionid= comision_id,inasistenciaid=inasistencia_id,fecha=fecha,cantidad=1)
+   
     if request.vars:
         # si me pasan en la URL el docente, lo filtro 
         q=db.alumnos.alumnoid == request.vars['alumnoid']
@@ -52,7 +64,7 @@ def alumnoXcomision():
         # sino, busco todos los docentes
         q=db.alumnos.alumnoid>0
     alumnos=db(q).select(orderby=db.alumnos.nombre)
-    return{'alumnos':alumnos, 'form': form}
+    return{'alumnos':alumnos}
     
 
  
@@ -131,17 +143,3 @@ def ficha():
     comisiones = db(q).select()
   
     return {'docente':docente, 'comisiones':comisiones}
-    
-    
-    
-def ingreso():
-    db.personal.user_id.default= auth.user_id
-    subtitulo= T ('Complete el formulario por favor...')
-    form=SQLFORM(db.personal)
-    if form.accepts(request.vars,session):
-        response.flash='Usted fue agregado como docente...'
-    elif form.errors: 
-        response.flash='Hay errores en el formulario!'
-    else:
-        response.flash='Por favor, complete el formulario!'
-    return dict (form=form, sub=subtitulo)

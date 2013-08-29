@@ -458,10 +458,7 @@ faltas.faltaid,faltas.alumnoid,faltas.comisionid,faltas.inasistenciaid,faltas.fe
 1,22,25,7,2013-08-27,1.0,True,Falta medica
 2,10,26,6,2013-08-23,1.0,False,tarde
 3,22,27,7,2013-08-15,1.0,False,
-4,21,29,6,2013-08-28,1.0,False,
-5,22,25,6,2013-08-21,1.0,False,
 6,10,30,7,2013-08-28,1.0,False,
-7,21,29,7,2013-08-15,1.0,True,falta medica
 
 
 TABLE examenes

@@ -75,6 +75,9 @@ db.define_table('personal',
     Field('cuil', type='string', length=50),
     Field('foto', type='upload', length=50),
     Field('cargoid', db.cargos),
+    Field('user_id', db.auth_user, readable= False, writable= False),
+
+
     
 ##    Field('seccionid', db.secciones),
     format= "%(personalid)s [%(nombre)s]",

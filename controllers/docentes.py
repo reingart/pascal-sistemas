@@ -1,6 +1,23 @@
 # coding: utf8
 # try something like
 #como hacer funcar esto
+
+@auth.requires_login()
+def ingreso():
+    db.personal.user_id.default= auth.user_id
+    subtitulo= T ('Complete el formulario por favor...')
+    form=SQLFORM(db.personal)
+    #db.auth_membership.insert(auth_membership.user_id== db.auth_id, auth_membership.group_id== auth_group.id)
+    if form.accepts(request.vars,session):
+        db.auth_membership.insert( auth_membership.user_id== auth.user_id, auth_membership.group_id== 'personal')
+        response.flash='Usted fue agregado como docente...'
+    elif form.errors: 
+        response.flash='Hay errores en el formulario!'
+    else:
+        response.flash='Por favor, complete el formulario!'
+        
+    return dict (form=form, sub=subtitulo)
+    
 def busqueda():
     # armo un formulario para buscar alumno por su dni
     form = SQLFORM.factory(
@@ -63,13 +80,13 @@ def alumnoXcomision():
         
     if request.vars:
         # si me pasan en la URL el docente, lo filtro 
-        q=db.alumnos.alumnoid == request.vars['alumnoid']
-        
+        #q=db.alumnos.alumnoid == request.vars['alumnoid']
+        q=db.alumnos.alumnoid == db.inscripcionescomision.alumnoid, db.comisiones.comisionid==db.inscripcionescomision.comisionid
+
     else:
         # sino, busco todos los docentes
         q=db.alumnos.alumnoid>0
-    alumnos=db(q).select(orderby=db.alumnos.nombre)
-    #db.faltas.insert(alumnoid= 5, comisionid=1,inasistenciaid="martes",fecha=10)
+        alumnos=db(q).select(orderby=db.alumnos.nombre)
 
     return{'alumnos':alumnos}
     
@@ -119,7 +136,9 @@ def asistencias():
         
         return{'asistencias':asistencias}
 
-        
+
+@auth.requires_login()
+@auth.requires_membership(role='personal')       
 def ficha():
     # obtengo el id de la url (primer argumento por posicion):
    

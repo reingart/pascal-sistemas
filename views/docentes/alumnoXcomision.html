@@ -1,4 +1,5 @@
 {{extend 'layout.html'}}
+{{=alumnos}}
 <FORM ACTION = "" method="POST">
     <b><h5> FECHA: </h5></b><INPUT type="text" name="fecha" >
     
@@ -8,7 +9,7 @@
 
 
 <table style="border: 1px solid white">
-    <td style="border: 1px solid white"><center> DNI</center>  </td> <td style="border: 1px solid white"> <center>nombre</center> </td> <td style="border: 1px solid white"> presente</td>
+    <td style="border: 1px solid white"><center> DNI</center>  </td> <td style="border: 1px solid white"> <center>Nombre</center> </td> <td style="border: 1px solid white"> Presente</td>
     
 <tr>
 <td style="border: 1px solid white"><ul>
@@ -39,6 +40,9 @@
 
     {{pass}}
     </td>
+    
+    
+
     </tr>
 
 

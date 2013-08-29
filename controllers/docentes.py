@@ -7,7 +7,7 @@ def ingreso():
     db.personal.user_id.default= auth.user_id
     subtitulo= T ('Complete el formulario por favor...')
     form=SQLFORM(db.personal)
-    #db.auth_membership.insert(auth_membership.user_id== db.auth_id, auth_membership.group_id== auth_group.id)
+    db.auth_membership.insert(auth_membership.user_id== db.auth_id, auth_membership.group_id== auth_group.id)
     if form.accepts(request.vars,session):
         db.auth_membership.insert( auth_membership.user_id== auth.user_id, auth_membership.group_id== 'personal')
         response.flash='Usted fue agregado como docente...'
@@ -80,8 +80,7 @@ def alumnoXcomision():
         
     if request.vars:
         # si me pasan en la URL el docente, lo filtro 
-        #q=db.alumnos.alumnoid == request.vars['alumnoid']
-        q=db.alumnos.alumnoid == db.inscripcionescomision.alumnoid, db.comisiones.comisionid==db.inscripcionescomision.comisionid
+        q=db.alumnos.alumnoid == request.vars['alumnoid']
 
     else:
         # sino, busco todos los docentes

@@ -92,8 +92,11 @@ def horarios():
         
     
 def inasistencias():
+    #buscar el alumno y compararlo con el logueado
     q = db.alumnos.user_id== auth.user_id
+    #utilizamos los datos de faltas para filtrar las inasistencias del alumno
     q &= db.faltas.alumnoid== db.alumnos.alumnoid
+    #de inscrip_comision buscamos la materia = al alumno
     q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
     q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
     q &= db.faltas.comisionid== db.comisiones.comisionid

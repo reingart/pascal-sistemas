@@ -2,11 +2,7 @@
 # try something like
 #como hacer funcar esto
 def busqueda():
-    # armo un formulario para buscar alumno por su dni
-    form = SQLFORM.factory(
-        Field("dni", "integer"),
-        Field("nombre", "string"),
-        )
+   
     q= db.profesores.id>0
     if form.accepts(request.vars, session):
         # buscar el alumno
@@ -104,7 +100,24 @@ def asistencias():
         
         return{'asistencias':asistencias}
 
+@auth.requires_login()
+def ingreso():
+    db.personal.user_id.default= auth.user_id
+    subtitulo= T ('Complete el formulario por favor...')
+    form=SQLFORM(db.personal)
+    #db.auth_membership.insert(auth_membership.user_id== db.auth_id, auth_membership.group_id== auth_group.id)
+    if form.accepts(request.vars,session):
+        db.auth_membership.insert( auth_membership.user_id== auth.user_id, auth_membership.group_id== 'personal')
+        response.flash='Usted fue agregado como docente...'
+    elif form.errors: 
+        response.flash='Hay errores en el formulario!'
+    else:
+        response.flash='Por favor, complete el formulario!'
         
+    return dict (form=form, sub=subtitulo)
+    
+@auth.requires_login()
+@auth.requires_membership(role='personal')                     
 def ficha():
     # obtengo el id de la url (primer argumento por posicion):
    

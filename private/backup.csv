@@ -81,6 +81,18 @@ auth_event.id,auth_event.time_stamp,auth_event.client_ip,auth_event.user_id,auth
 56,2013-08-28 19:23:29,127.0.0.1,5,auth,User 5 Logged-out
 57,2013-08-28 19:24:43,127.0.0.1,1,auth,Usuario 1 sesión iniciada
 58,2013-08-28 19:30:37,127.0.0.1,1,auth,User 1 Logged-out
+59,2013-08-29 18:46:12,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+60,2013-08-29 18:46:33,127.0.0.1,1,auth,User 1 Logged-out
+61,2013-08-30 16:29:30,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+62,2013-08-30 16:50:47,127.0.0.1,1,auth,User 1 Logged-out
+63,2013-08-30 17:02:08,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+64,2013-08-30 17:02:40,127.0.0.1,1,auth,User 1 Logged-out
+65,2013-08-30 17:03:03,127.0.0.1,4,auth,Usuario 4 sesión iniciada
+66,2013-08-30 17:03:52,127.0.0.1,4,auth,User 4 Logged-out
+67,2013-08-30 17:04:19,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+68,2013-08-30 17:04:31,127.0.0.1,5,auth,User 5 Logged-out
+69,2013-08-30 17:07:55,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+70,2013-08-30 17:08:03,127.0.0.1,1,auth,User 1 Logged-out
 
 
 TABLE auth_cas
@@ -300,7 +312,7 @@ periodos.periodoid,periodos.descripcion,periodos.nivelid,periodos.cicloid,period
 6,2° Cuatrimestre 2010,1,1,10,2010,0,<NULL>,2,0,5,<NULL>,<NULL>,<NULL>,0,0,6014,<NULL>
 8,Exámenes Marzo 2010,1,<NULL>,0,0,0,<NULL>,0,0,0,<NULL>,<NULL>,<NULL>,0,0,6012,<NULL>
 9,Exámenes Agosto 2010,1,<NULL>,0,0,0,<NULL>,0,0,0,<NULL>,<NULL>,<NULL>,0,0,6013,<NULL>
-10,Exámenes Dic/2010,1,<NULL>,0,0,0,<NULL>,0,0,0,<NULL>,<NULL>,<NULL>,0,0,6014,<NULL>
+10,Exámenes Dic/2011,1,2,0,0,0,,0,0,0,,<NULL>,<NULL>,0,0,6014,<NULL>
 11,Examenes Marzo/2011,1,<NULL>,0,0,0,<NULL>,0,0,0,<NULL>,<NULL>,<NULL>,0,0,6015,<NULL>
 12,Examenes Agosto 2011,1,<NULL>,0,0,0,<NULL>,0,0,0,<NULL>,<NULL>,<NULL>,0,0,6016,<NULL>
 14,1º Cuatrimestre 2011,1,2,0,0,0,<NULL>,1,0,0,<NULL>,<NULL>,<NULL>,0,0,6016,<NULL>
@@ -319,29 +331,21 @@ periodos.periodoid,periodos.descripcion,periodos.nivelid,periodos.cicloid,period
 
 TABLE notas
 notas.notaid,notas.alumnoid,notas.materiaid,notas.periodoid,notas.calificacionid,notas.nota,notas.descripcion,notas.establecimiento,notas.observaciones,notas.fecha,notas.libro,notas.folio,notas.alta,notas.web,notas.turno
-1,<NULL>,8,<NULL>,5,2.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-2,<NULL>,9,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-3,<NULL>,4,<NULL>,5,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-4,<NULL>,5,<NULL>,5,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-5,<NULL>,6,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-6,<NULL>,7,<NULL>,5,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-7,<NULL>,1,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-8,<NULL>,2,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-9,<NULL>,3,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-10,<NULL>,45,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-11,<NULL>,23,<NULL>,5,10.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-12,<NULL>,22,<NULL>,5,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-13,<NULL>,21,<NULL>,5,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-14,<NULL>,20,<NULL>,5,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-15,<NULL>,16,<NULL>,5,3.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-16,<NULL>,17,<NULL>,5,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-17,<NULL>,18,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-18,<NULL>,19,<NULL>,5,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-19,<NULL>,34,<NULL>,5,5.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-20,<NULL>,35,<NULL>,5,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-21,<NULL>,31,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-22,<NULL>,32,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-23,<NULL>,33,<NULL>,5,3.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
+24,10,1,19,5,6.0,,istbp,,2011-12-21,,<NULL>,2013-08-30,False,Noche
+25,10,2,10,5,6.0,,istbp,,2011-12-19,,<NULL>,2013-08-30,False,Noche
+26,10,3,10,5,8.0,,istbp,,2011-12-16,,<NULL>,2013-08-30,False,Noche
+27,10,4,10,5,9.0,,istbp,,2011-12-23,,<NULL>,2013-08-30,False,Noche
+28,10,5,10,5,8.0,,istbp,,2011-12-19,,<NULL>,2013-08-30,False,Noche
+29,10,6,10,5,7.0,,istbp,,2011-12-22,,<NULL>,2013-08-30,False,Noche
+30,10,7,10,5,7.0,,istbp,,2011-12-21,,<NULL>,2013-08-30,False,Noche
+31,10,8,10,5,8.0,,istbp,,2011-12-20,,<NULL>,2013-08-30,False,Noche
+32,10,9,10,5,8.0,,istbp,,2011-12-27,,<NULL>,2013-08-30,False,Noche
+33,21,1,10,5,7.0,,istbp,,2011-12-21,,<NULL>,2013-08-30,False,Noche
+34,21,2,10,5,7.0,,istbp,,2011-12-20,,<NULL>,2013-08-30,False,Noche
+35,21,3,10,5,8.0,,istbp,,2011-12-23,,<NULL>,2013-08-30,False,Noche
+36,22,1,10,5,7.0,,istbp,,2011-12-21,,<NULL>,2013-08-30,False,Noche
+37,22,2,10,5,8.0,,,,2011-12-20,,<NULL>,2013-08-30,False,Noche
+38,22,3,10,5,9.0,,istbp,,2011-12-23,,<NULL>,2013-08-30,False,Noche
 
 
 TABLE titulos

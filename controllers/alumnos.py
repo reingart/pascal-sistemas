@@ -89,7 +89,8 @@ def horarios():
     return dict (horario=horario)
     
    
-        
+@auth.requires_login()
+@auth.requires_membership(role='alumnos')    
     
 def inasistencias():
     #buscar el alumno y compararlo con el logueado
@@ -108,25 +109,19 @@ def inasistencias():
     
     return dict (falta=falta)
     
+@auth.requires_login()
+@auth.requires_membership(role='alumnos')
+    
 def examenes():
-    # obtengo el parámetro pasado por variable en la url
-    alumnoid = request.vars['alumnoid']
-    # busco el alumno
-    alumno = db.alumnos[alumnoid]
-    # obtengo la carrera / plan de estudio
-    #carreraid = alumno.carreraid ...
-    
-    # busco las materias:
-    q = db.materias.materiaid>0  # HACER: filtrar por carrera/plan de estudio
-    orden = db.materias.materiaid    # HACER: mejorar el orden (por ej. curso)
-    materias = db(q).select(orderby=orden)
-    
-    # obtengo las notas
-    q = db.notas.alumnoid == db.alumnos.alumnoid
+ 
+    q = db.alumnos.user_id== auth.user_id
+    #guardo en la consulta el registro del alumno
+    q &= db.notas.alumnoid == db.alumnos.alumnoid
     q &= db.notas.materiaid == db.materias.materiaid
+    q &= db.materias.cursoid == db.cursos.cursoid
     q &= db.notas.calificacionid == 5  # filtrar solo finales
-    #q &= db.notas.periodoid == ...     # HACER: filtrar otros campos
-    notas = db(q).select(db.alumnos.nombre, db.materias.nombre, db.notas.nota, db.notas.alta)
+    q &= db.notas.periodoid == db.periodos.periodoid
+    notas = db(q).select(db.alumnos.nombre, db.materias.nombre, db.notas.nota, db.notas.fecha, db.periodos.descripcion, db.cursos.nombre)
     
     return dict (notas= notas)
     

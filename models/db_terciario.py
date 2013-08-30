@@ -266,7 +266,7 @@ db.define_table('notas',
     Field('folio', type='integer'),
     Field('alta', type='date', default=request.now),
     Field('web', type='boolean', default=False),
-    Field('turno', type='string', length=1),
+    Field('turno', type='string', length=10),
     format= "%(notaid)s [%(nota)s]",
     migrate=migrate)
 

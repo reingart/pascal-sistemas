@@ -1,8 +1,14 @@
 {{extend 'layout.html'}}
 <h2> <p align= 'right'> Año 2013  </h2>
 <h1> <center> Inscripción a Examenes Finales </center></h1>
-
+<table>
+<tr>
 {{for f in final:}}
 	
-	<input type="checkbox" name="MATERIAS">{{=f.materias.nombre}} <br>
+    <td><input type="checkbox" name="MATERIAS">{{=f.materias.nombre}} </td>
+    <td>{{=f.personal.nombre}}</td>
+    <td>{{=f.examenes.fecha}}</td>
+    <td>{{=f.examenes.hora}}</td>
+    </tr>
 {{pass}}
+</table>

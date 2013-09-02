@@ -4,7 +4,9 @@
 
 
 
-#@auth.requires_login()
+
+@auth.requires_login()
+@auth.requires_membership(role='alumnos')
 
 def index(): 
     "menu alumnos"
@@ -12,8 +14,9 @@ def index():
 
 @auth.requires_login()
 @auth.requires_membership(role='alumnos')
+
 def ficha():
-           
+    # muestra un perfil personalizado del alumno    
     # obtengo el registro del alumno ya registrado como usuario 
     
     q = db.alumnos.user_id== auth.user_id
@@ -34,7 +37,7 @@ def ingreso():
     form=SQLFORM(db.alumnos)
     #db.auth_membership.insert(auth_membership.user_id== db.auth_id, auth_membership.group_id== auth_group.id)
     if form.accepts(request.vars,session):
-        grupo_id = db(db.auth_group.name=='alumnos').first().id
+        grupo_id = db(db.auth_group.role=='alumnos').first().id
         db.auth_membership.insert(user_id=auth.user_id, group_id=grupo_id)
         #agrego al alumno y su id de registro en el grupo alumnos
         response.flash='Usted fue agregado como alumno...'
@@ -71,6 +74,7 @@ def busqueda():
     #response.view = "generic.html"  # HACER una vista de verdad
     return dict (form = form)
 
+
 def horarios():
     q= db.horarios.horaid==db.horas.horaid
     q &= db.horarios.comisionid== db.comisiones.comisionid
@@ -93,6 +97,7 @@ def horarios():
 @auth.requires_membership(role='alumnos')    
     
 def inasistencias():
+    #lista de inasistencias del alumno
     #buscar el alumno y compararlo con el logueado
     q = db.alumnos.user_id== auth.user_id
     #utilizamos los datos de faltas para filtrar las inasistencias del alumno
@@ -113,7 +118,7 @@ def inasistencias():
 @auth.requires_membership(role='alumnos')
     
 def examenes():
- 
+     #listado de examenes finales ya rendidos
     q = db.alumnos.user_id== auth.user_id
     #guardo en la consulta el registro del alumno
     q &= db.notas.alumnoid == db.alumnos.alumnoid
@@ -124,10 +129,12 @@ def examenes():
     notas = db(q).select(db.alumnos.nombre, db.materias.nombre, db.notas.nota, db.notas.fecha, db.periodos.descripcion, db.cursos.nombre)
     
     return dict (notas= notas)
-    
-def final():
-     
   
+@auth.requires_login()
+@auth.requires_membership(role='alumnos')
+  
+def final():
+    #formulario de inscrip a examenes finales 
     q = db.examenes.examenid>0
     q &= db.examenes.materiaid== db.materias.materiaid
     q &= db.examenes.personalid1== db.personal.personalid
@@ -136,22 +143,22 @@ def final():
     return dict (final= final) 
          
 ###################################################################################
-        
+  
+@auth.requires_login()
+@auth.requires_membership(role='alumnos')
+      
 def parciales():
-    # obtengo el parámetro pasado por variable en la url
-    alumnoid = request.vars['alumnoid']
-    # busco el alumno
-    alumno = db.alumnos[alumnoid]
-    # obtengo la carrera / plan de estudio
-    #carreraid = alumno.carreraid ...
+    #lista examenes cuatrimestrales ya rendidos
     
-    # obtengo las notas
-    q = db.notas.alumnoid == db.alumnos.alumnoid
+    q = db.alumnos.user_id== auth.user_id
+    #guardo en la consulta el registro del alumno
+    q &= db.notas.alumnoid == db.alumnos.alumnoid
     q &= db.notas.materiaid == db.materias.materiaid
+    q &= db.materias.cursoid == db.cursos.cursoid
     q &= db.notas.calificacionid == 3  # filtrar solo cuatrimestrales
     q &= db.notas.periodoid == db.periodos.periodoid     # HACER: filtrar otros campos
     notas = db(q).select(db.alumnos.nombre, db.materias.nombre, 
-    db.notas.nota, db.periodos.descripcion, db.notas.fecha)
+    db.notas.nota, db.periodos.descripcion, db.notas.fecha, db.cursos.nombre)
     
     return dict (notas= notas)
     

@@ -72,6 +72,7 @@
 'Controllers': 'Controladores',
 'controllers': 'controladores',
 'Copyright': 'Derechos de autor',
+'Correo inválido': 'Correo inválido',
 'create file with filename:': 'cree archivo con nombre:',
 'Create new application': 'Cree una nueva aplicación',
 'create new application:': 'nombre de la nueva aplicación:',

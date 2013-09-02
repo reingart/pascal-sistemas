@@ -43,16 +43,9 @@ response.menu = [
 
     ]],
     [T('Alumnos'), False, URL(request.application,'alumnos','index'), [
-        [T('Horario'), False, URL(request.application,'alumnos','horarios'), []],
-        [T('Parciales'), False, URL(request.application,'alumnos','index'),[
-            [T('Cuatrimentrales'), False, URL(request.application,'alumnos','parcial'),[]],
-            [T('Finales'), False, URL(request.application,'alumnos','examenes'),[]],
-            ]], 
-        [T('Inscripciones'), False, URL(request.application,'alumnos','index'),[
-            [T('En Curso'), False, URL(request.application,'alumnos','inscripciones'),[]],
-            [T('Finales'), False, URL(request.application,'alumnos','final'),[]],
-            ]],
-        [T('Inasistencias'), False, URL(request.application,'alumnos','inasistencias'),[]],
+        [T('Ingresar'), False, URL(request.application,'alumnos','index'), []],
+        [T('Registrarse'), False, URL(request.application,'alumnos','index'),[]], 
+        
     ]],
     [T('Graduados'), False, URL(request.application,'graduados','index'), []],
     [T('Extensión Terciaria'), False, URL(request.application,'extension','index'), [

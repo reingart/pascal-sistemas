@@ -1,5 +1,5 @@
 {{extend 'layout.html'}}
-<h1> PERFIL DEL ALUMNO</h1>
+<h1><font color="white"> PERFIL DEL ALUMNO </font></h1>
 {{=IMG(_src=URL(c='default',f='download',args=alumno.foto))}}<br>
 <h2> Nombre: {{=alumno.nombre}}</h2> 
 <h2> Localidad: {{=alumno.localidad}} </h2>
@@ -7,3 +7,7 @@
 <h2> Fecha de Nacimiento: {{=alumno.fechanacimiento}} </h2> 
 <h2> Email: {{=alumno.email1}}</h2> 
 <h2> Ingreso: {{=alumno.ingreso}} </h2>
+<br>
+<form>
+    <a href="index.html"><input type=button value="Volver" ></a>
+</form>

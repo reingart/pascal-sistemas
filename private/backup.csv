@@ -93,6 +93,25 @@ auth_event.id,auth_event.time_stamp,auth_event.client_ip,auth_event.user_id,auth
 68,2013-08-30 17:04:31,127.0.0.1,5,auth,User 5 Logged-out
 69,2013-08-30 17:07:55,127.0.0.1,1,auth,Usuario 1 sesión iniciada
 70,2013-08-30 17:08:03,127.0.0.1,1,auth,User 1 Logged-out
+71,2013-08-30 17:12:43,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+72,2013-08-30 17:12:51,127.0.0.1,1,auth,User 1 Logged-out
+73,2013-09-02 15:26:32,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+74,2013-09-02 15:29:23,127.0.0.1,1,auth,User 1 Logged-out
+75,2013-09-02 15:29:44,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+76,2013-09-02 15:30:00,127.0.0.1,5,auth,User 5 Logged-out
+77,2013-09-02 15:36:46,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+78,2013-09-02 15:44:58,127.0.0.1,1,auth,User 1 Logged-out
+79,2013-09-02 16:23:51,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+80,2013-09-02 16:32:23,127.0.0.1,1,auth,User 1 Logged-out
+81,2013-09-02 16:33:47,127.0.0.1,<NULL>,auth,Grupo 4 creado
+84,2013-09-02 16:42:11,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+85,2013-09-02 16:46:36,127.0.0.1,1,auth,User 1 Logged-out
+86,2013-09-02 16:47:55,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+87,2013-09-02 16:48:33,127.0.0.1,1,auth,User 1 Logged-out
+88,2013-09-02 16:56:59,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+89,2013-09-02 17:10:56,127.0.0.1,1,auth,User 1 Logged-out
+90,2013-09-02 17:11:26,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+91,2013-09-02 17:16:02,127.0.0.1,1,auth,User 1 Logged-out
 
 
 TABLE auth_cas
@@ -346,6 +365,20 @@ notas.notaid,notas.alumnoid,notas.materiaid,notas.periodoid,notas.calificacionid
 36,22,1,10,5,7.0,,istbp,,2011-12-21,,<NULL>,2013-08-30,False,Noche
 37,22,2,10,5,8.0,,,,2011-12-20,,<NULL>,2013-08-30,False,Noche
 38,22,3,10,5,9.0,,istbp,,2011-12-23,,<NULL>,2013-08-30,False,Noche
+39,21,4,10,5,8.0,,istbp,,2011-12-23,,<NULL>,2013-09-02,False,Noche
+40,22,4,10,5,8.0,,istbp,,2011-12-23,,<NULL>,2013-09-02,False,Noche
+41,10,31,26,3,9.0,,istbp,,2013-07-16,,<NULL>,2013-09-02,False,Noche
+42,10,32,26,3,7.0,,istbp,,2013-07-05,,<NULL>,2013-09-02,False,Noche
+43,10,33,26,3,9.0,,istbp,,2013-07-04,,<NULL>,2013-09-02,False,Noche
+44,10,34,26,3,9.0,,istbp,,2013-07-18,,<NULL>,2013-09-02,False,Noche
+45,10,35,26,3,9.0,,istbp,,2013-07-10,,<NULL>,2013-09-02,False,Noche
+46,10,45,26,3,8.0,,istbp,,2013-07-17,,<NULL>,2013-09-02,False,Noche
+47,21,31,26,3,8.0,,istbp,,2013-07-02,,<NULL>,2013-09-02,False,Noche
+48,21,32,26,3,9.0,,istbp,,2013-07-05,,<NULL>,2013-09-02,False,Noche
+49,21,33,26,3,9.0,,istbp,,2013-07-11,,<NULL>,2013-09-02,False,Noche
+50,22,45,26,3,9.0,,istbp,,2013-07-17,,<NULL>,2013-09-02,False,Noche
+51,22,35,26,3,9.0,,istbp,,2013-07-10,,<NULL>,2013-09-02,False,Noche
+52,22,34,26,3,8.0,,istbp,,2013-07-11,,<NULL>,2013-09-02,False,Noche
 
 
 TABLE titulos
@@ -498,6 +531,20 @@ inscripcionescomision.inscripcionid,inscripcionescomision.alumnoid,inscripciones
 2,22,30,2013-03-11,<NULL>,R
 3,22,25,2013-08-28,<NULL>,R
 4,21,26,2013-08-28,<NULL>,R
+5,10,25,2013-03-11,<NULL>,R
+6,10,26,2013-03-11,<NULL>,R
+7,10,27,2013-03-11,<NULL>,R
+8,10,28,2013-03-11,<NULL>,R
+9,10,29,2013-03-11,<NULL>,R
+10,22,26,2013-03-11,<NULL>,R
+11,22,27,2013-03-11,<NULL>,R
+12,22,28,2013-03-11,<NULL>,R
+13,22,29,2013-03-11,<NULL>,R
+14,21,25,2013-03-11,<NULL>,R
+15,21,27,2013-03-11,<NULL>,R
+16,21,28,2013-03-11,<NULL>,R
+17,21,29,2013-03-11,<NULL>,R
+18,21,30,2013-03-11,<NULL>,R
 
 
 TABLE inscripcionesdivision

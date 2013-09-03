@@ -145,7 +145,7 @@ def ficha():
     
     
     
-def ingreso():
+def altas():
     db.personal.user_id.default= auth.user_id
     subtitulo= T ('Complete el formulario por favor...')
     form=SQLFORM(db.personal)

@@ -181,6 +181,7 @@
 'Installed applications': 'Aplicaciones instaladas',
 'Institucional': 'Institucional',
 'Instrumentación': 'Instrumentación',
+'Insufficient privileges': 'Insufficient privileges',
 'internal error': 'error interno',
 'Internal State': 'Estado Interno',
 'Invalid action': 'Acción inválida',

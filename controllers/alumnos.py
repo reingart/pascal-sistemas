@@ -15,14 +15,14 @@ def index():
 def ficha():
            
     # obtengo el registro del alumno ya registrado como usuario 
-  
+    
     q = db.alumnos.user_id== auth.user_id
- 
-    alumno= db(q).select(db.alumnos.nombre, db.alumnos.sexo, 
-                         db.alumnos.foto, db.alumnos.email1,
-                         db.alumnos.localidad)
+    
+    fila = db(q).select( db.alumnos.nombre, db.alumnos.fechanacimiento, db.alumnos.estadocivil,
+                         db.alumnos.foto, db.alumnos.email1, db.alumnos.ingreso,
+                         db.alumnos.localidad).first()
                          
-    return dict (alumno=alumno, q=q)
+    return dict (alumno=fila)
     
 #@auth.requires_login()
 
@@ -34,12 +34,14 @@ def ingreso():
     form=SQLFORM(db.alumnos)
     #db.auth_membership.insert(auth_membership.user_id== db.auth_id, auth_membership.group_id== auth_group.id)
     if form.accepts(request.vars,session):
-        db.auth_membership.insert( auth_membership.user_id== auth.user_id, auth_membership.group_id== 'alumnos')
+        grupo_id = db(db.auth_group.name=='alumnos').first().id
+        db.auth_membership.insert(user_id=auth.user_id, group_id=grupo_id)
+        #agrego al alumno y su id de registro en el grupo alumnos
         response.flash='Usted fue agregado como alumno...'
     elif form.errors: 
-        response.flash='Hay errores en el formulario!'
+        response.flash='Hay errores en el formulario'
     else:
-        response.flash='Por favor, complete el formulario!'
+        response.flash='Por favor, complete el formulario'
         
     return dict (form=form, sub=subtitulo)
     
@@ -77,29 +79,31 @@ def horarios():
     q &= db.comisiones.divisionid== db.divisiones.divisionid
     filas= db(q).select(db.horas.hora, db.personal.nombre, db.materias.nombre, db.divisiones.divisionid, db.horarios.dia)
     
+    
     horario = {'lunes':{},'martes':{},'miercoles':{},'jueves':{},'viernes':{}}
     # horario es una estructura cuya clave es el dia y el valor es otro diccionario....
     #  {'lunes': {1: fila} ... }
     for fila in filas:
         horario[fila.horarios.dia].setdefault(fila.horas.hora, {})[fila.divisiones.divisionid]= fila
-
-    filas = db(db.horas.id>0).select()
-    horas=dict ([(hora.hora, hora) for hora in filas]) 
         
-    return dict (horario=horario, horas=horas)
+    return dict (horario=horario)
     
    
         
     
 def inasistencias():
-    alumno= db.alumnos.user_id== auth.user_id
-    q= db.faltas.faltaid== db.faltas.faltaid
-    q &= db.comisiones.materiaid== db.materias.materiaid
-    q &= db.comisiones.personalid== db.personal.personalid
+    #buscar el alumno y compararlo con el logueado
+    q = db.alumnos.user_id== auth.user_id
+    #utilizamos los datos de faltas para filtrar las inasistencias del alumno
     q &= db.faltas.alumnoid== db.alumnos.alumnoid
+    #de inscrip_comision buscamos la materia = al alumno
+    q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
+    q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
+    q &= db.faltas.comisionid== db.comisiones.comisionid
+    q &= db.comisiones.personalid== db.personal.personalid
     q &= db.faltas.inasistenciaid== db.inasistencias.inasistenciaid
     
-    falta= db(q).select(db.alumnos.nombre, db.materias.nombre, db.faltas.cantidad, db.inasistencias.descripcion, db.faltas.fecha)
+    falta= db(q).select(db.alumnos.nombre, db.comisiones.nombre, db.faltas.cantidad, db.inasistencias.descripcion, db.faltas.fecha)
    
     
     return dict (falta=falta)
@@ -127,18 +131,14 @@ def examenes():
     return dict (notas= notas)
     
 def final():
-     # a = db().select(db.examenes.ALL)#lista todos
-   q= db.examenes.examenid>0
-   q &= db.examenes.materiaid== db.materias.materiaid
-   q &= db.examenes.personalid1== db.personal.personalid
-    
-
-    
-   final= db(q).select(db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)
+     
   
-   return dict (final=final) 
+    q = db.examenes.examenid>0
+    q &= db.examenes.materiaid== db.materias.materiaid
+    q &= db.examenes.personalid1== db.personal.personalid
+    final= db(q).select(db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)
   
-            
+    return dict (final= final) 
          
 ###################################################################################
         

@@ -13,20 +13,34 @@
     <tr style="border: 1px solid white"> 
         
         
+        <td style="border: 1px solid white"> HORAS </td>
         <td style="border: 1px solid white"> LUNES </td>
         <td style="border: 1px solid white"> MARTES </td>
         <td style="border: 1px solid white"> MIERCOLES </td>
         <td style="border: 1px solid white"> JUEVES </td>
         <td style="border: 1px solid white"> VIERNES </td>
     </tr>
+    
   
     {{for hora in ['1','2','3','4']:}}
-    	
-    	
-    	<tr style="border: 1px solid white"> 
+         
+         
+         <td style="border: 1px solid white"> 
+              
+             {{=horas[hora].desde}}
+             
+             hasta
+             <br>
+             {{=horas[hora].hasta}}
+             hs.
             
-    	{{for dia in ['lunes','martes','miercoles','jueves','viernes']:}}
+              
+                 </td>
+        
+  
+        {{for dia in ['lunes','martes','miercoles','jueves','viernes']:}}
           
+         
     		<td style="border: 1px solid white"> 
                 
 			{{f=horario.get(dia, {}).get(hora, None).get(divisionid)}}
@@ -39,8 +53,9 @@
         	{{pass}}
             </td>
     	{{pass}}
-    </tr>
-    {{pass}}
+ 	</tr>
+   {{pass}}
+    
     <br>
     <br>
     </TABLE>

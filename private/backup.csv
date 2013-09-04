@@ -72,6 +72,46 @@ auth_event.id,auth_event.time_stamp,auth_event.client_ip,auth_event.user_id,auth
 47,2013-08-27 16:41:22,127.0.0.1,1,auth,User 1 Logged-out
 48,2013-08-27 17:00:53,127.0.0.1,4,auth,Usuario 4 sesión iniciada
 49,2013-08-27 17:01:10,127.0.0.1,4,auth,User 4 Logged-out
+50,2013-08-28 17:28:34,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+51,2013-08-28 17:50:25,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+52,2013-08-28 18:44:53,127.0.0.1,5,auth,User 5 Logged-out
+53,2013-08-28 18:45:39,127.0.0.1,4,auth,Usuario 4 sesión iniciada
+54,2013-08-28 18:46:59,127.0.0.1,4,auth,User 4 Logged-out
+55,2013-08-28 18:56:31,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+56,2013-08-28 19:23:29,127.0.0.1,5,auth,User 5 Logged-out
+57,2013-08-28 19:24:43,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+58,2013-08-28 19:30:37,127.0.0.1,1,auth,User 1 Logged-out
+59,2013-08-29 18:46:12,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+60,2013-08-29 18:46:33,127.0.0.1,1,auth,User 1 Logged-out
+61,2013-08-30 16:29:30,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+62,2013-08-30 16:50:47,127.0.0.1,1,auth,User 1 Logged-out
+63,2013-08-30 17:02:08,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+64,2013-08-30 17:02:40,127.0.0.1,1,auth,User 1 Logged-out
+65,2013-08-30 17:03:03,127.0.0.1,4,auth,Usuario 4 sesión iniciada
+66,2013-08-30 17:03:52,127.0.0.1,4,auth,User 4 Logged-out
+67,2013-08-30 17:04:19,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+68,2013-08-30 17:04:31,127.0.0.1,5,auth,User 5 Logged-out
+69,2013-08-30 17:07:55,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+70,2013-08-30 17:08:03,127.0.0.1,1,auth,User 1 Logged-out
+71,2013-08-30 17:12:43,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+72,2013-08-30 17:12:51,127.0.0.1,1,auth,User 1 Logged-out
+73,2013-09-02 15:26:32,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+74,2013-09-02 15:29:23,127.0.0.1,1,auth,User 1 Logged-out
+75,2013-09-02 15:29:44,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+76,2013-09-02 15:30:00,127.0.0.1,5,auth,User 5 Logged-out
+77,2013-09-02 15:36:46,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+78,2013-09-02 15:44:58,127.0.0.1,1,auth,User 1 Logged-out
+79,2013-09-02 16:23:51,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+80,2013-09-02 16:32:23,127.0.0.1,1,auth,User 1 Logged-out
+81,2013-09-02 16:33:47,127.0.0.1,<NULL>,auth,Grupo 4 creado
+84,2013-09-02 16:42:11,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+85,2013-09-02 16:46:36,127.0.0.1,1,auth,User 1 Logged-out
+86,2013-09-02 16:47:55,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+87,2013-09-02 16:48:33,127.0.0.1,1,auth,User 1 Logged-out
+88,2013-09-02 16:56:59,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+89,2013-09-02 17:10:56,127.0.0.1,1,auth,User 1 Logged-out
+90,2013-09-02 17:11:26,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+91,2013-09-02 17:16:02,127.0.0.1,1,auth,User 1 Logged-out
 
 
 TABLE auth_cas
@@ -79,25 +119,9 @@ TABLE auth_cas
 
 TABLE alumnos
 alumnos.alumnoid,alumnos.nombre,alumnos.dni,alumnos.sexo,alumnos.fechanacimiento,alumnos.lugarnacimiento,alumnos.estadocivil,alumnos.nacionalidad,alumnos.direccion,alumnos.localidad,alumnos.cp,alumnos.telefono,alumnos.email1,alumnos.email2,alumnos.ingreso,alumnos.egreso,alumnos.foto,alumnos.user_id
-1,armando paredes,123144,M,1989-02-13,almagro,soltero,argentino,corrientes 345,almagro,234,<NULL>,<NULL>,<NULL>,2011-03-30,<NULL>,<NULL>,<NULL>
-2,leonor taboada,123144,F,1990-06-03,pontevedra,soltera,argentina,nose 234,pontevedra,3456,<NULL>,<NULL>,<NULL>,2011-04-10,<NULL>,<NULL>,<NULL>
-3,camila aguirre,12314,F,1992-09-23,laferrere,casada,argentina,flores 345,laferrere,3456,<NULL>,<NULL>,<NULL>,2011-04-15,<NULL>,<NULL>,<NULL>
-4,roberto ocampo,45666,M,1991-01-12,gonzalez catan,soltero,franco argentino,suipacha 345,gonzalez catan,4356,<NULL>,<NULL>,<NULL>,2013-03-30,<NULL>,<NULL>,<NULL>
-5,lorenzino herrera,232532,M,1986-05-12,san justo,casado,argentino,arieta 341,san justo,2341,<NULL>,<NULL>,<NULL>,2010-03-15,<NULL>,<NULL>,<NULL>
-6,cacho buenavida,213425,M,1983-09-29,cañuelas,divorciado,argentino,campos 234,cañuelas,9273,<NULL>,<NULL>,<NULL>,2012-04-20,<NULL>,<NULL>,<NULL>
-7,maria britos,897263,F,1990-04-10,gonzalez catan,soltera,argentina,tranway 213,gonzalez catan,1759,<NULL>,<NULL>,<NULL>,2013-03-18,<NULL>,<NULL>,<NULL>
-8,marcos pan y agua,82364,M,1989-02-16,laferrere,soltero,argentino,luro 345,laferrere,8932,<NULL>,<NULL>,<NULL>,2011-04-30,<NULL>,<NULL>,<NULL>
-9,melina bravo,782634,F,1991-12-27,gonzalez catan,soltera,argentina,larre 341,gonzalez catan,1759,<NULL>,<NULL>,<NULL>,2012-03-18,<NULL>,<NULL>,<NULL>
-10,lucas,34456756,m,1992-09-23,gonzalez catan,soltero,argentino,bordoy 1123,gonzalez catan,1759,5678-9876,luka.jesu12@gmail.com,luks_chizzo@hotmail.com,2011-03-14,<NULL>,alumnos.foto.90039a4598bcd7e8.313030323937335f.jpg,1
-13,ivana santillo,2345672,f,1992-08-03,gonzalez catan,soltera,argentina,tranway 456,gonzalez catan,1759,456723,ivana_santillo@gmail.com,,2011-04-27,<NULL>,,<NULL>
-15,hector calvo,3423123,m,1975-08-13,pontevedra,casado,argentino,barrientos 234,gonzalez catan,1759,235267,hector.calvo@gmail.com,,2011-03-07,<NULL>,,<NULL>
-16,ezequiel villalba,785334,m,1992-08-18,casanova,soltero,argentino,marconi 3456,casanova,1767,9865123,eze_villalba@gmail.com,,2011-03-07,<NULL>,,<NULL>
-17,elias sosa,2345672,m,1991-10-11,laferrere,soltero,argentino,luro 123,laferrere,1745,112355423,elias_sosa@gmail.com,,2010-03-08,<NULL>,,<NULL>
-18,nahuel cosentino,3456712,m,1991-07-08,gonzalez catan,soltero,argentino,arrecifes 563,gonzalez catan,1759,2134125,nahuel_cosentino@gmail.com,,2010-04-05,<NULL>,,<NULL>
-19,matias portales,2342565,m,1991-05-05,gonzalez catan,soltero,argentino,larre 543,gonzalez catan,1759,4567232,matias_portales@gmail.com,,2010-04-12,<NULL>,,<NULL>
-20,mauro schiavone,3265246,m,1991-08-16,gonzalez catan,soltero,argentino,simon perez,gonzalez catan,1759,456723,mauro_schiavone@gmail.com,,2010-04-12,<NULL>,,<NULL>
-21,sofia ramirez,4534523,f,1991-12-20,gonzalez catan,soltera,argentina,dragones 3456,gonzalez catan,1759,4567345,sofia-ramirez91@hotmail.es,,2011-03-14,<NULL>,,4
-22,yanina alarcon,6753246,f,1985-10-16,gonzalez catan,casada,argentina,achupalla 2345,gonzalez catan,1759,456723,yani.alarcon@yahoo.com,,2011-03-14,<NULL>,,5
+10,Lucas Gonzalez,34456756,m,1992-09-23,gonzalez catan,soltero,argentino,bordoy 1123,gonzalez catan,1759,5678-9876,luka.jesu12@gmail.com,luks_chizzo@hotmail.com,2011-03-14,<NULL>,alumnos.foto.90039a4598bcd7e8.313030323937335f.jpg,1
+21,Sofia Ramirez,4534523,f,1991-12-20,gonzalez catan,soltera,argentina,dragones 3456,gonzalez catan,1759,4567345,sofia-ramirez91@hotmail.es,,2011-03-14,<NULL>,,4
+22,Yanina Alarcon,6753246,f,1985-10-16,gonzalez catan,casada,argentina,achupalla 2345,gonzalez catan,1759,456723,yani.alarcon@yahoo.com,,2011-03-14,<NULL>,,5
 
 
 TABLE cursos
@@ -285,10 +309,10 @@ correlativas.correlativaid,correlativas.materiaid1,correlativas.materiaid2,corre
 
 TABLE horas
 horas.horaid,horas.hora,horas.desde,horas.hasta,horas.nivelid
-1,1,18,19,1
-2,2,19,20:10,1
-3,3,20:20,21,1
-4,4,21,22:30,1
+1,1,18:00,19:00,1
+2,2,19:00,20:00,1
+3,3,20:15,21:15,1
+4,4,21:15,22:15,1
 
 
 TABLE inasistencias
@@ -307,7 +331,7 @@ periodos.periodoid,periodos.descripcion,periodos.nivelid,periodos.cicloid,period
 6,2° Cuatrimestre 2010,1,1,10,2010,0,<NULL>,2,0,5,<NULL>,<NULL>,<NULL>,0,0,6014,<NULL>
 8,Exámenes Marzo 2010,1,<NULL>,0,0,0,<NULL>,0,0,0,<NULL>,<NULL>,<NULL>,0,0,6012,<NULL>
 9,Exámenes Agosto 2010,1,<NULL>,0,0,0,<NULL>,0,0,0,<NULL>,<NULL>,<NULL>,0,0,6013,<NULL>
-10,Exámenes Dic/2010,1,<NULL>,0,0,0,<NULL>,0,0,0,<NULL>,<NULL>,<NULL>,0,0,6014,<NULL>
+10,Exámenes Dic/2011,1,2,0,0,0,,0,0,0,,<NULL>,<NULL>,0,0,6014,<NULL>
 11,Examenes Marzo/2011,1,<NULL>,0,0,0,<NULL>,0,0,0,<NULL>,<NULL>,<NULL>,0,0,6015,<NULL>
 12,Examenes Agosto 2011,1,<NULL>,0,0,0,<NULL>,0,0,0,<NULL>,<NULL>,<NULL>,0,0,6016,<NULL>
 14,1º Cuatrimestre 2011,1,2,0,0,0,<NULL>,1,0,0,<NULL>,<NULL>,<NULL>,0,0,6016,<NULL>
@@ -326,57 +350,35 @@ periodos.periodoid,periodos.descripcion,periodos.nivelid,periodos.cicloid,period
 
 TABLE notas
 notas.notaid,notas.alumnoid,notas.materiaid,notas.periodoid,notas.calificacionid,notas.nota,notas.descripcion,notas.establecimiento,notas.observaciones,notas.fecha,notas.libro,notas.folio,notas.alta,notas.web,notas.turno
-1,<NULL>,8,<NULL>,5,2.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-2,<NULL>,9,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-3,<NULL>,4,<NULL>,5,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-4,<NULL>,5,<NULL>,5,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-5,<NULL>,6,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-6,<NULL>,7,<NULL>,5,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-7,<NULL>,1,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-8,<NULL>,2,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-9,<NULL>,3,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-10,<NULL>,45,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-11,<NULL>,23,<NULL>,5,10.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-12,<NULL>,22,<NULL>,5,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-13,<NULL>,21,<NULL>,5,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-14,<NULL>,20,<NULL>,5,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-15,<NULL>,16,<NULL>,5,3.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-16,<NULL>,17,<NULL>,5,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-17,<NULL>,18,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-18,<NULL>,19,<NULL>,5,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-19,<NULL>,34,<NULL>,5,5.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-20,<NULL>,35,<NULL>,5,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-21,<NULL>,31,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-22,<NULL>,32,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-23,<NULL>,33,<NULL>,5,3.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-24,1,8,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-25,1,9,<NULL>,5,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-26,1,4,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-27,1,5,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-28,1,6,<NULL>,5,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-29,1,7,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-30,1,1,<NULL>,5,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-31,1,2,<NULL>,5,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-32,1,3,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-33,1,45,<NULL>,5,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-34,1,23,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-35,1,22,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-36,1,21,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-37,1,20,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-38,1,16,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-39,1,17,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-40,1,18,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-41,1,19,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-42,1,34,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-43,1,35,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-44,1,31,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-45,1,32,<NULL>,5,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-46,1,33,<NULL>,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-06-12,False,<NULL>
-47,1,1,20,3,8.0,examen final cuatrimestre,istbp,,2012-06-20,,<NULL>,2013-07-17,False,N
-48,1,6,20,3,6.0,,istbp,,2012-06-12,,<NULL>,2013-07-17,False,N
-49,2,8,20,3,5.0,,istbp,,2012-07-02,,<NULL>,2013-07-17,False,
-50,7,19,20,3,8.0,,istbp,,2012-07-19,,<NULL>,2013-07-17,False,
-51,7,7,18,5,8.0,examen final ,istbp,,2012-12-17,,<NULL>,2013-07-17,False,
+24,10,1,19,5,6.0,,istbp,,2011-12-21,,<NULL>,2013-08-30,False,Noche
+25,10,2,10,5,6.0,,istbp,,2011-12-19,,<NULL>,2013-08-30,False,Noche
+26,10,3,10,5,8.0,,istbp,,2011-12-16,,<NULL>,2013-08-30,False,Noche
+27,10,4,10,5,9.0,,istbp,,2011-12-23,,<NULL>,2013-08-30,False,Noche
+28,10,5,10,5,8.0,,istbp,,2011-12-19,,<NULL>,2013-08-30,False,Noche
+29,10,6,10,5,7.0,,istbp,,2011-12-22,,<NULL>,2013-08-30,False,Noche
+30,10,7,10,5,7.0,,istbp,,2011-12-21,,<NULL>,2013-08-30,False,Noche
+31,10,8,10,5,8.0,,istbp,,2011-12-20,,<NULL>,2013-08-30,False,Noche
+32,10,9,10,5,8.0,,istbp,,2011-12-27,,<NULL>,2013-08-30,False,Noche
+33,21,1,10,5,7.0,,istbp,,2011-12-21,,<NULL>,2013-08-30,False,Noche
+34,21,2,10,5,7.0,,istbp,,2011-12-20,,<NULL>,2013-08-30,False,Noche
+35,21,3,10,5,8.0,,istbp,,2011-12-23,,<NULL>,2013-08-30,False,Noche
+36,22,1,10,5,7.0,,istbp,,2011-12-21,,<NULL>,2013-08-30,False,Noche
+37,22,2,10,5,8.0,,,,2011-12-20,,<NULL>,2013-08-30,False,Noche
+38,22,3,10,5,9.0,,istbp,,2011-12-23,,<NULL>,2013-08-30,False,Noche
+39,21,4,10,5,8.0,,istbp,,2011-12-23,,<NULL>,2013-09-02,False,Noche
+40,22,4,10,5,8.0,,istbp,,2011-12-23,,<NULL>,2013-09-02,False,Noche
+41,10,31,26,3,9.0,,istbp,,2013-07-16,,<NULL>,2013-09-02,False,Noche
+42,10,32,26,3,7.0,,istbp,,2013-07-05,,<NULL>,2013-09-02,False,Noche
+43,10,33,26,3,9.0,,istbp,,2013-07-04,,<NULL>,2013-09-02,False,Noche
+44,10,34,26,3,9.0,,istbp,,2013-07-18,,<NULL>,2013-09-02,False,Noche
+45,10,35,26,3,9.0,,istbp,,2013-07-10,,<NULL>,2013-09-02,False,Noche
+46,10,45,26,3,8.0,,istbp,,2013-07-17,,<NULL>,2013-09-02,False,Noche
+47,21,31,26,3,8.0,,istbp,,2013-07-02,,<NULL>,2013-09-02,False,Noche
+48,21,32,26,3,9.0,,istbp,,2013-07-05,,<NULL>,2013-09-02,False,Noche
+49,21,33,26,3,9.0,,istbp,,2013-07-11,,<NULL>,2013-09-02,False,Noche
+50,22,45,26,3,9.0,,istbp,,2013-07-17,,<NULL>,2013-09-02,False,Noche
+51,22,35,26,3,9.0,,istbp,,2013-07-10,,<NULL>,2013-09-02,False,Noche
+52,22,34,26,3,8.0,,istbp,,2013-07-11,,<NULL>,2013-09-02,False,Noche
 
 
 TABLE titulos
@@ -478,9 +480,6 @@ profesores.profesorid,profesores.personalid,profesores.comisionid,profesores.car
 
 
 TABLE sanciones
-sanciones.sancionid,sanciones.alumnoid,sanciones.fecha,sanciones.cantidad,sanciones.tipo,sanciones.detalle,sanciones.parte
-1,5,2012-05-12,2.0,<NULL>,faltas,2
-2,2,2012-04-12,1.0,<NULL>,faltas,1
 
 
 TABLE situaciones
@@ -496,6 +495,7 @@ faltas.faltaid,faltas.alumnoid,faltas.comisionid,faltas.inasistenciaid,faltas.fe
 1,22,25,7,2013-08-27,1.0,True,Falta medica
 2,10,26,6,2013-08-23,1.0,False,tarde
 3,22,27,7,2013-08-15,1.0,False,
+6,10,30,7,2013-08-28,1.0,False,
 
 
 TABLE examenes
@@ -529,17 +529,25 @@ TABLE inscripcionescomision
 inscripcionescomision.inscripcionid,inscripcionescomision.alumnoid,inscripcionescomision.comisionid,inscripcionescomision.alta,inscripcionescomision.baja,inscripcionescomision.condicion
 1,10,30,2013-03-11,<NULL>,R
 2,22,30,2013-03-11,<NULL>,R
+3,22,25,2013-08-28,<NULL>,R
+4,21,26,2013-08-28,<NULL>,R
+5,10,25,2013-03-11,<NULL>,R
+6,10,26,2013-03-11,<NULL>,R
+7,10,27,2013-03-11,<NULL>,R
+8,10,28,2013-03-11,<NULL>,R
+9,10,29,2013-03-11,<NULL>,R
+10,22,26,2013-03-11,<NULL>,R
+11,22,27,2013-03-11,<NULL>,R
+12,22,28,2013-03-11,<NULL>,R
+13,22,29,2013-03-11,<NULL>,R
+14,21,25,2013-03-11,<NULL>,R
+15,21,27,2013-03-11,<NULL>,R
+16,21,28,2013-03-11,<NULL>,R
+17,21,29,2013-03-11,<NULL>,R
+18,21,30,2013-03-11,<NULL>,R
 
 
 TABLE inscripcionesdivision
-inscripcionesdivision.inscripcionid,inscripcionesdivision.alumnoid,inscripcionesdivision.divisionid,inscripcionesdivision.alta,inscripcionesdivision.baja,inscripcionesdivision.condicion
-1,1,1,2011-03-12,<NULL>,R
-2,2,2,2011-04-12,<NULL>,R
-3,3,3,2011-05-30,<NULL>,R
-4,4,1,2011-03-18,<NULL>,R
-5,5,1,2011-03-20,<NULL>,R
-6,6,2,2011-03-10,<NULL>,R
-7,7,3,2012-03-18,<NULL>,R
 
 
 TABLE inscripcionesexamen

@@ -226,3 +226,6 @@
 [2013-09-04 18:50:39] EDIT practica/controllers/docentes.py: -4
 [2013-09-04 18:47:11] EDIT prueba/controllers/alumnos.py: -2
 [2013-09-04 18:47:22] EDIT prueba/controllers/alumnos.py: -1
+[2013-09-04 18:52:58] EDIT practica/views/docentes/alumnoXcomision.html: -1
+[2013-09-04 18:53:14] EDIT practica/views/docentes/alumnoXcomision.html: -1
+[2013-09-04 19:05:11] EDIT practica/controllers/docentes.py: 0

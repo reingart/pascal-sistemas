@@ -90,9 +90,10 @@ def alumnoXcomision():
     else:
         # sino, busco todos los docentes
         q=db.alumnos.alumnoid>0
-        alumnos=db(q).select(orderby=db.alumnos.nombre)
 
-    return{'alumnos':alumnos}
+    alumnos=db(q).select(orderby=db.alumnos.nombre)
+
+    return {'alumnos':alumnos}
     
 
  

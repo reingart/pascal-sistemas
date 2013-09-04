@@ -13,6 +13,7 @@
      <TD style="border: 1px solid white"> <B>Descripcion</B></TD>
     <TD style="border: 1px solid white"> <B>Fecha</B> </TD> 
     </TR>
+     
      {{ f=falta}}
         
         {{for falta in f:}}
@@ -25,6 +26,7 @@
         	</TD>
             <TD style="border: 1px solid white">
              {{ =falta.faltas.cantidad}}
+            
              </TD>
         	<TD style="border: 1px solid white"> 
         	 {{ =falta.inasistencias.descripcion}}
@@ -34,8 +36,9 @@
              </TD>
         {{pass}}
     		 </TR>
-    </TABLE>
     
+    </TABLE>
+ 
     <br>
 <form>
     <a href="index.html"><input type=button value="Volver" ></a>

@@ -11,6 +11,8 @@
             <TD style="border: 1px solid white"> <center>MATERIA</center> </TD>
             <TD style="border: 1px solid white"> NOTA </TD>
             <TD style="border: 1px solid white"> FECHA </TD>
+            <TD style="border: 1px solid white"> PERIODO </TD>
+            <TD style="border: 1px solid white"> CURSO </TD>
         </TR>
         {{ n=notas}}
         
@@ -26,8 +28,18 @@
              {{ =nota.notas.nota}}
              </TD>
              <TD style="border: 1px solid white">
-             {{ =nota.notas.alta}}
+             {{ =nota.notas.fecha}}
+             </TD>
+             <TD style="border: 1px solid white">
+             {{ =nota.periodos.descripcion}}
+             </TD>
+             <TD style="border: 1px solid white">
+             {{ =nota.cursos.nombre}}
         {{pass}}
         	 </TD>
     		 </TR>
     </TABLE>
+    <br>
+    <form>
+    <a href="index.html"><input type=button value="Volver" ></a>
+</form>

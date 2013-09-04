@@ -22,31 +22,48 @@ response.menu = [
         [T('Palabras del Director'), False, URL(request.application,'info','director'), []],
     ]],
     [T('Carreras'), False, URL(request.application,'carreras','index'), [
-        [T('Analista de Sistemas'), False, URL(request.application,'carreras','sistemas'), [       
-            [T('Tecnicatura en redes informaticas'), False, URL(request.application,'carreras','redes'), []],
-]],
+        [T('Analista de Sistemas'), False, URL(request.application,'carreras','sistemas'), []],
+        [T('Recursos Humanos'), False, URL(request.application,'carreras','rrhh'), []],
         [T('Salud'), False, URL(request.application,'carreras','salud'), [
-            [T('Enfermería'), False, URL(request.application,'carreras','salud_enfermeria'), []],
-            [T('Auxiliar en enfermeria'), False, URL(request.application,'carreras','salud_auxenfermeria'), []],
-            [T('Instrumentación'), False, URL(request.application,'carreras','salud_instrumentacion'), []],
-            [T('Análisis Clínicos'), False, URL(request.application,'carreras','salud_laboratorio'), []],
-            [T('Radiología'), False, URL(request.application,'carreras','salud_radiologia'), []],
-            [T('Cardiología'), False, URL(request.application, 'carreras','salud_cardiologia'),[]],
+            [T('Enfermería'), False, URL(request.application,'carreras','salud/enfermeria'), []],
+            [T('Instrumentación'), False, URL(request.application,'carreras','salud/instrumentacion'),  []],
+            [T('Análisis Clínicos'), False, URL(request.application,'carreras','salud/laboratorio'), []],
+            [T('Radiología'), False, URL(request.application,'carreras','salud/radiologia'), []],
         ]],
-        
     ]],
     [T('Docentes'), False, URL(request.application,'docentes','index'), [ 
+       [T('Asistencias'), False, URL(request.application,'docentes','asistencias'), []],
+       [T('Horarios'), False, URL(request.application,'docentes','horarios'), []],
        [T('Finales'), False, URL(request.application,'docentes','finales'), []],
        [T('Parciales'), False, URL(request.application,'docentes','parciales'), []],
        [T('Apuntes'), False, URL(request.application,'docentes','apuntes'), []],
-       [T('Recursos'), False, URL(request.application,'docentes','recursos'), []],
-
     ]],
     [T('Alumnos'), False, URL(request.application,'alumnos','index'), [
-        [T('Ingresar'), False, URL(request.application,'alumnos','index'), []],
-        [T('Registrarse'), False, URL(request.application,'alumnos','index'),[]], 
-        
+        [T('Horario'), False, URL(request.application,'alumnos','horarios'), []],
+        [T('Parciales'), False, URL(request.application,'alumnos','index'),[
+            [T('Cuatrimentrales'), False, URL(request.application,'alumnos','parcial'),[]],
+            [T('Finales'), False, URL(request.application,'alumnos','examenes'),[]],
+            ]], 
+        [T('Inscripciones'), False, URL(request.application,'alumnos','index'),[
+            [T('En Curso'), False, URL(request.application,'alumnos','inscripciones'),[]],
+            [T('Finales'), False, URL(request.application,'alumnos','final'),[]],
+            ]],
+        [T('Inasistencias'), False, URL(request.application,'alumnos','inasistencias'),[]],
+        [T('Material de estudio'), False, URL(request.application,'alumnos','archivos'),[]],
     ]],
+
+
+
+    [T('Tramites'), False, URL(request.application,'tramites','index'), [
+        [T('Iniciar'), False, URL(request.application,'tramites','iniciar'), []],
+        [T('Consultar'), False, URL(request.application,'tramites','consultar'),[]],
+        [T('Actualizar'), False, URL(request.application,'tramites','actualizar'),[]],
+    ]],   
+         
+    
+
+
+
     [T('Graduados'), False, URL(request.application,'graduados','index'), []],
     [T('Extensión Terciaria'), False, URL(request.application,'extension','index'), [
         [T('FLISOL 2010'), False, URL("flisol2010",'default','index'), []],
@@ -56,3 +73,4 @@ response.menu = [
     ]
 
 response.menu_flisol = [T('FLISOL 2010'), False, URL("flisol2010",'default','index'), []]
+

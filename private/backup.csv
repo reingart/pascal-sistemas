@@ -3,6 +3,14 @@ auth_user.id,auth_user.first_name,auth_user.last_name,auth_user.email,auth_user.
 1,lucas,gonzalez,luka.jesu12@gmail.com,sha512$ac8b7839cc4d39b9$7bc8eb2f90f6b4083b478292091a4fe1e1768e44f287c8fe969aa504e4e615b3cf7664e37fe10494d77d5a86b6e562223d650b7901c9fa32626478269d64dbf8,,,
 4,sofia,ramirez,sofia-ramirez91@hotmail.es,sha512$97daccdb6f26b147$d61bbb6da1b65baa4d930155bea39613b6eab79bb2cece140c473df24bbef490fae52b2c67e00a9a4cd35792bd5fc5844f7ca128a8ae5f8f14ac471a6da3661c,,,
 5,yanina,alarcon,yani.alarcon@yahoo.com.ar,sha512$bafb07e4da266702$61e6fadcb6fa6928e5bbc44d21caf5ae11521e61717a101301f523196fa8df460e648c64c519aa0e8fc23f131e9b8db316e5bca7794bef127959a971d30d0e7c,,,
+6,mariano,reingart,reingart@gmail.com,sha512$ad515a5fdab3db6a$5d23b5162567eb042109edb5d7274d17b1ea8d8a37399cee1c4cffa4763ea3f65d2331e3205742b320a62e45eb11446acf4cac83b9639bcda8b7235b0bd51478,1234,1234,3456
+7,hector,amarilla,HectorAmarilla@gmail.com,sha512$b4c381e3b129535b$90556fc2e12dfd5d55bc58aeb90bc7d168bb94c6c6aa7a788e0ae0ff3db13bfb4d41aea06028bc570c1ee49ef8520fd8bbbab95777fd323283be3fdd8b513fc5,1234,1234,1234
+8,claudio,vargas,vargasclaudia@gmail.com,sha512$b6bddd0bde80152b$f70012abfd68f713a85b46eed57a748d4372c057e409076c4f59b679ead00050701e9804877587b855b6f47f1578814c05a677519b7cf78923a2bdfc4b132d2d,1234,1234,1234
+9,angel,bravo,Angelbravo@gmail.com,sha512$a11796689a8148d2$392c0d1ba9404374394df3a1a61b2388f446c7cdcab51d12e4ee4df60f90a34f72ab01662fe2ab1850ee931fdc21cbf10fdaecb8682c84f3b82c49c900ca00ad,1234,1234,1234
+10,helena,aguirre,Aguihelena@gmail.com,sha512$8993f2358ae7fe1c$32f0370800cb7ce83c18797c3e8f12d96697d5497b8455510296d735acd26e59b78df973979c8f3f9f014892a4388d6565ccd2deb72c48842201f0a85498317b,1234,1234,1234
+11,luz,medina,Medinaluz@gmail.com,sha512$8f2fc19920631bc2$274eabb1ce43ab9ea6e204a8ab97991495a3db87cabe31fa9b9dfcf391185170a7039ef40a1ce8f5ac9f9406e058cd42ab86e8b9e799d12a296b46b9e4adba22,1234,1234,1234
+12,jose,gonzalez,gonzalezjose@hotmail.com,sha512$933f5bf91182f1e3$c76b40f7dc633eaf7262b4b6dc6dd18891305846fe16d009f74848695d01030978840f9c3408618e05e2cbd3e80785d41cdca1941a87c3a7e0f9b4eefd0b9a2d,1234,1234,1234
+13,andrea,roselli,roselli@gmail.com,sha512$87195bd2ee1f8ab2$9d81815c1724ef407423e99d659a6960e41210248011a385d01588c8c20c7ddda79f9172e4bf5e7fe3efe60d8d2aebec5852fe1d5ffd962d244f03a415daeac2,1234,1234,1234
 
 
 TABLE auth_group
@@ -151,16 +159,15 @@ secciones.seccionid,secciones.descripcion
 
 
 TABLE personal
-personal.personalid,personal.E_mail,personal.facebook,personal.nombre,personal.dni,personal.nacimiento,personal.domicilio,personal.localidad,personal.cp,personal.provincia,personal.telefono,personal.titulos,personal.otorgadospor,personal.fechaotorgamiento,personal.apto,personal.nombramiento,personal.cuil,personal.foto,personal.cargoid
-2,<NULL>,<NULL>,Reingart Mariano,111111,<NULL>,Necochea 1132,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,pepe alberto,,nose,<NULL>,1234577,<NULL>,1
-3,<NULL>,<NULL>,Amarilla Hector,434343,<NULL>,Laprida 4567,gonzalez catan,1759,Buenos Aires,8568899,ingenieria en sistemas,Jose Rodriguez,,nose,<NULL>,8799999,<NULL>,2
-4,<NULL>,<NULL>,Vargas Claudia,4545,<NULL>,San Juan 1122,gonzalez catan,1759,Buenos Aires,7899765,Contaduria,Juan Repeto,,nose,<NULL>,7876669,<NULL>,2
-5,<NULL>,<NULL>,Bravo Angel,9897,<NULL>,Rivas 1450,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,Norberto Gonzalez,,nose,<NULL>,76969989,<NULL>,1
-6,<NULL>,<NULL>,Aguirre Elena,57865,<NULL>,Sarmiento 1120,gonzalez catan,1759,Buenos Aires,6888899,Psicopedagoga,Norma Villanueva,,nose,<NULL>,545465456,<NULL>,2
-7,,,Medina Luz,754645657,<NULL>,Claudia Sifre 1112,gonzalez catan,1759,Buenos Aires,436777,Analisis de sistemas,Angel Bravo,,nose,<NULL>,9679679,,1
-8,<NULL>,<NULL>,Gonzalez Jose,79588,<NULL>,Lasalle 456,gonzalez catan,1759,Buenos Aires,5474868787,Profesor matematica,Ruben Olmedo,,nose,<NULL>,7896969,<NULL>,1
-9,,,Roselli,545353,<NULL>,Melian  567,gonzalez catan,1759,Buenos Aires,6576765757,Profesora de  ingles,Josefa Rosales,,nose,<NULL>,5476476475,,1
-10,<NULL>,<NULL>,Profe de Historia,6465464,<NULL>,Rivera Indarte 567,gonzalez catan,1759,Buenos Aires,5474755,Profesor de historia,Alberto Pepeto,,nose,<NULL>,6587568,<NULL>,2
+personal.personalid,personal.E_mail,personal.facebook,personal.nombre,personal.dni,personal.nacimiento,personal.domicilio,personal.localidad,personal.cp,personal.provincia,personal.telefono,personal.titulos,personal.otorgadospor,personal.fechaotorgamiento,personal.apto,personal.nombramiento,personal.cuil,personal.foto,personal.cargoid,personal.user_id
+2,reingart@gmail.com,Mariano Reingart,Reingart Mariano,111111,<NULL>,Necochea 1132,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,pepe alberto,,nose,<NULL>,1234577,personal.foto.bb6d864159343845.6d617269616e6f3.jpg,1,6
+3,HectorAmarilla@gmail.com,Hector Amarilla,Amarilla Hector,434343,<NULL>,Laprida 4567,gonzalez catan,1759,Buenos Aires,8568899,ingenieria en sistemas,Jose Rodriguez,,nose,<NULL>,8799999,personal.foto.95bff2dea6282645.616d6172696c6c6.jpg,2,7
+4,vargasclaudia@gmail.com,Maria Claudia Vargas,Vargas Claudia,4545,<NULL>,San Juan 1122,gonzalez catan,1759,Buenos Aires,7899765,Contaduria,Juan Repeto,,nose,<NULL>,7876669,personal.foto.8923381fed831dc3.323031332d30382.jpg,2,8
+5,Angelbravo@gmail.com,Angel Bravo,Bravo Angel,9897,<NULL>,Rivas 1450,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,Norberto Gonzalez,,nose,<NULL>,76969989,personal.foto.850426898ae9eca4.627261766f2e6a7.jpg,1,9
+6,Aguihelena@gmail.com,Aguirre Helena,Aguirre Elena,57865,<NULL>,Sarmiento 1120,gonzalez catan,1759,Buenos Aires,6888899,Psicopedagoga,Norma Villanueva,,nose,<NULL>,545465456,personal.foto.b3525a43c9211411.68656c656e61206.jpg,2,10
+7,Medinaluz@gmail.com,Luz Medina,Medina Luz,754645657,<NULL>,Claudia Sifre 1112,gonzalez catan,1759,Buenos Aires,436777,Analisis de sistemas,Angel Bravo,,nose,<NULL>,9679679,personal.foto.82213c051d4b0412.37333538355f343.jpg,1,11
+8,gonzalezjose@hotmail.com,jose gonzalez,Gonzalez Jose,79588,<NULL>,Lasalle 456,gonzalez catan,1759,Buenos Aires,5474868787,Profesor matematica,Ruben Olmedo,,nose,<NULL>,7896969,,2,12
+9,roselli@gmail.com,Andrea Roselli,Andrea Roselli ,545353,<NULL>,Melian  567,gonzalez catan,1759,Buenos Aires,6576765757,Profesora de  ingles,Josefa Rosales,,nose,<NULL>,5476476475,personal.foto.a05603f2b7e5df60.3136323831335f3.jpg,2,13
 
 
 TABLE niveles
@@ -475,8 +482,6 @@ horarios.horarioid,horarios.horaid,horarios.comisionid,horarios.dia,horarios.det
 
 
 TABLE profesores
-profesores.profesorid,profesores.personalid,profesores.comisionid,profesores.cargoid,profesores.revistaid,profesores.licencia,profesores.detalle,profesores.ref
-9,10,10,1,1,True,nose que poner aca,",modelo"
 
 
 TABLE sanciones

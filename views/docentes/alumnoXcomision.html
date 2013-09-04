@@ -1,6 +1,7 @@
 {{extend 'layout.html'}}
 <FORM ACTION = "" method="POST">
     <b><h5> FECHA: </h5></b><INPUT type="text" name="fecha" >
+    <h5><b>FECHA:</h5></b> <INPUT  type="text" NAME="fecha" VALUE={{=request.now.date()}}>
     
     <br></br>
     
@@ -36,6 +37,7 @@
     {{for alumno in alumnos: }}
      
             <center>{{=INPUT (_type="checkbox", _name="falta_%s" %(alumno.id))}}</center>
+            <center><INPUT type="checkbox" NAME="{{="falta_%s" % alumno.alumnoid}}" size="0"></center>
 
     {{pass}}
     </td>

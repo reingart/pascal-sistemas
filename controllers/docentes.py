@@ -2,21 +2,21 @@
 # try something like
 #como hacer funcar esto
 
-@auth.requires_login()
-def ingreso():
-    db.personal.user_id.default= auth.user_id
-    subtitulo= T ('Complete el formulario por favor...')
-    form=SQLFORM(db.personal)
-    db.auth_membership.insert(auth_membership.user_id== db.auth_id, auth_membership.group_id== auth_group.id)
-    if form.accepts(request.vars,session):
-        db.auth_membership.insert( auth_membership.user_id== auth.user_id, auth_membership.group_id== 'personal')
-        response.flash='Usted fue agregado como docente...'
-    elif form.errors: 
-        response.flash='Hay errores en el formulario!'
-    else:
-        response.flash='Por favor, complete el formulario!'
+#@auth.requires_login()
+#def ingreso():
+   # db.personal.user_id.default= auth.user_id
+   # subtitulo= T ('Complete el formulario por favor...')
+   # form=SQLFORM(db.personal)
+   # db.auth_membership.insert(auth_membership.user_id== db.auth_id, auth_membership.group_id== auth_group.id)
+    #if form.accepts(request.vars,session):
+        #db.auth_membership.insert( auth_membership.user_id== auth.user_id, auth_membership.group_id== 'personal')
+       # response.flash='Usted fue agregado como docente...'
+    #elif form.errors: 
+       # response.flash='Hay errores en el formulario!'
+   # else:
+        #response.flash='Por favor, complete el formulario!'
         
-    return dict (form=form, sub=subtitulo)
+   # return dict (form=form, sub=subtitulo)
     
 def busqueda():
     # armo un formulario para buscar alumno por su dni
@@ -61,19 +61,24 @@ def index():
 def alumnoXcomision():
     
    
+   
+    if request.vars:
+        # si me pasan en la URL el docente, lo filtro 
+        q=db.alumnos.alumnoid == request.vars['alumnoid']
+        
      #cuando hago click en el boton guardar
     if request.vars.grabar=="GUARDAR":
             #en k tenemos el nombre del checkbox
+        fecha = request.vars.fecha
         for _name,_value in request.vars.items():
             if _name.startswith ("falta"):
                 alumno_id = int(_name[_name.index('_')+1:])
-                comision_id = int(_name[_name.index('_')+1:])
-                inasistencia_id = 5
-                fecha = request.vars.fecha
+                comision_id = 1
+                inasistencia_id = 1
 
-
+                # si el valor es on  en el checkbox insertamos los datos del alumno en la tabla faltas. 
                 if _value == "on":
-                    db.faltas.insert ( alumnoid= alumno_id, comisionid= comision_id,inasistenciaid=inasistencia_id, fecha= fecha,cantidad=1)
+                    db.faltas.insert(alumnoid= alumno_id, comisionid= comision_id,inasistenciaid=inasistencia_id,fecha=fecha,cantidad=1)
 
             
             
@@ -136,8 +141,8 @@ def asistencias():
         return{'asistencias':asistencias}
 
 
-@auth.requires_login()
-@auth.requires_membership(role='personal')       
+#@auth.requires_login()
+#@auth.requires_membership(role='personal')       
 def ficha():
     # obtengo el id de la url (primer argumento por posicion):
    

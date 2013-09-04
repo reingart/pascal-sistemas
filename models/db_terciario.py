@@ -77,6 +77,8 @@ db.define_table('personal',
     Field('cargoid', db.cargos),
     Field('user_id', db.auth_user, readable= False, writable= False),
 
+
+    
 ##    Field('seccionid', db.secciones),
     format= "%(personalid)s [%(nombre)s]",
     migrate=migrate)
@@ -267,7 +269,7 @@ db.define_table('notas',
     Field('folio', type='integer'),
     Field('alta', type='date', default=request.now),
     Field('web', type='boolean', default=False),
-    Field('turno', type='string', length=10),
+    Field('turno', type='string', length=1),
     format= "%(notaid)s [%(nota)s]",
     migrate=migrate)
 

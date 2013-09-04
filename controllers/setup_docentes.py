@@ -276,34 +276,7 @@ def cargar_revista():
     
     return {'filas': db(db.revistas.revistaid>0).select()}
     
-    
-def cargar_comision():
-    
-    # Antes de insertar borramos los registros de la tabla    
-    
-    db(db.comisiones.comisionid>0).delete()  
 
-    # Insertamos los cursos correspondientes
-    
-    db.comisiones.insert(comisionid=1, nombre="Analisis Matematico", divisionid=1, periodoid="", materiaid= 2, personalid= 8)
-    db.comisiones.insert(comisionid=2, nombre="Algebra", divisionid=1, periodoid="", materiaid= 1, personalid= 8)
-    
-    db.comisiones.insert(comisionid=3, nombre="Introduccion a los sistemas de informacion", divisionid=1, periodoid="", materiaid= 7, personalid= 5)
-    
-    db.comisiones.insert(comisionid=4, nombre="Arquitectura", divisionid=1, periodoid="", materiaid= 8, personalid= 5)
-    
-    db.comisiones.insert(comisionid=5, nombre="EDI ", divisionid=1, periodoid="", materiaid= 9, personalid= 5)
-    
-    db.comisiones.insert(comisionid=6, nombre="Programacion", divisionid=1, periodoid="", materiaid= 6, personalid= 3)
-    
-    db.comisiones.insert(comisionid=7, nombre="Ingles", divisionid=1, periodoid="", materiaid= 3, personalid= 9)
-    
-    
-    response.view="generic.html"
-    
-    # Devuelvo una consulta del contenido de la tabla
-    
-    return {'filas': db(db.comisiones.comisionid>0).select()}
     
     
     

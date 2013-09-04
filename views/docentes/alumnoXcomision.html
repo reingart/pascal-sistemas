@@ -1,12 +1,15 @@
 {{extend 'layout.html'}}
-
-<FORM ACTION="">
-    <h5><b>FECHA:</h5></b> <INPUT  type="text" NAME="fecha">
+<FORM ACTION = "" method="POST">
+    <b><h5> FECHA: </h5></b><INPUT type="text" name="fecha" >
     
     <br></br>
+    
+
+
 
 <table style="border: 1px solid white">
-    <td style="border: 1px solid white"><center> DNI</center>  </td> <td style="border: 1px solid white"> <center>nombre</center> </td> <td style="border: 1px solid white"> presente</td>
+    <td style="border: 1px solid white"><center> DNI</center>  </td> <td style="border: 1px solid white"> <center>Nombre</center> </td> <td style="border: 1px solid white"> Presente</td>
+    
 <tr>
 <td style="border: 1px solid white"><ul>
     
@@ -32,15 +35,17 @@
     
     {{for alumno in alumnos: }}
      
-        <FORM ACTION="">
-        <center><INPUT type="checkbox" NAME="PRESENTE" size="0"></center>
+            <center>{{=INPUT (_type="checkbox", _name="falta_%s" %(alumno.id))}}</center>
 
     {{pass}}
     </td>
+    
+    
+
     </tr>
 
 
 </table>
 <br></br>
-<INPUT type="submit" name="GRABAR" value="GUARDAR">
+<INPUT type="submit" name="grabar" value="GUARDAR">
 </FORM>

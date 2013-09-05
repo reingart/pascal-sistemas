@@ -259,3 +259,5 @@
 [2013-09-05 12:46:24] EDIT prueba/views/alumnos/horarios.html: -1
 [2013-09-05 12:48:09] EDIT prueba/views/alumnos/horarios.html: 1
 [2013-09-05 15:57:30] EDIT prueba/controllers/alumnos.py: -123
+[2013-09-05 16:02:16] EDIT prueba/views/alumnos/ficha.html: -4
+[2013-09-05 16:04:04] EDIT prueba/views/alumnos/ficha.html: -5

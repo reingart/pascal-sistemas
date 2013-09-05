@@ -39,17 +39,8 @@ response.menu = [
        [T('Apuntes'), False, URL(request.application,'docentes','apuntes'), []],
     ]],
     [T('Alumnos'), False, URL(request.application,'alumnos','index'), [
-        [T('Horario'), False, URL(request.application,'alumnos','horarios'), []],
-        [T('Parciales'), False, URL(request.application,'alumnos','index'),[
-            [T('Cuatrimentrales'), False, URL(request.application,'alumnos','parcial'),[]],
-            [T('Finales'), False, URL(request.application,'alumnos','examenes'),[]],
-            ]], 
-        [T('Inscripciones'), False, URL(request.application,'alumnos','index'),[
-            [T('En Curso'), False, URL(request.application,'alumnos','inscripciones'),[]],
-            [T('Finales'), False, URL(request.application,'alumnos','final'),[]],
-            ]],
-        [T('Inasistencias'), False, URL(request.application,'alumnos','inasistencias'),[]],
-        [T('Material de estudio'), False, URL(request.application,'alumnos','archivos'),[]],
+        [T('Ingresar'), False, URL(request.application,'alumnos','index'), []],
+        [T('Registrarse'), False, URL(request.application,'alumnos','index'),[]]
     ]],
 
 
@@ -73,4 +64,3 @@ response.menu = [
     ]
 
 response.menu_flisol = [T('FLISOL 2010'), False, URL("flisol2010",'default','index'), []]
-

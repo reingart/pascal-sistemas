@@ -261,3 +261,6 @@
 [2013-09-05 15:57:30] EDIT prueba/controllers/alumnos.py: -123
 [2013-09-05 16:02:16] EDIT prueba/views/alumnos/ficha.html: -4
 [2013-09-05 16:04:04] EDIT prueba/views/alumnos/ficha.html: -5
+[2013-09-05 16:20:52] EDIT pascal2/models/menu.py: 0
+[2013-09-05 16:22:04] EDIT pascal2/models/menu.py: -9
+[2013-09-05 16:22:37] EDIT pascal2/models/menu.py: 0

@@ -1,14 +1,25 @@
 {{extend 'layout.html'}}
 
+<<<<<<< local
+<h1><font color="white"> PERFIL DEL ALUMNO </font></h1>
+=======
 <h1> FICHA DEL ALUMNO </h1>
+>>>>>>> other
 {{=IMG(_src=URL(c='default',f='download',args=alumno.foto))}}<br>
-<h2> Nombre: {{=alumno.nombre}}</h2> 
-<h2> Localidad: {{=alumno.localidad}} </h2>
-<h2> Estado Civil: {{=alumno.estadocivil}} </h2>
-<h2> Fecha de Nacimiento: {{=alumno.fechanacimiento}} </h2> 
-<h2> Email: {{=alumno.email1}}</h2> 
-<h2> Ingreso: {{=alumno.ingreso}} </h2>
+<h1> Nombre: {{=alumno.nombre}}</h1> 
+<h1> Localidad: {{=alumno.localidad}} </h1>
+<h1> Estado Civil: {{=alumno.estadocivil}} </h1>
+<h1> Fecha de Nacimiento: {{=alumno.fechanacimiento}} </h1> 
+<h1> Nacionalidad:  </h1>
+<h1> Email: {{=alumno.email1}}</h1> 
+<h1> Ingreso: {{=alumno.ingreso}} </h1>
+<h1> carrera: </h1>
 <br>
+<TABLE>
+    <TR><TD>materias</TD>
+        <TD>{{=alumno.comiciones.nombre}}</TD>
+        </TR>
+</TABLE>
 <form>
     <a href="index.html"><input type=button value="Volver" ></a>
 </form>

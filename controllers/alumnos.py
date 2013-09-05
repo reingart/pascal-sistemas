@@ -1,15 +1,15 @@
 # coding: utf8
 # try something like
 
-@auth.requires_login()
-@auth.requires_membership(role='alumnos')
+@auth.requires_login() #requiere que haya un usuario logeado
+@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
 
 def index(): 
     "menu alumnos"
     return dict ()
 
-@auth.requires_login()
-@auth.requires_membership(role='alumnos')
+@auth.requires_login() #requiere que haya un usuario logeado
+@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
 
 def ficha():
     # muestra un perfil personalizado del alumno    
@@ -26,7 +26,7 @@ def ficha():
 #@auth.requires_login()
 
 
-@auth.requires_login()
+@auth.requires_login() #requiere que haya un usuario logeado
 def ingreso():
     db.alumnos.user_id.default= auth.user_id
     subtitulo= T ('Complete el formulario por favor...')
@@ -89,8 +89,8 @@ def horarios():
     return dict (horario=horario)
     
    
-@auth.requires_login()
-@auth.requires_membership(role='alumnos')    
+@auth.requires_login() #requiere que haya un usuario logeado
+@auth.requires_membership(role='alumnos')    #requiere que haya un usuario logeado e integre el grupo alumnos
     
 def inasistencias():
     #lista de inasistencias del alumno
@@ -109,8 +109,8 @@ def inasistencias():
     
     return dict (falta=falta)
     
-@auth.requires_login()
-@auth.requires_membership(role='alumnos')
+@auth.requires_login() #requiere que haya un usuario logeado
+@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
     
 def examenes():
      #listado de examenes finales ya rendidos
@@ -125,8 +125,8 @@ def examenes():
     
     return dict (notas= notas)
   
-@auth.requires_login()
-@auth.requires_membership(role='alumnos')
+@auth.requires_login() #requiere que haya un usuario logeado
+@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
   
 def final():
     #formulario de inscrip a examenes finales 
@@ -139,8 +139,8 @@ def final():
          
 ###################################################################################
   
-@auth.requires_login()
-@auth.requires_membership(role='alumnos')
+@auth.requires_login() #requiere que haya un usuario logeado
+@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
       
 def parciales():
     #lista examenes cuatrimestrales ya rendidos

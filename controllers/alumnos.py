@@ -19,7 +19,7 @@ def ficha():
     
     fila = db(q).select( db.alumnos.nombre, db.alumnos.fechanacimiento, db.alumnos.estadocivil,
                          db.alumnos.foto, db.alumnos.email1, db.alumnos.ingreso,
-                         db.alumnos.localidad,).first()
+                         db.alumnos.localidad, db.alumnos.nacionalidad,).first()
                          
     return dict (alumno=fila)
     

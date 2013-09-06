@@ -75,10 +75,11 @@ def alumnoXcomision():
                 alumno_id = int(_name[_name.index('_')+1:])
                 comision_id = 1
                 inasistencia_id = 1
-
+                detalle_id = request.vars.detalle
                 # si el valor es on  en el checkbox insertamos los datos del alumno en la tabla faltas. 
                 if _value == "on":
-                    db.faltas.insert(alumnoid= alumno_id, comisionid= comision_id,inasistenciaid=inasistencia_id,fecha=fecha,cantidad=1)
+                    db.faltas.insert(alumnoid= alumno_id, comisionid= comision_id,inasistenciaid=inasistencia_id,
+                    fecha=fecha,cantidad=1,detalle=detalle_id)
 
             
             

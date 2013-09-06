@@ -16,12 +16,20 @@ def ficha():
     # obtengo el registro del alumno ya registrado como usuario 
     
     q = db.alumnos.user_id== auth.user_id
-    
     fila = db(q).select( db.alumnos.nombre, db.alumnos.fechanacimiento, db.alumnos.estadocivil,
                          db.alumnos.foto, db.alumnos.email1, db.alumnos.ingreso,
                          db.alumnos.localidad, db.alumnos.nacionalidad,).first()
                          
-    return dict (alumno=fila)
+    q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
+    q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
+    q &= db.comisiones.periodoid== db.periodos.periodoid
+    q &= db.periodos.cicloid== db.ciclos.cicloid
+    datos= db(q).select( db.comisiones.nombre, db.inscripcionescomision.alta, db.ciclos.anio)
+                      
+                         
+    
+                         
+    return dict (alumno=fila, dato=datos)
     
 #@auth.requires_login()
 
@@ -72,7 +80,8 @@ def busqueda():
 
 
 def horarios():
-    q= db.horarios.horaid==db.horas.horaid
+    
+    q = db.horarios.horaid==db.horas.horaid
     q &= db.horarios.comisionid== db.comisiones.comisionid
     q &= db.comisiones.personalid== db.personal.personalid
     q &= db.comisiones.materiaid== db.materias.materiaid
@@ -85,8 +94,10 @@ def horarios():
     #  {'lunes': {1: fila} ... }
     for fila in filas:
         horario[fila.horarios.dia].setdefault(fila.horas.hora, {})[fila.divisiones.divisionid]= fila
+    filas = db(db.horas.id>0).select()
+    horas=dict ([(hora.hora, hora) for hora in filas])
         
-    return dict (horario=horario)
+    return dict (horario=horario, horas=horas)
     
    
 @auth.requires_login() #requiere que haya un usuario logeado

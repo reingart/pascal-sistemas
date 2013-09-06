@@ -20,9 +20,9 @@
         <td style="border: 1px solid white"> JUEVES </td>
         <td style="border: 1px solid white"> VIERNES </td>
     </tr>
-       <!--  {{for hora in ['1','2','3','4']:}}
+        {{for hora in ['1','2','3','4']:}}
            
-         
+         <tr>
          <td style="border: 1px solid white"> 
               
              {{=horas[hora].desde}}
@@ -33,12 +33,12 @@
              hs.
             
               
-                 </td>
+         </td>
         
- !-->
+		
         {{for dia in ['lunes','martes','miercoles','jueves','viernes']:}}
           
-         
+         	
     		<td style="border: 1px solid white"> 
                 
 			{{f=horario.get(dia, {}).get(hora, None).get(divisionid)}}
@@ -51,8 +51,10 @@
         	{{pass}}
             </td>
     	{{pass}}
-
+    </tr>
    {{pass}}
+    
+{{pass}}
     
     <br>
     <br>

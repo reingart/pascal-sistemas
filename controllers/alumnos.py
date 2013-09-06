@@ -80,7 +80,8 @@ def busqueda():
 
 
 def horarios():
-    q= db.horarios.horaid==db.horas.horaid
+    
+    q = db.horarios.horaid==db.horas.horaid
     q &= db.horarios.comisionid== db.comisiones.comisionid
     q &= db.comisiones.personalid== db.personal.personalid
     q &= db.comisiones.materiaid== db.materias.materiaid
@@ -93,8 +94,10 @@ def horarios():
     #  {'lunes': {1: fila} ... }
     for fila in filas:
         horario[fila.horarios.dia].setdefault(fila.horas.hora, {})[fila.divisiones.divisionid]= fila
+    filas = db(db.horas.id>0).select()
+    horas=dict ([(hora.hora, hora) for hora in filas])
         
-    return dict (horario=horario)
+    return dict (horario=horario, horas=horas)
     
    
 @auth.requires_login() #requiere que haya un usuario logeado

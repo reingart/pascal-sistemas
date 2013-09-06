@@ -140,9 +140,12 @@ def examenes():
 @auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
   
 def final():
-    #formulario de inscrip a examenes finales 
+    
     q = db.alumnos.user_id== auth.user_id
-    q &= db.examenes.examenid>0
+    alumno= db(q).select().first()
+    
+    #formulario de inscrip a examenes finales 
+    q = db.examenes.examenid>0
     q &= db.examenes.materiaid== db.materias.materiaid
     q &= db.examenes.personalid1== db.personal.personalid
     final= db(q).select(db.examenes.examenid, db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)
@@ -155,18 +158,14 @@ def final():
                 examen_id = int(_name[_name.index('_')+1:])
                 # si el valor es on  en el checkbox insertamos los datos del alumno en la tabla faltas. 
                 if _value == "on":                    
-                    db.inscripcionesexamen.insert(alumnoid= q, 
-                        examenid= examenid,
+                    db.inscripcionesexamen.insert(alumnoid= alumno.alumnoid, 
+                        examenid= examen_id,
                         condicion="R",
                         alta=fecha,
                         confirmar=True,
                         valido=True)
-                        
-                        
-                     
-                     
-                    
-                    
+                       
+      
     return dict (final= final) 
          
      

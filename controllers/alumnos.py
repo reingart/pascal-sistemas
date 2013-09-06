@@ -141,12 +141,35 @@ def examenes():
   
 def final():
     #formulario de inscrip a examenes finales 
-    q = db.examenes.examenid>0
+    q = db.alumnos.user_id== auth.user_id
+    q &= db.examenes.examenid>0
     q &= db.examenes.materiaid== db.materias.materiaid
     q &= db.examenes.personalid1== db.personal.personalid
-    final= db(q).select(db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)
+    final= db(q).select(db.examenes.examenid, db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)
   
+    if request.vars.guardar=="Guardar":
+            #en k tenemos el nombre del checkbox
+        fecha = request.vars.fecha
+        for _name,_value in request.vars.items():
+            if _name.startswith ("examen_"):
+                examen_id = int(_name[_name.index('_')+1:])
+                # si el valor es on  en el checkbox insertamos los datos del alumno en la tabla faltas. 
+                if _value == "on":                    
+                    db.inscripcionesexamen.insert(alumnoid= q, 
+                        examenid= examenid,
+                        condicion="R",
+                        alta=fecha,
+                        confirmar=True,
+                        valido=True)
+                        
+                        
+                     
+                     
+                    
+                    
     return dict (final= final) 
+         
+     
          
 ###################################################################################
   

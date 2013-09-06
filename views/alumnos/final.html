@@ -6,7 +6,7 @@
 <tr>
 {{for f in final:}}
 	
-    <td><input type="checkbox" name="{{="examen_%s" % f.examenes.id}}">{{=f.materias.nombre}} </td>
+    <td><input type="checkbox" name="{{="examen_%s" % f.examenes.examenid}}">{{=f.materias.nombre}} </td>
     <td>{{=f.personal.nombre}}</td>
     <td>{{=f.examenes.fecha}}</td>
     <td>{{=f.examenes.hora}}</td>

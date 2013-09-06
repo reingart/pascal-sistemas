@@ -22,9 +22,12 @@ def ficha():
                          
     q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
     q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
+    q &= db.comisiones.materiaid== db.materias.materiaid
+    q &= db.materias.materiaid== db.asignaturas.materiaid
+    q &= db.asignaturas.carreraid== db.carreras.carreraid
     q &= db.comisiones.periodoid== db.periodos.periodoid
     q &= db.periodos.cicloid== db.ciclos.cicloid
-    datos= db(q).select( db.comisiones.nombre, db.inscripcionescomision.alta, db.ciclos.anio)
+    datos= db(q).select( db.comisiones.nombre, db.inscripcionescomision.alta, db.ciclos.anio, db.carreras.nombre)
                       
                          
     

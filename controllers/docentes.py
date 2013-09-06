@@ -59,13 +59,18 @@ def index():
     return{'docentes':docentes}
     
 def alumnoXcomision():
+    comisionid=request.args[0]
+   
+   
+    # si me pasan en la URL el docente, lo filtro 
+    q = db.comisiones.comisionid == comisionid
     
-   
-   
-    if request.vars:
-        # si me pasan en la URL el docente, lo filtro 
-        q=db.alumnos.alumnoid == request.vars['alumnoid']
-        
+    # selecciono los alumnos que estan en la inscripcion en donde entre
+    q &=db.alumnos.alumnoid == db.inscripcionescomision.alumnoid 
+    
+    # Busca las comisiones que coincidan
+    q &= db.comisiones.comisionid == db.inscripcionescomision.comisionid
+     
      #cuando hago click en el boton guardar
     if request.vars.grabar=="GUARDAR":
             #en k tenemos el nombre del checkbox
@@ -73,26 +78,17 @@ def alumnoXcomision():
         for _name,_value in request.vars.items():
             if _name.startswith ("falta"):
                 alumno_id = int(_name[_name.index('_')+1:])
-                comision_id = 1
+                comision_id = comisionid
                 inasistencia_id = 1
-                detalle_id = request.vars.detalle
+                
                 # si el valor es on  en el checkbox insertamos los datos del alumno en la tabla faltas. 
                 if _value == "on":
                     db.faltas.insert(alumnoid= alumno_id, comisionid= comision_id,inasistenciaid=inasistencia_id,
-                    fecha=fecha,cantidad=1,detalle=detalle_id)
+                    fecha=fecha,cantidad=1)
 
             
-            
-        
-    if request.vars:
-        # si me pasan en la URL el docente, lo filtro 
-        q=db.alumnos.alumnoid == request.vars['alumnoid']
-
-    else:
-        # sino, busco todos los docentes
-        q=db.alumnos.alumnoid>0
-
-    alumnos=db(q).select(orderby=db.alumnos.nombre)
+    # Ejecuto el sql donde vienen los alumnos por comision
+    alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre)
 
     return {'alumnos':alumnos}
     

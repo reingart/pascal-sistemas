@@ -8,7 +8,7 @@
 
 
 <table style="border: 1px solid white">
-    <td style="border: 1px solid white"><center> DNI</center>  </td> <td style="border: 1px solid white"> <center>Nombre</center> </td> <td style="border: 1px solid white"> Presente</td> <td style="border: 1px solid white"> <center>Detalle</center> </td> 
+    <td style="border: 1px solid white"><center> DNI</center>  </td> <td style="border: 1px solid white"> <center>Nombre</center> </td> <td style="border: 1px solid white"> Presente</td> 
     
 <tr>
 <td style="border: 1px solid white"><ul>
@@ -34,21 +34,11 @@
 <td style="border: 1px solid white">
     
     {{for alumno in alumnos: }}
-     
-            <center>{{=INPUT (_type="checkbox", _name="falta_%s" %(alumno.id))}}</center>
+    <center>{{=INPUT (_type="checkbox", _name="falta_%s" %(alumno.id))}}</center> 
 
     {{pass}}
     </td>
-    
-    
-<td style="border: 1px solid white">
-    
-    {{for alumno in alumnos: }}
-     
-            <center>{{=INPUT (_type="text", _name="detalle_%s" %(alumno.id))}}</center>
 
-    {{pass}}
-    </td>
     
     
     </tr>

@@ -14,7 +14,7 @@ Titulos: {{=docente.titulos}}<br>
 <BR></BR>
 {{for comision in comisiones:}}
 
-<li>Materia que dicta:<a href="http://127.0.0.1:8000/practica/docentes/alumnoXcomision">{{=comision.nombre}}</a></li>
+<li>Materia que dicta:<a href="{{=URL(f="alumnoXcomision", args=[comision.comisionid])}}">{{=comision.nombre}}</a></li>
 {{pass}}
 
 

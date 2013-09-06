@@ -1,17 +1,42 @@
 {{extend 'layout.html'}}
 
 
-<h1> PERFIL DEL ALUMNO </h1>
+<h1> PERFIL</h1>
 
 {{=IMG(_src=URL(c='default',f='download',args=alumno.foto))}}<br>
-<h1> Nombre: {{=alumno.nombre}}</h1> 
-<h1> Localidad: {{=alumno.localidad}} </h1>
-<h1> Estado Civil: {{=alumno.estadocivil}} </h1>
-<h1> Fecha de Nacimiento: {{=alumno.fechanacimiento}} </h1> 
-<h1> Nacionalidad:  </h1>
-<h1> Email: {{=alumno.email1}}</h1> 
-<h1> Ingreso: {{=alumno.ingreso}} </h1>
-<h1> carrera: </h1>
+<h2> Nombre: {{=alumno.nombre}}</h2> 
+<h2> Localidad: {{=alumno.localidad}} </h2>
+<h2> Estado Civil: {{=alumno.estadocivil}} </h2>
+<h2> Fecha de Nacimiento: {{=alumno.fechanacimiento}} </h2> 
+<h2> Email: {{=alumno.email1}}</h2> 
+<h2> Ingreso: {{=alumno.ingreso}} </h2>
+<h2> Carrera: en proceso... </h2>
+<br>
+<h2> Inscripto a: </h2>
+<TABLE style="border: 1px solid white">
+    <TR style="border: 1px solid white">
+     <TD style="border: 1px solid white"> <B>Materia</B></TD>
+    <TD style="border: 1px solid white"> <B>Fecha de Alta</B></TD> 
+     <TD style="border: 1px solid white"> <B>Ciclo Lectivo</B></TD>
+    </TR>
+    {{ d=dato}}
+        
+        {{for datos in d:}}
+            <TR style="border: 1px solid white">
+        	<TD style="border: 1px solid white"> 
+        	 {{ =datos.comisiones.nombre}}
+             </TD>
+        	<TD style="border: 1px solid white"> 
+        	 {{ =datos.inscripcionescomision.alta}}
+        	</TD>
+            <TD style="border: 1px solid white">
+             {{ =datos.ciclos.anio}}
+             </TD>
+        {{pass}}
+    		 </TR>
+    
+    </TABLE>
+    
 <br>
 <form>
     <a href="index.html"><input type=button value="Volver" ></a>

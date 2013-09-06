@@ -16,12 +16,20 @@ def ficha():
     # obtengo el registro del alumno ya registrado como usuario 
     
     q = db.alumnos.user_id== auth.user_id
-    
     fila = db(q).select( db.alumnos.nombre, db.alumnos.fechanacimiento, db.alumnos.estadocivil,
                          db.alumnos.foto, db.alumnos.email1, db.alumnos.ingreso,
                          db.alumnos.localidad,).first()
                          
-    return dict (alumno=fila)
+    q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
+    q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
+    q &= db.comisiones.periodoid== db.periodos.periodoid
+    q &= db.periodos.cicloid== db.ciclos.cicloid
+    datos= db(q).select( db.comisiones.nombre, db.inscripcionescomision.alta, db.ciclos.anio)
+                      
+                         
+    
+                         
+    return dict (alumno=fila, dato=datos)
     
 #@auth.requires_login()
 

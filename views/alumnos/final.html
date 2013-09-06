@@ -2,6 +2,10 @@
 <h2> <p align= 'right'> Año 2013  </h2>
 <h1> <center> Inscripción a Examenes Finales </center></h1>
 <form method="POST">
+<h5>FECHA:</h5><INPUT  type="text" NAME="fecha" VALUE={{=request.now.date()}}>
+<br>
+<br>
+<br>
 <table>
 <tr>
 {{for f in final:}}

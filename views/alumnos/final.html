@@ -1,24 +1,39 @@
 {{extend 'layout.html'}}
-<h2> <p align= 'right'> Año 2013  </h2>
+<h2> Fecha: {{=request.now.date()}}</h2>
 <h1> <center> Inscripción a Examenes Finales </center></h1>
 <form method="POST">
-<h5>FECHA:</h5><INPUT  type="text" NAME="fecha" VALUE={{=request.now.date()}}>
 <br>
 <br>
+    <h3> <font color= "white"> *información de exámenes finales </font> </h3>
 <br>
-<table>
-<tr>
+<TABLE style="border: 1px solid white">
+<TR>
+    <TD style="border: 1px solid white"> MATERIA </TD>
+    <TD style="border: 1px solid white"> DOCENTE </TD>
+    <TD style="border: 1px solid white"> FECHA </TD>
+    <TD style="border: 1px solid white"> HORA </TD>
+<TR>
 {{for f in final:}}
 	
-    <td><input type="checkbox" name="{{="examen_%s" % f.examenes.examenid}}">{{=f.materias.nombre}} </td>
-    <td>{{=f.personal.nombre}}</td>
-    <td>{{=f.examenes.fecha}}</td>
-    <td>{{=f.examenes.hora}}</td>
+    <td style="border: 1px solid white"><input type="checkbox" name="{{="examen_%s" % f.examenes.examenid}}">
+    {{=f.materias.nombre}}
+    </td>
+    <td style="border: 1px solid white">
+    {{=f.personal.nombre}}
+    </td>
+    <td style="border: 1px solid white">
+    {{=f.examenes.fecha}}
+    </td>
+    <td style="border: 1px solid white">
+    {{=f.examenes.hora}}
+    </td>
     
-    </tr>
+    </TR>
 {{pass}}
-</table>
+</TABLE>
 <br>
     <a href="index.html"><input type=button value="Volver" ></a>
     <input type="submit" name="guardar" value="Guardar" >
+    <input type="reset" value="Cancelar">
+
 </form>

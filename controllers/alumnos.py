@@ -147,18 +147,18 @@ def final():
     alumno= db(q).select().first()
     
     #formulario de inscrip a examenes finales 
-    q = db.examenes.examenid>0
+    
     q &= db.examenes.materiaid== db.materias.materiaid
     q &= db.examenes.personalid1== db.personal.personalid
     final= db(q).select(db.examenes.examenid, db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)
-  
+     #cuando hago click en el boton guardar
     if request.vars.guardar=="Guardar":
             #en k tenemos el nombre del checkbox
-        fecha = request.vars.fecha
+        fecha = request.now.date()
         for _name,_value in request.vars.items():
             if _name.startswith ("examen_"):
                 examen_id = int(_name[_name.index('_')+1:])
-                # si el valor es on  en el checkbox insertamos los datos del alumno en la tabla faltas. 
+                # si el valor es on  en el checkbox insertamos los datos en inscripcion a examenes. 
                 if _value == "on":                    
                     db.inscripcionesexamen.insert(alumnoid= alumno.alumnoid, 
                         examenid= examen_id,
@@ -166,7 +166,13 @@ def final():
                         alta=fecha,
                         confirmar=True,
                         valido=True)
-                       
+                    response.flash= "Usted se a inscripto a los exámenes seleccionados!"
+                elif _value == "off": 
+                    response.flash= "Hay errores en el formulario"
+                else:
+                    response.flash='Por favor, complete el formulario'
+                   
+         
       
     return dict (final= final) 
          

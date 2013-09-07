@@ -13,13 +13,9 @@ def index():
 
 def ficha():
     # muestra un perfil personalizado del alumno    
-    # obtengo el registro del alumno ya registrado como usuario 
     
-    q = db.alumnos.user_id== auth.user_id
-    fila = db(q).select( db.alumnos.nombre, db.alumnos.fechanacimiento, db.alumnos.estadocivil,
-                         db.alumnos.foto, db.alumnos.email1, db.alumnos.ingreso,
-                         db.alumnos.localidad, db.alumnos.nacionalidad,).first()
-                         
+    
+    q = db.alumnos.user_id== auth.user_id   # obtengo el registro del alumno ya registrado como usuario 
     q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
     q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
     q &= db.comisiones.materiaid== db.materias.materiaid
@@ -27,11 +23,14 @@ def ficha():
     q &= db.asignaturas.carreraid== db.carreras.carreraid
     q &= db.comisiones.periodoid== db.periodos.periodoid
     q &= db.periodos.cicloid== db.ciclos.cicloid
-    datos= db(q).select( db.comisiones.nombre, db.inscripcionescomision.alta, db.ciclos.anio, db.carreras.nombre)
-                      
+    fila = db(q).select( db.alumnos.nombre, db.alumnos.fechanacimiento, 
+                         db.alumnos.estadocivil, db.alumnos.foto, db.alumnos.email1, 
+                         db.alumnos.ingreso, db.alumnos.localidad, db.alumnos.nacionalidad,
+                         db.carreras.nombre,).first()
                          
-    
-                         
+    datos= db(q).select( db.comisiones.nombre, db.inscripcionescomision.alta,
+                         db.ciclos.anio, db.carreras.nombre)
+                                  
     return dict (alumno=fila, dato=datos)
     
 #@auth.requires_login()

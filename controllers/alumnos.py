@@ -199,7 +199,7 @@ def parciales():
     return dict (notas= notas)
     
 def inscripciones():
-    "Listado de inscripciones a curso"
+    "Listado de inscripciones a comision"
     return {}
     
 def archivos():

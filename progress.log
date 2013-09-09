@@ -448,3 +448,11 @@
 [2013-09-09 19:42:10] EDIT prueba/views/alumnos/inasistencias.html: 0
 [2013-09-09 19:45:47] EDIT prueba/views/alumnos/examenes.html: 0
 [2013-09-09 19:48:05] EDIT prueba/views/alumnos/parciales.html: 0
+[2013-09-09 19:55:32] EDIT pascal2/controllers/alumnos.py: 1
+[2013-09-09 19:56:00] EDIT pascal2/controllers/alumnos.py: 0
+[2013-09-09 19:56:06] EDIT pascal2/controllers/alumnos.py: 0
+[2013-09-09 19:56:54] EDIT pascal2/views/alumnos/parciales.html: 1
+[2013-09-09 19:57:27] EDIT pascal2/views/alumnos/parciales.html: 0
+[2013-09-09 19:59:18] EDIT pascal2/controllers/alumnos.py: 0
+[2013-09-09 20:00:26] EDIT pascal2/views/alumnos/parciales.html: 0
+[2013-09-09 20:02:05] EDIT pascal2/views/alumnos/parciales.html: 0

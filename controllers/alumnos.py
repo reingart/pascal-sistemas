@@ -187,6 +187,7 @@ def parciales():
     q = db.alumnos.user_id== auth.user_id
     #guardo en la consulta el registro del alumno
     q &= db.notas.alumnoid == db.alumnos.alumnoid
+    datos= db(q).select(db.alumnos.nombre).first()
     q &= db.notas.materiaid == db.materias.materiaid
     q &= db.materias.cursoid == db.cursos.cursoid
     q &= db.notas.calificacionid == 3  # filtrar solo cuatrimestrales
@@ -194,7 +195,7 @@ def parciales():
     notas = db(q).select(db.alumnos.nombre, db.materias.nombre, 
     db.notas.nota, db.periodos.descripcion, db.notas.fecha, db.cursos.nombre)
     
-    return dict (notas= notas)
+    return dict (notas= notas, datos=datos)
     
 def inscripciones():
     "Listado de inscripciones a comision"

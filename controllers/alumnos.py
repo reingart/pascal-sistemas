@@ -141,12 +141,10 @@ def examenes():
 @auth.requires_login() #requiere que haya un usuario logeado
 @auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
   
-def final():
+def final(): #formulario de inscrip a examenes finales 
     
-    q = db.alumnos.user_id== auth.user_id
-    alumno= db(q).select().first()
-    
-    #formulario de inscrip a examenes finales 
+    q = db.alumnos.user_id== auth.user_id #busca y trae todos los datos del alumno logueado
+    alumno= db(q).select().first() # guarda en una variable los datos para poder ser utilizados
     
     q &= db.examenes.materiaid== db.materias.materiaid
     q &= db.examenes.personalid1== db.personal.personalid

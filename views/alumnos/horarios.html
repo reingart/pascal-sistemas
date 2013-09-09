@@ -1,7 +1,7 @@
 {{extend 'layout.html'}}
 
-<h2> <p align= 'right'> Año 2013  </h2>
-<h1> Horarios: Analista de sistemas </h1>
+<h2> Fecha: {{=request.now.date()}}</h2>
+<h1><center> Horarios: Analista de sistemas</center> </h1>
 
 {{for divisionid in (1, 2, 3): }}
 

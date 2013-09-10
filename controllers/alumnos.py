@@ -44,8 +44,10 @@ def ingreso():
     subtitulo= T ('Complete el formulario por favor...')
     form=SQLFORM(db.alumnos)
     if form.accepts(request.vars,session):
-        grupo_id = db(db.auth_group.role=='alumnos').first().id
-        db.auth_membership.insert(user_id=auth.user_id, group_id=grupo_id)
+        grupo_id = db(db.auth_group.role=='alumnos').select(db.auth_group.id)
+        for x in grupo_id:
+            grupo=x.id
+        db.auth_membership.insert(user_id=auth.user_id, group_id=grupo)
         #agrego al alumno y su id de registro en el grupo alumnos
         response.flash='Usted fue agregado como alumno...'
     elif form.errors: 
@@ -85,12 +87,12 @@ def busqueda():
 @auth.requires_login() #requiere que haya un usuario logeado
 @auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
 def horarios():
-    
+   
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
     alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista
-    q = db.horarios.horaid==db.horas.horaid
    # q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
     #q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
+    q &= db.horarios.horaid== db.horas.horaid
     q &= db.horarios.comisionid== db.comisiones.comisionid
     q &= db.comisiones.personalid== db.personal.personalid
     q &= db.comisiones.materiaid== db.materias.materiaid
@@ -111,8 +113,7 @@ def horarios():
 @auth.requires_login() #requiere que haya un usuario logeado
 @auth.requires_membership(role='alumnos')    #requiere que haya un usuario logeado e integre el grupo alumnos
     
-def inasistencias():
-    #lista de inasistencias del alumno
+def inasistencias():   #lista de inasistencias del alumno
     #buscar el alumno y compararlo con el logueado
     q = db.alumnos.user_id== auth.user_id
     #traemos el alumno para notificarlo en la vista

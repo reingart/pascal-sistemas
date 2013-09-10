@@ -527,4 +527,14 @@
 [2013-09-10 15:50:39] EDIT pascal2/controllers/alumnos.py: 0
 [2013-09-10 15:53:12] EDIT pascal2/controllers/alumnos.py: -1
 [2013-09-10 16:06:46] EDIT pascal2/controllers/alumnos.py: 0
+<<<<<<< local
+[2013-09-10 19:18:49] EDIT prueba/controllers/alumnos.py: 3
+=======
 [2013-09-10 19:07:08] EDIT pascal2/views/alumnos/index.html: 1
+>>>>>>> other
+[2013-09-10 19:29:27] EDIT prueba/controllers/alumnos.py: 0
+[2013-09-10 19:30:26] EDIT prueba/views/alumnos/horarios.html.orig: 0
+[2013-09-10 19:30:52] EDIT prueba/views/alumnos/horarios.html: 4
+[2013-09-10 19:31:02] DELETE prueba/views/alumnos/horarios.html.orig: -41
+[2013-09-10 19:36:34] EDIT prueba/controllers/alumnos.py: -1
+[2013-09-10 19:38:45] EDIT prueba/controllers/alumnos.py: 0

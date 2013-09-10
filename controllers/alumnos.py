@@ -82,19 +82,20 @@ def busqueda():
     return dict (form = form)
 
 
+@auth.requires_login() #requiere que haya un usuario logeado
+@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
 def horarios():
     
-    q = db.alumnos.user_id== auth.user_id
-    #guardo en la consulta el registro del alumno
-    #traemos el alumno para notificarlo en la vista
-    alumno= db(q).select().first()
+    q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
+    alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista
     q = db.horarios.horaid==db.horas.horaid
+   # q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
+    #q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
     q &= db.horarios.comisionid== db.comisiones.comisionid
     q &= db.comisiones.personalid== db.personal.personalid
     q &= db.comisiones.materiaid== db.materias.materiaid
     q &= db.comisiones.divisionid== db.divisiones.divisionid
     filas= db(q).select(db.horas.hora, db.personal.nombre, db.materias.nombre, db.divisiones.divisionid, db.horarios.dia)
-    
     
     horario = {'lunes':{},'martes':{},'miercoles':{},'jueves':{},'viernes':{}}
     # horario es una estructura cuya clave es el dia y el valor es otro diccionario....

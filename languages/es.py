@@ -66,6 +66,7 @@
 'Client IP': 'IP del Cliente',
 'compile': 'compilar',
 'compiled application removed': 'aplicación compilada removida',
+'Complete el formulario por favor...': 'Complete el formulario por favor...',
 'Consultar': 'Consultar',
 'Consultar Examenes': 'Consultar Examenes',
 'Controller': 'Controlador',

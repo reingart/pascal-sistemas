@@ -1,11 +1,13 @@
 {{extend 'layout.html'}}
 
 <h2> Fecha: {{=request.now.date()}}</h2>
-<h2> Alumno/a: {{=alumno.nombre}}
+<h2> Alumno/a: {{=alumno.nombre}} </h2>
     <h1><u>Menu Alumnos</u></h1>
 <ul>
     <li> <a href="ficha.html">Perfil del Alumno</a></li>
 	Perfil del alumno con sus datos personales correspondientes.
+    <li> <a href="ingreso.html">Preinscripción</a></li>
+	Permite ver el horario completo de la carrera cursada por el alumno.
     <li> <a href="horarios.html">Horarios</a></li>
 	Permite ver el horario completo de la carrera cursada por el alumno.
     <li> <a href="inasistencias.html">Inasistencias</a></li>
@@ -22,5 +24,3 @@
     Muestra el estado de los tramites iniciados.
 
 </ul>
-
-{{=BEAUTIFY(response._vars)}}

@@ -2,7 +2,7 @@
 # try something like
 
 @auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+#@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
 
 def index(): 
     q = db.alumnos.user_id== auth.user_id
@@ -43,7 +43,6 @@ def ingreso():
     db.alumnos.user_id.default= auth.user_id
     subtitulo= T ('Complete el formulario por favor...')
     form=SQLFORM(db.alumnos)
-    #db.auth_membership.insert(auth_membership.user_id== db.auth_id, auth_membership.group_id== auth_group.id)
     if form.accepts(request.vars,session):
         grupo_id = db(db.auth_group.role=='alumnos').first().id
         db.auth_membership.insert(user_id=auth.user_id, group_id=grupo_id)

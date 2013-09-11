@@ -183,7 +183,7 @@ def ficha():
     horarios = db(q).select()
     
     q &= db.horas.horaid == horaid
-    horas = db(q).select()
+    horas = db(q).select(db.horas.ALL)
     
   
     return {'docente':docente, 'comisiones':comisiones, 'horario':horario, 'horarios':horarios, 'horas':horas,'hora':hora}

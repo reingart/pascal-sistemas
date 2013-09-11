@@ -1,13 +1,17 @@
 {{extend 'layout.html'}}
-<h1>Ficha del docente: {{=docente.nombre}}</h1>
+<table style="border: 1px solid white">
+<td  style="border: 1px solid white">
 
-{{=IMG(_src=URL(c='default',f='download',args=docente.foto))}}
-<br> 
+<h1>Ficha del docente: {{=docente.nombre}}</h1>
+</td>
+<tr>
+<td style="border: 1px solid white">
+    <center>{{=IMG(_src=URL(c='default',f='download',args=docente.foto))}}</center>
+<br>
 <h5>E-mail: {{=docente.E_mail}} </h5>
 <h5> Facebook: {{=docente.facebook}} </h5>
 Localidad: {{=docente.localidad}}<br>
 Titulos: {{=docente.titulos}}<br>
-
 
 <br></br>
 <h5>*click en la materia para tomar asistencias*</h5>
@@ -17,16 +21,20 @@ Titulos: {{=docente.titulos}}<br>
 <li>Materia que dicta:<a href="{{=URL(f="alumnoXcomision", args=[comision.comisionid])}}">{{=comision.nombre}}</a></li>
 {{pass}}
 
+</td>
+</tr>
+<tr>
+    <td style="border: 1px solid white">
+    <center><b><u><h3> HORARIOS EN QUE DICTA LAS MATERIAS</h3></u></b></center>
+<tr style="border: 1px solid white">
 
 
-    
-<br></br>    
+    <td style="border: 1px solid white"> <b>Horario: </b>{{=horario.dia}} {{=horario.horaid}} hs ,<b>Materia: </b>{{=comision.nombre}} </td>
+</tr>
 
+</td>
 
-<li><b><u><h3> HORARIOS EN QUE DICTA MATERIAS</h3></u></b></li>
-
-<li>Dia y hora: {{=horario.dia}}, {{=horario.horaid}} hs </li>
-
+</table>
 
 <br></br>
 <a href="http://127.0.0.1:8000/practica/docentes/index">VOLVER</a>

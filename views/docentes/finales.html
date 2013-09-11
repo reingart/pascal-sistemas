@@ -2,13 +2,13 @@
 <h1>ACTA VOLANTE 3er AÑO ANALISIS EN SISTEMAS</h1>
 <h3> Alumnos regulares</h3> 
 <table>
-    <td> Libro: 4</td><td> Folio:4 </td> <td> Llamado: 1º</td> <td>Mes: Julio</td><td>Fecha: 12-07-13</td>
+    <td>Libro: <INPUT type="text" Name="libro" size="1"> </td><td> Folio: <INPUT type="text" Name="folio" size="1"></td>  <td>Fecha: <INPUT type="text" Name="fecha"></td>
 </table>
 
 <h2> Profesor: Medina Luz </h2>
 <H2> Materia: Investigación Operativa</H2>
 <FORM ACTION="">
-<TABLE style="border: 1px solid white">
+    <TABLE style="border: 1px solid white">
     <tr style="border: 1px solid white">
     <td style="border: 1px solid white"><B><center>D.N.I</B></td>
     <td style="border: 1px solid white"><B><center>Alumno</B></td>
@@ -17,79 +17,9 @@
    
     </tr>
     <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><B><center>93573269</B></td>
-    <td style="border: 1px solid white"><center>Hector Calvo</B></td>
-    <td style="border: 1px solid white"><center><INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"> </td>
-
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><B><center>71846219</B></td>
-    <td style="border: 1px solid white"><center>Ezequiel Villalba</B></td>
-    <td style="border: 1px solid white"><center><INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"></td>
-    
-    
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><B><center>893259292</B></td>
-    <td style="border: 1px solid white"><center>Sofia Ramirez</B></td>
-    <td style="border: 1px solid white"><center><INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"></td>
-    
-    
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><B><center>8235350920</B></td>
-    <td style="border: 1px solid white"><center>Lucas Gonzalez</B></td>
-    <td style="border: 1px solid white"><center><INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"> </td>
-
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><B><center>71846219</B></td>
-    <td style="border: 1px solid white"><center>Yanina Alarcon</B></td>
-    <td style="border: 1px solid white"><center><INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"></td>
-    
-    
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><B><center>893259292</B></td>
-    <td style="border: 1px solid white"><center>Ivana Santillo</B></td>
-    <td style="border: 1px solid white"><center><INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"></td>
-    
-    
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><B><center>93573269</B></td>
-    <td style="border: 1px solid white"><center>Elias Sosa</B></td>
-    <td style="border: 1px solid white"><center><INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"> </td>
-
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><B><center>71846219</B></td>
-    <td style="border: 1px solid white"><center>Matias Portales</B></td>
-    <td style="border: 1px solid white"><center><INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"></td>
-    
-    
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><B><center>893259292</B></td>
-    <td style="border: 1px solid white"><center>Nahuel Cosentino</B></td>
-    <td style="border: 1px solid white"><center><INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"></td>
-    
-    
-    </tr>
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><B><center>893259292</B></td>
-    <td style="border: 1px solid white"><center>Mauro Schiavone</B></td>
-    <td style="border: 1px solid white"><center><INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"></td>
-    
     
     </tr>
 </table>
+    <br></br>
     <INPUT type="submit" name="GRABAR" value="GUARDAR">
 </FORM>
-
-
-<ul>
-    {{for nota  in notas: }}
-    <li>{{=A(nota.alumnoid,nota.nota,_href=URL(f='nota',args=[nota.notaid]))}} </li>
-    {{pass}} 
-</ul>

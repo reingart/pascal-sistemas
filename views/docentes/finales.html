@@ -2,20 +2,29 @@
 <h1>ACTA VOLANTE 3er AÑO ANALISIS EN SISTEMAS</h1>
 <h3> Alumnos regulares</h3> 
 <table>
-    <td>Libro: <INPUT type="text" Name="libro" size="1"> </td><td> Folio: <INPUT type="text" Name="folio" size="1"></td>  <td>Fecha: <INPUT type="text" Name="fecha"></td>
+    <td>Libro: <INPUT type="text" Name="libro" size="1"> </td><td> Folio: <INPUT type="text" Name="folio" size="1"></td>  <td>Fecha: <INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}></td>
+    
+    
 </table>
+<br></br>
 
-<h2> Profesor: Medina Luz </h2>
-<H2> Materia: Investigación Operativa</H2>
 <FORM ACTION="">
     <TABLE style="border: 1px solid white">
     <tr style="border: 1px solid white">
     <td style="border: 1px solid white"><B><center>D.N.I</B></td>
     <td style="border: 1px solid white"><B><center>Alumno</B></td>
     <td style="border: 1px solid white"><B><center>Nota</B></td>
+    <td style="border: 1px solid white"><B><center>Turno</B></td>
+
   
    
     </tr>
+    <td style="border: 1px solid white"><B><center>3569252</B></td>
+    <td style="border: 1px solid white"><B><center>lucas gonzalez</B></td>
+    <td style="border: 1px solid white"><B><INPUT type="text" Name="nota" size="1"></td>
+    <td style="border: 1px solid white"><B><center><SELECT name="turno" > <option>Seleccionar...</option><option>Mañana</option><option>Tarde</option> <option>Noche</option></td>
+    
+
     <tr style="border: 1px solid white">
     
     </tr>

@@ -113,7 +113,8 @@ def horarios():
     return{'horarios':horarios}
     
 #@auth.requires_login()
-#@auth.requires_membership(role='personal')     
+#@auth.requires_membership(role='personal')  
+   
 def finales():
     q=db.notas.notaid>0
     notas=db(q).select()
@@ -161,15 +162,31 @@ def ficha():
     # obtengo el id de la url (primer argumento por posicion):
    
     personalid = request.args[0]
+    horarioid = request.args[0]
+    horaid = request.args[0]
+
+    
+        
+    # obtengo el registro del docente
+    horario = db.horarios[horarioid]
     
         
     # obtengo el registro del docente
     docente = db.personal[personalid]
-    
+    hora = db.horas[horaid]
+
     q = db.comisiones.personalid == personalid
     comisiones = db(q).select()
+    
+    
+    q &= db.horarios.horarioid == horarioid
+    horarios = db(q).select()
+    
+    q &= db.horas.horaid == horaid
+    horas = db(q).select()
+    
   
-    return {'docente':docente, 'comisiones':comisiones}
+    return {'docente':docente, 'comisiones':comisiones, 'horario':horario, 'horarios':horarios, 'horas':horas,'hora':hora}
     
     
 #@auth.requires_login()

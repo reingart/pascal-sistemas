@@ -176,11 +176,10 @@ def final(): #formulario de inscrip a examenes finales
                         confirmar=True,
                         valido=True)
                     response.flash= "Usted se a inscripto a los exámenes seleccionados!"
-                elif _value == "off": 
-                    response.flash= "Hay errores en el formulario"
-                else:
-                    response.flash='Por favor, complete el formulario'
-                   
+                if _value == "off":
+                         response.flash= "Hay errores en el formulario"
+                #else:
+                 #   response.flash='Por favor, complete el formulario'
          
       
     return dict (final= final, alumno=alumno) 

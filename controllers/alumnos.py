@@ -16,7 +16,7 @@ def index():
 @auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
 
 def ficha():
-    # muestra un perfil personalizado del alumno    
+    # muestra un perfil personalizado del alumno.
     q = db.alumnos.user_id== auth.user_id   # obtengo el registro del alumno ya registrado como usuario 
     q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
     q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid

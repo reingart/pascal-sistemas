@@ -756,3 +756,4 @@
 [2013-09-12 00:12:18] EDIT pascal/controllers/alumnos.py: 0
 [2013-09-12 10:03:40] EDIT practica/models/db_terciario.py: 0
 [2013-09-12 10:12:48] DELETE practica/private/backup.csv: -545
+[2013-09-12 10:17:19] DELETE practica/private/backup.csv: -542

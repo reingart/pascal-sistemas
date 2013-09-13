@@ -47,3 +47,6 @@ def redes():
     return {}
 def salud_cardiologia():
     return {}
+    
+def programas():
+    return {}

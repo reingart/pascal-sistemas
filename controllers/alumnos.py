@@ -167,6 +167,7 @@ def final(): #formulario de inscrip a examenes finales
     if request.vars.guardar=="Guardar":
             #en k tenemos el nombre del checkbox
         fecha = request.now.date()
+        ok = 0
         for _name,_value in request.vars.items():
             if _name.startswith ("examen_"):
                 examen_id = int(_name[_name.index('_')+1:])
@@ -178,16 +179,15 @@ def final(): #formulario de inscrip a examenes finales
                         alta=fecha,
                         confirmar=True,
                         valido=True)
-                    response.flash= "Usted se a inscripto a los exámenes seleccionados!"
-                else:
-                    response.flash= "Hay errores en el formulario"
-                         
-    #elif form.errors: 
-     #   response.flash='Hay errores en el formulario'
+                    ok += 1 #creo contador de examenes insertados/seleccionados por el alumno
+        if ok:
+              response.flash= "Usted se a inscripto a %d exámenes seleccionados!" % ok
+        else:
+              response.flash = "Por favor seleccione una opción!"
+    
     else:
         response.flash='Por favor, complete el formulario'            
-                #else:
-                 #   response.flash='Por favor, complete el formulario'
+                
          
       
     return dict (final= final, alumno=alumno) 

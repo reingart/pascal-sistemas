@@ -31,7 +31,7 @@
      <td style="border: 1px solid white">
          <center> <select name="{{="tipo_%s" %(alumno.id)}}"> <option>Seleccionar...</option>
               {{for inasistencia in inasistencias: }}
-             <option value="{{= inasistencia.inasistenciaid }}">{{=A(inasistencia.descripcion)}}</option>
+             <option value="{{= inasistencia.inasistenciaid }}">{{=(inasistencia.descripcion)}}</option>
 			 {{pass}}
              </select></center>
      </td>

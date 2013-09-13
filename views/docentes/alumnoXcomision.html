@@ -10,47 +10,37 @@
 <table style="border: 1px solid white">
     <td style="border: 1px solid white"><center> DNI</center>  </td> <td style="border: 1px solid white"> <center>Nombre</center> </td> <td style="border: 1px solid white"> Ausente</td><center> <td>Tipo de falta</td></center>
 
+{{for alumno in alumnos: }}
+
 <tr>
 <td style="border: 1px solid white"><ul>
 
-    {{for alumno in alumnos: }}
     <li>{{=A(alumno.dni)}} </li>
-
-
-    {{pass}}
 
 </ul></td>
 
 <td style="border: 1px solid white"><ul>
-
-    {{for alumno in alumnos: }}
     <li>{{=A(alumno.nombre)}} </li>
-
-
-    {{pass}}
-
 </ul>
 </td>
 <td style="border: 1px solid white">
 
-    {{for alumno in alumnos: }}
     <center>{{=INPUT (_type="checkbox", _name="falta_%s" %(alumno.id))}}</center>
 
-    {{pass}}
     </td>
      <td style="border: 1px solid white">
-     {{for inasistencia in inasistencia: }}
-
-         <center> <SELECT name="detalle"> <option>Seleccionar...</option><option>{{=A(inasistencia.descripcion)}}</option>
-
-	 {{pass}}
+         <center> <select name="detalle"> <option>Seleccionar...</option>
+              {{for inasistencia in inasistencias: }}
+				<option>{{=A(inasistencia.descripcion)}}</option>
+			 {{pass}}
+             </select></center>
      </td>
 
 
 
     </tr>
 
-
+{{pass}}
 
 </table>
     <br></br>

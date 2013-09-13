@@ -104,10 +104,10 @@ def alumnoXcomision():
             
     # Ejecuto el sql donde vienen los alumnos por comision
     alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre)
-    inasistencia=db(q).select(db.inasistencias.ALL)
+    inasistencias=db(q).select(db.inasistencias.ALL)
 
 
-    return {'alumnos':alumnos, 'inasistencia':inasistencia}
+    return {'alumnos':alumnos, 'inasistencias':inasistencias}
     
 
  

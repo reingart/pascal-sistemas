@@ -5,8 +5,7 @@
 <h1>Ficha del docente: {{=docente.nombre}}</h1>
 </td>
 
-
-<br></br>
+<br>
 
 <tr>
 <td style="border: 1px solid white">
@@ -17,9 +16,10 @@
 Localidad: {{=docente.localidad}}<br>
 Titulos: {{=docente.titulos}}<br>
 
-<br></br>
+<br>
 <h5>*click en la materia para tomar asistencias*</h5>
-<BR></BR>
+
+<BR>
 
 {{for comision in comisiones:}}
 <li>Materia que dicta:<a href="{{=URL(f="alumnoXcomision", args=[comision.comisionid])}}">{{=comision.nombre}}</a></li>
@@ -35,11 +35,9 @@ Titulos: {{=docente.titulos}}<br>
 
 
 <tr style="border: 1px solid white">
-
 <td style="border: 1px solid white">
-{{for horario in horarios:}}
-
-    <li><b>Horario: </b>{{=horario.dia}} {{=horario.horaid}} hs ,<b>Materia: </b>{{=comision.nombre}}</li>
+{{for comision in comisiones:}}
+<li><b>Horario: </b>{{=horario.dia}} {{=horario.horaid}} hs ,<b>Materia: </b>{{=comision.nombre}}</li>
 {{pass}}
 </td>
 
@@ -49,7 +47,7 @@ Titulos: {{=docente.titulos}}<br>
 </td>
 
 </table>
-<br></br>
+<br>
 
 
 <a href="http://127.0.0.1:8000/practica/docentes/index">VOLVER</a>

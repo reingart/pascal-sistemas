@@ -36,7 +36,12 @@ Titulos: {{=docente.titulos}}<br>
 
 <tr style="border: 1px solid white">
 
-<td style="border: 1px solid white"> <b>Horario: </b>{{=horario.dia}} {{=horario.horaid}} hs ,<b>Materia: </b>{{=comision.nombre}} </td>
+<td style="border: 1px solid white">
+{{for horario in horarios:}}
+
+    <li><b>Horario: </b>{{=horario.dia}} {{=horario.horaid}} hs ,<b>Materia: </b>{{=comision.nombre}}</li>
+{{pass}}
+</td>
 
 </tr>
 

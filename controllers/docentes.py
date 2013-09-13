@@ -22,7 +22,7 @@
     
      
 def busqueda():
-    # armo un formulario para buscar alumno por su dni
+    # armo un formulario para buscar alumno por su dni y nombre
     form = SQLFORM.factory(
         Field("dni", "integer"),
         Field("nombre", "string"),
@@ -62,7 +62,10 @@ def index():
     docentes=db(q).select(orderby=db.personal.nombre)
     return{'docentes':docentes}
 
-#@auth.requires_login()
+#@auth.requires_login() 
+# requiere logue para ingresar
+
+# requiere que el logueado pertenezca al rol de personal  y/o doncente
 #@auth.requires_membership(role='personal')     
 def alumnoXcomision():
     comisionid=request.args[0]
@@ -82,7 +85,7 @@ def alumnoXcomision():
      
      #cuando hago click en el boton guardar
     if request.vars.grabar=="GUARDAR":
-            #en k tenemos el nombre del checkbox
+        # en _name tenemos el nombre del checkbox
         fecha = request.vars.fecha
         for _name,_value in request.vars.items():
             if _name.startswith ("falta"):
@@ -101,8 +104,10 @@ def alumnoXcomision():
             
     # Ejecuto el sql donde vienen los alumnos por comision
     alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre)
+    inasistencia=db(q).select(db.inasistencias.ALL)
 
-    return {'alumnos':alumnos}
+
+    return {'alumnos':alumnos, 'inasistencia':inasistencia}
     
 
  
@@ -116,6 +121,8 @@ def horarios():
 #@auth.requires_membership(role='personal')  
    
 def finales():
+   
+     
     q=db.notas.notaid>0
     notas=db(q).select()
     if request.vars.GUARDAR=="GRABAR":
@@ -180,7 +187,7 @@ def ficha():
     
     
     q &= db.horarios.horarioid == horarioid
-    horarios = db(q).select()
+    horarios = db(q).select(db.horarios.ALL)
     
     q &= db.horas.horaid == horaid
     horas = db(q).select(db.horas.ALL)

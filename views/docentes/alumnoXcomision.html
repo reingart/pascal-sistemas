@@ -8,7 +8,7 @@
 
 
 <table style="border: 1px solid white">
-    <td style="border: 1px solid white"><center> DNI</center>  </td> <td style="border: 1px solid white"> <center>Nombre</center> </td> <td style="border: 1px solid white"> Presente</td> <td>Detalle</td>
+    <td style="border: 1px solid white"><center> DNI</center>  </td> <td style="border: 1px solid white"> <center>Nombre</center> </td> <td style="border: 1px solid white"> Ausente</td><center> <td>Tipo de falta</td></center>
 
 <tr>
 <td style="border: 1px solid white"><ul>
@@ -39,9 +39,9 @@
     {{pass}}
     </td>
      <td style="border: 1px solid white">
-     {{for alumno in alumnos: }}
+     {{for inasistencia in inasistencia: }}
 
-         <center> <SELECT name="Recursos" > <option>Seleccionar...</option><option>Media falta</option><option>Ausente</option> <option>Justificado</option><option>Retiro anticipado</option>
+         <center> <SELECT name="detalle"> <option>Seleccionar...</option><option>{{=A(inasistencia.descripcion)}}</option>
 
 	 {{pass}}
      </td>

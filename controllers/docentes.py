@@ -82,30 +82,27 @@ def alumnoXcomision():
     
     # Busca las comisiones que coincidan
     q &= db.comisiones.comisionid == db.inscripcionescomision.comisionid
+
+    # Ejecuto el sql donde vienen los alumnos por comision
+    alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre)
+    inasistencias=db(q).select(db.inasistencias.ALL)
      
      #cuando hago click en el boton guardar
     if request.vars.grabar=="GUARDAR":
         # en _name tenemos el nombre del checkbox
         fecha = request.vars.fecha
-        for _name,_value in request.vars.items():
-            if _name.startswith ("falta"):
-                alumno_id = int(_name[_name.index('_')+1:])
+        for alumno in alumnos:
+                alumno_id = alumno.alumnoid
                 comision_id = comisionid
                 inasistencia_id = 1
+                # obtenemos los valores de los campos en el formulario para este alumno
+                falta = request.vars["falta_%s" % alumno_id]
+                inasistencia_id = request.vars["tipo_%s" % alumno_id]
                 
                 # si el valor es on  en el checkbox insertamos los datos del alumno en la tabla faltas. 
-                if _value == "on":
+                if falta == "on":
                     db.faltas.insert(alumnoid= alumno_id, comisionid= comision_id,inasistenciaid=inasistencia_id,
                     fecha=fecha,cantidad=1)
-                    
-                    
-    
-
-            
-    # Ejecuto el sql donde vienen los alumnos por comision
-    alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre)
-    inasistencias=db(q).select(db.inasistencias.ALL)
-
 
     return {'alumnos':alumnos, 'inasistencias':inasistencias}
     

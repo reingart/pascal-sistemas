@@ -227,6 +227,7 @@ db.define_table('horas',
 db.define_table('inasistencias',
     Field('inasistenciaid', type='id'),
     Field('descripcion', type='string', length=50),
+    Field('valor', type='integer'),
     format= "%(inasistenciaid)s [%(descripcion)s]",
     migrate=migrate)
 

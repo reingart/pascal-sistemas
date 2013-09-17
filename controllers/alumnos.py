@@ -156,11 +156,12 @@ def final(): #formulario de inscrip a examenes finales
     q = db.alumnos.user_id== auth.user_id #busca y trae todos los datos del alumno logueado
     alumno= db(q).select().first() 
     # guarda en una variable los datos para poder ser utilizados y tmb la envio a la vista
-    #q &= db.notas.alumnoid== db.alumnos.alumnoid
+    #q &= db.notas.alumnoid== alumno
     #q &= db.notas.calificacionid==5
-    #q &= db.notas.nota<=4
-    #q &= db.notas.materiaid== db.examenes.materiaid
-    q &= db.examenes.materiaid== db.materias.materiaid
+    #q &= db.notas.nota<4
+    #q &= db.notas.materiaid==db.materias.materiaid
+    #q &= db.examenes.materiaid== db.notas.materiaid
+    q &= db.examenes.materiaid==db.materias.materiaid
     q &= db.examenes.personalid1== db.personal.personalid
     final= db(q).select(db.examenes.examenid, db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)
      #cuando hago click en el boton guardar

@@ -373,7 +373,7 @@ inasistencias.inasistenciaid,inasistencias.descripcion,inasistencias.valor
 6,Media falta,0.5
 7,tarde,0.25
 8,retiro anticipado,0.25
-9,ausente,1.0
+9,completa,1.0
 
 
 TABLE periodos
@@ -573,6 +573,7 @@ faltas.faltaid,faltas.alumnoid,faltas.comisionid,faltas.inasistenciaid,faltas.fe
 28,10,30,6,2013-09-13,1.0,False,<NULL>
 29,10,30,6,2013-09-13,1.0,False,<NULL>
 30,10,30,6,2013-09-13,1.0,False,<NULL>
+31,10,30,8,2013-09-17,1.0,False,<NULL>
 
 
 TABLE examenes

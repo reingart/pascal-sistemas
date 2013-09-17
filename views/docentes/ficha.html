@@ -22,7 +22,7 @@ Titulos: {{=docente.titulos}}<br>
 <BR>
 
 {{for comision in comisiones:}}
-<li>Materia que dicta:<a href="{{=URL(f="alumnoXcomision", args=[comision.comisionid])}}">{{=comision.nombre}}</a></li>
+<li>Materia que dicta: <a href="{{=URL(f="alumnoXcomision", args=[comision.comisionid])}}">{{=comision.nombre}}</a></li>
 {{pass}}
 
 </td>
@@ -31,15 +31,19 @@ Titulos: {{=docente.titulos}}<br>
 
 <tr>
 <td style="border: 1px solid white">
-<center><b><u><h3> HORARIOS EN QUE DICTA LAS MATERIAS</h3></u></b></center>
+<center><b><u><h3> Horario en que dicta las materias</h3></u></b></center>
 
 
 <tr style="border: 1px solid white">
+
 <td style="border: 1px solid white">
-{{for comision in comisiones:}}
-<li><b>Horario: </b>{{=horario.dia}} {{=horario.horaid}} hs ,<b>Materia: </b>{{=comision.nombre}}</li>
+{{for hora in horas:}}
+    <li><b></b>{{=horario.dia}} {{=hora.desde}} hs a {{=hora.hasta}} hs <b>Materia: </b>{{=comision.nombre}}</li>
 {{pass}}
+
+
 </td>
+
 
 </tr>
 
@@ -50,4 +54,4 @@ Titulos: {{=docente.titulos}}<br>
 <br>
 
 
-<a href="http://127.0.0.1:8000/practica/docentes/index">VOLVER</a>
+<a href="{{=URL(f="index")}}">VOLVER</a>

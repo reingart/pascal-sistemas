@@ -1,24 +1,26 @@
 {{extend 'layout.html'}}
 <h1>Carga de apuntes</h1>
-<h1> ANALISTA DE SISTEMAS</h1>
+<br>
 <TABLE style="border: 1px solid white">
     
-    <H1>PRIMER AÑO</h1>
+    
     <tr style="border: 1px solid white">
     <td style="border: 1px solid white"><B><center>Archivo</center></B></td>
     <td style="border: 1px solid white"><B><center>Descripcion</B></td>
+    <td style="border: 1px solid white"><B><center>Carreras </B></td>
     <td style="border: 1px solid white"><B><center>Materia </B></td>
+
     <td style="border: 1px solid white"><B><center>Profesor</B></td>
     <td style="border: 1px solid white"><B><center>Fecha</B></td>
    
     </tr>
     
     <tr style="border: 1px solid white">
-        <td style="border: 1px solid white"><center><FORM ACTION=""> <INPUT type="submit" name="GRABAR" value="Examinar..."></FORM></B></td>
-    <td style="border: 1px solid white"><center><INPUT type="text" NAME="NOTA" size="60" MAXLENGTH="60"></B></td>
-    <td style="border: 1px solid white"><center> <SELECT name="condicion" > <option>Analisis 1</option><option>Algebra 1</option> <option>Int. Sistemas</option><option>Arquitectura</option> <option>Programación</option><option>Administración</option><option>EDI 1</option><option>Metodología de Información</option><option>Intr. a Física</option><option>Ingles</option></td>
+        <td style="border: 1px solid white"><center><FORM ACTION=""> <input name="Examinar" type="file" size="20"> </a> </FORM></B></td>
+    <td style="border: 1px solid white"><center><INPUT type="text" NAME="NOTA" size="60" MAXLENGTH="60"></B></td><td></td> 
+<td style="border: 1px solid white"><center> </td>
         <td style="border: 1px solid white"><center>Hector Amarilla</center> </td>
-        <td style="border: 1px solid white"><center>25/04/2013 </td>
+        <td style="border: 1px solid white"><center>{{=request.now.date()}} </td>
  
      
     
@@ -26,4 +28,5 @@
     
    
 </table>
+ <br>
  <INPUT type="submit" name="GRABAR" value="GUARDAR">

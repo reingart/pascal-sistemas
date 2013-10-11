@@ -23,19 +23,6 @@ db.define_table('alumnos',
     Field('user_id', db.auth_user, readable= False, writable= False),
     format= "%(alumnoid)s [%(nombre)s]",
     migrate=migrate)
-db.alumnos.nombre.requires=IS_NOT_EMPTY(error_message='Ingrese el nombre')
-db.alumnos.dni.requires=IS_NOT_EMPTY(error_message='Ingrese el dni')
-db.alumnos.sexo.requires=IS_NOT_EMPTY(error_message='Ingrese el sexo')
-db.alumnos.fechanacimiento.requires=IS_NOT_EMPTY(error_message='Ingrese la fecha de nacimiento')
-db.alumnos.lugarnacimiento.requires=IS_NOT_EMPTY(error_message='Ingrese el lugar de nacimiento')
-db.alumnos.estadocivil.requires=IS_NOT_EMPTY(error_message='Ingrese el estado civil')
-db.alumnos.nacionalidad.requires=IS_NOT_EMPTY(error_message='Ingrese la nacionalidad')
-db.alumnos.direccion.requires=IS_NOT_EMPTY(error_message='Ingrese la direccion')
-db.alumnos.localidad.requires=IS_NOT_EMPTY(error_message='Ingrese la localidad')
-db.alumnos.cp.requires=IS_NOT_EMPTY(error_message='Ingrese el codigo postal')
-db.alumnos.telefono.requires=IS_NOT_EMPTY(error_message='Ingrese el telefono')
-db.alumnos.email1.requires=IS_NOT_EMPTY(error_message='Ingrese el email')
-db.alumnos.ingreso.requires=IS_NOT_EMPTY(error_message='Ingrese la fecha de ingreso')
     
 db.define_table('cursos',
     Field('cursoid', type='id'),
@@ -88,7 +75,7 @@ db.define_table('personal',
     Field('cuil', type='string', length=50),
     Field('foto', type='upload', length=50),
     Field('cargoid', db.cargos),
-    Field('user_id', db.auth_user, readable= False, writable= False),
+    
 ##    Field('seccionid', db.secciones),
     format= "%(personalid)s [%(nombre)s]",
     migrate=migrate)
@@ -157,6 +144,8 @@ db.define_table('materias',
     format= "%(materiaid)s [%(nombre)s]",
     migrate=migrate)
 
+
+
 db.define_table('divisiones',
     Field('divisionid', type='id'),
     Field('descripcion', type='string', length=50),
@@ -189,6 +178,8 @@ db.define_table('asignaturas',
     format= "%(asignaturaid)s [%(nombre)s]",
     migrate= migrate )
 
+
+
 db.define_table('calendarios',
     Field('calendarioid', type='id'),
     Field('fecha', type='date'),
@@ -207,6 +198,7 @@ db.define_table('calificaciones',
     format= "%(calificacionid)s [%(descripcion)s]",
     migrate=migrate)
 
+
 db.define_table('correlativas',
     Field('correlativaid', type='id'),
     Field('materiaid1', db.materias),
@@ -224,12 +216,17 @@ db.define_table('horas',
     format= "%(horaid)s [%(hora)s]",
     migrate=migrate)
 
+
+
+
+
 db.define_table('inasistencias',
     Field('inasistenciaid', type='id'),
     Field('descripcion', type='string', length=50),
-    Field('valor', type='double'),
     format= "%(inasistenciaid)s [%(descripcion)s]",
     migrate=migrate)
+
+
 
 db.define_table('periodos',
     Field('periodoid', type='id'),
@@ -253,6 +250,7 @@ db.define_table('periodos',
     format= "%(periodoid)s [%(descripcion)s]",
     migrate=migrate)
 
+
 db.define_table('notas',
     Field('notaid', type='id'),
     Field('alumnoid', db.alumnos),
@@ -271,6 +269,8 @@ db.define_table('notas',
     Field('turno', type='string', length=1),
     format= "%(notaid)s [%(nota)s]",
     migrate=migrate)
+
+
     
 db.define_table('titulos',
     Field('tituloid', type='id'),
@@ -316,6 +316,8 @@ db.define_table('profesores',
     format= "%(profesorid)s [%(detalle)s]",
     migrate=migrate)
 
+
+
 db.define_table('sanciones',
     Field('sancionid', type='id'),
     Field('alumnoid', db.alumnos),
@@ -327,12 +329,16 @@ db.define_table('sanciones',
     format= "%(sancionid)s [%(detalle)s]",
     migrate=migrate)
 
+
+
 db.define_table('situaciones',
     Field('situacionid', type='id'),
     Field('detalle', type='string', length=30),
     format= "%(situacionid)s [%(detalle)s]",
     migrate=migrate)
-   
+
+
+    
 db.define_table('faltas',
     Field('faltaid', type='id'),
     Field('alumnoid', db.alumnos),
@@ -363,8 +369,8 @@ db.define_table('inscripcionescomision',
     Field('inscripcionid', type='id'),
     Field('alumnoid', db.alumnos),
     Field('comisionid', db.comisiones),
-    Field('alta', type='date', default=request.now.date, required= True),
-    Field('baja', type='date',writable=False, readable=False),
+    Field('alta', type='date'),
+    Field('baja', type='date'),
     Field('condicion', type='string', length=1),
     migrate=migrate)
 
@@ -372,8 +378,8 @@ db.define_table('inscripcionesdivision',
     Field('inscripcionid', type='id'),
     Field('alumnoid', db.alumnos),
     Field('divisionid', db.divisiones),
-    Field('alta', type='date', default=request.now.date, required= True),
-    Field('baja', type='date',writable=False, readable=False),
+    Field('alta', type='date'),
+    Field('baja', type='date'),
     Field('condicion', type='string', length=1),
     migrate=migrate)
 
@@ -382,9 +388,63 @@ db.define_table('inscripcionesexamen',
     Field('alumnoid', db.alumnos),
     Field('examenid', db.examenes),
     Field('condicion', type='string', length=1),
-    Field('alta', type='date', default=request.now.date, required= True),
-    Field('baja', type='date',writable=False, readable=False),
+    Field('alta', type='date'),
+    Field('baja', type='date'),
     Field('confirmar', type='boolean', default=False),
     Field('valido', type='boolean', default=False),
     migrate=migrate)
-db.inscripcionesexamen.examenid.requires=IS_NOT_EMPTY(error_message='Ingrese el examen')
+    
+
+
+db.define_table('constancia',
+    Field('constanciaid', type='id'),
+    Field('alumnoid', db.alumnos),
+    Field('carreraid', db.carreras),
+    Field('apellido', type='string', length=1),
+    Field('dni', type='integer'),
+    Field('alta', type='date'),
+    Field('fechadeinicio', type='date'),
+    Field('alumnoregular', type='boolean', default=False),
+    Field('valido', type='boolean', default=False),
+    migrate=migrate)
+    
+db.define_table('certificado',
+    Field('certificadoid', type='id'),
+    Field('alumnoid', db.alumnos),
+    Field('carreraid', db.carreras),
+    Field('materiaid', db.materias),
+    Field('apellido', type='string', length=1),
+    Field('dni', type='integer'),
+    Field('cantidad', type='integer'),
+    Field('porcentaje', type='integer'),
+    Field('alta', type='date'),
+    Field('fechadeinicio', type='date'),
+    Field('materiasaprobadas', type='boolean', default=False),
+    Field('valido', type='boolean', default=False),
+    migrate=migrate)
+    
+db.define_table('tituloentramite',
+    Field('tituloentramiteid', type='id'),
+    Field('alumnoid', db.alumnos),
+    Field('carreraid', db.carreras),
+    Field('apellido', type='string', length=1),
+    Field('dni', type='integer'),
+    Field('matricula', type='integer'),
+    Field('alta', type='date'),
+    Field('fechadeinicio', type='date'),
+    Field('fechadetermino', type='date'),
+    Field('valido', type='boolean', default=False),
+    migrate=migrate)
+    
+
+    
+db.define_table('documentacion',
+    Field('documentacionid', type='id'),
+    Field('conatanciaid', db.constancia),
+    Field('certificadoid', db.certificado),
+    Field('tituloentramiteid', db.tituloentramite),
+    Field('alta', type='date'),
+    Field('fechadeinicio', type='date'),
+    Field('fechadetermino', type='date'),
+    Field('valido', type='boolean', default=False),
+    migrate=migrate)

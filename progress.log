@@ -375,12 +375,6 @@
 [2013-09-06 15:48:51] EDIT pascal2/controllers/alumnos.py: 1
 [2013-09-06 15:51:23] EDIT pascal2/controllers/alumnos.py: -3
 [2013-09-06 15:51:51] EDIT pascal2/controllers/alumnos.py: 0
-<<<<<<< local
-[2013-09-06 19:51:18] EDIT pascal/views/tramites/consultar.html: 0
-[2013-09-06 19:58:14] EDIT pascal/views/tramites/actualizar.html: 1
-[2013-09-06 20:00:57] EDIT pascal/views/tramites/actualizar.html: 0
-[2013-09-06 20:02:02] EDIT pascal/views/tramites/actualizar.html: 2
-=======
 [2013-09-06 19:03:57] EDIT practica/models/menu.py: 1
 [2013-09-06 19:06:20] EDIT practica/models/menu.py: 1
 [2013-09-06 19:15:14] EDIT practica/controllers/carreras.py: 2
@@ -540,16 +534,44 @@
 [2013-09-25 16:03:54] EDIT pascal/controllers/alumnos.py: 0
 [2013-09-25 16:04:19] EDIT pascal/controllers/alumnos.py: 0
 [2013-09-25 16:06:05] EDIT pascal/controllers/alumnos.py: 0
-<<<<<<< local
->>>>>>> other
-=======
 [2013-09-26 16:39:18] EDIT prueba/views/alumnos/ingreso.html: 4
 [2013-09-26 16:40:06] EDIT prueba/views/alumnos/ingreso.html: 0
 [2013-09-26 16:44:52] EDIT prueba/views/alumnos/ingreso.html: -2
 [2013-09-26 16:46:00] EDIT prueba/views/alumnos/ingreso.html: -1
 [2013-09-26 16:46:45] EDIT prueba/views/alumnos/ingreso.html: 2
->>>>>>> other
-[2013-10-11 19:06:49] EDIT pascal/views/tramites/consultar.html: 0
-[2013-10-11 19:07:47] EDIT pascal/views/tramites/actualizar.html: 1
-[2013-10-11 19:07:52] EDIT pascal/views/tramites/consultar.html: 0
-[2013-10-11 19:09:29] EDIT pascal/views/tramites/actualizar.html: -3
+[2013-10-11 19:20:53] EDIT pascal2/controllers/alumnos.py: 1
+[2013-10-11 19:21:15] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:21:49] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:21:57] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:22:30] EDIT pascal2/views/alumnos/inasistencias.html: 1
+[2013-10-11 19:23:33] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:24:21] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:24:28] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:24:57] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:25:11] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:25:18] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:25:47] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:26:10] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:29:11] EDIT pascal2/controllers/alumnos.py: 1
+[2013-10-11 19:29:14] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:29:27] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:29:37] EDIT pascal2/views/alumnos/inasistencias.html: 0
+[2013-10-11 19:30:23] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:31:22] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:32:12] EDIT pascal2/views/alumnos/inasistencias.html: 0
+[2013-10-11 19:32:53] EDIT pascal2/views/alumnos/inasistencias.html: 0
+[2013-10-11 19:33:28] EDIT pascal2/views/alumnos/inasistencias.html: 0
+[2013-10-11 19:34:39] EDIT pascal2/views/alumnos/inasistencias.html: 5
+[2013-10-11 19:34:52] EDIT pascal2/views/alumnos/inasistencias.html: -1
+[2013-10-11 19:35:59] EDIT pascal2/views/alumnos/inasistencias.html: 3
+[2013-10-11 19:37:23] EDIT pascal2/views/alumnos/inasistencias.html: 0
+[2013-10-11 19:38:00] EDIT pascal2/views/alumnos/inasistencias.html: 0
+[2013-10-11 19:39:19] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:39:35] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:40:38] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:41:30] EDIT pascal2/views/alumnos/inasistencias.html: -1
+[2013-10-11 19:41:38] EDIT pascal2/views/alumnos/inasistencias.html: -3
+[2013-10-11 19:41:56] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:43:58] EDIT pascal2/controllers/alumnos.py: 0
+[2013-10-11 19:44:37] EDIT pascal2/views/alumnos/inasistencias.html: 0
+[2013-10-11 19:44:48] EDIT pascal2/controllers/alumnos.py: 0

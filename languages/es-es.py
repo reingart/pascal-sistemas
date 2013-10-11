@@ -49,6 +49,7 @@
 'cannot create file': 'no es posible crear archivo',
 'cannot upload file "%(filename)s"': 'no es posible subir archivo "%(filename)s"',
 'Carreras': 'Carreras',
+'certificado de alumno regular': 'certificado de alumno regular',
 'Change Password': 'Cambie Contraseña',
 'change password': 'cambiar contraseña',
 'check all': 'marcar todos',

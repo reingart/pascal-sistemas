@@ -102,6 +102,17 @@ db.define_table('niveles',
     format= "%(nivelid)s [%(descripcion)s]",
     migrate=migrate)
     
+db.define_table('apuntes',
+    Field('apunteid', type='id'),
+    Field('archivo', type='dowloand', length=50),
+    Field('carrera', type='string', length=50),
+    Field('descripcion', type='string', default=0),
+    Field('profesor', type='string', default=0),
+    Field('fecha', type='date', default=0),
+
+    format= "%(apunteid)s [%(descripcion)s]",
+    migrate=migrate)
+    
 db.define_table('carreras',
     Field('carreraid', type='id'),
     Field('nombre', type='string', length=250),

@@ -45,3 +45,13 @@
 [2013-10-11 19:34:21] EDIT practica/views/docentes/apuntes.html: 0
 [2013-10-11 19:34:49] EDIT practica/views/docentes/apuntes.html: -3
 [2013-10-11 19:35:11] EDIT practica/controllers/docentes.py: 0
+[2013-10-13 13:43:47] EDIT practica/controllers/docentes.py: 3
+[2013-10-13 13:44:18] CREATE docentes/unidad.html: 0
+[2013-10-13 13:44:23] EDIT practica/views/docentes/unidad.html: 19
+[2013-10-13 13:44:37] EDIT practica/views/docentes/unidad.html: 0
+[2013-10-13 13:46:16] EDIT practica/views/docentes/apuntes.html: 2
+[2013-10-13 13:46:36] EDIT practica/views/docentes/apuntes.html: 1
+[2013-10-13 13:47:04] EDIT practica/views/docentes/apuntes.html: 0
+[2013-10-13 13:50:16] EDIT practica/models/db_terciario.py: 9
+[2013-10-13 13:50:32] EDIT practica/models/db_terciario.py: 0
+[2013-10-13 13:50:48] EDIT practica/models/db_terciario.py: 0

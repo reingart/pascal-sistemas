@@ -1,0 +1,32 @@
+{{extend 'layout.html'}}
+<h1>Carga de unidades</h1>
+<br>
+<TABLE style="border: 1px solid white">
+    
+    
+    <tr style="border: 1px solid white">
+    <td style="border: 1px solid white"><B><center>Archivo</center></B></td>
+    <td style="border: 1px solid white"><B><center>Descripcion</B></td>
+    <td style="border: 1px solid white"><B><center>Carrera </B></td>
+    <td style="border: 1px solid white"><B><center>Materia </B></td>
+
+    <td style="border: 1px solid white"><B><center>Profesor</B></td>
+    <td style="border: 1px solid white"><B><center>Fecha</B></td>
+   
+    </tr>
+    
+    <tr style="border: 1px solid white">
+        <td style="border: 1px solid white"><center><FORM ACTION=""> <input name="Examinar" type="file" size="20"> </a> </FORM></B></td>
+    <td style="border: 1px solid white"><center><INPUT type="text" NAME="NOTA" size="60" MAXLENGTH="60"></B></td><td></td> 
+<td style="border: 1px solid white"><center> </td>
+        <td style="border: 1px solid white"><center>Hector Amarilla</center> </td>
+        <td style="border: 1px solid white"><center>{{=request.now.date()}} </td>
+ 
+     
+    
+    </tr>
+    
+   
+</table>
+ <br>
+ <INPUT type="submit" name="GRABAR" value="GUARDAR">

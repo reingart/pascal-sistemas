@@ -85,7 +85,7 @@ def alumnoXcomision():
 
     # Ejecuto el sql donde vienen los alumnos por comision
     alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre)
-    inasistencias=db(q).select(db.inasistencias.ALL)
+    inasistencias=db(db.inasistencias.id>0).select(db.inasistencias.ALL)
      
      #cuando hago click en el boton guardar
     if request.vars.grabar=="GUARDAR":

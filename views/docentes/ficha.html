@@ -37,8 +37,8 @@ Titulos: {{=docente.titulos}}<br>
 <tr style="border: 1px solid white">
 
 <td style="border: 1px solid white">
-{{for hora in horas:}}
-    <li><b></b>{{=horario.dia}} {{=hora.desde}} hs a {{=hora.hasta}} hs <b>Materia: </b>{{=comision.nombre}}</li>
+{{for comision in comisiones:}}
+    <li><b></b>{{=horario.dia}} <b>Materia: </b>{{=comision.nombre}}</li>
 {{pass}}
 
 

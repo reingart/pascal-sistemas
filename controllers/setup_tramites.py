@@ -1,19 +1,29 @@
 def cargar_tramites():
-    db(db.tramites.tramiteid>0).delete()  
+    form = SQLFORM(db.constancia,submit_button='Aceptar')
+    if form.accepts(request.vars, session):
+        response.flash = 'NUEVO CLIENTE INGRESADO'
+        redirect(URL('dar_permiso'))
+    elif form.errors:
+        response.flash = 'HAY ERRORES EN EL INGRESO'
+    else:
+        response.flash = 'POR FAVOR COMPLETE EL FORMULARIO'    
+    return dict(form=form)
+
+    #db(db.tramites.tramiteid>0).delete()  
 
     # Insertamos los tramites requeridos
     
-    db.tramites.insert(tramiteid="1",descripcion="Certificado de Alumno Regular", arancelado="true")
-    db.tramites.insert(tramiteid="2",descripcion="Certificado de Titulo en Tramite", arancelado="true")
-    db.tramites.insert(tramiteid="3",descripcion="Certificado de Reincorporacion", arancelado="true")
-    db.tramites.insert(tramiteid="4",descripcion="Certificado de Materias Aprobadas", arancelado="true")
+    #db.tramites.insert(tramiteid="1",descripcion="Certificado de Alumno Regular", arancelado="true")
+   # db.tramites.insert(tramiteid="2",descripcion="Certificado de Titulo en Tramite", arancelado="true")
+    #db.tramites.insert(tramiteid="3",descripcion="Certificado de Reincorporacion", arancelado="true")
+   # db.tramites.insert(tramiteid="4",descripcion="Certificado de Materias Aprobadas", arancelado="true")
     
     
-    response.view="generic.html"
+   # response.view="generic.html"
     
     # Devuelvo una consulta del contenido de la tabla
    
-    return {'filas': db(db.tramites.tramiteid>0).select()}
+    #return {'filas': db(db.tramites.tramiteid>0).select()}
 
 
 def cargar_ubicaciones():

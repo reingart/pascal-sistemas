@@ -126,9 +126,13 @@ def inasistencias():   #lista de inasistencias del alumno
     q &= db.faltas.comisionid== db.comisiones.comisionid
     q &= db.comisiones.personalid== db.personal.personalid
     q &= db.faltas.inasistenciaid== db.inasistencias.inasistenciaid
-    falta= db(q).select(db.alumnos.nombre, db.comisiones.nombre, db.faltas.cantidad, db.inasistencias.descripcion, db.faltas.fecha)
+    #cantidad= db(q).count()
+    falta= db(q).select(db.comisiones.nombre, db.faltas.cantidad, db.inasistencias.descripcion, db.faltas.fecha)
     
-    return dict (falta=falta, alumno=alumno)
+    total= db(q).select(db.faltas.cantidad.sum().with_alias("suma")).first()
+    
+    
+    return dict (falta=falta, alumno=alumno, total=total)
     
 @auth.requires_login() #requiere que haya un usuario logeado
 @auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos

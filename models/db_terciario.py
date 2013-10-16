@@ -91,7 +91,7 @@ db.define_table('niveles',
     
 db.define_table('apuntes',
     Field('apunteid', type='id'),
-    Field('archivo', type='dowloand', length=50),
+    Field('archivo', type='upload', length=50),
     Field('carrera', type='string', length=50),
     Field('descripcion', type='string', default=0),
     Field('profesor', type='string', default=0),

@@ -166,7 +166,6 @@ auth_event.id,auth_event.time_stamp,auth_event.client_ip,auth_event.user_id,auth
 146,2013-09-11 22:11:03,127.0.0.1,4,auth,User 4 Logged-out
 149,2013-09-11 22:53:28,127.0.0.1,1,auth,Usuario 1 sesión iniciada
 150,2013-09-11 23:41:00,127.0.0.1,1,auth,User 1 Logged-out
-151,2013-10-11 19:18:54,127.0.0.1,1,auth,Usuario 1 sesión iniciada
 
 
 TABLE auth_cas
@@ -184,6 +183,12 @@ cursos.cursoid,cursos.nombre,cursos.codigo,cursos.nivel,cursos.anio,cursos.secci
 1,Primer a�o,1,3,2013,A,4,1
 2,Segundo a�o,2,3,2013,B,3,2
 3,Tercer a�o,3,3,2013,C,3,3
+
+
+TABLE recursos
+
+
+TABLE reservas
 
 
 TABLE revistas
@@ -206,21 +211,24 @@ secciones.seccionid,secciones.descripcion
 
 
 TABLE personal
-personal.personalid,personal.E_mail,personal.facebook,personal.nombre,personal.dni,personal.nacimiento,personal.domicilio,personal.localidad,personal.cp,personal.provincia,personal.telefono,personal.titulos,personal.otorgadospor,personal.fechaotorgamiento,personal.apto,personal.nombramiento,personal.cuil,personal.foto,personal.cargoid,personal.user_id
-2,ringart@gmail.com,mariano.reingart,Reingart Mariano,111111,<NULL>,Necochea 1132,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,pepe alberto,,nose,<NULL>,1234577,personal.foto.846577e02fd2b2a3.6d617269616e6f3.jpg,1,<NULL>
-3,hector@hotmail.com,hector.amarilla,Amarilla Hector,434343,<NULL>,Laprida 4567,gonzalez catan,1759,Buenos Aires,8568899,ingenieria en sistemas,Jose Rodriguez,,nose,<NULL>,8799999,personal.foto.bcbf221d67f4794c.616d6172696c6c6.jpg,2,<NULL>
-4,claudia@hotmail.com,mariaclaudia.vargas,Vargas Claudia,4545,<NULL>,San Juan 1122,gonzalez catan,1759,Buenos Aires,7899765,Contaduria,Juan Repeto,,nose,<NULL>,7876669,personal.foto.be7fa2dae636613a.323031332d30382.jpg,2,<NULL>
-5,angelbravo@gmail.com,angel.bravo,Bravo Angel,9897,<NULL>,Rivas 1450,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,Norberto Gonzalez,,nose,<NULL>,76969989,personal.foto.b86d8bebfddda1a5.627261766f2e6a7.jpg,1,<NULL>
-6,agui.elena@live.com,elen.aguirre,Aguirre Elena,57865,<NULL>,Sarmiento 1120,gonzalez catan,1759,Buenos Aires,6888899,Psicopedagoga,Norma Villanueva,,nose,<NULL>,545465456,personal.foto.b6d5339f19c52ba1.68656c656e61206.jpg,2,<NULL>
-7,luzmedina@hotmail.com,luz.pamela,Medina Luz,754645657,<NULL>,Claudia Sifre 1112,gonzalez catan,1759,Buenos Aires,436777,Analisis de sistemas,Angel Bravo,,nose,<NULL>,9679679,personal.foto.8ffc405571829758.37333538355f343.jpg,1,<NULL>
-8,josegonzalez@hotmail.com,jose.gonzalez,Gonzalez Jose,79588,<NULL>,Lasalle 456,gonzalez catan,1759,Buenos Aires,5474868787,Profesor matematica,Ruben Olmedo,,nose,<NULL>,7896969,personal.foto.8ea2bda6b501e36d.313233343933305.jpg,1,<NULL>
-9,roselli@hotmail.com,roselli.andrea,Andre Roselli,545353,<NULL>,Melian  567,gonzalez catan,1759,Buenos Aires,6576765757,Profesora de  ingles,Josefa Rosales,,nose,<NULL>,5476476475,personal.foto.8d0ccb6f6d8da835.3136323831335f3.jpg,2,<NULL>
+personal.personalid,personal.E_mail,personal.facebook,personal.nombre,personal.dni,personal.nacimiento,personal.domicilio,personal.localidad,personal.cp,personal.provincia,personal.telefono,personal.titulos,personal.otorgadospor,personal.fechaotorgamiento,personal.apto,personal.nombramiento,personal.cuil,personal.foto,personal.cargoid
+2,ringart@gmail.com,mariano.reingart,Reingart Mariano,111111,<NULL>,Necochea 1132,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,pepe alberto,,nose,<NULL>,1234577,personal.foto.846577e02fd2b2a3.6d617269616e6f3.jpg,1
+3,hector@hotmail.com,hector.amarilla,Amarilla Hector,434343,<NULL>,Laprida 4567,gonzalez catan,1759,Buenos Aires,8568899,ingenieria en sistemas,Jose Rodriguez,,nose,<NULL>,8799999,personal.foto.bcbf221d67f4794c.616d6172696c6c6.jpg,2
+4,claudia@hotmail.com,mariaclaudia.vargas,Vargas Claudia,4545,<NULL>,San Juan 1122,gonzalez catan,1759,Buenos Aires,7899765,Contaduria,Juan Repeto,,nose,<NULL>,7876669,personal.foto.be7fa2dae636613a.323031332d30382.jpg,2
+5,angelbravo@gmail.com,angel.bravo,Bravo Angel,9897,<NULL>,Rivas 1450,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,Norberto Gonzalez,,nose,<NULL>,76969989,personal.foto.b86d8bebfddda1a5.627261766f2e6a7.jpg,1
+6,agui.elena@live.com,elen.aguirre,Aguirre Elena,57865,<NULL>,Sarmiento 1120,gonzalez catan,1759,Buenos Aires,6888899,Psicopedagoga,Norma Villanueva,,nose,<NULL>,545465456,personal.foto.b6d5339f19c52ba1.68656c656e61206.jpg,2
+7,luzmedina@hotmail.com,luz.pamela,Medina Luz,754645657,<NULL>,Claudia Sifre 1112,gonzalez catan,1759,Buenos Aires,436777,Analisis de sistemas,Angel Bravo,,nose,<NULL>,9679679,personal.foto.8ffc405571829758.37333538355f343.jpg,1
+8,josegonzalez@hotmail.com,jose.gonzalez,Gonzalez Jose,79588,<NULL>,Lasalle 456,gonzalez catan,1759,Buenos Aires,5474868787,Profesor matematica,Ruben Olmedo,,nose,<NULL>,7896969,personal.foto.8ea2bda6b501e36d.313233343933305.jpg,1
+9,roselli@hotmail.com,roselli.andrea,Andre Roselli,545353,<NULL>,Melian  567,gonzalez catan,1759,Buenos Aires,6576765757,Profesora de  ingles,Josefa Rosales,,nose,<NULL>,5476476475,personal.foto.8d0ccb6f6d8da835.3136323831335f3.jpg,2
 
 
 TABLE niveles
 niveles.nivelid,niveles.descripcion,niveles.ciclo,niveles.tipo,niveles.personalid
 1,Terciario,2,<NULL>,<NULL>
 2,Secundario,2,<NULL>,<NULL>
+
+
+TABLE apuntes
 
 
 TABLE carreras
@@ -363,18 +371,15 @@ correlativas.correlativaid,correlativas.materiaid1,correlativas.materiaid2,corre
 
 TABLE horas
 horas.horaid,horas.hora,horas.desde,horas.hasta,horas.nivelid
-1,1,18:00,19:00,1
-2,2,19:00,20:00,1
-3,3,20:15,21:15,1
-4,4,21:15,22:15,1
+1,1,18:00,20:00,1
+2,2,20:15,22:00,1
 
 
 TABLE inasistencias
-inasistencias.inasistenciaid,inasistencias.descripcion,inasistencias.valor
-6,Media falta,0.5
-7,Tarde,0.25
-8,Retiro Anticipado,0.25
-9,Completa,1.0
+inasistencias.inasistenciaid,inasistencias.descripcion
+6,Media falta
+7,Tarde
+8,Retiro Anticipado
 
 
 TABLE periodos
@@ -478,56 +483,29 @@ TABLE horarios
 horarios.horarioid,horarios.horaid,horarios.comisionid,horarios.dia,horarios.detalle
 1,1,16,lunes,
 2,2,15,lunes,
-3,3,13,lunes,
-4,4,13,lunes,
 5,1,10,martes,
 6,2,10,martes,
-7,3,15,martes,
-8,4,15,martes,
 9,1,12,miercoles,
 10,2,12,miercoles,
-11,3,14,miercoles,
-12,4,14,miercoles,
 13,1,9,jueves,
 14,2,9,jueves,
-15,3,13,jueves,
-16,4,13,jueves,
 17,1,11,viernes,
 18,2,11,viernes,
-19,3,8,viernes,
-20,4,8,viernes,
 21,1,21,lunes,
 22,2,21,lunes,
-23,3,24,lunes,
-24,4,24,lunes,
-25,3,19,martes,
-26,4,19,martes,
 27,1,20,miercoles,
 28,2,20,miercoles,
-29,3,23,miercoles,
-30,4,23,miercoles,
 31,1,21,jueves,
 32,2,21,jueves,
-33,3,18,jueves,
-34,4,18,jueves,
 35,1,17,viernes,
 36,2,17,viernes,
-37,3,22,viernes,
-38,4,22,viernes,
-39,3,25,martes,
-40,4,25,martes,
 41,1,30,miercoles,
 42,2,30,miercoles,
-43,3,29,miercoles,
-44,4,29,miercoles,
 45,1,27,jueves,
 46,2,27,jueves,
-47,3,28,jueves,
-48,4,28,jueves,
 49,1,30,viernes,
 50,2,30,viernes,
-51,3,26,viernes,
-52,4,26,viernes,
+53,1,30,Miercoles,Desarrollo de Proyectos
 
 
 TABLE profesores
@@ -546,35 +524,35 @@ situaciones.situacionid,situaciones.detalle
 
 TABLE faltas
 faltas.faltaid,faltas.alumnoid,faltas.comisionid,faltas.inasistenciaid,faltas.fecha,faltas.cantidad,faltas.justificado,faltas.detalle
-1,22,25,7,2013-08-27,0.25,True,Falta medica
-2,10,26,6,2013-08-23,0.5,False,tarde
-3,22,27,7,2013-08-15,0.25,False,
-6,10,30,7,2013-08-28,0.25,False,
-7,21,26,7,2013-09-06,0.25,False,
-8,10,30,7,2013-09-12,0.25,False,lal
-9,21,28,7,2013-09-12,0.25,False,
-10,10,28,7,2013-09-12,0.25,False,
-11,21,28,7,2013-09-12,0.25,False,
-12,10,28,7,2013-09-12,0.25,False,
-13,21,28,7,2013-09-12,0.25,False,
-14,10,28,7,2013-09-12,0.25,False,
-15,21,28,7,2013-09-12,0.25,False,
-16,10,28,7,2013-09-12,0.25,False,
-17,21,28,7,2013-09-12,0.25,False,
-18,10,28,7,2013-09-12,0.25,False,
-19,21,28,7,2013-09-12,0.25,False,
-20,10,28,7,2013-09-12,0.25,False,
-21,21,28,7,2013-09-12,0.25,False,
-22,10,28,7,2013-09-12,0.25,False,
-23,21,28,7,2013-09-12,0.25,False,
-24,10,28,7,2013-09-12,0.25,False,
-25,10,30,7,2013-09-13,0.25,False,
-26,10,30,7,2013-09-13,0.25,False,
-27,10,30,7,2013-09-13,0.25,False,
-28,10,30,6,2013-09-13,0.5,False,
-29,10,30,6,2013-09-13,0.5,False,
-30,10,30,6,2013-09-13,0.5,False,
-31,10,30,8,2013-09-17,0.25,False,
+1,22,25,7,2013-08-27,1.0,True,Falta medica
+2,10,26,6,2013-08-23,1.0,False,tarde
+3,22,27,7,2013-08-15,1.0,False,
+6,10,30,7,2013-08-28,1.0,False,
+7,21,26,7,2013-09-06,1.0,False,
+8,10,30,1,2013-09-12,1.0,False,<NULL>
+9,21,28,1,2013-09-12,1.0,False,<NULL>
+10,10,28,1,2013-09-12,1.0,False,<NULL>
+11,21,28,1,2013-09-12,1.0,False,<NULL>
+12,10,28,1,2013-09-12,1.0,False,<NULL>
+13,21,28,1,2013-09-12,1.0,False,<NULL>
+14,10,28,1,2013-09-12,1.0,False,<NULL>
+15,21,28,1,2013-09-12,1.0,False,<NULL>
+16,10,28,1,2013-09-12,1.0,False,<NULL>
+17,21,28,1,2013-09-12,1.0,False,<NULL>
+18,10,28,1,2013-09-12,1.0,False,<NULL>
+19,21,28,1,2013-09-12,1.0,False,<NULL>
+20,10,28,1,2013-09-12,1.0,False,<NULL>
+21,21,28,1,2013-09-12,1.0,False,<NULL>
+22,10,28,1,2013-09-12,1.0,False,<NULL>
+23,21,28,1,2013-09-12,1.0,False,<NULL>
+24,10,28,1,2013-09-12,1.0,False,<NULL>
+25,10,30,1,2013-09-13,1.0,False,<NULL>
+26,10,30,1,2013-09-13,1.0,False,<NULL>
+27,10,30,1,2013-09-13,1.0,False,<NULL>
+28,10,30,6,2013-09-13,1.0,False,<NULL>
+29,10,30,6,2013-09-13,1.0,False,<NULL>
+30,10,30,6,2013-09-13,1.0,False,<NULL>
+31,10,30,8,2013-09-17,1.0,False,<NULL>
 
 
 TABLE examenes
@@ -634,6 +612,18 @@ inscripcionesexamen.inscripcionid,inscripcionesexamen.alumnoid,inscripcionesexam
 29,10,45,R,2013-09-11,<NULL>,True,True
 
 
+TABLE constancia
+
+
+TABLE certificado
+
+
+TABLE tituloentramite
+
+
+TABLE documentacion
+
+
 TABLE tramites
 
 
@@ -652,7 +642,7 @@ TABLE seguimientos
 TABLE constancia_modelo
 
 
-TABLE constancia
+TABLE lalala
 
 
 TABLE plugin_flatpage

@@ -36,6 +36,32 @@ db.define_table('cursos',
     format= "%(cursoid)s [%(nombre)s]",
     migrate=migrate)
     
+db.define_table('recursos',
+    Field('recursoid', type='id'),
+    Field('nombre', type='string', length=50),
+    format= "%(recursosid)s [%(nombre)s]",
+    migrate=migrate)
+    
+db.define_table('reservas',
+    Field('reservaid', type='id'),
+    Field('recursoid', type='integer'),
+    Field('fecha_reserva', type='date'),
+    Field('hora_retiro', type='date'),
+    Field('hora_devolucion', type='date'),
+    Field('cantidad', type='integer'),
+    Field('profesor', type='string',length=50),
+    Field('tipo', type='integer', default=0),
+    format= "%(reservasid)s [%(nombre)s]",
+    migrate=migrate)
+       
+    
+    
+    
+    
+    
+    
+    
+    
 db.define_table('revistas',
     Field('revistaid', type='id'),
     Field('nombre', type='string', length=50),

@@ -156,11 +156,14 @@ def examenes():
 @auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
   
 def final(): #formulario de inscrip a examenes finales 
-    repetido= 0
+    
     q = db.alumnos.user_id== auth.user_id #busca y trae todos los datos del alumno logueado
     alumno= db(q).select().first() 
     # guarda en una variable los datos para poder ser utilizados y tmb la envio a la vista
-        
+    examen= db(db.inscripcionesexamen.alumnoid==alumno.alumnoid).select(db.inscripcionesexamen.examenid)
+    for x in examen:
+        repetido= x.examenid
+        q &= db.examenes.examenid!= repetido
     q &= db.examenes.materiaid== db.materias.materiaid
     q &= db.examenes.personalid1== db.personal.personalid
     
@@ -183,8 +186,6 @@ def final(): #formulario de inscrip a examenes finales
                         valido=True)
                     ok += 1 #creo contador de examenes insertados/seleccionados por el alumno
                     
-                    
-                        
         if ok:
               response.flash= "Usted se a inscripto a %d exámenes seleccionados!" % ok
         else:

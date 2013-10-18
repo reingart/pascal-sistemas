@@ -8,10 +8,11 @@
 <br>
 <TABLE style="border: 1px solid white">
 <TR>
-    <TD style="border: 1px solid white"> MATERIA </TD>
-    <TD style="border: 1px solid white"> DOCENTE </TD>
-    <TD style="border: 1px solid white"> FECHA </TD>
-    <TD style="border: 1px solid white"> HORA </TD>
+    <TD style="border: 1px solid white"><center> MATERIA </center> </TD>
+    <TD style="border: 1px solid white"><center> DOCENTE </center> </TD>
+    <TD style="border: 1px solid white"><center> FECHA </center> </TD>
+    <TD style="border: 1px solid white"><center> HORA </center> </TD>
+    <TD style="border: 1px solid white"> <center>ESTADO</center> </TD>
 <TR>
 {{for f in final:}}
 	
@@ -27,15 +28,17 @@
     <td style="border: 1px solid white">
     {{=f.examenes.hora}}
     </td>
+    <td style="border: 1px solid white" >
+    {{='Ya se encuentra inscripto al examen' if (f.examenes.examenid in inscripciones) else 'Disponible'}}
+        
     
+    </td>
     </TR>
 {{pass}}
 </TABLE>
 <br>
     <a href="index.html"><input type=button value="Volver" ></a>
-    
-    <a href="javascript:location.reload()"><input type="button" value="Actualizar" ></a>
     <input type="reset" value="Cancelar">
-    <input type="submit" name="guardar" value="Guardar" onClik="location.reload()"> 
-	<!--<a href="javascript:location.reload()"><input type="submit" name="guardar" value="Guardar"> </a>-->
+    <input type="submit" name="guardar" value="Guardar" > 
+	
 </form>

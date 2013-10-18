@@ -159,19 +159,9 @@ def examenes():
 @auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
   
 def final(): #formulario de inscrip a examenes finales 
-    
     q = db.alumnos.user_id== auth.user_id #busca y trae todos los datos del alumno logueado
     alumno= db(q).select().first() 
-    # guarda en una variable los datos para poder ser utilizados y tmb la envio a la vista
-    inscripciones = db(db.inscripcionesexamen.alumnoid==alumno.alumnoid).select(db.inscripcionesexamen.examenid)
-    inscripciones = [inscripcion.examenid for inscripcion in inscripciones]
-    #for x in examen:
-    #    repetido= x.examenid
-    #    q &= db.examenes.examenid!= repetido
-    q &= db.examenes.materiaid== db.materias.materiaid
-    q &= db.examenes.personalid1== db.personal.personalid
     
-    final= db(q).select(db.examenes.examenid, db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)
      #cuando hago click en el boton guardar
     if request.vars.guardar=="Guardar":
             #en k tenemos el nombre del checkbox
@@ -196,11 +186,25 @@ def final(): #formulario de inscrip a examenes finales
               response.flash = "Por favor seleccione una opción!"
     
     else:
-        response.flash='Por favor, complete el formulario'            
+        response.flash='Por favor, complete el formulario'     
+                
+    
+    # guarda en una variable los datos para poder ser utilizados y tmb la envio a la vista
+    inscripciones = db(db.inscripcionesexamen.alumnoid==alumno.alumnoid).select(db.inscripcionesexamen.examenid)
+    inscripciones = [inscripcion.examenid for inscripcion in inscripciones]
+    notas= db(db.notas.alumnoid== alumno.alumnoid).select(db.notas.notaid)
+    notas = [nota.notaid for nota in notas]
+    #for x in examen:
+    #    repetido= x.examenid
+    #    q &= db.examenes.examenid!= repetido
+    q &= db.examenes.materiaid== db.materias.materiaid
+    q &= db.examenes.personalid1== db.personal.personalid
+    
+    final= db(q).select(db.examenes.examenid, db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)       
                 
          
       
-    return dict (final= final, alumno=alumno, inscripciones=inscripciones) 
+    return dict (final= final, alumno=alumno, inscripciones=inscripciones, notas=notas) 
          
      
          

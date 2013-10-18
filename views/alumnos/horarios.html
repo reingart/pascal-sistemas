@@ -28,8 +28,8 @@
         {{for dia in ['lunes','martes','miercoles','jueves','viernes']:}}
     		<td style="border: 1px solid white"> 
                 
-			{{f=horario.get(dia, {}).get(hora, None).get(divisionid)}}
-			
+			{{f=horario.get(dia, {}).get(hora, None).get(divisionid, None)}}
+                
 			{{if f:}}
                 
                 {{=f.materias.nombre}} <br>

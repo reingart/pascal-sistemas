@@ -90,13 +90,15 @@ def horarios():
    
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
     alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista
-   # q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
-    #q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
+    q &= db.inscripcionesdivision.alumnoid== db.alumnos.alumnoid
+    q &= db.inscripcionesdivision.divisionid== db.divisiones.divisionid
     q &= db.horarios.horaid== db.horas.horaid
     q &= db.horarios.comisionid== db.comisiones.comisionid
     q &= db.comisiones.personalid== db.personal.personalid
     q &= db.comisiones.materiaid== db.materias.materiaid
-    q &= db.comisiones.divisionid== db.divisiones.divisionid
+   # q &= db.comisiones.divisionid== db.divisiones.divisionid
+
+     
     filas= db(q).select(db.horas.hora, db.personal.nombre, db.materias.nombre, db.divisiones.divisionid, db.horarios.dia)
     
     horario = {'lunes':{},'martes':{},'miercoles':{},'jueves':{},'viernes':{}}
@@ -124,11 +126,12 @@ def inasistencias():   #lista de inasistencias del alumno
     q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
     q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
     q &= db.faltas.comisionid== db.comisiones.comisionid
-    q &= db.comisiones.personalid== db.personal.personalid
+    q &= db.comisiones.personalid== db.personal.personalid      
+      
     q &= db.faltas.inasistenciaid== db.inasistencias.inasistenciaid
     #cantidad= db(q).count()
     falta= db(q).select(db.comisiones.nombre, db.faltas.cantidad, db.inasistencias.descripcion, db.faltas.fecha)
-    
+
     total= db(q).select(db.faltas.cantidad.sum().with_alias("suma")).first()
     
     

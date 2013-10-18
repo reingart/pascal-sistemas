@@ -160,10 +160,11 @@ def final(): #formulario de inscrip a examenes finales
     q = db.alumnos.user_id== auth.user_id #busca y trae todos los datos del alumno logueado
     alumno= db(q).select().first() 
     # guarda en una variable los datos para poder ser utilizados y tmb la envio a la vista
-    examen= db(db.inscripcionesexamen.alumnoid==alumno.alumnoid).select(db.inscripcionesexamen.examenid)
-    for x in examen:
-        repetido= x.examenid
-        q &= db.examenes.examenid!= repetido
+    inscripciones = db(db.inscripcionesexamen.alumnoid==alumno.alumnoid).select(db.inscripcionesexamen.examenid)
+    inscripciones = [inscripcion.examenid for inscripcion in inscripciones]
+    #for x in examen:
+    #    repetido= x.examenid
+    #    q &= db.examenes.examenid!= repetido
     q &= db.examenes.materiaid== db.materias.materiaid
     q &= db.examenes.personalid1== db.personal.personalid
     
@@ -196,7 +197,7 @@ def final(): #formulario de inscrip a examenes finales
                 
          
       
-    return dict (final= final, alumno=alumno) 
+    return dict (final= final, alumno=alumno, inscripciones=inscripciones) 
          
      
          

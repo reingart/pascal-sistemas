@@ -15,7 +15,7 @@
 <TR>
 {{for f in final:}}
 	
-    <td style="border: 1px solid white"><input type="checkbox" name="{{="examen_%s" % f.examenes.examenid}}">
+    <td style="border: 1px solid white"><input type="checkbox" name="{{="examen_%s" % f.examenes.examenid}}" {{='disabled' if (f.examenes.examenid in inscripciones) else ''}}>
     {{=f.materias.nombre}}
     </td>
     <td style="border: 1px solid white">

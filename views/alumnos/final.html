@@ -1,22 +1,22 @@
 {{extend 'layout.html'}}
 <h2> Fecha: {{=request.now.date()}}</h2>
 <h2> Alumno/a: {{=alumno.nombre}}
-<h1> <center><u> Inscripción a Examenes Finales</u> </center></h1>
+<h1> <center><u> Inscripción a Exámenes Finales</u> </center></h1>
 <form method="POST">
 <br>
     <h3> <font color= "white"> *información de exámenes finales </font> </h3>
 <br>
 <TABLE style="border: 1px solid white">
 <TR>
-    <TD style="border: 1px solid white"><center> MATERIA </center> </TD>
-    <TD style="border: 1px solid white"><center> DOCENTE </center> </TD>
-    <TD style="border: 1px solid white"><center> FECHA </center> </TD>
-    <TD style="border: 1px solid white"><center> HORA </center> </TD>
-    <TD style="border: 1px solid white"> <center>ESTADO</center> </TD>
+    <TD style="border: 1px solid white"><center><b> MATERIA </b></center> </TD>
+    <TD style="border: 1px solid white"><center><b> DOCENTE </b></center> </TD>
+    <TD style="border: 1px solid white"><center><b> FECHA </b></center> </TD>
+    <TD style="border: 1px solid white"><center><b> HORA </b></center> </TD>
+    <TD style="border: 1px solid white"> <center><b>ESTADO</b></center> </TD>
 <TR>
 {{for f in final:}}
 	
-    <td style="border: 1px solid white"><input type="checkbox" name="{{="examen_%s" % f.examenes.examenid}}" {{='disabled' if (f.examenes.examenid in inscripciones) else ''}}>
+    <td style="border: 1px solid white"><input type="checkbox" name="{{="examen_%s" % f.examenes.examenid}}" {{='disabled' if (f.examenes.examenid in inscripciones) else ''}} or {{='disabled' if (f.examenes.materiaid in notas) else ''}}>
     {{=f.materias.nombre}}
     </td>
     <td style="border: 1px solid white">
@@ -29,9 +29,10 @@
     {{=f.examenes.hora}}
     </td>
     <td style="border: 1px solid white" >
-    {{='Ya se encuentra inscripto al examen' if (f.examenes.examenid in inscripciones) else 'Disponible'}}
-        
-    
+    <font color="">
+{{='*Ya se encuentra inscripto' if (f.examenes.examenid in inscripciones) else ''}}
+    {{='*Examen ya rendido' if (f.examenes.materiaid in notas) else ''}}
+        </font>
     </td>
     </TR>
 {{pass}}

@@ -13,7 +13,7 @@ def index():
     return dict (alumno=alumno)
 
 @auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
 
 def ficha():
     # muestra un perfil personalizado del alumno.
@@ -44,7 +44,7 @@ def ingreso():
     subtitulo= T ('Complete el formulario por favor...')
     form=SQLFORM(db.alumnos)
     if form.accepts(request.vars,session):
-        grupo_id = db(db.auth_group.role=='alumnos').select(db.auth_group.id)
+        grupo_id = db(db.auth_group.role=='Alumnos').select(db.auth_group.id)
         for x in grupo_id:
             grupo=x.id
         db.auth_membership.insert(user_id=auth.user_id, group_id=grupo)
@@ -85,7 +85,7 @@ def busqueda():
 
 
 @auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
 def horarios():
    
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
@@ -113,7 +113,7 @@ def horarios():
     
    
 @auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='alumnos')    #requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos')    #requiere que haya un usuario logeado e integre el grupo alumnos
     
 def inasistencias():   #lista de inasistencias del alumno
     #buscar el alumno y compararlo con el logueado
@@ -138,7 +138,7 @@ def inasistencias():   #lista de inasistencias del alumno
     return dict (falta=falta, alumno=alumno, total=total)
     
 @auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
     
 def examenes():
      #listado de examenes finales ya rendidos
@@ -156,7 +156,7 @@ def examenes():
     return dict (notas= notas, alumno=alumno)
   
 @auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
   
 def final(): #formulario de inscrip a examenes finales 
     q = db.alumnos.user_id== auth.user_id #busca y trae todos los datos del alumno logueado
@@ -174,7 +174,7 @@ def final(): #formulario de inscrip a examenes finales
                 if _value == "on":                    
                     db.inscripcionesexamen.insert(alumnoid= alumno.alumnoid, 
                         examenid= examen_id,
-                        condicion="R",
+                        condicion="Regular",
                         alta=fecha,
                         confirmar=True,
                         valido=True)
@@ -192,15 +192,16 @@ def final(): #formulario de inscrip a examenes finales
     # guarda en una variable los datos para poder ser utilizados y tmb la envio a la vista
     inscripciones = db(db.inscripcionesexamen.alumnoid==alumno.alumnoid).select(db.inscripcionesexamen.examenid)
     inscripciones = [inscripcion.examenid for inscripcion in inscripciones]
-    notas= db(db.notas.alumnoid== alumno.alumnoid).select(db.notas.notaid)
-    notas = [nota.notaid for nota in notas]
-    #for x in examen:
-    #    repetido= x.examenid
-    #    q &= db.examenes.examenid!= repetido
+    n= db.notas.alumnoid== alumno.alumnoid
+    n&= db.notas.calificacionid==5
+    n&= db.notas.nota>4
+    notas= db(n).select(db.notas.materiaid)
+    notas = [nota.materiaid for nota in notas]
+    
     q &= db.examenes.materiaid== db.materias.materiaid
     q &= db.examenes.personalid1== db.personal.personalid
     
-    final= db(q).select(db.examenes.examenid, db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)       
+    final= db(q).select(db.examenes.examenid, db.examenes.materiaid, db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)       
                 
          
       
@@ -211,7 +212,7 @@ def final(): #formulario de inscrip a examenes finales
 ###################################################################################
   
 @auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
       
 def parciales():
     #lista examenes cuatrimestrales ya rendidos

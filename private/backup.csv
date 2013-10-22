@@ -7,8 +7,8 @@ auth_user.id,auth_user.first_name,auth_user.last_name,auth_user.email,auth_user.
 
 TABLE auth_group
 auth_group.id,auth_group.role,auth_group.description
-1,alumnos,Grupo de alumnos 
-3,personal,Grupo de docentes y personal de la institución 
+1,Alumnos,Grupo de alumnos 
+3,Personal,Grupo de docentes y personal de la institución 
 
 
 TABLE auth_membership
@@ -167,6 +167,19 @@ auth_event.id,auth_event.time_stamp,auth_event.client_ip,auth_event.user_id,auth
 149,2013-09-11 22:53:28,127.0.0.1,1,auth,Usuario 1 sesión iniciada
 150,2013-09-11 23:41:00,127.0.0.1,1,auth,User 1 Logged-out
 151,2013-10-11 19:18:54,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+152,2013-10-16 19:00:54,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+153,2013-10-16 19:46:48,127.0.0.1,1,auth,User 1 Logged-out
+154,2013-10-18 14:56:14,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+155,2013-10-18 18:33:05,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+156,2013-10-18 20:32:56,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+157,2013-10-21 21:18:11,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+158,2013-10-21 22:06:49,127.0.0.1,1,auth,User 1 Logged-out
+159,2013-10-21 22:07:45,127.0.0.1,4,auth,Usuario 4 sesión iniciada
+160,2013-10-21 22:45:21,127.0.0.1,4,auth,User 4 Logged-out
+161,2013-10-21 22:46:03,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+162,2013-10-22 00:09:34,127.0.0.1,1,auth,User 1 Logged-out
+163,2013-10-22 00:32:10,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+164,2013-10-22 00:33:29,127.0.0.1,1,auth,User 1 Logged-out
 
 
 TABLE auth_cas
@@ -206,21 +219,24 @@ secciones.seccionid,secciones.descripcion
 
 
 TABLE personal
-personal.personalid,personal.E_mail,personal.facebook,personal.nombre,personal.dni,personal.nacimiento,personal.domicilio,personal.localidad,personal.cp,personal.provincia,personal.telefono,personal.titulos,personal.otorgadospor,personal.fechaotorgamiento,personal.apto,personal.nombramiento,personal.cuil,personal.foto,personal.cargoid,personal.user_id
-2,ringart@gmail.com,mariano.reingart,Reingart Mariano,111111,<NULL>,Necochea 1132,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,pepe alberto,,nose,<NULL>,1234577,personal.foto.846577e02fd2b2a3.6d617269616e6f3.jpg,1,<NULL>
-3,hector@hotmail.com,hector.amarilla,Amarilla Hector,434343,<NULL>,Laprida 4567,gonzalez catan,1759,Buenos Aires,8568899,ingenieria en sistemas,Jose Rodriguez,,nose,<NULL>,8799999,personal.foto.bcbf221d67f4794c.616d6172696c6c6.jpg,2,<NULL>
-4,claudia@hotmail.com,mariaclaudia.vargas,Vargas Claudia,4545,<NULL>,San Juan 1122,gonzalez catan,1759,Buenos Aires,7899765,Contaduria,Juan Repeto,,nose,<NULL>,7876669,personal.foto.be7fa2dae636613a.323031332d30382.jpg,2,<NULL>
-5,angelbravo@gmail.com,angel.bravo,Bravo Angel,9897,<NULL>,Rivas 1450,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,Norberto Gonzalez,,nose,<NULL>,76969989,personal.foto.b86d8bebfddda1a5.627261766f2e6a7.jpg,1,<NULL>
-6,agui.elena@live.com,elen.aguirre,Aguirre Elena,57865,<NULL>,Sarmiento 1120,gonzalez catan,1759,Buenos Aires,6888899,Psicopedagoga,Norma Villanueva,,nose,<NULL>,545465456,personal.foto.b6d5339f19c52ba1.68656c656e61206.jpg,2,<NULL>
-7,luzmedina@hotmail.com,luz.pamela,Medina Luz,754645657,<NULL>,Claudia Sifre 1112,gonzalez catan,1759,Buenos Aires,436777,Analisis de sistemas,Angel Bravo,,nose,<NULL>,9679679,personal.foto.8ffc405571829758.37333538355f343.jpg,1,<NULL>
-8,josegonzalez@hotmail.com,jose.gonzalez,Gonzalez Jose,79588,<NULL>,Lasalle 456,gonzalez catan,1759,Buenos Aires,5474868787,Profesor matematica,Ruben Olmedo,,nose,<NULL>,7896969,personal.foto.8ea2bda6b501e36d.313233343933305.jpg,1,<NULL>
-9,roselli@hotmail.com,roselli.andrea,Andre Roselli,545353,<NULL>,Melian  567,gonzalez catan,1759,Buenos Aires,6576765757,Profesora de  ingles,Josefa Rosales,,nose,<NULL>,5476476475,personal.foto.8d0ccb6f6d8da835.3136323831335f3.jpg,2,<NULL>
+personal.personalid,personal.E_mail,personal.facebook,personal.nombre,personal.dni,personal.nacimiento,personal.domicilio,personal.localidad,personal.cp,personal.provincia,personal.telefono,personal.titulos,personal.otorgadospor,personal.fechaotorgamiento,personal.apto,personal.nombramiento,personal.cuil,personal.foto,personal.cargoid
+2,ringart@gmail.com,mariano.reingart,Reingart Mariano,111111,<NULL>,Necochea 1132,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,pepe alberto,,nose,<NULL>,1234577,personal.foto.846577e02fd2b2a3.6d617269616e6f3.jpg,1
+3,hector@hotmail.com,hector.amarilla,Amarilla Hector,434343,<NULL>,Laprida 4567,gonzalez catan,1759,Buenos Aires,8568899,ingenieria en sistemas,Jose Rodriguez,,nose,<NULL>,8799999,personal.foto.bcbf221d67f4794c.616d6172696c6c6.jpg,2
+4,claudia@hotmail.com,mariaclaudia.vargas,Vargas Claudia,4545,<NULL>,San Juan 1122,gonzalez catan,1759,Buenos Aires,7899765,Contaduria,Juan Repeto,,nose,<NULL>,7876669,personal.foto.be7fa2dae636613a.323031332d30382.jpg,2
+5,angelbravo@gmail.com,angel.bravo,Bravo Angel,9897,<NULL>,Rivas 1450,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,Norberto Gonzalez,,nose,<NULL>,76969989,personal.foto.b86d8bebfddda1a5.627261766f2e6a7.jpg,1
+6,agui.elena@live.com,elen.aguirre,Aguirre Elena,57865,<NULL>,Sarmiento 1120,gonzalez catan,1759,Buenos Aires,6888899,Psicopedagoga,Norma Villanueva,,nose,<NULL>,545465456,personal.foto.b6d5339f19c52ba1.68656c656e61206.jpg,2
+7,luzmedina@hotmail.com,luz.pamela,Medina Luz,754645657,<NULL>,Claudia Sifre 1112,gonzalez catan,1759,Buenos Aires,436777,Analisis de sistemas,Angel Bravo,,nose,<NULL>,9679679,personal.foto.8ffc405571829758.37333538355f343.jpg,1
+8,josegonzalez@hotmail.com,jose.gonzalez,Gonzalez Jose,79588,<NULL>,Lasalle 456,gonzalez catan,1759,Buenos Aires,5474868787,Profesor matematica,Ruben Olmedo,,nose,<NULL>,7896969,personal.foto.8ea2bda6b501e36d.313233343933305.jpg,1
+9,roselli@hotmail.com,roselli.andrea,Andre Roselli,545353,<NULL>,Melian  567,gonzalez catan,1759,Buenos Aires,6576765757,Profesora de  ingles,Josefa Rosales,,nose,<NULL>,5476476475,personal.foto.8d0ccb6f6d8da835.3136323831335f3.jpg,2
 
 
 TABLE niveles
 niveles.nivelid,niveles.descripcion,niveles.ciclo,niveles.tipo,niveles.personalid
 1,Terciario,2,<NULL>,<NULL>
 2,Secundario,2,<NULL>,<NULL>
+
+
+TABLE apuntes
 
 
 TABLE carreras
@@ -370,11 +386,11 @@ horas.horaid,horas.hora,horas.desde,horas.hasta,horas.nivelid
 
 
 TABLE inasistencias
-inasistencias.inasistenciaid,inasistencias.descripcion,inasistencias.valor
-6,Media falta,0.5
-7,Tarde,0.25
-8,Retiro Anticipado,0.25
-9,Completa,1.0
+inasistencias.inasistenciaid,inasistencias.descripcion
+6,Media falta
+7,Tarde
+8,Retiro Anticipado
+9,Completa
 
 
 TABLE periodos
@@ -435,6 +451,7 @@ notas.notaid,notas.alumnoid,notas.materiaid,notas.periodoid,notas.calificacionid
 50,22,45,26,3,9.0,,istbp,,2013-07-17,,<NULL>,2013-09-02,False,Noche
 51,22,35,26,3,9.0,,istbp,,2013-07-10,,<NULL>,2013-09-02,False,Noche
 52,22,34,26,3,8.0,,istbp,,2013-07-11,,<NULL>,2013-09-02,False,Noche
+53,10,17,18,5,2.0,,,,2012-12-17,,<NULL>,2013-10-21,False,N
 
 
 TABLE titulos
@@ -606,24 +623,24 @@ examenes.examenid,examenes.materiaid,examenes.periodoid,examenes.llamado,examene
 
 TABLE inscripcionescomision
 inscripcionescomision.inscripcionid,inscripcionescomision.alumnoid,inscripcionescomision.comisionid,inscripcionescomision.alta,inscripcionescomision.baja,inscripcionescomision.condicion
-1,10,30,2013-03-11,<NULL>,R
-2,22,30,2013-03-11,<NULL>,R
-3,22,25,2013-08-28,<NULL>,R
-4,21,26,2013-08-28,<NULL>,R
-5,10,25,2013-03-11,<NULL>,R
-6,10,26,2013-03-11,<NULL>,R
-7,10,27,2013-03-11,<NULL>,R
-8,10,28,2013-03-11,<NULL>,R
-9,10,29,2013-03-11,<NULL>,R
-10,22,26,2013-03-11,<NULL>,R
-11,22,27,2013-03-11,<NULL>,R
-12,22,28,2013-03-11,<NULL>,R
-13,22,29,2013-03-11,<NULL>,R
-14,21,25,2013-03-11,<NULL>,R
-15,21,27,2013-03-11,<NULL>,R
-16,21,28,2013-03-11,<NULL>,R
-17,21,29,2013-03-11,<NULL>,R
-18,21,30,2013-03-11,<NULL>,R
+1,10,30,2013-03-11,<NULL>,Regular
+2,22,30,2013-03-11,<NULL>,Regular
+3,22,25,2013-08-28,<NULL>,Regular
+4,21,26,2013-08-28,<NULL>,Regular
+5,10,25,2013-03-11,<NULL>,Regular
+6,10,26,2013-03-11,<NULL>,Regular
+7,10,27,2013-03-11,<NULL>,Regular
+8,10,28,2013-03-11,<NULL>,Regular
+9,10,29,2013-03-11,<NULL>,Regular
+10,22,26,2013-03-11,<NULL>,Regular
+11,22,27,2013-03-11,<NULL>,Regular
+12,22,28,2013-03-11,<NULL>,Regular
+13,22,29,2013-03-11,<NULL>,Regular
+14,21,25,2013-03-11,<NULL>,Regular
+15,21,27,2013-03-11,<NULL>,Regular
+16,21,28,2013-03-11,<NULL>,Regular
+17,21,29,2013-03-11,<NULL>,Regular
+18,21,30,2013-03-11,<NULL>,Regular
 
 
 TABLE inscripcionesdivision
@@ -631,7 +648,21 @@ TABLE inscripcionesdivision
 
 TABLE inscripcionesexamen
 inscripcionesexamen.inscripcionid,inscripcionesexamen.alumnoid,inscripcionesexamen.examenid,inscripcionesexamen.condicion,inscripcionesexamen.alta,inscripcionesexamen.baja,inscripcionesexamen.confirmar,inscripcionesexamen.valido
-29,10,45,R,2013-09-11,<NULL>,True,True
+60,10,45,Regular,2013-10-18,<NULL>,True,True
+61,10,44,Regular,2013-10-21,<NULL>,True,True
+65,10,40,Regular,2013-10-22,<NULL>,True,True
+
+
+TABLE constancia
+
+
+TABLE certificado
+
+
+TABLE tituloentramite
+
+
+TABLE documentacion
 
 
 TABLE tramites
@@ -652,7 +683,7 @@ TABLE seguimientos
 TABLE constancia_modelo
 
 
-TABLE constancia
+TABLE lalala
 
 
 TABLE plugin_flatpage

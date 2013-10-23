@@ -193,11 +193,15 @@ def final(): #formulario de inscrip a examenes finales
     # guarda en una variable los datos para poder ser utilizados y tmb la envio a la vista
     inscripciones = db(db.inscripcionesexamen.alumnoid==alumno.alumnoid).select(db.inscripcionesexamen.examenid)
     inscripciones = [inscripcion.examenid for inscripcion in inscripciones]
+    #listo si ya se inscribio al examen
     n= db.notas.alumnoid== alumno.alumnoid
     n&= db.notas.calificacionid==5
     n&= db.notas.nota>4
     notas= db(n).select(db.notas.materiaid)
     notas = [nota.materiaid for nota in notas]
+    #listo si ya aprobo el examen 
+    correlativas= db.correlativas.materia== notas.notas.materiaid
+    correlativas= [correlativa.materia for correlativa in correlativas]
     
     
     q &= db.examenes.materiaid== db.materias.materiaid
@@ -206,7 +210,7 @@ def final(): #formulario de inscrip a examenes finales
     final= db(q).select(db.examenes.examenid, db.examenes.materiaid, db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)       
                 
          
-    return dict (final= final, alumno=alumno, inscripciones=inscripciones, notas=notas) 
+    return dict (final= final, alumno=alumno, inscripciones=inscripciones, notas=notas, correlativas= correlativas) 
          
 ###################################################################################
   

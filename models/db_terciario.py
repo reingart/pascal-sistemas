@@ -375,6 +375,14 @@ db.define_table('examenes',
     Field('personalid3', db.personal),
     format= "%(examenid)s [%(llamado)s]",
     migrate=migrate)
+    
+db.define_table('inscripcionescarrera',
+    Field('inscripcionid', type='id'),
+    Field('alumnoid', db.alumnos),
+    Field('carreraid', db.carreras),
+    Field('alta', type='date', default=request.now.date(), required= True),
+    Field('baja', type='date', readable= False, writable= False),
+    migrate=migrate)
 
 db.define_table('inscripcionescomision',
     Field('inscripcionid', type='id'),

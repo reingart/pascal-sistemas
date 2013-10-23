@@ -212,8 +212,8 @@ db.define_table('calificaciones',
 
 db.define_table('correlativas',
     Field('correlativaid', type='id'),
-    Field('materiaid1', db.materias),
-    Field('materiaid2', db.materias),
+    Field('materia', db.materias),
+    Field('materiacorrelativa', db.materias),
     Field('planestudioid', db.planesestudio),
     format= "%(correlativaid)s [%(materiaid1)s]",
     migrate=migrate)

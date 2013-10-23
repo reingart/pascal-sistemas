@@ -30,8 +30,10 @@
     {{=f.examenes.hora}}
     </td>
     <td style="border: 1px solid white" >
-    <font color="red"> 
+    <font color="yellow"> 
         {{='Ya se encuentra inscripto' if (f.examenes.examenid in inscripciones) else ''}}
+    </font>
+    <font color="red"> 
         {{='Examen ya rendido' if (f.examenes.materiaid in notas) else ''}}
     </font>
         {{='' if (f.examenes.examenid in inscripciones or f.examenes.materiaid in notas) else 'Disponible'}}

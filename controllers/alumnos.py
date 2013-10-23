@@ -58,8 +58,6 @@ def ingreso():
     return dict (form=form, sub=subtitulo)
     
     
-    
-
 def busqueda():
     # armo un formulario para buscar alumno por su dni
     form = SQLFORM.factory(
@@ -159,9 +157,12 @@ def examenes():
 @auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
   
 def final(): #formulario de inscrip a examenes finales 
+    
     q = db.alumnos.user_id== auth.user_id #busca y trae todos los datos del alumno logueado
     alumno= db(q).select().first() 
+    # guarda en una variable los datos para poder ser utilizados y tmb la envio a la vista
     
+     
      #cuando hago click en el boton guardar
     if request.vars.guardar=="Guardar":
             #en k tenemos el nombre del checkbox
@@ -181,7 +182,7 @@ def final(): #formulario de inscrip a examenes finales
                     ok += 1 #creo contador de examenes insertados/seleccionados por el alumno
                     
         if ok:
-              response.flash= "Usted se a inscripto a %d exámenes seleccionados!" % ok
+              response.flash= "Usted se a inscripto a %d exámenes!" % ok
         else:
               response.flash = "Por favor seleccione una opción!"
     
@@ -204,10 +205,7 @@ def final(): #formulario de inscrip a examenes finales
     final= db(q).select(db.examenes.examenid, db.examenes.materiaid, db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)       
                 
          
-      
     return dict (final= final, alumno=alumno, inscripciones=inscripciones, notas=notas) 
-         
-     
          
 ###################################################################################
   

@@ -128,7 +128,6 @@
 'enter a number between %(min)g and %(max)g': 'enter a number between %(min)g and %(max)g',
 'enter an integer between %(min)g and %(max)g': 'enter an integer between %(min)g and %(max)g',
 'enter date and time as %(format)s': 'enter date and time as %(format)s',
-'enter from %(min)g to %(max)g characters': 'enter from %(min)g to %(max)g characters',
 'Error logs for "%(app)s"': 'Bitácora de errores en "%(app)s"',
 'errors': 'errores',
 'Examanes': 'Examanes',

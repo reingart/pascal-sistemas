@@ -199,6 +199,7 @@ def final(): #formulario de inscrip a examenes finales
     notas= db(n).select(db.notas.materiaid)
     notas = [nota.materiaid for nota in notas]
     
+    
     q &= db.examenes.materiaid== db.materias.materiaid
     q &= db.examenes.personalid1== db.personal.personalid
     

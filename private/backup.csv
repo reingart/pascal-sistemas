@@ -180,6 +180,9 @@ auth_event.id,auth_event.time_stamp,auth_event.client_ip,auth_event.user_id,auth
 162,2013-10-22 00:09:34,127.0.0.1,1,auth,User 1 Logged-out
 163,2013-10-22 00:32:10,127.0.0.1,1,auth,Usuario 1 sesión iniciada
 164,2013-10-22 00:33:29,127.0.0.1,1,auth,User 1 Logged-out
+165,2013-10-22 00:40:26,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+166,2013-10-23 14:51:23,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+167,2013-10-23 18:19:02,127.0.0.1,1,auth,Usuario 1 sesión iniciada
 
 
 TABLE auth_cas
@@ -364,17 +367,25 @@ calificaciones.calificacionid,calificaciones.descripcion,calificaciones.condicio
 
 
 TABLE correlativas
-correlativas.correlativaid,correlativas.materiaid1,correlativas.materiaid2,correlativas.planestudioid
-2,16,1,1
-3,31,16,1
-4,17,1,1
-6,32,1,1
-7,19,4,1
-8,34,18,1
-10,35,3,1
-12,21,6,1
-15,22,7,1
-17,23,8,1
+correlativas.correlativaid,correlativas.materia,correlativas.materiacorrelativa,correlativas.planestudioid
+20,16,1,1
+21,16,2,1
+22,18,3,1
+23,19,4,1
+24,19,7,1
+25,20,6,1
+26,21,8,1
+27,22,6,1
+28,31,16,1
+29,31,17,1
+30,31,20,1
+31,32,19,1
+32,33,21,1
+33,34,19,1
+34,45,5,1
+35,45,20,1
+36,45,22,1
+37,45,19,1
 
 
 TABLE horas
@@ -621,6 +632,12 @@ examenes.examenid,examenes.materiaid,examenes.periodoid,examenes.llamado,examene
 45,45,24,1,Noche,2013-12-20,19:00,2,3,5
 
 
+TABLE inscripcionescarrera
+inscripcionescarrera.inscripcionid,inscripcionescarrera.alumnoid,inscripcionescarrera.carreraid,inscripcionescarrera.alta,inscripcionescarrera.baja
+1,10,1,2011-03-01,<NULL>
+2,22,1,2011-03-01,<NULL>
+
+
 TABLE inscripcionescomision
 inscripcionescomision.inscripcionid,inscripcionescomision.alumnoid,inscripcionescomision.comisionid,inscripcionescomision.alta,inscripcionescomision.baja,inscripcionescomision.condicion
 1,10,30,2013-03-11,<NULL>,Regular
@@ -647,10 +664,6 @@ TABLE inscripcionesdivision
 
 
 TABLE inscripcionesexamen
-inscripcionesexamen.inscripcionid,inscripcionesexamen.alumnoid,inscripcionesexamen.examenid,inscripcionesexamen.condicion,inscripcionesexamen.alta,inscripcionesexamen.baja,inscripcionesexamen.confirmar,inscripcionesexamen.valido
-60,10,45,Regular,2013-10-18,<NULL>,True,True
-61,10,44,Regular,2013-10-21,<NULL>,True,True
-65,10,40,Regular,2013-10-22,<NULL>,True,True
 
 
 TABLE constancia

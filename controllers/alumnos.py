@@ -18,13 +18,11 @@ def index():
 def ficha():
     # muestra un perfil personalizado del alumno.
     q = db.alumnos.user_id== auth.user_id   # obtengo el registro del alumno ya registrado como usuario 
-    q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
+    q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid
     q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
     q &= db.comisiones.materiaid== db.materias.materiaid
-    q &= db.materias.materiaid== db.asignaturas.materiaid
-    q &= db.asignaturas.carreraid== db.carreras.carreraid
-    q &= db.comisiones.periodoid== db.periodos.periodoid
-    q &= db.periodos.cicloid== db.ciclos.cicloid
+    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
+
     fila = db(q).select( db.alumnos.nombre, db.alumnos.fechanacimiento, 
                          db.alumnos.estadocivil, db.alumnos.foto, db.alumnos.email1, 
                          db.alumnos.ingreso, db.alumnos.localidad, db.alumnos.nacionalidad,
@@ -88,8 +86,8 @@ def horarios():
    
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
     alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista
-    q &= db.inscripcionesdivision.alumnoid== db.alumnos.alumnoid
-    q &= db.inscripcionesdivision.divisionid== db.divisiones.divisionid
+    q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid
+    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
     q &= db.horarios.horaid== db.horas.horaid
     q &= db.horarios.comisionid== db.comisiones.comisionid
     q &= db.comisiones.personalid== db.personal.personalid

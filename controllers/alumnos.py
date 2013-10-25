@@ -94,7 +94,7 @@ def horarios():
     q &= db.horarios.comisionid== db.comisiones.comisionid
     q &= db.comisiones.personalid== db.personal.personalid
     q &= db.comisiones.materiaid== db.materias.materiaid
-   # q &= db.comisiones.divisionid== db.divisiones.divisionid
+    q &= db.comisiones.divisionid== db.divisiones.divisionid
 
      
     filas= db(q).select(db.horas.hora, db.personal.nombre, db.materias.nombre, db.divisiones.divisionid, db.horarios.dia)

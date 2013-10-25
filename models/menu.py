@@ -25,12 +25,12 @@ response.menu = [
         [T('Analista de Sistemas'), False, URL(request.application,'carreras','sistemas'), [[T('Tecnicatura en redes informaticas'), False, URL(request.application,'carreras','rrhh'), []]]],
         
         [T('Salud'), False, URL(request.application,'carreras','salud'), [
-            [T('Enfermería'), False, URL(request.application,'carreras','salud/enfermeria'), []],
-            [T('Instrumentación'), False, URL(request.application,'carreras','salud/instrumentacion'),  []],
-            [T('Laboratorio'), False, URL(request.application,'carreras','salud/laboratorio'), []],
-            [T('Radiología'), False, URL(request.application,'carreras','salud/radiologia'), []],
-            [T('Cardiología'), False, URL(request.application,'carreras','salud/cardiologia'), []],
-            [T('Auxiliar en enfermeria'), False, URL(request.application,'carreras','salud/auxenfermeria'), []],
+            [T('Enfermería'), False, URL(request.application,'carreras','salud_enfermeria'), []],
+            [T('Instrumentación'), False, URL(request.application,'carreras','salud_instrumentacion'),  []],
+            [T('Laboratorio'), False, URL(request.application,'carreras','salud_laboratorio'), []],
+            [T('Radiología'), False, URL(request.application,'carreras','salud_radiologia'), []],
+            [T('Cardiología'), False, URL(request.application,'carreras','salud_cardiologia'), []],
+            [T('Auxiliar en enfermeria'), False, URL(request.application,'carreras','salud_auxenfermeria'), []],
 
 
             

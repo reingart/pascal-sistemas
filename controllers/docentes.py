@@ -151,7 +151,11 @@ def parciales():
     
 def apuntes():
     
-    ""
+    if request.vars.GRABAR=="GUARDAR":
+        fecha = request.vars.fecha
+        descripcion =  request.vars.descripcion         
+        db.apuntes.insert(fecha=fecha, descripcion=descripcion)               
+   
     return{}
     
 def recursos():

@@ -27,9 +27,12 @@ response.menu = [
         [T('Salud'), False, URL(request.application,'carreras','salud'), [
             [T('Enfermería'), False, URL(request.application,'carreras','salud/enfermeria'), []],
             [T('Instrumentación'), False, URL(request.application,'carreras','salud/instrumentacion'),  []],
-            [T('Análisis Clínicos'), False, URL(request.application,'carreras','salud/laboratorio'), []],
+            [T('Laboratorio'), False, URL(request.application,'carreras','salud/laboratorio'), []],
             [T('Radiología'), False, URL(request.application,'carreras','salud/radiologia'), []],
             [T('Cardiología'), False, URL(request.application,'carreras','salud/cardiologia'), []],
+            [T('Auxiliar en enfermeria'), False, URL(request.application,'carreras','salud/auxenfermeria'), []],
+
+
             
         ]],
     ]],

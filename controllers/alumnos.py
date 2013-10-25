@@ -18,11 +18,13 @@ def index():
 def ficha():
     # muestra un perfil personalizado del alumno.
     q = db.alumnos.user_id== auth.user_id   # obtengo el registro del alumno ya registrado como usuario 
-    q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid
+    q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
     q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
     q &= db.comisiones.materiaid== db.materias.materiaid
+    q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid
     q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
-
+    q &= db.comisiones.divisionid== db.divisiones.divisionid
+    q &= db.divisiones.cicloid== db.ciclos.cicloid
     fila = db(q).select( db.alumnos.nombre, db.alumnos.fechanacimiento, 
                          db.alumnos.estadocivil, db.alumnos.foto, db.alumnos.email1, 
                          db.alumnos.ingreso, db.alumnos.localidad, db.alumnos.nacionalidad,

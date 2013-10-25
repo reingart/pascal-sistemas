@@ -6,7 +6,7 @@ db.define_table('alumnos',
     Field('alumnoid', type='id'),
     Field('nombre', type='string', length=200),
     Field('dni', type='integer'),
-    Field('sexo', type='string', length=1),
+    Field('sexo', type='string', length=10),
     Field('fechanacimiento', type='date'),
     Field('lugarnacimiento', type='string', length=250),
     Field('estadocivil', type='string', length=50),
@@ -35,32 +35,6 @@ db.define_table('cursos',
     Field('orden', type='integer', default=0),
     format= "%(cursoid)s [%(nombre)s]",
     migrate=migrate)
-    
-db.define_table('recursos',
-    Field('recursoid', type='id'),
-    Field('nombre', type='string', length=50),
-    format= "%(recursosid)s [%(nombre)s]",
-    migrate=migrate)
-    
-db.define_table('reservas',
-    Field('reservaid', type='id'),
-    Field('recursoid', type='integer'),
-    Field('fecha_reserva', type='date'),
-    Field('hora_retiro', type='date'),
-    Field('hora_devolucion', type='date'),
-    Field('cantidad', type='integer'),
-    Field('profesor', type='string',length=50),
-    Field('tipo', type='integer', default=0),
-    format= "%(reservasid)s [%(nombre)s]",
-    migrate=migrate)
-       
-    
-    
-    
-    
-    
-    
-    
     
 db.define_table('revistas',
     Field('revistaid', type='id'),
@@ -238,8 +212,8 @@ db.define_table('calificaciones',
 
 db.define_table('correlativas',
     Field('correlativaid', type='id'),
-    Field('materiaid1', db.materias),
-    Field('materiaid2', db.materias),
+    Field('materia', db.materias),
+    Field('materiacorrelativa', db.materias),
     Field('planestudioid', db.planesestudio),
     format= "%(correlativaid)s [%(materiaid1)s]",
     migrate=migrate)
@@ -273,7 +247,7 @@ db.define_table('periodos',
     Field('mes', type='integer', default=0),
     Field('anio', type='integer', default=0),
     Field('trimestre', type='integer', default=0),
-    Field('condicion', type='string', length=50),
+    Field('condicion', type='string', length=10),
     Field('cuatrimestre', type='integer', default=0),
     Field('semestre', type='integer', default=0),
     Field('orden', type='integer', default=0),
@@ -394,12 +368,20 @@ db.define_table('examenes',
     Field('periodoid', db.periodos),
     Field('llamado', type='string', length=1),
     Field('turno', type='string'),
-    Field('fecha', type='string'),
+    Field('fecha', type='date'),
     Field('hora', type='string'),
     Field('personalid1', db.personal),
     Field('personalid2', db.personal),
     Field('personalid3', db.personal),
     format= "%(examenid)s [%(llamado)s]",
+    migrate=migrate)
+    
+db.define_table('inscripcionescarrera',
+    Field('inscripcionid', type='id'),
+    Field('alumnoid', db.alumnos),
+    Field('carreraid', db.carreras),
+    Field('alta', type='date', default=request.now.date(), required= True),
+    Field('baja', type='date', readable= False, writable= False),
     migrate=migrate)
 
 db.define_table('inscripcionescomision',
@@ -408,7 +390,7 @@ db.define_table('inscripcionescomision',
     Field('comisionid', db.comisiones),
     Field('alta', type='date'),
     Field('baja', type='date'),
-    Field('condicion', type='string', length=1),
+    Field('condicion', type='string', length=10),
     migrate=migrate)
 
 db.define_table('inscripcionesdivision',
@@ -417,14 +399,14 @@ db.define_table('inscripcionesdivision',
     Field('divisionid', db.divisiones),
     Field('alta', type='date'),
     Field('baja', type='date'),
-    Field('condicion', type='string', length=1),
+    Field('condicion', type='string', length=10),
     migrate=migrate)
 
 db.define_table('inscripcionesexamen',
     Field('inscripcionid', type='id'),
     Field('alumnoid', db.alumnos),
     Field('examenid', db.examenes),
-    Field('condicion', type='string', length=1),
+    Field('condicion', type='string', length=10),
     Field('alta', type='date'),
     Field('baja', type='date'),
     Field('confirmar', type='boolean', default=False),

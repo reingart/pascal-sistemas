@@ -1,21 +1,23 @@
 {{extend 'layout.html'}}
 <h2> Fecha: {{=request.now.date()}}</h2>
 <h2> Alumno/a: {{=alumno.nombre}}
-<h1> <center><u> Inscripción a Examenes Finales</u> </center></h1>
+<h1> <center><u> Inscripción a Exámenes Finales</u> </center></h1>
 <form method="POST">
 <br>
-    <h3> <font color= "white"> *información de exámenes finales </font> </h3>
+    <h3> <font color= "white"> *exámenes finales </font> </h3>
 <br>
 <TABLE style="border: 1px solid white">
 <TR>
-    <TD style="border: 1px solid white"> MATERIA </TD>
-    <TD style="border: 1px solid white"> DOCENTE </TD>
-    <TD style="border: 1px solid white"> FECHA </TD>
-    <TD style="border: 1px solid white"> HORA </TD>
+    <TD style="border: 1px solid white"><center><b> MATERIA </b></center> </TD>
+    <TD style="border: 1px solid white"><center><b> DOCENTE </b></center> </TD>
+    <TD style="border: 1px solid white"><center><b> FECHA </b></center> </TD>
+    <TD style="border: 1px solid white"><center><b> HORA </b></center> </TD>
+    <TD style="border: 1px solid white"> <center><b>ESTADO</b></center> </TD>
 <TR>
 {{for f in final:}}
 	
-    <td style="border: 1px solid white"><input type="checkbox" name="{{="examen_%s" % f.examenes.examenid}}">
+    <td style="border: 1px solid white"><input type="checkbox" name="{{="examen_%s" % f.examenes.examenid}}" {{='disabled' if (f.examenes.examenid in inscripciones or f.examenes.materiaid in notas) else ''}} > 
+    
     {{=f.materias.nombre}}
     </td>
     <td style="border: 1px solid white">
@@ -27,13 +29,22 @@
     <td style="border: 1px solid white">
     {{=f.examenes.hora}}
     </td>
-    
+    <td style="border: 1px solid white" >
+    <font color="yellow"> 
+        {{='Ya se encuentra inscripto' if (f.examenes.examenid in inscripciones) else ''}}
+    </font>
+    <font color="red"> 
+        {{='Examen ya rendido' if (f.examenes.materiaid in notas) else ''}}
+    </font>
+        {{='' if (f.examenes.examenid in inscripciones or f.examenes.materiaid in notas) else 'Disponible'}}
+        
+    </td>
     </TR>
 {{pass}}
 </TABLE>
 <br>
     <a href="index.html"><input type=button value="Volver" ></a>
-    <input type="submit" name="guardar" value="Guardar" >
     <input type="reset" value="Cancelar">
-
+    <input type="submit" name="guardar" value="Guardar" > 
+	
 </form>

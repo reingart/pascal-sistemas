@@ -155,8 +155,48 @@ def apuntes():
     return{}
     
 def recursos():
-    ""
-    return{}
+
+    recursoid=request.args[0]
+    
+   
+   
+    # si me pasan en la URL del recurso, lo filtro 
+    q=db.recursos.id>0
+    # q = db.recursos.recursoid == recursoid
+    
+    
+    # selecciono los recursos del instituto disponibles o no
+    #q &=db.recursos.alumnoid == db.inscripcionescomision.alumnoid
+    
+    
+    # Busca las comisiones que coincidan
+    #q &= db.comisiones.comisionid == db.inscripcionescomision.comisionid
+
+    # Ejecuto el sql donde vienen los alumnos por comision
+    #alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre)
+    #inasistencias=db(db.inasistencias.id>0).select(db.inasistencias.ALL)
+     
+     #cuando hago click en el boton guardar
+    if request.vars.grabar=="GUARDAR":
+        # en _name tenemos el nombre del checkbox
+        fecha = request.vars.fecha
+        for recurso in recursos:
+                recurso_id = recurso.recursoid
+                nombre = recurso.nombre
+                disponible = recurso.disponible
+                # obtenemos los valores de los campos en el formulario para este alumno
+                #falta = request.vars["falta_%s" % alumno_id]
+                #inasistencia_id = request.vars["tipo_%s" % alumno_id]
+                
+                # si el valor es on  en el checkbox insertamos los datos del alumno en la tabla faltas. 
+                # if falta == "on":
+                #    db.faltas.insert(alumnoid= alumno_id, comisionid= comision_id,inasistenciaid=inasistencia_id,
+                #    fecha=fecha,cantidad=1)
+
+    return {'recursos':recursos}
+    
+   
+
     
 def unidad():
     ""

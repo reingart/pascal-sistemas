@@ -37,15 +37,10 @@ def salud_auxenfermeria():
 def salud_instrumentacion():
     return {}
 
-def salud_laboratorio():
-    return {}
-
 def salud_radiologia():
     return {}
 
 def redes():
-    return {}
-def salud_cardiologia():
     return {}
     
 def programas():

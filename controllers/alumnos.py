@@ -13,7 +13,7 @@ def index():
     return dict (alumno=alumno)
 
 @auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
 
 def ficha():
     # muestra un perfil personalizado del alumno.
@@ -21,10 +21,10 @@ def ficha():
     q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
     q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
     q &= db.comisiones.materiaid== db.materias.materiaid
-    q &= db.materias.materiaid== db.asignaturas.materiaid
-    q &= db.asignaturas.carreraid== db.carreras.carreraid
-    q &= db.comisiones.periodoid== db.periodos.periodoid
-    q &= db.periodos.cicloid== db.ciclos.cicloid
+    q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid
+    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
+    q &= db.comisiones.divisionid== db.divisiones.divisionid
+    q &= db.divisiones.cicloid== db.ciclos.cicloid
     fila = db(q).select( db.alumnos.nombre, db.alumnos.fechanacimiento, 
                          db.alumnos.estadocivil, db.alumnos.foto, db.alumnos.email1, 
                          db.alumnos.ingreso, db.alumnos.localidad, db.alumnos.nacionalidad,
@@ -44,7 +44,7 @@ def ingreso():
     subtitulo= T ('Complete el formulario por favor...')
     form=SQLFORM(db.alumnos)
     if form.accepts(request.vars,session):
-        grupo_id = db(db.auth_group.role=='alumnos').select(db.auth_group.id)
+        grupo_id = db(db.auth_group.role=='Alumnos').select(db.auth_group.id)
         for x in grupo_id:
             grupo=x.id
         db.auth_membership.insert(user_id=auth.user_id, group_id=grupo)
@@ -58,8 +58,6 @@ def ingreso():
     return dict (form=form, sub=subtitulo)
     
     
-    
-
 def busqueda():
     # armo un formulario para buscar alumno por su dni
     form = SQLFORM.factory(
@@ -85,18 +83,20 @@ def busqueda():
 
 
 @auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
 def horarios():
    
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
     alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista
-   # q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
-    #q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
+    q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid
+    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
     q &= db.horarios.horaid== db.horas.horaid
     q &= db.horarios.comisionid== db.comisiones.comisionid
     q &= db.comisiones.personalid== db.personal.personalid
     q &= db.comisiones.materiaid== db.materias.materiaid
-    q &= db.comisiones.divisionid== db.divisiones.divisionid
+   # q &= db.comisiones.divisionid== db.divisiones.divisionid
+
+     
     filas= db(q).select(db.horas.hora, db.personal.nombre, db.materias.nombre, db.divisiones.divisionid, db.horarios.dia)
     
     horario = {'lunes':{},'martes':{},'miercoles':{},'jueves':{},'viernes':{}}
@@ -111,7 +111,7 @@ def horarios():
     
    
 @auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='alumnos')    #requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos')    #requiere que haya un usuario logeado e integre el grupo alumnos
     
 def inasistencias():   #lista de inasistencias del alumno
     #buscar el alumno y compararlo con el logueado
@@ -124,18 +124,19 @@ def inasistencias():   #lista de inasistencias del alumno
     q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
     q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
     q &= db.faltas.comisionid== db.comisiones.comisionid
-    q &= db.comisiones.personalid== db.personal.personalid
+    q &= db.comisiones.personalid== db.personal.personalid      
+      
     q &= db.faltas.inasistenciaid== db.inasistencias.inasistenciaid
     #cantidad= db(q).count()
     falta= db(q).select(db.comisiones.nombre, db.faltas.cantidad, db.inasistencias.descripcion, db.faltas.fecha)
-    
+
     total= db(q).select(db.faltas.cantidad.sum().with_alias("suma")).first()
     
     
     return dict (falta=falta, alumno=alumno, total=total)
     
 @auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
     
 def examenes():
      #listado de examenes finales ya rendidos
@@ -153,21 +154,15 @@ def examenes():
     return dict (notas= notas, alumno=alumno)
   
 @auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
   
 def final(): #formulario de inscrip a examenes finales 
     
     q = db.alumnos.user_id== auth.user_id #busca y trae todos los datos del alumno logueado
     alumno= db(q).select().first() 
     # guarda en una variable los datos para poder ser utilizados y tmb la envio a la vista
-    q &= db.inscripcionescomision.alumnoid== alumno
-    q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
-    q &= db.comisiones.materiaid==db.materias.materiaid
-    #q &= db.notas.materiaid==db.materias.materiaid
-    #q &= db.examenes.materiaid== db.notas.materiaid
-    q &= db.materias.materiaid==db.examenes.materiaid
-    q &= db.examenes.personalid1== db.personal.personalid
-    final= db(q).select(db.examenes.examenid, db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)
+    
+     
      #cuando hago click en el boton guardar
     if request.vars.guardar=="Guardar":
             #en k tenemos el nombre del checkbox
@@ -180,29 +175,47 @@ def final(): #formulario de inscrip a examenes finales
                 if _value == "on":                    
                     db.inscripcionesexamen.insert(alumnoid= alumno.alumnoid, 
                         examenid= examen_id,
-                        condicion="R",
+                        condicion="Regular",
                         alta=fecha,
                         confirmar=True,
                         valido=True)
                     ok += 1 #creo contador de examenes insertados/seleccionados por el alumno
+                    
         if ok:
-              response.flash= "Usted se a inscripto a %d exámenes seleccionados!" % ok
+              response.flash= "Usted se a inscripto a %d exámenes!" % ok
         else:
               response.flash = "Por favor seleccione una opción!"
     
     else:
-        response.flash='Por favor, complete el formulario'            
+        response.flash='Por favor, complete el formulario'     
+                
+    
+    # guarda en una variable los datos para poder ser utilizados y tmb la envio a la vista
+    inscripciones = db(db.inscripcionesexamen.alumnoid==alumno.alumnoid).select(db.inscripcionesexamen.examenid)
+    inscripciones = [inscripcion.examenid for inscripcion in inscripciones]
+    #listo si ya se inscribio al examen
+    n= db.notas.alumnoid== alumno.alumnoid
+    n&= db.notas.calificacionid==5
+    n&= db.notas.nota>4
+    notas= db(n).select(db.notas.materiaid)
+    notas = [nota.materiaid for nota in notas]
+    #listo si ya aprobo el examen 
+    correlativas= db.correlativas.materia== notas.notas.materiaid
+    correlativas= [correlativa.materia for correlativa in correlativas]
+    
+    
+    q &= db.examenes.materiaid== db.materias.materiaid
+    q &= db.examenes.personalid1== db.personal.personalid
+    
+    final= db(q).select(db.examenes.examenid, db.examenes.materiaid, db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)       
                 
          
-      
-    return dict (final= final, alumno=alumno) 
-         
-     
+    return dict (final= final, alumno=alumno, inscripciones=inscripciones, notas=notas, correlativas= correlativas) 
          
 ###################################################################################
   
 @auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
       
 def parciales():
     #lista examenes cuatrimestrales ya rendidos

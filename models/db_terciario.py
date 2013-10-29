@@ -413,57 +413,18 @@ db.define_table('inscripcionesexamen',
     Field('valido', type='boolean', default=False),
     migrate=migrate)
     
+db.define_table('constancia_modelo',
+    Field('modeloid', type='id'),
+    Field('descripcion', type='string', length=200),
+    Field('plantilla', type='text', comment=T('texto base')),
+    format= "%(modeloid)s [%(descripcion)s]",
+    migrate=migrate)
 
 
 db.define_table('constancia',
     Field('constanciaid', type='id'),
     Field('alumnoid', db.alumnos),
-    Field('carreraid', db.carreras),
-    Field('apellido', type='string', length=1),
-    Field('dni', type='integer'),
-    Field('alta', type='date'),
-    Field('fechadeinicio', type='date'),
-    Field('alumnoregular', type='boolean', default=False),
-    Field('valido', type='boolean', default=False),
-    migrate=migrate)
-    
-db.define_table('certificado',
-    Field('certificadoid', type='id'),
-    Field('alumnoid', db.alumnos),
-    Field('carreraid', db.carreras),
-    Field('materiaid', db.materias),
-    Field('apellido', type='string', length=1),
-    Field('dni', type='integer'),
-    Field('cantidad', type='integer'),
-    Field('porcentaje', type='integer'),
-    Field('alta', type='date'),
-    Field('fechadeinicio', type='date'),
-    Field('materiasaprobadas', type='boolean', default=False),
-    Field('valido', type='boolean', default=False),
-    migrate=migrate)
-    
-db.define_table('tituloentramite',
-    Field('tituloentramiteid', type='id'),
-    Field('alumnoid', db.alumnos),
-    Field('carreraid', db.carreras),
-    Field('apellido', type='string', length=1),
-    Field('dni', type='integer'),
-    Field('matricula', type='integer'),
-    Field('alta', type='date'),
-    Field('fechadeinicio', type='date'),
-    Field('fechadetermino', type='date'),
-    Field('valido', type='boolean', default=False),
-    migrate=migrate)
-    
-
-    
-db.define_table('documentacion',
-    Field('documentacionid', type='id'),
-    Field('conatanciaid', db.constancia),
-    Field('certificadoid', db.certificado),
-    Field('tituloentramiteid', db.tituloentramite),
-    Field('alta', type='date'),
-    Field('fechadeinicio', type='date'),
-    Field('fechadetermino', type='date'),
+    Field('modeloid', db.constancia_modelo),
+    Field('fecha_alta', type='date'),
     Field('valido', type='boolean', default=False),
     migrate=migrate)

@@ -85,7 +85,7 @@ def busqueda():
 @auth.requires_login() #requiere que haya un usuario logeado
 @auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
 def horarios():
-   
+   #lista los horarios dependiendo de la carrera
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
     alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista
     q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid

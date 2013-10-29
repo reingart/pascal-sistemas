@@ -200,17 +200,31 @@ def final(): #formulario de inscrip a examenes finales
     notas= db(n).select(db.notas.materiaid)
     notas = [nota.materiaid for nota in notas]
     #listo si ya aprobo el examen 
-    correlativas= db.correlativas.materia== notas.notas.materiaid
-    correlativas= [correlativa.materia for correlativa in correlativas]
+    
+    aprobada= []
+    desaprobada= []
+    n= db.notas.alumnoid== alumno.alumnoid
+    n&= db.notas.calificacionid==5
+    nota= db(n).select(db.notas.nota, db.notas.materiaid)
+    for notas in nota:
+            if notas.nota>4:
+                aprobada.append(notas.materiaid)
+            else:
+                desaprobada.append(notas.materiaid)
+    correlatividades = {}
+    c= db().select(db.correlativas.materiacorrelativa, db.correlativas.materia)
+    for x in c:
+        correlatividades.setdefault(x.materia, []).append(x.materiacorrelativa)
+        
     
     
-    q &= db.examenes.materiaid== db.materias.materiaid
+    q = db.examenes.materiaid== db.materias.materiaid
     q &= db.examenes.personalid1== db.personal.personalid
     
     final= db(q).select(db.examenes.examenid, db.examenes.materiaid, db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)       
                 
          
-    return dict (final= final, alumno=alumno, inscripciones=inscripciones, notas=notas, correlativas= correlativas) 
+    return dict (final= final, alumno=alumno, inscripciones=inscripciones, notas=notas, aprobada= aprobada, desaprobada= desaprobada, c=c, correlatividades=correlatividades) 
          
 ###################################################################################
   

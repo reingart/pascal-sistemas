@@ -14,9 +14,11 @@
     <TD style="border: 1px solid white"><center><b> HORA </b></center> </TD>
     <TD style="border: 1px solid white"> <center><b>ESTADO</b></center> </TD>
 <TR>
+    
 {{for f in final:}}
-	
-    <td style="border: 1px solid white"><input type="checkbox" name="{{="examen_%s" % f.examenes.examenid}}" {{='disabled' if (f.examenes.examenid in inscripciones or f.examenes.materiaid in notas) else ''}} > 
+    
+    
+    <td style="border: 1px solid white"><input type="checkbox" name="{{="examen_%s" % f.examenes.examenid}}" {{='disabled' if (f.examenes.examenid in inscripciones) else ''}} or {{='disabled' if (f.examenes.materiaid in aprobada) else ''}} > 
     
     {{=f.materias.nombre}}
     </td>
@@ -33,14 +35,20 @@
     <font color="yellow"> 
         {{='Ya se encuentra inscripto' if (f.examenes.examenid in inscripciones) else ''}}
     </font>
-    <font color="red"> 
-        {{='Examen ya rendido' if (f.examenes.materiaid in notas) else ''}}
-    </font>
-        {{='' if (f.examenes.examenid in inscripciones or f.examenes.materiaid in notas) else 'Disponible'}}
+    <font color="yellow"> 
+       
         
+    </font>
+    
+    <font color="red"> 
+        {{='Examen Aprobado' if (f.examenes.materiaid in aprobada) else ''}}  
+    </font>
+    
     </td>
     </TR>
-{{pass}}
+    
+    {{pass}}
+    {{pass}}
 </TABLE>
 <br>
     <a href="index.html"><input type=button value="Volver" ></a>
@@ -48,3 +56,12 @@
     <input type="submit" name="guardar" value="Guardar" > 
 	
 </form>
+    {{=aprobada}}
+    <br>
+    {{=desaprobada}}
+    <br>
+    {{=c}}
+    <br>
+    {{=correlatividades.keys()}}
+    <br>
+    {{=correlatividades.values()}}

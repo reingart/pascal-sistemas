@@ -1,94 +1,573 @@
 TABLE auth_user
+auth_user.id,auth_user.first_name,auth_user.last_name,auth_user.email,auth_user.password,auth_user.registration_key,auth_user.reset_password_key,auth_user.registration_id
+1,lucas,gonzalez,luka.jesu12@gmail.com,sha512$ac8b7839cc4d39b9$7bc8eb2f90f6b4083b478292091a4fe1e1768e44f287c8fe969aa504e4e615b3cf7664e37fe10494d77d5a86b6e562223d650b7901c9fa32626478269d64dbf8,,,
+4,sofia,ramirez,sofia-ramirez91@hotmail.es,sha512$97daccdb6f26b147$d61bbb6da1b65baa4d930155bea39613b6eab79bb2cece140c473df24bbef490fae52b2c67e00a9a4cd35792bd5fc5844f7ca128a8ae5f8f14ac471a6da3661c,,,
+5,yanina,alarcon,yani.alarcon@yahoo.com.ar,sha512$bafb07e4da266702$61e6fadcb6fa6928e5bbc44d21caf5ae11521e61717a101301f523196fa8df460e648c64c519aa0e8fc23f131e9b8db316e5bca7794bef127959a971d30d0e7c,,,
 
 
 TABLE auth_group
+auth_group.id,auth_group.role,auth_group.description
+1,Alumnos,Grupo de alumnos 
+3,Personal,Grupo de docentes y personal de la institución 
 
 
 TABLE auth_membership
+auth_membership.id,auth_membership.user_id,auth_membership.group_id
+1,1,1
+4,4,1
+5,5,1
 
 
 TABLE auth_permission
 
 
 TABLE auth_event
+auth_event.id,auth_event.time_stamp,auth_event.client_ip,auth_event.user_id,auth_event.origin,auth_event.description
+1,2013-08-16 19:46:09,127.0.0.1,<NULL>,auth,Grupo 1 creado
+2,2013-08-16 19:46:09,127.0.0.1,1,auth,Usuario 1 Registrado
+3,2013-08-19 23:28:19,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+4,2013-08-19 23:28:50,127.0.0.1,1,auth,User 1 Logged-out
+5,2013-08-19 23:39:37,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+6,2013-08-19 23:40:53,127.0.0.1,1,auth,User 1 Logged-out
+7,2013-08-20 15:55:23,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+8,2013-08-20 15:58:15,127.0.0.1,1,auth,User 1 Logged-out
+9,2013-08-20 16:16:41,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+10,2013-08-20 16:58:11,127.0.0.1,1,auth,User 1 Logged-out
+11,2013-08-20 17:21:39,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+12,2013-08-20 17:45:15,127.0.0.1,1,auth,User 1 Logged-out
+13,2013-08-20 17:50:32,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+14,2013-08-20 17:55:11,127.0.0.1,1,auth,User 1 Logged-out
+15,2013-08-20 18:38:38,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+16,2013-08-20 18:40:22,127.0.0.1,1,auth,User 1 Logged-out
+17,2013-08-21 18:29:23,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+18,2013-08-21 19:00:25,127.0.0.1,1,auth,User 1 Logged-out
+19,2013-08-24 15:36:43,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+20,2013-08-24 16:13:45,127.0.0.1,1,auth,User 1 Logged-out
+21,2013-08-24 16:15:30,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+22,2013-08-24 16:15:56,127.0.0.1,1,auth,User 1 Logged-out
+23,2013-08-24 16:58:48,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+24,2013-08-24 17:11:53,127.0.0.1,1,auth,User 1 Logged-out
+25,2013-08-26 19:17:57,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+26,2013-08-27 16:04:00,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+27,2013-08-27 16:04:08,127.0.0.1,1,auth,User 1 Logged-out
+28,2013-08-27 16:05:47,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+29,2013-08-27 16:05:54,127.0.0.1,1,auth,User 1 Logged-out
+30,2013-08-27 16:10:37,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+31,2013-08-27 16:10:53,127.0.0.1,1,auth,User 1 Logged-out
+32,2013-08-27 16:15:23,127.0.0.1,<NULL>,auth,Grupo 3 creado
+33,2013-08-27 16:15:23,127.0.0.1,4,auth,Usuario 4 Registrado
+34,2013-08-27 16:15:49,127.0.0.1,4,auth,User 4 Logged-out
+35,2013-08-27 16:17:18,127.0.0.1,<NULL>,auth,Grupo 4 creado
+36,2013-08-27 16:17:18,127.0.0.1,5,auth,Usuario 5 Registrado
+37,2013-08-27 16:18:06,127.0.0.1,5,auth,User 5 Logged-out
+38,2013-08-27 16:21:06,127.0.0.1,4,auth,Usuario 4 sesión iniciada
+39,2013-08-27 16:25:43,127.0.0.1,4,auth,User 4 Logged-out
+40,2013-08-27 16:27:14,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+41,2013-08-27 16:30:00,127.0.0.1,5,auth,User 5 Logged-out
+42,2013-08-27 16:38:33,127.0.0.1,4,auth,Usuario 4 sesión iniciada
+43,2013-08-27 16:38:46,127.0.0.1,4,auth,User 4 Logged-out
+44,2013-08-27 16:39:16,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+45,2013-08-27 16:39:23,127.0.0.1,5,auth,User 5 Logged-out
+46,2013-08-27 16:41:12,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+47,2013-08-27 16:41:22,127.0.0.1,1,auth,User 1 Logged-out
+48,2013-08-27 17:00:53,127.0.0.1,4,auth,Usuario 4 sesión iniciada
+49,2013-08-27 17:01:10,127.0.0.1,4,auth,User 4 Logged-out
+50,2013-08-28 17:28:34,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+51,2013-08-28 17:50:25,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+52,2013-08-28 18:44:53,127.0.0.1,5,auth,User 5 Logged-out
+53,2013-08-28 18:45:39,127.0.0.1,4,auth,Usuario 4 sesión iniciada
+54,2013-08-28 18:46:59,127.0.0.1,4,auth,User 4 Logged-out
+55,2013-08-28 18:56:31,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+56,2013-08-28 19:23:29,127.0.0.1,5,auth,User 5 Logged-out
+57,2013-08-28 19:24:43,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+58,2013-08-28 19:30:37,127.0.0.1,1,auth,User 1 Logged-out
+59,2013-08-29 18:46:12,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+60,2013-08-29 18:46:33,127.0.0.1,1,auth,User 1 Logged-out
+61,2013-08-30 16:29:30,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+62,2013-08-30 16:50:47,127.0.0.1,1,auth,User 1 Logged-out
+63,2013-08-30 17:02:08,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+64,2013-08-30 17:02:40,127.0.0.1,1,auth,User 1 Logged-out
+65,2013-08-30 17:03:03,127.0.0.1,4,auth,Usuario 4 sesión iniciada
+66,2013-08-30 17:03:52,127.0.0.1,4,auth,User 4 Logged-out
+67,2013-08-30 17:04:19,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+68,2013-08-30 17:04:31,127.0.0.1,5,auth,User 5 Logged-out
+69,2013-08-30 17:07:55,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+70,2013-08-30 17:08:03,127.0.0.1,1,auth,User 1 Logged-out
+71,2013-08-30 17:12:43,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+72,2013-08-30 17:12:51,127.0.0.1,1,auth,User 1 Logged-out
+73,2013-09-02 15:26:32,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+74,2013-09-02 15:29:23,127.0.0.1,1,auth,User 1 Logged-out
+75,2013-09-02 15:29:44,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+76,2013-09-02 15:30:00,127.0.0.1,5,auth,User 5 Logged-out
+77,2013-09-02 15:36:46,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+78,2013-09-02 15:44:58,127.0.0.1,1,auth,User 1 Logged-out
+79,2013-09-02 16:23:51,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+80,2013-09-02 16:32:23,127.0.0.1,1,auth,User 1 Logged-out
+81,2013-09-02 16:33:47,127.0.0.1,<NULL>,auth,Grupo 4 creado
+84,2013-09-02 16:42:11,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+85,2013-09-02 16:46:36,127.0.0.1,1,auth,User 1 Logged-out
+86,2013-09-02 16:47:55,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+87,2013-09-02 16:48:33,127.0.0.1,1,auth,User 1 Logged-out
+88,2013-09-02 16:56:59,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+89,2013-09-02 17:10:56,127.0.0.1,1,auth,User 1 Logged-out
+90,2013-09-02 17:11:26,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+91,2013-09-02 17:16:02,127.0.0.1,1,auth,User 1 Logged-out
+92,2013-09-05 16:04:38,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+93,2013-09-05 16:10:56,127.0.0.1,1,auth,User 1 Logged-out
+94,2013-09-05 16:12:59,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+95,2013-09-05 16:16:11,127.0.0.1,1,auth,User 1 Logged-out
+96,2013-09-05 16:28:39,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+97,2013-09-05 16:28:59,127.0.0.1,1,auth,User 1 Logged-out
+98,2013-09-05 19:47:05,127.0.0.1,4,auth,Usuario 4 sesión iniciada
+99,2013-09-05 19:47:19,127.0.0.1,4,auth,User 4 Logged-out
+100,2013-09-05 19:47:34,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+101,2013-09-05 19:47:41,127.0.0.1,5,auth,User 5 Logged-out
+102,2013-09-06 14:15:02,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+103,2013-09-06 15:28:46,127.0.0.1,1,auth,User 1 Logged-out
+104,2013-09-06 18:09:55,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+105,2013-09-06 19:21:43,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+106,2013-09-07 15:46:55,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+107,2013-09-07 15:48:01,127.0.0.1,1,auth,User 1 Logged-out
+108,2013-09-07 15:48:24,127.0.0.1,4,auth,Usuario 4 sesión iniciada
+109,2013-09-07 15:49:14,127.0.0.1,4,auth,User 4 Logged-out
+110,2013-09-07 15:49:51,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+111,2013-09-07 15:51:27,127.0.0.1,5,auth,User 5 Logged-out
+112,2013-09-07 15:53:36,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+113,2013-09-09 19:14:09,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+114,2013-09-09 19:14:46,127.0.0.1,1,auth,User 1 Logged-out
+115,2013-09-09 19:15:31,127.0.0.1,4,auth,Usuario 4 sesión iniciada
+116,2013-09-09 19:17:27,127.0.0.1,4,auth,User 4 Logged-out
+117,2013-09-09 19:26:19,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+118,2013-09-10 14:38:06,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+119,2013-09-10 14:39:03,127.0.0.1,1,auth,User 1 Logged-out
+120,2013-09-10 14:39:44,127.0.0.1,4,auth,Usuario 4 sesión iniciada
+121,2013-09-10 14:48:47,127.0.0.1,4,auth,User 4 Logged-out
+122,2013-09-10 14:49:37,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+123,2013-09-10 14:50:28,127.0.0.1,5,auth,User 5 Logged-out
+124,2013-09-10 14:53:27,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+125,2013-09-10 14:53:52,127.0.0.1,1,auth,User 1 Logged-out
+126,2013-09-10 14:56:36,127.0.0.1,4,auth,Usuario 4 sesión iniciada
+127,2013-09-10 14:58:40,127.0.0.1,4,auth,User 4 Logged-out
+128,2013-09-10 15:03:32,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+129,2013-09-10 15:34:37,127.0.0.1,1,auth,User 1 Logged-out
+130,2013-09-10 15:38:19,127.0.0.1,<NULL>,auth,Grupo 4 creado
+132,2013-09-10 18:31:00,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+133,2013-09-10 18:45:57,127.0.0.1,1,auth,User 1 Logged-out
+134,2013-09-10 18:46:23,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+135,2013-09-10 18:51:58,127.0.0.1,5,auth,User 5 Logged-out
+136,2013-09-10 19:41:16,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+137,2013-09-10 19:44:42,127.0.0.1,1,auth,User 1 Logged-out
+138,2013-09-10 19:56:46,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+139,2013-09-10 20:03:28,127.0.0.1,1,auth,User 1 Logged-out
+140,2013-09-11 20:51:16,127.0.0.1,<NULL>,auth,Grupo 5 creado
+143,2013-09-11 22:08:38,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+144,2013-09-11 22:09:33,127.0.0.1,1,auth,User 1 Logged-out
+145,2013-09-11 22:09:53,127.0.0.1,4,auth,Usuario 4 sesión iniciada
+146,2013-09-11 22:11:03,127.0.0.1,4,auth,User 4 Logged-out
+149,2013-09-11 22:53:28,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+150,2013-09-11 23:41:00,127.0.0.1,1,auth,User 1 Logged-out
+151,2013-10-11 19:18:54,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+152,2013-10-16 19:00:54,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+153,2013-10-16 19:46:48,127.0.0.1,1,auth,User 1 Logged-out
+154,2013-10-18 14:56:14,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+155,2013-10-18 18:33:05,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+156,2013-10-18 20:32:56,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+157,2013-10-21 21:18:11,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+158,2013-10-21 22:06:49,127.0.0.1,1,auth,User 1 Logged-out
+159,2013-10-21 22:07:45,127.0.0.1,4,auth,Usuario 4 sesión iniciada
+160,2013-10-21 22:45:21,127.0.0.1,4,auth,User 4 Logged-out
+161,2013-10-21 22:46:03,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+162,2013-10-22 00:09:34,127.0.0.1,1,auth,User 1 Logged-out
+163,2013-10-22 00:32:10,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+164,2013-10-22 00:33:29,127.0.0.1,1,auth,User 1 Logged-out
+165,2013-10-22 00:40:26,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+166,2013-10-23 14:51:23,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+167,2013-10-23 18:19:02,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+168,2013-10-23 20:35:46,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+169,2013-10-24 18:40:19,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+170,2013-10-25 15:20:59,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+171,2013-10-25 18:38:25,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+172,2013-10-25 20:42:52,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+173,2013-10-26 16:13:30,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+174,2013-10-27 18:48:49,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+175,2013-10-27 19:51:36,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+176,2013-10-27 19:53:58,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+177,2013-10-27 20:00:14,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+178,2013-10-28 15:47:12,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+179,2013-10-29 16:38:46,127.0.0.1,1,auth,Usuario 1 sesión iniciada
 
 
 TABLE auth_cas
 
 
 TABLE alumnos
+alumnos.alumnoid,alumnos.nombre,alumnos.dni,alumnos.sexo,alumnos.fechanacimiento,alumnos.lugarnacimiento,alumnos.estadocivil,alumnos.nacionalidad,alumnos.direccion,alumnos.localidad,alumnos.cp,alumnos.telefono,alumnos.email1,alumnos.email2,alumnos.ingreso,alumnos.egreso,alumnos.foto,alumnos.user_id
+10,Lucas Gonzalez,34456756,Masculino,1992-09-23,Gonzalez Catan,Soltero,Argentino,Bordoy 1123,Gonzalez Catan,1759,5678-9876,luka.jesu12@gmail.com,luks_chizzo@hotmail.com,2011-03-14,<NULL>,alumnos.foto.90039a4598bcd7e8.313030323937335f.jpg,1
+21,Sofia Ramirez,4534523,Femenina,1991-12-20,Gonzalez Catan,Soltera,Argentina,Dragones 3456,Gonzalez Catan,1759,4567345,sofia-ramirez91@hotmail.es,,2011-03-14,<NULL>,,4
+22,Yanina Alarcon,6753246,Femenina,1985-10-16,Gonzalez Catan,Casada,Argentina,Achupalla 2345,Gonzalez Catan,1759,456723,yani.alarcon@yahoo.com,,2011-03-14,<NULL>,,5
 
 
 TABLE cursos
+cursos.cursoid,cursos.nombre,cursos.codigo,cursos.nivel,cursos.anio,cursos.seccion,cursos.division,cursos.orden
+1,Primer a�o,1,3,2013,A,4,1
+2,Segundo a�o,2,3,2013,B,3,2
+3,Tercer a�o,3,3,2013,C,3,3
 
 
 TABLE revistas
+revistas.revistaid,revistas.nombre
+1,Titular
+2,Suplente
 
 
 TABLE cargos
+cargos.cargoid,cargos.descripcion
+1,Administrativo
+2,Profesor
+3,Porteria
 
 
 TABLE secciones
+secciones.seccionid,secciones.descripcion
+1,Sistemas
+2,Salud
 
 
 TABLE personal
+personal.personalid,personal.E_mail,personal.facebook,personal.nombre,personal.dni,personal.nacimiento,personal.domicilio,personal.localidad,personal.cp,personal.provincia,personal.telefono,personal.titulos,personal.otorgadospor,personal.fechaotorgamiento,personal.apto,personal.nombramiento,personal.cuil,personal.foto,personal.cargoid
+2,ringart@gmail.com,mariano.reingart,Reingart Mariano,111111,<NULL>,Necochea 1132,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,pepe alberto,,nose,<NULL>,1234577,personal.foto.846577e02fd2b2a3.6d617269616e6f3.jpg,1
+3,hector@hotmail.com,hector.amarilla,Amarilla Hector,434343,<NULL>,Laprida 4567,gonzalez catan,1759,Buenos Aires,8568899,ingenieria en sistemas,Jose Rodriguez,,nose,<NULL>,8799999,personal.foto.bcbf221d67f4794c.616d6172696c6c6.jpg,2
+4,claudia@hotmail.com,mariaclaudia.vargas,Vargas Claudia,4545,<NULL>,San Juan 1122,gonzalez catan,1759,Buenos Aires,7899765,Contaduria,Juan Repeto,,nose,<NULL>,7876669,personal.foto.be7fa2dae636613a.323031332d30382.jpg,2
+5,angelbravo@gmail.com,angel.bravo,Bravo Angel,9897,<NULL>,Rivas 1450,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,Norberto Gonzalez,,nose,<NULL>,76969989,personal.foto.b86d8bebfddda1a5.627261766f2e6a7.jpg,1
+6,agui.elena@live.com,elen.aguirre,Aguirre Elena,57865,<NULL>,Sarmiento 1120,gonzalez catan,1759,Buenos Aires,6888899,Psicopedagoga,Norma Villanueva,,nose,<NULL>,545465456,personal.foto.b6d5339f19c52ba1.68656c656e61206.jpg,2
+7,luzmedina@hotmail.com,luz.pamela,Medina Luz,754645657,<NULL>,Claudia Sifre 1112,gonzalez catan,1759,Buenos Aires,436777,Analisis de sistemas,Angel Bravo,,nose,<NULL>,9679679,personal.foto.8ffc405571829758.37333538355f343.jpg,1
+8,josegonzalez@hotmail.com,jose.gonzalez,Gonzalez Jose,79588,<NULL>,Lasalle 456,gonzalez catan,1759,Buenos Aires,5474868787,Profesor matematica,Ruben Olmedo,,nose,<NULL>,7896969,personal.foto.8ea2bda6b501e36d.313233343933305.jpg,1
+9,roselli@hotmail.com,roselli.andrea,Andre Roselli,545353,<NULL>,Melian  567,gonzalez catan,1759,Buenos Aires,6576765757,Profesora de  ingles,Josefa Rosales,,nose,<NULL>,5476476475,personal.foto.8d0ccb6f6d8da835.3136323831335f3.jpg,2
 
 
 TABLE niveles
+niveles.nivelid,niveles.descripcion,niveles.ciclo,niveles.tipo,niveles.personalid
+1,Terciario,2,<NULL>,<NULL>
+2,Secundario,2,<NULL>,<NULL>
 
 
 TABLE apuntes
 
 
 TABLE carreras
+carreras.carreraid,carreras.nombre
+1,Tecnicatura Superior en Analisis de Sistemas
+2,Tecnicatura Superior en Enfermería
+3,Tecnicatura Superior en Instrumentación Quirúrgica 
+4,Tecnicatura Superior en Laboratorio de Análisis Clínicos
+5,Tecnicatura Superior en Radiología
+6,Tecnicatura Superior en Cardiologia
 
 
 TABLE planesestudio
+planesestudio.planestudioid,planesestudio.descripcion,planesestudio.aprobadopor,planesestudio.carreraid,planesestudio.desde,planesestudio.hasta
+1,Analista de sistemas 2012,Resolución Nº5817/03,1,2012-03-18,2012-12-21
+2,Radiologia 2012,Resolución N° 3244,5,2012-03-18,2012-12-18
+3,Analisis Clinico 2012,Resolucion N°2134,4,2012-03-18,2012-12-18
+5,Enfermeria 2012,Resolución N° 2345,2,2012-03-18,2012-12-21
+6,Instrumentación 2012,Resolución N° 6543,3,2012-03-21,2012-12-21
+7,Cardiologia 2013,Resolución N° 2312,6,2012-03-18,2012-12-21
 
 
 TABLE ciclos
+ciclos.cicloid,ciclos.nombre,ciclos.anio,ciclos.detalle,ciclos.desde,ciclos.hasta
+1,Ciclo Lectivo 2010,2010,<NULL>,2010-01-01,2010-12-31
+2,Ciclo Lectivo 2011,2011,<NULL>,2011-01-01,2011-12-31
+3,Ciclo Lectivo 2012,2012,<NULL>,2012-01-01,2012-12-31
+4,Ciclo Lectivo 2013,2013,<NULL>,2013-01-01,2013-12-31
 
 
 TABLE catedras
+catedras.catedraid,catedras.nombre,catedras.informe,catedras.boletin,catedras.analitico,catedras.espacio,catedras.abr,catedras.calificacion,catedras.horas,catedras.minutos,catedras.nivelid
+1,saraza,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,7,80,4800,1
+2,programacion,saraza,<NULL>,234,<NULL>,<NULL>,5,10,600,1
 
 
 TABLE materias
+materias.materiaid,materias.nombre,materias.resumen,materias.cursoid,materias.catedraid,materias.codigo,materias.orden,materias.optativa,materias.analitico,materias.requerida
+1,ALGEBRA,<NULL>,1,<NULL>,c1m01,1,False,<NULL>,True
+2,ANÁLISIS MATEMÁTICO,<NULL>,1,<NULL>,c1m02,2,False,<NULL>,True
+3,INGLÉS TÉCNICO,<NULL>,1,<NULL>,c1m03,3,False,<NULL>,True
+4,ADMINISTRACIÓN DE LAS ORGANIZACIONES,<NULL>,1,<NULL>,c1m04,4,False,<NULL>,True
+5,METODOLOGÍA DE LA INVESTIGACIÓN,<NULL>,1,<NULL>,c1m05,5,False,<NULL>,True
+6,PROGRAMACIÓN I,<NULL>,1,<NULL>,c1m06,6,False,<NULL>,True
+7,INTRODUCCIÓN A LOS SISTEMAS DE INFORMACIÓN,<NULL>,1,<NULL>,c1m07,7,False,<NULL>,True
+8,ARQUITECTURA DE COMPUTADORES,<NULL>,1,<NULL>,c1m08,8,False,<NULL>,True
+9,ESPACIO DE DEFINICIÓN INSTITUCIONAL I,<NULL>,1,<NULL>,c1m09,9,False,<NULL>,True
+16,PROBABILIDAD Y ESTADÍSTICAS,<NULL>,2,<NULL>,c2m01,1,False,<NULL>,True
+17,ANÁLISIS MATEMÁTICO II,<NULL>,2,<NULL>,c2m02,2,False,<NULL>,True
+18,INGLÉS TÉCNICO II,<NULL>,2,<NULL>,c2m03,3,False,<NULL>,True
+19,SISTEMAS DE INFORMACIÓN I,<NULL>,2,<NULL>,c2m04,4,False,<NULL>,True
+20,PROGRAMACIÓN II,<NULL>,2,<NULL>,c2m05,5,False,<NULL>,True
+21,SISTEMAS OPERATIVOS,<NULL>,2,<NULL>,c2m06,6,False,<NULL>,True
+22,BASES DE DATOS,<NULL>,2,<NULL>,c2m07,7,False,<NULL>,True
+23,ESPACIO DE DEFINICIÓN INSTITUCIONAL II,<NULL>,2,<NULL>,c2m08,8,False,<NULL>,True
+31,INVESTIGACIÓN OPERATIVA,<NULL>,3,<NULL>,c3m01,1,False,<NULL>,True
+32,ECONOMÍA EMPRESARIAL,<NULL>,3,<NULL>,c3m02,2,False,<NULL>,True
+33,TELEINFORMÁTICA,<NULL>,3,<NULL>,c3m03,3,False,<NULL>,True
+34,SISTEMAS DE INFORMACIÓN II,<NULL>,3,<NULL>,c3m04,4,False,<NULL>,True
+35,ESPACIO DE DEFINICIÓN INSTITUCIONAL III,<NULL>,3,<NULL>,c3m06,6,False,<NULL>,True
+45,PRÁCTICA PROFESIONAL,<NULL>,3,<NULL>,c3m05,5,False,<NULL>,True
 
 
 TABLE divisiones
+divisiones.divisionid,divisiones.descripcion,divisiones.codigo,divisiones.cursoid,divisiones.cicloid,divisiones.numero,divisiones.letra,divisiones.turno,divisiones.anio
+1,1º ,1A06,1,4,1,A,N,2013
+2,2°,2B06,2,4,2,B,N,2013
+3,3º,3C06,3,4,3,C,N,2013
 
 
 TABLE asignaturas
+asignaturas.asignaturaid,asignaturas.nombre,asignaturas.materiaid,asignaturas.cursoid,asignaturas.carreraid,asignaturas.planestudioid,asignaturas.orden,asignaturas.horas,asignaturas.teorica,asignaturas.practica,asignaturas.optativa,asignaturas.faltas1r,asignaturas.faltaslibre,asignaturas.faltasrecursa,asignaturas.cicloid
+26,ALGEBRA,1,1,1,1,1,3,False,False,False,<NULL>,24,30,<NULL>
+27,ANÁLISIS MATEMÁTICO,2,1,1,1,2,3,False,False,False,<NULL>,24,30,<NULL>
+28,INGLÉS TÉCNICO,3,1,1,1,3,2,False,False,False,<NULL>,16,20,<NULL>
+29,ADMINISTRACIÓN DE LAS ORGANIZACIONES,4,1,1,1,4,3,False,False,False,<NULL>,24,30,<NULL>
+30,METODOLOGÍA DE LA INVESTIGACIÓN,5,1,1,1,5,2,False,False,False,<NULL>,16,20,<NULL>
+31,PROGRAMACIÓN I,6,1,1,1,6,3,False,False,False,<NULL>,24,30,<NULL>
+32,INTRODUCCIÓN A LOS SISTEMAS DE INFORMACIÓN,7,1,1,1,7,2,False,False,False,<NULL>,16,20,<NULL>
+33,ARQUITECTURA DE COMPUTADORES,8,1,1,1,8,2,False,False,False,<NULL>,16,20,<NULL>
+34,ESPACIO DE DEFINICIÓN INSTITUCIONAL I,9,1,1,1,9,<NULL>,False,False,False,<NULL>,24,30,<NULL>
+41,PROBABILIDAD Y ESTADÍSTICAS,16,2,1,1,1,3,False,False,False,<NULL>,24,30,<NULL>
+42,ANÁLISIS MATEMÁTICO II,17,2,1,1,2,2,False,False,False,<NULL>,16,20,<NULL>
+43,INGLÉS TÉCNICO II,18,2,1,1,3,2,False,False,False,<NULL>,16,20,<NULL>
+44,SISTEMAS DE INFORMACIÓN I,19,2,1,1,4,2,False,False,False,<NULL>,16,20,<NULL>
+45,PROGRAMACIÓN II,20,2,1,1,5,2,False,False,False,<NULL>,16,20,<NULL>
+46,SISTEMAS OPERATIVOS,21,2,1,1,6,3,False,True,False,<NULL>,24,30,<NULL>
+47,BASES DE DATOS,22,2,1,1,7,2,False,True,False,<NULL>,16,20,<NULL>
+48,ESPACIO DE DEFINICIÓN INSTITUCIONAL II,23,2,1,1,8,2,False,True,False,<NULL>,16,20,<NULL>
+55,INVESTIGACIÓN OPERATIVA,31,3,1,1,1,2,False,False,False,<NULL>,16,20,<NULL>
+56,ECONOMÍA EMPRESARIAL,32,3,1,1,2,2,False,False,False,<NULL>,16,20,<NULL>
+57,TELEINFORMÁTICA,33,3,1,1,3,2,False,False,False,<NULL>,16,20,<NULL>
+58,SISTEMAS DE INFORMACIÓN II,34,3,1,1,4,2,False,False,False,<NULL>,16,20,<NULL>
+59,ESPACIO DE DEFINICIÓN INSTITUCIONAL III,35,3,1,1,5,2,False,False,False,<NULL>,16,20,<NULL>
+69,PRÁCTICA PROFESIONAL,45,3,1,1,15,2,False,False,False,<NULL>,16,20,<NULL>
 
 
 TABLE calendarios
+calendarios.calendarioid,calendarios.fecha,calendarios.feriado,calendarios.mensaje
+1,2013-01-01,True,Año Nuevo
+2,2013-04-05,True,Malvinas
+3,2013-04-08,True,Jueves Santo
+4,2013-04-09,True,Viernes Santo
+5,2013-05-01,True,Día del Trabajador
+6,2013-05-25,True,25 de Mayo
+7,2013-06-21,True,Bandera
+8,2013-07-09,True,Independencia
+9,2013-08-16,True,Gral. San Martín
+10,2013-10-11,True,Día de la Raza
+11,2013-12-08,True,Día de la Virgen
+12,2013-12-25,True,Navidad
 
 
 TABLE calificaciones
+calificaciones.calificacionid,calificaciones.descripcion,calificaciones.condicion,calificaciones.ayuda,calificaciones.equivalencia,calificaciones.previa
+1,Orientativa,<NULL>,<NULL>,False,False
+2,TP,<NULL>,<NULL>,False,False
+3,Exámenes,<NULL>,<NULL>,False,False
+4,Definitiva,Regular,Dentro del Mismo Período,False,False
+5,Final,Regular,Analítico,False,False
+6,Acreditación,Pend.Acred.,"""Previa""",False,False
+7,Equivalencia,Equiv.,<NULL>,True,False
+8,Libre,Libre,<NULL>,False,False
+9,Final (No Regular),No Regular,<NULL>,False,False
 
 
 TABLE correlativas
+correlativas.correlativaid,correlativas.materia,correlativas.materiacorrelativa,correlativas.planestudioid
+20,16,1,1
+21,16,2,1
+22,18,3,1
+23,19,4,1
+24,19,7,1
+25,20,6,1
+26,21,8,1
+27,22,6,1
+28,31,16,1
+29,31,17,1
+30,31,20,1
+31,32,19,1
+32,33,21,1
+33,34,19,1
+34,45,5,1
+35,45,20,1
+36,45,22,1
+37,45,19,1
 
 
 TABLE horas
+horas.horaid,horas.hora,horas.desde,horas.hasta,horas.nivelid
+1,1,18:00,19:00,1
+2,2,19:00,20:00,1
+3,3,20:15,21:15,1
+4,4,21:15,22:15,1
 
 
 TABLE inasistencias
+inasistencias.inasistenciaid,inasistencias.descripcion
+6,Media falta
+7,Tarde
+8,Retiro Anticipado
+9,Completa
 
 
 TABLE periodos
+periodos.periodoid,periodos.descripcion,periodos.nivelid,periodos.cicloid,periodos.mes,periodos.anio,periodos.trimestre,periodos.condicion,periodos.cuatrimestre,periodos.semestre,periodos.orden,periodos.codigo,periodos.inicio,periodos.cierre,periodos.tipo,periodos.dias,periodos.secuencia,periodos.notaminima
+1,Finales Anteriores,1,<NULL>,0,0,0,<NULL>,0,0,0,<NULL>,<NULL>,<NULL>,0,0,<NULL>,<NULL>
+2,Año 2007,1,<NULL>,0,0,0,<NULL>,0,0,1,<NULL>,<NULL>,<NULL>,0,0,<NULL>,<NULL>
+3,Año 2008,1,<NULL>,0,0,0,<NULL>,0,0,2,<NULL>,<NULL>,<NULL>,0,0,<NULL>,<NULL>
+4,Año 2009,1,<NULL>,0,0,0,<NULL>,0,0,3,<NULL>,<NULL>,<NULL>,0,0,<NULL>,<NULL>
+5,1° Cuatrimestre 2010,1,1,6,2010,0,<NULL>,1,0,4,<NULL>,<NULL>,<NULL>,0,0,6014,<NULL>
+6,2° Cuatrimestre 2010,1,1,10,2010,0,<NULL>,2,0,5,<NULL>,<NULL>,<NULL>,0,0,6014,<NULL>
+8,Exámenes Marzo 2010,1,1,0,0,0,,0,0,0,,<NULL>,<NULL>,0,0,6012,<NULL>
+9,Exámenes Agosto 2010,1,1,0,0,0,,0,0,0,,<NULL>,<NULL>,0,0,6013,<NULL>
+10,Exámenes Dic/2011,1,2,0,0,0,,0,0,0,,<NULL>,<NULL>,0,0,6014,<NULL>
+11,Examenes Marzo/2011,1,2,0,0,0,,0,0,0,,<NULL>,<NULL>,0,0,6015,<NULL>
+12,Examenes Agosto 2011,1,2,0,0,0,,0,0,0,,<NULL>,<NULL>,0,0,6016,<NULL>
+14,1º Cuatrimestre 2011,1,2,0,0,0,<NULL>,1,0,0,<NULL>,<NULL>,<NULL>,0,0,6016,<NULL>
+15,2º Cuatrimestre 2011,1,2,0,0,0,<NULL>,2,0,0,<NULL>,<NULL>,<NULL>,0,0,6016,<NULL>
+18,Exámenes Dic/2012,1,3,0,0,0,,0,0,0,,<NULL>,<NULL>,0,0,6016,<NULL>
+19,Exámenes Mar/2012,1,3,0,0,0,,0,0,0,,<NULL>,<NULL>,0,0,6017,<NULL>
+20,1º Cuatrimestre 2012,1,3,0,0,0,<NULL>,1,0,1,<NULL>,<NULL>,<NULL>,0,0,6017,<NULL>
+21,2ª Cuatrimestre 2012,1,3,0,0,0,<NULL>,2,0,0,<NULL>,<NULL>,<NULL>,0,0,6017,<NULL>
+22,Año 2013,1,4,0,0,0,<NULL>,0,0,0,<NULL>,<NULL>,<NULL>,0,0,6017,<NULL>
+23,Examenes Agosto 2013,1,4,0,0,0,,0,0,0,,<NULL>,<NULL>,0,0,6018,<NULL>
+24,Exámenes Dic/2013,1,4,0,0,0,,0,0,0,,<NULL>,<NULL>,0,0,6019,<NULL>
+25,Exámenes Mar/2013,1,4,0,0,0,,0,0,0,,<NULL>,<NULL>,0,0,6020,<NULL>
+26,1º Cuatrimestre 2013,1,4,0,0,0,<NULL>,1,0,1,<NULL>,<NULL>,<NULL>,0,0,6021,<NULL>
+27,2ª Cuatrimestre 2013,1,4,0,0,0,<NULL>,2,0,0,<NULL>,<NULL>,<NULL>,0,0,6021,<NULL>
 
 
 TABLE notas
+notas.notaid,notas.alumnoid,notas.materiaid,notas.periodoid,notas.calificacionid,notas.nota,notas.descripcion,notas.establecimiento,notas.observaciones,notas.fecha,notas.libro,notas.folio,notas.alta,notas.web,notas.turno
+24,10,1,19,5,6.0,,istbp,,2011-12-21,,<NULL>,2013-08-30,False,Noche
+25,10,2,10,5,6.0,,istbp,,2011-12-19,,<NULL>,2013-08-30,False,Noche
+26,10,3,10,5,8.0,,istbp,,2011-12-16,,<NULL>,2013-08-30,False,Noche
+27,10,4,10,5,9.0,,istbp,,2011-12-23,,<NULL>,2013-08-30,False,Noche
+28,10,5,10,5,8.0,,istbp,,2011-12-19,,<NULL>,2013-08-30,False,Noche
+29,10,6,10,5,7.0,,istbp,,2011-12-22,,<NULL>,2013-08-30,False,Noche
+30,10,7,10,5,7.0,,istbp,,2011-12-21,,<NULL>,2013-08-30,False,Noche
+31,10,8,10,5,8.0,,istbp,,2011-12-20,,<NULL>,2013-08-30,False,Noche
+32,10,9,10,5,8.0,,istbp,,2011-12-27,,<NULL>,2013-08-30,False,Noche
+33,21,1,10,5,7.0,,istbp,,2011-12-21,,<NULL>,2013-08-30,False,Noche
+34,21,2,10,5,7.0,,istbp,,2011-12-20,,<NULL>,2013-08-30,False,Noche
+35,21,3,10,5,8.0,,istbp,,2011-12-23,,<NULL>,2013-08-30,False,Noche
+36,22,1,10,5,7.0,,istbp,,2011-12-21,,<NULL>,2013-08-30,False,Noche
+37,22,2,10,5,8.0,,,,2011-12-20,,<NULL>,2013-08-30,False,Noche
+38,22,3,10,5,9.0,,istbp,,2011-12-23,,<NULL>,2013-08-30,False,Noche
+39,21,4,10,5,8.0,,istbp,,2011-12-23,,<NULL>,2013-09-02,False,Noche
+40,22,4,10,5,8.0,,istbp,,2011-12-23,,<NULL>,2013-09-02,False,Noche
+41,10,31,26,3,9.0,,istbp,,2013-07-16,,<NULL>,2013-09-02,False,Noche
+42,10,32,26,3,7.0,,istbp,,2013-07-05,,<NULL>,2013-09-02,False,Noche
+43,10,33,26,3,9.0,,istbp,,2013-07-04,,<NULL>,2013-09-02,False,Noche
+44,10,34,26,3,9.0,,istbp,,2013-07-18,,<NULL>,2013-09-02,False,Noche
+45,10,35,26,3,9.0,,istbp,,2013-07-10,,<NULL>,2013-09-02,False,Noche
+46,10,45,26,3,8.0,,istbp,,2013-07-17,,<NULL>,2013-09-02,False,Noche
+47,21,31,26,3,8.0,,istbp,,2013-07-02,,<NULL>,2013-09-02,False,Noche
+48,21,32,26,3,9.0,,istbp,,2013-07-05,,<NULL>,2013-09-02,False,Noche
+49,21,33,26,3,9.0,,istbp,,2013-07-11,,<NULL>,2013-09-02,False,Noche
+50,22,45,26,3,9.0,,istbp,,2013-07-17,,<NULL>,2013-09-02,False,Noche
+51,22,35,26,3,9.0,,istbp,,2013-07-10,,<NULL>,2013-09-02,False,Noche
+52,22,34,26,3,8.0,,istbp,,2013-07-11,,<NULL>,2013-09-02,False,Noche
+53,10,17,18,5,2.0,,,,2012-12-17,,<NULL>,2013-10-21,False,N
 
 
 TABLE titulos
+titulos.tituloid,titulos.nombre,titulos.planestudioid,titulos.carreraid,titulos.cursoid
+1,Técnico Superior en Análisis de Sistemas,1,1,3
+2,Técnico Superior en Enfermería,5,2,2
+3,Técnico Superior en Instrumentación Quirúrgica ,6,3,2
+4,Técnico Superior en Laboratorio de Análisis Clínicos,3,4,2
+5,Técnico Superior en Radiología,2,5,3
+6,Técnico Superior en Cardiologia,7,6,1
 
 
 TABLE comisiones
+comisiones.comisionid,comisiones.nombre,comisiones.divisionid,comisiones.periodoid,comisiones.materiaid,comisiones.personalid,comisiones.faltas1r,comisiones.faltas2r,comisiones.faltaslibre,comisiones.faltasrecursa
+8,Algebra,1,22,1,8,<NULL>,<NULL>,<NULL>,<NULL>
+9,Análisis Matemático,1,22,2,8,<NULL>,<NULL>,<NULL>,<NULL>
+10,Inglés Técnico,1,22,3,9,<NULL>,<NULL>,<NULL>,<NULL>
+11,Administración de las Organizaciones,1,22,4,4,<NULL>,<NULL>,<NULL>,<NULL>
+12,Metodología de la Investigación ,1,22,5,6,<NULL>,<NULL>,<NULL>,<NULL>
+13,Programación I ,1,22,6,3,<NULL>,<NULL>,<NULL>,<NULL>
+14,Introducción a los sistemas de información ,1,22,7,7,<NULL>,<NULL>,<NULL>,<NULL>
+15,Arquitectura de Computadores,1,22,8,5,<NULL>,<NULL>,<NULL>,<NULL>
+16,EDI I,1,22,9,5,<NULL>,<NULL>,<NULL>,<NULL>
+17,Probabilidad y Estadisticas,2,22,16,8,<NULL>,<NULL>,<NULL>,<NULL>
+18,Análisis Matemático II,2,22,17,8,<NULL>,<NULL>,<NULL>,<NULL>
+19,Ingles Técnico II,2,22,18,9,<NULL>,<NULL>,<NULL>,<NULL>
+20,Sistemas de Información I,2,22,19,7,<NULL>,<NULL>,<NULL>,<NULL>
+21,Programación II,2,22,20,3,<NULL>,<NULL>,<NULL>,<NULL>
+22,Sistemas Operativos,2,22,21,2,<NULL>,<NULL>,<NULL>,<NULL>
+23,Base de Datos,2,22,22,2,<NULL>,<NULL>,<NULL>,<NULL>
+24,EDI II,2,22,23,5,<NULL>,<NULL>,<NULL>,<NULL>
+25,Investigación Operativa,3,22,31,7,<NULL>,<NULL>,<NULL>,<NULL>
+26,Economía Empresarial,3,22,32,4,<NULL>,<NULL>,<NULL>,<NULL>
+27,Teleinformatica,3,22,33,5,<NULL>,<NULL>,<NULL>,<NULL>
+28,Sistemas de Información II,3,22,34,5,<NULL>,<NULL>,<NULL>,<NULL>
+29,EDI III,3,22,35,6,<NULL>,<NULL>,<NULL>,<NULL>
+30,Practica Profesional,3,22,45,2,<NULL>,<NULL>,<NULL>,<NULL>
 
 
 TABLE horarios
+horarios.horarioid,horarios.horaid,horarios.comisionid,horarios.dia,horarios.detalle
+1,1,16,lunes,
+2,2,15,lunes,
+3,3,13,lunes,
+4,4,13,lunes,
+5,1,10,martes,
+6,2,10,martes,
+7,3,15,martes,
+8,4,15,martes,
+9,1,12,miercoles,
+10,2,12,miercoles,
+11,3,14,miercoles,
+12,4,14,miercoles,
+13,1,9,jueves,
+14,2,9,jueves,
+15,3,13,jueves,
+16,4,13,jueves,
+17,1,11,viernes,
+18,2,11,viernes,
+19,3,8,viernes,
+20,4,8,viernes,
+21,1,21,lunes,
+22,2,21,lunes,
+23,3,24,lunes,
+24,4,24,lunes,
+25,3,19,martes,
+26,4,19,martes,
+27,1,20,miercoles,
+28,2,20,miercoles,
+29,3,23,miercoles,
+30,4,23,miercoles,
+31,1,21,jueves,
+32,2,21,jueves,
+33,3,18,jueves,
+34,4,18,jueves,
+35,1,17,viernes,
+36,2,17,viernes,
+37,3,22,viernes,
+38,4,22,viernes,
+39,3,25,martes,
+40,4,25,martes,
+41,1,30,miercoles,
+42,2,30,miercoles,
+43,3,29,miercoles,
+44,4,29,miercoles,
+45,1,27,jueves,
+46,2,27,jueves,
+47,3,28,jueves,
+48,4,28,jueves,
+49,1,30,viernes,
+50,2,30,viernes,
+51,3,26,viernes,
+52,4,26,viernes,
 
 
 TABLE profesores
@@ -98,36 +577,113 @@ TABLE sanciones
 
 
 TABLE situaciones
+situaciones.situacionid,situaciones.detalle
+1,Activa
+2,Baja
+3,Moroso
+4,Incobrable
 
 
 TABLE faltas
+faltas.faltaid,faltas.alumnoid,faltas.comisionid,faltas.inasistenciaid,faltas.fecha,faltas.cantidad,faltas.justificado,faltas.detalle
+1,22,25,7,2013-08-27,0.25,True,Falta medica
+2,10,26,6,2013-08-23,0.5,False,tarde
+3,22,27,7,2013-08-15,0.25,False,
+6,10,30,7,2013-08-28,0.25,False,
+7,21,26,7,2013-09-06,0.25,False,
+8,10,30,7,2013-09-12,0.25,False,lal
+9,21,28,7,2013-09-12,0.25,False,
+10,10,28,7,2013-09-12,0.25,False,
+11,21,28,7,2013-09-12,0.25,False,
+12,10,28,7,2013-09-12,0.25,False,
+13,21,28,7,2013-09-12,0.25,False,
+14,10,28,7,2013-09-12,0.25,False,
+15,21,28,7,2013-09-12,0.25,False,
+16,10,28,7,2013-09-12,0.25,False,
+17,21,28,7,2013-09-12,0.25,False,
+18,10,28,7,2013-09-12,0.25,False,
+19,21,28,7,2013-09-12,0.25,False,
+20,10,28,7,2013-09-12,0.25,False,
+21,21,28,7,2013-09-12,0.25,False,
+22,10,28,7,2013-09-12,0.25,False,
+23,21,28,7,2013-09-12,0.25,False,
+24,10,28,7,2013-09-12,0.25,False,
+25,10,30,7,2013-09-13,0.25,False,
+26,10,30,7,2013-09-13,0.25,False,
+27,10,30,7,2013-09-13,0.25,False,
+28,10,30,6,2013-09-13,0.5,False,
+29,10,30,6,2013-09-13,0.5,False,
+30,10,30,6,2013-09-13,0.5,False,
+31,10,30,8,2013-09-17,0.25,False,
 
 
 TABLE examenes
+examenes.examenid,examenes.materiaid,examenes.periodoid,examenes.llamado,examenes.turno,examenes.fecha,examenes.hora,examenes.personalid1,examenes.personalid2,examenes.personalid3
+23,1,24,1,Noche,2013-12-10,19:00,8,3,5
+24,2,24,1,Noche,2013-12-18,19:00,8,3,5
+25,3,24,1,Noche,2013-12-20,19:00,9,7,6
+26,4,24,1,Noche,2013-12-16,19:00,4,9,6
+27,5,24,1,Noche,2013-12-27,19:00,6,7,4
+28,6,24,1,Noche,2013-12-19,19:00,3,8,5
+29,7,24,1,Noche,2013-12-18,19:00,7,5,3
+30,8,24,1,Noche,2013-12-17,19:00,5,3,8
+31,9,24,1,Noche,2013-12-18,19:00,5,3,8
+32,16,24,1,Noche,2013-12-18,19:00,8,5,3
+33,17,24,1,Noche,2013-12-17,19:00,8,3,5
+34,18,24,1,Noche,2013-12-20,19:00,9,4,6
+35,19,24,1,Noche,2013-12-19,19:00,7,5,8
+36,20,24,1,Noche,2013-12-17,19:00,3,2,5
+37,21,24,1,Noche,2013-12-16,19:00,2,7,5
+38,22,24,1,Noche,2013-12-26,19:00,2,5,3
+39,23,24,1,Noche,2013-12-19,20:00,5,8,3
+40,31,24,1,Noche,2013-12-23,19:00,7,6,5
+41,32,24,1,Noche,2013-12-20,19:00,4,9,6
+42,33,24,1,Noche,2013-12-19,19:00,5,3,2
+43,34,24,1,Noche,2013-12-23,19:00,5,7,3
+44,35,24,1,Noche,2013-12-23,19:00,6,7,5
+45,45,24,1,Noche,2013-12-20,19:00,2,3,5
 
 
 TABLE inscripcionescarrera
+inscripcionescarrera.inscripcionid,inscripcionescarrera.alumnoid,inscripcionescarrera.carreraid,inscripcionescarrera.alta,inscripcionescarrera.baja
+1,10,1,2011-03-01,<NULL>
+2,22,1,2011-03-01,<NULL>
 
 
 TABLE inscripcionescomision
+inscripcionescomision.inscripcionid,inscripcionescomision.alumnoid,inscripcionescomision.comisionid,inscripcionescomision.alta,inscripcionescomision.baja,inscripcionescomision.condicion
+1,10,30,2013-03-11,<NULL>,Regular
+2,22,30,2013-03-11,<NULL>,Regular
+3,22,25,2013-08-28,<NULL>,Regular
+4,21,26,2013-08-28,<NULL>,Regular
+5,10,25,2013-03-11,<NULL>,Regular
+6,10,26,2013-03-11,<NULL>,Regular
+7,10,27,2013-03-11,<NULL>,Regular
+8,10,28,2013-03-11,<NULL>,Regular
+9,10,29,2013-03-11,<NULL>,Regular
+10,22,26,2013-03-11,<NULL>,Regular
+11,22,27,2013-03-11,<NULL>,Regular
+12,22,28,2013-03-11,<NULL>,Regular
+13,22,29,2013-03-11,<NULL>,Regular
+14,21,25,2013-03-11,<NULL>,Regular
+15,21,27,2013-03-11,<NULL>,Regular
+16,21,28,2013-03-11,<NULL>,Regular
+17,21,29,2013-03-11,<NULL>,Regular
+18,21,30,2013-03-11,<NULL>,Regular
 
 
 TABLE inscripcionesdivision
 
 
 TABLE inscripcionesexamen
+inscripcionesexamen.inscripcionid,inscripcionesexamen.alumnoid,inscripcionesexamen.examenid,inscripcionesexamen.condicion,inscripcionesexamen.alta,inscripcionesexamen.baja,inscripcionesexamen.confirmar,inscripcionesexamen.valido
+71,10,45,Regular,2013-10-27,<NULL>,True,True
 
 
 TABLE constancia_modelo
 
 
 TABLE constancia
-
-
-TABLE certificado
-
-
-TABLE tituloentramite
 
 
 TABLE tramites

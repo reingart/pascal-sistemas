@@ -45,7 +45,7 @@ response.menu = [
     ]],
     [T('Alumnos'), False, URL(request.application,'alumnos','index'), [
         [T('Ingresar'), False, URL(request.application,'alumnos','index'), []],
-        [T('Registrarse'), False, URL(request.application,'alumnos','index'),[]]
+        
     ]],
 
 

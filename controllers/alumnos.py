@@ -201,16 +201,16 @@ def final(): #formulario de inscrip a examenes finales
     notas = [nota.materiaid for nota in notas]
     #listo si ya aprobo el examen 
     
-    aprobada= []
-    desaprobada= []
+    aprobadas= []
+    desaprobadas= []
     n= db.notas.alumnoid== alumno.alumnoid
     n&= db.notas.calificacionid==5
     nota= db(n).select(db.notas.nota, db.notas.materiaid)
     for notas in nota:
             if notas.nota>4:
-                aprobada.append(notas.materiaid)
+                aprobadas.append(notas.materiaid)
             else:
-                desaprobada.append(notas.materiaid)
+                desaprobadas.append(notas.materiaid)
     correlatividades = {}
     c= db().select(db.correlativas.materiacorrelativa, db.correlativas.materia)
     for x in c:
@@ -219,19 +219,29 @@ def final(): #formulario de inscrip a examenes finales
     q = db.examenes.materiaid== db.materias.materiaid
     q &= db.examenes.personalid1== db.personal.personalid
     
-    final= db(q).select(db.examenes.examenid, db.examenes.materiaid, db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)       
+    final= db(q).select(db.examenes.examenid, db.examenes.materiaid, db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)      
                 
+    msj_aprobada = {}                
     mensajes = {}
+    msj_inscripto = {}
     for f in final:
+        msg_aprobada=[]
+        msg = []
+        msg_inscripto= []
+        if f.examenes.examenid in inscripciones:
+            msg_inscripto.append("Ya se encuentra inscripto")
+        msj_inscripto[f.examenes.materiaid] = ', '.join(msg_inscripto)
+        if f.examenes.materiaid in aprobadas:
+            msg_aprobada.append("Materia Aprobada")
+        msj_aprobada[f.examenes.materiaid] = ', '.join(msg_aprobada)
         if f.examenes.materiaid in correlatividades:
             correlativas = correlatividades[f.examenes.materiaid]
-            msg = []
             for correlativa in correlativas:
-                if correlativa not in aprobada:
-                    msg.append("Materia %s no aprobada" % correlativa)
+                if correlativa not in aprobadas:
+                    msg.append("Materia %s No Aprobada" % correlativa)
             mensajes[f.examenes.materiaid] = ', '.join(msg)
          
-    return dict (final= final, alumno=alumno, inscripciones=inscripciones, notas=notas, aprobada= aprobada, desaprobada= desaprobada, c=c, correlatividades=correlatividades, mensajes=mensajes) 
+    return dict (final= final, alumno=alumno, inscripciones=inscripciones, notas=notas, aprobadas= aprobadas, desaprobadas= desaprobadas, correlatividades=correlatividades, mensajes=mensajes, msj_aprobada= msj_aprobada, msj_inscripto=msj_inscripto) 
          
 ###################################################################################
   

@@ -15,7 +15,7 @@
     <TD style="border: 1px solid white"> <center><b>ESTADO</b></center> </TD>
 <TR>
 {{for f in final:}}
-    <td style="border: 1px solid white"><input type="checkbox" name="{{="examen_%s" % f.examenes.examenid}}" {{='disabled' if (f.examenes.examenid in inscripciones) else ''}} or {{='disabled' if (f.examenes.materiaid in aprobada) else ''}} > 
+    <td style="border: 1px solid white"><input type="checkbox" name="{{="examen_%s" % f.examenes.examenid}}" {{='disabled' if (f.examenes.examenid in inscripciones) else ''}} or {{='disabled' if (f.examenes.materiaid in aprobadas) else ''}} > 
     
     {{=f.materias.nombre}}
     </td>
@@ -30,14 +30,14 @@
     </td>
     <td style="border: 1px solid white" >
     <font color="yellow"> 
-        {{='Ya se encuentra inscripto' if (f.examenes.examenid in inscripciones) else ''}}
+        {{=msj_inscripto.get(f.examenes.examenid, "")}}  
     </font>
-    
-    <font color="red"> 
-        {{='Examen Aprobado' if (f.examenes.materiaid in aprobada) else ''}}  
+    	
+    <font color="white"> 
+        {{=msj_aprobada.get(f.examenes.materiaid, "")}}      
     </font>
 
-    <font color="blue"> 
+    <font color="red"> 
         {{=mensajes.get(f.examenes.materiaid, "")}}  
     </font>
     
@@ -53,12 +53,3 @@
     <input type="submit" name="guardar" value="Guardar" > 
 	
 </form>
-    {{=aprobada}}
-    <br>
-    {{=desaprobada}}
-    <br>
-    {{=c}}
-    <br>
-    {{=correlatividades.keys()}}
-    <br>
-    {{=correlatividades.values()}}

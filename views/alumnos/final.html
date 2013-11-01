@@ -6,7 +6,7 @@
 <br>
     <h3> <font color= "white"> *exámenes finales </font> </h3>
 <br>
-<TABLE style="border: 1px solid white">
+<TABLE class="mitabla" style="border: 1px solid white">
 <TR>
     <TD style="border: 1px solid white"><center><b> MATERIA </b></center> </TD>
     <TD style="border: 1px solid white"><center><b> DOCENTE </b></center> </TD>
@@ -14,10 +14,7 @@
     <TD style="border: 1px solid white"><center><b> HORA </b></center> </TD>
     <TD style="border: 1px solid white"> <center><b>ESTADO</b></center> </TD>
 <TR>
-    
 {{for f in final:}}
-    
-    
     <td style="border: 1px solid white"><input type="checkbox" name="{{="examen_%s" % f.examenes.examenid}}" {{='disabled' if (f.examenes.examenid in inscripciones) else ''}} or {{='disabled' if (f.examenes.materiaid in aprobada) else ''}} > 
     
     {{=f.materias.nombre}}
@@ -35,13 +32,13 @@
     <font color="yellow"> 
         {{='Ya se encuentra inscripto' if (f.examenes.examenid in inscripciones) else ''}}
     </font>
-    <font color="yellow"> 
-       
-        
-    </font>
     
     <font color="red"> 
         {{='Examen Aprobado' if (f.examenes.materiaid in aprobada) else ''}}  
+    </font>
+
+    <font color="blue"> 
+        {{=mensajes.get(f.examenes.materiaid, "")}}  
     </font>
     
     </td>

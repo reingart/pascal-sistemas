@@ -119,29 +119,31 @@ def horarios():
    
 def finales():
    
-     
-    q=db.notas.notaid>0
-    notas=db(q).select()
-    if request.vars.GUARDAR=="GRABAR":
-            #en k tenemos el nombre del checkbox
-        fecha = request.vars.fecha
-            
-        alumno_id = int(name[name.index('_')+1:])
-        materia_id = comisionid
-        calificacion_id = 1
-        nota = request.vars.nota
-        libro = request.vars.libro
-        folio = request.vars.folio
-        turno = 1
-                
-                # si el valor es on  en el checkbox insertamos los datos del alumno en la tabla faltas. 
-               
-        db.notas.insert(alumnoid= alumno_id, materiaid= materia_id,calificacionid=calificacion_id,nota=nota, fecha=fecha,libro=libro,folio=folio, turno=turno) 
-                
-    alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre)
+    q =db.alumnos.alumnoid == db.inscripcionescomision.alumnoid
     
+    
+    # Busca las comisiones que coincidan
+    q &= db.inscripcionescomision.condicion == "Regular"
+    q &=  db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
+    alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre , distinct= True)
 
-    return{'notas':notas}
+    if request.vars.GUARDAR=="GRABAR":
+        for alumno in alumnos:
+            fecha = request.vars.fecha
+            
+            alumno_id = int(name[name.index('_')+1:])
+            materia_id = comisionid
+            calificacion_id = 1
+            nota = request.vars.nota
+            libro = request.vars.libro
+            folio = request.vars.folio
+            turno = 1
+                               
+            db.notas.insert(alumnoid= alumno_id, materiaid= materia_id,calificacionid=calificacion_id,nota=nota, fecha=fecha,libro=libro,folio=folio, turno=turno) 
+                
+   
+
+    return{'alumnos':alumnos}
     
     
 def parciales():

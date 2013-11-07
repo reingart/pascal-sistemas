@@ -202,6 +202,7 @@ db.define_table('calendarios',
 db.define_table('calificaciones',
     Field('calificacionid', type='id'),
     Field('descripcion', type='string', length=50),
+
     Field('condicion', type='string', length=50),
     Field('ayuda', type='text'),
     Field('equivalencia', type='boolean', default=False),

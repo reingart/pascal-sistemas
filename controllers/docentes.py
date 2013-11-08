@@ -152,7 +152,16 @@ def finales():
     comisiones = db(q).select(db.comisiones.ALL, distinct=True)
 
     return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}
+   
+def listamaterias():
+    q = db.examenes.materiaid == db.materias.materiaid
+    q &= db.examenes.periodoid == db.periodos.periodoid
     
+    examenes=db(q).select(db.materias.ALL, distinct= True, orderby=db.materias.nombre)
+    periodos=db(q).select(db.periodos.ALL, distinct= True)
+
+    
+    return{'examenes':examenes, 'periodos':periodos} 
     
 def parciales():
     ""

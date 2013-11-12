@@ -121,13 +121,15 @@ def horarios():
 def finales():
     
 
-    q =db.alumnos.alumnoid == db.inscripcionescomision.alumnoid
+    q =db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
     
     
     # Busca las comisiones que coincidan
-    q &= db.inscripcionescomision.condicion == "Regular"
-    q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
-    q &= db.materias.materiaid == db.notas.materiaid
+    q &= db.inscripcionesexamen.condicion == "Regular"
+    #q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
+    q &= db.inscripcionesexamen.examenid == db.examenes.examenid
+    q &= db.examenes.materiaid == db.materias.materiaid
+  
     alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre , distinct= True)
     i=0
     a=0
@@ -157,11 +159,10 @@ def listamaterias():
     q = db.examenes.materiaid == db.materias.materiaid
     q &= db.examenes.periodoid == db.periodos.periodoid
     
-    examenes=db(q).select(db.materias.ALL, distinct= True, orderby=db.materias.nombre)
-    periodos=db(q).select(db.periodos.ALL, distinct= True)
+    examenes=db(q).select(db.materias.nombre, db.periodos.descripcion)
 
     
-    return{'examenes':examenes, 'periodos':periodos} 
+    return dict (examenes= examenes) 
     
 def parciales():
     ""

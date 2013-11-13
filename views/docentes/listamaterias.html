@@ -1,0 +1,22 @@
+{{extend 'layout.html'}}
+<h1>Listado de examenes finales proximos </h1>
+<br>
+
+<TABLE style="border: 1px solid white">
+    <tr>
+    <td  style="border: 1px solid white"> Materia</td><td  style="border: 1px solid white"> Periodo</td>
+    </tr>
+
+        {{for examen in examenes: }}
+        	<tr>
+
+        
+        	   
+            <td><a href="{{=URL(f="finales")}}"> {{=examen.materias.nombre}} </td>    
+     
+        		<td  style="border: 1px solid white">{{=examen.periodos.descripcion}} </td> 
+        	
+        
+        </tr>
+    {{pass}}
+</TABLE>

@@ -2,23 +2,25 @@
 # try something like
 #como hacer funcar esto
 
-#@auth.requires_login()
-#@auth.requires_membership(role='personal') 
-#def ingreso():
-   # db.personal.user_id.default= auth.user_id
-   # subtitulo= T ('Complete el formulario por favor...')
-   # form=SQLFORM(db.personal)
-   # db.auth_membership.insert(auth_membership.user_id== db.auth_id, auth_membership.group_id== auth_group.id)
-    #if form.accepts(request.vars,session):
-        #db.auth_membership.insert( auth_membership.user_id== auth.user_id, auth_membership.group_id== 'personal')
-       # response.flash='Usted fue agregado como docente...'
-    #elif form.errors: 
-       # response.flash='Hay errores en el formulario!'
-   # else:
-        #response.flash='Por favor, complete el formulario!'
+@auth.requires_login()
+def ingreso():
+    db.personal.user_id.default= auth.user_id
+    subtitulo= T ('Complete el formulario por favor...')
+    form=SQLFORM(db.personal)
+    if form.accepts(request.vars,session):
+        grupo_id = db(db.auth_group.role=='Personal').select(db.auth_group.id)
+        for x in grupo_id:
+            grupo=x.id
+        db.auth_membership.insert(user_id=auth.user_id, group_id=grupo)
+        #agrego al alumno y su id de registro en el grupo alumnos
+        response.flash='Usted fue agregado como docente...'
+    elif form.errors: 
+        response.flash='Hay errores en el formulario'
+    else:
+        response.flash='Por favor, complete el formulario'
         
-   # return dict (form=form, sub=subtitulo)
-
+    return dict (form=form, sub=subtitulo)
+    
     
      
 def busqueda():
@@ -62,8 +64,8 @@ def index():
     docentes=db(q).select(orderby=db.personal.nombre)
     return{'docentes':docentes}
 
-#@auth.requires_login() 
-# requiere logue para ingresar
+#@auth.requires_login()
+#@auth.requires_membership(role='personal')  
 
 # requiere que el logueado pertenezca al rol de personal  y/o doncente
 #@auth.requires_membership(role='personal')     
@@ -154,21 +156,28 @@ def finales():
     comisiones = db(q).select(db.comisiones.ALL, distinct=True)
 
     return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}
-   
+    
+#@auth.requires_login()
+#@auth.requires_membership(role='personal')    
 def listamaterias():
     q = db.examenes.materiaid == db.materias.materiaid
     q &= db.examenes.periodoid == db.periodos.periodoid
+  
     
     examenes=db(q).select(db.materias.nombre, db.periodos.descripcion)
+    
 
     
     return dict (examenes= examenes) 
-    
+
+#@auth.requires_login()
+#@auth.requires_membership(role='personal')      
 def parciales():
     ""
     return{}
     
-    
+#@auth.requires_login()
+#@auth.requires_membership(role='personal')      
 def apuntes():
     
     if request.vars.GRABAR=="GUARDAR":
@@ -177,17 +186,22 @@ def apuntes():
         db.apuntes.insert(fecha=fecha, descripcion=descripcion)               
    
     return{}
-    
+
+#@auth.requires_login()
+#@auth.requires_membership(role='personal')      
 def recursos():
     ""
     return{}
+
     
+#@auth.requires_login()
+#@auth.requires_membership(role='personal')      
 def unidad():
     ""
     return{}
 
 #@auth.requires_login()
-#@auth.requires_membership(role='personal')       
+#@auth.requires_membership(role='personal')        
 def ficha():
     # obtengo el id de la url (primer argumento por posicion):
    
@@ -219,7 +233,7 @@ def ficha():
     
     
 #@auth.requires_login()
-#@auth.requires_membership(role='personal')     
+@auth.requires_membership(role='personal')  
 def altas():
     db.personal.user_id.default= auth.user_id
     subtitulo= T ('Complete el formulario por favor...')

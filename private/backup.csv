@@ -229,6 +229,7 @@ auth_event.id,auth_event.time_stamp,auth_event.client_ip,auth_event.user_id,auth
 200,2013-11-13 19:44:07,127.0.0.1,<NULL>,auth,Grupo 7 creado
 201,2013-11-13 19:44:07,127.0.0.1,9,auth,Usuario 9 Registrado
 202,2013-11-13 19:48:23,127.0.0.1,9,auth,User 9 Logged-out
+203,2013-11-15 15:04:20,127.0.0.1,1,auth,Usuario 1 sesión iniciada
 
 
 TABLE auth_cas
@@ -759,7 +760,7 @@ comisiones.comisionid,comisiones.nombre,comisiones.divisionid,comisiones.periodo
 71,EDI II,2,22,174,5,<NULL>,<NULL>,<NULL>,<NULL>
 72,INVESTIGACION OPERATIVA,3,22,175,7,<NULL>,<NULL>,<NULL>,<NULL>
 73,ECONOMIA EMPRESARIAL,3,22,176,4,<NULL>,<NULL>,<NULL>,<NULL>
-74,TELEINFORMATICA,3,22,177,1,<NULL>,<NULL>,<NULL>,<NULL>
+74,TELEINFORMATICA,3,22,177,5,<NULL>,<NULL>,<NULL>,<NULL>
 75,SISTEMAS DE INFORMACION II,3,22,178,5,<NULL>,<NULL>,<NULL>,<NULL>
 76,PRACTICA PROFESIONAL,3,22,179,2,<NULL>,<NULL>,<NULL>,<NULL>
 77,EDI III,3,22,180,6,<NULL>,<NULL>,<NULL>,<NULL>
@@ -983,6 +984,7 @@ examenes.examenid,examenes.materiaid,examenes.periodoid,examenes.llamado,examene
 66,178,24,,,<NULL>,,5,7,3
 67,179,24,,,<NULL>,,2,6,3
 68,180,24,,,<NULL>,,6,5,3
+69,47,22,,,<NULL>,,12,18,13
 
 
 TABLE inscripcionescarrera

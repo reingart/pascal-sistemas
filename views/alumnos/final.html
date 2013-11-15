@@ -30,6 +30,7 @@
     </td>
     <td style="border: 1px solid white" >
     <font color="yellow"> 
+        {{ ='Ya se encuentra inscripto' if (f.examenes.examenid in inscripciones) else ''}}
         {{=msj_inscripto.get(f.examenes.examenid, "")}}  
     </font>
     	
@@ -42,7 +43,7 @@
     </font>
     
     <font color="white"> 
-        {{=msj_disponible.get(f.examenes.materiaid, "")}}
+        
     </font>
     
     </td>

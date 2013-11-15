@@ -1369,3 +1369,10 @@
 [2013-11-15 16:14:11] EDIT pascal/views/alumnos/index.html: 0
 [2013-11-15 16:14:50] EDIT pascal/views/alumnos/index.html: -3
 [2013-11-15 16:15:11] EDIT pascal/controllers/alumnos.py: 0
+[2013-11-15 17:52:39] EDIT pascal/controllers/alumnos.py: -3
+[2013-11-15 17:52:46] EDIT pascal/controllers/alumnos.py: 0
+[2013-11-15 17:52:58] EDIT pascal/views/alumnos/final.html: -1
+[2013-11-15 17:54:30] EDIT pascal/views/alumnos/final.html: 1
+[2013-11-15 17:54:46] EDIT pascal/views/alumnos/final.html: 0
+[2013-11-15 17:55:40] EDIT pascal/views/alumnos/final.html: -1
+[2013-11-15 17:56:23] EDIT pascal/views/alumnos/final.html: 1

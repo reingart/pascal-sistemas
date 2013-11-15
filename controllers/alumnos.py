@@ -252,11 +252,9 @@ def final(): #formulario de inscrip a examenes finales
                     msg.append("Materia %s No Aprobada" % correlativa)
                 
             mensajes[f.examenes.materiaid] = ', '.join(msg)
-        else:
-             msg_disponible.append("Disponible")
-        msj_disponible[f.examenes.materiaid] = ', '.join(msg_disponible)
+        
          
-    return dict (final= final, alumno=alumno, inscripciones=inscripciones, notas=notas, aprobadas= aprobadas, desaprobadas= desaprobadas, correlatividades=correlatividades, mensajes=mensajes, msj_aprobada= msj_aprobada, msj_inscripto=msj_inscripto , msj_disponible=msj_disponible) 
+    return dict (final= final, alumno=alumno, inscripciones=inscripciones, notas=notas, aprobadas= aprobadas, desaprobadas= desaprobadas, correlatividades=correlatividades, mensajes=mensajes, msj_aprobada= msj_aprobada, msj_inscripto=msj_inscripto ) 
          
 ###################################################################################
   

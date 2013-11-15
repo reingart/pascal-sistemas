@@ -5,12 +5,12 @@
 #@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
 
 def index(): 
-    q = db.alumnos.user_id== auth.user_id
+    #q = db.alumnos.user_id== auth.user_id
     #guardo en la consulta el registro del alumno
     #traemos el alumno para notificarlo en la vista
-    alumno= db(q).select().first()
+    #alumno= db(q).select().first()
     
-    return dict (alumno=alumno)
+    return dict ()
 
 @auth.requires_login() #requiere que haya un usuario logeado
 @auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
@@ -121,6 +121,8 @@ def inasistencias():   #lista de inasistencias del alumno
     #utilizamos los datos de faltas para filtrar las inasistencias del alumno
     q &= db.faltas.alumnoid== db.alumnos.alumnoid
     #de inscrip_comision buscamos la materia = al alumno
+    q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid
+    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
     q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
     q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
     q &= db.faltas.comisionid== db.comisiones.comisionid
@@ -144,6 +146,8 @@ def examenes():
     #traemos el alumno para notificarlo en la vista
     alumno= db(q).select().first()
     #guardo en la consulta el registro del alumno
+    q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid
+    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
     q &= db.notas.alumnoid == db.alumnos.alumnoid
     q &= db.notas.materiaid == db.materias.materiaid
     q &= db.materias.cursoid == db.cursos.cursoid
@@ -212,11 +216,13 @@ def final(): #formulario de inscrip a examenes finales
             else:
                 desaprobadas.append(notas.materiaid)
     correlatividades = {}
-    c= db().select(db.correlativas.materiacorrelativa, db.correlativas.materia)
+    c= db().select(db.correlativas.materiacorrelativa, db.correlativas.materiaid)
     for x in c:
-        correlatividades.setdefault(x.materia, []).append(x.materiacorrelativa)    
+        correlatividades.setdefault(x.materiaid, []).append(x.materiacorrelativa)    
     
-    q = db.examenes.materiaid== db.materias.materiaid
+    q &= db.inscripcionescarrera.alumnoid== alumno.alumnoid
+    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
+    q &= db.examenes.materiaid== db.materias.materiaid
     q &= db.examenes.personalid1== db.personal.personalid
     
     final= db(q).select(db.examenes.examenid, db.examenes.materiaid, db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)      
@@ -239,6 +245,7 @@ def final(): #formulario de inscrip a examenes finales
             for correlativa in correlativas:
                 if correlativa not in aprobadas:
                     msg.append("Materia %s No Aprobada" % correlativa)
+                
             mensajes[f.examenes.materiaid] = ', '.join(msg)
          
     return dict (final= final, alumno=alumno, inscripciones=inscripciones, notas=notas, aprobadas= aprobadas, desaprobadas= desaprobadas, correlatividades=correlatividades, mensajes=mensajes, msj_aprobada= msj_aprobada, msj_inscripto=msj_inscripto) 
@@ -255,6 +262,8 @@ def parciales():
     #guardo en la consulta el registro del alumno
     #traemos el alumno para notificarlo en la vista
     alumno= db(q).select().first()
+    q &= db.inscripcionescarrera.alumnoid== alumno.alumnoid
+    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
     q &= db.notas.alumnoid == db.alumnos.alumnoid
     q &= db.notas.materiaid == db.materias.materiaid
     q &= db.materias.cursoid == db.cursos.cursoid
@@ -312,8 +321,9 @@ def inscripciones():
             else:
                 desaprobada.append(notas.materiaid)
     
-    
-    q = db.comisiones.materiaid== db.materias.materiaid
+    q &= db.inscripcionescarrera.alumnoid== alumno.alumnoid
+    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
+    q &= db.comisiones.materiaid== db.materias.materiaid
     q &= db.comisiones.personalid== db.personal.personalid
     
     comision= db(q).select(db.comisiones.comisionid, db.comisiones.materiaid, db.materias.nombre, db.personal.nombre)       

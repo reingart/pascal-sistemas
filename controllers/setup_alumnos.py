@@ -69,22 +69,12 @@ def insert_division():
     
 def insert_materias():
     
-    filas= db1.executesql('SELECT * FROM materias', as_dict= True)
+    db.materias.insert(codigo=500, nombre= "ALGEBRA", cursoid=1, catedraid=3)
+    db.materias.insert(codigo=501, nombre= "ANALISIS MATEMATICO I", cursoid=1, catedraid=3)
     
-    for fila in filas:
-    
-        db.materias.insert(materiaid= fila['materiaid'], 
-                            nombre= fila['materia'], 
-                            resumen= fila['resumen'], 
-                            cursoid= fila['cursoid'], 
-                            catedraid= fila['catedraid'], 
-                            codigo= fila['codigo'], 
-                            orden= fila['orden'], 
-                            optativa= fila['optativa'], 
-                            analitico= fila['analitico'], 
-                            requerida= fila['requerida'] )
+      
         
-    return {'filas': filas}
+    return dict()
     
 def insert_catedra():
     
@@ -135,27 +125,43 @@ def insert_planestudio():
     
 def insert_asignaturas():
     
-    filas= db1.executesql('SELECT * FROM asignaturas', as_dict= True)
+    db.asignaturas.insert(nombre= "SALUD PUBLICA", materiaid=125, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "EST. Y FUNCION DEL CUERPO HUMANO", materiaid=126, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "BIOFISICA Y BIOQUIMICA", materiaid=127, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "MICROBIOLOGIA Y PARASITOLOGIA", materiaid=128, carreraid=2, planestudioid=4, cicloid=2)    
+    db.asignaturas.insert(nombre= "FUNDAMENTOS DE NUTRICION", materiaid=129, carreraid=2, planestudioid=4, cicloid=2)    
+    db.asignaturas.insert(nombre= "ENFERM. FUND. PRACT. Y TENDENCIAS", materiaid=130, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "ENFERMERIA MATERNO INFANTIL I", materiaid=131, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "FARMOCOLOGIA EN ENFERMERIA", materiaid=132, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "PRACTICA I", materiaid=133, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "INT. A LA INVESTIGACION EN SALUD", materiaid=134, carreraid=2, planestudioid=4, cicloid=2)    
+    db.asignaturas.insert(nombre= "EPIDEMIOLOGIA Y ESTADISTICA EN SALUD", materiaid=135, carreraid=2, planestudioid=4, cicloid=2)    
+    db.asignaturas.insert(nombre= "INFORMATICA", materiaid=136, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "ENFERMERIA DELADULTO Y EL ANCIANO", materiaid=137, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "DIETETICA EN ENFERMERIA", materiaid=138, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "ENFERMERIA EN SALUD MENTAL", materiaid=139, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "EDI", materiaid=140, carreraid=2, planestudioid=4, cicloid=2)    
+    db.asignaturas.insert(nombre= "PRACTICA II", materiaid=141, carreraid=2, planestudioid=4, cicloid=2)    
+    db.asignaturas.insert(nombre= "EDUCACION EN SALUD", materiaid=142, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "ORG. Y GESTION SERV. SALUD", materiaid=143, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "INV. Y PLANIF. EN SALUD", materiaid=144, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "INGLES", materiaid=145, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "ENFERM. MATERNO-INF. II", materiaid=146, carreraid=2, planestudioid=4, cicloid=2)    
+    db.asignaturas.insert(nombre= "ORG. Y GESTION SERV. DE ENFERM.", materiaid=147, carreraid=2, planestudioid=4, cicloid=2)    
+    db.asignaturas.insert(nombre= "ENFERM. EN EMERG. Y CATASTROFES", materiaid=148, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "ASPECTOS ETICOS Y LEGALES DE LA PRAC. PROF", materiaid=149, carreraid=2, planestudioid=4, cicloid=2)   
+     
+    db.asignaturas.insert(nombre= "EDI II", materiaid=150, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "PRACTICA III", materiaid=151, carreraid=2, planestudioid=4, cicloid=2)
     
-    for fila in filas:
+    db.asignaturas.insert(nombre= "CONDICIONES Y MEDIO AMBIENTE DEL TRABAJO", materiaid=152, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "SALUD PUBLICA I", materiaid=153, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "BIOLOGIA HUMANA", materiaid=154, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "FUNDAMENTOS DEL CUIDADO", materiaid=155, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "CUIDADOS DE LA SALUD CENTRADOS EN LA COMUNIDAD Y LA FAMILIA", materiaid=156, carreraid=2, planestudioid=4, cicloid=2)
+    db.asignaturas.insert(nombre= "PRACTICA I", materiaid=157, carreraid=2, planestudioid=4, cicloid=2)
     
-        db.asignaturas.insert(asignaturaid= fila['asignaturaid'], 
-                            nombre= fila['asignatura'], 
-                            materiaid= fila['materiaid'], 
-                            cursoid= fila['cursoid'], 
-                            carreraid= fila['carreraid'], 
-                            planestudioid= fila['planestudioid'], 
-                            orden= fila['orden'], 
-                            horas= fila['horas'], 
-                            teorica= fila['teorica'], 
-                            practica= fila['práctica'], 
-                            optativa= fila['optativa'], 
-                            faltas1r= fila['faltas1r'],
-                            faltaslibre= fila['faltaslibre'], 
-                            faltasrecursa= fila['faltasrecursa'], 
-                            cicloid= fila['cicloid'] )
-        
-    return {'filas': filas}
+    return dict ()
     
 def insert_calendario():
     
@@ -270,22 +276,46 @@ def insert_correlativas():
     
 def insert_comision():
     
-    filas= db1.executesql('SELECT * FROM comisiones', as_dict= True)
+    db.comisiones.insert(nombre= "SALUD PUBLICA", materiaid=125, divisionid=1, periodoid=22)
+    db.comisiones.insert(nombre= "EST. Y FUNCION DEL CUERPO HUMANO", materiaid=126, divisionid=1, periodoid=22, personalid=15)
+    db.comisiones.insert(nombre= "BIOFISICA Y BIOQUIMICA", materiaid=127, divisionid=1, periodoid=22, personalid=15)
+    db.comisiones.insert(nombre= "MICROBIOLOGIA Y PARASITOLOGIA", materiaid=128, divisionid=1, periodoid=22, personalid=24)
+    db.comisiones.insert(nombre= "FUNDAMENTOS DE NUTRICION", materiaid=129, divisionid=1, periodoid=22)
+    db.comisiones.insert(nombre= "ENFERM. FUND. PRACT. Y TENDENCIAS", materiaid=130, divisionid=1, periodoid=22, personalid=25)
+    db.comisiones.insert(nombre= "ENFERMERIA MATERNO INFANTIL I", materiaid=131, divisionid=1, periodoid=22, personalid=24)    
+    db.comisiones.insert(nombre= "FARMACOLOGIA EN ENFERMERIA", materiaid=132, divisionid=1, periodoid=22, personalid=15)
     
-    for fila in filas:
+    db.comisiones.insert(nombre= "PRACTICA I", materiaid=133, divisionid=1, periodoid=22, personalid=24)
     
-        db.comisiones.insert(comisionid= fila['comisionid'], 
-                            nombre= fila['comision'], 
-                            divisionid= fila['divisionid'], 
-                            periodoid= fila['periodoid'], 
-                            materiaid= fila['materiaid'], 
-                            personalid= fila['personalid'],
-                            faltas1r= fila['faltas1r'], 
-                            faltas2r= fila['faltas2r'], 
-                            faltaslibre= fila['faltaslibre'], 
-                            faltasrecursa= fila['faltasrecursa'] )
-        
-    return {'filas': filas}
+    db.comisiones.insert(nombre= "INT. A LA INVESTIGACION EN SALUD", materiaid=134, divisionid=2, periodoid=22, personalid=25)
+    db.comisiones.insert(nombre= "EPIDEMIOLOGIA Y ESTADISTICA EN SALUD", materiaid=135, divisionid=2, periodoid=22, personalid=25)
+    db.comisiones.insert(nombre= "INFORMATICA", materiaid=136, divisionid=2, periodoid=22, personalid=11)
+    db.comisiones.insert(nombre= "ENFERMERIA DEL ADULTO Y EL ANCIANO", materiaid=137, divisionid=2, periodoid=22, personalid=25)
+    db.comisiones.insert(nombre= "DIETETICA EN ENFERMERIA", materiaid=138, divisionid=2, periodoid=2)
+    db.comisiones.insert(nombre= "ENFERMERIA EN SALUD MENTAL", materiaid=139, divisionid=2, periodoid=22, personalid=25)
+    db.comisiones.insert(nombre= "EDI", materiaid=140, divisionid=2, periodoid=22, personalid=24)
+    db.comisiones.insert(nombre= "PRACTICA II", materiaid=141, divisionid=2, periodoid=22, personalid=24)
+    
+    db.comisiones.insert(nombre= "EDUCACION EN SALUD", materiaid=142, divisionid=3, periodoid=22, personalid=26)
+    db.comisiones.insert(nombre= "ORG. Y GESTION SERV. SALUD", materiaid=143, divisionid=3, periodoid=22, personalid=25)
+    db.comisiones.insert(nombre= "INV. Y PLANIF. EN SALUD", materiaid=144, divisionid=3, periodoid=22, personalid=25)
+    db.comisiones.insert(nombre= "INGLES", materiaid=145, divisionid=3, periodoid=22, personalid=9)
+    db.comisiones.insert(nombre= "ENFERM. MATERNO-INF. II", materiaid=146, divisionid=3, periodoid=22, personalid=24)
+    
+    db.comisiones.insert(nombre= "ORG. Y GESTION SERV. DE ENFERM.", materiaid=147, divisionid=3, periodoid=22, personalid=25)
+    db.comisiones.insert(nombre= "ENFERM. EN EMERG. Y CATASTROFES", materiaid=148, divisionid=3, periodoid=22, personalid=24)
+    db.comisiones.insert(nombre= "ASPECTOS ETICOS Y LEGALES DE LA PRAC. PROF", materiaid=149, divisionid=3, periodoid=22, personalid=25)
+    db.comisiones.insert(nombre= "EDI II", materiaid=150, divisionid=3, periodoid=22, personalid=24)
+    db.comisiones.insert(nombre= "PRACTICA III", materiaid=151, divisionid=3, periodoid=22, personalid=24)
+    
+    db.comisiones.insert(nombre= "CONDICIONES Y MEDIO AMBIENTE DEL TRABAJO", materiaid=152, divisionid=1, periodoid=22, personalid=24)
+    db.comisiones.insert(nombre= "SALUD PUBLICA I", materiaid=153, divisionid=1, periodoid=22, personalid=27)
+    db.comisiones.insert(nombre= "BIOLOGIA HUMANA", materiaid=154, divisionid=1, periodoid=22, personalid=15)
+    db.comisiones.insert(nombre= "FUNDAMENTOS DEL CUIDADO", materiaid=155, divisionid=1, periodoid=22, personalid=25)
+    db.comisiones.insert(nombre= "CUIDADOS DE LA SALUD CENTRADOS EN LA COMUNIDAD Y LA FAMILIA", materiaid=156, divisionid=1, periodoid=22, personalid=25)
+    db.comisiones.insert(nombre= "PRACTICA I", materiaid=157, divisionid=1, periodoid=22, personalid=24)
+    
+    return dict ()
     
 def insert_inscripcioncomision():
     

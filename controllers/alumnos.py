@@ -220,20 +220,25 @@ def final(): #formulario de inscrip a examenes finales
     for x in c:
         correlatividades.setdefault(x.materiaid, []).append(x.materiacorrelativa)    
     
-    q &= db.inscripcionescarrera.alumnoid== alumno.alumnoid
-    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
-    q &= db.examenes.materiaid== db.materias.materiaid
+    
+    q = db.examenes.materiaid== db.materias.materiaid
     q &= db.examenes.personalid1== db.personal.personalid
+    q &= db.materias.materiaid== db.asignaturas.materiaid
+    q &= db.asignaturas.carreraid== db.carreras.carreraid
+    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
+    q &= db.inscripcionescarrera.alumnoid== alumno.alumnoid
     
     final= db(q).select(db.examenes.examenid, db.examenes.materiaid, db.materias.nombre, db.personal.nombre, db.examenes.fecha, db.examenes.hora)      
                 
     msj_aprobada = {}                
     mensajes = {}
     msj_inscripto = {}
+    msj_disponible = {}
     for f in final:
         msg_aprobada=[]
         msg = []
         msg_inscripto= []
+        msg_disponible= []
         if f.examenes.examenid in inscripciones:
             msg_inscripto.append("Ya se encuentra inscripto")
         msj_inscripto[f.examenes.materiaid] = ', '.join(msg_inscripto)
@@ -247,8 +252,11 @@ def final(): #formulario de inscrip a examenes finales
                     msg.append("Materia %s No Aprobada" % correlativa)
                 
             mensajes[f.examenes.materiaid] = ', '.join(msg)
+        else:
+             msg_disponible.append("Disponible")
+        msj_disponible[f.examenes.materiaid] = ', '.join(msg_disponible)
          
-    return dict (final= final, alumno=alumno, inscripciones=inscripciones, notas=notas, aprobadas= aprobadas, desaprobadas= desaprobadas, correlatividades=correlatividades, mensajes=mensajes, msj_aprobada= msj_aprobada, msj_inscripto=msj_inscripto) 
+    return dict (final= final, alumno=alumno, inscripciones=inscripciones, notas=notas, aprobadas= aprobadas, desaprobadas= desaprobadas, correlatividades=correlatividades, mensajes=mensajes, msj_aprobada= msj_aprobada, msj_inscripto=msj_inscripto , msj_disponible=msj_disponible) 
          
 ###################################################################################
   
@@ -321,10 +329,13 @@ def inscripciones():
             else:
                 desaprobada.append(notas.materiaid)
     
-    q &= db.inscripcionescarrera.alumnoid== alumno.alumnoid
-    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
-    q &= db.comisiones.materiaid== db.materias.materiaid
+   
+    q = db.comisiones.materiaid== db.materias.materiaid
     q &= db.comisiones.personalid== db.personal.personalid
+    q &= db.materias.materiaid== db.asignaturas.materiaid
+    q &= db.asignaturas.carreraid== db.carreras.carreraid
+    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
+    q &= db.inscripcionescarrera.alumnoid== alumno.alumnoid
     
     comision= db(q).select(db.comisiones.comisionid, db.comisiones.materiaid, db.materias.nombre, db.personal.nombre)       
                 

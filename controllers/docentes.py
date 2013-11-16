@@ -86,9 +86,10 @@ def alumnoXcomision():
     # Ejecuto el sql donde vienen los alumnos por comision
     alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre)
     inasistencias=db(db.inasistencias.id>0).select(db.inasistencias.ALL)
-     
+    
      #cuando hago click en el boton guardar
     if request.vars.grabar=="GUARDAR":
+        
         # en _name tenemos el nombre del checkbox
         fecha = request.vars.fecha
         for alumno in alumnos:
@@ -103,7 +104,7 @@ def alumnoXcomision():
                 if falta == "on":
                     db.faltas.insert(alumnoid= alumno_id, comisionid= comision_id,inasistenciaid=inasistencia_id,
                     fecha=fecha,cantidad=1)
-
+  
     return {'alumnos':alumnos, 'inasistencias':inasistencias}
     
 
@@ -118,7 +119,8 @@ def horarios():
 #@auth.requires_membership(role='personal')  
    
 def finales():
-   
+    
+
     q =db.alumnos.alumnoid == db.inscripcionescomision.alumnoid
     
     
@@ -126,24 +128,27 @@ def finales():
     q &= db.inscripcionescomision.condicion == "Regular"
     q &=  db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
     alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre , distinct= True)
-
-    if request.vars.GUARDAR=="GRABAR":
+    i=0
+    a=0
+    if request.vars.grabar=="GUARDAR":
+     
         for alumno in alumnos:
-            fecha = request.vars.fecha
-            
-            alumno_id = int(name[name.index('_')+1:])
-            materia_id = comisionid
-            calificacion_id = 1
-            nota = request.vars.nota
+            fecha= request.vars.fecha
+            alumno_id= alumno.alumnoid
+            #alumno_id = int(name[name.index('_')+1:])
+            #materia_id = alumno.materiaid
+           # calificacion_id = 1
+            nota = int(request.vars.nota[i])
             libro = request.vars.libro
             folio = request.vars.folio
-            turno = 1
-                               
-            db.notas.insert(alumnoid= alumno_id, materiaid= materia_id,calificacionid=calificacion_id,nota=nota, fecha=fecha,libro=libro,folio=folio, turno=turno) 
-                
+           # turno = 1
+            a=5
+                           
+            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,libro=libro,folio=folio) 
+            i= i+1  
    
 
-    return{'alumnos':alumnos}
+    return{'alumnos':alumnos,'a':a}
     
     
 def parciales():

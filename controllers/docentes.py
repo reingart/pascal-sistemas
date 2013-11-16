@@ -4,7 +4,7 @@
 
 @auth.requires_login()
 def ingreso():
-    db.personal.user_id.default= auth.user_id
+    db.Personal.user_id.default= auth.user_id
     subtitulo= T ('Complete el formulario por favor...')
     form=SQLFORM(db.personal)
     if form.accepts(request.vars,session):
@@ -12,7 +12,7 @@ def ingreso():
         for x in grupo_id:
             grupo=x.id
         db.auth_membership.insert(user_id=auth.user_id, group_id=grupo)
-        #agrego al alumno y su id de registro en el grupo alumnos
+        #agrego al docente y su id de registro en el grupo docentes
         response.flash='Usted fue agregado como docente...'
     elif form.errors: 
         response.flash='Hay errores en el formulario'
@@ -68,7 +68,7 @@ def index():
 #@auth.requires_membership(role='personal')  
 
 # requiere que el logueado pertenezca al rol de personal  y/o doncente
-#@auth.requires_membership(role='personal')     
+
 def alumnoXcomision():
     comisionid=request.args[0]
     #inasistenciaid=request.args[0]
@@ -162,14 +162,52 @@ def finales():
 def listamaterias():
     q = db.examenes.materiaid == db.materias.materiaid
     q &= db.examenes.periodoid == db.periodos.periodoid
-  
+    
     
     examenes=db(q).select(db.materias.nombre, db.periodos.descripcion)
     
 
     
     return dict (examenes= examenes) 
+    
+def libres():
+   
+    q =db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
+    
+    
+    # Busca las comisiones que coincidan
+    q &= db.inscripcionesexamen.condicion == "Libre"
+    #q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
+    q &= db.inscripcionesexamen.examenid == db.examenes.examenid
+    q &= db.examenes.materiaid == db.materias.materiaid
+  
+    alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre , distinct= True)
+    i=0
+    a=0
+    if request.vars.grabar=="GUARDAR":
+     
+        for alumno in alumnos:
 
+            fecha= request.vars.fecha
+            alumno_id= alumno.alumnoid
+            #materia_id = alumno.materiaid
+           # calificacion_id = 1
+            nota = int(request.vars.nota[i])
+            libro = request.vars.libro
+            folio =request.vars.folio
+            turno = request.vars.turno
+            establecimiento= "I.S.T.B.P"
+            a=5
+                           
+            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,libro=libro,folio=folio, establecimiento=establecimiento,turno=turno) 
+            i= i+1  
+   
+    comisiones = db(q).select(db.comisiones.ALL, distinct=True)
+
+    return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}
+def elegir():
+    ""
+    return{}
 #@auth.requires_login()
 #@auth.requires_membership(role='personal')      
 def parciales():
@@ -233,7 +271,7 @@ def ficha():
     
     
 #@auth.requires_login()
-@auth.requires_membership(role='personal')  
+#@auth.requires_membership(role='personal')  
 def altas():
     db.personal.user_id.default= auth.user_id
     subtitulo= T ('Complete el formulario por favor...')

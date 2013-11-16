@@ -30,8 +30,7 @@ jQuery(document).ready(function(){
             <h1><a href="{{=URL(r=request,c='default',f='index')}}">Instituto Superior Tecnológico Blaise Pascal</a></h1>
             Puerto Argentino 4238 - González Catan  (1759) - Provincia de Buenos Aires - Argentina -
             Teléfono 02202-423336/427725 <a href="mailto:info@institutopascal.edu.ar" style="color: #9999FF">info@institutopascal.edu.ar</a>
-            <h2>{{=response.title or request.application}}</h2>            
-            <h3 class="subtitle">{{=response.subtitle or request.function}}</h3>
+            
             <div class="statusbar">
                 {{ if 'auth' in globals():}}
                 [ {{if not auth.user:}}

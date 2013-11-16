@@ -135,16 +135,16 @@ def finales():
         for alumno in alumnos:
             fecha= request.vars.fecha
             alumno_id= alumno.alumnoid
-            #alumno_id = int(name[name.index('_')+1:])
             #materia_id = alumno.materiaid
            # calificacion_id = 1
             nota = int(request.vars.nota[i])
             libro = request.vars.libro
             folio = request.vars.folio
-           # turno = 1
+            turno = request.vars.turno
+            establecimiento= "I.S.T.B.P"
             a=5
                            
-            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,libro=libro,folio=folio) 
+            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,libro=libro,folio=folio, establecimiento=establecimiento,turno=turno) 
             i= i+1  
    
 

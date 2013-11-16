@@ -1,7 +1,11 @@
 {{extend 'layout.html'}}
 <h1>ACTA VOLANTE 3er AÑO ANALISIS EN SISTEMAS</h1>
-
-<h3> Alumnos regulares de la materia:</h3> 
+ Establecimiento: <label for="istbp">I.S.T.B.P</label>
+ <br>
+ <br>
+Alumnos regulares de la materia:
+<br>
+<br>
 <table>
     <td>Libro: <INPUT type="text" Name="libro" size="1"> </td><td> Folio: <INPUT type="text" Name="folio" size="1"></td>  <td>Fecha: <INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}></td>
     
@@ -24,7 +28,7 @@
         
         <td style="border: 1px solid white"><ul><B><center>{{=alumno.nombre}}</ul></B></td>
         <td style="border: 1px solid white"><B><INPUT type="text" Name="nota" size="1"></td>
-    <td style="border: 1px solid white"><B><center><SELECT name="turno" > <option>Seleccionar...</option><option>Mañana</option><option>Tarde</option> <option>Noche</option></td>
+    <td style="border: 1px solid white"><B><center><SELECT name="turno" > <option>Noche</option><option>Tarde</option> <option>Mañana</option></td>
     
         </tr>
         {{pass}}

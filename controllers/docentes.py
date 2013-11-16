@@ -146,11 +146,10 @@ def finales():
             nota = int(request.vars.nota[i])
             libro = request.vars.libro
             folio =request.vars.folio
-            turno = request.vars.turno
             establecimiento= "I.S.T.B.P"
             a=5
                            
-            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,libro=libro,folio=folio, establecimiento=establecimiento,turno=turno) 
+            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,libro=libro,folio=folio, establecimiento=establecimiento) 
             i= i+1  
    
     comisiones = db(q).select(db.comisiones.ALL, distinct=True)
@@ -195,11 +194,10 @@ def libres():
             nota = int(request.vars.nota[i])
             libro = request.vars.libro
             folio =request.vars.folio
-            turno = request.vars.turno
             establecimiento= "I.S.T.B.P"
             a=5
                            
-            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,libro=libro,folio=folio, establecimiento=establecimiento,turno=turno) 
+            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,libro=libro,folio=folio, establecimiento=establecimiento) 
             i= i+1  
    
     comisiones = db(q).select(db.comisiones.ALL, distinct=True)

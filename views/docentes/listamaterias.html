@@ -4,7 +4,11 @@
 
 <TABLE style="border: 1px solid white">
     <tr>
-    <td  style="border: 1px solid white"> Materia</td><td  style="border: 1px solid white"> Periodo</td>
+    <td  style="border: 1px solid white"> Materia</td>
+    <td  style="border: 1px solid white"> Periodo</td>
+    <td  style="border: 1px solid white"> Fecha</td>
+
+    <td  style="border: 1px solid white"> Hora</td>
     </tr>
 
         {{for examen in examenes: }}
@@ -14,7 +18,12 @@
         	   
             <td><a href="{{=URL(f="elegir")}}"> {{=examen.materias.nombre}} </td>    
      
-        		<td  style="border: 1px solid white">{{=examen.periodos.descripcion}} </td> 
+        		 <td  style="border: 1px solid white">{{=examen.periodos.descripcion}} </td> 
+
+        		 <td  style="border: 1px solid white">{{=examen.examenes.fecha}} </td> 
+        		 <td  style="border: 1px solid white">{{=examen.examenes.hora}} </td> 
+
+
         	
         
         </tr>

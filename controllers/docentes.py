@@ -163,7 +163,7 @@ def listamaterias():
     q &= db.examenes.periodoid == db.periodos.periodoid
     
     
-    examenes=db(q).select(db.materias.nombre, db.periodos.descripcion)
+    examenes=db(q).select(db.materias.nombre, db.periodos.descripcion, db.examenes.fecha,db.examenes.hora)
     
 
     

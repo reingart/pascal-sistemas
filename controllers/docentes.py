@@ -126,20 +126,22 @@ def finales():
     
     # Busca las comisiones que coincidan
     q &= db.inscripcionescomision.condicion == "Regular"
-    q &=  db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
+    q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
+    q &= db.materias.materiaid == db.notas.materiaid
     alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre , distinct= True)
     i=0
     a=0
     if request.vars.grabar=="GUARDAR":
      
         for alumno in alumnos:
+
             fecha= request.vars.fecha
             alumno_id= alumno.alumnoid
             #materia_id = alumno.materiaid
            # calificacion_id = 1
             nota = int(request.vars.nota[i])
             libro = request.vars.libro
-            folio = request.vars.folio
+            folio =request.vars.folio
             turno = request.vars.turno
             establecimiento= "I.S.T.B.P"
             a=5
@@ -147,8 +149,9 @@ def finales():
             db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,libro=libro,folio=folio, establecimiento=establecimiento,turno=turno) 
             i= i+1  
    
+    comisiones = db(q).select(db.comisiones.ALL, distinct=True)
 
-    return{'alumnos':alumnos,'a':a}
+    return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}
     
     
 def parciales():
@@ -198,9 +201,8 @@ def ficha():
     
     q &= db.horarios.horarioid == horarioid
     horarios = db(q).select(db.horarios.ALL)
-    
     q &= db.horas.horaid == horaid
-    horas = db(q).select(db.horas.ALL)
+    horas = db(q).select(db.horas.ALL, distinct=True)
     
   
     return {'docente':docente, 'comisiones':comisiones, 'horario':horario, 'horarios':horarios, 'horas':horas,'hora':hora}

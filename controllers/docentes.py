@@ -421,20 +421,23 @@ def listarfinales():
 
 def modificarfinal():
 
-    #realiza la consulta. request.args(0) contiene el 'id' seleccionado en 'listarCarreras y viene como parametro
+     #realiza la consulta. request.args(0) contiene el 'id' seleccionado en 'listarfinales viene como parametro
 
     finalSeleccionado = db(db.notas.id==request.args(0)).select()
+
+    #guarda el id en la variable 'idCarreraSeleccionada'
+
     idfinalSeleccionado = finalSeleccionado[0]
 
     #crea un formulario para ser mostrado en la vista solo con los campos que permito que se modifiquen:
 
-    form = SQLFORM(db.notas, deletable=False,
+    form = SQLFORM(db.notas, idfinalSeleccionado, deletable=False,
 
-                    fields=['folio','libro','nota'],
+                    fields=['notaid','folio','libro','nota'],
 
+                    
 
-
-                    labels={'folio':'folio', 'libro':'libro', 'nota':'nota'},
+                    labels={'notaid':'notaid', 'folio':'folio'},
 
                     submit_button='Grabar')
 
@@ -446,7 +449,7 @@ def modificarfinal():
 
         #redirecciona al controlador principal
 
-        redirect(URL(r=request, f='listarfinales'))
+        redirect(URL(r=request, f='listarfinales'))                
 
     #retorna el formulario a la vista
 

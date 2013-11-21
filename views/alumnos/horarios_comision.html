@@ -1,0 +1,54 @@
+{{extend 'layout.html'}}
+<h2> Fecha: {{=request.now.date()}}</h2>
+<h2> Alumno/a: {{=alumno.nombre}}
+<h1> <center><u> Horarios de Comision</u> </center></h1>
+    
+
+{{for divisionid in (1, 2, 3): }}
+<TABLE style="border: 1px solid white"> 
+    
+    <tr style="border: 1px solid white"> 
+        
+        <td style="border: 1px solid white"> HORAS </td>
+        <td style="border: 1px solid white"> LUNES </td>
+        <td style="border: 1px solid white"> MARTES </td>
+        <td style="border: 1px solid white"> MIERCOLES </td>
+        <td style="border: 1px solid white"> JUEVES </td>
+        <td style="border: 1px solid white"> VIERNES </td>
+    </tr>
+        {{for hora in ['1','2','3','4']:}}
+         <tr>
+         <td style="border: 1px solid white">      
+             {{=horas[hora].desde}}
+             hasta
+             <br>
+             {{=horas[hora].hasta}}
+             hs.                
+         </td>
+         <br>
+        {{for dia in ['lunes','martes','miercoles','jueves','viernes']:}}
+    		<td style="border: 1px solid white"> 
+                
+			{{f=horario.get(dia, {}).get(hora, None).get(divisionid)}}
+                
+			{{if f:}}
+                
+                {{=f.materias.nombre}} <br>
+				{{=f.personal.nombre}} 
+                
+        	{{pass}}
+            </td>
+    	{{pass}}
+    </tr>
+   {{pass}}
+    
+{{pass}}
+    
+    <br>
+    <br>
+    </TABLE>
+<br>
+<form>
+    <a href="index.html"><input type=button value="Volver" ></a>
+</form>
+    {{=horario}}

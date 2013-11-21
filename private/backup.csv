@@ -732,12 +732,16 @@ periodos.periodoid,periodos.descripcion,periodos.nivelid,periodos.cicloid,period
 
 TABLE notas
 notas.notaid,notas.alumnoid,notas.materiaid,notas.periodoid,notas.calificacionid,notas.nota,notas.descripcion,notas.establecimiento,notas.observaciones,notas.fecha,notas.libro,notas.folio,notas.alta,notas.web,notas.turno
-54,10,158,10,5,7.0,,,,2011-12-14,,<NULL>,2013-11-13,False,
-55,10,159,10,5,7.0,,,,2011-12-15,,<NULL>,2013-11-13,False,
-56,10,175,22,3,8.0,,,,2013-07-10,,<NULL>,2013-11-13,False,
-57,21,161,22,3,8.0,,,,2013-07-17,,<NULL>,2013-11-13,False,
-58,22,158,22,3,7.0,,,,2013-07-10,,<NULL>,2013-11-13,False,
-59,22,158,22,5,7.0,,,,2011-12-15,,<NULL>,2013-11-13,False,
+54,10,158,10,5,7.0,,I.S.T.B.P,,2011-12-14,1,2,2013-11-13,False,
+55,10,159,10,5,7.0,,I.S.T.B.P,,2011-12-15,1,2,2013-11-13,False,
+56,10,175,22,3,8.0,,I.S.T.B.P,,2013-07-10,1,2,2013-11-13,False,
+57,21,161,22,3,8.0,,I.S.T.B.P,,2013-07-17,1,2,2013-11-13,False,
+58,22,158,22,3,7.0,,I.S.T.B.P,,2013-07-10,1,2,2013-11-13,False,
+59,22,158,22,5,7.0,,I.S.T.B.P,,2011-12-15,1,2,2013-11-13,False,
+60,24,<NULL>,<NULL>,<NULL>,4.0,<NULL>,I.S.T.B.P,<NULL>,2013-11-20,1,2,2013-11-20,False,<NULL>
+61,23,<NULL>,<NULL>,<NULL>,5.0,<NULL>,I.S.T.B.P,<NULL>,2013-11-20,1,2,2013-11-20,False,<NULL>
+62,10,<NULL>,<NULL>,<NULL>,6.0,<NULL>,I.S.T.B.P,<NULL>,2013-11-20,1,2,2013-11-20,False,<NULL>
+63,22,<NULL>,<NULL>,<NULL>,7.0,<NULL>,I.S.T.B.P,<NULL>,2013-11-20,1,2,2013-11-20,False,<NULL>
 
 
 TABLE titulos

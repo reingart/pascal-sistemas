@@ -109,6 +109,35 @@ def horarios():
         
     return dict (horario=horario, horas=horas, alumno=alumno)
     
+@auth.requires_login() #requiere que haya un usuario logeado
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+def horarios_comision():
+   #lista los horarios dependiendo de la carrera
+    q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
+    alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista
+    
+    q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
+    q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
+    q &= db.horarios.horaid== db.horas.horaid
+    q &= db.horarios.comisionid== db.comisiones.comisionid
+    q &= db.comisiones.personalid== db.personal.personalid
+    q &= db.comisiones.materiaid== db.materias.materiaid
+    q &= db.comisiones.divisionid== db.divisiones.divisionid
+    
+
+     
+    filas= db(q).select(db.horas.hora, db.personal.nombre, db.materias.nombre, db.divisiones.divisionid, db.horarios.dia)
+    
+    horario = {'lunes':{},'martes':{},'miercoles':{},'jueves':{},'viernes':{}}
+    # horario es una estructura cuya clave es el dia y el valor es otro diccionario....
+    #  {'lunes': {1: fila} ... }
+    for fila in filas:
+        horario[fila.horarios.dia].setdefault(fila.horas.hora, {})[fila.divisiones.divisionid]= fila
+    filas = db(db.horas.id>0).select()
+    horas=dict ([(hora.hora, hora) for hora in filas])
+        
+    return dict (horario=horario, horas=horas, alumno=alumno)    
+    
    
 @auth.requires_login() #requiere que haya un usuario logeado
 @auth.requires_membership(role='Alumnos')    #requiere que haya un usuario logeado e integre el grupo alumnos
@@ -198,11 +227,7 @@ def final(): #formulario de inscrip a examenes finales
     inscripciones = db(db.inscripcionesexamen.alumnoid==alumno.alumnoid).select(db.inscripcionesexamen.examenid)
     inscripciones = [inscripcion.examenid for inscripcion in inscripciones]
     #listo si ya se inscribio al examen
-    n= db.notas.alumnoid== alumno.alumnoid
-    n&= db.notas.calificacionid==5
-    n&= db.notas.nota>4
-    notas= db(n).select(db.notas.materiaid)
-    notas = [nota.materiaid for nota in notas]
+    
     #listo si ya aprobo el examen 
     
     aprobadas= []
@@ -239,28 +264,41 @@ def final(): #formulario de inscrip a examenes finales
         msg = []
         msg_inscripto= []
         msg_disponible= []
-        if f.examenes.examenid in inscripciones:
-            msg_inscripto.append("Ya se encuentra inscripto")
-        msj_inscripto[f.examenes.materiaid] = ', '.join(msg_inscripto)
-        if f.examenes.materiaid in aprobadas:
-            msg_aprobada.append("Materia Aprobada")
-        msj_aprobada[f.examenes.materiaid] = ', '.join(msg_aprobada)
+        
+        
         if f.examenes.materiaid in correlatividades:
             correlativas = correlatividades[f.examenes.materiaid]
             for correlativa in correlativas:
                 if correlativa not in aprobadas:
                     msg.append("Materia %s No Aprobada" % correlativa)
-                
             mensajes[f.examenes.materiaid] = ', '.join(msg)
+            
+        if f.examenes.materiaid in aprobadas:
+            msg_aprobada.append("Materia Aprobada")
+        msj_aprobada[f.examenes.materiaid] = ', '.join(msg_aprobada)
         
          
-    return dict (final= final, alumno=alumno, inscripciones=inscripciones, notas=notas, aprobadas= aprobadas, desaprobadas= desaprobadas, correlatividades=correlatividades, mensajes=mensajes, msj_aprobada= msj_aprobada, msj_inscripto=msj_inscripto ) 
+    return dict (final= final, alumno=alumno, inscripciones=inscripciones, aprobadas= aprobadas, desaprobadas= desaprobadas, correlatividades=correlatividades, mensajes=mensajes, msj_aprobada= msj_aprobada, msj_inscripto=msj_inscripto ) 
          
-###################################################################################
-  
-@auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+
+def constancia_final():
+    #traigo las inscripciones a examenes finales del alumno para formatearla en una constancia para su posterior impresion
+    q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
+    alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista
+    q &= db.inscripcionesexamen.alumnoid== alumno.alumnoid
+    q &= db.inscripcionesexamen.examenid== db.examenes.examenid
+    q &= db.inscripcionescarrera.alumnoid== alumno.alumnoid
+    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
+    carrera= db(q).select(db.carreras.nombre).first()
+    q &= db.examenes.materiaid== db.materias.materiaid
+    q &= db.examenes.periodoid== db.periodos.periodoid
+    q &= db.examenes.personalid1== db.personal.personalid
+    inscripcion= db(q).select(db.materias.codigo, db.materias.nombre, db.periodos.descripcion, db.personal.nombre, db.examenes.fecha)
       
+    return dict(alumno=alumno, inscripcion=inscripcion, carrera=carrera)
+ 
+@auth.requires_login() #requiere que haya un usuario logeado
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos           
 def parciales():
     #lista examenes cuatrimestrales ya rendidos
     
@@ -280,6 +318,8 @@ def parciales():
     
     return dict (notas= notas, alumno=alumno)
     
+@auth.requires_login() #requiere que haya un usuario logeado
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos      
 def inscripciones():
     q = db.alumnos.user_id== auth.user_id #busca y trae todos los datos del alumno logueado
     alumno= db(q).select().first() 
@@ -300,7 +340,7 @@ def inscripciones():
                         comisionid= comision_id,
                         alta=fecha,
                         condicion="Regular")
-                    ok += 1 #creo contador de examenes insertados/seleccionados por el alumno
+                    ok += 1 #creo contador de comisiones insertados/seleccionados por el alumno
                     
         if ok:
               response.flash= "Usted se a inscripto a %d comisiones!" % ok
@@ -335,11 +375,30 @@ def inscripciones():
     q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
     q &= db.inscripcionescarrera.alumnoid== alumno.alumnoid
     
-    comision= db(q).select(db.comisiones.comisionid, db.comisiones.materiaid, db.materias.nombre, db.personal.nombre)       
+    comision= db(q).select(db.comisiones.comisionid, db.comisiones.materiaid, db.materias.materiaid, db.materias.nombre, db.personal.nombre)       
                 
          
     return dict (comision= comision, alumno=alumno, inscripciones=inscripciones, aprobada= aprobada, desaprobada= desaprobada) 
-    
+ 
+
+def constancia_comision():
+    #traigo las inscripciones a examenes finales del alumno para formatearla en una constancia para su posterior impresion
+    q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
+    alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista
+    q &= db.inscripcionescomision.alumnoid== alumno.alumnoid
+    q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
+    q &= db.inscripcionescarrera.alumnoid== alumno.alumnoid
+    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
+    carrera= db(q).select(db.carreras.nombre).first()
+    q &= db.comisiones.materiaid== db.materias.materiaid
+    q &= db.comisiones.periodoid== db.periodos.periodoid
+    q &= db.comisiones.divisionid== db.divisiones.divisionid
+    inscripcion= db(q).select(db.materias.codigo, db.materias.nombre, db.periodos.descripcion, db.divisiones.descripcion)
+      
+    return dict(alumno=alumno, inscripcion=inscripcion, carrera=carrera)
+
+@auth.requires_login() #requiere que haya un usuario logeado
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos    
 def archivos():
     "descarga de archivos pedagogicos subidos por docentes"
     return {}

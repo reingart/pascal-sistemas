@@ -9,14 +9,18 @@
 
 <TABLE style="border: 1px solid white">
 <TR>
+    <TD style="border: 1px solid white"><center><b> CODIGO </b></center> </TD>
     <TD style="border: 1px solid white"><center><b> MATERIA </b></center> </TD>
     <TD style="border: 1px solid white"><center><b> DOCENTE </b></center> </TD>
+    <TD style="border: 1px solid white"> <center><b> CONDICIÓN </b></center> </TD>
     <TD style="border: 1px solid white"> <center><b>ESTADO</b></center> </TD>
 <TR>
     
 {{for c in comision:}}
     
-    
+    <td style="border: 1px solid white">
+    {{=c.materias.materiaid}}
+    </td>
     <td style="border: 1px solid white"><input type="checkbox" name="{{="comision_%s" % c.comisiones.comisionid}}" {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} > 
     
     {{=c.materias.nombre}}
@@ -24,9 +28,17 @@
     <td style="border: 1px solid white">
     {{=c.personal.nombre}}
     </td>
+    <td style="border: 1px solid white">
+    <input type="radio" name="condicion" value="Regular" 
+    {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} > Regular
+	<br>
+	<input type="radio" name="condicion" value="Libre" 
+	{{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} > Libre
+
+    </td>
     <td style="border: 1px solid white" >
     <font color="yellow"> 
-        {{='Ya se encuentra inscripto' if (c.comisiones.comisionid in inscripciones) else ''}}
+        {{='Ya inscripto, pendiente de revision' if (c.comisiones.comisionid in inscripciones) else ''}}
     </font>
        
     <font color="red"> 
@@ -41,7 +53,8 @@
 </TABLE>
 <br>
     <a href="index.html"><input type=button value="Volver" ></a>
-    <input type="reset" value="Cancelar">
     <input type="submit" name="guardar" value="Guardar" > 
+    <input type="reset" value="Cancelar">
+    <a href="constancia_comision.html"><input type=button value="Imprimir Constancia" ></a>
 	
 </form>

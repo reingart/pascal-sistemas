@@ -238,6 +238,7 @@ auth_event.id,auth_event.time_stamp,auth_event.client_ip,auth_event.user_id,auth
 206,2013-11-16 18:24:32,127.0.0.1,<NULL>,auth,Grupo 8 creado
 207,2013-11-16 18:24:32,127.0.0.1,10,auth,Usuario 10 Registrado
 208,2013-11-16 18:29:51,127.0.0.1,10,auth,User 10 Logged-out
+209,2013-11-21 18:39:40,127.0.0.1,1,auth,Usuario 1 sesión iniciada
 
 
 TABLE auth_cas
@@ -1038,7 +1039,7 @@ TABLE inscripcionesdivision
 
 TABLE inscripcionesexamen
 inscripcionesexamen.inscripcionid,inscripcionesexamen.alumnoid,inscripcionesexamen.examenid,inscripcionesexamen.condicion,inscripcionesexamen.alta,inscripcionesexamen.baja,inscripcionesexamen.confirmar,inscripcionesexamen.valido
-1,10,46,Regular,2013-11-15,<NULL>,False,False
+1,10,50,Regular,2013-11-15,<NULL>,False,False
 2,22,46,Regular,2013-11-15,<NULL>,False,False
 3,23,46,Regular,2013-11-15,<NULL>,False,False
 4,24,46,Regular,2013-11-15,<NULL>,False,False

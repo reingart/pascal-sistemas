@@ -16,18 +16,21 @@
 Titulos: {{=docente.titulos}}<br>
 
 <br>
-    <h5><marquee behavior="alternate"  scrollamount="4">*click en la materia para tomar asistencias*</h5></marquee>
-<br>
 <BR>
 
+    <b><u>Tomar inasistencias:</u></b>
+<br>
+<br>
 {{for comision in comisiones:}}
-<li>Materia que dicta: <a href="{{=URL(f="alumnoXcomision", args=[comision.comisionid])}}">{{=comision.nombre}}</a></li>
+
+    <li> <a href="{{=URL(f="alumnoXcomision", args=[comision.comisionid])}}">{{=comision.nombre}}</a></li>
 {{pass}}
 
 </td>
+
 </tr>
 
-
+<br>
 <tr>
 <td style="border: 1px solid white">
 <center><b><u><h3> Horario en que dicta las materias</h3></u></b></center>

@@ -237,27 +237,30 @@ def insert_titulos():
     
 def insert_nota():
     
-    filas= db1.executesql('SELECT * FROM notas', as_dict= True)
+    fecha = request.now.date()
     
-    for fila in filas:
+    db.notas.insert(alumnoid= 25, materiaid=175, periodoid=26, calificacionid=3, nota=7, alta= fecha)
+    db.notas.insert(alumnoid= 25, materiaid=176, periodoid=26, calificacionid=3, nota=6, alta= fecha)
+    db.notas.insert(alumnoid= 25, materiaid=177, periodoid=26, calificacionid=3, nota=8, alta= fecha)
+    db.notas.insert(alumnoid= 25, materiaid=178, periodoid=26, calificacionid=3, nota=7, alta= fecha)
+    db.notas.insert(alumnoid= 25, materiaid=179, periodoid=26, calificacionid=3, nota=9, alta= fecha)
+    db.notas.insert(alumnoid= 25, materiaid=180, periodoid=26, calificacionid=3, nota=6, alta= fecha)
     
-        db.notas.insert(notaid= fila['notaid'], 
-                            alumnoid= fila['alumnoid'], 
-                            materiaid= fila['materiaid'], 
-                            periodoid= fila['periodoid'], 
-                            calificacionid= fila['calificacionid'], 
-                            nota= fila['nota'], 
-                            descripcion= fila['descripcion'], 
-                            establecimiento= fila['establecimiento'],
-                            observaciones= fila['observaciones'], 
-                            fecha= fila['fecha'], 
-                            libro= fila['libro'], 
-                            folio= fila['folio'], 
-                            alta= fila['alta'], 
-                            web= fila['web'],
-                            turno= fila['turno'] )
+    
+    
+    
+    #2DO CUATRI
+    db.notas.insert(alumnoid= 25, materiaid=175, periodoid=27, calificacionid=3, nota=7, alta= fecha)
+    db.notas.insert(alumnoid= 25, materiaid=176, periodoid=27, calificacionid=3, nota=6, alta= fecha)
+    db.notas.insert(alumnoid= 25, materiaid=177, periodoid=27, calificacionid=3, nota=8, alta= fecha)
+    db.notas.insert(alumnoid= 25, materiaid=178, periodoid=27, calificacionid=3, nota=7, alta= fecha)
+    db.notas.insert(alumnoid= 25, materiaid=179, periodoid=27, calificacionid=3, nota=9, alta= fecha)
+    db.notas.insert(alumnoid= 25, materiaid=180, periodoid=27, calificacionid=3, nota=6, alta= fecha)
+    
+ 
+                            
         
-    return {'filas': filas}
+    return dict ()
     
 def insert_correlativas():
     

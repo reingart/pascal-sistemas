@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
 body, table, tr, td, th, thead, tfoot, label, h1, h2, h3, h4, h5, h6, p, ul, li, ol, pre {
-    background: transparent;
+    background: transparen;
     border: 0;
     margin: 0;
     outline: 0;
     padding: 0;
-    color: inherit;
+    color: white;
     font-weight: inherit;
     font-style: inherit;
     font-family: inherit;

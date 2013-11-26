@@ -1,12 +1,10 @@
 {{extend 'layout.html'}}
 
 <h2> Fecha: {{=request.now.date()}}</h2>
-<h2> Alumno/a: {{=alumno.nombre}} </h2>
-<h1> <center><u> Parciales Cuatrimestrales Rendidos</u> </center></h1>
-
+<h1> <center><u> Examenes Cuatrimestrales Rendidos</u> </center></h1>
+<br>
 <TABLE style="border: 1px solid white">
         <TR style="border: 1px solid white">
-            <TD style="border: 1px solid white"> ALUMNO </TD>
             <TD style="border: 1px solid white"> <center>MATERIA</center> </TD>
             <TD style="border: 1px solid white"> <center>PERIODO</center> </TD>
             <TD style="border: 1px solid white"> NOTA </TD>
@@ -17,9 +15,9 @@
         
         {{for nota in n:}}
             <TR style="border: 1px solid white">
-            <TD style="border: 1px solid white"> 
+           <!-- <TD style="border: 1px solid white"> 
         	 {{ =nota.alumnos.nombre}}
-        	</TD>
+        	</TD>-->
         	<TD style="border: 1px solid white"> 
         	 {{ =nota.materias.nombre}}
         	</TD>

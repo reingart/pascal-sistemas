@@ -283,6 +283,23 @@ db.define_table('notas',
     Field('turno', type='string', length=1),
     format= "%(notaid)s [%(nota)s]",
     migrate=migrate)
+    
+    
+db.define_table('parciales',
+    Field('parcialid', type='id'),
+    Field('alumnoid', db.alumnos),
+    Field('materiaid', db.materias),
+    Field('personalid',db.personal),
+    Field('detalle',type='string'),
+
+    Field('trimestre1',type='integer', default=0 ),
+    Field('trimestre2', type='integer', default=0),
+    Field('recuperatorio1', type='integer', length=50),
+    Field('recuperatorio2', type='integer', length=50),
+    Field('condicion', type='text'),
+    Field('fecha', type='date'),
+    format= "%(parcialid)s [%(detalle)s]",
+    migrate=migrate)
 
 
     

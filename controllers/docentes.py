@@ -141,7 +141,7 @@ def finales():
 
             fecha= request.vars.fecha
             alumno_id= alumno.alumnoid
-            #materia_id = alumno.materiaid
+            materia_id = alumno.materiaid
            # calificacion_id = 1
             nota = int(request.vars.nota[i])
             libro = request.vars.libro
@@ -149,7 +149,7 @@ def finales():
             establecimiento= "I.S.T.B.P"
             a=5
 
-            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,libro=libro,folio=folio, establecimiento=establecimiento)
+            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,libro=libro,folio=folio, establecimiento=establecimiento, materiaid=materia_id)
             i= i+1
 
     comisiones = db(q).select(db.comisiones.ALL, distinct=True)
@@ -159,31 +159,33 @@ def finales():
 #@auth.requires_login()
 #@auth.requires_membership(role='personal')
 def listamaterias():
-    
     form = SQLFORM.factory(
         Field("Materia", "string"),
         )
     q= db.materias.id>0
     if form.accepts(request.vars, session):
         # buscar el docente
+
         if form.vars.Materia:
-            q &= db.materias.nombre == form.vars.Materia
-            materia = db(q).select().first()
+            q &= db.materias.nombre.contains(form.vars.Materia)
+        materia = db(q).select().first()
 
 
         #if materia:
             # encontrado, redirigo a cargar notas por
-            #redirect(URL(f=index, vars={'personalid': docente.personal.personalid}))
+           # redirect(URL(f=index, vars={'materiaid': materia.materias.materiaid}))
 
        # else:
-           # response.flash = "docente no encontrado"
-    
+          #  response.flash = "Materia no encontrado"
+
     q = db.examenes.materiaid == db.materias.materiaid
     q &= db.examenes.periodoid == db.periodos.periodoid
 
 
     examenes=db(q).select(db.materias.nombre, db.periodos.descripcion, db.examenes.fecha,db.examenes.hora)
-    return dict (examenes= examenes, form=form)
+
+
+    return dict (examenes= examenes,form=form)
 
 def libres():
 
@@ -225,8 +227,32 @@ def elegir():
 #@auth.requires_login()
 #@auth.requires_membership(role='personal')
 def parciales():
-    ""
-    return{}
+    #q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
+    q = db.personal.personalid == db.comisiones.personalid
+   # q &= db.examenes.materiaid == db.materias.materiaid
+
+    alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre , distinct= True)
+    i=0
+    a=0
+    if request.vars.GRABAR=="GUARDAR":
+
+        for alumno in alumnos:
+
+            fecha= request.vars.fecha
+            alumno_id= alumno.alumnoid
+            #materia_id = alumno.materiaid
+           # calificacion_id = 1
+           #nota = int(request.vars.nota[i])
+            #libro = request.vars.libro
+            #folio =request.vars.folio
+            #establecimiento= "I.S.T.B.P"
+            a=5
+
+            db.parciales.insert(fecha=fecha,alumnoid=alumno_id)
+            i= i+1
+
+
+    return{'alumnos':alumnos,'a':a}
 
 #@auth.requires_login()
 #@auth.requires_membership(role='personal')
@@ -378,7 +404,7 @@ def modificarfinal():
 
                     fields=['notaid','folio','libro','nota'],
 
-                    
+
 
                     labels={'notaid':'notaid', 'folio':'folio'},
 
@@ -392,7 +418,7 @@ def modificarfinal():
 
         #redirecciona al controlador principal
 
-        redirect(URL(r=request, f='listarfinales'))                
+        redirect(URL(r=request, f='listarfinales'))
 
     #retorna el formulario a la vista
 
@@ -409,14 +435,14 @@ def muestrafinal():
 
     #que hace que el campo 'nombre' no pueda ser modificado en la vista
 
-    
+
     db.notas.folio.writable = False
 
     db.notas.libro.writable = False
 
     db.notas.nota.writable = False
 
-   
+
     form = SQLFORM(db.notas, idfinalSeleccionado, writable=False,
 
                     fields=['folio','libro','nota'],
@@ -429,8 +455,8 @@ def muestrafinal():
 
         session.flash = "ADVERTENCIA: Los datos modificados se guardaran en la Base de Datos"
 
-        redirect(URL(r=request, f='listarfinales'))#redirecciona al controlador principal                
+        redirect(URL(r=request, f='listarfinales'))#redirecciona al controlador principal
 
-                    
+
 
     return dict(form=form)

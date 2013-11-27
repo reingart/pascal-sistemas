@@ -32,7 +32,7 @@
 
     </td>
      <td style="border: 1px solid white">
-         <center> <select name="{{="tipo_%s" %(alumno.id)}}"> <option>Seleccionar</option>
+         <center> <select name="{{="tipo_%s" %(alumno.id)}}"> 
               {{for inasistencia in inasistencias: }}
              <option value="{{= inasistencia.inasistenciaid }}">{{=(inasistencia.descripcion)}}</option>
 			 {{pass}}

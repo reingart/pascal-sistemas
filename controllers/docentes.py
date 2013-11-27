@@ -141,7 +141,7 @@ def finales():
 
             fecha= request.vars.fecha
             alumno_id= alumno.alumnoid
-            #materia_id = alumno.materiaid
+            materia_id = alumno.materiaid
            # calificacion_id = 1
             nota = int(request.vars.nota[i])
             libro = request.vars.libro
@@ -149,7 +149,7 @@ def finales():
             establecimiento= "I.S.T.B.P"
             a=5
 
-            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,libro=libro,folio=folio, establecimiento=establecimiento)
+            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,libro=libro,folio=folio, establecimiento=establecimiento, materiaid=materia_id)
             i= i+1
 
     comisiones = db(q).select(db.comisiones.ALL, distinct=True)
@@ -159,88 +159,33 @@ def finales():
 #@auth.requires_login()
 #@auth.requires_membership(role='personal')
 def listamaterias():
+    form = SQLFORM.factory(
+        Field("Materia", "string"),
+        )
+    q= db.materias.id>0
+    if form.accepts(request.vars, session):
+        # buscar el docente
+       
+        if form.vars.Materia:
+            q &= db.materias.nombre.contains(form.vars.Materia)
+        materia = db(q).select().first()
+
+
+        #if materia:
+            # encontrado, redirigo a cargar notas por
+           # redirect(URL(f=index, vars={'materiaid': materia.materias.materiaid}))
+
+       # else:
+          #  response.flash = "Materia no encontrado"
+    
     q = db.examenes.materiaid == db.materias.materiaid
     q &= db.examenes.periodoid == db.periodos.periodoid
 
 
     examenes=db(q).select(db.materias.nombre, db.periodos.descripcion, db.examenes.fecha,db.examenes.hora)
-    tablaFinal=[]
+   
 
-    i=0
-
-    form2=''
-
-    form=FORM(TABLE(TR("Nombre:",INPUT(_type="text",_name="Nombre",requires=IS_NOT_EMPTY())),TR("",INPUT(_type="submit",_value="Buscar"))))
-
-    if form.accepts(request.vars,session):
-        if len(db(db.materias.materiaid==db.examenes.materiaid)&(db.periodos.periodoid==db.examenes.periodoid)&(db.materias.nombre==form.vars.Nombre.upper()).select(db.materias.nombre, db.examenes.hora, db.periodos.descripcion,db.examenes.fecha))==0:
-
-            form.errors.codigo="El nombre ingresado no esta¡ en la base de datos"
-
-
-        else:
-
-
-
-            listado = db(db.materias.materiaid==db.examenes.materiaid)&(db.periodos.periodoid==db.examenes.periodoid)&(db.materias.nombre)==form.vars.Nombre.upper().select(db.materias.nombre, db.examenes.hora, db.periodos.descripcion,db.examenes.fecha)
-
-            for x in listado:
-
-                i=i+1
-
-            lista=[]
-
-
-
-            lista.append(TABLE(TR(
-
-            TH('Materia',_style='width:200px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
-
-            TH('Periodo',_style='width:200px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
-
-            TH('Fecha',_style='width:200px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
-
-            TH('Hora',_style='width:200px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
-
-
-            TFOOT(TR(TH('Total: ',_style='width:20px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
-
-            TH(i,' Clientes',_style='width:120px; color:#000; background: #99f; border: 2px solid #cdcdcd'))),
-
-
-
-            *[TR(
-
-            TD(rows.nombre,_style='width:200px; color:#000; background: #eef; border: 2px solid #cdcdcd'),
-
-            TD(rows.descripcion,_style='width:200px; color:#000; background: #eef; border: 2px solid #cdcdcd'),
-
-            TD(rows.fecha,_style='width:200px; color:#000; background: #eef; border: 2px solid #cdcdcd'),
-
-            TD(rows.hora,_style='width:200px; color:#000; background: #eef; border: 2px solid #cdcdcd'),
-
-            )
-
-            for rows in listado]),))
-
-
-
-
-
-            tablaFinal = DIV(lista)
-
-
-    elif form.errors:
-
-       response.flash = 'Hay un error en el formulario'
-
-    else:
-
-       response.flash = 'Por favor, complete el Formulario'
-
-
-
-    return dict (examenes= examenes,form=form, tabla=tablaFinal)
+    return dict (examenes= examenes,form=form)
 
 def libres():
 

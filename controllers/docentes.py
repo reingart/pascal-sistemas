@@ -254,6 +254,35 @@ def parciales():
 
     return{'alumnos':alumnos,'a':a}
 
+def listaparciales():
+    form = SQLFORM.factory(
+        Field("Materia", "string"),
+        )
+    q= db.materias.id>0
+    if form.accepts(request.vars, session):
+        # buscar el docente
+
+        if form.vars.Materia:
+            q &= db.materias.nombre.contains(form.vars.Materia)
+        materia = db(q).select().first()
+
+
+        #if materia:
+            # encontrado, redirigo a cargar notas por
+           # redirect(URL(f=index, vars={'materiaid': materia.materias.materiaid}))
+
+       # else:
+          #  response.flash = "Materia no encontrado"
+
+    q= db.inscripcionesexamen.condicion == "Regular"
+
+
+
+    examenes=db(q).select(db.materias.nombre, orderby=db.materias.nombre , distinct= True )
+
+
+    return dict (examenes= examenes,form=form)
+
 #@auth.requires_login()
 #@auth.requires_membership(role='personal')
 def apuntes():

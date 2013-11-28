@@ -1,0 +1,30 @@
+{{extend 'layout.html'}}
+<BR><p>
+
+
+{{=form}}
+
+
+<h1>Listado de examenes finales proximos </h1>
+<br>
+
+<TABLE style="border: 1px solid white">
+    <tr>
+    <td  style="border: 1px solid white"> Materia</td>
+
+    </tr>
+
+        {{for examen in examenes: }}
+        	<tr>
+
+        
+        	   
+            <td><a href="{{=URL(f="parciales")}}"> {{=examen.nombre}} </td>    
+     
+        		
+
+        	
+        
+        </tr>
+    {{pass}}
+</TABLE>

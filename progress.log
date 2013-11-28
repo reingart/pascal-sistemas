@@ -1590,3 +1590,14 @@
 [2013-11-27 19:47:39] EDIT practica/controllers/docentes.py: 0
 [2013-11-27 19:47:48] EDIT practica/controllers/docentes.py: 0
 [2013-11-27 19:51:27] EDIT practica/views/docentes/parciales.html: 2
+[2013-11-27 21:45:29] EDIT practica/controllers/docentes.py: 18
+[2013-11-27 21:45:35] EDIT practica/controllers/docentes.py: 0
+[2013-11-27 21:46:04] EDIT practica/controllers/docentes.py: 0
+[2013-11-27 21:46:25] CREATE docentes/listaparciales.html: 0
+[2013-11-27 21:47:28] EDIT practica/views/docentes/listaparciales.html: 12
+[2013-11-27 21:47:56] EDIT practica/views/docentes/listaparciales.html: 0
+[2013-11-27 21:57:56] EDIT practica/views/docentes/listaparciales.html: 0
+[2013-11-27 21:58:31] EDIT practica/controllers/docentes.py: 0
+[2013-11-27 21:58:59] EDIT practica/models/menu.py: 0
+[2013-11-27 21:59:43] EDIT practica/controllers/docentes.py: 0
+[2013-11-27 22:00:08] EDIT practica/models/menu.py: 0

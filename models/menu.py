@@ -38,7 +38,7 @@ response.menu = [
     ]],
     [T('Docentes'), False, URL(request.application,'docentes','index'), [ 
        [T('Finales'), False, URL(request.application,'docentes','listamaterias'), []],
-       [T('Parciales'), False, URL(request.application,'docentes','parciales'), []],
+       [T('Parciales'), False, URL(request.application,'docentes','listaparciales'), []],
        [T('Apuntes'), False, URL(request.application,'docentes','apuntes'), []],
        [T('Recursos'), False, URL(request.application,'docentes','recursos'), []],
 

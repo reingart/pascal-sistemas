@@ -240,6 +240,8 @@ auth_event.id,auth_event.time_stamp,auth_event.client_ip,auth_event.user_id,auth
 208,2013-11-16 18:29:51,127.0.0.1,10,auth,User 10 Logged-out
 209,2013-11-21 18:39:40,127.0.0.1,1,auth,Usuario 1 sesión iniciada
 210,2013-11-25 19:26:27,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+211,2013-11-26 09:42:26,127.0.0.1,5,auth,Usuario 5 sesión iniciada
+212,2013-11-26 18:33:21,127.0.0.1,5,auth,Usuario 5 sesión iniciada
 
 
 TABLE auth_cas

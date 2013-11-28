@@ -1,11 +1,10 @@
 <TABLE style="border: 1px solid black">
-<TR>
+    <TR aling:'center'>
     <td>
-    {{=IMG(_src=URL(c='static', f='logo_plano.png'),_width='30px')}}
-    </td>
-    <td aling:center>
-    <h4><u>CONSTANCIA DE INSCRIPCIÓN A COMISIÓN<u></h4></td> 
-    </TR>
+    <h3>{{=IMG(_src=URL(c='static', f='logo_plano.png'),_width='30px')}}
+        <u>CONSTANCIA DE INSCRIPCIÓN A COMISIÓN</u></h3>
+    </td> 
+        </TR>
     <TR>
     <td> 
         Alumno/a: {{=alumno.nombre}}<br>
@@ -43,5 +42,8 @@
             Pendiente de Revisión
         	</td>
     	</TR>
-    {{pass}}        
+    {{pass}}
+    <br>        
+    <td><h6>*El certificado debe ser presentado y firmado por autoridades del Instituto para su validación</h6>
+    </td>
 </TABLE>

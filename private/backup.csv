@@ -284,33 +284,33 @@ secciones.seccionid,secciones.descripcion
 
 
 TABLE personal
-personal.personalid,personal.E_mail,personal.facebook,personal.nombre,personal.dni,personal.nacimiento,personal.domicilio,personal.localidad,personal.cp,personal.provincia,personal.telefono,personal.titulos,personal.otorgadospor,personal.fechaotorgamiento,personal.apto,personal.nombramiento,personal.cuil,personal.foto,personal.cargoid,personal.user_id
-2,reingart@gmail.com,mariano.reingart,Reingart Mariano,111111,<NULL>,Necochea 1132,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,pepe alberto,,nose,<NULL>,1234577,personal.foto.846577e02fd2b2a3.6d617269616e6f3.jpg,2,10
-3,hector@hotmail.com,hector.amarilla,Amarilla Hector,434343,<NULL>,Laprida 4567,gonzalez catan,1759,Buenos Aires,8568899,ingenieria en sistemas,Jose Rodriguez,,nose,<NULL>,8799999,personal.foto.bcbf221d67f4794c.616d6172696c6c6.jpg,2,<NULL>
-4,claudia@hotmail.com,mariaclaudia.vargas,Vargas Claudia,4545,<NULL>,San Juan 1122,gonzalez catan,1759,Buenos Aires,7899765,Contaduria,Juan Repeto,,nose,<NULL>,7876669,personal.foto.be7fa2dae636613a.323031332d30382.jpg,2,<NULL>
-5,angelbravo@gmail.com,angel.bravo,Bravo Angel,9897,<NULL>,Rivas 1450,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,Norberto Gonzalez,,nose,<NULL>,76969989,personal.foto.b86d8bebfddda1a5.627261766f2e6a7.jpg,1,<NULL>
-6,agui.elena@live.com,elen.aguirre,Aguirre Elena,57865,<NULL>,Sarmiento 1120,gonzalez catan,1759,Buenos Aires,6888899,Psicopedagoga,Norma Villanueva,,nose,<NULL>,545465456,personal.foto.b6d5339f19c52ba1.68656c656e61206.jpg,2,<NULL>
-7,luzmedina@hotmail.com,luz.pamela,Medina Luz,754645657,<NULL>,Claudia Sifre 1112,gonzalez catan,1759,Buenos Aires,436777,Analisis de sistemas,Angel Bravo,,nose,<NULL>,9679679,personal.foto.8ffc405571829758.37333538355f343.jpg,1,<NULL>
-8,josegonzalez@hotmail.com,jose.gonzalez,Gonzalez Jose,79588,<NULL>,Lasalle 456,gonzalez catan,1759,Buenos Aires,5474868787,Profesor matematica,Ruben Olmedo,,nose,<NULL>,7896969,personal.foto.8ea2bda6b501e36d.313233343933305.jpg,1,<NULL>
-9,roselli@hotmail.com,roselli.andrea,Andre Roselli,545353,<NULL>,Melian  567,gonzalez catan,1759,Buenos Aires,6576765757,Profesora de  ingles,Josefa Rosales,,nose,<NULL>,5476476475,personal.foto.8d0ccb6f6d8da835.3136323831335f3.jpg,2,<NULL>
-10,,,FLORES,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
-11,,,COLLOCA,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
-12,,,FERNANDEZ,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
-13,,,GUERRERO,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
-14,,,BOTTO,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
-15,,,RODRIGUEZ,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
-16,,,BORRAS,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
-17,,,KLEIMAN,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
-18,,,DIAZ TORRES,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
-19,,,MELGAREJO,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
-20,,,BENITEZ,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
-21,,,PETIT,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
-22,,,YANSEN,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
-23,,,RONDAN,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
-24,,,VERA,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
-25,,,FIELMARIN,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
-26,,,MARTINEZ,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
-27,,,CASTILLO,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
+personal.personalid,personal.E_mail,personal.facebook,personal.nombre,personal.dni,personal.nacimiento,personal.domicilio,personal.localidad,personal.cp,personal.provincia,personal.telefono,personal.titulos,personal.otorgadospor,personal.fechaotorgamiento,personal.apto,personal.nombramiento,personal.cuil,personal.foto,personal.cargoid
+2,reingart@gmail.com,mariano.reingart,Reingart Mariano,111111,<NULL>,Necochea 1132,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,pepe alberto,,nose,<NULL>,1234577,personal.foto.846577e02fd2b2a3.6d617269616e6f3.jpg,2
+3,hector@hotmail.com,hector.amarilla,Amarilla Hector,434343,<NULL>,Laprida 4567,gonzalez catan,1759,Buenos Aires,8568899,ingenieria en sistemas,Jose Rodriguez,,nose,<NULL>,8799999,personal.foto.bcbf221d67f4794c.616d6172696c6c6.jpg,2
+4,claudia@hotmail.com,mariaclaudia.vargas,Vargas Claudia,4545,<NULL>,San Juan 1122,gonzalez catan,1759,Buenos Aires,7899765,Contaduria,Juan Repeto,,nose,<NULL>,7876669,personal.foto.be7fa2dae636613a.323031332d30382.jpg,2
+5,angelbravo@gmail.com,angel.bravo,Bravo Angel,9897,<NULL>,Rivas 1450,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,Norberto Gonzalez,,nose,<NULL>,76969989,personal.foto.b86d8bebfddda1a5.627261766f2e6a7.jpg,1
+6,agui.elena@live.com,elen.aguirre,Aguirre Elena,57865,<NULL>,Sarmiento 1120,gonzalez catan,1759,Buenos Aires,6888899,Psicopedagoga,Norma Villanueva,,nose,<NULL>,545465456,personal.foto.b6d5339f19c52ba1.68656c656e61206.jpg,2
+7,luzmedina@hotmail.com,luz.pamela,Medina Luz,754645657,<NULL>,Claudia Sifre 1112,gonzalez catan,1759,Buenos Aires,436777,Analisis de sistemas,Angel Bravo,,nose,<NULL>,9679679,personal.foto.8ffc405571829758.37333538355f343.jpg,1
+8,josegonzalez@hotmail.com,jose.gonzalez,Gonzalez Jose,79588,<NULL>,Lasalle 456,gonzalez catan,1759,Buenos Aires,5474868787,Profesor matematica,Ruben Olmedo,,nose,<NULL>,7896969,personal.foto.8ea2bda6b501e36d.313233343933305.jpg,1
+9,roselli@hotmail.com,roselli.andrea,Andre Roselli,545353,<NULL>,Melian  567,gonzalez catan,1759,Buenos Aires,6576765757,Profesora de  ingles,Josefa Rosales,,nose,<NULL>,5476476475,personal.foto.8d0ccb6f6d8da835.3136323831335f3.jpg,2
+10,,,FLORES,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2
+11,,,COLLOCA,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2
+12,,,FERNANDEZ,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2
+13,,,GUERRERO,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2
+14,,,BOTTO,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2
+15,,,RODRIGUEZ,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2
+16,,,BORRAS,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2
+17,,,KLEIMAN,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2
+18,,,DIAZ TORRES,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2
+19,,,MELGAREJO,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2
+20,,,BENITEZ,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2
+21,,,PETIT,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2
+22,,,YANSEN,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2
+23,,,RONDAN,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2
+24,,,VERA,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2
+25,,,FIELMARIN,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2
+26,,,MARTINEZ,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2
+27,,,CASTILLO,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2
 
 
 TABLE niveles
@@ -670,25 +670,25 @@ calificaciones.calificacionid,calificaciones.descripcion,calificaciones.condicio
 
 
 TABLE correlativas
-correlativas.correlativaid,correlativas.materiaid,correlativas.materiacorrelativa,correlativas.planestudioid
-38,167,158,1
-39,167,159,1
-40,169,160,1
-41,170,161,1
-42,170,164,1
-43,171,163,1
-44,172,165,1
-45,173,163,1
-46,175,167,1
-47,175,168,1
-48,175,171,1
-49,176,170,1
-50,177,172,1
-51,178,170,1
-52,179,162,1
-53,179,171,1
-54,179,173,1
-55,179,170,1
+correlativas.correlativaid,correlativas.materia,correlativas.materiacorrelativa,correlativas.planestudioid
+38,<NULL>,158,1
+39,<NULL>,159,1
+40,<NULL>,160,1
+41,<NULL>,161,1
+42,<NULL>,164,1
+43,<NULL>,163,1
+44,<NULL>,165,1
+45,<NULL>,163,1
+46,<NULL>,167,1
+47,<NULL>,168,1
+48,<NULL>,171,1
+49,<NULL>,170,1
+50,<NULL>,172,1
+51,<NULL>,170,1
+52,<NULL>,162,1
+53,<NULL>,171,1
+54,<NULL>,173,1
+55,<NULL>,170,1
 
 
 TABLE horas
@@ -1399,6 +1399,15 @@ TABLE constancia_modelo
 
 
 TABLE constancia
+
+
+TABLE certificado
+
+
+TABLE tituloentramite
+
+
+TABLE documentacion
 
 
 TABLE tramites

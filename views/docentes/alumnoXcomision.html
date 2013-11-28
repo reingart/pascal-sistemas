@@ -16,6 +16,7 @@
 <tr>
 {{for alumno in alumnos: }}
 
+<tr>
 <td style="border: 1px solid white"><ul>
 
     <li>{{=A(alumno.dni)}} </li>
@@ -27,7 +28,7 @@
 </ul>
 </td>
 <td style="border: 1px solid white">
-   
+    <!--check recibe el nombre relacionado al id del alumno -->
     <center>{{=INPUT (_type="checkbox", _name="falta_%s" %(alumno.id))}}</center>
 
     </td>
@@ -47,7 +48,7 @@
 
 </table>
     <br></br>
-
+<a href="http://127.0.0.1:8000/practica/docentes/finales"> CLICK PARA PASAR NOTAS FINALES >>></a>
 
 <br></br>
 <INPUT type="submit" name="grabar" value="GUARDAR">

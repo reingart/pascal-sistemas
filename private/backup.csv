@@ -249,9 +249,9 @@ TABLE auth_cas
 
 TABLE alumnos
 alumnos.alumnoid,alumnos.nombre,alumnos.dni,alumnos.sexo,alumnos.fechanacimiento,alumnos.lugarnacimiento,alumnos.estadocivil,alumnos.nacionalidad,alumnos.direccion,alumnos.localidad,alumnos.cp,alumnos.telefono,alumnos.email1,alumnos.email2,alumnos.ingreso,alumnos.egreso,alumnos.foto,alumnos.user_id
-10,Lucas Gonzalez,34456756,Masculino,1992-09-23,Gonzalez Catan,Soltero,Argentino,Bordoy 1123,Gonzalez Catan,1759,5678-9876,luka.jesu12@gmail.com,luks_chizzo@hotmail.com,2011-03-14,<NULL>,alumnos.foto.90039a4598bcd7e8.313030323937335f.jpg,1
+10,Lucas Gonzalez,37144763,Masculino,1992-09-23,Gonzalez Catan,Soltero,Argentino,Bordoy 1123,Gonzalez Catan,1759,5678-9876,luka.jesu12@gmail.com,luks_chizzo@hotmail.com,2011-03-14,<NULL>,alumnos.foto.90039a4598bcd7e8.313030323937335f.jpg,1
 21,Sofia Ramirez,4534523,Femenina,1991-12-20,Gonzalez Catan,Soltera,Argentina,Dragones 3456,Gonzalez Catan,1759,4567345,sofia-ramirez91@hotmail.es,,2011-03-14,<NULL>,,4
-22,Yanina Alarcon,6753246,Femenina,1985-10-16,Gonzalez Catan,Casada,Argentina,Achupalla 2345,Gonzalez Catan,1759,456723,yani.alarcon@yahoo.com,,2011-03-14,<NULL>,,5
+22,Yanina Alarcon,31460842,Femenina,1984-11-13,Gonzalez Catan,Casada,Argentina,Monaco 6419,Gonzalez Catan,1759,456723,yani.alarcon@yahoo.com,,2011-03-14,<NULL>,,5
 23,Ivana Sabrina Santillo,37554250,Femenina,1993-04-08,lanus,soltera,argentina,totoral 365,gonzalez catan,1759,433584,yvanasantillo@yahoo.com,yvanasantillo1993@hotmail.com,2011-03-15,<NULL>,,6
 24,Ezequiel Villalba,36919250,Masculino,1992-07-13,Capital Federal,Soltero,Argentino,Santa Rosa 3723,laferrere,1757,4457-1645,ezevillalba92@gmail.com,,2011-03-07,<NULL>,,8
 25,Hector,23242526,Masculino,2010-02-07,bs as,casado,Argentino,loluu,catan,1212,15-2345-67,hector.calvo@gmail.com,,2011-03-07,<NULL>,,9
@@ -259,8 +259,8 @@ alumnos.alumnoid,alumnos.nombre,alumnos.dni,alumnos.sexo,alumnos.fechanacimiento
 
 TABLE cursos
 cursos.cursoid,cursos.nombre,cursos.codigo,cursos.nivel,cursos.anio,cursos.seccion,cursos.division,cursos.orden
-1,Primer año,1,3,2013,A,4,1
-2,Segundo año,2,3,2013,B,3,2
+1,Anual,1,3,2013,A,4,1
+2,Cuatrimestral,2,3,2013,B,3,2
 3,Tercer año,3,3,2013,C,3,3
 
 
@@ -285,7 +285,7 @@ secciones.seccionid,secciones.descripcion
 
 TABLE personal
 personal.personalid,personal.E_mail,personal.facebook,personal.nombre,personal.dni,personal.nacimiento,personal.domicilio,personal.localidad,personal.cp,personal.provincia,personal.telefono,personal.titulos,personal.otorgadospor,personal.fechaotorgamiento,personal.apto,personal.nombramiento,personal.cuil,personal.foto,personal.cargoid,personal.user_id
-2,reingart@gmail.com,mariano.reingart,REINGART MARIANO,111111,<NULL>,Necochea 1132,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,pepe alberto,,nose,<NULL>,1234577,personal.foto.846577e02fd2b2a3.6d617269616e6f3.jpg,2,10
+2,reingart@gmail.com,mariano.reingart,Reingart Mariano,111111,<NULL>,Necochea 1132,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,pepe alberto,,nose,<NULL>,1234577,personal.foto.846577e02fd2b2a3.6d617269616e6f3.jpg,2,10
 3,hector@hotmail.com,hector.amarilla,Amarilla Hector,434343,<NULL>,Laprida 4567,gonzalez catan,1759,Buenos Aires,8568899,ingenieria en sistemas,Jose Rodriguez,,nose,<NULL>,8799999,personal.foto.bcbf221d67f4794c.616d6172696c6c6.jpg,2,<NULL>
 4,claudia@hotmail.com,mariaclaudia.vargas,Vargas Claudia,4545,<NULL>,San Juan 1122,gonzalez catan,1759,Buenos Aires,7899765,Contaduria,Juan Repeto,,nose,<NULL>,7876669,personal.foto.be7fa2dae636613a.323031332d30382.jpg,2,<NULL>
 5,angelbravo@gmail.com,angel.bravo,Bravo Angel,9897,<NULL>,Rivas 1450,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,Norberto Gonzalez,,nose,<NULL>,76969989,personal.foto.b86d8bebfddda1a5.627261766f2e6a7.jpg,1,<NULL>
@@ -480,20 +480,20 @@ materias.materiaid,materias.codigo,materias.nombre,materias.resumen,materias.cur
 164,506,INTROD. SISTEMAS DE INFORMACION,<NULL>,1,3,0,False,<NULL>,False
 165,507,ARQUITECTURA DE COMPUTADORES,<NULL>,1,3,0,False,<NULL>,False
 166,508,EDI I,<NULL>,1,3,0,False,<NULL>,False
-167,509,PROBABILIDAD Y ESTADISTICA,<NULL>,2,3,0,False,<NULL>,False
-168,510,ANALISIS MATEMATICO II,<NULL>,2,3,0,False,<NULL>,False
-169,511,INGLES TECNICO II,<NULL>,2,3,0,False,<NULL>,False
-170,512,SISTEMAS DE INFORMACION I,<NULL>,2,3,0,False,<NULL>,False
-171,513,PROGRAMACION II,<NULL>,2,3,0,False,<NULL>,False
-172,514,SISTEMAS OPERATIVOS,<NULL>,2,3,0,False,<NULL>,False
-173,515,BASES DE DATOS,<NULL>,2,3,0,False,<NULL>,False
-174,516,EDI II,<NULL>,2,3,0,False,<NULL>,False
-175,517,INVESTIGACION OPERATIVA,<NULL>,3,3,0,False,<NULL>,False
-176,518,ECONOMIA EMPRESARIAL,<NULL>,3,3,0,False,<NULL>,False
-177,519,TELEINFORMATICA,<NULL>,3,3,0,False,<NULL>,False
-178,520,SISTEMAS DE INFORMACION II,<NULL>,3,3,0,False,<NULL>,False
-179,521,PRACTICA PROFESIONAL,<NULL>,3,3,0,False,<NULL>,False
-180,522,EDI III,<NULL>,3,3,0,False,<NULL>,False
+167,509,PROBABILIDAD Y ESTADISTICA,,1,3,0,False,,False
+168,510,ANALISIS MATEMATICO II,,1,3,0,False,,False
+169,511,INGLES TECNICO II,,1,3,0,False,,False
+170,512,SISTEMAS DE INFORMACION I,,1,3,0,False,,False
+171,513,PROGRAMACION II,,1,3,0,False,,False
+172,514,SISTEMAS OPERATIVOS,,1,3,0,False,,False
+173,515,BASES DE DATOS,,1,3,0,False,,False
+174,516,EDI II,,1,3,0,False,,False
+175,517,INVESTIGACION OPERATIVA,,1,3,0,False,,False
+176,518,ECONOMIA EMPRESARIAL,,1,3,0,False,,False
+177,519,TELEINFORMATICA,,1,3,0,False,,False
+178,520,SISTEMAS DE INFORMACION II,,1,3,0,False,,False
+179,521,PRACTICA PROFESIONAL,,1,3,0,False,,False
+180,522,EDI III,,1,3,0,False,,False
 
 
 TABLE divisiones
@@ -701,10 +701,10 @@ horas.horaid,horas.hora,horas.desde,horas.hasta,horas.nivelid
 
 TABLE inasistencias
 inasistencias.inasistenciaid,inasistencias.descripcion
-6,Completa
+6,Media falta
 7,Tarde
 8,Retiro Anticipado
-9,Media falta
+9,Completa
 
 
 TABLE periodos
@@ -738,9 +738,6 @@ TABLE notas
 notas.notaid,notas.alumnoid,notas.materiaid,notas.periodoid,notas.calificacionid,notas.nota,notas.descripcion,notas.establecimiento,notas.observaciones,notas.fecha,notas.libro,notas.folio,notas.alta,notas.web,notas.turno
 54,10,158,10,5,7.0,,I.S.T.B.P,,2011-12-14,1,2,2013-11-13,False,
 55,10,159,10,5,7.0,,I.S.T.B.P,,2011-12-15,1,2,2013-11-13,False,
-56,10,175,22,3,8.0,,I.S.T.B.P,,2013-07-10,1,2,2013-11-13,False,
-57,21,161,22,3,8.0,,I.S.T.B.P,,2013-07-17,1,2,2013-11-13,False,
-58,22,158,22,3,7.0,,I.S.T.B.P,,2013-07-10,1,2,2013-11-13,False,
 59,22,158,22,5,7.0,,I.S.T.B.P,,2011-12-15,1,2,2013-11-13,False,
 60,24,158,10,5,4.0,,I.S.T.B.P,,2013-11-20,1,2,2013-11-20,False,
 61,24,159,10,5,5.0,,I.S.T.B.P,,2013-11-20,1,2,2013-11-20,False,
@@ -1086,19 +1083,6 @@ notas.notaid,notas.alumnoid,notas.materiaid,notas.periodoid,notas.calificacionid
 
 
 TABLE parciales
-parciales.parcialid,parciales.alumnoid,parciales.materiaid,parciales.personalid,parciales.detalle,parciales.trimestre1,parciales.trimestre2,parciales.recuperatorio1,parciales.recuperatorio2,parciales.condicion,parciales.fecha
-1,24,<NULL>,<NULL>,<NULL>,0,0,<NULL>,<NULL>,<NULL>,2013-11-27
-2,25,<NULL>,<NULL>,<NULL>,0,0,<NULL>,<NULL>,<NULL>,2013-11-27
-3,23,<NULL>,<NULL>,<NULL>,0,0,<NULL>,<NULL>,<NULL>,2013-11-27
-4,10,<NULL>,<NULL>,<NULL>,0,0,<NULL>,<NULL>,<NULL>,2013-11-27
-5,21,<NULL>,<NULL>,<NULL>,0,0,<NULL>,<NULL>,<NULL>,2013-11-27
-6,22,<NULL>,<NULL>,<NULL>,0,0,<NULL>,<NULL>,<NULL>,2013-11-27
-7,24,<NULL>,<NULL>,<NULL>,0,0,<NULL>,<NULL>,<NULL>,2013-11-27
-8,25,<NULL>,<NULL>,<NULL>,0,0,<NULL>,<NULL>,<NULL>,2013-11-27
-9,23,<NULL>,<NULL>,<NULL>,0,0,<NULL>,<NULL>,<NULL>,2013-11-27
-10,10,<NULL>,<NULL>,<NULL>,0,0,<NULL>,<NULL>,<NULL>,2013-11-27
-11,21,<NULL>,<NULL>,<NULL>,0,0,<NULL>,<NULL>,<NULL>,2013-11-27
-12,22,<NULL>,<NULL>,<NULL>,0,0,<NULL>,<NULL>,<NULL>,2013-11-27
 
 
 TABLE titulos
@@ -1408,7 +1392,6 @@ TABLE inscripcionesdivision
 
 TABLE inscripcionesexamen
 inscripcionesexamen.inscripcionid,inscripcionesexamen.alumnoid,inscripcionesexamen.examenid,inscripcionesexamen.condicion,inscripcionesexamen.alta,inscripcionesexamen.baja,inscripcionesexamen.confirmar,inscripcionesexamen.valido
-1,10,46,Regular,2013-11-15,<NULL>,False,False
 2,22,46,Regular,2013-11-15,<NULL>,False,False
 3,23,46,Regular,2013-11-15,<NULL>,False,False
 4,24,46,Regular,2013-11-15,<NULL>,False,False
@@ -1419,15 +1402,6 @@ TABLE constancia_modelo
 
 
 TABLE constancia
-
-
-TABLE certificado
-
-
-TABLE tituloentramite
-
-
-TABLE documentacion
 
 
 TABLE tramites

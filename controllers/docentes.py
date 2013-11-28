@@ -34,61 +34,61 @@ def busqueda():
         # buscar el docente
         if form.vars.dni:
             q &= db.personal.dni == form.vars.dni
-        if form.vars.nombre:
+        if form.vars.nombre:    
             q &= db.personal.nombre.contains(form.vars.nombre)
         docente = db(q).select().first()
-
-
+        
+        
         if docente:
-            # encontrado, redirigo a cargar notas por
+            # encontrado, redirigo a cargar notas por 
             redirect(URL(f=index, vars={'personalid': docente.personal.personalid}))
-
+            
         else:
             response.flash = "docente no encontrado"
     #response.view = "generic.html"  # HACER una vista de verdad
     return dict (form = form)
-
+    
 #@auth.requires_login()
-#@auth.requires_membership(role='personal')
+#@auth.requires_membership(role='personal')     
 def index():
     if request.vars:
-        # si me pasan en la URL el docente, lo filtro
+        # si me pasan en la URL el docente, lo filtro 
         q=db.personal.personalid == request.vars['personalid']
 
         redirect(URL(f=ficha, vars={'personalid': docente.personal.personalid}))
 
-
+        
     else:
         # sino, busco todos los docentes
         q=db.personal.personalid>0
     docentes=db(q).select(orderby=db.personal.nombre)
     return{'docentes':docentes}
 
-#@auth.requires_login()
-#@auth.requires_membership(role='personal')
+#@auth.requires_login() 
+# requiere logue para ingresar
 
 # requiere que el logueado pertenezca al rol de personal  y/o doncente
-
+#@auth.requires_membership(role='personal')     
 def alumnoXcomision():
     comisionid=request.args[0]
     #inasistenciaid=request.args[0]
-
-
-    # si me pasan en la URL el docente, lo filtro
+   
+   
+    # si me pasan en la URL el docente, lo filtro 
     q = db.comisiones.comisionid == comisionid
     #q = db.inasistencias.inasistenciaid == inasistenciaid
-
+    
     # selecciono los alumnos que estan en la inscripcion en donde entre
     q &=db.alumnos.alumnoid == db.inscripcionescomision.alumnoid
-
-
+    
+    
     # Busca las comisiones que coincidan
     q &= db.comisiones.comisionid == db.inscripcionescomision.comisionid
 
     # Ejecuto el sql donde vienen los alumnos por comision
     alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre)
     inasistencias=db(db.inasistencias.id>0).select(db.inasistencias.ALL)
-
+     
      #cuando hago click en el boton guardar
     if request.vars.grabar=="GUARDAR":
 
@@ -101,14 +101,16 @@ def alumnoXcomision():
                 # obtenemos los valores de los campos en el formulario para este alumno
                 falta = request.vars["falta_%s" % alumno_id]
                 inasistencia_id = request.vars["tipo_%s" % alumno_id]
-
-                # si el valor es on  en el checkbox insertamos los datos del alumno en la tabla faltas.
+                
+                # si el valor es on  en el checkbox insertamos los datos del alumno en la tabla faltas. 
                 if falta == "on":
                     db.faltas.insert(alumnoid= alumno_id, comisionid= comision_id,inasistenciaid=inasistencia_id,
                     fecha=fecha,cantidad=1)
 
     return {'alumnos':alumnos, 'inasistencias':inasistencias}
+    
 
+ 
 
 
 
@@ -116,193 +118,51 @@ def horarios():
     q=db.horarios.horarioid>0
     horarios=db(q).select()
     return{'horarios':horarios}
-
+    
 #@auth.requires_login()
-#@auth.requires_membership(role='personal')
-
+#@auth.requires_membership(role='personal')  
+   
 def finales():
+   
+     
+    q=db.notas.notaid>0
+    notas=db(q).select()
+    if request.vars.GUARDAR=="GRABAR":
+            #en k tenemos el nombre del checkbox
+        fecha = request.vars.fecha
+            
+        alumno_id = int(name[name.index('_')+1:])
+        materia_id = comisionid
+        calificacion_id = 1
+        nota = request.vars.nota
+        libro = request.vars.libro
+        folio = request.vars.folio
+        turno = 1
+                
+                # si el valor es on  en el checkbox insertamos los datos del alumno en la tabla faltas. 
+               
+        db.notas.insert(alumnoid= alumno_id, materiaid= materia_id,calificacionid=calificacion_id,nota=nota, fecha=fecha,libro=libro,folio=folio, turno=turno) 
+                
+    alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre)
+    
 
-
-    q =db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
-
-
-    # Busca las comisiones que coincidan
-    q &= db.inscripcionesexamen.condicion == "Regular"
-    #q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
-    q &= db.inscripcionesexamen.examenid == db.examenes.examenid
-    q &= db.examenes.materiaid == db.materias.materiaid
-
-    alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre , distinct= True)
-    i=0
-    a=0
-    if request.vars.grabar=="GUARDAR":
-
-        for alumno in alumnos:
-
-            fecha= request.vars.fecha
-            alumno_id= alumno.alumnoid
-            materia_id = alumno.materiaid
-           # calificacion_id = 1
-            nota = int(request.vars.nota[i])
-            libro = request.vars.libro
-            folio =request.vars.folio
-            establecimiento= "I.S.T.B.P"
-            a=5
-
-            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,libro=libro,folio=folio, establecimiento=establecimiento, materiaid=materia_id)
-            i= i+1
-
-    comisiones = db(q).select(db.comisiones.ALL, distinct=True)
-
-    return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}
-
-#@auth.requires_login()
-#@auth.requires_membership(role='personal')
-def listamaterias():
-    form = SQLFORM.factory(
-        Field("Materia", "string"),
-        )
-    q= db.materias.id>0
-    if form.accepts(request.vars, session):
-        # buscar el docente
-
-        if form.vars.Materia:
-            q &= db.materias.nombre.contains(form.vars.Materia)
-        materia = db(q).select().first()
-
-
-        #if materia:
-            # encontrado, redirigo a cargar notas por
-           # redirect(URL(f=index, vars={'materiaid': materia.materias.materiaid}))
-
-       # else:
-          #  response.flash = "Materia no encontrado"
-
-    q = db.examenes.materiaid == db.materias.materiaid
-    q &= db.examenes.periodoid == db.periodos.periodoid
-
-
-    examenes=db(q).select(db.materias.nombre, db.periodos.descripcion, db.examenes.fecha,db.examenes.hora)
-
-
-    return dict (examenes= examenes,form=form)
-
-def libres():
-
-    q =db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
-
-
-    # Busca las comisiones que coincidan
-    q &= db.inscripcionesexamen.condicion == "Libre"
-    #q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
-    q &= db.inscripcionesexamen.examenid == db.examenes.examenid
-    q &= db.examenes.materiaid == db.materias.materiaid
-
-    alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre , distinct= True)
-    i=0
-    a=0
-    if request.vars.grabar=="GUARDAR":
-
-        for alumno in alumnos:
-
-            fecha= request.vars.fecha
-            alumno_id= alumno.alumnoid
-            #materia_id = alumno.materiaid
-           # calificacion_id = 1
-            nota = int(request.vars.nota[i])
-            libro = request.vars.libro
-            folio =request.vars.folio
-            establecimiento= "I.S.T.B.P"
-            a=5
-
-            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,libro=libro,folio=folio, establecimiento=establecimiento)
-            i= i+1
-
-    comisiones = db(q).select(db.comisiones.ALL, distinct=True)
-
-    return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}
-def elegir():
+    return{'notas':notas}
+    
+    
+def parciales():
     ""
     return{}
-#@auth.requires_login()
-#@auth.requires_membership(role='personal')
-def parciales():
-    #q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
-    q = db.personal.personalid == db.comisiones.personalid
-   # q &= db.examenes.materiaid == db.materias.materiaid
-
-    alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre , distinct= True)
-    i=0
-    a=0
-    if request.vars.GRABAR=="GUARDAR":
-
-        for alumno in alumnos:
-
-            fecha= request.vars.fecha
-            alumno_id= alumno.alumnoid
-            #materia_id = alumno.materiaid
-           # calificacion_id = 1
-           #nota = int(request.vars.nota[i])
-            #libro = request.vars.libro
-            #folio =request.vars.folio
-            #establecimiento= "I.S.T.B.P"
-            a=5
-
-            db.parciales.insert(fecha=fecha,alumnoid=alumno_id)
-            i= i+1
-
-
-    return{'alumnos':alumnos,'a':a}
-
-def listaparciales():
-    form = SQLFORM.factory(
-        Field("Materia", "string"),
-        )
-    q= db.materias.id>0
-    if form.accepts(request.vars, session):
-        # buscar el docente
-
-        if form.vars.Materia:
-            q &= db.materias.nombre.contains(form.vars.Materia)
-        materia = db(q).select().first()
-
-
-        #if materia:
-            # encontrado, redirigo a cargar notas por
-           # redirect(URL(f=index, vars={'materiaid': materia.materias.materiaid}))
-
-       # else:
-          #  response.flash = "Materia no encontrado"
-
-    q= db.inscripcionesexamen.condicion == "Regular"
-
-
-
-    examenes=db(q).select(db.materias.nombre, orderby=db.materias.nombre , distinct= True )
-
-
-    return dict (examenes= examenes,form=form)
-
-#@auth.requires_login()
-#@auth.requires_membership(role='personal')
+    
+    
 def apuntes():
-
-    if request.vars.GRABAR=="GUARDAR":
-        fecha = request.vars.fecha
-        descripcion =  request.vars.descripcion
-        db.apuntes.insert(fecha=fecha, descripcion=descripcion)
-
+    
+    ""
     return{}
-
-#@auth.requires_login()
-#@auth.requires_membership(role='personal')
+    
 def recursos():
     ""
     return{}
-
-
-#@auth.requires_login()
-#@auth.requires_membership(role='personal')
+    
 def unidad():
     ""
     return{}
@@ -332,6 +192,7 @@ def ficha():
 
     q &= db.horarios.horarioid == horarioid
     horarios = db(q).select(db.horarios.ALL)
+    
     q &= db.horas.horaid == horaid
     horas = db(q).select(db.horas.ALL, distinct=True)
 
@@ -433,6 +294,7 @@ def modificarfinal():
 
                     fields=['notaid','folio','libro','nota'],
 
+                    
 
 
                     labels={'notaid':'notaid', 'folio':'folio'},
@@ -447,7 +309,7 @@ def modificarfinal():
 
         #redirecciona al controlador principal
 
-        redirect(URL(r=request, f='listarfinales'))
+        redirect(URL(r=request, f='listarfinales'))                
 
     #retorna el formulario a la vista
 
@@ -464,14 +326,14 @@ def muestrafinal():
 
     #que hace que el campo 'nombre' no pueda ser modificado en la vista
 
-
+    
     db.notas.folio.writable = False
 
     db.notas.libro.writable = False
 
     db.notas.nota.writable = False
 
-
+   
     form = SQLFORM(db.notas, idfinalSeleccionado, writable=False,
 
                     fields=['folio','libro','nota'],
@@ -484,8 +346,8 @@ def muestrafinal():
 
         session.flash = "ADVERTENCIA: Los datos modificados se guardaran en la Base de Datos"
 
-        redirect(URL(r=request, f='listarfinales'))#redirecciona al controlador principal
+        redirect(URL(r=request, f='listarfinales'))#redirecciona al controlador principal                
 
-
+                    
 
     return dict(form=form)

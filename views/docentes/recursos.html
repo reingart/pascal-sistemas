@@ -1,7 +1,80 @@
 {{extend 'layout.html'}}
 <h1>Recursos didácticos</h1>
 <h1></h1>
-<TABLE style="border: 1px solid white">
+
+    
+<FORM ACTION = "" method="POST">
+    <h5><b>FECHA:</h5></b> <INPUT  type="text" NAME="fecha" VALUE={{=request.now.date()}}>
+
+   
+
+    <br></br>
+     
+
+
+<h2>Recursos</h2>
+<table style="border: 1px solid white">
+    <td style="border: 1px solid white"><center> codigo</center>  </td> <td style="border: 1px solid white"> <center>Recurso</center> </td> <td style="border: 1px solid white"> Disponible</td><center> <td>fecha reserva</td></center>
+
+{{for recurso in recursos: }}
+
+<tr>
+<td style="border: 1px solid white"><ul>
+
+    <li>{{=A(recurso.recursoid)}} </li>
+
+</ul></td>
+
+<td style="border: 1px solid white"><ul>
+    <li>{{=A(recurso.nombre)}} </li>
+</ul>
+</td>
+<td style="border: 1px solid white">
+    <!--check recibe el nombre relacionado al id del alumno -->
+    <center>{{=INPUT (_type="checkbox", _name="recurso_%s" %(recurso.id))}}</center>
+
+    </td>
+     <td style="border: 1px solid white">
+         <center> <select name="{{="tipo_%s" %(alumno.id)}}"> <option>Seleccionar</option>
+              {{for reserva in reservas: }}
+             <option value="{{= reserva.reservaidid }}">{{=(reserva.id)}}</option>
+			 {{pass}}
+             </select></center>
+     </td>
+
+
+
+    </tr>
+
+{{pass}}
+
+</table>
+    <br></br>
+
+<br></br>
+<INPUT type="submit" name="grabar" value="GUARDAR">
+</FORM>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <TABLE style="border: 1px solid white">
     
     <H1>Reservas de recursos</h1>
     <tr style="border: 1px solid white">

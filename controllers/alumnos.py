@@ -173,10 +173,12 @@ def examenes():
     q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
     q &= db.notas.alumnoid == db.alumnos.alumnoid
     q &= db.notas.materiaid == db.materias.materiaid
-    q &= db.materias.cursoid == db.cursos.cursoid
+    q &= db.comisiones.materiaid == db.materias.materiaid
+    q &= db.comisiones.divisionid == db.divisiones.divisionid
+    
     q &= db.notas.calificacionid == 5  # filtrar solo finales
     q &= db.notas.periodoid == db.periodos.periodoid
-    notas = db(q).select(db.alumnos.nombre, db.materias.nombre, db.notas.nota, db.notas.fecha, db.periodos.descripcion, db.cursos.nombre)
+    notas = db(q).select(db.alumnos.nombre, db.materias.nombre, db.notas.nota, db.notas.fecha, db.periodos.descripcion, db.divisiones.descripcion)
     
     return dict (notas= notas, alumno=alumno)
   
@@ -304,11 +306,12 @@ def parciales():
     q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
     q &= db.notas.alumnoid == db.alumnos.alumnoid
     q &= db.notas.materiaid == db.materias.materiaid
-    q &= db.materias.cursoid == db.cursos.cursoid
+    q &= db.comisiones.materiaid == db.materias.materiaid
+    q &= db.comisiones.divisionid == db.divisiones.divisionid
     q &= db.notas.calificacionid == 3  # filtrar solo cuatrimestrales
     q &= db.notas.periodoid == db.periodos.periodoid     # HACER: filtrar otros campos
     notas = db(q).select(db.alumnos.nombre, db.materias.nombre, 
-    db.notas.nota, db.periodos.descripcion, db.notas.fecha, db.cursos.nombre)
+    db.notas.nota, db.periodos.descripcion, db.notas.fecha, db.divisiones.descripcion)
     
     return dict (notas= notas, alumno=alumno)
     
@@ -326,15 +329,17 @@ def inscripciones():
         fecha = request.now.date()
         ok = 0
         for _name,_value in request.vars.items():
-            if _name.startswith ("comision_"):
+            if _name.startswith ("comision_") :
                 comision_id = int(_name[_name.index('_')+1:])
+                condicion_id = request.vars.condicion
                 # si el valor es on  en el checkbox insertamos los datos en inscripcion a examenes. 
-                if _value == "on":                    
-                    db.inscripcioncomision.insert(alumnoid= alumno.alumnoid, 
+                if _value == "on": 
+                                        
+                        db.inscripcionescomision.insert(alumnoid= alumno.alumnoid, 
                         comisionid= comision_id,
                         alta=fecha,
-                        condicion="Regular")
-                    ok += 1 #creo contador de comisiones insertados/seleccionados por el alumno
+                        condicion=condicion_id)
+                        ok += 1 #creo contador de comisiones insertados/seleccionados por el alumno
                     
         if ok:
               response.flash= "Usted se a inscripto a %d comisiones!" % ok

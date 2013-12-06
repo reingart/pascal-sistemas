@@ -6,36 +6,37 @@
 <form method="POST">
 <br>
   
-
-<TABLE style="border: 1px solid white">
+<div id= "div_centrado">
+<TABLE id= "tabla">
 <TR>
-    <TD style="border: 1px solid white"><center><b> CODIGO </b></center> </TD>
-    <TD style="border: 1px solid white"><center><b> MATERIA </b></center> </TD>
-    <TD style="border: 1px solid white"><center><b> DOCENTE </b></center> </TD>
-    <TD style="border: 1px solid white"> <center><b> CONDICIÓN </b></center> </TD>
-    <TD style="border: 1px solid white"> <center><b>ESTADO</b></center> </TD>
+    <TD id= "head"> CÓDIGO  </TD>
+    <TD id= "head"> MATERIA </TD>
+    <TD id= "head"> DOCENTE  </TD>
+    <TD id= "head"> CONDICIÓN  </TD>
+    <TD id= "head"> ESTADO </TD>
 <TR>
     
 {{for c in comision:}}
     
-    <td style="border: 1px solid white">
+    <td id= "td">
     {{=c.materias.materiaid}}
     </td>
-    <td style="border: 1px solid white"><input type="checkbox" name="{{="comision_%s" % c.comisiones.comisionid}}" {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} > 
+    <td id= "td">
+    <input type="checkbox" name="{{="comision_%s" % c.comisiones.comisionid}}" {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} > 
     
     {{=c.materias.nombre}}
     </td>
-    <td style="border: 1px solid white">
+    <td id= "td">
     {{=c.personal.nombre}}
     </td>
-    <td style="border: 1px solid white">
+    <td id= "td">
         <select name="condicion" {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} or 
              {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}}> 
              <option value="regular" > Regular
 			 <option value="libre" > Libre
              </select>
     </td>
-    <td style="border: 1px solid white" >
+    <td id= "td">
     <font color="yellow"> 
         {{='Ya inscripto, pendiente de revision' if (c.comisiones.comisionid in inscripciones) else ''}}
     </font>
@@ -53,10 +54,12 @@
     {{pass}}
     {{pass}}
 </TABLE>
+    </div>
 <br>
+    <center>
     <a href="index.html"><input type=button value="Volver" ></a>
     <input type="submit" name="guardar" value="Guardar" > 
     <input type="reset" value="Cancelar">
     <a href="constancia_comision.html"><input type=button value="Imprimir Constancia" ></a>
-	
+    </center>
 </form>

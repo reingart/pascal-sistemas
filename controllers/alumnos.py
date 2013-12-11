@@ -138,6 +138,8 @@ def horarios_comision():
     
 def inasistencias():   #lista de inasistencias del alumno
     #buscar el alumno y compararlo con el logueado
+    fecha= request.now.date() #guardo la fecha actual 
+    fecha_actual= fecha.strftime("%d/%m/%Y") #cambio el formato de fecha a latino-americano
     q = db.alumnos.user_id== auth.user_id
     #traemos el alumno para notificarlo en la vista
     alumno= db(q).select().first()
@@ -158,7 +160,7 @@ def inasistencias():   #lista de inasistencias del alumno
     total= db(q).select(db.faltas.cantidad.sum().with_alias("suma")).first()
     
     
-    return dict (falta=falta, alumno=alumno, total=total)
+    return dict (falta=falta, alumno=alumno, total=total, fecha_actual= fecha_actual)
     
 @auth.requires_login() #requiere que haya un usuario logeado
 @auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
@@ -322,16 +324,19 @@ def inscripciones():
     alumno= db(q).select().first() 
     # guarda en una variable los datos para poder ser utilizados y tmb la envio a la vista
     
-     
+    
      #cuando hago click en el boton guardar
     if request.vars.guardar=="Guardar":
             #en k tenemos el nombre del checkbox
         fecha = request.now.date()
         ok = 0
+        
         for _name,_value in request.vars.items():
-            if _name.startswith ("comision_") :
+            if _name.startswith ("comision_"):
                 comision_id = int(_name[_name.index('_')+1:])
-                condicion_id = request.vars.condicion
+                condicion_id= request.vars["condicion"]
+                    
+                
                 # si el valor es on  en el checkbox insertamos los datos en inscripcion a examenes. 
                 if _value == "on": 
                                         

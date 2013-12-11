@@ -1,6 +1,6 @@
 {{extend 'layout.html'}}
 
-<h2> Fecha: {{=request.now.date()}}</h2>
+<h2> Fecha: {{=fecha_actual}}</h2>
 <h1> <center><u> Consulta de Inasistencias</u> </center></h1>
 
 <div id= "div_centrado">    
@@ -28,7 +28,7 @@
         	 {{ =falta.inasistencias.descripcion}}
               </TD>
              <TD id= "td">
-             {{ =falta.faltas.fecha}}
+                 {{ =falta.faltas.fecha.strftime("%d/%m/%Y")}}
              </TD>
         {{pass}}
     		 </TR>

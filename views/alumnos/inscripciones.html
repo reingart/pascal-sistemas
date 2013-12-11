@@ -29,12 +29,15 @@
     <td id= "td">
     {{=c.personal.nombre}}
     </td>
-    <td id= "td">
-        <select name="condicion" {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} or 
-             {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}}> 
-             <option value="regular" > Regular
-			 <option value="libre" > Libre
-             </select>
+    <td>
+    <select name="condicion" {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}}>
+    <option> </option>
+	<option>Regular</option>
+	<option>Libre</option>
+	
+	</select>
+
+            
     </td>
     <td id= "td">
     <font color="yellow"> 
@@ -50,8 +53,6 @@
     </font>
     </td>
     </TR>
-    
-    {{pass}}
     {{pass}}
 </TABLE>
     </div>

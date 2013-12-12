@@ -1,51 +1,49 @@
 {{extend 'layout.html'}}
 
-<h2> Fecha: {{=fecha_actual}}</h2>
+<h2> Fecha: {{=request.now.date()}}</h2>
+<h2> Alumno/a: {{=alumno.nombre}}</h2>
 <h1> <center><u> Consulta de Inasistencias</u> </center></h1>
 
-<div id= "div_centrado">    
-<TABLE id= "tabla">
-    <TR>
-     <TD id= "head"> MATERIAS</TD>
-    <TD id= "head"> CANTIDAD</TD> 
-     <TD id= "head"> DESCRIPCIÓN</TD>
-    <TD id= "head"> FECHA </TD> 
+    
+<TABLE style="border: 1px solid white">
+    <TR style="border: 1px solid white">
+     <TD style="border: 1px solid white"> <B>Materias</B></TD>
+    <TD style="border: 1px solid white"> <B>Cantidad</B></TD> 
+     <TD style="border: 1px solid white"> <B>Descripcion</B></TD>
+    <TD style="border: 1px solid white"> <B>Fecha</B> </TD> 
     </TR>
      
      {{ f=falta}}
         
         {{for falta in f:}}
-            <TR>
+            <TR style="border: 1px solid white">
         	
-        	<TD id= "td"> 
+        	<TD style="border: 1px solid white"> 
         	 {{ =falta.comisiones.nombre}}
         	</TD>
-            <TD id= "td">
+            <TD style="border: 1px solid white">
              {{ =falta.faltas.cantidad}}
          
              </TD>
-        	<TD id= "td"> 
+        	<TD style="border: 1px solid white"> 
         	 {{ =falta.inasistencias.descripcion}}
               </TD>
-             <TD id= "td">
-                 {{ =falta.faltas.fecha.strftime("%d/%m/%Y")}}
+             <TD style="border: 1px solid white">
+             {{ =falta.faltas.fecha}}
              </TD>
         {{pass}}
     		 </TR>
     		 <TR>
-    		 <TD id= "td">
+    		 <TD style="border: 1px solid white">
              TOTAL
              </TD>
-    		 <TD id= "td">
+    		 <TD style="border: 1px solid white">
                  {{ =total['suma']}}
              </TD>
     </TR>
     
     </TABLE>
-</div>
     <br>
 <form>
-    <center>
     <a href="index.html"><input type=button value="Volver" ></a>
-    </center>
 </form>

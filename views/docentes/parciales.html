@@ -1,7 +1,7 @@
 {{extend 'layout.html'}}
-
+Fecha: {{=request.now.date()}}
+<br>
 <FORM ACTION="">
-<td>Fecha: <INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}></td>
 
 <TABLE style="border: 1px solid white">
     
@@ -16,13 +16,8 @@
     <td style="border: 1px solid white"><B><center>Condicion</B></td>
     
     </tr>
-    
-   
-    
     {{for alumno in alumnos: }}
 
-    <tr>
-    
     <tr style="border: 1px solid white">
     <td style="border: 1px solid white"><center>{{=alumno.dni}}</center></B></td>
     <td style="border: 1px solid white"><center>{{=alumno.nombre}}</B></td>
@@ -34,7 +29,7 @@
     
     </tr>
     {{pass}}
-    <tr style="border: 1px solid white">
+    
     
     </tr>
 </table>

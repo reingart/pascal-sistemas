@@ -43,11 +43,7 @@ response.menu = [
        [T('Recursos'), False, URL(request.application,'docentes','recursos'), []],
 
     ]],
-    [T('Alumnos'), False, URL(request.application,'alumnos','index'), [
-        [T('Ingresar'), False, URL(request.application,'alumnos','index'), []],
-        
-    ]],
-
+    
 
 
     [T('Tramites'), False, URL(request.application,'tramites','index'), [
@@ -66,6 +62,15 @@ response.menu = [
     ]],
     [T('Inserción Laboral'), False, URL(request.application,'laboral','index'), []],
     [T('Admin'), False, "https://www.institutopascal.edu.ar/admin", []],
+    
+    [T('CAMPUS WEB'), False, URL(request.application,'default','index'), [
+        [T('Alumnos'), False, URL(request.application,'default','index'), [
+        [T('Ingresar'), False, URL(request.application,'alumnos','index'), []],
+        [T('Manual de usuario'), False, URL(request.application,'default','index'), []],
+     ]],
+        
+    ]],   
+    
     ]
 
 response.menu_flisol = [T('FLISOL 2010'), False, URL("flisol2010",'default','index'), []]

@@ -724,3 +724,6 @@
 [2013-12-11 17:04:14] EDIT pascal2/controllers/alumnos.py: 0
 [2013-12-11 17:04:25] EDIT pascal2/controllers/alumnos.py: 0
 [2013-12-11 17:19:40] EDIT prueba/views/layout.html: 0
+[2013-12-13 19:04:27] EDIT prueba/views/alumnos/archivos.html: 0
+[2013-12-13 19:05:05] EDIT prueba/views/alumnos/busqueda.html: 0
+[2013-12-13 19:06:06] EDIT prueba/views/alumnos/constancia_comision.html: 0

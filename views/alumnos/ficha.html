@@ -12,37 +12,35 @@
 <h2><u> Ingreso:</u> {{=alumno.alumnos.ingreso}} </h2>
 <h2><u> Carrera:</u> {{=alumno.carreras.nombre}}</h2>
 <br>
-<h2><center><u> Inscripto a las siguientes materias:</u></center> </h2>
-<div id= "div_centrado">
-<TABLE id= "tabla">
-    <TR>
-     <TD id= "head"> MATERIAS</TD>
-    <TD id= "head"> FECHA DE ALTA</TD> 
-     <TD id= "head"> AÑO</TD>
-    <TD id= "head"> CARRERA </TD> 
+<h2><u> Inscripto a las siguientes materias:</u> </h2>
+<TABLE style="border: 1px solid white">
+    <TR style="border: 1px solid white">
+     <TD style="border: 1px solid white"> <B>Materias</B></TD>
+    <TD style="border: 1px solid white"> <B>Fecha de Alta</B></TD> 
+     <TD style="border: 1px solid white"> <B>Año</B></TD>
+    <TD style="border: 1px solid white"> <B>Carrera</B> </TD> 
     </TR>
      
      {{ d=dato}}
         
         {{for datos in d:}}
-            <TR>
-        	<TD id= "td"> 
+            <TR style="border: 1px solid white">
+        	<TD style="border: 1px solid white"> 
         	 {{ =datos.comisiones.nombre}}
              </TD>
-        	<TD id= "td"> 
+        	<TD style="border: 1px solid white"> 
         	 {{ =datos.inscripcionescomision.alta}}
         	</TD>
-            <TD id= "td">
+            <TD style="border: 1px solid white">
              {{ =datos.ciclos.anio}}
              </TD>
-        	<TD id= "td"> 
+        	<TD style="border: 1px solid white"> 
         	 {{ =datos.carreras.nombre}}  
              </TD>
         {{pass}}
     		 </TR>
     </TABLE>
-</div>
 <br>
 <form>
-    <center><a href="index.html"><input type=button value="Volver" ></a></center>
+    <a href="index.html"><input type=button value="Volver" ></a>
 </form>

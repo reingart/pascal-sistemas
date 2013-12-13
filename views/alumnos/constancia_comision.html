@@ -1,30 +1,29 @@
 <TABLE style="border: 1px solid black">
-    <TR aling:'center'>
+<TR>
     <td>
-    <h4>{{=IMG(_src=URL(c='static', f='logo_plano.png'),_width='30px')}}
-        <u>CONSTANCIA DE INSCRIPCIÓN A COMISIÓN</u></h4>
-    </td> 
-        </TR>
+    {{=IMG(_src=URL(c='static', f='logo_plano.png'),_width='30px')}}
+    </td>
+    <td aling:center>
+    <h4><u>CONSTANCIA DE INSCRIPCIÓN A COMISIÓN<u></h4></td> 
+    </TR>
     <TR>
-    <td><h4> 
+    <td> 
         Alumno/a: {{=alumno.nombre}}<br>
 		DNI: {{=alumno.dni}}<br>
 		Carrera: {{=carrera.nombre}}<br>
 		Fecha: {{=request.now.date()}}
-        </h4></td>
+        </td>
     </TR>
     <TR>
-        <h5>
+        
     	<td style="border: 1px solid black">MATERIA</td>
     	<td style="border: 1px solid black">CÓDIGO</td>
     	<td style="border: 1px solid black">DIVISIÓN</td>
     	<td style="border: 1px solid black">PERÍODO</td>
     	<td style="border: 1px solid black">ESTADO</td>
-        </h5>
     </TR>
     
         <TR>
-        <h5>
         {{for x in inscripcion:}}
         	
         	
@@ -43,10 +42,6 @@
         	<td style="border: 1px solid black">
             Pendiente de Revisión
         	</td>
-            </h5>
     	</TR>
-    {{pass}}
-    <br>        
-    <td><h6>*El certificado debe ser presentado y firmado por autoridades del Instituto para su validación</h6>
-    </td>
+    {{pass}}        
 </TABLE>

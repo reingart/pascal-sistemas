@@ -1,26 +1,27 @@
 {{extend 'layout.html'}}
 <h2> Fecha: {{=request.now.date()}}</h2>
-
+<h2> Alumno/a: {{=alumno.nombre}}
 <h1> <center><u> Horarios de Comision</u> </center></h1>
     
 
-<div id= "div_centrado">
-<TABLE id= "tabla"> 
+
+<TABLE style="border: 1px solid white"> 
     
-    <tr> 
+    <tr style="border: 1px solid white"> 
         
-        <td id= "head"> DÍAS </td>
-        <td id= "head"> HORARIOS </td>
-        <td id= "head"> MATERIAS </td>
-        <td id= "head"> DOCENTE </td>
-        <td id= "head"> DIVISIÓN </td>
+        
+        <td style="border: 1px solid white"> DIAS </td>
+        <td style="border: 1px solid white"> HORARIOS </td>
+        <td style="border: 1px solid white"> MATERIAS </td>
+        <td style="border: 1px solid white"> DOCENTE </td>
+        <td style="border: 1px solid white"> DIVISION </td>
     </tr>
     {{for hora in horarios:}}
          <tr>
-         <td id= "td">      
+         <td style="border: 1px solid white">      
              {{=hora.horarios.dia}}              
          </td>
-         <td id= "td">      
+         <td style="border: 1px solid white">      
              {{=hora.horas.desde}}
              hasta
              <br>
@@ -28,21 +29,20 @@
              hs.                
          </td>
          
-         <td id= "td">      
+         <td style="border: 1px solid white">      
              {{=hora.materias.nombre}}              
          </td>
-         <td id= "td">      
+         <td style="border: 1px solid white">      
              {{=hora.personal.nombre}}              
          </td>
-         <td id= "td">      
+         <td style="border: 1px solid white">      
              {{=hora.divisiones.descripcion}}              
          </td>
     </tr>
     {{pass}}
     </TABLE>
-</div>
 <br>
 <form>
-    <center><a href="index.html"><input type=button value="Volver" ></a>
-    <a href="horarios.html"><input type=button value="Horario General" ></a></center>
+    <a href="index.html"><input type=button value="Volver" ></a>
+    <a href="horarios.html"><input type=button value="Horario General" ></a>
 </form>

@@ -1,49 +1,54 @@
 {{extend 'layout.html'}}
 
-<h2> Fecha: {{=request.now.date()}}</h2>
-<h2> Alumno/a: {{=alumno.nombre}}</h2>
+<h2> Fecha: {{=fecha_actual}} </h2>
+
 <h1> <center><u> Consulta de Inasistencias</u> </center></h1>
 
     
-<TABLE style="border: 1px solid white">
-    <TR style="border: 1px solid white">
-     <TD style="border: 1px solid white"> <B>Materias</B></TD>
-    <TD style="border: 1px solid white"> <B>Cantidad</B></TD> 
-     <TD style="border: 1px solid white"> <B>Descripcion</B></TD>
-    <TD style="border: 1px solid white"> <B>Fecha</B> </TD> 
+<div id= "div_centrado">
+<TABLE id= "tabla">
+	<TR>
+	<TD id= "head"> MATERIAS</TD>
+	<TD id= "head"> CANTIDAD</TD>
+	<TD id= "head"> DESCRIPCIÓN</TD>
+	<TD id= "head"> FECHA </TD>
     </TR>
-     
-     {{ f=falta}}
+
+	
+	{{ f=falta}}
+		
+		        
         
         {{for falta in f:}}
-            <TR style="border: 1px solid white">
+            <TR>
         	
-        	<TD style="border: 1px solid white"> 
+        	<TD id= "td">
         	 {{ =falta.comisiones.nombre}}
         	</TD>
-            <TD style="border: 1px solid white">
+            <TD id= "td">
              {{ =falta.faltas.cantidad}}
          
              </TD>
-        	<TD style="border: 1px solid white"> 
+        	<TD id= "td"> 
         	 {{ =falta.inasistencias.descripcion}}
               </TD>
-             <TD style="border: 1px solid white">
+             <TD id= "td">
              {{ =falta.faltas.fecha}}
              </TD>
         {{pass}}
     		 </TR>
     		 <TR>
-    		 <TD style="border: 1px solid white">
+    		 <TD id= "td">
              TOTAL
              </TD>
-    		 <TD style="border: 1px solid white">
+    		 <TD id= "td">
                  {{ =total['suma']}}
              </TD>
     </TR>
     
     </TABLE>
+</div>
     <br>
 <form>
-    <a href="index.html"><input type=button value="Volver" ></a>
+    <center><a href="index.html"><input type=button value="Volver" ></a></center>
 </form>

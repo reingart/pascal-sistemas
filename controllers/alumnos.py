@@ -137,6 +137,9 @@ def horarios_comision():
 @auth.requires_membership(role='Alumnos')    #requiere que haya un usuario logeado e integre el grupo alumnos
     
 def inasistencias():   #lista de inasistencias del alumno
+    
+    fecha= request.now.date() #guardo la fecha actual
+    fecha_actual= fecha.strftime("%d/%m/%Y") #cambio el formato de fecha a latino-americano
     #buscar el alumno y compararlo con el logueado
     q = db.alumnos.user_id== auth.user_id
     #traemos el alumno para notificarlo en la vista
@@ -158,7 +161,7 @@ def inasistencias():   #lista de inasistencias del alumno
     total= db(q).select(db.faltas.cantidad.sum().with_alias("suma")).first()
     
     
-    return dict (falta=falta, alumno=alumno, total=total)
+    return dict (falta=falta, alumno=alumno, total=total, fecha_actual= fecha_actual)
     
 @auth.requires_login() #requiere que haya un usuario logeado
 @auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos

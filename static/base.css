@@ -652,3 +652,9 @@ html:not([lang*=""])  div.web2py-menu-center ul.web2py-menu li a:hover {
 {
     height: 1%;
 }
+
+
+#div_centrado {width: 80%; margin-left: auto; margin-right: auto}
+#tabla {border: 1px solid white; text-align: center}
+#head {border: 1px solid white; text-align: center; font-weight: bold; color: white}
+#td {border: 1px solid white; text-align: center; color: white}

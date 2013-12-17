@@ -2,19 +2,10 @@
 <table style="border: 1px solid white">
 
 <td  style="border: 1px solid white">
-<h1>Ficha del docente: {{=docente.nombre}}</h1>
-</td>
-
-<br>
-
-<tr>
-<td style="border: 1px solid white">
-<center>{{=IMG(_src=URL(c='default',f='download',args=docente.foto))}}</center>
-<br>
-<h5>E-mail: {{=docente.E_mail}} </h5>
-<h5> Facebook: {{=docente.facebook}} </h5>
-Titulos: {{=docente.titulos}}<br>
-
+<center>{{=IMG(_src=URL(c='default',f='download',args=fila.foto))}}</center>
+<h1>Nombre: {{=fila.nombre}}</h1>
+<h1>Facebook: {{=fila.facebook}}</h1>
+<h1> E_mail: {{=fila.E_mail}} </h1>
 <br>
 <BR>
 
@@ -23,37 +14,5 @@ Titulos: {{=docente.titulos}}<br>
 <br>
 {{for comision in comisiones:}}
 
-    <li> <a href="{{=URL(f="alumnoXcomision", args=[comision.comisionid])}}">{{=comision.nombre}}</a></li>
+    <li> <a href="{{=URL(f="alumnoXcomision", args=[comision.comisionid])}}">{{=comision.nombre}}</li>
 {{pass}}
-
-</td>
-
-</tr>
-
-<br>
-<tr>
-<td style="border: 1px solid white">
-<center><b><u><h3> Horario en que dicta las materias</h3></u></b></center>
-
-
-<tr style="border: 1px solid white">
-
-<td style="border: 1px solid white">
-{{for comision in comisiones:}}
-    <li><b></b>{{=horario.dia}} <b>Materia: </b>{{=comision.nombre}}</li>
-{{pass}}
-
-
-</td>
-
-
-</tr>
-
-
-</td>
-
-</table>
-<br>
-
-
-<a href="{{=URL(f="index")}}">VOLVER</a>

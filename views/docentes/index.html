@@ -2,18 +2,14 @@
 
 
 
-<table style="border: 1px solid white">
-<td style="border: 1px solid white"><ul>
-    {{for docente in docentes: }}
-    <li>{{=A(docente.nombre,_href=URL(f='ficha',args=[docente.personalid]))}} </li>
-
-    {{pass}}
-</ul> 
-</td>
-</table>
 
 
-
+<br></br>
+<li>
+<a href="http://127.0.0.1:8000/pascal2/docentes/ficha">Ficha</a>
+    
+</li>
+muestra los datos de contacto del docente y las materias que dicta con la posibilidad de tomar inasistencias
 <br></br>
 <li>
     <a href="http://127.0.0.1:8000/practica/docentes/listamaterias">Examenes finales</a>
@@ -23,7 +19,7 @@ carga las notas finales de los alumnos
 <br></br>
 
 <li>
-    <a  href="http://127.0.0.1:8000/practica/docentes/parciales">Examenes parciales</a>
+    <a  href="http://127.0.0.1:8000/pascal2/docentes/listaparciales">Examenes parciales</a>
 </li>
 carga de notas parciales de los alumnos
 <br></br>

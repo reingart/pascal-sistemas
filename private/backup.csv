@@ -8,6 +8,14 @@ auth_user.id,auth_user.first_name,auth_user.last_name,auth_user.email,auth_user.
 9,hector,calvo,hector2251@yahoo.com.ar,sha512$9a95abaa420aa899$e36eb2238514bcf2c792211a6f865591c7e6781fae7b9f2aa72c3e67a1b1ff91c5d9a6ff61ab1dea95402db44f96ea34823cabbeff1221292e357dc5e5e488a6,,,
 10,Mariano,Reingart,reingart@gmail.com,sha512$83b6570097bc8502$6499af312f1a2fe90526552286ce015c077f66e31e3c8783b0f08a806197d2cb9d4dcb6554e88782d2d65dd859748e0e8394d163c382d442fb9ccfe0c6ace8e9,,,
 11,angel,bravo,angel@gmail.com,sha512$afcfd728cdd6722d$43b4f8c80f9d217b547869b5eadb5a2120a37608c574f0536649c948259f0d700a4f77bc03cba3ef4f10dfa2ba9430a1215f7d331d58b09f3b90ac69a9707435,,,
+12,luz,medina,luz@gmail.com,sha512$9df5facf3c70dcd1$a7ac989efd435f97aac466097b0320a24e93874d73f96dd3c969a420e39fcf454a18e577d0fb838eba713092d4595d4191232f1e178f7dccda18f15a71dbd872,,,
+13,jose,gonzalez,jose@gmail.com,sha512$b65c2293faf6293a$b8dd1ffab8c82694cb3ffc809207c6a9ed52b6756522630f2a00965d6dd39a6caf43370789cb3f69f5fadf06b3d752dfd7c93f842945c9df8ff3bb7bfe4a0dfb,,,
+14,hector,amarilla,amarilla@gmail.com,sha512$b897dbfd883fef10$70bab4bab5bff42d63b4519149b6c8519b63ce050acddf586386767d33adf266fc9e6d127ade06878273ebba5cc1b075efdf428707bd70da7d05480899c83bf0,,,
+15,claudia,vargas,vargas@gmail.com,sha512$850c7713d6eced0d$bcf930107fe8f22fcc401faa98bae1b65aa3f56554f8fe6ea9458221099bbfc6cff115bdaffc919fea74c4a1f5842dd40d9988d454406cf8bdbeabfa7f2f8b85,,,
+16,elena,aguirre,aguirre@gmail.com,sha512$a7aea8e7ebf4dc15$8e135fc710b7aaa0138bc0d99bf5c50fc422621450002aced7d6c5b9566d69366dd1a60890baa3ccc5186332eb865bdd92ad550d206f90ecad12b4de3a21fd8a,,,
+17,andrea,roselli,roselli@gmail.com,sha512$b9f3ab8bf60b03fe$38177cef1f42aa1734979ecd29469d4007de8fcfa192d81d5d0b1baaf2fa24b1a304d4b7ee4d117bd1772283c877dd4a16f4297e37063b816ba16a2dae298df2,,,
+18,mirta,melgarejo,melgarejo@gmail.com,sha512$88c5a96c0faf0e17$e30ab648030ad52a73d5641dec5399e8d9cc52234543bf210e07e00086d58e191b93957d5ac8239170e8790ed68be32d28c1f8b2f40b2f535159be6390de22d3,,,
+19,mariano,reingart,reingart_mariano@gmail.com,sha512$9441c283caf75914$82032b4262f18c8fd07fdad128110e2b5cf48eef18bf75ff453ff3dea61c8031edc202dca5eb2310088994b89bf9aabfc0682da5fd85bb974aae2d08e6c3e9d5,,,
 
 
 TABLE auth_group
@@ -20,6 +28,14 @@ auth_group.id,auth_group.role,auth_group.description
 7,user_9,Group uniquely assigned to user 9
 8,user_10,Group uniquely assigned to user 10
 9,user_11,Group uniquely assigned to user 11
+10,user_12,Group uniquely assigned to user 12
+11,user_13,Group uniquely assigned to user 13
+12,user_14,Group uniquely assigned to user 14
+13,user_15,Group uniquely assigned to user 15
+14,user_16,Group uniquely assigned to user 16
+15,user_17,Group uniquely assigned to user 17
+16,user_18,Group uniquely assigned to user 18
+17,user_19,Group uniquely assigned to user 19
 
 
 TABLE auth_membership
@@ -33,8 +49,22 @@ auth_membership.id,auth_membership.user_id,auth_membership.group_id
 10,8,1
 11,9,7
 12,9,1
-13,10,3
 14,11,3
+15,12,3
+16,13,11
+17,14,12
+18,15,13
+19,16,14
+20,17,15
+21,18,16
+22,17,3
+23,15,3
+24,16,3
+25,16,3
+26,14,3
+27,13,3
+28,18,3
+29,19,3
 
 
 TABLE auth_permission
@@ -266,6 +296,45 @@ auth_event.id,auth_event.time_stamp,auth_event.client_ip,auth_event.user_id,auth
 231,2013-12-17 17:47:51,127.0.0.1,11,auth,Usuario 11 Registrado
 232,2013-12-17 17:48:19,127.0.0.1,11,auth,User 11 Logged-out
 233,2013-12-17 17:51:05,127.0.0.1,11,auth,Usuario 11 sesión iniciada
+234,2013-12-17 18:06:10,127.0.0.1,11,auth,Usuario 11 sesión iniciada
+235,2013-12-17 18:28:27,127.0.0.1,11,auth,User 11 Logged-out
+236,2013-12-17 18:29:04,127.0.0.1,<NULL>,auth,Grupo 10 creado
+237,2013-12-17 18:29:04,127.0.0.1,12,auth,Usuario 12 Registrado
+238,2013-12-17 18:29:13,127.0.0.1,12,auth,User 12 Logged-out
+239,2013-12-17 18:30:52,127.0.0.1,12,auth,Usuario 12 sesión iniciada
+240,2013-12-17 18:31:37,127.0.0.1,12,auth,User 12 Logged-out
+241,2013-12-17 18:35:02,127.0.0.1,12,auth,Usuario 12 sesión iniciada
+242,2013-12-17 18:41:50,127.0.0.1,12,auth,User 12 Logged-out
+243,2013-12-17 18:47:19,127.0.0.1,12,auth,Usuario 12 sesión iniciada
+244,2013-12-17 18:47:36,127.0.0.1,11,auth,Usuario 11 sesión iniciada
+245,2013-12-17 19:00:09,127.0.0.1,11,auth,User 11 Logged-out
+246,2013-12-17 19:02:36,127.0.0.1,<NULL>,auth,Grupo 11 creado
+247,2013-12-17 19:02:36,127.0.0.1,13,auth,Usuario 13 Registrado
+248,2013-12-17 19:02:45,127.0.0.1,13,auth,User 13 Logged-out
+249,2013-12-17 19:03:28,127.0.0.1,<NULL>,auth,Grupo 12 creado
+250,2013-12-17 19:03:28,127.0.0.1,14,auth,Usuario 14 Registrado
+251,2013-12-17 19:03:35,127.0.0.1,14,auth,User 14 Logged-out
+252,2013-12-17 19:04:41,127.0.0.1,<NULL>,auth,Grupo 13 creado
+253,2013-12-17 19:04:41,127.0.0.1,15,auth,Usuario 15 Registrado
+254,2013-12-17 19:04:48,127.0.0.1,15,auth,User 15 Logged-out
+255,2013-12-17 19:05:20,127.0.0.1,<NULL>,auth,Grupo 14 creado
+256,2013-12-17 19:05:20,127.0.0.1,16,auth,Usuario 16 Registrado
+257,2013-12-17 19:05:58,127.0.0.1,16,auth,User 16 Logged-out
+258,2013-12-17 19:07:24,127.0.0.1,<NULL>,auth,Grupo 15 creado
+259,2013-12-17 19:07:24,127.0.0.1,17,auth,Usuario 17 Registrado
+260,2013-12-17 19:07:30,127.0.0.1,17,auth,User 17 Logged-out
+261,2013-12-17 19:09:35,127.0.0.1,<NULL>,auth,Grupo 16 creado
+262,2013-12-17 19:09:35,127.0.0.1,18,auth,Usuario 18 Registrado
+263,2013-12-17 19:14:42,127.0.0.1,18,auth,User 18 Logged-out
+264,2013-12-17 19:15:11,127.0.0.1,18,auth,Usuario 18 sesión iniciada
+265,2013-12-17 19:15:19,127.0.0.1,18,auth,User 18 Logged-out
+266,2013-12-17 19:15:53,127.0.0.1,13,auth,Usuario 13 sesión iniciada
+267,2013-12-17 19:16:55,127.0.0.1,13,auth,User 13 Logged-out
+268,2013-12-17 19:21:14,127.0.0.1,<NULL>,auth,Grupo 17 creado
+269,2013-12-17 19:21:14,127.0.0.1,19,auth,Usuario 19 Registrado
+270,2013-12-17 19:21:21,127.0.0.1,19,auth,User 19 Logged-out
+271,2013-12-17 19:22:29,127.0.0.1,19,auth,Usuario 19 sesión iniciada
+272,2013-12-17 19:43:02,127.0.0.1,12,auth,Usuario 12 sesión iniciada
 
 
 TABLE auth_cas
@@ -309,7 +378,7 @@ secciones.seccionid,secciones.descripcion
 
 TABLE personal
 personal.personalid,personal.E_mail,personal.facebook,personal.nombre,personal.dni,personal.nacimiento,personal.domicilio,personal.localidad,personal.cp,personal.provincia,personal.telefono,personal.titulos,personal.otorgadospor,personal.fechaotorgamiento,personal.apto,personal.nombramiento,personal.cuil,personal.foto,personal.cargoid,personal.user_id
-2,reingart@gmail.com,mariano.reingart,Reingart Mariano,111111,<NULL>,Necochea 1132,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,pepe alberto,,nose,<NULL>,1234577,personal.foto.846577e02fd2b2a3.6d617269616e6f3.jpg,2,10
+2,reingart@gmail.com,mariano.reingart,Reingart Mariano,111111,<NULL>,Necochea 1132,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,pepe alberto,,nose,<NULL>,1234577,personal.foto.846577e02fd2b2a3.6d617269616e6f3.jpg,2,19
 3,hector@hotmail.com,hector.amarilla,Amarilla Hector,434343,<NULL>,Laprida 4567,gonzalez catan,1759,Buenos Aires,8568899,ingenieria en sistemas,Jose Rodriguez,,nose,<NULL>,8799999,personal.foto.bcbf221d67f4794c.616d6172696c6c6.jpg,2,<NULL>
 4,claudia@hotmail.com,mariaclaudia.vargas,Vargas Claudia,4545,<NULL>,San Juan 1122,gonzalez catan,1759,Buenos Aires,7899765,Contaduria,Juan Repeto,,nose,<NULL>,7876669,personal.foto.be7fa2dae636613a.323031332d30382.jpg,2,<NULL>
 5,angelbravo@gmail.com,angel.bravo,Bravo Angel,9897,<NULL>,Rivas 1450,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,Norberto Gonzalez,,nose,<NULL>,76969989,personal.foto.b86d8bebfddda1a5.627261766f2e6a7.jpg,1,<NULL>
@@ -1313,6 +1382,14 @@ horarios.horarioid,horarios.horaid,horarios.comisionid,horarios.dia,horarios.det
 TABLE profesores
 profesores.profesorid,profesores.personalid,profesores.comisionid,profesores.cargoid,profesores.revistaid,profesores.licencia,profesores.detalle,profesores.ref,profesores.user_id
 1,5,62,2,1,False,,,11
+2,7,72,2,1,False,,,12
+4,2,70,2,1,False,,,19
+5,3,68,2,1,False,,,14
+6,4,58,2,1,False,,,15
+7,6,77,2,1,False,,,16
+8,8,56,2,1,False,,,13
+9,9,66,2,1,False,,,17
+10,19,104,2,1,False,,,18
 
 
 TABLE sanciones

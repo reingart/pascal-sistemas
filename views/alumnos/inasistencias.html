@@ -33,7 +33,7 @@
         	 {{ =falta.inasistencias.descripcion}}
               </TD>
              <TD id= "td">
-             {{ =falta.faltas.fecha}}
+             {{ =falta.faltas.fecha.strftime("%d/%m/%Y")}}
              </TD>
         {{pass}}
     		 </TR>

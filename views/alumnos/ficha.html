@@ -5,11 +5,11 @@
 <center>{{=IMG(_src=URL(c='default',f='download',args=alumno.alumnos.foto))}}</center>
 <h2><u> Alumno/a:</u> {{=alumno.alumnos.nombre}}</h2> 
 <!--<h2><u> Localidad:</u> {{=alumno.alumnos.localidad}} </h2>-->
-<h2><u> Fecha de Nacimiento:</u> {{=alumno.alumnos.fechanacimiento}} </h2> 
+<h2><u> Fecha de Nacimiento:</u> {{=alumno.alumnos.fechanacimiento.strftime("%d/%m/%Y")}} </h2> 
 <h2><u> Estado Civil:</u> {{=alumno.alumnos.estadocivil}} </h2>
 <h2><u> Nacionalidad:</u> {{=alumno.alumnos.nacionalidad}}  </h2>
 <h2><u> Email:</u> {{=alumno.alumnos.email1}}</h2> 
-<h2><u> Ingreso:</u> {{=alumno.alumnos.ingreso}} </h2>
+<h2><u> Ingreso:</u> {{=alumno.alumnos.ingreso.strftime("%d/%m/%Y")}} </h2>
 <h2><u> Carrera:</u> {{=alumno.carreras.nombre}}</h2>
 <br>
 <h2><u> Inscripto a las siguientes materias:</u> </h2>
@@ -29,7 +29,7 @@
         	 {{ =datos.comisiones.nombre}}
              </TD>
         	<TD style="border: 1px solid white"> 
-        	 {{ =datos.inscripcionescomision.alta}}
+        	 {{ =datos.inscripcionescomision.alta.strftime("%d/%m/%Y")}}
         	</TD>
             <TD style="border: 1px solid white">
              {{ =datos.ciclos.anio}}

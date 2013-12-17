@@ -5,12 +5,14 @@
 #@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
 
 def index(): 
+    fecha= request.now.date() #guardo la fecha actual
+    fecha_actual= fecha.strftime("%d/%m/%Y") #cambio el formato de fecha a latino-americano
     #q = db.alumnos.user_id== auth.user_id
     #guardo en la consulta el registro del alumno
     #traemos el alumno para notificarlo en la vista
     #alumno= db(q).select().first()
     
-    return dict ()
+    return dict (fecha_actual=fecha_actual)
 
 @auth.requires_login() #requiere que haya un usuario logeado
 @auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos

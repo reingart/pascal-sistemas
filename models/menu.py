@@ -38,11 +38,8 @@ response.menu = [
     ]],
     
 
-    ]],
-    [T('Alumnos'), False, URL(request.application,'alumnos','index'), [
-        [T('Ingresar'), False, URL(request.application,'alumnos','index'), []],
-        
-    ]],
+    
+    
 
     #[T('Tramites'), False, URL(request.application,'tramites','index'), [
      #   [T('Iniciar'), False, URL(request.application,'tramites','iniciar'), []],

@@ -36,21 +36,14 @@ response.menu = [
             
         ]],
     ]],
-    [T('Docentes'), False, URL(request.application,'docentes','index'), [ 
-       [T('Finales'), False, URL(request.application,'docentes','listamaterias'), []],
-       [T('Parciales'), False, URL(request.application,'docentes','parciales'), []],
-       [T('Apuntes'), False, URL(request.application,'docentes','apuntes'), []],
-       [T('Recursos'), False, URL(request.application,'docentes','recursos'), []],
-
-    ]],
     
 
 
-    [T('Tramites'), False, URL(request.application,'tramites','index'), [
-        [T('Iniciar'), False, URL(request.application,'tramites','iniciar'), []],
-        [T('Consultar'), False, URL(request.application,'tramites','consultar'),[]],
-        [T('Actualizar'), False, URL(request.application,'tramites','actualizar'),[]],
-    ]],   
+    #[T('Tramites'), False, URL(request.application,'tramites','index'), [
+     #   [T('Iniciar'), False, URL(request.application,'tramites','iniciar'), []],
+      #  [T('Consultar'), False, URL(request.application,'tramites','consultar'),[]],
+       # [T('Actualizar'), False, URL(request.application,'tramites','actualizar'),[]],
+    #]],   
          
     
 
@@ -63,11 +56,20 @@ response.menu = [
     [T('Inserción Laboral'), False, URL(request.application,'laboral','index'), []],
     [T('Admin'), False, "https://www.institutopascal.edu.ar/admin", []],
     
+    
     [T('CAMPUS WEB'), False, URL(request.application,'default','index'), [
         [T('Alumnos'), False, URL(request.application,'default','index'), [
         [T('Ingresar'), False, URL(request.application,'alumnos','index'), []],
         [T('Manual de usuario'), False, URL(request.application,'default','index'), []],
-     ]],
+       ]],
+       
+    [T('Docentes'), False, URL(request.application,'docentes','index'), [ 
+       [T('Finales'), False, URL(request.application,'docentes','listamaterias'), []],
+       [T('Parciales'), False, URL(request.application,'docentes','parciales'), []],
+       [T('Apuntes'), False, URL(request.application,'docentes','apuntes'), []],
+       [T('Recursos'), False, URL(request.application,'docentes','recursos'), []],
+
+    ]],
         
     ]],   
     

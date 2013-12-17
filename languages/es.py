@@ -6,6 +6,7 @@
 '%Y-%m-%d': '%Y-%m-%d',
 '%Y-%m-%d %H:%M:%S': '%Y-%m-%d %H:%M:%S',
 '(something like "it-it")': '(algo como "it-it")',
+'<h4>CAMPUS WEB</h4>': '<h4>CAMPUS WEB</h4>',
 'A new version of web2py is available': 'Hay una nueva versión de web2py disponible',
 'A new version of web2py is available: %s': 'Hay una nueva versión de web2py disponible: %s',
 'About': 'Acerca de',

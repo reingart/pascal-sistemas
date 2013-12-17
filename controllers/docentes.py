@@ -255,37 +255,7 @@ def elegir():
 #@auth.requires_login()
 #@auth.requires_membership(role='personal')
 def parciales():
-    q =db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
-
-
-    # Busca las comisiones que coincidan
-    q &= db.inscripcionesexamen.condicion == "Regular"
-    #q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
-    q &= db.inscripcionesexamen.examenid == db.examenes.examenid
-    q &= db.examenes.materiaid == db.materias.materiaid
-
-    alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre , distinct= True)
-    i=0
-    a=0
-    if request.vars.grabar=="GUARDAR":
-
-
-            fecha= request.vars.fecha
-            alumno_id= alumno.alumnoid
-            materia_id = alumno.materiaid
-           # calificacion_id = 1
-            nota = int(request.vars.nota[i])
-           # libro = request.vars.libro
-           # folio =request.vars.folio
-            establecimiento= "I.S.T.B.P"
-            a=5
-
-            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id, establecimiento=establecimiento, materiaid=materia_id)
-            i= i+1
-
-    comisiones = db(q).select(db.comisiones.ALL, distinct=True)
-
-    return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}
+    ""
     return{}
 
 #@auth.requires_login()

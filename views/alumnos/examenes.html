@@ -3,40 +3,42 @@
 <h2> Fecha: {{=request.now.date()}}</h2>
 <h1> <center><u> Examenes Finales Rendidos</u> </center></h1>
     <br>
-    <TABLE style="border: 1px solid white">
-        <TR style="border: 1px solid white">
-            <TD style="border: 1px solid white"> <center>MATERIA</center> </TD>
-            <TD style="border: 1px solid white"><center> NOTA</center></TD>
-            <TD style="border: 1px solid white"><center>FECHA</center></TD>
-            <TD style="border: 1px solid white"><center>PERIODO</center></TD>
-            <TD style="border: 1px solid white"><center>CURSO</center></TD>
+    <div id= "div_centrado">
+    <TABLE id= "tabla">
+        <TR>
+            <TD id= "head"> <center>MATERIA</center> </TD>
+            <TD id= "head"><center> NOTA</center></TD>
+            <TD id= "head"><center>FECHA</center></TD>
+            <TD id= "head"><center>PERIODO</center></TD>
+            <TD id= "head"><center>CURSO</center></TD>
         </TR>
         {{ n=notas}}
         
         {{for nota in n:}}
-            <TR style="border: 1px solid white">
+            <TR>
         	<!--<TD style="border: 1px solid white"> 
         	 {{ =nota.alumnos.nombre}}
         	</TD>-->
-            <TD style="border: 1px solid white">
+            <TD id= "td">
              {{ =nota.materias.nombre}}
              </TD>
-             <TD style="border: 1px solid white">
+             <TD id= "td">
              {{ =nota.notas.nota}}
              </TD>
-             <TD style="border: 1px solid white">
+             <TD id= "td">
              {{ =nota.notas.fecha}}
              </TD>
-             <TD style="border: 1px solid white">
+             <TD id= "td">
              {{ =nota.periodos.descripcion}}
              </TD>
-             <TD style="border: 1px solid white">
+             <TD id= "td">
              {{ =nota.cursos.nombre}}
         {{pass}}
         	 </TD>
     		 </TR>
     </TABLE>
+</div>
     <br>
     <form>
-    <a href="index.html"><input type=button value="Volver" ></a>
+        <center><a href="index.html"><input type=button value="Volver" ></a></center>
 </form>

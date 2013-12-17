@@ -3,25 +3,25 @@
 <h2> Alumno/a: {{=alumno.nombre}}
 <h1> <center><u> Horarios de Comision</u> </center></h1>
     
+<div id= "div_centrado">
 
-
-<TABLE style="border: 1px solid white"> 
+<TABLE id= "tabla"> 
     
-    <tr style="border: 1px solid white"> 
+    <tr> 
         
         
-        <td style="border: 1px solid white"> DIAS </td>
-        <td style="border: 1px solid white"> HORARIOS </td>
-        <td style="border: 1px solid white"> MATERIAS </td>
-        <td style="border: 1px solid white"> DOCENTE </td>
-        <td style="border: 1px solid white"> DIVISION </td>
+        <td id= "head"> DIAS </td>
+        <td id= "head"> HORARIOS </td>
+        <td id= "head"> MATERIAS </td>
+        <td id= "head"> DOCENTE </td>
+        <td id= "head"> DIVISION </td>
     </tr>
     {{for hora in horarios:}}
          <tr>
-         <td style="border: 1px solid white">      
+         <td id= "td">      
              {{=hora.horarios.dia}}              
          </td>
-         <td style="border: 1px solid white">      
+         <td id= "td">      
              {{=hora.horas.desde}}
              hasta
              <br>
@@ -29,13 +29,13 @@
              hs.                
          </td>
          
-         <td style="border: 1px solid white">      
+         <td id= "td">      
              {{=hora.materias.nombre}}              
          </td>
-         <td style="border: 1px solid white">      
+         <td id= "td">      
              {{=hora.personal.nombre}}              
          </td>
-         <td style="border: 1px solid white">      
+         <td id= "td">      
              {{=hora.divisiones.descripcion}}              
          </td>
     </tr>
@@ -43,6 +43,8 @@
     </TABLE>
 <br>
 <form>
+    <center>
     <a href="index.html"><input type=button value="Volver" ></a>
     <a href="horarios.html"><input type=button value="Horario General" ></a>
+    </center>
 </form>

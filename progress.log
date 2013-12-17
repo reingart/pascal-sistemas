@@ -1677,4 +1677,11 @@
 [2013-12-17 17:19:02] EDIT pascal2/views/alumnos/horarios.html: 1
 [2013-12-17 17:19:50] EDIT pascal2/views/alumnos/horarios.html: 0
 [2013-12-17 17:20:18] EDIT pascal2/controllers/alumnos.py: 0
-[2013-12-17 17:54:45] EDIT pascal2/controllers/alumnos.py: 0
+[2013-12-17 17:50:59] EDIT prueba/views/default/index.html: 0
+[2013-12-17 17:54:44] UPLOAD /home/yanina/web2py/applications/prueba/static/logo_face3.jpg: 3359
+[2013-12-17 17:55:12] EDIT prueba/views/default/index.html: 0
+[2013-12-17 17:56:13] EDIT prueba/views/default/index.html: 0
+[2013-12-17 17:57:59] EDIT prueba/views/default/index.html: 0
+[2013-12-17 18:05:25] EDIT prueba/views/default/index.html: 0
+[2013-12-17 18:05:59] EDIT prueba/views/default/index.html: 0
+[2013-12-17 18:10:58] DELETE prueba/static/logo_face.jpg: -1259

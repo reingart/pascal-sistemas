@@ -40,7 +40,7 @@ def ficha():
 #@auth.requires_login()
 
 
-@auth.requires_login() #requiere que haya un usuario logeado
+@auth.requires_login() #requiere que haya un usuario logueado
 def ingreso():
     db.alumnos.user_id.default= auth.user_id
     subtitulo= T ('Complete el formulario por favor...')
@@ -84,8 +84,8 @@ def busqueda():
     return dict (form = form)
 
 
-@auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_login() #requiere que haya un usuario logueado
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos
 def horarios():
    #lista los horarios dependiendo de la carrera
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
@@ -111,8 +111,8 @@ def horarios():
         
     return dict (horario=horario, horas=horas, alumno=alumno)
     
-@auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_login() #requiere que haya un usuario logueado
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos
 def horarios_comision():
    #lista los horarios dependiendo de la carrera
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
@@ -135,8 +135,8 @@ def horarios_comision():
     return dict (horarios= horarios, alumno=alumno)    
     
    
-@auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='Alumnos')    #requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_login() #requiere que haya un usuario logueado
+@auth.requires_membership(role='Alumnos')    #requiere que haya un usuario logueado e integre el grupo alumnos
     
 def inasistencias():   #lista de inasistencias del alumno
     
@@ -185,8 +185,8 @@ def examenes():
     
     return dict (notas= notas, alumno=alumno)
   
-@auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_login() #requiere que haya un usuario logueado
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos
   
 def final(): #formulario de inscrip a examenes finales 
     
@@ -296,8 +296,8 @@ def constancia_final():
       
     return dict(alumno=alumno, inscripcion=inscripcion, carrera=carrera)
  
-@auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos           
+@auth.requires_login() #requiere que haya un usuario logueado
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos           
 def parciales():
     #lista examenes cuatrimestrales ya rendidos
     
@@ -396,8 +396,8 @@ def constancia_comision():
       
     return dict(alumno=alumno, inscripcion=inscripcion, carrera=carrera)
 
-@auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos    
+@auth.requires_login() #requiere que haya un usuario logueado
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos    
 def archivos():
     "descarga de archivos pedagogicos subidos por docentes"
     return {}

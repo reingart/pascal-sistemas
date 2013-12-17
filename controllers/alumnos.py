@@ -1,7 +1,7 @@
 # coding: utf8
 # try something like
 
-@auth.requires_login() #requiere que haya un usuario logeado
+@auth.requires_login() #requiere que haya un usuario logeado.
 #@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
 
 def index(): 

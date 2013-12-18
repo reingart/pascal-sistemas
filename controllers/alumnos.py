@@ -7,12 +7,25 @@
 def index(): 
     fecha= request.now.date() #guardo la fecha actual
     fecha_actual= fecha.strftime("%d/%m/%Y") #cambio el formato de fecha a latino-americano
-    #q = db.alumnos.user_id== auth.user_id
-    #guardo en la consulta el registro del alumno
-    #traemos el alumno para notificarlo en la vista
-    #alumno= db(q).select().first()
     
-    return dict (fecha_actual=fecha_actual)
+    alumnos= db(db.alumnos).select(db.alumnos.user_id)
+    q = db.alumnos.user_id== auth.user_id
+    alumno= db(q).select().first()
+    inscripcion= db(db.inscripcionescomision).select(db.inscripcionescomision.alumnoid, db.inscripcionescomision.comisionid)
+    visible= []
+    for x in inscripcion:
+        if x.alumnoid==alumno.alumnoid:
+            visible.append(x.alumnoid)
+    #verifico si el alumno se encuentra inscripto a comision, si es asi lo guardo en "visible"
+    
+    user= []
+    usuario=auth.user_id
+    for n in alumnos:
+        if n.user_id==usuario:
+            user.append(n.user_id)
+    #verifico si el usuario logueado se encuentra registrado como alumno alumnos. si es asi lo guardo en "user"
+        
+    return dict (fecha_actual=fecha_actual, alumno=alumno, visible= visible, user=user, usuario=usuario)
 
 @auth.requires_login() #requiere que haya un usuario logeado
 @auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos

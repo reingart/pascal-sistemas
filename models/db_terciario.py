@@ -48,7 +48,24 @@ db.define_table('cargos',
     format= "%(cargoid)s [%(descripcion)s]",
     migrate=migrate)
     
+db.define_table('manuales',
+    Field('manualid', type='id'),
+    Field('descripcion', type='string', length=50),
+    Field('manual', type='upload'),
+    format= "%(manualid)s [%(descripcion)s]",
+    migrate=migrate)
     
+    
+db.define_table('recursos',
+    Field('recursoid', type='id'),
+    Field('recurso', type='string', length=50),
+    Field('profesor', type='string'),
+    Field('fecha', type='date'),
+    Field('estado', type='boolean'),
+    format= "%(recursoid)s [%(recurso)s]",
+    migrate=migrate)
+    
+            
 db.define_table('secciones',
     Field('seccionid', type='id'),
     Field('descripcion', type='string', length=50),

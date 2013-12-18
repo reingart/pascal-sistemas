@@ -164,7 +164,7 @@ def listamaterias():
   
    
 
-    examenes=db(q).select(db.materias.nombre, db.periodos.descripcion, db.examenes.fecha,db.examenes.hora)
+    examenes=db(q).select(db.materias.nombre, db.periodos.descripcion, db.examenes.fecha,db.examenes.hora,db.materias.materiaid)
    
 
     return dict (examenes= examenes)

@@ -262,7 +262,7 @@ def parciales():
 
         for alumno in alumnos:
             fecha= request.vars.fecha
-            alumno_id= alumnos.alumnoid
+            #alumno_id= alumnos.alumnoid
             #materia_id = alumno.materiaid
            # calificacion_id = 1
             nota = int(request.vars.nota[i])
@@ -271,7 +271,7 @@ def parciales():
             establecimiento= "I.S.T.B.P"
             a=5
 
-            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id, establecimiento=establecimiento)
+            db.notas.insert(nota=nota ,fecha=fecha, establecimiento=establecimiento)
             i= i+1
 
     comisiones = db(q).select(db.comisiones.ALL, distinct=True)
@@ -292,10 +292,106 @@ def apuntes():
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 def recursos():
-    ""
-    return{}
+    q = db.profesores.user_id == auth.user_id
+    q &= db.profesores.personalid== db.personal.personalid
+    
+    
+    if request.vars.GRABAR=="Guardar":
+
+        
+            fecha= request.now.date()         
+            #materia_id = alumno.materiaid
+           # calificacion_id = 1            
+            recurso = request.vars.Recursos
+            cantidad =request.vars.cantidad
+            #profesor = usuario.nombre
+            db.recursos.insert(fecha=fecha, recurso=recurso,cantidad=cantidad)
+            
+   
+    usuario = db(q).select(db.personal.nombre).first()
+    return {'usuario':usuario}
+    
+@auth.requires_login()
+@auth.requires_membership(role='Personal')
+def listar():
+    reservas = db().select(db.recursos.recurso,db.recursos.profesor,db.recursos.fecha,db.recursos.cantidad)
+    return{'reservas':reservas}
+    
+def cancelar():
+    i=0
+
+    recursos = db().select (db.recursos.ALL, distinct = True)
+
+     
+
+    listado=[]
+
+    listado.append(TABLE(TR(
+           TH('CODIGO',_style='width:200px; color:#000; background: #99f; border: 1px solid #cdcdcd'),
+
+           TH('RECURSO',_style='width:200px; color:#000; background: #99f; border: 1px solid #cdcdcd'),
+
+           TH('PROFESOR',_style='width:200px; color:#000; background: #99f; border: 1px solid #cdcdcd'),
+
+           TH('FECHA',_style='width:200px; color:#000; background: #99f; border: 1px solid #cdcdcd'),
+
+           TH('CANTIDAD',_style='width:200px; color:#000; background: #99f; border: 1px solid #cdcdcd')
+
+           )))  
+
+    for x in recursos:
+
+        listado.append(TABLE(TR(
+
+           TD(x.recursoid,_style='width:200px; color:#000; background: #063C8E; border: 1px solid #FFFFFF'),
+
+           TD(x.recurso,_style='width:200px; color:#000; background: #063C8E; border: 1px solid #FFFFFF'),
+
+           TD(x.profesor,_style='width:200px;background: #063C8E; border: 1px solid #FFFFFF'),
+
+           TD(x.fecha,_style='width:200px;background: #063C8E; border: 1px solid #FFFFFF'),
+
+           TD(x.cantidad,_style='width:200px;background: #063C8E; border: 1px solid #FFFFFF')
+           ))) 
 
 
+
+    a = DIV(listado)
+
+    form=FORM(TABLE(TR("Codigo:",INPUT(_type="text",_name="codigo",requires=IS_NOT_EMPTY())),
+
+                    
+                    
+
+                    TR("",INPUT(_type="submit",_value="eliminar"))))
+
+                                 
+
+    
+
+    if form.accepts(request.vars,session):#si esta todo bien 
+
+        if len(db((db.recursos.recursoid==request.vars.codigo)).select())==0:
+
+                   
+
+           form.errors.codigo='el codigo no esta en la base'        
+
+        else:
+
+            db(db.recursos.recursoid==form.vars.codigo).delete()                   
+
+
+    elif form.errors:
+
+          response.flash="errores hay"
+
+    else:
+
+        response.flash="complete el formulario"
+
+    return dict (f=form,a=a)
+    
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 def unidad():

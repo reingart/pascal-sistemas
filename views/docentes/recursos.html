@@ -1,6 +1,5 @@
 {{extend 'layout.html'}}
 <div id= "div_centrado">
-
 <h1>Recursos didácticos</h1>
 <h1></h1>
 <TABLE id= "tabla">
@@ -16,53 +15,33 @@
    
     </tr>
  
-        <tr>
-        <td id= "head"><center>12/08/2013</center></td>
-        <td id= "head"><B><center>Proyector</B></td>
-        <td id= "head"><B><center>1</B></td>
-        <td id= "head"><B><center>Hector Amarilla</B></td>
-        <td id= "head"><center><INPUT type="submit" name="GRABAR" value="Cancelar"></td>
-         
+      
      </tr>
    
-   
-        <tr>
-        <td id= "head"><center>12/09/2013</center></td>
-        <td id= "head"><B><center>Microscopio</B></td>
-        <td id= "head"><B><center>1</B></td>
-        <td id= "head"><B><center>Mariano Reingart</B></td>
-        <td id= "head">Reservado<center></td>
-        </tr>
+<FORM ACTION="">    
         
-        
-        <tr>
-        <td id= "head"><center>22/10/2013</center></td>
-        <td id= "head"><B><center>Muñeco</B></td>
-        <td id= "head"><B><center>1</B></td>
-        <td id= "head"><B><center>Mariano Reingart</B></td>
-         <td id= "head">Reservado<center></td>
-        </tr>
-        
-        <tr>
-        <td id= "head"><center>12/12/2013</center></td>
-        <td id= "head"><B><center>Notebook</B></td>
-        <td id= "head"><B><center>7</B></td>
-        <td id= "head"><B><center>Bravo Angel</B></td>
-        <td id= "head"><center>Reservado</td>
-        </tr>
  
     <tr>
-        <td id= "head"><center><FORM ACTION=""> <INPUT type="text" size="8" MAXLENGTH="8"></FORM></B></td>
+        <td id= "head"><center>{{=request.now.date()}}</center></td>
   
-        <td id= "head"><center> <SELECT name="Recursos" > <option>Seleccionar...</option><option>Proyector</option><option>Netbook</option> <option>Microscopio</option><option>Muñeco</option></td>
-        <td id= "head"><center><FORM ACTION=""> <INPUT type="text" size="2" MAXLENGTH="2"></FORM> </td>
-        <td id= "head"><center><FORM ACTION="">Hector Amarilla</td>
+        <td id= "head"><center> <SELECT name="Recursos" > <option>Proyector</option><option>Netbook</option> <option>Microscopio</option><option>Muñeco</option></td>
+        <td id= "head"><center><INPUT type="text" name="cantidad" size="2" MAXLENGTH="2"> </td>
+            <td id= "head"><center>{{=usuario.nombre}}</center></td>
 		<td id= "head"><center><INPUT type="submit" name="GRABAR" value="Reservar"></td>
          
    
 </table>
+    <br>
+    <a href="http://127.0.0.1:8000/pascal2/docentes/listar"> Listado de recursos reservados </a>
+<br>
 <br>
 <form>
-<a href="index.html"><input type=button value="Volver" ></a> 
-</form>
+<INPUT type="submit" name="GRABAR" value="Guardar"></td>
+
+
+
             </div>
+            
+    </FORM>
+    
+    <br>

@@ -62,6 +62,8 @@ db.define_table('recursos',
     Field('profesor', type='string'),
     Field('fecha', type='date'),
     Field('estado', type='boolean'),
+    Field('cantidad', type='integer'),
+
     format= "%(recursoid)s [%(recurso)s]",
     migrate=migrate)
     

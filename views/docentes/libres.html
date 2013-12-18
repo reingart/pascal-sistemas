@@ -1,4 +1,6 @@
 {{extend 'layout.html'}}
+ <div id= "div_centrado">
+
  Establecimiento: <label for="istbp">I.S.T.B.P</label>
  <br>
  <br>
@@ -14,30 +16,27 @@ Alumnos libres
 </table>
 <br></br>
 
-    <TABLE style="border: 1px solid white">
-    <td style="border: 1px solid white"><B><center>D.N.I</B></td>
-    <td style="border: 1px solid white"><B><center>Alumno</B></td>
-    <td style="border: 1px solid white"><B><center>Nota</B></td>
+    <TABLE id= "tabla">
+    <td id= "head"><B><center>D.N.I</B></td>
+    <td id= "head"><B><center>Alumno</B></td>
+    <td id= "head"><B><center>Nota</B></td>
 
-  
-    
     {{for alumno in alumnos: }}
 	<tr>
-    <td style="border: 1px solid white"><B><center>{{=alumno.dni}}</B></td>
-        
-        <td style="border: 1px solid white"><ul><B><center>{{=alumno.nombre}}</ul></B></td>
-        <td style="border: 1px solid white"><B><INPUT type="text" Name="nota" size="1"></td>
-    
-        </tr>
-        {{pass}}
-    
-
-    <tr style="border: 1px solid white">
+    <td id= "head"><B><center>{{=alumno.dni}}</B></td>        
+    <td id= "head"><ul><B><center>{{=alumno.nombre}}</ul></B></td>
+    <td id= "head"><B><INPUT type="text" Name="nota" size="1"></td>    
+    </tr>
+    {{pass}}
+    <tr>
     
     </tr>
-</table>
+    </table>
     <br></br>
     <INPUT type="submit" name="grabar" value="GUARDAR">
 </FORM>
 <br>
-<a href="http://127.0.0.1:8000/practica/docentes/elegir"> VOLVER </a>
+<form>
+<a href="elegir.html"><input type=button value="Volver" ></a>
+</form>
+</div>

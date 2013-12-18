@@ -1,57 +1,56 @@
 {{extend 'layout.html'}}
+<div id= "div_centrado">
+
 <FORM ACTION = "" method="POST">
     <h5><b>FECHA:</h5></b> <INPUT  type="text" NAME="fecha" VALUE={{=request.now.date()}}>
 
-   
-
     <br></br>
-     
-
-
+    
 <h2>Inasistencias</h2>
-<table style="border: 1px solid white">
-    <td style="border: 1px solid white"><center> DNI</center>  </td> <td style="border: 1px solid white"> <center>Nombre</center> </td> <td style="border: 1px solid white"> Ausente</td><center> <td>Tipo de falta</td></center>
 
-
-<tr>
+<table id= "tabla">
+    
+    <td id= "head"><center> DNI</center>  </td> 
+    <td id= "head"> <center>Nombre</center> </td> 
+    <td id= "head"> Ausente</td><center> 
+    <td id= "head">Tipo de falta</td></center>
+    <tr>
+    
 {{for alumno in alumnos: }}
 
-<td style="border: 1px solid white"><ul>
+    <td id= "head"><ul>
 
     <li>{{=A(alumno.dni)}} </li>
 
-</ul></td>
+    </ul>
+    </td>
 
-<td style="border: 1px solid white"><ul>
+    <td id= "head"><ul>
     <li>{{=A(alumno.nombre)}} </li>
-</ul>
-</td>
-<td style="border: 1px solid white">
+    </ul>
+    </td>
+    <td id= "head">
    
     <center>{{=INPUT (_type="checkbox", _name="falta_%s" %(alumno.id))}}</center>
 
-    </td>
-     <td style="border: 1px solid white">
+     </td>
+     <td id= "head">
          <center> <select name="{{="tipo_%s" %(alumno.id)}}"> 
               {{for inasistencia in inasistencias: }}
              <option value="{{= inasistencia.inasistenciaid }}">{{=(inasistencia.descripcion)}}</option>
 			 {{pass}}
              </select></center>
      </td>
-
-
-
-    </tr>
+     </tr>
 
 {{pass}}
 
 </table>
-    <br></br>
-
-
+<br></br>
 <br></br>
 <INPUT type="submit" name="grabar" value="GUARDAR">
 </FORM>
 
 <br>
 <a href="http://127.0.0.1:8000/pascal2/docentes/index"> Volver al menu principal</a>
+</div>

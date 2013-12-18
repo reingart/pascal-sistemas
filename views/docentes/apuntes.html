@@ -1,37 +1,37 @@
 {{extend 'layout.html'}}
-<h1>Carga de apuntes</h1>
+<center><h1>Carga de apuntes</h1></center>
 <br>
 <FORM ACTION="">
-<TABLE style="border: 1px solid white">
+<div id= "div_centrado">
+<table id= "tabla">
     
     
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><B><center>Archivo</center></B></td>
-    <td style="border: 1px solid white"><B><center>Descripcion</B></td>
-    <td style="border: 1px solid white"><B><center>Carreras </B></td>
-    <td style="border: 1px solid white"><B><center>Materia </B></td>
+    <tr>
+    <td id= "head"><B><center>Archivo</center></B></td>
+    <td id= "head"><B><center>Descripcion</B></td>
+    <td id= "head"><B><center>Carreras </B></td>
+    <td id= "head"><B><center>Materia </B></td>
 
-    <td style="border: 1px solid white"><B><center>Profesor</B></td>
-    <td style="border: 1px solid white"><B><center>Fecha</B></td>
+    <td id= "head"><B><center>Profesor</B></td>
+    <td id= "head"><B><center>Fecha</B></td>
    
     </tr>
     
-    <tr style="border: 1px solid white">
-        <td style="border: 1px solid white"><center> <input name="Examinar" type="file" size="20"> </a> </B></td>
-    <td style="border: 1px solid white"><center><INPUT type="text" NAME="NOTA" size="60" MAXLENGTH="60"></B></td><td></td> 
-<td style="border: 1px solid white"><center> </td>
-        <td style="border: 1px solid white"><center>Hector Amarilla</center> </td>
-        <td style="border: 1px solid white"><center><INPUT  type="text" NAME="fecha" VALUE={{=request.now.date()}}></td>
- 
-     
-    
+    <tr>
+    <td id= "head"><center> <input name="Examinar" type="file" size="20"> </a> </B></td>
+    <td id= "head"><center><INPUT type="text" NAME="NOTA" size="60" MAXLENGTH="60"></B></td><td></td> 
+    <td id= "head"><center> </td>
+    <td id= "head"><center>Hector Amarilla</center> </td>
+    <td id= "head"><center><INPUT  type="text" NAME="fecha" VALUE={{=request.now.date()}}></td>
+
     </tr>
     
    
 </table>
+</div>
  <br>
- <INPUT type="submit" name="GRABAR" value="GUARDAR">
+<center><INPUT type="submit" name="GRABAR" value="GUARDAR"></center>
  </FORM>
 <br>
 <br>
-<a href="http://127.0.0.1:8000/practica/docentes/unidad"> <h2>Ir a carga de unidades >>></h2> </a>
+<center><a href="http://127.0.0.1:8000/practica/docentes/unidad"> <h2>Ir a carga de unidades >>></h2> </a></center>

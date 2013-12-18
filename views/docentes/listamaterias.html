@@ -1,39 +1,32 @@
 {{extend 'layout.html'}}
+<div id= "div_centrado">
 
 <h1>Listado de examenes finales proximos </h1>
 <br>
+<TABLE id= "tabla">
+     <tr>
+     <td id= "head"> Materia</td>
+     <td id= "head"> Periodo</td>
+     <td id= "head"> Fecha</td>
 
-<TABLE style="border: 1px solid white">
-    <tr>
-    <td  style="border: 1px solid white"> Materia</td>
-    <td  style="border: 1px solid white"> Periodo</td>
-    <td  style="border: 1px solid white"> Fecha</td>
+     <td id= "head"> Hora</td>
+     </tr>
 
-    <td  style="border: 1px solid white"> Hora</td>
-    </tr>
-
-        {{for examen in examenes: }}
-        	<tr>
-
-        
-        	   
-            <td><a href="{{=URL(f="elegir")}}"> {{=examen.materias.nombre}} </td>    
-     
-        		 <td  style="border: 1px solid white">{{=examen.periodos.descripcion}} </td> 
-
-        		 <td  style="border: 1px solid white">{{=examen.examenes.fecha}} </td> 
-        		 <td  style="border: 1px solid white">{{=examen.examenes.hora}} </td> 
-
-
-        	
-        
-        </tr>
+     {{for examen in examenes: }}
+     <tr>
+   	   
+     <td><a href="{{=URL(f="elegir")}}"> {{=examen.materias.nombre}} </td>        
+     <td id= "head">{{=examen.periodos.descripcion}} </td> 
+     <td id= "head">{{=examen.examenes.fecha}} </td> 
+     <td id= "head">{{=examen.examenes.hora}} </td> 
+     </tr>
     {{pass}}
 </TABLE>
 
-
+<br>
 <br>
 <form>
 
 <a href="index.html"><input type=button value="Volver" ></a>
 </form>
+</div>

@@ -296,7 +296,7 @@ def recursos():
     q &= db.profesores.personalid== db.personal.personalid
     
     
-    if request.vars.GRABAR=="Guardar":
+    if request.vars.GRABAR=="Reservar":
 
         
             fecha= request.now.date()         

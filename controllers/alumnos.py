@@ -1,8 +1,8 @@
 # coding: utf8
 # try something like
 
-@auth.requires_login() #requiere que haya un usuario logeado.
-#@auth.requires_membership(role='alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_login() #requiere que haya un usuario logueado.
+#@auth.requires_membership(role='alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos
 
 def index(): 
     fecha= request.now.date() #guardo la fecha actual
@@ -35,7 +35,7 @@ def index():
     return dict (fecha_actual=fecha_actual, visible= visible, user=user, usuario=usuario)
 
 @auth.requires_login() #requiere que haya un usuario logueado
-@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos
 
 def ficha():
     # muestra un perfil personalizado del alumno.
@@ -85,7 +85,7 @@ def ingreso():
         
     return dict (form=form, sub=subtitulo)
  
-@auth.requires_login() #requiere que haya un usuario logeado 
+@auth.requires_login() #requiere que haya un usuario logueado 
 def inscripcioncarrera():
     q = db.alumnos.user_id== auth.user_id  
     alumno= db(q).select().first()

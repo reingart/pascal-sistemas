@@ -335,6 +335,36 @@ auth_event.id,auth_event.time_stamp,auth_event.client_ip,auth_event.user_id,auth
 270,2013-12-17 19:21:21,127.0.0.1,19,auth,User 19 Logged-out
 271,2013-12-17 19:22:29,127.0.0.1,19,auth,Usuario 19 sesión iniciada
 272,2013-12-17 19:43:02,127.0.0.1,12,auth,Usuario 12 sesión iniciada
+273,2013-12-17 21:20:39,127.0.0.1,11,auth,Usuario 11 sesión iniciada
+274,2013-12-17 21:22:05,127.0.0.1,11,auth,User 11 Logged-out
+275,2013-12-17 21:22:17,127.0.0.1,19,auth,Usuario 19 sesión iniciada
+276,2013-12-17 21:43:03,127.0.0.1,19,auth,Usuario 19 sesión iniciada
+277,2013-12-18 10:06:46,127.0.0.1,19,auth,Usuario 19 sesión iniciada
+278,2013-12-18 15:42:14,127.0.0.1,19,auth,Usuario 19 sesión iniciada
+279,2013-12-18 16:48:42,127.0.0.1,19,auth,Usuario 19 sesión iniciada
+280,2013-12-18 18:00:04,127.0.0.1,19,auth,User 19 Logged-out
+281,2013-12-18 18:00:16,127.0.0.1,11,auth,Usuario 11 sesión iniciada
+282,2013-12-18 18:35:24,127.0.0.1,11,auth,User 11 Logged-out
+283,2013-12-18 18:35:39,127.0.0.1,19,auth,Usuario 19 sesión iniciada
+284,2013-12-18 18:35:48,127.0.0.1,19,auth,User 19 Logged-out
+285,2013-12-18 18:35:59,127.0.0.1,19,auth,Usuario 19 sesión iniciada
+286,2013-12-18 19:33:26,127.0.0.1,19,auth,User 19 Logged-out
+287,2013-12-18 19:34:11,127.0.0.1,19,auth,Usuario 19 sesión iniciada
+288,2013-12-18 19:54:21,127.0.0.1,19,auth,User 19 Logged-out
+289,2013-12-18 19:55:48,127.0.0.1,19,auth,Usuario 19 sesión iniciada
+290,2013-12-18 21:51:49,127.0.0.1,12,auth,Usuario 12 sesión iniciada
+291,2013-12-18 21:57:33,127.0.0.1,12,auth,User 12 Logged-out
+292,2013-12-18 21:57:50,127.0.0.1,19,auth,Usuario 19 sesión iniciada
+293,2013-12-18 21:59:50,127.0.0.1,19,auth,User 19 Logged-out
+294,2013-12-18 22:00:09,127.0.0.1,14,auth,Usuario 14 sesión iniciada
+295,2013-12-18 22:02:22,127.0.0.1,14,auth,User 14 Logged-out
+296,2013-12-18 22:02:33,127.0.0.1,18,auth,Usuario 18 sesión iniciada
+297,2013-12-18 22:02:44,127.0.0.1,18,auth,User 18 Logged-out
+298,2013-12-18 22:03:00,127.0.0.1,13,auth,Usuario 13 sesión iniciada
+299,2013-12-18 22:06:56,127.0.0.1,13,auth,User 13 Logged-out
+300,2013-12-18 22:07:12,127.0.0.1,6,auth,Usuario 6 sesión iniciada
+301,2013-12-18 22:08:19,127.0.0.1,6,auth,User 6 Logged-out
+302,2013-12-18 22:08:28,127.0.0.1,19,auth,Usuario 19 sesión iniciada
 
 
 TABLE auth_cas
@@ -370,6 +400,18 @@ cargos.cargoid,cargos.descripcion
 3,Porteria
 
 
+TABLE manuales
+
+
+TABLE recursos
+recursos.recursoid,recursos.recurso,recursos.profesor,recursos.fecha,recursos.estado,recursos.cantidad
+46,Microscopio,<NULL>,2013-12-18,<NULL>,1
+47,Muñeco,<NULL>,2013-12-18,<NULL>,4
+49,Muñeco,<NULL>,2013-12-18,<NULL>,4
+50,Microscopio,<NULL>,2013-12-18,<NULL>,7
+52,Netbook,<NULL>,2013-12-18,<NULL>,8
+
+
 TABLE secciones
 secciones.seccionid,secciones.descripcion
 1,Sistemas
@@ -378,14 +420,14 @@ secciones.seccionid,secciones.descripcion
 
 TABLE personal
 personal.personalid,personal.E_mail,personal.facebook,personal.nombre,personal.dni,personal.nacimiento,personal.domicilio,personal.localidad,personal.cp,personal.provincia,personal.telefono,personal.titulos,personal.otorgadospor,personal.fechaotorgamiento,personal.apto,personal.nombramiento,personal.cuil,personal.foto,personal.cargoid,personal.user_id
-2,reingart@gmail.com,mariano.reingart,Reingart Mariano,111111,<NULL>,Necochea 1132,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,pepe alberto,,nose,<NULL>,1234577,personal.foto.846577e02fd2b2a3.6d617269616e6f3.jpg,2,19
-3,hector@hotmail.com,hector.amarilla,Amarilla Hector,434343,<NULL>,Laprida 4567,gonzalez catan,1759,Buenos Aires,8568899,ingenieria en sistemas,Jose Rodriguez,,nose,<NULL>,8799999,personal.foto.bcbf221d67f4794c.616d6172696c6c6.jpg,2,<NULL>
-4,claudia@hotmail.com,mariaclaudia.vargas,Vargas Claudia,4545,<NULL>,San Juan 1122,gonzalez catan,1759,Buenos Aires,7899765,Contaduria,Juan Repeto,,nose,<NULL>,7876669,personal.foto.be7fa2dae636613a.323031332d30382.jpg,2,<NULL>
-5,angelbravo@gmail.com,angel.bravo,Bravo Angel,9897,<NULL>,Rivas 1450,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,Norberto Gonzalez,,nose,<NULL>,76969989,personal.foto.b86d8bebfddda1a5.627261766f2e6a7.jpg,1,<NULL>
-6,agui.elena@live.com,elen.aguirre,Aguirre Elena,57865,<NULL>,Sarmiento 1120,gonzalez catan,1759,Buenos Aires,6888899,Psicopedagoga,Norma Villanueva,,nose,<NULL>,545465456,personal.foto.b6d5339f19c52ba1.68656c656e61206.jpg,2,<NULL>
-7,luzmedina@hotmail.com,luz.pamela,Medina Luz,754645657,<NULL>,Claudia Sifre 1112,gonzalez catan,1759,Buenos Aires,436777,Analisis de sistemas,Angel Bravo,,nose,<NULL>,9679679,personal.foto.8ffc405571829758.37333538355f343.jpg,1,<NULL>
-8,josegonzalez@hotmail.com,jose.gonzalez,Gonzalez Jose,79588,<NULL>,Lasalle 456,gonzalez catan,1759,Buenos Aires,5474868787,Profesor matematica,Ruben Olmedo,,nose,<NULL>,7896969,personal.foto.8ea2bda6b501e36d.313233343933305.jpg,1,<NULL>
-9,roselli@hotmail.com,roselli.andrea,Andre Roselli,545353,<NULL>,Melian  567,gonzalez catan,1759,Buenos Aires,6576765757,Profesora de  ingles,Josefa Rosales,,nose,<NULL>,5476476475,personal.foto.8d0ccb6f6d8da835.3136323831335f3.jpg,2,<NULL>
+2,reingart@gmail.com,mariano.reingart,Reingart Mariano,111111,<NULL>,Necochea 1132,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,pepe alberto,,nose,<NULL>,1234577,personal.foto.8839d4cc6b353a2d.706572736f6e616.jpg,2,19
+3,hector@hotmail.com,hector.amarilla,Amarilla Hector,434343,<NULL>,Laprida 4567,gonzalez catan,1759,Buenos Aires,8568899,ingenieria en sistemas,Jose Rodriguez,,nose,<NULL>,8799999,personal.foto.8c9d6f53bc23f111.706572736f6e616.jpg,2,14
+4,claudia@hotmail.com,mariaclaudia.vargas,Vargas Claudia,4545,<NULL>,San Juan 1122,gonzalez catan,1759,Buenos Aires,7899765,Contaduria,Juan Repeto,,nose,<NULL>,7876669,personal.foto.a106a1c3af8cfbc0.706572736f6e616.jpg,2,15
+5,angelbravo@gmail.com,angel.bravo,Bravo Angel,9897,<NULL>,Rivas 1450,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,Norberto Gonzalez,,nose,<NULL>,76969989,personal.foto.aa0dc986aca4f695.706572736f6e616.jpg,1,11
+6,agui.elena@live.com,elen.aguirre,Aguirre Elena,57865,<NULL>,Sarmiento 1120,gonzalez catan,1759,Buenos Aires,6888899,Psicopedagoga,Norma Villanueva,,nose,<NULL>,545465456,personal.foto.aad353419d8302d7.706572736f6e616.jpg,2,16
+7,luzmedina@hotmail.com,luz.pamela,Medina Luz,754645657,<NULL>,Claudia Sifre 1112,gonzalez catan,1759,Buenos Aires,436777,Analisis de sistemas,Angel Bravo,,nose,<NULL>,9679679,personal.foto.8284ee86db438520.706572736f6e616.jpg,1,12
+8,josegonzalez@hotmail.com,jose.gonzalez,Gonzalez Jose,79588,<NULL>,Lasalle 456,gonzalez catan,1759,Buenos Aires,5474868787,Profesor matematica,Ruben Olmedo,,nose,<NULL>,7896969,personal.foto.9e6d53956b85b0b3.706572736f6e616.jpg,1,13
+9,roselli@hotmail.com,roselli.andrea,Andre Roselli,545353,<NULL>,Melian  567,gonzalez catan,1759,Buenos Aires,6576765757,Profesora de  ingles,Josefa Rosales,,nose,<NULL>,5476476475,personal.foto.b6ca416dde0504e1.706572736f6e616.jpg,2,17
 10,,,FLORES,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
 11,,,COLLOCA,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
 12,,,FERNANDEZ,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
@@ -395,7 +437,7 @@ personal.personalid,personal.E_mail,personal.facebook,personal.nombre,personal.d
 16,,,BORRAS,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
 17,,,KLEIMAN,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
 18,,,DIAZ TORRES,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
-19,,,MELGAREJO,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
+19,,,MELGAREJO,<NULL>,<NULL>,,,,,,,,,,<NULL>,,personal.foto.bec9597e3a462384.313137333635355.jpg,2,18
 20,,,BENITEZ,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
 21,,,PETIT,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
 22,,,YANSEN,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>

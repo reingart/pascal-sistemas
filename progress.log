@@ -9,3 +9,8 @@
 [2013-12-18 19:22:02] EDIT pascal2/views/docentes/recursos.html: 0
 [2013-12-18 19:22:16] EDIT pascal2/views/docentes/recursos.html: 0
 [2013-12-18 19:24:05] EDIT pascal2/views/docentes/cancelar.html: 4
+[2013-12-18 19:29:15] EDIT pascal2/controllers/docentes.py: -2
+[2013-12-18 21:56:00] UPLOAD C:/Users/yvana/Documents/web2py/applications/pascal2/static/melgarejo.jpg: 59
+[2013-12-18 21:56:12] UPLOAD C:/Users/yvana/Documents/web2py/applications/pascal2/static/roselli.jpg: 50
+[2013-12-18 21:56:49] DELETE pascal2/static/melgarejo.jpg: -2
+[2013-12-18 21:56:57] DELETE pascal2/static/roselli.jpg: -20

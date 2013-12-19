@@ -300,8 +300,6 @@ def recursos():
 
         
             fecha= request.now.date()         
-            #materia_id = alumno.materiaid
-           # calificacion_id = 1            
             recurso = request.vars.Recursos
             cantidad =request.vars.cantidad
             #profesor = usuario.nombre

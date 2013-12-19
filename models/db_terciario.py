@@ -69,6 +69,8 @@ db.define_table('recursos',
     Field('fecha', type='date'),
     Field('estado', type='boolean'),
     Field('cantidad', type='integer'),
+    #Field('fecha_de_reserva', type='date'),
+
 
     format= "%(recursoid)s [%(recurso)s]",
     migrate=migrate)
@@ -275,7 +277,7 @@ db.define_table('periodos',
     Field('mes', type='integer', default=0),
     Field('anio', type='integer', default=0),
     Field('trimestre', type='integer', default=0),
-    Field('condicion', type='string', length=10),
+    Field('condicion', type='string', length=50),
     Field('cuatrimestre', type='integer', default=0),
     Field('semestre', type='integer', default=0),
     Field('orden', type='integer', default=0),
@@ -428,7 +430,7 @@ db.define_table('inscripcionesdivision',
     Field('divisionid', db.divisiones),
     Field('alta', type='date'),
     Field('baja', type='date'),
-    Field('condicion', type='string', length=10),
+    Field('condicion', type='string', length=50),
     migrate=migrate)
 
 db.define_table('inscripcionesexamen',

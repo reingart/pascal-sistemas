@@ -125,7 +125,7 @@ def finales():
 
 
     # Busca las comisiones que coincidan
-    q &= db.inscripcionesexamen.condicion == "Regular"
+    q &= db.inscripcionesexamen.condicion == 1
     #q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
     q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.examenes.materiaid == db.materias.materiaid
@@ -139,7 +139,7 @@ def finales():
 
             fecha= request.vars.fecha
             alumno_id= alumno.alumnoid
-            materia_id = alumno.materiaid
+           # materia_id = alumno.materiaid
            # calificacion_id = 1
             nota = int(request.vars.nota[i])
             libro = request.vars.libro
@@ -147,7 +147,7 @@ def finales():
             establecimiento= "I.S.T.B.P"
             a=5
 
-            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,libro=libro,folio=folio, establecimiento=establecimiento, materiaid=materia_id)
+            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,libro=libro,folio=folio, establecimiento=establecimiento)
             i= i+1
 
     comisiones = db(q).select(db.comisiones.ALL, distinct=True)
@@ -207,7 +207,7 @@ def libres():
 
 
     # Busca las comisiones que coincidan
-    q &= db.inscripcionesexamen.condicion == "Libre"
+    q &= db.inscripcionesexamen.condicion == 2 #2 reepresenta libre
     #q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
     q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.examenes.materiaid == db.materias.materiaid
@@ -303,6 +303,7 @@ def recursos():
             recurso = request.vars.Recursos
             cantidad =request.vars.cantidad
             #profesor = usuario.nombre
+            #fecha_reserva= request.vars.fecha
             db.recursos.insert(fecha=fecha, recurso=recurso,cantidad=cantidad)
             
    

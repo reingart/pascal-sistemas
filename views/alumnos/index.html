@@ -5,18 +5,20 @@
     <h1><u>Menu Alumnos</u></h1>
 
 <ul>
+    <!-- si el usuario ya es alumno no muestro la preescripcion. de lo contrario si -->
     {{if usuario not in user:}}
     <li> <a href="ingreso.html">Preinscripción</a></li>
 	Formulario de Pre- Inscripcion como alumno.
     {{pass}}
-    
+	{{if usuario in user:}}
     <li> <a href="ficha.html">Perfil del Alumno</a></li>
 	Perfil del alumno con sus datos personales correspondientes.
     
     <li> <a href="inscripciones.html">Inscripción a comisiónes</a></li>
     Permite inscribir a comisión/division de un curso con registro de modalidad de cursada.
-    
-    {{if alumno.alumnoid in visible:}}
+        
+    <!-- si el alumno se encuantra inscripto en comision muestro las opciones. de lo contrario no -->
+   
     <li> <a href="horarios_comision.html">Horarios de Comisiones</a></li>
 	Permite ver el horario completo de la carrera cursada por el alumno.
     
@@ -30,7 +32,7 @@
     Lista las notas de los parciales cuatrimestrales rendidos.
     
     <li> <a href="final.html">Inscripción a Exámenes</a></li>
-    Permite inscribir a examenen final con informacion detallada de la mesa de examen.
+    Permite inscribir a exámenen final con informacion detallada de la mesa de examen.
     {{pass}}
    
 

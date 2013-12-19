@@ -8,26 +8,33 @@ def index():
     fecha= request.now.date() #guardo la fecha actual
     fecha_actual= fecha.strftime("%d/%m/%Y") #cambio el formato de fecha a latino-americano
     
-    alumnos= db(db.alumnos).select(db.alumnos.user_id)
-    q = db.alumnos.user_id== auth.user_id
-    alumno= db(q).select().first()
-    inscripcion= db(db.inscripcionescomision).select(db.inscripcionescomision.alumnoid, db.inscripcionescomision.comisionid)
+    usuario=auth.user_id
+    alumnos= db(db.alumnos).select(db.alumnos.user_id, db.alumnos.alumnoid)
+    
+    c = db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
+    c &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
+    inscripcion= db(c).select(db.alumnos.alumnoid, db.comisiones.comisionid)
+    
+    
     visible= []
-    for x in inscripcion:
-        if x.alumnoid==alumno.alumnoid:
-            visible.append(x.alumnoid)
+    dato= []
     #verifico si el alumno se encuentra inscripto a comision, si es asi lo guardo en "visible"
+    if usuario in alumnos:
+        dato.append(alumnos.alumnoid)
+        for x in inscripcion:
+            if x.alumnoid== dato:
+                visible.append(x.alumnoid)
     
     user= []
-    usuario=auth.user_id
+    #verifico si el usuario logueado se encuentra registrado como alumno alumnos. si es asi lo guardo en "user"
     for n in alumnos:
         if n.user_id==usuario:
             user.append(n.user_id)
-    #verifico si el usuario logueado se encuentra registrado como alumno alumnos. si es asi lo guardo en "user"
+    
         
-    return dict (fecha_actual=fecha_actual, alumno=alumno, visible= visible, user=user, usuario=usuario)
+    return dict (fecha_actual=fecha_actual, visible= visible, user=user, usuario=usuario)
 
-@auth.requires_login() #requiere que haya un usuario logeado
+@auth.requires_login() #requiere que haya un usuario logueado
 @auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
 
 def ficha():
@@ -36,19 +43,24 @@ def ficha():
     q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
     q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
     q &= db.comisiones.materiaid== db.materias.materiaid
-    q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid
-    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
     q &= db.comisiones.divisionid== db.divisiones.divisionid
     q &= db.divisiones.cicloid== db.ciclos.cicloid
-    fila = db(q).select( db.alumnos.nombre, db.alumnos.fechanacimiento, 
-                         db.alumnos.estadocivil, db.alumnos.foto, db.alumnos.email1, 
-                         db.alumnos.ingreso, db.alumnos.localidad, db.alumnos.nacionalidad,
-                         db.carreras.nombre,).first()
+    q &= db.materias.materiaid== db.asignaturas.materiaid
+    q &= db.asignaturas.carreraid== db.carreras.carreraid
+    fila = db(q).select( db.alumnos.nombre, db.alumnos.fechanacimiento, db.alumnos.estadocivil, 
+                         db.alumnos.foto, db.alumnos.email1, db.alumnos.ingreso, 
+                         db.alumnos.localidad, db.alumnos.nacionalidad, db.alumnos.alumnoid).first()
                          
     datos= db(q).select( db.comisiones.nombre, db.inscripcionescomision.alta,
                          db.ciclos.anio, db.carreras.nombre)
+    
+    inscripcion= db(db.inscripcionescomision).select(db.inscripcionescomision.alumnoid, db.inscripcionescomision.comisionid)
+    visible= []
+    for x in inscripcion:
+        if x.alumnoid==fila.alumnoid:
+            visible.append(x.alumnoid)
                                   
-    return dict (alumno=fila, dato=datos)
+    return dict (alumno=fila, dato=datos, visible=visible)
     
 #@auth.requires_login()
 
@@ -64,6 +76,7 @@ def ingreso():
             grupo=x.id
         db.auth_membership.insert(user_id=auth.user_id, group_id=grupo)
         #agrego al alumno y su id de registro en el grupo alumnos
+        
         response.flash='Usted fue agregado como alumno...'
     elif form.errors: 
         response.flash='Hay errores en el formulario'
@@ -71,7 +84,38 @@ def ingreso():
         response.flash='Por favor, complete el formulario'
         
     return dict (form=form, sub=subtitulo)
+ 
+@auth.requires_login() #requiere que haya un usuario logeado 
+def inscripcioncarrera():
+    q = db.alumnos.user_id== auth.user_id  
+    alumno= db(q).select().first()
     
+    if request.vars.grabar=="Guardar":
+
+        # en _name tenemos el nombre del checkbox
+        fecha = request.now.date()
+        for _name,_value in request.vars.items():
+            if _name.startswith ("carrera_"):
+        # obtenemos los valores de los campos en el formulario para este alumno
+                carrera_id = request.vars["carrera_%s" % alumno.alumnoid]
+                validar = request.vars["validar_%s" % alumno.alumnoid]
+                #validar= me confirma si la inscripcion es on u off
+                # si el valor es on  en el checkbox insertamos los datos en la tabla inscip.carreras.
+                ok= 0
+                if validar== "on":
+                    db.inscripcionescarrera.insert(alumnoid= alumno.alumnoid, carreraid=carrera_id,
+                    alta=fecha)
+                    
+                    ok += 1 #creo contador de examenes insertados/seleccionados por el alumno
+                    
+        if ok:
+              response.flash= "Usted se a inscripto a %d carrera!" % ok
+        else:
+              response.flash = "Por favor seleccione una opción!"
+               
+    carreras= db(db.carreras).select(db.carreras.carreraid, db.carreras.nombre)
+    
+    return dict (carreras=carreras, alumno=alumno)
     
 def busqueda():
     # armo un formulario para buscar alumno por su dni
@@ -346,12 +390,13 @@ def inscripciones():
         for _name,_value in request.vars.items():
             if _name.startswith ("comision_"):
                 comision_id = int(_name[_name.index('_')+1:])
+                condicion_id = request.vars["condicion_%s" % alumno.alumnoid]
                 # si el valor es on  en el checkbox insertamos los datos en inscripcion a examenes. 
                 if _value == "on":                    
-                    db.inscripcioncomision.insert(alumnoid= alumno.alumnoid, 
+                    db.inscripcionescomision.insert(alumnoid= alumno.alumnoid, 
                         comisionid= comision_id,
                         alta=fecha,
-                        condicion="Regular")
+                        condicion=condicion_id)
                     ok += 1 #creo contador de comisiones insertados/seleccionados por el alumno
                     
         if ok:
@@ -387,10 +432,13 @@ def inscripciones():
     q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
     q &= db.inscripcionescarrera.alumnoid== alumno.alumnoid
     
+    condiciones=db(db.condiciones).select(db.condiciones.condicionid, db.condiciones.detalle)
+    
+    
     comision= db(q).select(db.comisiones.comisionid, db.comisiones.materiaid, db.materias.materiaid, db.materias.nombre, db.personal.nombre)       
                 
          
-    return dict (comision= comision, alumno=alumno, inscripciones=inscripciones, aprobada= aprobada, desaprobada= desaprobada) 
+    return dict (comision= comision, alumno=alumno, inscripciones=inscripciones, aprobada= aprobada, desaprobada= desaprobada, condiciones=condiciones) 
  
 
 def constancia_comision():

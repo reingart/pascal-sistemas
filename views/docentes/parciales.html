@@ -1,31 +1,33 @@
 {{extend 'layout.html'}}
+<div id= "div_centrado">
+
 Fecha: {{=request.now.date()}}
 <br>
 <FORM ACTION="">
 
-<TABLE style="border: 1px solid white">
+<TABLE id= "tabla">
     
     
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><B><center>DNI</center></B></td>
-    <td style="border: 1px solid white"><B><center>Alumno</B></td>
-    <td style="border: 1px solid white"><B><center>1er Cuatrimestre </B></td>
-    <td style="border: 1px solid white"><B><center>2do Cuatrimestre</B></td>
-    <td style="border: 1px solid white"><B><center>Recuperatorio 1 </B></td>
-    <td style="border: 1px solid white"><B><center>Recuperatorio 2</B></td>
-    <td style="border: 1px solid white"><B><center>Condicion</B></td>
+    <tr>
+    <td id= "head"><center>DNI</center></B></td>
+    <td id= "head"><center>Alumno</center></td>
+    <td id= "head"><center>1er Cuatrimestre </center></td>
+    <td id= "head"><center>2do Cuatrimestre</center></td>
+    <td id= "head"><center>Recuperatorio 1 </center></td>
+    <td id= "head"><center>Recuperatorio 2</center></td>
+    <td id= "head"><center>Condicion</center></td>
     
     </tr>
     {{for alumno in alumnos: }}
 
-    <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><center>{{=alumno.dni}}</center></B></td>
-    <td style="border: 1px solid white"><center>{{=alumno.nombre}}</B></td>
-    <td style="border: 1px solid white"><center> <INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"> </td>
-    <td style="border: 1px solid white"><center><INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"></center> </td>
-    <td style="border: 1px solid white"><center><INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"> </td>
-    <td style="border: 1px solid white"><center><INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"> </td>
-    <td style="border: 1px solid white"><center><SELECT name="condicion" > <option> REGULAR</option><option>LIBRE</option></td>
+    <tr>
+    <td id= "head"><center>{{=alumno.dni}}</center></td>
+    <td id= "head"><center>{{=alumno.nombre}}</center></td>
+    <td id= "head"><center> <INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"></center> </td>
+    <td id= "head"><center><INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"></center> </td>
+    <td id= "head"><center><INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"> </center></td>
+    <td id= "head"><center><INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"></center> </td>
+    <td id= "head"><center><SELECT name="condicion" > <option> REGULAR</option><option>LIBRE</option></td>
     
     </tr>
     {{pass}}
@@ -34,4 +36,8 @@ Fecha: {{=request.now.date()}}
     </tr>
 </table>
     <INPUT type="submit" name="GRABAR" value="GUARDAR">
+    <br>
+    <a href="listaparciales.html"><input type=button value="Volver" ></a>
+
 </FORM>
+</div>

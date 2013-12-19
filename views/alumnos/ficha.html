@@ -1,18 +1,19 @@
 {{extend 'layout.html'}}
-<h2> Fecha: {{=request.now.date()}}</h2>
+
 <h1> <center><u> PERFIL</u> </center></h1>
 
-<center>{{=IMG(_src=URL(c='default',f='download',args=alumno.alumnos.foto))}}</center>
-<h2><u> Alumno/a:</u> {{=alumno.alumnos.nombre}}</h2> 
-<!--<h2><u> Localidad:</u> {{=alumno.alumnos.localidad}} </h2>-->
-<h2><u> Fecha de Nacimiento:</u> {{=alumno.alumnos.fechanacimiento.strftime("%d/%m/%Y")}} </h2> 
-<h2><u> Estado Civil:</u> {{=alumno.alumnos.estadocivil}} </h2>
-<h2><u> Nacionalidad:</u> {{=alumno.alumnos.nacionalidad}}  </h2>
-<h2><u> Email:</u> {{=alumno.alumnos.email1}}</h2> 
-<h2><u> Ingreso:</u> {{=alumno.alumnos.ingreso.strftime("%d/%m/%Y")}} </h2>
-<h2><u> Carrera:</u> {{=alumno.carreras.nombre}}</h2>
+<center>{{=IMG(_src=URL(c='default',f='download',args=alumno.foto))}}</center>
+<h2><u> Alumno/a:</u> {{=alumno.nombre}}</h2> 
+<h2><u> Fecha de Nacimiento:</u> {{=alumno.fechanacimiento.strftime("%d/%m/%Y")}} </h2> 
+<h2><u> Estado Civil:</u> {{=alumno.estadocivil}} </h2>
+<h2><u> Nacionalidad:</u> {{=alumno.nacionalidad}}  </h2>
+<h2><u> Localidad:</u> {{=alumno.localidad}}</h2>
+<h2><u> Email:</u> {{=alumno.email1}}</h2> 
+<h2><u> Ingreso:</u> {{=alumno.ingreso.strftime("%d/%m/%Y")}} </h2>
+
 <br>
-<h2><u> Inscripto a las siguientes materias:</u> </h2>
+{{if alumno.alumnoid in visible:}}
+<h2><u><center> Inscripto a las siguientes materias:</center></u> </h2>
 <div id= "div_centrado">
 <TABLE id= "tabla">
     <TR>
@@ -36,12 +37,16 @@
              {{ =datos.ciclos.anio}}
              </TD>
         	<TD id= "td"> 
-        	 {{ =datos.carreras.nombre}}  
+                {{=datos.carreras.nombre}}
              </TD>
         {{pass}}
     		 </TR>
     </TABLE>
 </div>
+{{pass}}
+{{if alumno.alumnoid not in visible:}}
+<h2><u><center> No se encuentra inscripto a comisiones.</center></u> </h2>
+{{pass}}
 <br>
 <form>
     <center><a href="index.html"><input type=button value="Volver" ></a></center>

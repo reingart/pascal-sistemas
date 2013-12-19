@@ -42,13 +42,38 @@ db.define_table('revistas',
     format= "%(revistaid)s [%(nombre)s]",
     migrate=migrate)
     
+db.define_table('condiciones',
+    Field('condicionid', type='id'),
+    Field('detalle', type='string', length=50),
+    format= "%(condicionid)s [%(detalle)s]",
+    migrate=migrate)
+    
 db.define_table('cargos',
     Field('cargoid', type='id'),
     Field('descripcion', type='string', length=50),
     format= "%(cargoid)s [%(descripcion)s]",
     migrate=migrate)
     
+db.define_table('manuales',
+    Field('manualid', type='id'),
+    Field('descripcion', type='string', length=50),
+    Field('manual', type='upload'),
+    format= "%(manualid)s [%(descripcion)s]",
+    migrate=migrate)
     
+    
+db.define_table('recursos',
+    Field('recursoid', type='id'),
+    Field('recurso', type='string', length=50),
+    Field('profesor', type='string'),
+    Field('fecha', type='date'),
+    Field('estado', type='boolean'),
+    Field('cantidad', type='integer'),
+
+    format= "%(recursoid)s [%(recurso)s]",
+    migrate=migrate)
+    
+            
 db.define_table('secciones',
     Field('seccionid', type='id'),
     Field('descripcion', type='string', length=50),
@@ -382,7 +407,7 @@ db.define_table('examenes',
     
 db.define_table('inscripcionescarrera',
     Field('inscripcionid', type='id'),
-    Field('alumnoid', db.alumnos),
+    Field('alumnoid', db.alumnos, readable= False, writable= False),
     Field('carreraid', db.carreras),
     Field('alta', type='date', default=request.now.date(), required= True),
     Field('baja', type='date', readable= False, writable= False),
@@ -394,7 +419,7 @@ db.define_table('inscripcionescomision',
     Field('comisionid', db.comisiones),
     Field('alta', type='date'),
     Field('baja', type='date'),
-    Field('condicion', type='string', length=10),
+    Field('condicion', db.condiciones),
     migrate=migrate)
 
 db.define_table('inscripcionesdivision',
@@ -410,7 +435,7 @@ db.define_table('inscripcionesexamen',
     Field('inscripcionid', type='id'),
     Field('alumnoid', db.alumnos),
     Field('examenid', db.examenes),
-    Field('condicion', type='string', length=10),
+    Field('condicion', db.condiciones),
     Field('alta', type='date'),
     Field('baja', type='date'),
     Field('confirmar', type='boolean', default=False),

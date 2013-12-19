@@ -1,32 +1,23 @@
 {{extend 'layout.html'}}
 <BR><p>
+<div id= "div_centrado">
 
-<h1>Listado de examenes finales proximos </h1>
+<h1>Listado de examenes parciales </h1>
 <br>
 
-<TABLE style="border: 1px solid white">
+<TABLE id= "tabla">
     <tr>
-    <td  style="border: 1px solid white"> Materia</td>
-
+    <td id= "head"> Materia</td>
     </tr>
+    {{for examen in examenes: }}
+    <tr>   
+    <td><a href="{{=URL(f="parciales")}}"> {{=examen.nombre}} </td>    
 
-        {{for examen in examenes: }}
-        	<tr>
-
-        
-        	   
-            <td><a href="{{=URL(f="parciales")}}"> {{=examen.nombre}} </td>    
-     
-        		
-
-        	
-        
-        </tr>
-    {{pass}}
-</TABLE>
+     </tr>
+     {{pass}}
+     </TABLE>
 
 <br>
 <form>
-
 <a href="index.html"><input type=button value="Volver" ></a>
 </form>

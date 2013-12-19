@@ -1,49 +1,50 @@
 {{extend 'layout.html'}}
+<div id= "div_centrado">
 Establecimiento: <label for="istbp">I.S.T.B.P</label>
- <br>
- <br>
+<br>
+<br>
+
 Alumnos regulares 
+
 <br>
 <br>
-<FORM ACTION="">
+<FORM ACTION="POST">
 
-<table>
-    <td>Libro: <INPUT type="text" Name="libro" size="1"> </td><td> Folio: <INPUT type="text" Name="folio" size="1"></td>  <td>Fecha: <INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}></td>
+    <table>
+    <td>Libro: <INPUT type="text" Name="libro" size="1"> </td>
+    <td> Folio: <INPUT type="text" Name="folio" size="1"></td>  
+    <td>Fecha: <INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}></td>
+    </table>
     
-    
-</table>
-<br></br>
+<br>
 
-    <TABLE style="border: 1px solid white">
-    <td style="border: 1px solid white"><B><center>D.N.I</B></td>
-    <td style="border: 1px solid white"><B><center>Alumno</B></td>
-    <td style="border: 1px solid white"><B><center>Nota</B></td>
+    <TABLE id= "tabla">
+    <td id= "head"><B><center>D.N.I</B></td>
+    <td id= "head"><B><center>Alumno</B></td>
+    <td id= "head"><B><center>Nota</B></td>
 
   
     
     {{for alumno in alumnos:}}
 	<tr>
-    <td style="border: 1px solid white"><B><center>{{=alumno.dni}}</B></td>
-        
-        <td style="border: 1px solid white"><ul><B><center>{{=alumno.nombre}}</ul></B></td>
-        <td style="border: 1px solid white"><B><INPUT type="text" Name="nota" size="1"></td>
-    
-        </tr>
-        {{pass}}
-    
-
-    <tr style="border: 1px solid white">
+    <td id= "head"><B><center>{{=alumno.dni}}</B></td>
+    <td id= "head"><ul><B><center>{{=alumno.nombre}}</ul></B></td>
+    <td id= "head"><B><INPUT type="text" Name="nota" size="1"></td>
     
     </tr>
-</table>
-<br>
-
-<a href="http://127.0.0.1:8000/practica/docentes/listarfinales#"> ***Haga click para modificar datos erróneos*** </a>   
-
-    <br></br>
-    <INPUT type="submit" name="grabar" value="GUARDAR">
+    {{pass}}
+    <tr>
+    </tr>
+    </table>
     
-    </FORM>
+<br>
+<a href="http://127.0.0.1:8000/pascal2/docentes/listarfinales"> ***Haga click para modificar datos erróneos*** </a>   
+<br></br>
+<INPUT type="submit" name="grabar" value="GUARDAR">
+</FORM>
 <br>
 <br>
-<a href="http://127.0.0.1:8000/practica/docentes/elegir"> VOLVER </a>
+<form>
+ <a href="elegir.html"><input type=button value="Volver" ></a> 
+</form>
+</div>

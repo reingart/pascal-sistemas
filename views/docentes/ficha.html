@@ -1,13 +1,17 @@
 {{extend 'layout.html'}}
-<table style="border: 1px solid white">
+<div id= "div_centrado">
 
-<td  style="border: 1px solid white">
+<table id= "tabla">
+<td  id= "head">
+
 <center>{{=IMG(_src=URL(c='default',f='download',args=fila.foto))}}</center>
+
 <h1>Nombre: {{=fila.nombre}}</h1>
 <h1>Facebook: {{=fila.facebook}}</h1>
 <h1> E_mail: {{=fila.E_mail}} </h1>
 <br>
 <BR>
+    </div>
 
     <b><u>Tomar inasistencias:</u></b>
 <br>
@@ -16,3 +20,12 @@
 
     <li> <a href="{{=URL(f="alumnoXcomision", args=[comision.comisionid])}}">{{=comision.nombre}}</li>
 {{pass}}
+
+    </table>
+    
+<br>
+
+<form>
+
+<a href="index.html"><input type=button value="Volver" ></a>
+</form>

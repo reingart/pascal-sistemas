@@ -8,16 +8,17 @@
     <!-- si el usuario ya es alumno no muestro la preescripcion. de lo contrario si -->
     {{if usuario not in user:}}
     <li> <a href="ingreso.html">Preinscripción</a></li>
-	Formulario de Pre- Inscripcion como alumno.
+	Por favor, complete el formulario de Preinscripción. De lo contrario no podra utilizar las siguientes opciones del Campus Web-Alumnos.
     {{pass}}
 	{{if usuario in user:}}
     <li> <a href="ficha.html">Perfil del Alumno</a></li>
 	Perfil del alumno con sus datos personales correspondientes.
+       
+    <li> <a href="inscripcioncarrera.html">Inscripción a Carrera</a></li>
+    Permite inscribir a una Carrera, lo cual permitira filtrar comisiones en una instancia de inscrip. a comisión. 
     
-    <li> <a href="inscripciones.html">Inscripción a comisiónes</a></li>
-    Permite inscribir a comisión/division de un curso con registro de modalidad de cursada.
-        
-    <!-- si el alumno se encuantra inscripto en comision muestro las opciones. de lo contrario no -->
+    <li> <a href="inscripciones.html">Inscripción a Comisiónes</a></li>
+    Permite inscribir a comisión/division de un curso con registro de modalidad de cursada.   
    
     <li> <a href="horarios_comision.html">Horarios de Comisiones</a></li>
 	Permite ver el horario completo de la carrera cursada por el alumno.

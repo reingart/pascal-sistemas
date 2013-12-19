@@ -11,7 +11,6 @@
     <TD id= "head"> CODIGO  </TD>
     <TD id= "head">MATERIA  </TD>
     <TD id= "head"> DOCENTE </TD>
-    <TD id= "head"> CONDICIÓN  </TD>
     <TD id= "head"> ESTADO </TD>
 <TR>
     
@@ -27,14 +26,7 @@
     <td id= "td">
     {{=c.personal.nombre}}
     </td>
-    <td id= "td">
-    <select name="{{="condicion_%s" % alumno.alumnoid}}" {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}}> 
-              {{for condicion in condiciones: }}
-             <option value="{{=condicion.condicionid }}">{{=(condicion.detalle)}}</option>
-			 {{pass}}
-             </select>
-
-    </td>
+    
     <td id= "td">
     <font color="yellow"> 
         {{='Ya inscripto, pendiente de revision' if (c.comisiones.comisionid in inscripciones) else ''}}

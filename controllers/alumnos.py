@@ -40,6 +40,9 @@ def index():
 def ficha():
     # muestra un perfil personalizado del alumno.
     q = db.alumnos.user_id== auth.user_id   # obtengo el registro del alumno ya registrado como usuario 
+    alumno= db(q).select( db.alumnos.nombre, db.alumnos.fechanacimiento, db.alumnos.estadocivil, 
+                         db.alumnos.foto, db.alumnos.email1, db.alumnos.ingreso, 
+                         db.alumnos.localidad, db.alumnos.nacionalidad, db.alumnos.alumnoid).first()
     q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
     q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
     q &= db.comisiones.materiaid== db.materias.materiaid
@@ -47,20 +50,21 @@ def ficha():
     q &= db.divisiones.cicloid== db.ciclos.cicloid
     q &= db.materias.materiaid== db.asignaturas.materiaid
     q &= db.asignaturas.carreraid== db.carreras.carreraid
-    fila = db(q).select( db.alumnos.nombre, db.alumnos.fechanacimiento, db.alumnos.estadocivil, 
-                         db.alumnos.foto, db.alumnos.email1, db.alumnos.ingreso, 
-                         db.alumnos.localidad, db.alumnos.nacionalidad, db.alumnos.alumnoid).first()
+    
                          
     datos= db(q).select( db.comisiones.nombre, db.inscripcionescomision.alta,
                          db.ciclos.anio, db.carreras.nombre)
     
     inscripcion= db(db.inscripcionescomision).select(db.inscripcionescomision.alumnoid, db.inscripcionescomision.comisionid)
     visible= []
-    for x in inscripcion:
-        if x.alumnoid==fila.alumnoid:
-            visible.append(x.alumnoid)
+    dato=[]
+    usuario=auth.user_id
+    alumnos= db(db.alumnos).select(db.alumnos.user_id, db.alumnos.alumnoid)
+    
+    
+        
                                   
-    return dict (alumno=fila, dato=datos, visible=visible)
+    return dict (alumno=alumno, dato=datos, inscripcion=inscripcion)
     
 #@auth.requires_login()
 
@@ -76,7 +80,7 @@ def ingreso():
             grupo=x.id
         db.auth_membership.insert(user_id=auth.user_id, group_id=grupo)
         #agrego al alumno y su id de registro en el grupo alumnos
-        
+        redirect(URL(f=index))
         response.flash='Usted fue agregado como alumno...'
     elif form.errors: 
         response.flash='Hay errores en el formulario'
@@ -257,6 +261,7 @@ def final(): #formulario de inscrip a examenes finales
             #en k tenemos el nombre del checkbox
         fecha = request.now.date()
         ok = 0
+        condicion_id= 1
         for _name,_value in request.vars.items():
             if _name.startswith ("examen_"):
                 examen_id = int(_name[_name.index('_')+1:])
@@ -264,7 +269,7 @@ def final(): #formulario de inscrip a examenes finales
                 if _value == "on":                    
                     db.inscripcionesexamen.insert(alumnoid= alumno.alumnoid, 
                         examenid= examen_id,
-                        condicion="Regular",
+                        condicionid=condicion_id,
                         alta=fecha,
                         confirmar=True,
                         valido=True)
@@ -338,7 +343,10 @@ def final(): #formulario de inscrip a examenes finales
          
 
 def constancia_final():
+    fecha= request.now.date() #guardo la fecha actual
+    fecha_actual= fecha.strftime("%d/%m/%Y") #cambio el formato de fecha a latino-americano
     #traigo las inscripciones a examenes finales del alumno para formatearla en una constancia para su posterior impresion
+    
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
     alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista
     q &= db.inscripcionesexamen.alumnoid== alumno.alumnoid
@@ -351,7 +359,7 @@ def constancia_final():
     q &= db.examenes.personalid1== db.personal.personalid
     inscripcion= db(q).select(db.materias.codigo, db.materias.nombre, db.periodos.descripcion, db.personal.nombre, db.examenes.fecha)
       
-    return dict(alumno=alumno, inscripcion=inscripcion, carrera=carrera)
+    return dict(alumno=alumno, inscripcion=inscripcion, carrera=carrera, fecha_actual=fecha_actual)
  
 @auth.requires_login() #requiere que haya un usuario logueado
 @auth.requires_membership(role='Alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos           
@@ -387,16 +395,17 @@ def inscripciones():
             #en k tenemos el nombre del checkbox
         fecha = request.now.date()
         ok = 0
+        condicion_id= 1
         for _name,_value in request.vars.items():
             if _name.startswith ("comision_"):
                 comision_id = int(_name[_name.index('_')+1:])
-                condicion_id = request.vars["condicion_%s" % alumno.alumnoid]
-                # si el valor es on  en el checkbox insertamos los datos en inscripcion a examenes. 
-                if _value == "on":                    
+                
+                # si el valor es on  en el checkbox insertamos los datos en inscripcion a examenes.                  
+                if _value== "on":                    
                     db.inscripcionescomision.insert(alumnoid= alumno.alumnoid, 
-                        comisionid= comision_id,
-                        alta=fecha,
-                        condicion=condicion_id)
+                                comisionid= comision_id,
+                                alta=fecha,
+                                condicion=condicion_id)
                     ok += 1 #creo contador de comisiones insertados/seleccionados por el alumno
                     
         if ok:
@@ -442,6 +451,8 @@ def inscripciones():
  
 
 def constancia_comision():
+    fecha= request.now.date() #guardo la fecha actual
+    fecha_actual= fecha.strftime("%d/%m/%Y") #cambio el formato de fecha a latino-americano
     #traigo las inscripciones a examenes finales del alumno para formatearla en una constancia para su posterior impresion
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
     alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista
@@ -455,7 +466,7 @@ def constancia_comision():
     q &= db.comisiones.divisionid== db.divisiones.divisionid
     inscripcion= db(q).select(db.materias.codigo, db.materias.nombre, db.periodos.descripcion, db.divisiones.descripcion)
       
-    return dict(alumno=alumno, inscripcion=inscripcion, carrera=carrera)
+    return dict(alumno=alumno, inscripcion=inscripcion, carrera=carrera, fecha_actual=fecha_actual)
 
 @auth.requires_login() #requiere que haya un usuario logueado
 @auth.requires_membership(role='Alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos    

@@ -12,7 +12,8 @@
 <h2><u> Ingreso:</u> {{=alumno.ingreso.strftime("%d/%m/%Y")}} </h2>
 
 <br>
-{{if alumno.alumnoid in visible:}}
+{{if alumno.alumnoid not in inscripcion:}}
+
 <h2><u><center> Inscripto a las siguientes materias:</center></u> </h2>
 <div id= "div_centrado">
 <TABLE id= "tabla">
@@ -39,14 +40,12 @@
         	<TD id= "td"> 
                 {{=datos.carreras.nombre}}
              </TD>
-        {{pass}}
+                {{pass}}
     		 </TR>
     </TABLE>
 </div>
-{{pass}}
-{{if alumno.alumnoid not in visible:}}
-<h2><u><center> No se encuentra inscripto a comisiones.</center></u> </h2>
-{{pass}}
+			{{pass}}
+
 <br>
 <form>
     <center><a href="index.html"><input type=button value="Volver" ></a></center>

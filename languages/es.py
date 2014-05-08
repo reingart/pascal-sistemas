@@ -332,6 +332,7 @@
 'There are no translators, only default language is supported': 'No hay traductores, sólo el lenguaje por defecto es soportado',
 'There are no views': 'No hay vistas',
 'these files are served without processing, your images go here': 'estos archivos son servidos sin procesar, sus imágenes van aquí',
+'This email already has an account': 'This email already has an account',
 'This is the %(filename)s template': 'Esta es la plantilla %(filename)s',
 'Ticket': 'Tiquete',
 'Timestamp': 'Fecha y hora',

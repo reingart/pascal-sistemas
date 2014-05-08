@@ -1,4 +1,4 @@
-# coding: utf8
+# coding: utf-8
 {
 '"update" is an optional expression like "field1=\'newvalue\'". You cannot update or delete the results of a JOIN': '"actualice" es una expresión opcional como "campo1=\'nuevo_valor\'". No se puede actualizar o eliminar resultados de un JOIN',
 '%s rows deleted': '%s filas eliminadas',
@@ -289,6 +289,7 @@
 'There are no translators, only default language is supported': 'No hay traductores, sólo el lenguaje por defecto es soportado',
 'There are no views': 'No hay vistas',
 'these files are served without processing, your images go here': 'estos archivos son servidos sin procesar, sus imágenes van aquí',
+'This email already has an account': 'This email already has an account',
 'This is the %(filename)s template': 'Esta es la plantilla %(filename)s',
 'Ticket': 'Tiquete',
 'Timestamp': 'Fecha y hora',

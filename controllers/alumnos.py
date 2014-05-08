@@ -1,9 +1,10 @@
 # coding: utf8
 # try something like
 
-@auth.requires_login() #requiere que haya un usuario logueado.
+#@auth.requires_login() #requiere que haya un usuario logueado.
 #@auth.requires_membership(role='alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos
-
+def libreta():
+    return{}
 def index(): 
     fecha= request.now.date() #guardo la fecha actual
     fecha_actual= fecha.strftime("%d/%m/%Y") #cambio el formato de fecha a latino-americano
@@ -89,7 +90,7 @@ def ingreso():
         
     return dict (form=form, sub=subtitulo)
  
-@auth.requires_login() #requiere que haya un usuario logueado 
+#@auth.requires_login() #requiere que haya un usuario logueado 
 def inscripcioncarrera():
     q = db.alumnos.user_id== auth.user_id  
     alumno= db(q).select().first()

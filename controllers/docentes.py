@@ -118,8 +118,8 @@ def horarios():
 
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
-def finales(): 
-    #ACTA VOLANTE
+def finales():
+
 
     q =db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
 
@@ -157,20 +157,20 @@ def finales():
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 def listamaterias():
-    
+
     q = db.examenes.materiaid == db.materias.materiaid
     q &= db.examenes.periodoid == db.periodos.periodoid
-   
-  
-   
+
+
+
 
     examenes=db(q).select(db.materias.nombre, db.periodos.descripcion, db.examenes.fecha,db.examenes.hora,db.materias.materiaid)
-   
+
 
     return dict (examenes= examenes)
-    
+
 @auth.requires_login()
-@auth.requires_membership(role='Personal')  
+@auth.requires_membership(role='Personal')
 def listaparciales():
     form = SQLFORM.factory(
         Field("Materia", "string"),
@@ -178,7 +178,7 @@ def listaparciales():
     q= db.materias.id>0
     if form.accepts(request.vars, session):
         # buscar el docente
-       
+
         if form.vars.Materia:
             q &= db.materias.nombre.contains(form.vars.Materia)
         materia = db(q).select().first()
@@ -190,15 +190,15 @@ def listaparciales():
 
        # else:
           #  response.flash = "Materia no encontrado"
-    
-   
-    
+
+
+
 
     examenes=db().select(db.materias.nombre)
-   
+
 
     return dict (examenes= examenes,form=form)
-    
+
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 def libres():
@@ -235,14 +235,14 @@ def libres():
     comisiones = db(q).select(db.comisiones.ALL, distinct=True)
 
     return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}
-    
+
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 def elegir():
     ""
     return{}
-    
-    
+
+
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 def parciales():
@@ -276,7 +276,7 @@ def parciales():
 
     comisiones = db(q).select(db.comisiones.ALL, distinct=True)
 
-    return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}   
+    return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}
 
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
@@ -294,34 +294,34 @@ def apuntes():
 def recursos():
     q = db.profesores.user_id == auth.user_id
     q &= db.profesores.personalid== db.personal.personalid
-    
-    
+
+
     if request.vars.GRABAR=="Reservar":
 
-        
-            fecha= request.now.date()         
+
+            fecha= request.now.date()
             recurso = request.vars.Recursos
             cantidad =request.vars.cantidad
             #profesor = usuario.nombre
             #fecha_reserva= request.vars.fecha
             db.recursos.insert(fecha=fecha, recurso=recurso,cantidad=cantidad)
-            
-   
+
+
     usuario = db(q).select(db.personal.nombre).first()
     return {'usuario':usuario}
-    
+
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 def listar():
     reservas = db().select(db.recursos.recurso,db.recursos.profesor,db.recursos.fecha,db.recursos.cantidad)
     return{'reservas':reservas}
-    
+
 def cancelar():
     i=0
 
     recursos = db().select (db.recursos.ALL, distinct = True)
 
-     
+
 
     listado=[]
 
@@ -336,7 +336,7 @@ def cancelar():
 
            TH('CANTIDAD',_style='width:200px; color:#000; background: #99f; border: 1px solid #cdcdcd')
 
-           )))  
+           )))
 
     for x in recursos:
 
@@ -351,7 +351,7 @@ def cancelar():
            TD(x.fecha,_style='width:200px;background: #063C8E; border: 1px solid #FFFFFF'),
 
            TD(x.cantidad,_style='width:200px;background: #063C8E; border: 1px solid #FFFFFF')
-           ))) 
+           )))
 
 
 
@@ -359,26 +359,26 @@ def cancelar():
 
     form=FORM(TABLE(TR("Codigo:",INPUT(_type="text",_name="codigo",requires=IS_NOT_EMPTY())),
 
-                    
-                    
+
+
 
                     TR("",INPUT(_type="submit",_value="eliminar"))))
 
-                                 
 
-    
 
-    if form.accepts(request.vars,session):#si esta todo bien 
+
+
+    if form.accepts(request.vars,session):#si esta todo bien
 
         if len(db((db.recursos.recursoid==request.vars.codigo)).select())==0:
 
-                   
 
-           form.errors.codigo='el codigo no esta en la base'        
+
+           form.errors.codigo='el codigo no esta en la base'
 
         else:
 
-            db(db.recursos.recursoid==form.vars.codigo).delete()                   
+            db(db.recursos.recursoid==form.vars.codigo).delete()
 
 
     elif form.errors:
@@ -390,7 +390,7 @@ def cancelar():
         response.flash="complete el formulario"
 
     return dict (f=form,a=a)
-    
+
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 def unidad():
@@ -401,7 +401,7 @@ def unidad():
 @auth.requires_membership(role='Personal')
 def ficha():
     # obtengo el id de la url (primer argumento por posicion):
-    
+
 
     #personalid = request.args[0]
    # horarioid = request.args[0]
@@ -428,14 +428,14 @@ def ficha():
 
 
    # return {'docente':docente, 'comisiones':comisiones, 'horario':horario, 'horarios':horarios, 'horas':horas,'hora':hora}
-    q = db.profesores.user_id== auth.user_id   # obtengo el registro del alumno ya registrado como usuario 
+    q = db.profesores.user_id== auth.user_id   # obtengo el registro del alumno ya registrado como usuario
     q &= db.profesores.personalid== db.personal.personalid
     q &= db.personal.personalid== db.comisiones.personalid
-   
+
     fila = db(q).select( db.personal.nombre,db.personal.facebook, db.personal.E_mail, db.personal.foto).first()
-    comisiones= db(q).select(db.comisiones.nombre,db.comisiones.comisionid)                    
-   
-                                  
+    comisiones= db(q).select(db.comisiones.nombre,db.comisiones.comisionid)
+
+
     return dict (fila=fila, comisiones=comisiones)
 
 @auth.requires_login()
@@ -455,7 +455,7 @@ def altas():
 def modificar():
     ""
     return{}
-    
+
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 def listarfinales():
@@ -536,7 +536,7 @@ def modificarfinal():
 
                     fields=['notaid','folio','libro','nota'],
 
-                    
+
 
                     labels={'notaid':'notaid', 'folio':'folio'},
 
@@ -550,7 +550,7 @@ def modificarfinal():
 
         #redirecciona al controlador principal
 
-        redirect(URL(r=request, f='listarfinales'))                
+        redirect(URL(r=request, f='listarfinales'))
 
     #retorna el formulario a la vista
 
@@ -568,14 +568,14 @@ def muestrafinal():
 
     #que hace que el campo 'nombre' no pueda ser modificado en la vista
 
-    
+
     db.notas.folio.writable = False
 
     db.notas.libro.writable = False
 
     db.notas.nota.writable = False
 
-   
+
     form = SQLFORM(db.notas, idfinalSeleccionado, writable=False,
 
                     fields=['folio','libro','nota'],
@@ -588,12 +588,14 @@ def muestrafinal():
 
         session.flash = "ADVERTENCIA: Los datos modificados se guardaran en la Base de Datos"
 
-        redirect(URL(r=request, f='listarfinales'))#redirecciona al controlador principal                
+        redirect(URL(r=request, f='listarfinales'))#redirecciona al controlador principal
 
-                    
+
 
     return dict(form=form)
 
-
 def asistencias():
+    return{}
+
+def acta_volante():
     return{}

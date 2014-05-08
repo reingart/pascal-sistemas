@@ -118,8 +118,8 @@ def horarios():
 
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
-def finales():
-
+def finales(): 
+    #ACTA VOLANTE
 
     q =db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
 
@@ -593,3 +593,7 @@ def muestrafinal():
                     
 
     return dict(form=form)
+
+
+def asistencias():
+    return{}

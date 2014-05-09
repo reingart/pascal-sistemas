@@ -1,10 +1,10 @@
 # coding: utf8
 # try something like
 
-#@auth.requires_login() #requiere que haya un usuario logueado.
-#@auth.requires_membership(role='alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos
+
 def libreta():
     return{}
+@auth.requires_login() 
 def index(): 
     fecha= request.now.date() #guardo la fecha actual
     fecha_actual= fecha.strftime("%d/%m/%Y") #cambio el formato de fecha a latino-americano
@@ -35,8 +35,11 @@ def index():
         
     return dict (fecha_actual=fecha_actual, visible= visible, user=user, usuario=usuario)
 
-@auth.requires_login() #requiere que haya un usuario logueado
-@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos
+#requiere que haya un usuario logueado
+@auth.requires_login() 
+
+#requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos') 
 
 def ficha():
     # muestra un perfil personalizado del alumno.
@@ -57,20 +60,14 @@ def ficha():
                          db.ciclos.anio, db.carreras.nombre)
     
     inscripcion= db(db.inscripcionescomision).select(db.inscripcionescomision.alumnoid, db.inscripcionescomision.comisionid)
-    visible= []
-    dato=[]
-    usuario=auth.user_id
+    #envio todos los alumnos y comisiones para luego comparar en ficha.
+    
     alumnos= db(db.alumnos).select(db.alumnos.user_id, db.alumnos.alumnoid)
-    
-    
-        
-                                  
+                       
     return dict (alumno=alumno, dato=datos, inscripcion=inscripcion)
     
-#@auth.requires_login()
-
-
-@auth.requires_login() #requiere que haya un usuario logueado
+#requiere que haya un usuario logueado..
+@auth.requires_login() 
 def ingreso():
     db.alumnos.user_id.default= auth.user_id
     subtitulo= T ('Complete el formulario por favor...')
@@ -89,8 +86,9 @@ def ingreso():
         response.flash='Por favor, complete el formulario'
         
     return dict (form=form, sub=subtitulo)
- 
-#@auth.requires_login() #requiere que haya un usuario logueado 
+
+ #requiere que haya un usuario logeado  
+@auth.requires_login() 
 def inscripcioncarrera():
     q = db.alumnos.user_id== auth.user_id  
     alumno= db(q).select().first()
@@ -145,9 +143,10 @@ def busqueda():
     #response.view = "generic.html"  # HACER una vista de verdad
     return dict (form = form)
 
-
-@auth.requires_login() #requiere que haya un usuario logueado
-@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos
+#requiere que haya un usuario logueado
+@auth.requires_login() 
+#requiere que haya un usuario logueado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos') 
 def horarios():
    #lista los horarios dependiendo de la carrera
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
@@ -164,8 +163,7 @@ def horarios():
     filas= db(q).select(db.horas.hora, db.personal.nombre, db.materias.nombre, db.divisiones.divisionid, db.horarios.dia)
     
     horario = {'lunes':{},'martes':{},'miercoles':{},'jueves':{},'viernes':{}}
-    # horario es una estructura cuya clave es el dia y el valor es otro diccionario....
-    #  {'lunes': {1: fila} ... }
+    
     for fila in filas:
         horario[fila.horarios.dia].setdefault(fila.horas.hora, {})[fila.divisiones.divisionid]= fila
     filas = db(db.horas.id>0).select()
@@ -173,8 +171,10 @@ def horarios():
         
     return dict (horario=horario, horas=horas, alumno=alumno)
     
-@auth.requires_login() #requiere que haya un usuario logueado
-@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos
+#requiere que haya un usuario logueado    
+@auth.requires_login() 
+#requiere que haya un usuario logueado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos') 
 def horarios_comision():
    #lista los horarios dependiendo de la carrera
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
@@ -192,25 +192,27 @@ def horarios_comision():
      
     horarios= db(q).select(db.horas.hora, db.horas.desde, db.horas.hasta, db.personal.nombre, db.materias.nombre, db.divisiones.descripcion, db.horarios.dia)
     
-    
-        
     return dict (horarios= horarios, alumno=alumno)    
     
-   
-@auth.requires_login() #requiere que haya un usuario logueado
-@auth.requires_membership(role='Alumnos')    #requiere que haya un usuario logueado e integre el grupo alumnos
+#requiere que haya un usuario logueado
+@auth.requires_login() 
+ #requiere que haya un usuario logueado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos')   
     
-def inasistencias():   #lista de inasistencias del alumno
+def inasistencias():   
+    #lista de inasistencias del alumno
     
-    fecha= request.now.date() #guardo la fecha actual
-    fecha_actual= fecha.strftime("%d/%m/%Y") #cambio el formato de fecha a latino-americano
+    fecha= request.now.date() 
+    #guardo la fecha actual
+    fecha_actual= fecha.strftime("%d/%m/%Y") 
+    #cambio el formato de fecha a latino-americano
     #buscar el alumno y compararlo con el logueado
     q = db.alumnos.user_id== auth.user_id
     #traemos el alumno para notificarlo en la vista
     alumno= db(q).select().first()
     #utilizamos los datos de faltas para filtrar las inasistencias del alumno
     q &= db.faltas.alumnoid== db.alumnos.alumnoid
-    #de inscrip_comision buscamos la materia = al alumno
+    
     q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid
     q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
     q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
@@ -219,16 +221,18 @@ def inasistencias():   #lista de inasistencias del alumno
     q &= db.comisiones.personalid== db.personal.personalid      
       
     q &= db.faltas.inasistenciaid== db.inasistencias.inasistenciaid
-    #cantidad= db(q).count()
+    
     falta= db(q).select(db.comisiones.nombre, db.faltas.cantidad, db.inasistencias.descripcion, db.faltas.fecha)
 
     total= db(q).select(db.faltas.cantidad.sum().with_alias("suma")).first()
-    
+    #creo un grupo en donde guardo la suma de las inasistencias de los alumnos
     
     return dict (falta=falta, alumno=alumno, total=total, fecha_actual= fecha_actual)
-    
-@auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos
+
+#requiere que haya un usuario logueado  
+@auth.requires_login()
+#requiere que haya un usuario logeado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos') 
     
 def examenes():
      #listado de examenes finales ya rendidos
@@ -241,18 +245,23 @@ def examenes():
     q &= db.notas.alumnoid == db.alumnos.alumnoid
     q &= db.notas.materiaid == db.materias.materiaid
     q &= db.materias.cursoid == db.cursos.cursoid
-    q &= db.notas.calificacionid == 5  # filtrar solo finales
+    q &= db.notas.calificacionid == 5  
+    # filtrar solo finales
     q &= db.notas.periodoid == db.periodos.periodoid
     notas = db(q).select(db.alumnos.nombre, db.materias.nombre, db.notas.nota, db.notas.fecha, db.periodos.descripcion, db.cursos.nombre)
     
     return dict (notas= notas, alumno=alumno)
+
+#requiere que haya un usuario logueado
+@auth.requires_login() 
+#requiere que haya un usuario logueado e integre el grupo alumnos
+@auth.requires_membership(role='Alumnos') 
   
-@auth.requires_login() #requiere que haya un usuario logueado
-@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos
-  
-def final(): #formulario de inscrip a examenes finales 
+def final(): 
+    #formulario de inscrip a examenes finales 
     
-    q = db.alumnos.user_id== auth.user_id #busca y trae todos los datos del alumno logueado
+    q = db.alumnos.user_id== auth.user_id 
+    #busca y trae todos los datos del alumno logueado
     alumno= db(q).select().first() 
     # guarda en una variable los datos para poder ser utilizados y tmb la envio a la vista
     
@@ -344,12 +353,16 @@ def final(): #formulario de inscrip a examenes finales
          
 
 def constancia_final():
-    fecha= request.now.date() #guardo la fecha actual
-    fecha_actual= fecha.strftime("%d/%m/%Y") #cambio el formato de fecha a latino-americano
+    fecha= request.now.date() 
+    #guardo la fecha actual
+    fecha_actual= fecha.strftime("%d/%m/%Y") 
+    #cambio el formato de fecha a latino-americano
     #traigo las inscripciones a examenes finales del alumno para formatearla en una constancia para su posterior impresion
     
-    q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
-    alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista
+    q = db.alumnos.user_id== auth.user_id   
+     #guardo en la consulta el registro del alumno
+    alumno= db(q).select().first()     
+    #traemos el alumno para notificarlo en la vista
     q &= db.inscripcionesexamen.alumnoid== alumno.alumnoid
     q &= db.inscripcionesexamen.examenid== db.examenes.examenid
     q &= db.inscripcionescarrera.alumnoid== alumno.alumnoid
@@ -383,10 +396,14 @@ def parciales():
     
     return dict (notas= notas, alumno=alumno)
     
-@auth.requires_login() #requiere que haya un usuario logeado
-@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logeado e integre el grupo alumnos      
+#requiere que haya un usuario logeado  
+#@auth.requires_login() 
+#requiere que haya un usuario logeado e integre el grupo alumnos   
+#@auth.requires_membership(role='Alumnos')    
 def inscripciones():
-    q = db.alumnos.user_id== auth.user_id #busca y trae todos los datos del alumno logueado
+    #formulario de inscrip. a comisiones
+    q = db.alumnos.user_id== auth.user_id 
+    #busca y trae todos los datos del alumno logueado
     alumno= db(q).select().first() 
     # guarda en una variable los datos para poder ser utilizados y tmb la envio a la vista
     
@@ -452,11 +469,15 @@ def inscripciones():
  
 
 def constancia_comision():
-    fecha= request.now.date() #guardo la fecha actual
-    fecha_actual= fecha.strftime("%d/%m/%Y") #cambio el formato de fecha a latino-americano
+    fecha= request.now.date() 
+    #guardo la fecha actual
+    fecha_actual= fecha.strftime("%d/%m/%Y") 
+    #cambio el formato de fecha a latino-americano
     #traigo las inscripciones a examenes finales del alumno para formatearla en una constancia para su posterior impresion
-    q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
-    alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista
+    q = db.alumnos.user_id== auth.user_id    
+    #guardo en la consulta el registro del alumno
+    alumno= db(q).select().first()     
+    #traemos el alumno para notificarlo en la vista
     q &= db.inscripcionescomision.alumnoid== alumno.alumnoid
     q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
     q &= db.inscripcionescarrera.alumnoid== alumno.alumnoid

@@ -1,4 +1,8 @@
+<<<<<<< local
+# coding: utf-8
+=======
 # coding: utf8
+>>>>>>> other
 {
 '"update" is an optional expression like "field1=\'newvalue\'". You cannot update or delete the results of a JOIN': '"actualice" es una expresión opcional como "campo1=\'nuevo_valor\'". No se puede actualizar o eliminar resultados de un JOIN',
 '%s rows deleted': '%s filas eliminadas',
@@ -34,6 +38,10 @@
 'application "%s" uninstalled': 'aplicación "%s" desinstalada',
 'application compiled': 'aplicación compilada',
 'application is compiled and cannot be designed': 'la aplicación está compilada y no puede ser modificada',
+<<<<<<< local
+'Apply changes': 'Apply changes',
+=======
+>>>>>>> other
 'Apuntes': 'Apuntes',
 'Are you sure you want to delete file "%s"?': '¿Está seguro que desea eliminar el archivo "%s"?',
 'Are you sure you want to uninstall application "%s"': '¿Está seguro que desea desinstalar la aplicación "%s"',
@@ -332,7 +340,10 @@
 'There are no translators, only default language is supported': 'No hay traductores, sólo el lenguaje por defecto es soportado',
 'There are no views': 'No hay vistas',
 'these files are served without processing, your images go here': 'estos archivos son servidos sin procesar, sus imágenes van aquí',
+<<<<<<< local
+=======
 'This email already has an account': 'This email already has an account',
+>>>>>>> other
 'This is the %(filename)s template': 'Esta es la plantilla %(filename)s',
 'Ticket': 'Tiquete',
 'Timestamp': 'Fecha y hora',

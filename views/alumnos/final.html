@@ -1,67 +1,859 @@
 {{extend 'layout.html'}}
 
 <h1> <center><u> Inscripción a Exámenes Finales</u> </center></h1>
+<tr><td class="expandable column2">
+            <div class="flash" style="display: block;">Por favor, complete el formulario</div>
+            <div class="body">
+            
+
+<h1> <center><u> Inscripción a Exámenes Finales</u> </center></h1>
 <form method="POST">
 <br>
     
 <br>
-<div id= "div_centrado">
-<TABLE id= "tabla">
-<TR>
-    <TD id= "head"> CODIGO  </TD>
-    <TD id= "head"> MATERIA </TD>
-    <TD id= "head"> DOCENTE  </TD>
-    <TD id= "head"> FECHA  </TD>
-    <TD id= "head"> HORA  </TD>
-    <TD id= "head">ESTADO </TD>
-    </TR>    
-<TR>
-{{for f in final:}}
-    <td id= "td">
-    {{=f.examenes.materiaid}}
+<div id="div_centrado">
+<table id="tabla">
+<tbody><tr>
+    <td id="head"> CODIGO  </td>
+    <td id="head"> MATERIA </td>
+    <td id="head"> DOCENTE  </td>
+    <td id="head"> FECHA  </td>
+    <td id="head"> HORA  </td>
+    <td id="head">ESTADO </td>
+    </tr>    
+<tr>
+
+    <td id="td">
+    158
     </td>
-    <td id= "td"><input type="checkbox" name="{{="examen_%s" % f.examenes.examenid}}" {{='disabled' if (f.examenes.materiaid in mensajes) else ''}} or {{='disabled' if (f.examenes.materiaid in aprobadas) else ''}} or {{='disabled' if (f.examenes.examenid in inscripciones) else ''}}> 
+    <td id="td"><input type="checkbox" name="examen_46" or=""> 
     
-    {{=f.materias.nombre}}
+    ALGEBRA
     </td>
-    <td id= "td">
-    {{=f.personal.nombre}}
+    <td id="td">
+    Gonzalez Jose
     </td>
-    <td id= "td">
-    {{=f.examenes.fecha.strftime("%d/%m/%Y")}}
+    <td id="td">
+    27/11/2015
     </td>
-    <td id= "td">
-    {{=f.examenes.hora}}
+    <td id="td">
+    19:00hs
     </td>
-    <td id= "td">
+    <td id="td">
     <font color="yellow"> 
-        {{ ='Ya inscripto, pendiente de revision' if (f.examenes.examenid in inscripciones) else ''}} 
+         
     </font>
     	
     <font color="white"> 
-        {{=msj_aprobada.get(f.examenes.materiaid, "")}}      
+              
     </font>
 
     <font color="red"> 
-        {{=mensajes.get(f.examenes.materiaid, "")}}  
+          
     </font>
     
     <font color="white"> 
-        {{='' if (f.examenes.materiaid in mensajes or f.examenes.materiaid in aprobadas or f.examenes.examenid in inscripciones) else 'Disponible'}}
+        Disponible
     </font>
     
     </td>
-    </TR>
+    </tr>
     
-    {{pass}}
-    {{pass}}
-</TABLE>
+    
+    <tr><td id="td">
+    159
+    </td>
+    <td id="td"><input type="checkbox" name="examen_47" or=""> 
+    
+    ANALISIS MATEMATICO I
+    </td>
+    <td id="td">
+    Gonzalez Jose
+    </td>
+    <td id="td">
+    11/12/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+          
+    </font>
+    
+    <font color="white"> 
+        Disponible
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    160
+    </td>
+    <td id="td"><input type="checkbox" name="examen_48" or=""> 
+    
+    INGLES TECNICO I
+    </td>
+    <td id="td">
+    Andre Roselli
+    </td>
+    <td id="td">
+    17/12/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+          
+    </font>
+    
+    <font color="white"> 
+        Disponible
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    161
+    </td>
+    <td id="td"><input type="checkbox" name="examen_49" or=""> 
+    
+    ADM. DE LAS ORGANIZACIONES
+    </td>
+    <td id="td">
+    Vargas Claudia
+    </td>
+    <td id="td">
+    25/12/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+          
+    </font>
+    
+    <font color="white"> 
+        Disponible
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    162
+    </td>
+    <td id="td"><input type="checkbox" name="examen_50" or=""> 
+    
+    METODOLOGIA DE LA INVESTIGACION
+    </td>
+    <td id="td">
+    Aguirre Elena
+    </td>
+    <td id="td">
+    23/12/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+          
+    </font>
+    
+    <font color="white"> 
+        Disponible
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    163
+    </td>
+    <td id="td"><input type="checkbox" name="examen_51" or=""> 
+    
+    PROGRAMACION I
+    </td>
+    <td id="td">
+    Amarilla Hector
+    </td>
+    <td id="td">
+    23/12/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+          
+    </font>
+    
+    <font color="white"> 
+        Disponible
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    164
+    </td>
+    <td id="td"><input type="checkbox" name="examen_52" or=""> 
+    
+    INTROD. SISTEMAS DE INFORMACION
+    </td>
+    <td id="td">
+    Medina Luz
+    </td>
+    <td id="td">
+    18/12/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+          
+    </font>
+    
+    <font color="white"> 
+        Disponible
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    165
+    </td>
+    <td id="td"><input type="checkbox" name="examen_53" or=""> 
+    
+    ARQUITECTURA DE COMPUTADORES
+    </td>
+    <td id="td">
+    Bravo Angel
+    </td>
+    <td id="td">
+    14/11/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+          
+    </font>
+    
+    <font color="white"> 
+        Disponible
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    166
+    </td>
+    <td id="td"><input type="checkbox" name="examen_54" or=""> 
+    
+    EDI I
+    </td>
+    <td id="td">
+    Bravo Angel
+    </td>
+    <td id="td">
+    20/12/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+          
+    </font>
+    
+    <font color="white"> 
+        Disponible
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    167
+    </td>
+    <td id="td"><input type="checkbox" name="examen_55" disabled="" or=""> 
+    
+    PROBABILIDAD Y ESTADISTICA
+    </td>
+    <td id="td">
+    Gonzalez Jose
+    </td>
+    <td id="td">
+    19/12/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+        Materia 158 No Aprobada, Materia 159 No Aprobada  
+    </font>
+    
+    <font color="white"> 
+        
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    168
+    </td>
+    <td id="td"><input type="checkbox" name="examen_56" or=""> 
+    
+    ANALISIS MATEMATICO II
+    </td>
+    <td id="td">
+    Gonzalez Jose
+    </td>
+    <td id="td">
+    24/12/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+          
+    </font>
+    
+    <font color="white"> 
+        Disponible
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    169
+    </td>
+    <td id="td"><input type="checkbox" name="examen_57" disabled="" or=""> 
+    
+    INGLES TECNICO II
+    </td>
+    <td id="td">
+    Andre Roselli
+    </td>
+    <td id="td">
+    19/12/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+        Materia 160 No Aprobada  
+    </font>
+    
+    <font color="white"> 
+        
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    170
+    </td>
+    <td id="td"><input type="checkbox" name="examen_58" disabled="" or=""> 
+    
+    SISTEMAS DE INFORMACION I
+    </td>
+    <td id="td">
+    Medina Luz
+    </td>
+    <td id="td">
+    15/11/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+        Materia 161 No Aprobada, Materia 164 No Aprobada  
+    </font>
+    
+    <font color="white"> 
+        
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    171
+    </td>
+    <td id="td"><input type="checkbox" name="examen_59" disabled="" or=""> 
+    
+    PROGRAMACION II
+    </td>
+    <td id="td">
+    Amarilla Hector
+    </td>
+    <td id="td">
+    16/11/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+        Materia 163 No Aprobada  
+    </font>
+    
+    <font color="white"> 
+        
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    172
+    </td>
+    <td id="td"><input type="checkbox" name="examen_60" disabled="" or=""> 
+    
+    SISTEMAS OPERATIVOS
+    </td>
+    <td id="td">
+    Reingart Mariano
+    </td>
+    <td id="td">
+    18/12/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+        Materia 165 No Aprobada  
+    </font>
+    
+    <font color="white"> 
+        
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    173
+    </td>
+    <td id="td"><input type="checkbox" name="examen_61" disabled="" or=""> 
+    
+    BASES DE DATOS
+    </td>
+    <td id="td">
+    Reingart Mariano
+    </td>
+    <td id="td">
+    17/12/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+        Materia 163 No Aprobada  
+    </font>
+    
+    <font color="white"> 
+        
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    175
+    </td>
+    <td id="td"><input type="checkbox" name="examen_63" disabled="" or=""> 
+    
+    INVESTIGACION OPERATIVA
+    </td>
+    <td id="td">
+    Medina Luz
+    </td>
+    <td id="td">
+    13/12/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+        Materia 167 No Aprobada, Materia 168 No Aprobada, Materia 171 No Aprobada  
+    </font>
+    
+    <font color="white"> 
+        
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    176
+    </td>
+    <td id="td"><input type="checkbox" name="examen_64" disabled="" or=""> 
+    
+    ECONOMIA EMPRESARIAL
+    </td>
+    <td id="td">
+    Vargas Claudia
+    </td>
+    <td id="td">
+    13/11/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+        Materia 170 No Aprobada  
+    </font>
+    
+    <font color="white"> 
+        
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    177
+    </td>
+    <td id="td"><input type="checkbox" name="examen_65" disabled="" or=""> 
+    
+    TELEINFORMATICA
+    </td>
+    <td id="td">
+    Bravo Angel
+    </td>
+    <td id="td">
+    17/12/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+        Materia 172 No Aprobada  
+    </font>
+    
+    <font color="white"> 
+        
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    178
+    </td>
+    <td id="td"><input type="checkbox" name="examen_66" disabled="" or=""> 
+    
+    SISTEMAS DE INFORMACION II
+    </td>
+    <td id="td">
+    Bravo Angel
+    </td>
+    <td id="td">
+    18/12/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+        Materia 170 No Aprobada  
+    </font>
+    
+    <font color="white"> 
+        
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    179
+    </td>
+    <td id="td"><input type="checkbox" name="examen_67" disabled="" or=""> 
+    
+    PRACTICA PROFESIONAL
+    </td>
+    <td id="td">
+    Reingart Mariano
+    </td>
+    <td id="td">
+    12/12/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+        Materia 162 No Aprobada, Materia 171 No Aprobada, Materia 173 No Aprobada, Materia 170 No Aprobada  
+    </font>
+    
+    <font color="white"> 
+        
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    <tr><td id="td">
+    180
+    </td>
+    <td id="td"><input type="checkbox" name="examen_68" or=""> 
+    
+    EDI III
+    </td>
+    <td id="td">
+    Aguirre Elena
+    </td>
+    <td id="td">
+    23/12/2013
+    </td>
+    <td id="td">
+    19:00hs
+    </td>
+    <td id="td">
+    <font color="yellow"> 
+         
+    </font>
+    	
+    <font color="white"> 
+              
+    </font>
+
+    <font color="red"> 
+          
+    </font>
+    
+    <font color="white"> 
+        Disponible
+    </font>
+    
+    </td>
+    </tr>
+    
+    
+    
+</tbody></table>
     </div>
 <br>
     <center>
-    <a href="index.html"><input type=button value="Volver" ></a>
-    <input type="submit" name="guardar" value="Guardar" > 
+    <a href="index.html"><input type="button" value="Volver"></a>
+    <input type="submit" name="guardar" value="Guardar"> 
     <input type="reset" value="Cancelar">
-    <a href="constancia_final.html"><input type=button value="Imprimir Constancia" ></a>
+    <a href="constancia_final.html"><input type="button" value="Imprimir Constancia"></a>
     </center>
 </form>
+
+            </div>
+          </td>
+          <!--
+               <td class="width10em column3">
+                 <h2>Right Column</h2>
+               </td>
+          //-->
+        </tr>

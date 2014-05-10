@@ -67,7 +67,7 @@ def ficha():
     return dict (alumno=alumno, dato=datos, inscripcion=inscripcion)
     
 #requiere que haya un usuario logueado..
-@auth.requires_login() 
+#@auth.requires_login() 
 def ingreso():
     db.alumnos.user_id.default= auth.user_id
     subtitulo= T ('Complete el formulario por favor...')
@@ -146,7 +146,7 @@ def busqueda():
 #requiere que haya un usuario logueado
 @auth.requires_login() 
 #requiere que haya un usuario logueado e integre el grupo alumnos
-@auth.requires_membership(role='Alumnos') 
+#@auth.requires_membership(role='Alumnos') 
 def horarios():
    #lista los horarios dependiendo de la carrera
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
@@ -174,7 +174,7 @@ def horarios():
 #requiere que haya un usuario logueado    
 @auth.requires_login() 
 #requiere que haya un usuario logueado e integre el grupo alumnos
-@auth.requires_membership(role='Alumnos') 
+#@auth.requires_membership(role='Alumnos') 
 def horarios_comision():
    #lista los horarios dependiendo de la carrera
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
@@ -197,7 +197,7 @@ def horarios_comision():
 #requiere que haya un usuario logueado
 @auth.requires_login() 
  #requiere que haya un usuario logueado e integre el grupo alumnos
-@auth.requires_membership(role='Alumnos')   
+#@auth.requires_membership(role='Alumnos')   
     
 def inasistencias():   
     #lista de inasistencias del alumno
@@ -232,7 +232,7 @@ def inasistencias():
 #requiere que haya un usuario logueado  
 @auth.requires_login()
 #requiere que haya un usuario logeado e integre el grupo alumnos
-@auth.requires_membership(role='Alumnos') 
+#@auth.requires_membership(role='Alumnos') 
     
 def examenes():
      #listado de examenes finales ya rendidos
@@ -255,7 +255,7 @@ def examenes():
 #requiere que haya un usuario logueado
 @auth.requires_login() 
 #requiere que haya un usuario logueado e integre el grupo alumnos
-@auth.requires_membership(role='Alumnos') 
+#@auth.requires_membership(role='Alumnos') 
   
 def final(): 
     #formulario de inscrip a examenes finales 
@@ -408,7 +408,7 @@ def inscripciones():
     # guarda en una variable los datos para poder ser utilizados y tmb la envio a la vista
     
      
-     #cuando hago click en el boton guardar
+     #cu$ando hago click en el boton guardar
     if request.vars.guardar=="Guardar":
             #en k tenemos el nombre del checkbox
         fecha = request.now.date()

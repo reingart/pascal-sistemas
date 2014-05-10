@@ -2,40 +2,40 @@
 
 
 <h1> <center><u> Examenes Finales Rendidos</u> </center></h1>
+    
+<tr><td class="expandable column2">
+            <div class="flash" style="display: none;"></div>
+            <div class="body">
+            
+
+
+<h1> <center><u> Examenes Finales Rendidos</u> </center></h1>
     <br>
-    <div id= "div_centrado">
-    <TABLE id= "tabla">
-        <TR>
-            <TD id= "head"> <center>MATERIA</center> </TD>
-            <TD id= "head"><center> NOTA</center></TD>
-            <TD id= "head"><center>PERIODO</center></TD>
-            <TD id= "head"><center>CURSO</center></TD>
-        </TR>
-        {{ n=notas}}
+    <div id="div_centrado">
+    <table id="tabla">
+        <tbody><tr>
+            <td id="head"> <center>MATERIA</center> </td>
+            <td id="head"><center> NOTA</center></td>
+            <td id="head"><center>PERIODO</center></td>
+            <td id="head"><center>CURSO</center></td>
+        </tr>
         
-        {{for nota in n:}}
-            <TR>
-        	<!--<TD style="border: 1px solid white"> 
-        	 {{ =nota.alumnos.nombre}}
-        	</TD>-->
-            <TD id= "td">
-             {{ =nota.materias.nombre}}
-             </TD>
-             <TD id= "td">
-             {{ =nota.notas.nota}}
-             </TD>
-          
-             <TD id= "td">
-             {{ =nota.periodos.descripcion}}
-             </TD>
-             <TD id= "td">
-             {{ =nota.cursos.nombre}}
-        {{pass}}
-        	 </TD>
-    		 </TR>
-    </TABLE>
+        
+        
+        	 
+    		 
+    </tbody></table>
 </div>
     <br>
     <form>
-        <center><a href="index.html"><input type=button value="Volver" ></a></center>
+        <center><a href="index.html"><input type="button" value="Volver"></a></center>
 </form>
+
+            </div>
+          </td>
+          <!--
+               <td class="width10em column3">
+                 <h2>Right Column</h2>
+               </td>
+          //-->
+        </tr>

@@ -1,0 +1,30 @@
+{{extend 'layout.html'}}
+<div id= "div_centrado">
+Establecimiento: <label for="istbp">I.S.T.B.P</label>
+<br>
+<br>
+
+Alumnos regulares 
+
+<br>
+<br>
+<FORM method="POST">
+
+    <table>
+    <td>Libro: <INPUT type="text" Name="libro" size="1"> </td>
+    <td> Folio: <INPUT type="text" Name="folio" size="1"></td> 
+    <td> Materia: <INPUT type="text" Name="folio" size="1"></td>  
+    <td>Fecha: <INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}></td>
+    </table>
+    
+<br>
+<TABLE id= "tabla">
+    <td id= "head"><B><center>D.N.I </B></td>
+    <td id= "head"><B><center>Alumno</B></td>
+    <td id= "head"><B><center>Nota</B></td>
+</TABLE>  
+
+<INPUT type="submit" name="GRABAR" value="GUARDAR">
+
+<INPUT type="submit" name="CANCELAR" value="CANCELAR">
+</FORM>

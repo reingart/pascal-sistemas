@@ -1,73 +1,76 @@
 {{extend 'layout.html'}}
 
-<h2> Fecha: {{=fecha_actual}}</h2>
 
-    <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
-.tg .tg-7a16{background-color:#fffc9e;text-align:center}
-.tg .tg-uhkr{background-color:#ffce93}
-.tg .tg-7q1t{background-color:#cd9934}
-.tg .tg-gb5q{font-size:22px;font-family:Arial, Helvetica, sans-serif !important;;background-color:#ffcc67;text-align:center}
-</style>
-<table class="tg">
-  <tr>
-    <th class="tg-gb5q" colspan="4">Menu Alumnos</th>
-  </tr>
-  <tr>
-    <td class="tg-uhkr"><a href="ingreso.html">Preincripcion</a>
-	<p>Permite que el alumno se preinscriba.</p></td>
 
-    <td class="tg-7a16" colspan="3">Informacion de Materias</td>
-  </tr>
-  <tr>
-    <td class="tg-uhkr"><a href="ficha.html">Perfil del Alumno</a>
-	<p>Perfil del alumno con sus datos personales correspondientes.</p></td>
-    <td class="tg-7q1t">Materia</td>
-    <td class="tg-7q1t">Cursando</td>
-    <td class="tg-7q1t">Asistencia</td>
-  </tr>
-<tr>
-    <td class="tg-uhkr"><a href="libreta.html">Completar libreta</a>
-	<p>Suba las calificaciones de finales obtenidas hasta el momento.</p></td>
-    <td class="tg-031e"></td>
-    <td class="tg-031e"></td>
-    <td class="tg-031e"></td>
-  </tr>
-  <tr>
-    <td class="tg-uhkr"><a href="inscripcioncarrera.html">Inscripcion a Carrera</a>
-    <p>Permite inscribir a una Carrera, lo cual permitira filtrar comisiones en una instancia de inscrip. a comision. </p></td>
-    <td class="tg-031e"></td>
-    <td class="tg-031e"></td>
-    <td class="tg-031e"></td>
-  </tr>
-<tr>
-    <td class="tg-uhkr"><a href="inscripciones.html">Inscripcion a Comisiones</a>
-    <p>Permite inscribir a comisión/division de un curso con registro de modalidad de cursada.</p></td>
-    <td class="tg-031e"></td>
-    <td class="tg-031e"></td>
-    <td class="tg-031e"></td>
-  </tr>
-<tr>
-    <td class="tg-uhkr"><a href="horarios_comision.html">Horarios de Comisiones</a>
-	<p>Permite ver el horario completo de la carrera cursada por el alumno.</p></td>
-    <td class="tg-031e"></td>
-    <td class="tg-031e"></td>
-    <td class="tg-031e"></td>
-  </tr>
-<tr>
-    <td class="tg-uhkr"><a href="final.html">Inscripcion a Examenes</a>
-   <p> Permite inscribir a examenen final con informacion detallada de la mesa de examen.</p></td>
-    <td class="tg-031e"></td>
-    <td class="tg-031e"></td>
-    <td class="tg-031e"></td>
-  </tr>
-<tr>
-    <td class="tg-uhkr"><a href="examenes.html">Finales</a>
-    <p>Lista las notas de los examenes finales rendidos.</p></td>
-    <td class="tg-031e"></td>
-    <td class="tg-031e"></td>
-    <td class="tg-031e"></td>
-  </tr>
-	</table>
+
+            
+
+<h2> Fecha: 14/05/2014</h2>
+
+    <h1><u>Menu Alumnos</u></h1>
+
+<ul>
+    <!-- si el usuario ya es alumno no muestro la preescripcion. de lo contrario si -->
+    
+	
+    <li> <a href="ficha.html">Perfil del Alumno</a></li>
+	Perfil del alumno con sus datos personales correspondientes.
+       
+    <li> <a href="inscripcioncarrera.html">Inscripción a Carrera</a></li>
+    Permite inscribir a una Carrera, lo cual permitira filtrar comisiones en una instancia de inscrip. a comisión. 
+    
+    <li> <a href="libreta.html">Completar libreta</a></li>
+    Suba las calificaciones de finales obtenidas hasta el momento
+    
+    <li> <a href="inscripciones.html">Inscripción a Comisiónes</a></li>
+    Permite inscribir a comisión/division de un curso con registro de modalidad de cursada.   
+   
+    <li> <a href="horarios_comision.html">Horarios de Comisiones</a></li>
+	Permite ver el horario completo de la carrera cursada por el alumno.
+    
+    <li> <a href="inasistencias.html">Inasistencias</a></li>
+    Permite ver el conteo de inasistencias del alumno en la cursada de la carrera.
+    
+    <li> <a href="examenes.html">Finales</a></li>
+    Lista las notas de los examenes finales rendidos.
+    
+    <li> <a href="parciales.html">Parciales</a></li>
+    Lista las notas de los parciales cuatrimestrales rendidos.
+    
+    <li> <a href="final.html">Inscripción a Exámenes</a></li>
+    Permite inscribir a exámenen final con informacion detallada de la mesa de examen.
+    
+   
+
+</ul>
+
+<TABLE id="tabla"> 
+<TH align="center" id="tabla" COLSPAN=3> Informacion de alumno</TH>
+    </tr>
+        <td id="tabla">Materia</td>
+        <td id="tabla">Cursando</td>
+        <td id="tabla">Inasistencias</td>
+    </tr>
+    <tr id="tabla">
+        <td id="tabla">Ingles<td id="tabla">Regular<td id="tabla">10</td>
+    </tr>
+    <tr id="tabla">
+        <td id="tabla">Algebra<td id="tabla">Regular<td id="tabla">9</td>
+    </tr>
+    <tr id="tabla">
+        <td id="tabla">Ingles<td id="tabla">Regular<td id="tabla">10</td>
+    </tr>
+    <tr id="tabla">
+        <td id="tabla">Programacion I<td id="tabla">libre<td id="tabla">10</td>
+    </tr>
+    <tr id="tabla">
+        <td id="tabla">E.D.I I<td id="tabla">Regular<td id="tabla">10</td>
+    </tr>
+    <tr id="tabla">
+        <td id="tabla">Introduccion a los sistemas de informacion<td id="tabla">Libre<td id="tabla">8</td>
+    </tr>
+    <tr id="tabla">
+        <td id="tabla">Analisis Matematicos<td id="tabla">Regular<td id="tabla">8</td>
+    </tr>
+    
+</table>

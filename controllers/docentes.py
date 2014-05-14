@@ -48,8 +48,7 @@ def busqueda():
     #response.view = "generic.html"  # HACER una vista de verdad
     return dict (form = form)
 
-@auth.requires_login()
-
+#@auth.requires_login()
 def index():
     if request.vars:
         # si me pasan en la URL el docente, lo filtro

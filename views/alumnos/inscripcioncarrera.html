@@ -1,19 +1,43 @@
 {{extend 'layout.html'}}
-<HTML> 
-<HEAD> 
-<TITLE> Inscripcion a carrera </TITLE> 
-</HEAD> 
-<BODY> 
-<p>
-Carrera: <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('prueba');"> 
-<OPTION VALUE="1">Analisis De Sistemas</OPTION>
-<OPTION VALUE="2">Enfermeria</OPTION>
-<OPTION VALUE="3">Radiologia</OPTION>
-<OPTION VALUE="4">Enfermeria Auxiliar</OPTION> 
-</SELECT>
-</p>
+<div class="body">
+            
+<h1> <center> Inscripcion a Carrera</center></h1>
+<form method="POST">
+<br>
+<div id="div_centrado">
+<table id="tabla">
+<tbody><tr>
+    <td id="head"> CARRERA</td>
+    <td id="head"> CONFIRMAR  </td>
+    </tr>
+    <tr>
+    
+	<td id="td"> 
+             <select name="carrera_26"> 
+              
+             <option value="1">Tecnicatura Superior en Analisis de Sistemas</option>
+			 
+             <option value="2">Tecnicatura Superior en Enfermería</option>
+			 
+             <option value="3">Tecnicatura Superior en Instrumentación Quirúrgica </option>
+			 
+             <option value="4">Tecnicatura Superior en Laboratorio de Análisis Clínicos</option>
+			 
+             <option value="5">Tecnicatura Superior en Radiología</option>
+			 
+             <option value="6">Tecnicatura Superior en Cardiologia</option>
+			 
+             </select>
+        </td>
+     <td id="td"> <input name="validar_26" type="checkbox" value="on"></td>
+    </tr>
+    </tbody></table>
+    </div>   
+    <br>          
+    <center>
+      <input type="submit" name="grabar" value="Guardar">
+      <a href="index.html"><input type="button" value="Volver"></a>
+    </center>
+</form>
 
-
-
-</BODY> 
-</HTML>
+            </div>

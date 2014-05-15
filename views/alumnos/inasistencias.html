@@ -1,53 +1,82 @@
 {{extend 'layout.html'}}
 
 
+<td class="expandable column2">
+            <div class="flash" style="display: none;"></div>
+            <div class="body">
+            
+
+
 <h1> <center><u> Consulta de Inasistencias</u> </center></h1>
 
     
-<div id= "div_centrado">
-<TABLE id= "tabla">
-	<TR>
-	<TD id= "head"> MATERIAS</TD>
-	<TD id= "head"> CANTIDAD</TD>
-	<TD id= "head"> DESCRIPCIÓN</TD>
-	<TD id= "head"> FECHA </TD>
-    </TR>
+<div id="div_centrado">
+<table id="tabla">
+	<tbody><tr>
+	<td id="head"> MATERIAS</td>
+	<td id="head"> CANTIDAD</td>
+	<td id="head"> DESCRIPCIÓN</td>
+	<td id="head"> FECHA </td>
+    </tr>
+    <tr>
+	<td id="head"> MATERIAS</td>
+	<td id="head"> CANTIDAD</td>
+	<td id="head"> DESCRIPCIÓN</td>
+	<td id="head"> FECHA </td>
+    </tr>
+    <tr>
+	<td id="head"> MATERIAS</td>
+	<td id="head"> CANTIDAD</td>
+	<td id="head"> DESCRIPCIÓN</td>
+	<td id="head"> FECHA </td>
+    </tr>
+    <tr>
+	<td id="head"> MATERIAS</td>
+	<td id="head"> CANTIDAD</td>
+	<td id="head"> DESCRIPCIÓN</td>
+	<td id="head"> FECHA </td>
+    </tr>
+    <tr>
+	<td id="head"> MATERIAS</td>
+	<td id="head"> CANTIDAD</td>
+	<td id="head"> DESCRIPCIÓN</td>
+	<td id="head"> FECHA </td>
+    </tr>
+    <tr>
+	<td id="head"> MATERIAS</td>
+	<td id="head"> CANTIDAD</td>
+	<td id="head"> DESCRIPCIÓN</td>
+	<td id="head"> FECHA </td>
+    </tr>
+    <tr>
+	<td id="head"> MATERIAS</td>
+	<td id="head"> CANTIDAD</td>
+	<td id="head"> DESCRIPCIÓN</td>
+	<td id="head"> FECHA </td>
+    </tr>
 
 	
-	{{ f=falta}}
+	
 		
 		        
         
-        {{for falta in f:}}
-            <TR>
-        	
-        	<TD id= "td">
-        	 {{ =falta.comisiones.nombre}}
-        	</TD>
-            <TD id= "td">
-             {{ =falta.faltas.cantidad}}
-         
-             </TD>
-        	<TD id= "td"> 
-        	 {{ =falta.inasistencias.descripcion}}
-              </TD>
-             <TD id= "td">
-             {{ =falta.faltas.fecha.strftime("%d/%m/%Y")}}
-             </TD>
-        {{pass}}
-    		 </TR>
-    		 <TR>
-    		 <TD id= "td">
+        
+    		 
+    		 <tr>
+    		 <td id="td">
              TOTAL
-             </TD>
-    		 <TD id= "td">
-                 {{ =total['suma']}}
-             </TD>
-    </TR>
+             </td>
+    		 <td id="td">
+                 None
+             </td>
+    </tr>
     
-    </TABLE>
+    </tbody></table>
 </div>
     <br>
 <form>
-    <center><a href="index.html"><input type=button value="Volver" ></a></center>
+    <center><a href="index.html"><input type="button" value="Volver"></a></center>
 </form>
+
+            </div>
+          </td>

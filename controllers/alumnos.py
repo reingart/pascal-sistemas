@@ -264,25 +264,11 @@ def constancia_final():
     return dict(alumno=alumno, inscripcion=inscripcion, carrera=carrera, fecha_actual=fecha_actual)
  
 @auth.requires_login() #requiere que haya un usuario logueado
-@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos           
+#@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos           
 def parciales():
-    #lista examenes cuatrimestrales ya rendidos
     
-    q = db.alumnos.user_id== auth.user_id
-    #guardo en la consulta el registro del alumno
-    #traemos el alumno para notificarlo en la vista
-    alumno= db(q).select().first()
-    q &= db.inscripcionescarrera.alumnoid== alumno.alumnoid
-    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
-    q &= db.notas.alumnoid == db.alumnos.alumnoid
-    q &= db.notas.materiaid == db.materias.materiaid
-    q &= db.materias.cursoid == db.cursos.cursoid
-    q &= db.notas.calificacionid == 3  # filtrar solo cuatrimestrales
-    q &= db.notas.periodoid == db.periodos.periodoid     # HACER: filtrar otros campos
-    notas = db(q).select(db.alumnos.nombre, db.materias.nombre, 
-    db.notas.nota, db.periodos.descripcion, db.notas.fecha, db.cursos.nombre)
     
-    return dict (notas= notas, alumno=alumno)
+    return {}
     
 #requiere que haya un usuario logeado  
 #@auth.requires_login() 
@@ -314,7 +300,7 @@ def constancia_comision():
     return dict(alumno=alumno, inscripcion=inscripcion, carrera=carrera, fecha_actual=fecha_actual)
 
 @auth.requires_login() #requiere que haya un usuario logueado
-@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos    
+#@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos    
 def archivos():
     "descarga de archivos pedagogicos subidos por docentes"
     return {}

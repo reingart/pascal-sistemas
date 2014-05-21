@@ -223,6 +223,9 @@ div.error {
     background-color: #243080;
     color: #9999FF; 
     border-bottom: solid 1px #66b11a;
+    padding: 5px;
+    display: inline-block;
+    width: 100%;
 }
 
 .title {
@@ -240,6 +243,7 @@ div.error {
     text-align: center;
     color: #9999FF;
     border-top: solid 1px #66b11a;
+    padding: 5px;
 }
 
 .column1 {

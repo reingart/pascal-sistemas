@@ -21,16 +21,13 @@ jQuery(document).ready(function(){
 //-->
 </script> 
   </head>
-  <body style="background-image: url({{=URL(r=request,c='static',f='splash_isbp.jpg')}})">
-    <div class="wrapper">
-      <table class="layout">
-        <tr>
-          <td colspan="3"  class="header">
-            <a href="{{=URL(r=request,c='default',f='index')}}"><img src="{{=URL(request.application,'static','logo_pascal.png')}}" style="float:left" border="0"/></a>
-            <h1><a href="{{=URL(r=request,c='default',f='index')}}">Instituto Superior Tecnológico Blaise Pascal</a></h1>
-            Puerto Argentino 4238 - González Catan(1759) - Provincia de Buenos Aires - Argentina -
-            Teléfono 02202-423336/427725 <a href="mailto:info@institutopascal.edu.ar" style="color: #9999FF">info@institutopascal.edu.ar</a>
-            
+  <body>
+	<div class="header">
+        <div class="logo" style="float: left;">
+            <a href="{{=URL(r=request,c='default',f='index')}}"><img src="{{=URL(request.application,'static','logo_pascal.png')}}" border="0"/></a>
+        </div>
+        <div class="membrete" >
+            <h1><a href="{{=URL(r=request,c='default',f='index')}}">Instituto Superior Tecnológico Blaise Pascal</a></h1>            
             <div class="statusbar">
                 {{ if 'auth' in globals():}}
                 [ {{if not auth.user:}}
@@ -46,44 +43,21 @@ jQuery(document).ready(function(){
                 {{pass}}
                 {{=T("Language")}}&nbsp;<a href="?lang=es">Español</a>&nbsp;<a href="?lang=en">English</a>
             </div>
-          </td>
-        </tr>
-        <!--<tr>
-          <td class="width10em column1">
-            {{if response.menu:}}
-            <h3>{{=T('Main Menu')}}</h3>
-            {{=MENU(response.menu)}}
-            {{pass}}
-            {{if response.menu_edit:}}
-            <h3>{{=T('Edit This App')}}</h3>
-            {{=MENU(response.menu_edit)}}
-            {{pass}}
-            <br />
-          </td>
-          -->
-          <td class="expandable column2">
-            <div class="flash">{{=response.flash or ''}}</div>
-            <div class="body">
+            <h2>{{=request.title or request.controller}}</h2>
+            <h3>{{=request.subtitle or request.function}}</h3>
+      		</div>
+      </div>
+      <div class="flash">{{=response.flash or ''}}</div>
+      <div class="body">
             {{include}}
-            </div>
-          </td>
-          <!--
-               <td class="width10em column3">
-                 <h2>Right Column</h2>
-               </td>
-          //-->
-        </tr>
-       
-        <tr>
-          <td colspan="10" class="footer" align="center">
-DIPREGEP 6131 - Colegio Universitario - Carreras Terciarias Oficiales - 
+      </div>
+          <div class="footer" align="center">
+              DIPREGEP 6131 - Colegio Universitario - Carreras Terciarias Oficiales <br/>
+              Puerto Argentino 4238 - González Catan(1759) - Provincia de Buenos Aires - Argentina<br/>
+              Teléfono 02202-423336/427725 <a href="mailto:info@institutopascal.edu.ar">info@institutopascal.edu.ar</a><br/> 
              {{=T('Copyright')}} &copy; 2013 - 
              {{=T('Powered by')}} <a class="menu_foot" href="http://www.web2py.com.ar"><img alt="web2py" src="{{=URL(r=request,c='static',f='web2py_logo_small.png')}}" border="0"></a>
-
-          </td>
-        </tr>
-      </table>
-    </div>
+          </div>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

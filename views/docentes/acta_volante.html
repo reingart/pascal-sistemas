@@ -1,5 +1,5 @@
 {{extend 'layout.html'}}
-<div id= "div_centrado">
+
 Establecimiento: <label for="istbp">I.S.T.B.P</label>
 <br>
 <br>
@@ -11,9 +11,9 @@ Alumnos regulares
 <FORM method="POST">
 
     <table>
-    <td>Libro: <INPUT type="text" Name="libro" size="1"> </td>
-    <td> Folio: <INPUT type="text" Name="folio" size="1"></td> 
-    <td> Materia: <INPUT type="text" Name="folio" size="1"></td>  
+    <td>Libro: <INPUT type="text" Name="libro" size="3"> </td>
+    <td> Folio: <INPUT type="text" Name="folio" size="3"></td> 
+    <td> Materia: <INPUT type="text" Name="folio" size="3"></td>  
     <td>Fecha: <INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}></td>
     </table>
     

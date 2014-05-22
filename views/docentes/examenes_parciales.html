@@ -1,0 +1,43 @@
+{{extend 'layout.html'}}
+<div id= "div_centrado">
+
+Fecha: {{=request.now.date()}}
+<br>
+<FORM ACTION="">
+<TABLE id= "tabla">
+    
+    
+    <tr>
+    <td id= "head"><B><center>DNI</center> </B></td>
+    <td id= "head"><center>Alumno</center></td>
+    <td id= "head"><center>1er Cuatrimestre </center></td>
+    <td id= "head"><center>2do Cuatrimestre</center></td>
+    <td id= "head"><center>Recuperatorio 1 </center></td>
+    <td id= "head"><center>Recuperatorio 2</center></td>
+    <td id= "head"><B><center>Condicion</center></B></td>
+    
+    </tr>
+   
+
+    <tr>
+    
+    <td id= "head"><center> <INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"></center> </td>
+    <td id= "head"><center><INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"></center> </td>
+    <td id= "head"><center><INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"> </center></td>
+    <td id= "head"><center><INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"></center> </td>
+    <td id= "head"><center><SELECT name="condicion" > <option> REGULAR</option><option>LIBRE</option></td>
+      
+    <td id= "head"><center> <INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"></center> </td>
+    <td id= "head"><center><INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"></center> </td>
+    
+    </tr>
+    
+    
+    </tr>
+</table>
+    <INPUT type="submit" name="GRABAR" value="GUARDAR">
+    <br>
+    <a href="listaparciales.html"><input type=button value="Volver" ></a>
+
+</FORM>
+</div>

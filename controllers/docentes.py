@@ -20,7 +20,7 @@ def ingreso():
 
     return dict (form=form, sub=subtitulo)
 
-def examenes_parciles():
+def examenes_parciales():
     response.title="Docentes"
     response.subtitle="Examenes parciales"
     return {}

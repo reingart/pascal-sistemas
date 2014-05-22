@@ -20,7 +20,11 @@ def ingreso():
 
     return dict (form=form, sub=subtitulo)
 
-
+def examenes_parciles():
+    response.title="Docentes"
+    response.subtitle="Examenes parciales"
+    return {}
+    
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 def busqueda():

@@ -1,5 +1,5 @@
 {{extend 'layout.html'}}
-<div id= "div_centrado">
+
 Establecimiento: <label for="istbp">I.S.T.B.P</label>
 <br>
 <br>
@@ -11,23 +11,45 @@ Alumnos regulares
 <FORM method="POST">
 
     <table>
-    <td>Libro: <INPUT type="text" Name="libro" size="1"> </td>
-    <td> Folio: <INPUT type="text" Name="folio" size="1"></td> 
-    <td> Materia: <INPUT type="text" Name="folio" size="1"></td>  
+    <td>Libro: <INPUT type="text" Name="libro" size="3"> </td>
+    <td> Folio: <INPUT type="text" Name="folio" size="3"></td> 
+    <td> Materia: <INPUT type="text" Name="folio" size="3"></td>  
     <td>Fecha: <INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}></td>
     </table>
     
 <br>
 <TABLE id= "tabla">
+<tr>
+    <tr>
     <td id= "head"><B><center>D.N.I </center> </B></td>
     <td id= "head"><B><center>Alumno </center> </B></td>
     <td id= "head"><B><center>Nota </center>  </B></td>
-    
+    </tr>
     <tr><td id= "head"><B><center> 37.695.456 </center> </B> </td>
          <td id= "head"><B><center>Jose Perez</center> </B> </td>
          <td id= "head"><B><center> 8 </center> </B></td>
     </tr>
-         
+     <tr><td id= "head"><B><center> 38.564.752 </center> </B> </td>
+         <td id= "head"><B><center>Yanina Lopez</center> </B> </td>
+         <td id= "head"><B><center> 7 </center> </B></td>
+    </tr>
+     <tr><td id= "head"><B><center> 36.732.240 </center> </B> </td>
+         <td id= "head"><B><center>Diego Moreyra</center> </B> </td>
+         <td id= "head"><B><center> 9 </center> </B></td>
+    </tr>
+     <tr><td id= "head"><B><center> 36.875.746 </center> </B> </td>
+         <td id= "head"><B><center>Romina Llanos</center> </B> </td>
+         <td id= "head"><B><center> 9 </center> </B></td>
+    </tr>
+     <tr><td id= "head"><B><center> 36.956.454 </center> </B> </td>
+         <td id= "head"><B><center>Franco More</center> </B> </td>
+         <td id= "head"><B><center> 9 </center> </B></td>
+    </tr>
+     <tr><td id= "head"><B><center> 36.458.463 </center> </B> </td>
+         <td id= "head"><B><center>Retamal Sergio</center> </B> </td>
+         <td id= "head"><B><center> 9 </center> </B></td>
+    </tr>
+</tr>         
         
 </TABLE>  
 

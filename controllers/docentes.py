@@ -20,7 +20,11 @@ def ingreso():
 
     return dict (form=form, sub=subtitulo)
 
-
+def examenes_parciales():
+    response.title="Docentes"
+    response.subtitle="Examenes parciales"
+    return {}
+    
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 def busqueda():
@@ -50,6 +54,8 @@ def busqueda():
 
 #@auth.requires_login()
 def index():
+    #response.title="Docentes"
+    #response.subtitle="Menu Principal"
     if request.vars:
         # si me pasan en la URL el docente, lo filtro
         q=db.personal.personalid == request.vars['personalid']
@@ -60,6 +66,7 @@ def index():
     else:
         # sino, busco todos los docentes
         q=db.personal.personalid>0
+        
     return{}
 
 @auth.requires_login()
@@ -594,7 +601,11 @@ def muestrafinal():
     return dict(form=form)
 
 def asistencias():
+    #response.title="Docentes"
+    #response.subtitle="Asistencia"
     return{}
 
 def acta_volante():
+    #response.title="Docentes"
+    #response.subtitle="Acta volante"
     return{}

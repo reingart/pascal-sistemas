@@ -3,34 +3,41 @@
 
 Fecha: {{=request.now.date()}}
 <br>
+<tr>
+    <td id= "head"><B>Materia:</B></td>
+      <td id= "head"><B>Practica Profesional</B></td>
+     </tr>
 <FORM ACTION="">
-
+ 
 <TABLE id= "tabla">
+   
     
-    
-    <tr>
-    <td id= "head"><center>DNI</center></B></td>
+   	<tr>
+    <td id= "head"><B><center>DNI</center> </B></td>
     <td id= "head"><center>Alumno</center></td>
     <td id= "head"><center>1er Cuatrimestre </center></td>
     <td id= "head"><center>2do Cuatrimestre</center></td>
     <td id= "head"><center>Recuperatorio 1 </center></td>
     <td id= "head"><center>Recuperatorio 2</center></td>
-    <td id= "head"><center>Condicion</center></td>
-    
-    </tr>
+    <td id= "head"><center>Condición</center></td>
+   	</tr>
    
 
     <tr>
-    <td id= "head"><center>{{=alumno.dni}}</center></td>
-    <td id= "head"><center>{{=alumno.nombre}}</center></td>
-    <td id= "head"><center> <INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"></center> </td>
-    <td id= "head"><center><INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"></center> </td>
+    
+    <td id= "head"><center> <INPUT type="text" NAME="NOTA" size="4" MAXLENGTH="10"></center> </td>
+    
+    
+    <td id= "head"><center><INPUT type="text" NAME="NOTA" size="8" MAXLENGTH="20"></center> </td>
     <td id= "head"><center><INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"> </center></td>
     <td id= "head"><center><INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"></center> </td>
-    <td id= "head"><center><SELECT name="condicion" > <option> REGULAR</option><option>LIBRE</option></td>
-    
+
+      
+    <td id= "head"><center> <INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"></center> </td>
+    <td id= "head"><center><INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"></center> </td>
+    <td id= "head"><center><SELECT name="condicion" > <option> DESAPROBADO</option><option>APROBADO</option></td>
+ 
     </tr>
-    {{pass}}
     
     
     </tr>

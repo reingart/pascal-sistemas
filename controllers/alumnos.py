@@ -43,8 +43,28 @@ def index():
 
 def ficha():
     # muestra un perfil personalizado del alumno.
+    q = db.alumnos.user_id== auth.user_id   # obtengo el registro del alumno ya registrado como usuario 
+    alumno= db(q).select( db.alumnos.nombre, db.alumnos.fechanacimiento, db.alumnos.estadocivil, 
+                         db.alumnos.foto, db.alumnos.email1, db.alumnos.ingreso, 
+                         db.alumnos.localidad, db.alumnos.nacionalidad, db.alumnos.alumnoid).first()
+    q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
+    q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
+    q &= db.comisiones.materiaid== db.materias.materiaid
+    q &= db.comisiones.divisionid== db.divisiones.divisionid
+    q &= db.divisiones.cicloid== db.ciclos.cicloid
+    q &= db.materias.materiaid== db.asignaturas.materiaid
+    q &= db.asignaturas.carreraid== db.carreras.carreraid
     
-    return {}
+                         
+    datos= db(q).select( db.comisiones.nombre, db.inscripcionescomision.alta,
+                         db.ciclos.anio, db.carreras.nombre)
+    
+    inscripcion= db(db.inscripcionescomision).select(db.inscripcionescomision.alumnoid, db.inscripcionescomision.comisionid)
+    #envio todos los alumnos y comisiones para luego comparar en ficha.
+    
+    alumnos= db(db.alumnos).select(db.alumnos.user_id, db.alumnos.alumnoid)
+                       
+    return dict (alumno=alumno, dato=datos, inscripcion=inscripcion)
     
 #requiere que haya un usuario logueado..
 #@auth.requires_login() 

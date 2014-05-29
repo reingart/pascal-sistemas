@@ -1,30 +1,52 @@
 {{extend 'layout.html'}}
-            <div class="body">
-            
 
 <h1> <center><u> PERFIL</u> </center></h1>
 
-                
-<h2><u> Alumno/a:</u>Retamal Sergio</h2> <p><img src="{{=URL('static','foto.jpg')}}" align="right"></p>
-
-<h2><u> Fecha de Nacimiento:</u> 18/02/2013</h2>
-
-<h2><u> Estado Civil:</u> Soltero </h2>
-<h2><u> Nacionalidad:</u> Argentino  </h2>
-<h2><u> Localidad:</u>Virrey del Pino  </h2>
-<h2><u> Email:</u> serrxx66@hotmail.com</h2> 
-<h2><u> Ingreso:</u> 07/03/2012 </h2>
+<center>{{=IMG(_src=URL(c='default',f='download',args=alumno.foto))}}</center>
+<h2><u> Alumno/a:</u> {{=alumno.nombre}}</h2> 
+<h2><u> Fecha de Nacimiento:</u> {{=alumno.fechanacimiento.strftime("%d/%m/%Y")}} </h2> 
+<h2><u> Estado Civil:</u> {{=alumno.estadocivil}} </h2>
+<h2><u> Nacionalidad:</u> {{=alumno.nacionalidad}}  </h2>
+<h2><u> Localidad:</u> {{=alumno.localidad}}</h2>
+<h2><u> Email:</u> {{=alumno.email1}}</h2> 
+<h2><u> Ingreso:</u> {{=alumno.ingreso.strftime("%d/%m/%Y")}} </h2>
 
 <br>
+{{if alumno.alumnoid not in inscripcion:}}
 
-
-
+<h2><u><center> Inscripto a las siguientes materias:</center></u> </h2>
+<div id= "div_centrado">
+<TABLE id= "tabla">
+    <TR>
+     <TD id= "head"> <B>Materias</B></TD>
+    <TD id= "head"> <B>Fecha de Alta</B></TD> 
+     <TD id= "head"> <B>Año</B></TD>
+    <TD id= "head"> <B>Carrera</B> </TD> 
+    </TR>
      
+     {{ d=dato}}
         
-        
+        {{for datos in d:}}
+            <TR>
+        	<TD id= "td"> 
+        	 {{ =datos.comisiones.nombre}}
+             </TD>
+        	<TD id= "td"> 
+        	 {{ =datos.inscripcionescomision.alta.strftime("%d/%m/%Y")}}
+        	</TD>
+            <TD id= "td">
+             {{ =datos.ciclos.anio}}
+             </TD>
+        	<TD id= "td"> 
+                {{=datos.carreras.nombre}}
+             </TD>
+                {{pass}}
+    		 </TR>
+    </TABLE>
+</div>
+			{{pass}}
+
 <br>
 <form>
-    <center><a href="index.html"><input type="button" value="Volver"></a></center>
+    <center><a href="index.html"><input type=button value="Volver" ></a></center>
 </form>
-
-            </div>

@@ -1,45 +1,29 @@
 {{extend 'layout.html'}}
-<div class="body">
-            
 <h1> <center> Inscripcion a Carrera</center></h1>
 <form method="POST">
 <br>
-<div id="div_centrado">
-<table id="tabla">
-<tbody><tr>
-    <td id="head"> CARRERA</td>
-    <td id="head"> CONFIRMAR  </td>
-    </tr>
-    <tr>
+<div id= "div_centrado">
+<TABLE id= "tabla">
+<TR>
+    <TD id= "head"> CARRERA</TD>
+    <TD id= "head"> CONFIRMAR  </TD>
+    </TR>
+    <TR>
     
-	<td id="td"> 
-             <select name="carrera_26"> 
-              
-             <option value="1">Tecnicatura Superior en Analisis de Sistemas</option>
-             
-             <option value="1">Tecnicatura Superior en Analisis de Sistemas y Tecnico Superior en Redes</option>
-			 
-             <option value="2">Tecnicatura Superior en Enfermería</option>
-			 
-             <option value="3">Tecnicatura Superior en Instrumentación Quirúrgica </option>
-			 
-             <option value="4">Tecnicatura Superior en Laboratorio de Análisis Clínicos</option>
-			 
-             <option value="5">Tecnicatura Superior en Radiología</option>
-			 
-             <option value="6">Tecnicatura Superior en Cardiologia</option>
-			 
+	<td id= "td"> 
+             <select name="{{="carrera_%s" %(alumno.alumnoid)}}"> 
+              {{for carrera in carreras: }}
+             <option value="{{= carrera.carreraid }}">{{=(carrera.nombre)}}</option>
+			 {{pass}}
              </select>
         </td>
-     <td id="td"> <input name="validar_26" type="checkbox" value="on"></td>
-    </tr>
-    </tbody></table>
+     <td id= "td"> {{=INPUT (_type="checkbox", _name="validar_%s" %(alumno.id))}}</td>
+    </TR>
+    </TABLE>
     </div>   
     <br>          
     <center>
       <input type="submit" name="grabar" value="Guardar">
-      <a href="index.html"><input type="button" value="Volver"></a>
+      <a href="index.html"><input type=button value="Volver" ></a>
     </center>
 </form>
-
-            </div>

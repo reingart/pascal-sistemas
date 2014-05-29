@@ -434,6 +434,7 @@ def cargar():
     db.planesestudio.insert(planestudioid=1,descripcion='Analista de sistemas 2012',aprobadopor='Resoluci\xc3\xb3n N\xc2\xba5817/03',carreraid=1,desde='2012-03-18',hasta='2012-12-21')
     db.planesestudio.insert(planestudioid=2,descripcion='Radiologia 2012',aprobadopor='Resoluci\xc3\xb3n N\xc2\xb0 3244',carreraid=5,desde='2012-03-18',hasta='2012-12-18')
     db.planesestudio.insert(planestudioid=3,descripcion='Analisis Clinico 2012',aprobadopor='Resolucion N\xc2\xb02134',carreraid=4,desde='2012-03-18',hasta='2012-12-18')
+    db.planesestudio.insert(planestudioid=4,descripcion='',aprobadopor='',carreraid=4,desde='2012-03-18',hasta='2012-12-18')
     db.planesestudio.insert(planestudioid=5,descripcion='Enfermeria 2012',aprobadopor='Resoluci\xc3\xb3n N\xc2\xb0 2345',carreraid=2,desde='2012-03-18',hasta='2012-12-21')
     db.planesestudio.insert(planestudioid=6,descripcion='Instrumentaci\xc3\xb3n 2012',aprobadopor='Resoluci\xc3\xb3n N\xc2\xb0 6543',carreraid=3,desde='2012-03-21',hasta='2012-12-21')
     db.planesestudio.insert(planestudioid=7,descripcion='Cardiologia 2013',aprobadopor='Resoluci\xc3\xb3n N\xc2\xb0 2312',carreraid=6,desde='2012-03-18',hasta='2012-12-21')

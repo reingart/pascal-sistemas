@@ -283,7 +283,8 @@ def parciales():
     comisiones = db(q).select(db.comisiones.ALL, distinct=True)
 
     return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}
-
+def asistencia_seleccion():
+    return{}
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 def apuntes():

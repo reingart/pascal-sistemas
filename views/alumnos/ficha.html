@@ -14,35 +14,8 @@
 <br>
 {{if alumno.alumnoid not in inscripcion:}}
 
-<h2><u><center> Inscripto a las siguientes materias:</center></u> </h2>
 <div id= "div_centrado">
-<TABLE id= "tabla">
-    <TR>
-     <TD id= "head"> <B>Materias</B></TD>
-    <TD id= "head"> <B>Fecha de Alta</B></TD> 
-     <TD id= "head"> <B>Año</B></TD>
-    <TD id= "head"> <B>Carrera</B> </TD> 
-    </TR>
-     
-     {{ d=dato}}
-        
-        {{for datos in d:}}
-            <TR>
-        	<TD id= "td"> 
-        	 {{ =datos.comisiones.nombre}}
-             </TD>
-        	<TD id= "td"> 
-        	 {{ =datos.inscripcionescomision.alta.strftime("%d/%m/%Y")}}
-        	</TD>
-            <TD id= "td">
-             {{ =datos.ciclos.anio}}
-             </TD>
-        	<TD id= "td"> 
-                {{=datos.carreras.nombre}}
-             </TD>
-                {{pass}}
-    		 </TR>
-    </TABLE>
+
 </div>
 			{{pass}}
 

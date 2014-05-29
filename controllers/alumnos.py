@@ -3,7 +3,16 @@
 
 
 def libreta():
-    return{}
+    q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
+    alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista
+    q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid
+    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
+    q &= db.comisiones.materiaid== db.materias.materiaid
+    
+    materias=db(q).select(db.materias.id, db.materias.nombre)
+    
+    
+    return{"materias":materias}
 @auth.requires_login() 
 def index(): 
     fecha= request.now.date() #guardo la fecha actual

@@ -1,41 +1,35 @@
 {{extend 'layout.html'}}
 <div id= "div_centrado">
-
 Fecha: {{=request.now.date()}}
 <br>
 <tr>
     <td id= "head"><B>Materia:</B></td>
       <td id= "head"><B>Practica Profesional</B></td>
-     </tr>
+</tr>
 <FORM ACTION="">
- 
 <TABLE id= "tabla">
-   
-    
-   	<tr>
-    <td id= "head"><B><center>DNI</center> </B></td>
-    <td id= "head"><center>Alumno</center></td>
-    <td id= "head"><center>1er Cuatrimestre </center></td>
-    <td id= "head"><center>2do Cuatrimestre</center></td>
-    <td id= "head"><center>Recuperatorio 1 </center></td>
-    <td id= "head"><center>Recuperatorio 2</center></td>
-    <td id= "head"><center>Condición</center></td>
-   	</tr>
-   
-
-    <tr>
-    
-    <td id= "head"><center> <INPUT type="text" NAME="NOTA" size="4" MAXLENGTH="10"></center> </td>
-    
-    
-    <td id= "head"><center><INPUT type="text" NAME="NOTA" size="8" MAXLENGTH="20"></center> </td>
-    <td id= "head"><center><INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"> </center></td>
-    <td id= "head"><center><INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"></center> </td>
-
-      
-    <td id= "head"><center> <INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"></center> </td>
-    <td id= "head"><center><INPUT type="text" NAME="NOTA" size="1" MAXLENGTH="2"></center> </td>
-    <td id= "head"><center><SELECT name="condicion" > <option> DESAPROBADO</option><option>APROBADO</option></td>
+	<tr>
+		<td id= "head"><B><center>DNI</center> </B></td>
+		<td id= "head"><center>Alumno</center></td>
+		<td id= "head"><center>1er Cuatrimestre </center></td>
+		<td id= "head"><center>2do Cuatrimestre</center></td>
+		<td id= "head"><center>Recuperatorio 1 </center></td>
+		<td id= "head"><center>Recuperatorio 2</center></td>
+		<td id= "head"><center>Condición</center></td>
+	</tr>
+	<tr>
+		<td id= "head"><center><INPUT type="text" NAME="dni" size="8" MAXLENGTH="10"></center></td>
+		<td id= "head"><center><INPUT type="text" NAME="alumno" size="20" MAXLENGTH="20"></center></td>
+		<td id= "head"><center><INPUT type="text" NAME="cuatrimestre1" size="2" MAXLENGTH="2"></center></td>
+		<td id= "head"><center><INPUT type="text" NAME="cuatrimestre2" size="2" MAXLENGTH="2"></center></td>
+		<td id= "head"><center> <INPUT type="text" NAME="recuperatorio1" size="2" MAXLENGTH="2"></center></td>
+		<td id= "head"><center><INPUT type="text" NAME="recuperatorio2" size="2" MAXLENGTH="2"></center></td>
+		<td id= "head">
+			<center>
+				<SELECT name="condicion" >
+					<option> DESAPROBADO</option>
+					<option>APROBADO</option>
+		</td>
  
     </tr>
     

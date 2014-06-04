@@ -1,13 +1,14 @@
 {{extend 'layout.html'}}
-<div id= "div_centrado">
-Fecha: {{=request.now.date()}}
+<div>
+<FORM ACTION="">
 <br>
 <tr>
-    <td id= "head"><B>Materia:</B></td>
-      <td id= "head"><B>Practica Profesional</B></td>
-</tr>
-<FORM ACTION="">
-<TABLE id= "tabla">
+	<td id= "fecha">Fecha:</td>
+	<td>{{=request.now.date()}}</td>
+</tr><br><br>
+<tr><B>Materia:</B></tr><br><
+<tr><B>Practica Profesional</B></tr><br><br>
+<TABLE id= "tabla" align="left">
 	<tr>
 		<td id= "head"><B><center>DNI</center> </B></td>
 		<td id= "head"><center>Alumno</center></td>
@@ -26,19 +27,16 @@ Fecha: {{=request.now.date()}}
 		<td id= "head"><center><INPUT type="text" NAME="recuperatorio2" size="2" MAXLENGTH="2"></center></td>
 		<td id= "head">
 			<center>
-				<SELECT name="condicion" >
+				<select name="condicion" >
 					<option> DESAPROBADO</option>
 					<option>APROBADO</option>
 		</td>
- 
-    </tr>
-    
-    
-    </tr>
+	</tr>
 </table>
-    <INPUT type="submit" name="GRABAR" value="GUARDAR">
-    <br>
-    <a href="listaparciales.html"><input type=button value="Volver" ></a>
-
+<br><br><br><br>
+<tr>
+    <INPUT type="submit" name="GRABAR" value="CONFIRMAR">
+    <a href="listaparciales.html"><input type=button value="VOLVER" ></a>
+</tr>
 </FORM>
 </div>

@@ -22,7 +22,8 @@ response.menu = [
         [T('Palabras del Director'), False, URL(request.application,'info','director'), []],
     ]],
     [T('Carreras'), False, URL(request.application,'carreras','index'), [
-        [T('Analista de Sistemas'), False, URL(request.application,'carreras','sistemas'), [[T('Tecnicatura en redes informaticas'), False, URL(request.application,'carreras','rrhh'), []]]],
+        [T('Analista de Sistemas'), False, URL(request.application,'carreras','sistemas'),[]],
+        [T('Tecnicatura en redes informaticas'), False, URL(request.application,'carreras','rrhh'), []],
         
         [T('Salud'), False, URL(request.application,'carreras','salud'), [
             [T('Enfermería'), False, URL(request.application,'carreras','salud_enfermeria'), []],

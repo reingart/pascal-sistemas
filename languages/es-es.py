@@ -1,4 +1,4 @@
-# coding: utf-8
+# -*- coding: utf-8 -*-
 {
 '"update" is an optional expression like "field1=\'newvalue\'". You cannot update or delete the results of a JOIN': '"actualice" es una expresión opcional como "campo1=\'nuevo_valor\'". No se puede actualizar o eliminar resultados de un JOIN',
 '%s rows deleted': '%s filas eliminadas',
@@ -114,6 +114,8 @@
 'Email verification': 'Verificación por correo',
 'Enfermería': 'Enfermería',
 'enter a number between %(min)g and %(max)g': 'enter a number between %(min)g and %(max)g',
+'Enter a number between %(min)g and %(max)g': 'Enter a number between %(min)g and %(max)g',
+'Enter an integer between %(min)g and %(max)g': 'Enter an integer between %(min)g and %(max)g',
 'enter an integer between %(min)g and %(max)g': 'enter an integer between %(min)g and %(max)g',
 'Error logs for "%(app)s"': 'Bitácora de errores en "%(app)s"',
 'errors': 'errores',

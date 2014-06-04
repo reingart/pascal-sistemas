@@ -285,6 +285,9 @@ def parciales():
     return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}
 def asistencia_seleccion():
     return{}
+def parciales_seleccion():
+    return{}
+
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 def apuntes():

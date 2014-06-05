@@ -5,6 +5,10 @@
 def libreta():
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
     alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista
+    
+    q &= db.materias.materiaid== db.asignaturas.materiaid
+    q &= db.asignaturas.carreraid== db.carreras.carreraid
+    
     q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid
     q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
     q &= db.comisiones.materiaid== db.materias.materiaid

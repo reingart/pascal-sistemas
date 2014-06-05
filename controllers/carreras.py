@@ -42,3 +42,6 @@ def salud_radiologia():
 
 def redes():
     return {}
+    
+def programas():
+    return{}

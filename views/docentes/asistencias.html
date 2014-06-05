@@ -1,1 +1,22 @@
-{{extend 'layout.html'}} <h1>FECHA:</h1> <INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}> <h1>CARRERA:</h1><B>Análisis de Sistemas</B> <h2>COMISIÓN: </h2> <B>Tercer Año</B> <h2>MATERIA: </h2><B>Práctica Profesional</B> <FORM ACTION=""> <TABLE style="border: 1px solid white"> <tr style="border: 1px solid white"> <td style="border: 1px solid white"><B><center>Alumno</center></B></td> <td style="border: 1px solid white"><B><center>Asistencia</center></B></td> </tr> <tr style="border: 1px solid white"> <td style="border: 1px solid white">Irusta Agustín </td><td style="border: 1px solid white"> <center><INPUT type="checkbox" NAME="PRESENTE" size="0"></center> </td> </tr> <tr style="border: 1px solid white"> <td style="border: 1px solid white">LLanos Romina </td><td style="border: 1px solid white"> <center><INPUT type="checkbox" NAME="PRESENTE" size="0"></center> </td> </tr> <tr style="border: 1px solid white"> <td style="border: 1px solid white">More Franco </td><td style="border: 1px solid white"> <center><INPUT type="checkbox" NAME="PRESENTE" size="0"></center> </td> </tr> <tr style="border: 1px solid white"> <td style="border: 1px solid white">Moreyra Diego </td><td style="border: 1px solid white"> <center><INPUT type="checkbox" NAME="PRESENTE" size="0"></center> </td> </tr> <tr style="border: 1px solid white"> <td style="border: 1px solid white">Olmos Diego </td><td style="border: 1px solid white"> <center><INPUT type="checkbox" NAME="PRESENTE" size="0"></center> </td> </tr> <tr style="border: 1px solid white"> <td style="border: 1px solid white">Retamal Sergio </td><td style="border: 1px solid white"> <center><INPUT type="checkbox" NAME="PRESENTE" size="0"></center> </td> </tr> </TABLE> <INPUT type="submit" name="GRABAR" value="GUARDAR"> </FORM>
+{{extend 'layout.html'}} 
+<h1>FECHA:</h1> <INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}> <h1>CARRERA:</h1><B>Análisis de Sistemas</B>
+ <h2>COMISIÓN: </h2> <B>Tercer Año</B> 
+ <h2>MATERIA: </h2><B>Práctica Profesional</B> 
+ <FORM method="POST"> 
+ <TABLE id= "tabla"> 
+ <tr>
+ <td><B><center>Alumno</center></B></td> 
+ <td><B><center>Asistencia</center></B></td> </tr> 
+     {{for fila in filas:}}
+     {{alumno=fila.alumnos}}
+     <tr> 
+ 		<td >{{=alumno.nombre}}</td>
+         <td><center><INPUT type="checkbox" NAME="{{=alumno.alumnoid}}" ></center>
+         </td> 
+     </tr>
+    {{pass}} 
+</TABLE>
+<INPUT type="submit" value="CONFIRMAR">
+     </FORM>
+        <br>
+<a href="http://127.0.0.1:8000/practicarepo/docentes/asistencia_seleccion.html"><input type=button value="VOLVER" ></a>

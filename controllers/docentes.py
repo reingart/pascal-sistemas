@@ -249,8 +249,8 @@ def elegir():
     return{}
 
 
-@auth.requires_login()
-@auth.requires_membership(role='Personal')
+#@auth.requires_login()
+#@auth.requires_membership(role='Personal')
 def parciales():
     q =db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
 
@@ -605,11 +605,21 @@ def muestrafinal():
     return dict(form=form)
 
 def asistencias():
-    #response.title="Docentes"
-    #response.subtitle="Asistencia"
-    return{}
+    response.title="Docentes"
+    response.subtitle="Asistencia"
+    comisionid  = 76
+    q=db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
+    q&=db.comisiones.comisionid==db.inscripcionescomision.comisionid
+    q&=db.comisiones.comisionid==comisionid
+    filas=db(q).select()
+    for fila in filas:
+        valor=request.vars.get(str(fila.alumnos.alumnoid))
+        if valor=="on":
+            db.faltas.insert(alumnoid=fila.alumnos.alumnoid, comisionid=comisionid, fecha='', cantidad=1)
+        
+    return{"filas":filas}
 
 def acta_volante():
-    #response.title="Docentes"
-    #response.subtitle="Acta volante"
+    response.title="Docentes"
+    response.subtitle="Acta volante"
     return{}

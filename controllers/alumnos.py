@@ -4,7 +4,7 @@
 
 def libreta():
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
-    alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista
+    alumno= db(q).select().first() #traemos el alumno para notificarlo en la vista
     
     q &= db.materias.materiaid== db.asignaturas.materiaid
     q &= db.asignaturas.carreraid== db.carreras.carreraid
@@ -14,9 +14,27 @@ def libreta():
     q &= db.comisiones.materiaid== db.materias.materiaid
     
     materias=db(q).select(db.materias.id, db.materias.nombre)
+    mat=db(q).select(db.materias.id)
     
     
+    if request.vars.Aceptar:
+        n = 0
+        for materia in materias:
+            try:
+                nota = int(request.vars.get("nota_%s" % materia.id))
+                fecha = request.vars.get("fecha_%s" % materia.id)
+                #validar valores de foliio, libro y fecha el formato
+                libro = request.vars.get("libro_%s" % materia.id)
+                folio = request.vars.get("folio_%s" % materia.id)
+                # validar datos
+                if 1 <= nota <= 10:
+                    db.notas.insert(alumnoid= alumno.alumnoid, materiaid=materia.materiaid,calificacionid=5,nota=nota,fecha=fecha,libro=libro,folio=folio)
+                    n += 1
+            except ValueError:
+                 msg = "Error de datos"
+        response.flash = "a subido" +  str(n) + "notas"
     return{"materias":materias}
+
 @auth.requires_login() 
 def index(): 
     fecha= request.now.date() #guardo la fecha actual

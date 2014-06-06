@@ -1,55 +1,39 @@
 {{extend 'layout.html'}}
-<html>
-<head>
-	<title>Mis Calificaciones</title>
-</head>
 
-<body>
-<table id=tabla align="center" cellspacing="2" cellpadding="2" border="1" >
+<form method="post">
 
-    <tr id=tabla>
-    <td  align="center" id=tabla>Curso</td>
-    <td  align="center" id=tabla>Materia</td>
-    <td id=tabla>Fecha</td>
-    <td align="center id=tabla">Libro</td>
-    <td align="center" id=tabla>Folio</td>
-    <td align="center" id=tabla>Calificacion</td>
-    
-</tr>
-{{for materia in materias:}}
-<tr id=tabla>
-    <td id=tabla><H2 align=center>1°</H2></td>
-    <td>{{=materia.nombre}}</td>
-    <td align="center" id=tabla><input type="date" name="fecha"></td>
-    <td align="center" id=tabla><input type="text" size="5"> </td>
-    <td  align="center" id=tabla><input type="text" size="5"></td>
-    <td align="center" id=tabla><SELECT NAME="selCombo" SIZE=1>
-<OPTION VALUE="link pagina 1">1</OPTION>
-<OPTION VALUE="link pagina 2">2</OPTION>
-<OPTION VALUE="link pagina 3">3</OPTION>
-<OPTION VALUE="link pagina 4">4</OPTION>
-<OPTION VALUE="link pagina 1">5</OPTION>
-<OPTION VALUE="link pagina 2">6</OPTION>
-<OPTION VALUE="link pagina 3">7</OPTION>
-<OPTION VALUE="link pagina 4">8</OPTION>
-<OPTION VALUE="link pagina 1">9</OPTION>
-<OPTION VALUE="link pagina 2">10</OPTION>
-</SELECT> </td>
-</tr>
-{{pass}}
-</table>
-<p>
-
-
-
-
-</p>
-<form>
-    <center> <a href="index.html"><input type=button value="Aceptar" ></a> </center>
-
-    <center> <a href="index.html"><input type=button value="Volver" ></a> </center>
+    <table id=tabla align="center" cellspacing="2" cellpadding="2" border="1" >
+        <tr id=tabla>
+            <td  align="center" id=tabla>Curso</td>
+            <td  align="center" id=tabla>Materia</td>
+            <td id=tabla>Fecha</td>
+            <td align="center id=tabla">Libro</td>
+            <td align="center" id=tabla>Folio</td>
+            <td align="center" id=tabla>Calificacion</td>
+        </tr>
+        {{for materia in materias:}}
+            <tr id=tabla>
+                <td id=tabla><H2 align=center>1°</H2></td>
+                <td>{{=materia.nombre}}</td>
+                <td align="center" id=tabla><input type="date" name="fecha_{{=materia.id}}"></td>
+                <td align="center" id=tabla><input type="text" name="libro_{{=materia.id}}" size="5"> </td>
+                <td  align="center" id=tabla><input type="text" name="folio_{{=materia.id}}" size="5"></td>
+                <td align="center" id=tabla><SELECT name="nota_{{=materia.id}}" size="1">
+                    <OPTION VALUE="0">0</OPTION>
+                    <OPTION VALUE="1">1</OPTION>
+                    <OPTION VALUE="2">2</OPTION>
+                    <OPTION VALUE="3">3</OPTION>
+                    <OPTION VALUE="4">4</OPTION>
+                    <OPTION VALUE="5">5</OPTION>
+                    <OPTION VALUE="6">6</OPTION>
+                    <OPTION VALUE="7">7</OPTION>
+                    <OPTION VALUE="8">8</OPTION>
+                    <OPTION VALUE="9">9</OPTION>
+                    <OPTION VALUE="10">10</OPTION>
+                    </SELECT> </td>
+            </tr>
+        {{pass}}
+    </table>
+    <center> <input type="submit" value="Aceptar" name="Aceptar"> </center>
+    <center> <a href="index.html"><input type="button" value="Volver" ></a> </center>
 </form>
-
-
-</body>
-</html>

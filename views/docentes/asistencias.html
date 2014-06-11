@@ -14,8 +14,13 @@
      {{alumno=fila.alumnos}}
           <td style="border: 1px solid white">{{=alumno.nombre}}</td>
 	
-     <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="{{=alumno.alumnoid}}" size="0"></center></td>
-     
+     <td style="border: 1px solid white"><center> 
+     <select name="condicion" >
+					<option> AUSENTE</option>
+					<option>PRESENTE</option>
+					<option>MEDIA FALTA</option>
+					<option>RETIRO ANTICIPADO</option>
+					<option>LLEGADA TARDE</option>
     {{pass}} 
  </TABLE>
 <INPUT type="submit" value="CONFIRMAR">

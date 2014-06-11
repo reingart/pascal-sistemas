@@ -6,15 +6,14 @@ def index():
     return{'carreras':carreras}
 
 def materias():
-    carrerasid=request.args[0]
+    carreraid=request.args[0]
     q= db.asignaturas.carreraid==carreraid
-    q &= db.asignaturas.carreraid==db.materias.materiaid
-    q &=db.asiganturas.cursoid==db.cursos.cursoid
+    q &= db.asignaturas.carreraid==db.carreras.carreraid
+    q &= db.asignaturas.materiaid==db.materias.materiaid
+    q &= db.asignaturas.cursoid==db.cursos.cursoid
 
     filas=db(q).select()
-    return{'filas':filas}
-
-    return{}
+    return{'filas': filas}
 
 def sistemas():
     return {}

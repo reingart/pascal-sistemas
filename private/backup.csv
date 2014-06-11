@@ -22,20 +22,6 @@ TABLE auth_group
 auth_group.id,auth_group.role,auth_group.description
 1,Alumnos,Grupo de alumnos 
 3,Personal,Grupo de docentes y personal de la institución 
-4,user_6,Group uniquely assigned to user 6
-5,user_7,Group uniquely assigned to user 7
-6,user_8,Group uniquely assigned to user 8
-7,user_9,Group uniquely assigned to user 9
-8,user_10,Group uniquely assigned to user 10
-9,user_11,Group uniquely assigned to user 11
-10,user_12,Group uniquely assigned to user 12
-11,user_13,Group uniquely assigned to user 13
-12,user_14,Group uniquely assigned to user 14
-13,user_15,Group uniquely assigned to user 15
-14,user_16,Group uniquely assigned to user 16
-15,user_17,Group uniquely assigned to user 17
-16,user_18,Group uniquely assigned to user 18
-17,user_19,Group uniquely assigned to user 19
 
 
 TABLE auth_membership
@@ -43,20 +29,11 @@ auth_membership.id,auth_membership.user_id,auth_membership.group_id
 1,1,1
 4,4,1
 5,5,1
-6,6,4
 7,6,1
-9,8,6
 10,8,1
-11,9,7
 12,9,1
 14,11,3
 15,12,3
-16,13,11
-17,14,12
-18,15,13
-19,16,14
-20,17,15
-21,18,16
 22,17,3
 23,15,3
 24,16,3
@@ -71,272 +48,6 @@ TABLE auth_permission
 
 
 TABLE auth_event
-auth_event.id,auth_event.time_stamp,auth_event.client_ip,auth_event.user_id,auth_event.origin,auth_event.description
-1,2013-08-16 19:46:09,127.0.0.1,<NULL>,auth,Grupo 1 creado
-2,2013-08-16 19:46:09,127.0.0.1,1,auth,Usuario 1 Registrado
-3,2013-08-19 23:28:19,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-4,2013-08-19 23:28:50,127.0.0.1,1,auth,User 1 Logged-out
-5,2013-08-19 23:39:37,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-6,2013-08-19 23:40:53,127.0.0.1,1,auth,User 1 Logged-out
-7,2013-08-20 15:55:23,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-8,2013-08-20 15:58:15,127.0.0.1,1,auth,User 1 Logged-out
-9,2013-08-20 16:16:41,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-10,2013-08-20 16:58:11,127.0.0.1,1,auth,User 1 Logged-out
-11,2013-08-20 17:21:39,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-12,2013-08-20 17:45:15,127.0.0.1,1,auth,User 1 Logged-out
-13,2013-08-20 17:50:32,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-14,2013-08-20 17:55:11,127.0.0.1,1,auth,User 1 Logged-out
-15,2013-08-20 18:38:38,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-16,2013-08-20 18:40:22,127.0.0.1,1,auth,User 1 Logged-out
-17,2013-08-21 18:29:23,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-18,2013-08-21 19:00:25,127.0.0.1,1,auth,User 1 Logged-out
-19,2013-08-24 15:36:43,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-20,2013-08-24 16:13:45,127.0.0.1,1,auth,User 1 Logged-out
-21,2013-08-24 16:15:30,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-22,2013-08-24 16:15:56,127.0.0.1,1,auth,User 1 Logged-out
-23,2013-08-24 16:58:48,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-24,2013-08-24 17:11:53,127.0.0.1,1,auth,User 1 Logged-out
-25,2013-08-26 19:17:57,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-26,2013-08-27 16:04:00,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-27,2013-08-27 16:04:08,127.0.0.1,1,auth,User 1 Logged-out
-28,2013-08-27 16:05:47,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-29,2013-08-27 16:05:54,127.0.0.1,1,auth,User 1 Logged-out
-30,2013-08-27 16:10:37,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-31,2013-08-27 16:10:53,127.0.0.1,1,auth,User 1 Logged-out
-32,2013-08-27 16:15:23,127.0.0.1,<NULL>,auth,Grupo 3 creado
-33,2013-08-27 16:15:23,127.0.0.1,4,auth,Usuario 4 Registrado
-34,2013-08-27 16:15:49,127.0.0.1,4,auth,User 4 Logged-out
-35,2013-08-27 16:17:18,127.0.0.1,<NULL>,auth,Grupo 4 creado
-36,2013-08-27 16:17:18,127.0.0.1,5,auth,Usuario 5 Registrado
-37,2013-08-27 16:18:06,127.0.0.1,5,auth,User 5 Logged-out
-38,2013-08-27 16:21:06,127.0.0.1,4,auth,Usuario 4 sesión iniciada
-39,2013-08-27 16:25:43,127.0.0.1,4,auth,User 4 Logged-out
-40,2013-08-27 16:27:14,127.0.0.1,5,auth,Usuario 5 sesión iniciada
-41,2013-08-27 16:30:00,127.0.0.1,5,auth,User 5 Logged-out
-42,2013-08-27 16:38:33,127.0.0.1,4,auth,Usuario 4 sesión iniciada
-43,2013-08-27 16:38:46,127.0.0.1,4,auth,User 4 Logged-out
-44,2013-08-27 16:39:16,127.0.0.1,5,auth,Usuario 5 sesión iniciada
-45,2013-08-27 16:39:23,127.0.0.1,5,auth,User 5 Logged-out
-46,2013-08-27 16:41:12,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-47,2013-08-27 16:41:22,127.0.0.1,1,auth,User 1 Logged-out
-48,2013-08-27 17:00:53,127.0.0.1,4,auth,Usuario 4 sesión iniciada
-49,2013-08-27 17:01:10,127.0.0.1,4,auth,User 4 Logged-out
-50,2013-08-28 17:28:34,127.0.0.1,5,auth,Usuario 5 sesión iniciada
-51,2013-08-28 17:50:25,127.0.0.1,5,auth,Usuario 5 sesión iniciada
-52,2013-08-28 18:44:53,127.0.0.1,5,auth,User 5 Logged-out
-53,2013-08-28 18:45:39,127.0.0.1,4,auth,Usuario 4 sesión iniciada
-54,2013-08-28 18:46:59,127.0.0.1,4,auth,User 4 Logged-out
-55,2013-08-28 18:56:31,127.0.0.1,5,auth,Usuario 5 sesión iniciada
-56,2013-08-28 19:23:29,127.0.0.1,5,auth,User 5 Logged-out
-57,2013-08-28 19:24:43,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-58,2013-08-28 19:30:37,127.0.0.1,1,auth,User 1 Logged-out
-59,2013-08-29 18:46:12,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-60,2013-08-29 18:46:33,127.0.0.1,1,auth,User 1 Logged-out
-61,2013-08-30 16:29:30,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-62,2013-08-30 16:50:47,127.0.0.1,1,auth,User 1 Logged-out
-63,2013-08-30 17:02:08,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-64,2013-08-30 17:02:40,127.0.0.1,1,auth,User 1 Logged-out
-65,2013-08-30 17:03:03,127.0.0.1,4,auth,Usuario 4 sesión iniciada
-66,2013-08-30 17:03:52,127.0.0.1,4,auth,User 4 Logged-out
-67,2013-08-30 17:04:19,127.0.0.1,5,auth,Usuario 5 sesión iniciada
-68,2013-08-30 17:04:31,127.0.0.1,5,auth,User 5 Logged-out
-69,2013-08-30 17:07:55,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-70,2013-08-30 17:08:03,127.0.0.1,1,auth,User 1 Logged-out
-71,2013-08-30 17:12:43,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-72,2013-08-30 17:12:51,127.0.0.1,1,auth,User 1 Logged-out
-73,2013-09-02 15:26:32,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-74,2013-09-02 15:29:23,127.0.0.1,1,auth,User 1 Logged-out
-75,2013-09-02 15:29:44,127.0.0.1,5,auth,Usuario 5 sesión iniciada
-76,2013-09-02 15:30:00,127.0.0.1,5,auth,User 5 Logged-out
-77,2013-09-02 15:36:46,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-78,2013-09-02 15:44:58,127.0.0.1,1,auth,User 1 Logged-out
-79,2013-09-02 16:23:51,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-80,2013-09-02 16:32:23,127.0.0.1,1,auth,User 1 Logged-out
-81,2013-09-02 16:33:47,127.0.0.1,<NULL>,auth,Grupo 4 creado
-84,2013-09-02 16:42:11,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-85,2013-09-02 16:46:36,127.0.0.1,1,auth,User 1 Logged-out
-86,2013-09-02 16:47:55,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-87,2013-09-02 16:48:33,127.0.0.1,1,auth,User 1 Logged-out
-88,2013-09-02 16:56:59,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-89,2013-09-02 17:10:56,127.0.0.1,1,auth,User 1 Logged-out
-90,2013-09-02 17:11:26,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-91,2013-09-02 17:16:02,127.0.0.1,1,auth,User 1 Logged-out
-92,2013-09-05 16:04:38,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-93,2013-09-05 16:10:56,127.0.0.1,1,auth,User 1 Logged-out
-94,2013-09-05 16:12:59,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-95,2013-09-05 16:16:11,127.0.0.1,1,auth,User 1 Logged-out
-96,2013-09-05 16:28:39,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-97,2013-09-05 16:28:59,127.0.0.1,1,auth,User 1 Logged-out
-98,2013-09-05 19:47:05,127.0.0.1,4,auth,Usuario 4 sesión iniciada
-99,2013-09-05 19:47:19,127.0.0.1,4,auth,User 4 Logged-out
-100,2013-09-05 19:47:34,127.0.0.1,5,auth,Usuario 5 sesión iniciada
-101,2013-09-05 19:47:41,127.0.0.1,5,auth,User 5 Logged-out
-102,2013-09-06 14:15:02,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-103,2013-09-06 15:28:46,127.0.0.1,1,auth,User 1 Logged-out
-104,2013-09-06 18:09:55,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-105,2013-09-06 19:21:43,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-106,2013-09-07 15:46:55,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-107,2013-09-07 15:48:01,127.0.0.1,1,auth,User 1 Logged-out
-108,2013-09-07 15:48:24,127.0.0.1,4,auth,Usuario 4 sesión iniciada
-109,2013-09-07 15:49:14,127.0.0.1,4,auth,User 4 Logged-out
-110,2013-09-07 15:49:51,127.0.0.1,5,auth,Usuario 5 sesión iniciada
-111,2013-09-07 15:51:27,127.0.0.1,5,auth,User 5 Logged-out
-112,2013-09-07 15:53:36,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-113,2013-09-09 19:14:09,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-114,2013-09-09 19:14:46,127.0.0.1,1,auth,User 1 Logged-out
-115,2013-09-09 19:15:31,127.0.0.1,4,auth,Usuario 4 sesión iniciada
-116,2013-09-09 19:17:27,127.0.0.1,4,auth,User 4 Logged-out
-117,2013-09-09 19:26:19,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-118,2013-09-10 14:38:06,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-119,2013-09-10 14:39:03,127.0.0.1,1,auth,User 1 Logged-out
-120,2013-09-10 14:39:44,127.0.0.1,4,auth,Usuario 4 sesión iniciada
-121,2013-09-10 14:48:47,127.0.0.1,4,auth,User 4 Logged-out
-122,2013-09-10 14:49:37,127.0.0.1,5,auth,Usuario 5 sesión iniciada
-123,2013-09-10 14:50:28,127.0.0.1,5,auth,User 5 Logged-out
-124,2013-09-10 14:53:27,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-125,2013-09-10 14:53:52,127.0.0.1,1,auth,User 1 Logged-out
-126,2013-09-10 14:56:36,127.0.0.1,4,auth,Usuario 4 sesión iniciada
-127,2013-09-10 14:58:40,127.0.0.1,4,auth,User 4 Logged-out
-128,2013-09-10 15:03:32,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-129,2013-09-10 15:34:37,127.0.0.1,1,auth,User 1 Logged-out
-130,2013-09-10 15:38:19,127.0.0.1,<NULL>,auth,Grupo 4 creado
-132,2013-09-10 18:31:00,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-133,2013-09-10 18:45:57,127.0.0.1,1,auth,User 1 Logged-out
-134,2013-09-10 18:46:23,127.0.0.1,5,auth,Usuario 5 sesión iniciada
-135,2013-09-10 18:51:58,127.0.0.1,5,auth,User 5 Logged-out
-136,2013-09-10 19:41:16,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-137,2013-09-10 19:44:42,127.0.0.1,1,auth,User 1 Logged-out
-138,2013-09-10 19:56:46,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-139,2013-09-10 20:03:28,127.0.0.1,1,auth,User 1 Logged-out
-140,2013-09-11 20:51:16,127.0.0.1,<NULL>,auth,Grupo 5 creado
-143,2013-09-11 22:08:38,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-144,2013-09-11 22:09:33,127.0.0.1,1,auth,User 1 Logged-out
-145,2013-09-11 22:09:53,127.0.0.1,4,auth,Usuario 4 sesión iniciada
-146,2013-09-11 22:11:03,127.0.0.1,4,auth,User 4 Logged-out
-149,2013-09-11 22:53:28,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-150,2013-09-11 23:41:00,127.0.0.1,1,auth,User 1 Logged-out
-151,2013-10-11 19:18:54,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-152,2013-10-16 19:00:54,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-153,2013-10-16 19:46:48,127.0.0.1,1,auth,User 1 Logged-out
-154,2013-10-18 14:56:14,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-155,2013-10-18 18:33:05,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-156,2013-10-18 20:32:56,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-157,2013-10-21 21:18:11,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-158,2013-10-21 22:06:49,127.0.0.1,1,auth,User 1 Logged-out
-159,2013-10-21 22:07:45,127.0.0.1,4,auth,Usuario 4 sesión iniciada
-160,2013-10-21 22:45:21,127.0.0.1,4,auth,User 4 Logged-out
-161,2013-10-21 22:46:03,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-162,2013-10-22 00:09:34,127.0.0.1,1,auth,User 1 Logged-out
-163,2013-10-22 00:32:10,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-164,2013-10-22 00:33:29,127.0.0.1,1,auth,User 1 Logged-out
-165,2013-10-22 00:40:26,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-166,2013-10-23 14:51:23,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-167,2013-10-23 18:19:02,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-168,2013-10-23 20:35:46,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-169,2013-10-24 18:40:19,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-170,2013-10-25 15:20:59,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-171,2013-10-25 18:38:25,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-172,2013-10-25 20:42:52,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-173,2013-10-26 16:13:30,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-174,2013-10-27 18:48:49,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-175,2013-10-27 19:51:36,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-176,2013-10-27 19:53:58,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-177,2013-10-27 20:00:14,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-178,2013-10-28 15:47:12,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-179,2013-10-29 16:38:46,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-180,2013-10-30 15:54:15,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-181,2013-10-30 18:21:29,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-182,2013-11-01 19:02:04,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-183,2013-11-04 21:31:15,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-184,2013-11-04 21:45:24,127.0.0.1,1,auth,User 1 Logged-out
-185,2013-11-04 21:45:52,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-186,2013-11-04 21:47:26,127.0.0.1,1,auth,User 1 Logged-out
-187,2013-11-04 21:48:10,127.0.0.1,5,auth,Usuario 5 sesión iniciada
-188,2013-11-04 21:53:53,127.0.0.1,5,auth,User 5 Logged-out
-189,2013-11-09 18:47:20,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-190,2013-11-09 18:53:23,127.0.0.1,1,auth,User 1 Logged-out
-191,2013-11-13 19:19:27,127.0.0.1,<NULL>,auth,Grupo 4 creado
-192,2013-11-13 19:19:27,127.0.0.1,6,auth,Usuario 6 Registrado
-193,2013-11-13 19:23:44,127.0.0.1,6,auth,User 6 Logged-out
-194,2013-11-13 19:25:18,127.0.0.1,<NULL>,auth,Grupo 5 creado
-197,2013-11-13 19:30:03,127.0.0.1,<NULL>,auth,Grupo 6 creado
-198,2013-11-13 19:30:03,127.0.0.1,8,auth,Usuario 8 Registrado
-199,2013-11-13 19:33:32,127.0.0.1,8,auth,User 8 Logged-out
-200,2013-11-13 19:44:07,127.0.0.1,<NULL>,auth,Grupo 7 creado
-201,2013-11-13 19:44:07,127.0.0.1,9,auth,Usuario 9 Registrado
-202,2013-11-13 19:48:23,127.0.0.1,9,auth,User 9 Logged-out
-203,2013-11-15 15:04:20,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-204,2013-11-15 17:50:08,127.0.0.1,6,auth,Usuario 6 sesión iniciada
-205,2013-11-15 17:50:55,127.0.0.1,6,auth,User 6 Logged-out
-206,2013-11-16 18:24:32,127.0.0.1,<NULL>,auth,Grupo 8 creado
-207,2013-11-16 18:24:32,127.0.0.1,10,auth,Usuario 10 Registrado
-208,2013-11-16 18:29:51,127.0.0.1,10,auth,User 10 Logged-out
-209,2013-11-21 18:39:40,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-210,2013-11-25 19:26:27,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-211,2013-11-26 09:42:26,127.0.0.1,5,auth,Usuario 5 sesión iniciada
-212,2013-11-26 18:33:21,127.0.0.1,5,auth,Usuario 5 sesión iniciada
-213,2013-11-28 19:36:20,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-214,2013-12-02 16:13:18,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-215,2013-12-02 17:06:27,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-216,2013-12-02 20:05:29,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-217,2013-12-05 14:54:43,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-218,2013-12-06 16:19:44,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-219,2013-12-06 18:18:57,127.0.0.1,1,auth,User 1 Logged-out
-220,2013-12-06 18:19:48,127.0.0.1,4,auth,Usuario 4 sesión iniciada
-221,2013-12-06 18:20:17,127.0.0.1,4,auth,User 4 Logged-out
-222,2013-12-09 16:28:12,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-223,2013-12-09 19:03:13,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-224,2013-12-10 18:36:38,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-225,2013-12-11 15:15:21,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-226,2013-12-13 18:43:21,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-227,2013-12-13 19:41:42,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-228,2013-12-17 16:26:09,127.0.0.1,1,auth,Usuario 1 sesión iniciada
-229,2013-12-17 17:47:03,127.0.0.1,1,auth,User 1 Logged-out
-230,2013-12-17 17:47:51,127.0.0.1,<NULL>,auth,Grupo 9 creado
-231,2013-12-17 17:47:51,127.0.0.1,11,auth,Usuario 11 Registrado
-232,2013-12-17 17:48:19,127.0.0.1,11,auth,User 11 Logged-out
-233,2013-12-17 17:51:05,127.0.0.1,11,auth,Usuario 11 sesión iniciada
-234,2013-12-17 18:06:10,127.0.0.1,11,auth,Usuario 11 sesión iniciada
-235,2013-12-17 18:28:27,127.0.0.1,11,auth,User 11 Logged-out
-236,2013-12-17 18:29:04,127.0.0.1,<NULL>,auth,Grupo 10 creado
-237,2013-12-17 18:29:04,127.0.0.1,12,auth,Usuario 12 Registrado
-238,2013-12-17 18:29:13,127.0.0.1,12,auth,User 12 Logged-out
-239,2013-12-17 18:30:52,127.0.0.1,12,auth,Usuario 12 sesión iniciada
-240,2013-12-17 18:31:37,127.0.0.1,12,auth,User 12 Logged-out
-241,2013-12-17 18:35:02,127.0.0.1,12,auth,Usuario 12 sesión iniciada
-242,2013-12-17 18:41:50,127.0.0.1,12,auth,User 12 Logged-out
-243,2013-12-17 18:47:19,127.0.0.1,12,auth,Usuario 12 sesión iniciada
-244,2013-12-17 18:47:36,127.0.0.1,11,auth,Usuario 11 sesión iniciada
-245,2013-12-17 19:00:09,127.0.0.1,11,auth,User 11 Logged-out
-246,2013-12-17 19:02:36,127.0.0.1,<NULL>,auth,Grupo 11 creado
-247,2013-12-17 19:02:36,127.0.0.1,13,auth,Usuario 13 Registrado
-248,2013-12-17 19:02:45,127.0.0.1,13,auth,User 13 Logged-out
-249,2013-12-17 19:03:28,127.0.0.1,<NULL>,auth,Grupo 12 creado
-250,2013-12-17 19:03:28,127.0.0.1,14,auth,Usuario 14 Registrado
-251,2013-12-17 19:03:35,127.0.0.1,14,auth,User 14 Logged-out
-252,2013-12-17 19:04:41,127.0.0.1,<NULL>,auth,Grupo 13 creado
-253,2013-12-17 19:04:41,127.0.0.1,15,auth,Usuario 15 Registrado
-254,2013-12-17 19:04:48,127.0.0.1,15,auth,User 15 Logged-out
-255,2013-12-17 19:05:20,127.0.0.1,<NULL>,auth,Grupo 14 creado
-256,2013-12-17 19:05:20,127.0.0.1,16,auth,Usuario 16 Registrado
-257,2013-12-17 19:05:58,127.0.0.1,16,auth,User 16 Logged-out
-258,2013-12-17 19:07:24,127.0.0.1,<NULL>,auth,Grupo 15 creado
-259,2013-12-17 19:07:24,127.0.0.1,17,auth,Usuario 17 Registrado
-260,2013-12-17 19:07:30,127.0.0.1,17,auth,User 17 Logged-out
-261,2013-12-17 19:09:35,127.0.0.1,<NULL>,auth,Grupo 16 creado
-262,2013-12-17 19:09:35,127.0.0.1,18,auth,Usuario 18 Registrado
-263,2013-12-17 19:14:42,127.0.0.1,18,auth,User 18 Logged-out
-264,2013-12-17 19:15:11,127.0.0.1,18,auth,Usuario 18 sesión iniciada
-265,2013-12-17 19:15:19,127.0.0.1,18,auth,User 18 Logged-out
-266,2013-12-17 19:15:53,127.0.0.1,13,auth,Usuario 13 sesión iniciada
-267,2013-12-17 19:16:55,127.0.0.1,13,auth,User 13 Logged-out
-268,2013-12-17 19:21:14,127.0.0.1,<NULL>,auth,Grupo 17 creado
-269,2013-12-17 19:21:14,127.0.0.1,19,auth,Usuario 19 Registrado
-270,2013-12-17 19:21:21,127.0.0.1,19,auth,User 19 Logged-out
-271,2013-12-17 19:22:29,127.0.0.1,19,auth,Usuario 19 sesión iniciada
-272,2013-12-17 19:43:02,127.0.0.1,12,auth,Usuario 12 sesión iniciada
-273,2013-12-19 12:43:49,127.0.0.1,5,auth,Usuario 5 sesión iniciada
-274,2013-12-19 15:40:55,127.0.0.1,5,auth,Usuario 5 sesión iniciada
 
 
 TABLE auth_cas
@@ -354,8 +65,8 @@ alumnos.alumnoid,alumnos.nombre,alumnos.dni,alumnos.sexo,alumnos.fechanacimiento
 
 TABLE cursos
 cursos.cursoid,cursos.nombre,cursos.codigo,cursos.nivel,cursos.anio,cursos.seccion,cursos.division,cursos.orden
-1,Anual,1,3,2013,A,4,1
-2,Cuatrimestral,2,3,2013,B,3,2
+1,Primer año,1,3,2013,A,4,1
+2,Segundo año,2,3,2013,B,3,2
 3,Tercer año,3,3,2013,C,3,3
 
 
@@ -444,6 +155,7 @@ planesestudio.planestudioid,planesestudio.descripcion,planesestudio.aprobadopor,
 1,Analista de sistemas 2012,Resolución Nº5817/03,1,2012-03-18,2012-12-21
 2,Radiologia 2012,Resolución N° 3244,5,2012-03-18,2012-12-18
 3,Analisis Clinico 2012,Resolucion N°2134,4,2012-03-18,2012-12-18
+4,,,4,2012-03-18,2012-12-18
 5,Enfermeria 2012,Resolución N° 2345,2,2012-03-18,2012-12-21
 6,Instrumentación 2012,Resolución N° 6543,3,2012-03-21,2012-12-21
 7,Cardiologia 2013,Resolución N° 2312,6,2012-03-18,2012-12-21
@@ -609,139 +321,139 @@ divisiones.divisionid,divisiones.descripcion,divisiones.codigo,divisiones.cursoi
 
 TABLE asignaturas
 asignaturas.asignaturaid,asignaturas.nombre,asignaturas.materiaid,asignaturas.cursoid,asignaturas.carreraid,asignaturas.planestudioid,asignaturas.orden,asignaturas.horas,asignaturas.teorica,asignaturas.practica,asignaturas.optativa,asignaturas.faltas1r,asignaturas.faltaslibre,asignaturas.faltasrecursa,asignaturas.cicloid
-88,ALGEBRA,158,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-89,ANALISIS MATEMATICO I,159,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-90,INGLES TECNICO I,160,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-91,ADM. DE LAS ORGANIZACIONES,161,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-92,METODOLOGIA DE LA INVESTIGACION,162,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-93,PROGRAMACION I,163,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-94,INTROD. SISTEMAS DE INFORMACION,164,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-95,ARQUITECTURA DE COMPUTADORES,165,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-96,EDI I,166,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-97,PROBABILIDAD Y ESTADISTICA,167,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-98,ANALISIS MATEMATICO II,168,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-99,INGLES TECNICO II,169,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-100,SISTEMAS DE INFORMACION I,170,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-101,PROGRAMACION II,171,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-102,SISTEMAS OPERATIVOS,172,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-103,BASES DE DATOS,173,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-104,INVESTIGACION OPERATIVA,175,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-105,ECONOMIA EMPRESARIAL,176,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-106,TELEINFORMATICA,177,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-107,SISTEMAS DE INFORMACION II,178,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-108,PRACTICA PROFESIONAL,179,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-109,EDI III,180,<NULL>,1,1,0,<NULL>,False,False,False,0,0,0,4
-110,SALUD PUBLICA,47,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-111,INFORMATICA,48,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-112,BIOLOGIA I,49,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-113,FUND. DE LAS CIENCIAS EXACTAS,50,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-114,PROCESOS TECNOLOGICOS EN SALUD I,51,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-115,PROCESOS TECNOLOGICOS EN SALUD II,52,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-116,EDI,53,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-117,ESPACIO DE LA PRACTICA,54,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-118,ORG. Y GESTION DE SERV. DE SALUD,55,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-119,BIOLOGIA II,56,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-120,METODOLOGIA DE LA INVESTIGACION,57,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-121,SEGURIDAD E HIGIENE,58,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-122,EDI II,59,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-123,CENTRO Y ACTO QUIRURGICO,60,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-124,ATENCION DEL PACIENTE QUIRURGICO Y LA EMERGENCIA,61,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-125,ANATOMIA Y TECNICA QUIRURGICA I,62,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-126,PRACTICA,63,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-127,INV. EN SERV. DE SALUD,64,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-128,INGLES,65,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-129,BIOETICA,66,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-130,ANATOMIA Y TECNICA QUIRURGICA II,67,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-131,INT. A LA GESTION DEL CENTRO QUIRURG.,68,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-132,EDI III,69,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-133,PRACTICA,70,<NULL>,3,6,0,<NULL>,False,False,False,0,0,0,2
-134,SALUD PUBLICA,71,<NULL>,4,3,0,<NULL>,False,False,False,0,0,0,2
-135,INFORMATICA,72,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-136,BIOLOGIA I,73,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-137,FUND. DE LAS CIENCIAS EXACTAS,74,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-138,PROCESOS TECNOLOGICOS EN SALUD I,75,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-139,PROCESOS TECNOLOGICOS EN SALUD II,76,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-140,EDI,77,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-141,ESPACIO DE LA PRACTICA,78,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-142,ORG. Y GESTION DE SERV. DE SALUD,79,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-143,BIOLOGIA II,80,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-144,METODOLOGIA DE LA INVESTIGACION,81,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-145,SEGURIDAD E HIGIENE,82,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-146,EDI II,83,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-147,QUIMICA BIOLOGICA,84,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-148,ADMISION DE PACIENTES I,85,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-149,PROCED. TECNICOS NORMALIZADOS,86,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-150,PRACTICA,87,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-151,INVEST. DE LOS SERV. DE SALUD,88,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-152,INGLES,89,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-153,BIOETICA,90,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-154,ADMISION DE PACIENTES II,91,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-155,PROC. TECNICOS NORMALIZADOS II,92,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-156,CONTROL DE CALIDAD,93,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-157,GESTION DE LABORATORIO,94,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-158,EDI III,95,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-159,PRACTICA,96,<NULL>,4,4,0,<NULL>,False,False,False,0,0,0,2
-160,SALUD PUBLICA,97,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-161,INFORMATICA,98,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-162,BIOLOGIA I,99,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-163,FUND. DE LAS CIENCIAS EXACTAS,100,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-164,PROCESOS TECNOLOGICOS EN SALUD I,101,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-165,PROCESOS TECNOLOGICOS EN SALUD II,102,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-166,EDI,103,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-167,ESPACIO DE LA PRACTICA,104,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-168,ORG. Y GESTION DE SERV. DE SALUD,105,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-169,BIOLOGIA II,106,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-170,METODOLOGIA DE LA INVESTIGACION,107,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-171,SEGURIDAD E HIGIENE,108,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-172,EDI II,109,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-173,FUND. DE ANATOMOFISIOLOGIA,110,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-174,TECNICAS RADIOLOGICAS I,111,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-175,TECNICAS RADIOLOGICAS II,112,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-176,RADIOFISICA I,113,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-177,FUNDAMENTOS DE PATOLOGIA,114,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-178,PRACTICA,115,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-179,INV. EN SERV. DE SALUD,116,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-180,INGLES,117,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-181,BIOETICA,118,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-182,RADIOFISICA II,119,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-183,TECNOLOGIAS RADIOLOGICAS III,120,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-184,TECNOLOGIAS RADIOLOGICAS IV,121,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-185,RADIOTERAPIA,122,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-186,EDI III,123,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-187,PRACTICA,124,<NULL>,5,4,0,<NULL>,False,False,False,0,0,0,2
-188,SALUD PUBLICA,125,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-189,EST. Y FUNCION DEL CUERPO HUMANO,126,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-190,BIOFISICA Y BIOQUIMICA,127,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-191,MICROBIOLOGIA Y PARASITOLOGIA,128,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-192,FUNDAMENTOS DE NUTRICION,129,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-193,ENFERM. FUND. PRACT. Y TENDENCIAS,130,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-194,ENFERMERIA MATERNO INFANTIL I,131,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-195,FARMOCOLOGIA EN ENFERMERIA,132,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-196,PRACTICA I,133,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-197,INT. A LA INVESTIGACION EN SALUD,134,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-198,EPIDEMIOLOGIA Y ESTADISTICA EN SALUD,135,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-199,INFORMATICA,136,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-200,ENFERMERIA DELADULTO Y EL ANCIANO,137,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-201,DIETETICA EN ENFERMERIA,138,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-202,ENFERMERIA EN SALUD MENTAL,139,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-203,EDI,140,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-204,PRACTICA II,141,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-205,EDUCACION EN SALUD,142,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-206,ORG. Y GESTION SERV. SALUD,143,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-207,INV. Y PLANIF. EN SALUD,144,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-208,INGLES,145,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-209,ENFERM. MATERNO-INF. II,146,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-210,ORG. Y GESTION SERV. DE ENFERM.,147,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-211,ENFERM. EN EMERG. Y CATASTROFES,148,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-212,ASPECTOS ETICOS Y LEGALES DE LA PRAC. PROF,149,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-213,EDI II,150,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-214,PRACTICA III,151,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-215,CONDICIONES Y MEDIO AMBIENTE DEL TRABAJO,152,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-216,SALUD PUBLICA I,153,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-217,BIOLOGIA HUMANA,154,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-218,FUNDAMENTOS DEL CUIDADO,155,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-219,CUIDADOS DE LA SALUD CENTRADOS EN LA COMUNIDAD Y LA FAMILIA,156,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
-220,PRACTICA I,157,<NULL>,2,4,0,<NULL>,False,False,False,0,0,0,2
+88,ALGEBRA,158,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+89,ANALISIS MATEMATICO I,159,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+90,INGLES TECNICO I,160,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+91,ADM. DE LAS ORGANIZACIONES,161,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+92,METODOLOGIA DE LA INVESTIGACION,162,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+93,PROGRAMACION I,163,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+94,INTROD. SISTEMAS DE INFORMACION,164,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+95,ARQUITECTURA DE COMPUTADORES,165,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+96,EDI I,166,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+97,PROBABILIDAD Y ESTADISTICA,167,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+98,ANALISIS MATEMATICO II,168,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+99,INGLES TECNICO II,169,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+100,SISTEMAS DE INFORMACION I,170,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+101,PROGRAMACION II,171,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+102,SISTEMAS OPERATIVOS,172,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+103,BASES DE DATOS,173,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+104,INVESTIGACION OPERATIVA,175,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+105,ECONOMIA EMPRESARIAL,176,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+106,TELEINFORMATICA,177,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+107,SISTEMAS DE INFORMACION II,178,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+108,PRACTICA PROFESIONAL,179,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+109,EDI III,180,1,1,1,0,<NULL>,False,False,False,0,0,0,4
+110,SALUD PUBLICA,47,1,3,6,0,<NULL>,False,False,False,0,0,0,2
+111,INFORMATICA,48,1,3,6,0,<NULL>,False,False,False,0,0,0,2
+112,BIOLOGIA I,49,1,3,6,0,<NULL>,False,False,False,0,0,0,2
+113,FUND. DE LAS CIENCIAS EXACTAS,50,1,3,6,0,<NULL>,False,False,False,0,0,0,2
+114,PROCESOS TECNOLOGICOS EN SALUD I,51,1,3,6,0,<NULL>,False,False,False,0,0,0,2
+115,PROCESOS TECNOLOGICOS EN SALUD II,52,1,3,6,0,<NULL>,False,False,False,0,0,0,2
+116,EDI,53,1,3,6,0,<NULL>,False,False,False,0,0,0,2
+117,ESPACIO DE LA PRACTICA,54,1,3,6,0,<NULL>,False,False,False,0,0,0,2
+118,ORG. Y GESTION DE SERV. DE SALUD,55,2,3,6,0,<NULL>,False,False,False,0,0,0,2
+119,BIOLOGIA II,56,2,3,6,0,<NULL>,False,False,False,0,0,0,2
+120,METODOLOGIA DE LA INVESTIGACION,57,2,3,6,0,<NULL>,False,False,False,0,0,0,2
+121,SEGURIDAD E HIGIENE,58,2,3,6,0,<NULL>,False,False,False,0,0,0,2
+122,EDI II,59,2,3,6,0,<NULL>,False,False,False,0,0,0,2
+123,CENTRO Y ACTO QUIRURGICO,60,2,3,6,0,<NULL>,False,False,False,0,0,0,2
+124,ATENCION DEL PACIENTE QUIRURGICO Y LA EMERGENCIA,61,2,3,6,0,<NULL>,False,False,False,0,0,0,2
+125,ANATOMIA Y TECNICA QUIRURGICA I,62,2,3,6,0,<NULL>,False,False,False,0,0,0,2
+126,PRACTICA,63,2,3,6,0,<NULL>,False,False,False,0,0,0,2
+127,INV. EN SERV. DE SALUD,64,3,3,6,0,<NULL>,False,False,False,0,0,0,2
+128,INGLES,65,3,3,6,0,<NULL>,False,False,False,0,0,0,2
+129,BIOETICA,66,3,3,6,0,<NULL>,False,False,False,0,0,0,2
+130,ANATOMIA Y TECNICA QUIRURGICA II,67,3,3,6,0,<NULL>,False,False,False,0,0,0,2
+131,INT. A LA GESTION DEL CENTRO QUIRURG.,68,3,3,6,0,<NULL>,False,False,False,0,0,0,2
+132,EDI III,69,3,3,6,0,<NULL>,False,False,False,0,0,0,2
+133,PRACTICA,70,3,3,6,0,<NULL>,False,False,False,0,0,0,2
+134,SALUD PUBLICA,71,1,4,3,0,<NULL>,False,False,False,0,0,0,2
+135,INFORMATICA,72,1,4,4,0,<NULL>,False,False,False,0,0,0,2
+136,BIOLOGIA I,73,1,4,4,0,<NULL>,False,False,False,0,0,0,2
+137,FUND. DE LAS CIENCIAS EXACTAS,74,1,4,4,0,<NULL>,False,False,False,0,0,0,2
+138,PROCESOS TECNOLOGICOS EN SALUD I,75,1,4,4,0,<NULL>,False,False,False,0,0,0,2
+139,PROCESOS TECNOLOGICOS EN SALUD II,76,1,4,4,0,<NULL>,False,False,False,0,0,0,2
+140,EDI,77,1,4,4,0,<NULL>,False,False,False,0,0,0,2
+141,ESPACIO DE LA PRACTICA,78,1,4,4,0,<NULL>,False,False,False,0,0,0,2
+142,ORG. Y GESTION DE SERV. DE SALUD,79,2,4,4,0,<NULL>,False,False,False,0,0,0,2
+143,BIOLOGIA II,80,2,4,4,0,<NULL>,False,False,False,0,0,0,2
+144,METODOLOGIA DE LA INVESTIGACION,81,2,4,4,0,<NULL>,False,False,False,0,0,0,2
+145,SEGURIDAD E HIGIENE,82,2,4,4,0,<NULL>,False,False,False,0,0,0,2
+146,EDI II,83,2,4,4,0,<NULL>,False,False,False,0,0,0,2
+147,QUIMICA BIOLOGICA,84,2,4,4,0,<NULL>,False,False,False,0,0,0,2
+148,ADMISION DE PACIENTES I,85,2,4,4,0,<NULL>,False,False,False,0,0,0,2
+149,PROCED. TECNICOS NORMALIZADOS,86,2,4,4,0,<NULL>,False,False,False,0,0,0,2
+150,PRACTICA,87,2,4,4,0,<NULL>,False,False,False,0,0,0,2
+151,INVEST. DE LOS SERV. DE SALUD,88,3,4,4,0,<NULL>,False,False,False,0,0,0,2
+152,INGLES,89,3,4,4,0,<NULL>,False,False,False,0,0,0,2
+153,BIOETICA,90,3,4,4,0,<NULL>,False,False,False,0,0,0,2
+154,ADMISION DE PACIENTES II,91,3,4,4,0,<NULL>,False,False,False,0,0,0,2
+155,PROC. TECNICOS NORMALIZADOS II,92,3,4,4,0,<NULL>,False,False,False,0,0,0,2
+156,CONTROL DE CALIDAD,93,3,4,4,0,<NULL>,False,False,False,0,0,0,2
+157,GESTION DE LABORATORIO,94,3,4,4,0,<NULL>,False,False,False,0,0,0,2
+158,EDI III,95,3,4,4,0,<NULL>,False,False,False,0,0,0,2
+159,PRACTICA,96,3,4,4,0,<NULL>,False,False,False,0,0,0,2
+160,SALUD PUBLICA,97,1,5,4,0,<NULL>,False,False,False,0,0,0,2
+161,INFORMATICA,98,1,5,4,0,<NULL>,False,False,False,0,0,0,2
+162,BIOLOGIA I,99,1,5,4,0,<NULL>,False,False,False,0,0,0,2
+163,FUND. DE LAS CIENCIAS EXACTAS,100,1,5,4,0,<NULL>,False,False,False,0,0,0,2
+164,PROCESOS TECNOLOGICOS EN SALUD I,101,1,5,4,0,<NULL>,False,False,False,0,0,0,2
+165,PROCESOS TECNOLOGICOS EN SALUD II,102,1,5,4,0,<NULL>,False,False,False,0,0,0,2
+166,EDI,103,1,5,4,0,<NULL>,False,False,False,0,0,0,2
+167,ESPACIO DE LA PRACTICA,104,1,5,4,0,<NULL>,False,False,False,0,0,0,2
+168,ORG. Y GESTION DE SERV. DE SALUD,105,2,5,4,0,<NULL>,False,False,False,0,0,0,2
+169,BIOLOGIA II,106,2,5,4,0,<NULL>,False,False,False,0,0,0,2
+170,METODOLOGIA DE LA INVESTIGACION,107,2,5,4,0,<NULL>,False,False,False,0,0,0,2
+171,SEGURIDAD E HIGIENE,108,2,5,4,0,<NULL>,False,False,False,0,0,0,2
+172,EDI II,109,2,5,4,0,<NULL>,False,False,False,0,0,0,2
+173,FUND. DE ANATOMOFISIOLOGIA,110,2,5,4,0,<NULL>,False,False,False,0,0,0,2
+174,TECNICAS RADIOLOGICAS I,111,2,5,4,0,<NULL>,False,False,False,0,0,0,2
+175,TECNICAS RADIOLOGICAS II,112,2,5,4,0,<NULL>,False,False,False,0,0,0,2
+176,RADIOFISICA I,113,2,5,4,0,<NULL>,False,False,False,0,0,0,2
+177,FUNDAMENTOS DE PATOLOGIA,114,2,5,4,0,<NULL>,False,False,False,0,0,0,2
+178,PRACTICA,115,2,5,4,0,<NULL>,False,False,False,0,0,0,2
+179,INV. EN SERV. DE SALUD,116,3,5,4,0,<NULL>,False,False,False,0,0,0,2
+180,INGLES,117,3,5,4,0,<NULL>,False,False,False,0,0,0,2
+181,BIOETICA,118,3,5,4,0,<NULL>,False,False,False,0,0,0,2
+182,RADIOFISICA II,119,3,5,4,0,<NULL>,False,False,False,0,0,0,2
+183,TECNOLOGIAS RADIOLOGICAS III,120,3,5,4,0,<NULL>,False,False,False,0,0,0,2
+184,TECNOLOGIAS RADIOLOGICAS IV,121,3,5,4,0,<NULL>,False,False,False,0,0,0,2
+185,RADIOTERAPIA,122,3,5,4,0,<NULL>,False,False,False,0,0,0,2
+186,EDI III,123,3,5,4,0,<NULL>,False,False,False,0,0,0,2
+187,PRACTICA,124,3,5,4,0,<NULL>,False,False,False,0,0,0,2
+188,SALUD PUBLICA,125,1,2,4,0,<NULL>,False,False,False,0,0,0,2
+189,EST. Y FUNCION DEL CUERPO HUMANO,126,1,2,4,0,<NULL>,False,False,False,0,0,0,2
+190,BIOFISICA Y BIOQUIMICA,127,1,2,4,0,<NULL>,False,False,False,0,0,0,2
+191,MICROBIOLOGIA Y PARASITOLOGIA,128,1,2,4,0,<NULL>,False,False,False,0,0,0,2
+192,FUNDAMENTOS DE NUTRICION,129,1,2,4,0,<NULL>,False,False,False,0,0,0,2
+193,ENFERM. FUND. PRACT. Y TENDENCIAS,130,1,2,4,0,<NULL>,False,False,False,0,0,0,2
+194,ENFERMERIA MATERNO INFANTIL I,131,1,2,4,0,<NULL>,False,False,False,0,0,0,2
+195,FARMOCOLOGIA EN ENFERMERIA,132,1,2,4,0,<NULL>,False,False,False,0,0,0,2
+196,PRACTICA I,133,1,2,4,0,<NULL>,False,False,False,0,0,0,2
+197,INT. A LA INVESTIGACION EN SALUD,134,2,2,4,0,<NULL>,False,False,False,0,0,0,2
+198,EPIDEMIOLOGIA Y ESTADISTICA EN SALUD,135,2,2,4,0,<NULL>,False,False,False,0,0,0,2
+199,INFORMATICA,136,2,2,4,0,<NULL>,False,False,False,0,0,0,2
+200,ENFERMERIA DELADULTO Y EL ANCIANO,137,2,2,4,0,<NULL>,False,False,False,0,0,0,2
+201,DIETETICA EN ENFERMERIA,138,2,2,4,0,<NULL>,False,False,False,0,0,0,2
+202,ENFERMERIA EN SALUD MENTAL,139,2,2,4,0,<NULL>,False,False,False,0,0,0,2
+203,EDI,140,2,2,4,0,<NULL>,False,False,False,0,0,0,2
+204,PRACTICA II,141,2,2,4,0,<NULL>,False,False,False,0,0,0,2
+205,EDUCACION EN SALUD,142,3,2,4,0,<NULL>,False,False,False,0,0,0,2
+206,ORG. Y GESTION SERV. SALUD,143,3,2,4,0,<NULL>,False,False,False,0,0,0,2
+207,INV. Y PLANIF. EN SALUD,144,3,2,4,0,<NULL>,False,False,False,0,0,0,2
+208,INGLES,145,3,2,4,0,<NULL>,False,False,False,0,0,0,2
+209,ENFERM. MATERNO-INF. II,146,3,2,4,0,<NULL>,False,False,False,0,0,0,2
+210,ORG. Y GESTION SERV. DE ENFERM.,147,3,2,4,0,<NULL>,False,False,False,0,0,0,2
+211,ENFERM. EN EMERG. Y CATASTROFES,148,3,2,4,0,<NULL>,False,False,False,0,0,0,2
+212,ASPECTOS ETICOS Y LEGALES DE LA PRAC. PROF,149,3,2,4,0,<NULL>,False,False,False,0,0,0,2
+213,EDI II,150,3,2,4,0,<NULL>,False,False,False,0,0,0,2
+214,PRACTICA III,151,3,2,4,0,<NULL>,False,False,False,0,0,0,2
+215,CONDICIONES Y MEDIO AMBIENTE DEL TRABAJO,152,1,2,4,0,<NULL>,False,False,False,0,0,0,2
+216,SALUD PUBLICA I,153,1,2,4,0,<NULL>,False,False,False,0,0,0,2
+217,BIOLOGIA HUMANA,154,1,2,4,0,<NULL>,False,False,False,0,0,0,2
+218,FUNDAMENTOS DEL CUIDADO,155,1,2,4,0,<NULL>,False,False,False,0,0,0,2
+219,CUIDADOS DE LA SALUD CENTRADOS EN LA COMUNIDAD Y LA FAMILIA,156,1,2,4,0,<NULL>,False,False,False,0,0,0,2
+220,PRACTICA I,157,1,2,4,0,<NULL>,False,False,False,0,0,0,2
 
 
 TABLE calendarios
@@ -1370,4 +1082,58 @@ horarios.horarioid,horarios.horaid,horarios.comisionid,horarios.dia,horarios.det
 32,2,68,jueves,
 33,3,65,jueves,
 34,4,65,jueves,
-35,1,64
+35,1,64,<NULL>,<NULL>
+
+
+TABLE profesores
+
+
+TABLE sanciones
+
+
+TABLE situaciones
+
+
+TABLE faltas
+
+
+TABLE examenes
+
+
+TABLE inscripcionescarrera
+
+
+TABLE inscripcionescomision
+
+
+TABLE inscripcionesdivision
+
+
+TABLE inscripcionesexamen
+
+
+TABLE constancia_modelo
+
+
+TABLE constancia
+
+
+TABLE tramites
+
+
+TABLE ubicaciones
+
+
+TABLE estados
+
+
+TABLE expedientes
+
+
+TABLE seguimientos
+
+
+TABLE plugin_flatpage
+
+
+END

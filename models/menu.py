@@ -23,7 +23,7 @@ response.menu = [
     ]],
     [T('Carreras'), False, URL(request.application,'carreras','index'), [
         [T('Analista de Sistemas'), False, URL(request.application,'carreras','sistemas'),[]],
-        [T('Tecnicatura en redes informaticas'), False, URL(request.application,'carreras','rrhh'), []],
+        [T('Tecnicatura en redes informaticas'), False, URL(request.application,'carreras','redes'), []],
         
         [T('Salud'), False, URL(request.application,'carreras','salud'), [
             [T('Enfermería'), False, URL(request.application,'carreras','salud_enfermeria'), []],

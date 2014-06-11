@@ -123,6 +123,7 @@ def cargar():
     db.ciclos.insert(cicloid=2,nombre='Ciclo Lectivo 2011',anio=2011,detalle=None,desde='2011-01-01',hasta='2011-12-31')
     db.ciclos.insert(cicloid=3,nombre='Ciclo Lectivo 2012',anio=2012,detalle=None,desde='2012-01-01',hasta='2012-12-31')
     db.ciclos.insert(cicloid=4,nombre='Ciclo Lectivo 2013',anio=2013,detalle=None,desde='2013-01-01',hasta='2013-12-31')
+    db.ciclos.insert(cicloid=5,nombre='Ciclo Lectivo 2014',anio=2014,detalle=None,desde='2014-01-01',hasta='2014-12-31')
     db.catedras.insert(catedraid=3,nombre='catedra',informe='saraza',boletin='',analitico='',espacio='',abr='',calificacion='',horas=0,minutos=0,nivelid=1)
     db.materias.insert(materiaid=47,codigo=800,nombre='SALUD PUBLICA',resumen='',cursoid=1,catedraid=3,orden=0,optativa='False',analitico='',requerida='False')
     db.materias.insert(materiaid=48,codigo=801,nombre='INFORMATICA',resumen='',cursoid=1,catedraid=3,orden=0,optativa='False',analitico='',requerida='False')
@@ -443,6 +444,7 @@ def cargar():
     db.inasistencias.insert(inasistenciaid=7,descripcion='Tarde')
     db.inasistencias.insert(inasistenciaid=8,descripcion='Retiro Anticipado')
     db.inasistencias.insert(inasistenciaid=9,descripcion='Completa')
+    
     db.periodos.insert(periodoid=1,descripcion='Finales Anteriores',nivelid=1,cicloid=None,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=0,semestre=0,orden=0,codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=None,notaminima=None)
     db.periodos.insert(periodoid=2,descripcion='A\xc3\xb1o 2007',nivelid=1,cicloid=None,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=0,semestre=0,orden=1,codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=None,notaminima=None)
     db.periodos.insert(periodoid=3,descripcion='A\xc3\xb1o 2008',nivelid=1,cicloid=None,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=0,semestre=0,orden=2,codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=None,notaminima=None)
@@ -466,6 +468,13 @@ def cargar():
     db.periodos.insert(periodoid=25,descripcion='Ex\xc3\xa1menes Mar/2013',nivelid=1,cicloid=4,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0,codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6020,notaminima=None)
     db.periodos.insert(periodoid=26,descripcion='1\xc2\xba Cuatrimestre 2013',nivelid=1,cicloid=4,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=1,semestre=0,orden=1,codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6021,notaminima=None)
     db.periodos.insert(periodoid=27,descripcion='2\xc2\xaa Cuatrimestre 2013',nivelid=1,cicloid=4,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=2,semestre=0,orden=0,codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6021,notaminima=None)
+
+    db.periodos.insert(periodoid=28,descripcion='Ex\xc3\xa1menes Mar/2014',nivelid=1,cicloid=5,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0,codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6020,notaminima=None)
+    db.periodos.insert(periodoid=29,descripcion='Examenes Ago/2014',nivelid=1,cicloid=5,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0,codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6018,notaminima=None)
+    db.periodos.insert(periodoid=30,descripcion='Ex\xc3\xa1menes Dic/2014',nivelid=1,cicloid=5,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0,codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6019,notaminima=None)
+    db.periodos.insert(periodoid=31,descripcion='1\xc2\xba Cuatrimestre 2014',nivelid=1,cicloid=5,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=1,semestre=0,orden=1,codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6021,notaminima=None)
+    db.periodos.insert(periodoid=32,descripcion='2\xc2\xaa Cuatrimestre 2014',nivelid=1,cicloid=5,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=2,semestre=0,orden=0,codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6021,notaminima=None)
+
     db.notas.insert(notaid=54,alumnoid=10,materiaid=158,periodoid=10,calificacionid=5,nota=7.0,descripcion='',establecimiento='I.S.T.B.P',observaciones='',fecha='2011-12-14',libro=1,folio=2,alta='2013-11-13',web='False',turno='')
     db.notas.insert(notaid=55,alumnoid=10,materiaid=159,periodoid=10,calificacionid=5,nota=7.0,descripcion='',establecimiento='I.S.T.B.P',observaciones='',fecha='2011-12-15',libro=1,folio=2,alta='2013-11-13',web='False',turno='')
     db.notas.insert(notaid=59,alumnoid=22,materiaid=158,periodoid=22,calificacionid=5,nota=7.0,descripcion='',establecimiento='I.S.T.B.P',observaciones='',fecha='2011-12-15',libro=1,folio=2,alta='2013-11-13',web='False',turno='')

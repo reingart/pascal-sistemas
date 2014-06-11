@@ -167,6 +167,7 @@ ciclos.cicloid,ciclos.nombre,ciclos.anio,ciclos.detalle,ciclos.desde,ciclos.hast
 2,Ciclo Lectivo 2011,2011,<NULL>,2011-01-01,2011-12-31
 3,Ciclo Lectivo 2012,2012,<NULL>,2012-01-01,2012-12-31
 4,Ciclo Lectivo 2013,2013,<NULL>,2013-01-01,2013-12-31
+5,Ciclo Lectivo 2014,2014,<NULL>,2014-01-01,2014-12-31
 
 
 TABLE catedras
@@ -548,6 +549,11 @@ periodos.periodoid,periodos.descripcion,periodos.nivelid,periodos.cicloid,period
 25,Exámenes Mar/2013,1,4,0,0,0,,0,0,0,,<NULL>,<NULL>,0,0,6020,<NULL>
 26,1º Cuatrimestre 2013,1,4,0,0,0,<NULL>,1,0,1,<NULL>,<NULL>,<NULL>,0,0,6021,<NULL>
 27,2ª Cuatrimestre 2013,1,4,0,0,0,<NULL>,2,0,0,<NULL>,<NULL>,<NULL>,0,0,6021,<NULL>
+28,Exámenes Mar/2014,1,5,0,0,0,,0,0,0,,<NULL>,<NULL>,0,0,6020,<NULL>
+29,Examenes Ago/2014,1,5,0,0,0,,0,0,0,,<NULL>,<NULL>,0,0,6018,<NULL>
+30,Exámenes Dic/2014,1,5,0,0,0,,0,0,0,,<NULL>,<NULL>,0,0,6019,<NULL>
+31,1º Cuatrimestre 2014,1,5,0,0,0,<NULL>,1,0,1,<NULL>,<NULL>,<NULL>,0,0,6021,<NULL>
+32,2ª Cuatrimestre 2014,1,5,0,0,0,<NULL>,2,0,0,<NULL>,<NULL>,<NULL>,0,0,6021,<NULL>
 
 
 TABLE notas

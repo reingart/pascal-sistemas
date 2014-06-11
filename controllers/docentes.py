@@ -612,10 +612,14 @@ def asistencias():
     q&=db.comisiones.comisionid==db.inscripcionescomision.comisionid
     q&=db.comisiones.comisionid==comisionid
     filas=db(q).select()
+    if request.vars.fecha:
+        fecha = request.vars.fecha # validar y convertir date
+    else:
+        fecha = None
     for fila in filas:
         valor=request.vars.get(str(fila.alumnos.alumnoid))
-        if valor=="on":
-            db.faltas.insert(alumnoid=fila.alumnos.alumnoid, comisionid=comisionid, fecha='', cantidad=1)
+        if valor=="on" and fecha:
+            db.faltas.insert(alumnoid=fila.alumnos.alumnoid, comisionid=comisionid, fecha=fecha, cantidad=1)
         
     return{"filas":filas}
 

@@ -1,21 +1,23 @@
 {{extend 'layout.html'}} 
-<h1>FECHA:</h1> <INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}> <h1>CARRERA:</h1><B>Análisis de Sistemas</B>
+<h1>CARRERA:</h1><B>Análisis de Sistemas</B>
  <h2>COMISIÓN: </h2> <B>Tercer Año</B> 
  <h2>MATERIA: </h2><B>Práctica Profesional</B> 
  <FORM method="POST"> 
- <TABLE id= "tabla"> 
- <tr>
- <td><B><center>Alumno</center></B></td> 
- <td><B><center>Asistencia</center></B></td> </tr> 
+    <h1>FECHA:</h1> <INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}> 
+    <TABLE style="border: 1px solid white">
+   <tr style="border: 1px solid white">
+ 	 <td style="border: 1px solid white"><B><center>Alumno</center></B></td>
+ 
+ 	 <td style="border: 1px solid white"><B><center>Asistencia</center></B></td>
+   </tr>  
      {{for fila in filas:}}
      {{alumno=fila.alumnos}}
-     <tr> 
- 		<td >{{=alumno.nombre}}</td>
-         <td><center><INPUT type="checkbox" NAME="{{=alumno.alumnoid}}" ></center>
-         </td> 
-     </tr>
+          <td style="border: 1px solid white">{{=alumno.nombre}}</td>
+	
+     <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="{{=alumno.alumnoid}}" size="0"></center></td>
+     
     {{pass}} 
-</TABLE>
+ </TABLE>
 <INPUT type="submit" value="CONFIRMAR">
      </FORM>
         <br>

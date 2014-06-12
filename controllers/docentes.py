@@ -21,9 +21,39 @@ def ingreso():
     return dict (form=form, sub=subtitulo)
 
 def examenes_parciales():
-    response.title="Docentes"
-    response.subtitle="Examenes parciales"
-    return {}
+	response.title="Docentes"
+	response.subtitle="Examenes parciales"
+	COMISIONID=76
+	q = db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
+	q &= db.comisiones.comisionid==COMISIONID
+	q &=db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
+	# Busca las comisiones que coincidan
+	q &= db.inscripcionesexamen.condicion == 2 #REGULAR
+	q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
+	q &= db.inscripcionesexamen.examenid == db.examenes.examenid
+	q &= db.examenes.materiaid == db.materias.materiaid
+	filas=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre , distinct= True)
+	#VIEJA CONSULTA
+	#    alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre , distinct= True)
+	i=0
+	a=0
+	if request.vars.GRABAR=="GUARDAR":
+		for fila in filas:
+			alumno = fila.nombre
+			dni = fila.dni
+			fecha= request.vars.fecha
+			#alumno_id= alumnos.alumnoid
+			#materia_id = alumno.materiaid
+			# calificacion_id = 1
+			nota = int(request.vars.nota[i])
+			# libro = request.vars.libro
+			# folio =request.vars.folio
+			establecimiento= "I.S.T.B.P"
+			a=5
+			db.notas.insert(nota=nota ,fecha=fecha, establecimiento=establecimiento)
+			i= i+1
+	comisiones = db(q).select(db.comisiones.ALL, distinct=True)
+	return{'filas':filas,'a':a, 'comisiones':comisiones}
     
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
@@ -253,8 +283,6 @@ def elegir():
 #@auth.requires_membership(role='Personal')
 def parciales():
     q =db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
-
-
     # Busca las comisiones que coincidan
     q &= db.inscripcionesexamen.condicion == "Regular"
     #q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
@@ -265,7 +293,6 @@ def parciales():
     i=0
     a=0
     if request.vars.GRABAR=="GUARDAR":
-
         for alumno in alumnos:
             fecha= request.vars.fecha
             #alumno_id= alumnos.alumnoid

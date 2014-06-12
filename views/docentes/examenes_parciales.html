@@ -1,12 +1,12 @@
 {{extend 'layout.html'}}
 <div>
-<FORM ACTION="">
+<FORM method="POST">
 <br>
 <tr>
 	<td id= "fecha">Fecha:</td>
 	<td>{{=request.now.date()}}</td>
 </tr><br><br>
-<tr><B>Materia:</B></tr><br><
+<tr><B>Materia:</B></tr><br>
 <tr><B>Practica Profesional</B></tr><br><br>
 <TABLE id= "tabla" align="left">
 	<tr>
@@ -18,21 +18,24 @@
 		<td id= "head"><center>Recuperatorio 2</center></td>
 		<td id= "head"><center>Condición</center></td>
 	</tr>
-	<tr>
-		<td id= "head"><center><INPUT type="text" NAME="dni" size="8" MAXLENGTH="10"></center></td>
-		<td id= "head"><center><INPUT type="text" NAME="alumno" size="20" MAXLENGTH="20"></center></td>
-		<td id= "head"><center><INPUT type="text" NAME="cuatrimestre1" size="2" MAXLENGTH="2"></center></td>
-		<td id= "head"><center><INPUT type="text" NAME="cuatrimestre2" size="2" MAXLENGTH="2"></center></td>
-		<td id= "head"><center> <INPUT type="text" NAME="recuperatorio1" size="2" MAXLENGTH="2"></center></td>
-		<td id= "head"><center><INPUT type="text" NAME="recuperatorio2" size="2" MAXLENGTH="2"></center></td>
+	<tr>{{for fila in filas:}}
+		<td id= "head"><center>{{=fila.dni}}</center></td>
+		<td id= "head"><center>{{=fila.nombre}}</center></td>
+		<td id= "head"><center><INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"></center></td>
+		<td id= "head"><center><INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"></center></td>
+		<td id= "head"><center> <INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"></center></td>
+		<td id= "head"><center><INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"></center></td>
 		<td id= "head">
 			<center>
 				<select name="condicion" >
 					<option> DESAPROBADO</option>
 					<option>APROBADO</option>
+                    </select>
+            </center>
+{{pass}}
 		</td>
 	</tr>
-</table>
+</TABLE>
 <br><br><br><br>
 <tr>
     <INPUT type="submit" name="GRABAR" value="CONFIRMAR">

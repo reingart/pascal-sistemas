@@ -1,14 +1,9 @@
 {{extend 'layout.html'}}
-<div>
 <FORM method="POST">
 <br>
-<tr>
-	<td id= "fecha">Fecha:</td>
-	<td>{{=request.now.date()}}</td>
-</tr><br><br>
-<tr><B>Materia:</B></tr><br>
-<tr><B>Practica Profesional</B></tr><br><br>
-<TABLE id= "tabla" align="left">
+<B>Materia:</B>
+<B>Practica Profesional</B>
+<TABLE id= "tabla" >
 	<tr>
 		<td id= "head"><B><center>DNI</center> </B></td>
 		<td id= "head"><center>Alumno</center></td>
@@ -18,7 +13,8 @@
 		<td id= "head"><center>Recuperatorio 2</center></td>
 		<td id= "head"><center>Condición</center></td>
 	</tr>
-	<tr>{{for fila in filas:}}
+	{{for fila in filas:}}
+	<tr>
 		<td id= "head"><center>{{=fila.dni}}</center></td>
 		<td id= "head"><center>{{=fila.nombre}}</center></td>
 		<td id= "head"><center><INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"></center></td>
@@ -32,14 +28,12 @@
 					<option>APROBADO</option>
                     </select>
             </center>
-{{pass}}
+
 		</td>
+	
 	</tr>
+	{{pass}}
 </TABLE>
-<br><br><br><br>
-<tr>
     <INPUT type="submit" name="GRABAR" value="CONFIRMAR">
     <a href="listaparciales.html"><input type=button value="VOLVER" ></a>
-</tr>
 </FORM>
-</div>

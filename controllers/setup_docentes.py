@@ -57,9 +57,45 @@ def cargar_docentes():
    
     return {'filas': db(db.personal.personalid>0).select()}
 
+def cargar_alumnos():
+    
+    # Antes de insertar borramos los registros de la tabla
+    
+    db(db.alumnos.alumnoid>0).delete()  
 
+    # Insertamos los nombres de los alumnos
+    
+    #TERCER AÑO
+    db.alumnos.insert(alumnoid=1,nombre='Irusta Agustin', sexo='Masculino', user_id=1)
+    db.alumnos.insert(alumnoid=2,nombre='Luna Diego', sexo='Masculino', user_id=2)
+    db.alumnos.insert(alumnoid=3,nombre='Llanos Romina', sexo='Femenino', user_id=3)
+    db.alumnos.insert(alumnoid=4,nombre='Mendoza Debora', sexo='Femenino', user_id=4)
+    db.alumnos.insert(alumnoid=5,nombre='More Franco', sexo='Masculino', user_id=5)    
+    db.alumnos.insert(alumnoid=6,nombre='Moreyra Diego', sexo='Masculino', user_id=6)    
+    db.alumnos.insert(alumnoid=7,nombre='Olmos Diego', sexo='Masculino', user_id=7)
+    db.alumnos.insert(alumnoid=8,nombre='Retamal Sergio', sexo='Masculino', user_id=8)
+    db.alumnos.insert(alumnoid=9,nombre='Villalba Hugo', sexo='Masculino', user_id=9)
+    db.alumnos.insert(alumnoid=10,nombre='Schiavone Mauro', sexo='Masculino', user_id=10)
+    db.alumnos.insert(alumnoid=11,nombre='Cosentino Nahuel', sexo='Masculino', user_id=11)
+    #SEGUNDO AÑO
+    db.alumnos.insert(alumnoid=12,nombre='Blanco Juan Pablo', sexo='Masculino')
+    db.alumnos.insert(alumnoid=13,nombre='Hernando Patricio', sexo='Masculino')
+    db.alumnos.insert(alumnoid=14,nombre='Mamani Nestor', sexo='Masculino')
+    db.alumnos.insert(alumnoid=15,nombre='Zameberlan Paolo', sexo='Masculino')
+    db.alumnos.insert(alumnoid=16,nombre='Florentin Claudio', sexo='Masculino')
+    db.alumnos.insert(alumnoid=17,nombre='Leguizamon Pedro', sexo='Masculino')
+    db.alumnos.insert(alumnoid=18,nombre='Decimo Damian', sexo='Masculino')
+    db.alumnos.insert(alumnoid=19,nombre='Ragonese Ruben', sexo='Masculino')
+    
+    
 
+    response.view="generic.html"
+    
+    # Devuelvo una consulta del contenido de la tabla
+    
+    return {'filas': db(db.alumnos.alumnoid>0).select()}
 
+    
 def cargar_cursos():
     
     # Antes de insertar borramos los registros de la tabla

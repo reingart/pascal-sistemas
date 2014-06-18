@@ -15,8 +15,12 @@ def libreta():
     
     materias=db(q).select(db.materias.id, db.materias.nombre)
     mat=db(q).select(db.materias.id)
-    
-    
+
+    q =db.alumnos.user_id== auth.user_id
+    q &= db.alumnos.alumnoid==db.notas.alumnoid
+    notas=db(q).select(db.notas.materiaid,db.notas.fecha, db.notas.libro, db.notas.folio, db.notas.nota)
+    map_notas = dict([(nota.materiaid, nota) for nota in notas])
+
     if request.vars.Aceptar:
         n = 0
         for materia in materias:
@@ -27,13 +31,18 @@ def libreta():
                 libro = request.vars.get("libro_%s" % materia.id)
                 folio = request.vars.get("folio_%s" % materia.id)
                 # validar datos
-                if 1 <= nota <= 10:
-                    db.notas.insert(alumnoid= alumno.alumnoid, materiaid=materia.materiaid,calificacionid=5,nota=nota,fecha=fecha,libro=libro,folio=folio)
+                #if 1 <= nota <= 10:
+                if materia.id in map_notas:
+                    q = db.notas.alumnoid==alumno.alumnoid
+                    q &= db.notas.materiaid==materia.materiaid
+                    q &= db.notas.calificacionid==5
+                    db(q).update(nota=nota,fecha=fecha,libro=libro,folio=folio)
+                else:
+                    #db.notas.insert(alumnoid= alumno.alumnoid,db.alumnos materiaid=materia.materiaid,calificacionid=5,nota=nota,fecha=fecha,libro=libro,folio=folio)
                     n += 1
             except ValueError:
                  msg = "Error de datos"
-        response.flash = "a subido" +  str(n) + "notas"
-    return{"materias":materias}
+    return{"materias":materias,"map_notas":map_notas}
 
 @auth.requires_login() 
 def index(): 

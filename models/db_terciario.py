@@ -299,19 +299,17 @@ db.define_table('notas',
     Field('periodoid',db.periodos),
     Field('calificacionid',db.calificaciones ),
     Field('nota', type='double', default=0),
-    Field('descripcion', type='string', length=50),
-    Field('establecimiento', type='string', length=50),
-    Field('observaciones', type='text'),
+    Field('establecimiento', type='string', length=50, default ='ISTPB'),
     Field('fecha', type='date'),
     Field('libro', type='string', length=5),
     Field('folio', type='integer'),
     Field('alta', type='date', default=request.now),
-    Field('web', type='boolean', default=False),
     Field('turno', type='string', length=1),
     format= "%(notaid)s [%(nota)s]",
     migrate=migrate)
 
-
+requires = IS_DATE(format=T('%d-%m-%y'),
+                   error_message='¡Debe ser d-MM-y!')
     
 db.define_table('titulos',
     Field('tituloid', type='id'),

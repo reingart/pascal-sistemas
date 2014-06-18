@@ -1,4 +1,6 @@
 {{extend 'layout.html'}}
+<link type="text/css" rel="stylesheet" href="dhtmlgoodies_calendar/dhtmlgoodies_calendar.css?random=20051112" media="screen"></LINK>
+	<SCRIPT type="text/javascript" src="dhtmlgoodies_calendar/dhtmlgoodies_calendar.js?random=20060118"></script>
 
 <form method="post">
 
@@ -12,24 +14,25 @@
             <td align="center" id=tabla>Calificacion</td>
         </tr>
         {{for materia in materias:}}
+            {{nota = map_notas.get(materia.id)}}
             <tr id=tabla>
                 <td id=tabla><H2 align=center>1°</H2></td>
                 <td>{{=materia.nombre}}</td>
-                <td align="center" id=tabla><input type="date" name="fecha_{{=materia.id}}"></td>
-                <td align="center" id=tabla><input type="text" name="libro_{{=materia.id}}" size="5"> </td>
-                <td  align="center" id=tabla><input type="text" name="folio_{{=materia.id}}" size="5"></td>
+                <td align="center" id=tabla><input type="date"  name="fecha_{{=materia.id}}" value="{{=nota.fecha if nota else "24.12.2000"}}">
+                    <td align="center" id=tabla><input type="text" name="libro_{{=materia.id}}" size="5" value={{=nota.libro if nota else ""}}> </td>
+                <td  align="center" id=tabla><input type="text" name="folio_{{=materia.id}}" size="5" value={{=nota.folio if nota else ""}}></td>
                 <td align="center" id=tabla><SELECT name="nota_{{=materia.id}}" size="1">
-                    <OPTION VALUE="0">0</OPTION>
-                    <OPTION VALUE="1">1</OPTION>
-                    <OPTION VALUE="2">2</OPTION>
-                    <OPTION VALUE="3">3</OPTION>
-                    <OPTION VALUE="4">4</OPTION>
-                    <OPTION VALUE="5">5</OPTION>
-                    <OPTION VALUE="6">6</OPTION>
-                    <OPTION VALUE="7">7</OPTION>
-                    <OPTION VALUE="8">8</OPTION>
-                    <OPTION VALUE="9">9</OPTION>
-                    <OPTION VALUE="10">10</OPTION>
+                    <OPTION Value="0"{{="selected" if nota is not None and nota.nota==0 else "" }}></OPTION></OPTION>
+                    <OPTION VALUE="1"{{="selected" if nota is not None and nota.nota==1 else "" }}>1</OPTION>
+                    <OPTION VALUE="2"{{="selected" if nota is not None and nota.nota==2 else "" }}>2</OPTION>
+                    <OPTION VALUE="3"{{="selected" if nota is not None and nota.nota==3 else "" }}>3</OPTION>
+                    <OPTION VALUE="4"{{="selected" if nota is not None and nota.nota==4 else "" }}>4</OPTION>
+                    <OPTION VALUE="5"{{="selected" if nota is not None and nota.nota==5 else "" }}>5</OPTION>
+                    <OPTION VALUE="6"{{="selected" if nota is not None and nota.nota==6 else "" }}>6</OPTION>
+                    <OPTION VALUE="7"{{="selected" if nota is not None and nota.nota==7 else "" }}>7</OPTION>
+                    <OPTION VALUE="8"{{="selected" if nota is not None and nota.nota==8 else "" }}>8</OPTION>
+                    <OPTION VALUE="9"{{="selected" if nota is not None and nota.nota==9 else "" }}>9</OPTION>
+                    <OPTION VALUE="10"{{="selected" if nota is not None and nota.nota==10 else "" }}>10</OPTION>
                     </SELECT> </td>
             </tr>
         {{pass}}

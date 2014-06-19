@@ -605,23 +605,39 @@ def muestrafinal():
     return dict(form=form)
 
 def asistencias():
+    
     response.title="Docentes"
-    response.subtitle="Asistencia"
+    response.subtitle="Inasistencia"
+
+    tipos_map={}  
+    cants_map={}
+    
+    q=db.inasistencias.inasistenciaid>0
+   
+    for inasistencia in db(q).select(db.inasistencias.ALL):
+        inaid = inasistencia.inasistenciaid
+        tipos_map[inaid]= inasistencia.descripcion
+        cants_map[inaid]= inasistencia.cantidad
+
     comisionid  = 76
     q=db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
     q&=db.comisiones.comisionid==db.inscripcionescomision.comisionid
     q&=db.comisiones.comisionid==comisionid
     filas=db(q).select()
+
     if request.vars.fecha:
         fecha = request.vars.fecha # validar y convertir date
     else:
         fecha = None
+    
     for fila in filas:
-        valor=request.vars.get(str(fila.alumnos.alumnoid))
+        valor=request.vars.get("check_%s" % fila.alumnos.alumnoid)
+        tipo = int (request.vars.get("tipo_%s" % fila.alumnos.alumnoid))  #a tipo tengo que convertir a entero con "IN"
         if valor=="on" and fecha:
-            db.faltas.insert(alumnoid=fila.alumnos.alumnoid, comisionid=comisionid, fecha=fecha, cantidad=1)
-        
-    return{"filas":filas}
+            db.faltas.insert(alumnoid=fila.alumnos.alumnoid, comisionid=comisionid, fecha=fecha, cantidad=cants_map[tipo], inasistenciaid=tipo)
+      
+    return{"filas":filas, 'tipos_map': tipos_map, 'cants_map': cants_map}
+
 
 def acta_volante():
     response.title="Docentes"

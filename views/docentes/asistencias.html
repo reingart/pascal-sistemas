@@ -8,20 +8,20 @@
    <tr style="border: 1px solid white">
  	 <td style="border: 1px solid white"><B><center>Alumno</center></B></td>
  
- 	 <td style="border: 1px solid white"><B><center>Asistencia</center></B></td>
+ 	 <td style="border: 1px solid white"><B><center>Inasistencia</center></B></td>
    </tr>  
      {{for fila in filas:}}
      {{alumno=fila.alumnos}}
           <td style="border: 1px solid white">{{=alumno.nombre}}</td>
 	
-     <td style="border: 1px solid white"><center> 
-     <select name="condicion" >
-					<option> AUSENTE</option>
-					<option>PRESENTE</option>
-					<option>MEDIA FALTA</option>
-					<option>RETIRO ANTICIPADO</option>
-					<option>LLEGADA TARDE</option>
-    {{pass}} 
+     
+     <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="{{="check_%s" % alumno.alumnoid}}" ></center></td>
+     <td style="border: 1px solid white"><center>
+     <select NAME="{{="tipo_%s" % alumno.alumnoid}}">
+        {{for tipoid, desc in tipos_map.items():}}
+					<option value="{{=tipoid}}">{{=desc}}</option>
+		{{pass}}
+    	{{pass}} 
  </TABLE>
 <INPUT type="submit" value="CONFIRMAR">
      </FORM>

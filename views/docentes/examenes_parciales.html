@@ -17,15 +17,15 @@
 	<tr>
 		<td id= "head"><center>{{=fila.dni}}</center></td>
 		<td id= "head"><center>{{=fila.nombre}}</center></td>
-		<td id= "head"><center><INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"></center></td>
-		<td id= "head"><center><INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"></center></td>
-		<td id= "head"><center> <INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"></center></td>
-		<td id= "head"><center><INPUT type="text" NAME="NOTA" size="2" MAXLENGTH="2"></center></td>
+		<td id= "head"><center><INPUT type="text" NAME="NOTA_{{=fila.alumnoid}}_1" size="2" MAXLENGTH="2"></center></td>
+		<td id= "head"><center><INPUT type="text" NAME="NOTA_{{=fila.alumnoid}}_2" size="2" MAXLENGTH="2"></center></td>
+		<td id= "head"><center> <INPUT type="text" NAME="NOTA_{{=fila.alumnoid}}_1r" size="2" MAXLENGTH="2"></center></td>
+		<td id= "head"><center><INPUT type="text" NAME="NOTA_{{=fila.alumnoid}}_2r" size="2" MAXLENGTH="2"></center></td>
 		<td id= "head">
 			<center>
 				<select name="condicion" >
-					<option> DESAPROBADO</option>
-					<option>APROBADO</option>
+					<option> REGULAR</option>
+					<option>LIBRE</option>
                     </select>
             </center>
 

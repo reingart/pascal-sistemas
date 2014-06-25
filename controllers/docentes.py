@@ -24,6 +24,7 @@ def examenes_parciales():
 	response.title="Docentes"
 	response.subtitle="Examenes parciales"
 	COMISIONID=76
+	CALIFICACION=3 #PARCIAL
 	q = db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
 	q &= db.comisiones.comisionid==COMISIONID
 	q &=db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
@@ -32,29 +33,25 @@ def examenes_parciales():
 	q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
 	q &= db.inscripcionesexamen.examenid == db.examenes.examenid
 	q &= db.examenes.materiaid == db.materias.materiaid
-	filas=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre , distinct= True)
-	#VIEJA CONSULTA
-	#    alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre , distinct= True)
+	filas=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre, distinct=True)
 	i=0
 	a=0
-	if request.vars.GRABAR=="GUARDAR":
+	if request.vars.GRABAR:
 		for fila in filas:
-			alumno = fila.nombre
-			dni = fila.dni
+			#alumnos=fila.nombre
 			fecha= request.vars.fecha
-			#alumno_id= alumnos.alumnoid
+			alumno_id= fila.alumnoid
 			#materia_id = alumno.materiaid
 			# calificacion_id = 1
-			nota = int(request.vars.nota[i])
+			nota = int(request.vars.get("NOTA_%s_1" % alumno_id, 0))
 			# libro = request.vars.libro
 			# folio =request.vars.folio
 			establecimiento= "I.S.T.B.P"
 			a=5
-			db.notas.insert(nota=nota ,fecha=fecha, establecimiento=establecimiento)
+			db.notas.insert(alumnoid=alumno_id, materiaid=COMISIONID, calificacionid=CALIFICACION, nota=nota ,fecha=fecha, establecimiento=establecimiento)
 			i= i+1
 	comisiones = db(q).select(db.comisiones.ALL, distinct=True)
 	return{'filas':filas,'a':a, 'comisiones':comisiones}
-    
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 def busqueda():
@@ -306,10 +303,10 @@ def parciales():
 
             db.notas.insert(nota=nota ,fecha=fecha, establecimiento=establecimiento)
             i= i+1
-
     comisiones = db(q).select(db.comisiones.ALL, distinct=True)
-
     return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}
+
+    
 def asistencia_seleccion():
     return{}
 def parciales_seleccion():

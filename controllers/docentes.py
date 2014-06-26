@@ -23,8 +23,12 @@ def ingreso():
 def examenes_parciales():
 	response.title="Docentes"
 	response.subtitle="Examenes parciales"
-	COMISIONID=76
-	CALIFICACION=3 #PARCIAL
+	COMISIONID=76 #PRACTICA pROF
+	MATERIAID=179 #PRACTICA PROFESIONAL
+	PARCIAL=3 #Calificacionid PARCIAL
+	RECUPERATORIO=4 #Calificacionid RECUPERATORIO
+	PERIODOID_1=26 #ID DEL PERIODO 1er CUATRIMESTRE
+	PERIODOID_2=27 #ID DEL PERIODO 2do CUATRIMESTRE
 	q = db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
 	q &= db.comisiones.comisionid==COMISIONID
 	q &=db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
@@ -48,7 +52,7 @@ def examenes_parciales():
 			# folio =request.vars.folio
 			establecimiento= "I.S.T.B.P"
 			a=5
-			db.notas.insert(alumnoid=alumno_id, materiaid=COMISIONID, calificacionid=CALIFICACION, nota=nota ,fecha=fecha, establecimiento=establecimiento)
+			db.notas.insert(alumnoid=alumno_id, materiaid=MATERIAID, periodoid=PERIODOID_1, calificacionid=PARCIAL, nota=nota ,fecha=fecha, establecimiento=establecimiento)
 			i= i+1
 	comisiones = db(q).select(db.comisiones.ALL, distinct=True)
 	return{'filas':filas,'a':a, 'comisiones':comisiones}

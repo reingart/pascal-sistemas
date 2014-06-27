@@ -25,10 +25,6 @@ def examenes_parciales():
 	response.subtitle="Examenes parciales"
 	COMISIONID=76 #PRACTICA pROF
 	MATERIAID=179 #PRACTICA PROFESIONAL
-	PARCIAL=3 #Calificacionid PARCIAL
-	RECUPERATORIO=4 #Calificacionid RECUPERATORIO
-	PERIODOID_1=26 #ID DEL PERIODO 1er CUATRIMESTRE
-	PERIODOID_2=27 #ID DEL PERIODO 2do CUATRIMESTRE
 	q = db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
 	q &= db.comisiones.comisionid==COMISIONID
 	q &=db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
@@ -42,7 +38,18 @@ def examenes_parciales():
 	a=0
 	if request.vars.GRABAR:
 		for fila in filas:
-			#alumnos=fila.nombre
+			if request.vars.condicion=="1":
+				calificacion=3 #PARCIAL
+				periodo=26 #PRIMER CUATRIMESTRE
+			elif request.vars.condicion=="2":
+				calificacion=3 #PARCIAL
+				periodo=27 #SEGUNDO CUATRIMESTRE
+			elif request.vars.condicion=="1r":
+				calificacion=4 #RECUPERATORIO
+				periodo=26 #PRIMER CUATRIMESTRE
+			elif request.vars.condicion=="2r":
+				calificacion=4 #RECUPERATORIO
+				periodo=27 #SEGUNDO CUATRIMESTRE
 			fecha= request.vars.fecha
 			alumno_id= fila.alumnoid
 			#materia_id = alumno.materiaid
@@ -50,10 +57,10 @@ def examenes_parciales():
 			nota = int(request.vars.get("NOTA_%s" % alumno_id, 0))
 			# libro = request.vars.libro
 			# folio =request.vars.folio
-			observaciones= request.vars.get("observaciones_%s" % alumno_id, 0)
+			#observaciones= request.vars.get("observaciones_%s" % alumno_id, 0)
 			establecimiento= "I.S.T.B.P"
 			a=5
-			db.notas.insert(alumnoid=alumno_id, materiaid=MATERIAID, periodoid=PERIODOID_1, calificacionid=PARCIAL, nota=nota ,fecha=fecha, establecimiento=establecimiento, observaciones=observaciones)
+			db.notas.insert(alumnoid=alumno_id, materiaid=MATERIAID, periodoid=periodo, calificacionid=calificacion, nota=nota ,fecha=fecha, establecimiento=establecimiento)
 			i= i+1
 	comisiones = db(q).select(db.comisiones.ALL, distinct=True)
 	return{'filas':filas,'a':a, 'comisiones':comisiones}

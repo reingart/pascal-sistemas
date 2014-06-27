@@ -5,38 +5,27 @@
 		<B>Practica Profesional</B>
     </h1>
 	<h2>PERIODO:
-	<select name="condicion" >
-		<option NAME="1">1er CUATRIMESTRE</option>
-		<option NAME="2">2do CUATRIMESTRE</option>
-   		<option NAME="1r">1er RECUPERATORIO</option>
-   		<option NAME="2r">2do RECUPERATORIO</option>
+	<select NAME="condicion">
+		<option value="1">1er CUATRIMESTRE</option>
+		<option value="2">2do CUATRIMESTRE</option>
+   		<option value="1r">1er RECUPERATORIO</option>
+   		<option value="2r">2do RECUPERATORIO</option>
 	</select>
 	</h2>
 	<h2>FECHA:    <INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}> 
     </h2>
+	<h2>CALIFICACIONES:</h2>
 <TABLE id= "tabla" >
 	<tr>
 		<td id= "head"><B><center>DNI</center> </B></td>
-		<td id= "head"><center>Alumno</center></td>
-        <td id= "head"><center>NOTA</center></td>
-        <td id= "head"><center>Condición</center></td>
-		<td id= "head"><center>Observaciones</center></td>
+		<td id= "head"><B><center>Alumno</center></B></td>
+        <td id= "head"><B><center>NOTA</center></B></td>
     </tr>
 	{{for fila in filas:}}
 	<tr>
 		<td id= "head"><center>{{=fila.dni}}</center></td>
 		<td id= "head"><center>{{=fila.nombre}}</center></td>
 		<td id= "head"><center><INPUT type="text" NAME="NOTA_{{=fila.alumnoid}}" size="2" MAXLENGTH="2"></center></td>
-		<td id= "head">
-			<center>
-				<select name="condicion" >
-					<option> REGULAR</option>
-					<option>LIBRE</option>
-                    </select>
-            </center>
-		</td>
-		<td id= "head"><center><INPUT type="text" NAME="observaciones_{{=fila.alumnoid}}" size="40" MAXLENGTH="50"></center>			
-		</td>	
 	</tr>
 	{{pass}}
 </TABLE>

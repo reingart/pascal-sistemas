@@ -47,12 +47,13 @@ def examenes_parciales():
 			alumno_id= fila.alumnoid
 			#materia_id = alumno.materiaid
 			# calificacion_id = 1
-			nota = int(request.vars.get("NOTA_%s_1" % alumno_id, 0))
+			nota = int(request.vars.get("NOTA_%s" % alumno_id, 0))
 			# libro = request.vars.libro
 			# folio =request.vars.folio
+			observaciones= request.vars.get("observaciones_%s" % alumno_id, 0)
 			establecimiento= "I.S.T.B.P"
 			a=5
-			db.notas.insert(alumnoid=alumno_id, materiaid=MATERIAID, periodoid=PERIODOID_1, calificacionid=PARCIAL, nota=nota ,fecha=fecha, establecimiento=establecimiento)
+			db.notas.insert(alumnoid=alumno_id, materiaid=MATERIAID, periodoid=PERIODOID_1, calificacionid=PARCIAL, nota=nota ,fecha=fecha, establecimiento=establecimiento, observaciones=observaciones)
 			i= i+1
 	comisiones = db(q).select(db.comisiones.ALL, distinct=True)
 	return{'filas':filas,'a':a, 'comisiones':comisiones}

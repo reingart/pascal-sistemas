@@ -1,23 +1,41 @@
 {{extend 'layout.html'}}
 <BR><p>
-<div id= "div_centrado">
 
 <h1>Listado de examenes parciales </h1>
 <br>
 
-<TABLE id= "tabla">
-    <tr>
-    <td id= "head"> Materia</td>
+<FORM method="POST">
+	<br>
+	<h1><B>Materia:</B>
+		<B>Practica Profesional</B>
+    </h1>
+	<h2>FECHA:    <INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}> 
+    </h2>
+<TABLE id= "tabla" >
+	    <tr>
+    <td id= "head"><B><center>DNI</center></B></td>
+    <td id= "head"><center>Alumno</center></td>
+    <td id= "head"><center>1er Cuatrimestre </center></td>
+    <td id= "head"><center>2do Cuatrimestre</center></td>
+    <td id= "head"><center>Recuperatorio 1 </center></td>
+    <td id= "head"><center>Recuperatorio 2</center></td>
+    <td id= "head"><center>Condicion</center></td>
+    
     </tr>
-    {{for examen in examenes: }}
-    <tr>   
-    <td><a href="{{=URL(f="parciales")}}"> {{=examen.nombre}} </td>    
+   
+	{{for fila in filas:}}
 
-     </tr>
-     {{pass}}
-     </TABLE>
-
+    <tr>
+    	<td id= "head"><center>{{=fila.alumnoid}}</center></td>
+    	<td id= "head"><center>{{=nombre.nombre}}</center></td>
+        <td id= "head"><center>{{=fila.nota}}</center> </td>
+    	<td id= "head"><center></center> </td>
+    	<td id= "head"><center></center></td>
+    	<td id= "head"><center></center> </td>
+    	<td id= "head"><center></center></td>
+    </tr>
+	{{pass}}
+</TABLE>
 <br>
-<form>
-<a href="index.html"><input type=button value="Volver" ></a>
-</form>
+	<a href="index.html"><input type=button value="Volver" ></a>
+</FORM>

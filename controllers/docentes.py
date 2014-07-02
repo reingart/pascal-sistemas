@@ -217,32 +217,24 @@ def listamaterias():
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 def listaparciales():
-    form = SQLFORM.factory(
-        Field("Materia", "string"),
-        )
-    q= db.materias.id>0
-    if form.accepts(request.vars, session):
-        # buscar el docente
+	response.title="Docentes"
+	response.subtitle="Examenes parciales"
+	COMISIONID=76 #PRACTICA pROF
+	MATERIAID=179 #PRACTICA PROFESIONAL
+	q = db.notas.alumnoid==db.inscripcionescomision.alumnoid
+	q &= db.comisiones.comisionid==COMISIONID
+	q &=db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
+	# Busca las comisiones que coincidan
+	q &= db.inscripcionesexamen.condicion == 2 #REGULAR
+	q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
+	q &= db.inscripcionesexamen.examenid == db.examenes.examenid
+	q &= db.examenes.materiaid == db.materias.materiaid
+	q &= db.notas.calificacionid == 3 #PARCIAL
+	q &= db.notas.alumnoid==db.alumnos.alumnoid
+	filas=db(q).select(db.notas.alumnoid,db.notas.nota, orderby=db.notas.alumnoid, distinct=True)
+	nombres=db(q).select(db.alumnos.nombre, distinct=True)
+	return{'filas':filas, 'nombres':nombres}
 
-        if form.vars.Materia:
-            q &= db.materias.nombre.contains(form.vars.Materia)
-        materia = db(q).select().first()
-
-
-        #if materia:
-            # encontrado, redirigo a cargar notas por
-           # redirect(URL(f=index, vars={'materiaid': materia.materias.materiaid}))
-
-       # else:
-          #  response.flash = "Materia no encontrado"
-
-
-
-
-    examenes=db().select(db.materias.nombre)
-
-
-    return dict (examenes= examenes,form=form)
 
 @auth.requires_login()
 @auth.requires_membership(role='Personal')

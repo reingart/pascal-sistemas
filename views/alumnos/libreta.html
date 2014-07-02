@@ -20,7 +20,7 @@
                 <td>{{=materia.nombre}}</td>
                 <td align="center" id=tabla><input type="date"  name="fecha_{{=materia.id}}" value="{{=nota.fecha if nota else "24.12.2000"}}">
                     <td align="center" id=tabla><input type="text" name="libro_{{=materia.id}}" size="5" value={{=nota.libro if nota else ""}}> </td>
-                <td  align="center" id=tabla><input type="text" name="folio_{{=materia.id}}" size="5" value={{=nota.folio if nota else ""}}></td>
+                <td  align="center" id=tabla><input type="text" name="folio_{{=materia.id}}" size="5" value={{=nota.folio if nota is not None else ""}}></td>
                 <td align="center" id=tabla><SELECT name="nota_{{=materia.id}}" size="1">
                     <OPTION Value="0"{{="selected" if nota is not None and nota.nota==0 else "" }}></OPTION></OPTION>
                     <OPTION VALUE="1"{{="selected" if nota is not None and nota.nota==1 else "" }}>1</OPTION>

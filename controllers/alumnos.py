@@ -18,7 +18,11 @@ def libreta():
 
     q =db.alumnos.user_id== auth.user_id
     q &= db.alumnos.alumnoid==db.notas.alumnoid
-    notas=db(q).select(db.notas.materiaid,db.notas.fecha, db.notas.libro, db.notas.folio, db.notas.nota)
+    notas=db(q).select(db.notas.materiaid,
+                       db.notas.fecha,
+                       db.notas.libro,
+                       db.notas.folio,
+                       db.notas.nota)
     map_notas = dict([(nota.materiaid, nota) for nota in notas])
 
     if request.vars.Aceptar:
@@ -31,15 +35,24 @@ def libreta():
                 libro = request.vars.get("libro_%s" % materia.id)
                 folio = request.vars.get("folio_%s" % materia.id)
                 # validar datos
-                #if 1 <= nota <= 10:
-                if materia.id in map_notas:
-                    q = db.notas.alumnoid==alumno.alumnoid
-                    q &= db.notas.materiaid==materia.materiaid
-                    q &= db.notas.calificacionid==5
-                    db(q).update(nota=nota,fecha=fecha,libro=libro,folio=folio)
-                else:
-                    #db.notas.insert(alumnoid= alumno.alumnoid,db.alumnos materiaid=materia.materiaid,calificacionid=5,nota=nota,fecha=fecha,libro=libro,folio=folio)
-                    n += 1
+                if 1 <= nota <= 10:
+                    if materia.id in map_notas:
+                        q = db.notas.alumnoid==alumno.alumnoid
+                        q &= db.notas.materiaid==materia.materiaid
+                        q &= db.notas.calificacionid==5
+                        db(q).update(nota=nota,
+                                     fecha=fecha,
+                                     libro=libro,
+                                     folio=folio)
+                    else:
+                        db.notas.insert(alumnoid=alumno.alumnoid, 
+                                        materiaid=materia.materiaid,
+                                        calificacionid=5,
+                                        nota=nota,
+                                        fecha=fecha,
+                                        libro=libro,
+                                        folio=folio)
+                    n=n+1
             except ValueError:
                  msg = "Error de datos"
     return{"materias":materias,"map_notas":map_notas}
@@ -71,9 +84,20 @@ def index():
     for n in alumnos:
         if n.user_id==usuario:
             user.append(n.user_id)
+    q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
+    alumno= db(q).select().first() #traemos el alumno para notificarlo en la vista
     
+    q &= db.materias.materiaid== db.asignaturas.materiaid
+    q &= db.asignaturas.carreraid== db.carreras.carreraid
+    
+    q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid
+    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
+    q &= db.comisiones.materiaid== db.materias.materiaid
+    
+    materias=db(q).select(db.materias.id, db.materias.nombre)
+    mat=db(q).select(db.materias.id)
         
-    return dict (fecha_actual=fecha_actual, visible= visible, user=user, usuario=usuario)
+    return dict (fecha_actual=fecha_actual, visible= visible, user=user, usuario=usuario,materias=materias)
 
 #requiere que haya un usuario logueado
 @auth.requires_login() 

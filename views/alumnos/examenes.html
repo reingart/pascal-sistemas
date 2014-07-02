@@ -1,70 +1,47 @@
 {{extend 'layout.html'}}
 
-
-
-<h1> <center><u> Examenes Finales Rendidos</u> </center></h1>
+        
+        
+            <h1> <center><u> Examenes Finales Rendidos</u> </center></h1>
     <br>
-    <div id="div_centrado">
-    <table id="tabla">
-        <tbody><tr>
-            <td id="head"> <center>MATERIA</center> </td>
-            <td id="head"><center> NOTA</center></td>
-            <td id="head"><center>PERIODO</center></td>
-            <td id="head"><center>CURSO</center></td>
-        </tr>
-       <tr>
-            <td id="head"> <center>Analisis Matematico</center> </td>
-            <td id="head"><center> 6</center></td>
-            <td id="head"><center>Diciembre</center></td>
-            <td id="head"><center>1°</center></td>
-        </tr>
-        <tr>
-            <td id="head"> <center>Programacion I</center> </td>
-            <td id="head"><center> 7</center></td>
-            <td id="head"><center>Marzo</center></td>
-            <td id="head"><center>1°</center></td>
-        </tr>
-        <tr>
-            <td id="head"> <center>E.D.I</center> </td>
-            <td id="head"><center> 8</center></td>
-            <td id="head"><center>Diciembre</center></td>
-            <td id="head"><center>1°</center></td>
-        </tr>
-        <tr>
-            <td id="head"> <center>Algebra</center> </td>
-            <td id="head"><center> 8</center></td>
-            <td id="head"><center>Marzo</center></td>
-            <td id="head"><center>1°</center></td>
-        </tr>
-        <tr>
-            <td id="head"> <center>Base de datos</center> </td>
-            <td id="head"><center> 9</center></td>
-            <td id="head"><center>Diciembre</center></td>
-            <td id="head"><center>1°</center></td>
-        </tr>
-        <tr>
-            <td id="head"> <center>Metodologia de la investigacion</center> </td>
-            <td id="head"><center> 4</center></td>
-            <td id="head"><center>Diciembre</center></td>
-            <td id="head"><center>1°</center></td>
-        </tr>
+    <div id= "div_centrado">
+    <TABLE id= "tabla">
+        <TR>
+            <TD id= "head"> <center>MATERIA</center> </TD>
+            <TD id= "head"><center> NOTA</center></TD>
+            <TD id= "head"><center>PERIODO</center></TD>
+            <TD id= "head"><center>CURSO</center></TD>
+        </TR>
+        {{ n=notas}}
         
-        
-        
-        	 
-    		 
-    </tbody></table>
+         {{for nota in n:}}
+            <TR>
+           
+        	<!--<TD style="border: 1px solid white">
+        	 {{ =nota.alumnos.nombre}}
+        	</TD>-->
+            <TD id= "td">
+             {{ =nota.materias.nombre}}
+             </TD>
+             <TD id= "td">
+             {{ =nota.notas.nota}}
+             </TD>
+          
+             <TD id= "td">
+             {{ =nota.periodos.descripcion}}
+             </TD>
+             <TD id= "td">
+             {{ =nota.cursos.nombre}}
+       
+        	 </TD>
+               
+    		 </TR>
+    		  {{pass}}
+    </TABLE>
+    
 </div>
+     {{pass}}
     <br>
     <form>
-        <center><a href="index.html"><input type="button" value="Volver"></a></center>
+        <center><a href="index.html"><input type=button value="Volver" ></a></center>
 </form>
-
-            </div>
-          </td>
-          <!--
-               <td class="width10em column3">
-                 <h2>Right Column</h2>
-               </td>
-          //-->
-        </tr>

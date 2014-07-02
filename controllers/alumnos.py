@@ -275,7 +275,7 @@ def inasistencias():
 #@auth.requires_membership(role='Alumnos') 
     
 def examenes():
-     #listado de examenes finales ya rendidos
+     #litado de examenes finales ya rendidos
     q = db.alumnos.user_id== auth.user_id
     #traemos el alumno para notificarlo en la vista
     alumno= db(q).select().first()
@@ -326,7 +326,24 @@ def constancia_final():
 @auth.requires_login() #requiere que haya un usuario logueado
 #@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos           
 def parciales():
+   
+    #lista examenes cuatrimestrales ya rendidos
     
+    q = db.alumnos.user_id== auth.user_id
+    #guardo en la consulta el registro del alumno
+    #traemos el alumno para notificarlo en la vista
+    alumno= db(q).select().first()
+    q &= db.inscripcionescarrera.alumnoid== alumno.alumnoid
+    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
+    q &= db.notas.alumnoid == db.alumnos.alumnoid
+    q &= db.notas.materiaid == db.materias.materiaid
+    q &= db.materias.cursoid == db.cursos.cursoid
+    q &= db.notas.calificacionid == 3  # filtrar solo cuatrimestrales
+    q &= db.notas.periodoid == db.periodos.periodoid     # HACER: filtrar otros campos
+    notas = db(q).select(db.alumnos.nombre, db.materias.nombre, 
+    db.notas.nota, db.periodos.descripcion, db.notas.fecha, db.cursos.nombre)
+    
+    return dict (notas= notas, alumno=alumno)
     
     return {}
     
@@ -335,6 +352,73 @@ def parciales():
 #requiere que haya un usuario logeado e integre el grupo alumnos   
 #@auth.requires_membership(role='Alumnos')    
 def inscripciones():
+     #formulario de inscrip. a comisiones
+    q = db.alumnos.user_id== auth.user_id 
+    #busca y trae todos los datos del alumno logueado
+    alumno= db(q).select().first() 
+    # guarda en una variable los datos para poder ser utilizados y tmb la envio a la vista
+    
+     
+     #cuando hago click en el boton guardar
+    if request.vars.guardar=="Guardar":
+            #en k tenemos el nombre del checkbox
+        fecha = request.now.date()
+        ok = 0
+        condicion_id= 1
+        for _name,_value in request.vars.items():
+            if _name.startswith ("comision_"):
+                comision_id = int(_name[_name.index('_')+1:])
+                
+                # si el valor es on  en el checkbox insertamos los datos en inscripcion a examenes.                  
+                if _value== "on":                    
+                    db.inscripcionescomision.insert(alumnoid= alumno.alumnoid, 
+                                comisionid= comision_id,
+                                alta=fecha,
+                                condicion=condicion_id)
+                    ok += 1 #creo contador de comisiones insertados/seleccionados por el alumno
+                    
+        if ok:
+              response.flash= "Usted se a inscripto a %d comisiones!" % ok
+        else:
+              response.flash = "Por favor seleccione una opción!"
+    
+    else:
+        response.flash='Por favor, complete el formulario'     
+                
+    
+    # guarda en una variable los datos para poder ser utilizados y tmb la envio a la vista
+    inscripciones = db(db.inscripcionescomision.alumnoid==alumno.alumnoid).select(db.inscripcionescomision.comisionid)
+    inscripciones = [inscripcion.comisionid for inscripcion in inscripciones]
+    #listo si ya se inscribio al examen
+    
+    aprobada= []
+    desaprobada= []
+    n= db.notas.alumnoid== alumno.alumnoid
+    n&= db.notas.calificacionid==5
+    nota= db(n).select(db.notas.nota, db.notas.materiaid)
+    for notas in nota:
+            if notas.nota>4:
+                aprobada.append(notas.materiaid)
+            else:
+                desaprobada.append(notas.materiaid)
+    
+   
+    q = db.comisiones.materiaid== db.materias.materiaid
+    q &= db.comisiones.personalid== db.personal.personalid
+    q &= db.materias.materiaid== db.asignaturas.materiaid
+    q &= db.asignaturas.carreraid== db.carreras.carreraid
+    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
+    q &= db.inscripcionescarrera.alumnoid== alumno.alumnoid
+    
+    condiciones=db(db.condiciones).select(db.condiciones.condicionid, db.condiciones.detalle)
+    
+    
+    comision= db(q).select(db.comisiones.comisionid, db.comisiones.materiaid, db.materias.materiaid, db.materias.nombre, db.personal.nombre)       
+                
+         
+    return dict (comision= comision, alumno=alumno, inscripciones=inscripciones, aprobada= aprobada, desaprobada= desaprobada, condiciones=condiciones) 
+ 
+
     return{}
 
 def constancia_comision():
@@ -363,4 +447,32 @@ def constancia_comision():
 #@auth.requires_membership(role='Alumnos') #requiere que haya un usuario logueado e integre el grupo alumnos    
 def archivos():
     "descarga de archivos pedagogicos subidos por docentes"
+    return {}
+
+
+def parciales():
+     #litado de examenes finales ya rendidos
+    q = db.alumnos.user_id== auth.user_id
+    #traemos el alumno para notificarlo en la vista
+    alumno= db(q).select().first()
+    #guardo en la consulta el registro del alumno
+    q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid
+    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
+    q &= db.notas.alumnoid == db.alumnos.alumnoid
+    q &= db.notas.materiaid == db.materias.materiaid
+    q &= db.materias.cursoid == db.cursos.cursoid
+    q &= db.notas.calificacionid == 4  
+    # filtrar solo finales
+    q &= db.notas.periodoid == db.periodos.periodoid
+    notas = db(q).select(db.alumnos.nombre, db.materias.nombre, db.notas.nota, db.notas.fecha, db.periodos.descripcion, db.cursos.nombre)
+    
+    return dict (notas= notas, alumno=alumno)
+
+
+
+
+def inscripcion_cursos():
+    return {}
+    
+def inscripcion_finales():
     return {}

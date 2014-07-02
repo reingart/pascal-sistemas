@@ -644,7 +644,7 @@ def asistencias():
     
     response.title="Docentes"
     response.subtitle="Inasistencia"
-
+    
     tipos_map={}  
     cants_map={}
     
@@ -652,8 +652,11 @@ def asistencias():
    
     for inasistencia in db(q).select(db.inasistencias.ALL):
         inaid = inasistencia.inasistenciaid
-        tipos_map[inaid]= inasistencia.descripcion
-        cants_map[inaid]= inasistencia.cantidad
+        if inasistencia.cantidad == 0:
+            id_presente = inaid
+        else:
+            tipos_map[inaid]= inasistencia.descripcion
+            cants_map[inaid]= inasistencia.cantidad
 
     comisionid  = 76
     q=db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
@@ -666,11 +669,17 @@ def asistencias():
     else:
         fecha = None
     
-    for fila in filas:
-        valor=request.vars.get("check_%s" % fila.alumnos.alumnoid)
-        tipo = int (request.vars.get("tipo_%s" % fila.alumnos.alumnoid))  #a tipo tengo que convertir a entero con "IN"
-        if valor=="on" and fecha:
-            db.faltas.insert(alumnoid=fila.alumnos.alumnoid, comisionid=comisionid, fecha=fecha, cantidad=cants_map[tipo], inasistenciaid=tipo)
+    if request.vars.confirmar:  #agrego esto para que entre al for solo si el usuario presiono "confirmar" y me muestre todos los campos
+        for fila in filas:
+            valor=request.vars.get("check_%s" % fila.alumnos.alumnoid)
+            if fecha:
+                if valor == "on":
+                    tipo = id_presente
+                    cant = 0
+                else:
+                    tipo = int (request.vars.get("tipo_%s" % fila.alumnos.alumnoid))  #a tipo tengo que convertir a entero con "IN"
+                    cant = cants_map[tipo]
+                db.faltas.insert(alumnoid=fila.alumnos.alumnoid, comisionid=comisionid, fecha=fecha, cantidad=cant, inasistenciaid=tipo)
       
     return{"filas":filas, 'tipos_map': tipos_map, 'cants_map': cants_map}
 

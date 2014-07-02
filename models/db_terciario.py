@@ -44,7 +44,7 @@ db.define_table('revistas',
     
 db.define_table('condiciones',
     Field('condicionid', type='id'),
-    Field('detalle', type='string', length=50),
+    Field('detalle', type='string'),
     format= "%(condicionid)s [%(detalle)s]",
     migrate=migrate)
     
@@ -266,7 +266,7 @@ db.define_table('inasistencias',
     Field('descripcion', type='string', length=50),
     Field('cantidad', type='double', default=0),
     format= "%(inasistenciaid)s [%(descripcion)s]",
-    migrate=migrate)
+    migrate=True)
     
 
 

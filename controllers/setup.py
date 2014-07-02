@@ -66,6 +66,23 @@ def cargar():
     db.alumnos.insert(alumnoid=23,nombre='Ivana Sabrina Santillo',dni=37554250,sexo='Femenina',fechanacimiento='1993-04-08',lugarnacimiento='lanus',estadocivil='soltera',nacionalidad='argentina',direccion='totoral 365',localidad='gonzalez catan',cp=1759,telefono=433584,email1='yvanasantillo@yahoo.com',email2='yvanasantillo1993@hotmail.com',ingreso='2011-03-15',egreso=None,foto='',user_id=6)
     db.alumnos.insert(alumnoid=24,nombre='Ezequiel Villalba',dni=36919250,sexo='Masculino',fechanacimiento='1992-07-13',lugarnacimiento='Capital Federal',estadocivil='Soltero',nacionalidad='Argentino',direccion='Santa Rosa 3723',localidad='laferrere',cp=1757,telefono='4457-1645',email1='ezevillalba92@gmail.com',email2='',ingreso='2011-03-07',egreso=None,foto='',user_id=8)
     db.alumnos.insert(alumnoid=25,nombre='Hector',dni=23242526,sexo='Masculino',fechanacimiento='2010-02-07',lugarnacimiento='bs as',estadocivil='casado',nacionalidad='Argentino',direccion='loluu',localidad='catan',cp=1212,telefono='15-2345-67',email1='hector.calvo@gmail.com',email2='',ingreso='2011-03-07',egreso=None,foto='',user_id=9)
+    
+    db.alumnos.insert(alumnoid=26,nombre='Franco More', dni=35868544 , sexo='Masculino',fechanacimiento='',lugarnacimiento='',estadocivil='',nacionalidad='Argentino',direccion=' ',localidad='Gonzalez Catan',cp=1759 ,telefono='',email1='',email2='',ingreso='2012-03-14',egreso=None,foto='',user_id='')
+    
+    db.alumnos.insert(alumnoid=27,nombre='Diego Moreyra',dni=3858329,sexo='Masculino',fechanacimiento='',lugarnacimiento='',estadocivil='Soltero',nacionalidad='Argentino',direccion='',localidad='Pontevedra',cp=1771,telefono='',email1='',email2='',ingreso='2012-03-14',egreso=None,foto='',user_id='')
+    
+    db.alumnos.insert(alumnoid=28,nombre='Agustin Irusta',dni= 5479758,sexo='Masculino',fechanacimiento='',lugarnacimiento='',estadocivil='Soltero',nacionalidad='Argentino',direccion='',localidad='Pontevedra',cp=1771,telefono='',email1='',email2='',ingreso='2012-03-14',egreso=None,foto='',user_id='')
+   
+    db.alumnos.insert(alumnoid=29,nombre='Sergio Retamal',dni=5896788,sexo='Masculino',fechanacimiento='',lugarnacimiento='',estadocivil='Soltero',nacionalidad='Argentino',direccion='',localidad='Virrey del Pino',
+cp= 1763,telefono='',email1='',email2='',ingreso='2012-03-14',egreso=None,foto='',user_id='')
+    
+    db.alumnos.insert(alumnoid=30,nombre='Diego Luna',dni=3658492,sexo='Masculino',fechanacimiento='1991-05-22',lugarnacimiento='Cañuelas',estadocivil='Soltero',nacionalidad='Argentino',direccion='s.perez 5832',localidad='Virrey del pino',cp=1763,telefono='02202-443921',email1='',email2='',ingreso='2012-03-14',egreso=None,foto='',user_id='')
+    db.alumnos.insert(alumnoid=31,nombre='Romina Llanos',dni=53895843,sexo='femenino',fechanacimiento='1992-08-20',lugarnacimiento='Capital Federal',estadocivil='Soltera',nacionalidad='Argentino',direccion='s.perez 4382',localidad='Gonzalez Catan',cp=1759,telefono='02202- 458345',email1='',email2='',ingreso='2012-03-14',egreso=None,foto='', user_id='')
+       
+    db.alumnos.insert(alumnoid=32,nombre='Debora Mendoza',dni=35755797,sexo='femenino',fechanacimiento='',lugarnacimiento='',estadocivil='Soltero',nacionalidad='Argentino',direccion='',localidad='Virrey del Pino',cp=1763,telefono='',email1='',email2='',ingreso='2012-03-14',egreso=None,foto='',user_id='')
+    
+    
+    
     db.cursos.insert(cursoid=1,nombre='Primer a\xc3\xb1o',codigo=1,nivel=3,anio=2013,seccion='A',division=4,orden=1)
     db.cursos.insert(cursoid=2,nombre='Segundo a\xc3\xb1o',codigo=2,nivel=3,anio=2013,seccion='B',division=3,orden=2)
     db.cursos.insert(cursoid=3,nombre='Tercer a\xc3\xb1o',codigo=3,nivel=3,anio=2013,seccion='C',division=3,orden=3)

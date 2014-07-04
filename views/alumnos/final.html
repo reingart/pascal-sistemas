@@ -1,572 +1,58 @@
 {{extend 'layout.html'}}
-<Center><h1>Inscripcion a Finales</h1></Center>
+
+<Center>
+	<h1>Inscripcion a Finales</h1>
+</Center>
 <form method="POST">
 <br>
   
 <div id="div_centrado">
 <table id="tabla">
-<tbody><tr>
-    <td id="head"> AÑO  </td>
-    <td id="head"> CODIGO  </td>
-    <td id="head">MATERIA  </td>
-    <td id="head"> DOCENTE </td>
-    <td id="head"> INSCRIBIRSE </td>
-</tr><tr>
-    
+<tbody>
+   <tr>
+        <td id="head"> CODIGO  </td>
+        <td id="head">MATERIA  </td>
+        <td id="head"> DOCENTE </td>
+        <td id="head"> FECHA </td>
+        <td id="head"> HORA </td>
+        <td id="head"> ESTADO </td>
+       <td id="head"> INSCRIBIR </td>
+    </tr>
+    #cualquier cosa borrar esto
+    {{for c in comision:}}
+        <td id= "td">
+            {{=c.materias.materiaid}}
+        </td>
+        <td id= "td">
+            {{=c.materias.nombre}}
+        </td>
+        <td id= "td">
+            {{=c.personal.nombre}}
+        </td>
+    <td id= "td">
+    <font color="yellow">
+ <td id= "td">
+ <font color="red">
+    <td id= "td">
+    <font color="yellow">
+        {{='Ya inscripto, pendiente de revision' if (c.comisiones.comisionid in inscripciones) else ''}}
+    </font>
 
-    <TD ROWSPAN="9"><P>PRIMERO</P>
-    <td id="td">
-    158
-    </td>
-    <td id="td">
-    
-    ALGEBRA
-    </td>
-    <td id="td">
-    Gonzalez Jose
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
+    <font color="red">
+        {{='Comision Aprobado' if (c.comisiones.materiaid in aprobada) else ''}}  
     </font>
-       
-    <font color="red"> 
-          
+     </td>
     </font>
-    
+
     </td>
+        <td id= "td"><input type="radio" name="{{="comision_%s" % c.comisiones.comisionid}}" {{='enabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} ></td>
     </tr>
-    
-    
-    
-    <tr><td id="td">
-    159
-    </td>
-    <td id="td">
-    
-    ANALISIS MATEMATICO I
-    </td>
-    <td id="td">
-    Gonzalez Jose
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    160
-    </td>
-    <td id="td">
-    
-    INGLES TECNICO I
-    </td>
-    <td id="td">
-    Andre Roselli
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    161
-    </td>
-    <td id="td">
-    
-    ADM. DE LAS ORGANIZACIONES
-    </td>
-    <td id="td">
-    Vargas Claudia
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    162
-    </td>
-    <td id="td">
-    
-    METODOLOGIA DE LA INVESTIGACION
-    </td>
-    <td id="td">
-    Aguirre Elena
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    163
-    </td>
-    <td id="td">
-    
-    PROGRAMACION I
-    </td>
-    <td id="td">
-    Amarilla Hector
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    164
-    </td>
-    <td id="td">
-    
-    INTROD. SISTEMAS DE INFORMACION
-    </td>
-    <td id="td">
-    Medina Luz
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    165
-    </td>
-    <td id="td">
-    ARQUITECTURA DE COMPUTADORES
-    </td>
-    <td id="td">
-    Bravo Angel
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    166
-    </td>
-    <td id="td">
-    
-    EDI I
-    </td>
-    <td id="td">
-    Bravo Angel
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    <TD ROWSPAN="8"><P>SEGUNDO</P>
-    
-    <tr><td id="td">
-    167
-    </td>
-    <td id="td">
-    
-    
-    PROBABILIDAD Y ESTADISTICA
-    </td>
-    <td id="td">
-    Gonzalez Jose
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    168
-    </td>
-    <td id="td">
-    
-    ANALISIS MATEMATICO II
-    </td>
-    <td id="td">
-    Gonzalez Jose
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    169
-    </td>
-    <td id="td">
-    
-    INGLES TECNICO II
-    </td>
-    <td id="td">
-    Andre Roselli
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    170
-    </td>
-    <td id="td">
-    
-    SISTEMAS DE INFORMACION I
-    </td>
-    <td id="td">
-    Medina Luz
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    171
-    </td>
-    <td id="td">
-    
-    PROGRAMACION II
-    </td>
-    <td id="td">
-    Amarilla Hector
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    172
-    </td>
-    <td id="td">
-    
-    SISTEMAS OPERATIVOS
-    </td>
-    <td id="td">
-    Reingart Mariano
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    173
-    </td>
-    <td id="td">
-    
-    BASES DE DATOS
-    </td>
-    <td id="td">
-    Reingart Mariano
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    <TD ROWSPAN="7"><P>PRIMERO</P>
-    <tr><td id="td">
-    175
-    </td>
-    <td id="td">
-    
-    INVESTIGACION OPERATIVA
-    </td>
-    <td id="td">
-    Medina Luz
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    176
-    </td>
-    <td id="td">
-    
-    ECONOMIA EMPRESARIAL
-    </td>
-    <td id="td">
-    Vargas Claudia
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    177
-    </td>
-    <td id="td">
-    
-    TELEINFORMATICA
-    </td>
-    <td id="td">
-    Bravo Angel
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    178
-    </td>
-    <td id="td">
-    
-    SISTEMAS DE INFORMACION II
-    </td>
-    <td id="td">
-    Bravo Angel
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    179
-    </td>
-    <td id="td">
-    
-    PRACTICA PROFESIONAL
-    </td>
-    <td id="td">
-    Reingart Mariano
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    180
-    </td>
-    <td id="td">
-    
-    EDI III
-    </td>
-    <td id="td">
-    Aguirre Elena
-    </td>
-    
-    <td id="td"><input type="checkbox" name="comision_55" or=""> 
-    <font color="yellow"> 
-        
-    </font>
-       
-    <font color="red"> 
-          
-    </font>
-    
-    </td>
-    </tr>
-    
-    
-    
-</tbody></table>
+    {{pass}}
+    {{pass}}
+</TABLE>
     </div>
+<br>
+
 <br>
     <center>
     <a href="index.html"><input type="button" value="Volver"></a>
@@ -575,3 +61,7 @@
     <a href="constancia_comision.html"><input type="button" value="Imprimir Constancia"></a>
     </center>
 </form>
+
+</td>
+</tr>
+</table>

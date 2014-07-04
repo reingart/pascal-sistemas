@@ -1,29 +1,34 @@
 {{extend 'layout.html'}} 
 <h1>CARRERA:</h1><B>Análisis de Sistemas</B>
- <h2>COMISIÓN: </h2> <B>Tercer Año</B> 
- <h2>MATERIA: </h2><B>Práctica Profesional</B> 
+ <h2>COMISIÓN: </h2> <B>Tercer Año</B><h2>MATERIA: </h2><B>Práctica Profesional</B> 
  <FORM method="POST"> 
     <h1>FECHA:</h1> <INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}> 
-    <TABLE style="border: 1px solid white">
+   <TABLE style="border: 1px solid white">
    <tr style="border: 1px solid white">
- 	 <td style="border: 1px solid white"><B><center>Alumno</center></B></td>
- 
- 	 <td style="border: 1px solid white"><B><center>Inasistencia</center></B></td>
-   </tr>  
+   <td style="border: 1px solid white"><B><center>Alumno</center></B></td>
+   <td style="border: 1px solid white"><B><center>Presente</center></B></td>
+   <td style="border: 1px solid white"><B><center>Inasistencia</center></B></td></tr>
+     
      {{for fila in filas:}}
      {{alumno=fila.alumnos}}
-          <td style="border: 1px solid white">{{=alumno.nombre}}</td>
-	
-     
-     <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="{{="check_%s" % alumno.alumnoid}}" ></center></td>
-     <td style="border: 1px solid white"><center>
-     <select NAME="{{="tipo_%s" % alumno.alumnoid}}">
-        {{for tipoid, desc in tipos_map.items():}}
-					<option value="{{=tipoid}}">{{=desc}}</option>
-		{{pass}}
-    	{{pass}} 
- </TABLE>
-<INPUT type="submit" value="CONFIRMAR">
-     </FORM>
+        
+   <tr style="border: 1px solid white">
+   <td style="border: 1px solid white">{{=alumno.nombre}} </td>
+   <td style="border: 1px solid white"><center><INPUT type="checkbox" NAME="{{="check_%s" % alumno.alumnoid}}" ></center></td>
+   <td style="border: 1px solid white"><center>
+      <select NAME="{{="tipo_%s" % alumno.alumnoid}}">
+          {{for tipoid, desc in tipos_map.items():}}
+          <option value="{{=tipoid}}">{{=desc}}</option>
+
+    	{{pass}}
+    	{{pass}}
+       </select>
+       </center>
+       </td>
+       </tr>
+         
+   </TABLE>
+<INPUT type="submit" value="CONFIRMAR" name= "confirmar">
+   </FORM>
         <br>
 <a href="http://127.0.0.1:8000/practicarepo/docentes/asistencia_seleccion.html"><input type=button value="VOLVER" ></a>

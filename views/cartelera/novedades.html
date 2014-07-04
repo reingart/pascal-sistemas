@@ -1,3 +1,63 @@
 {{extend 'layout.html'}}
 <h1>Esta es la plantilla cartelera/novedades.html</h1>
 {{=BEAUTIFY(response._vars)}}
+<div id= "div_centrado">
+
+Fecha: {{=request.now.date()}}
+<br>
+<tr>
+    <td id= "head"><B>Materia:</B></td>
+      <td id= "head"><B>Practica Profesional</B></td>
+     </tr>
+<FORM ACTION="">
+NOVEDADES
+<TABLE  style="border: 1px solid white">
+    <tr style="border: 1px solid white">
+    <td style="border: 1px solid white"><B> Docente  </B></td>
+    <td style="border: 1px solid white"><B><center>Materia    </B></td>
+    <td style="border: 1px solid white"><B><center>Curso    </B></td>
+        <td style="border: 1px solid white"><B><center>Año  </B></td>
+        <td style="border: 1px solid white"><B>Horario</B></td>
+    <td style="border: 1px solid white"><B><center> Observaciones      </B></td>
+    </tr>
+    
+    
+    <td id= "head"><center><INPUT type="text" NAME="Docente" size="10" MAXLENGTH="27"></center></td>
+       <td id= "head"><center><INPUT type="text" NAME="Materia" size="16" MAXLENGTH="27"></center></td>
+       <td id= "head"><center><INPUT type="text" NAME="Curso" size="5" MAXLENGTH="10"></center></td>
+       <td id= "head"><center><INPUT type="text" NAME="Año" size="5" MAXLENGTH="10"></center></td>
+       <td id= "head"><center><INPUT type="text" NAME="Horario" size="8" MAXLENGTH="10"></center></td>
+       <td id= "head"><center><INPUT type="text" NAME="Observaciones" size="20" MAXLENGTH="27"></center></td>
+       
+      <tr style="border: 1px solid white">
+    </tr>
+       
+       <td id= "head"><center><INPUT type="text" NAME="Docente" size="10" MAXLENGTH="27"></center></td>
+       <td id= "head"><center><INPUT type="text" NAME="Materia" size="16" MAXLENGTH="27"></center></td>
+       <td id= "head"><center><INPUT type="text" NAME="Curso" size="5" MAXLENGTH="10"></center></td>
+       <td id= "head"><center><INPUT type="text" NAME="Año" size="5" MAXLENGTH="10"></center></td>
+       <td id= "head"><center><INPUT type="text" NAME="Horario" size="8" MAXLENGTH="10"></center></td>
+       <td id= "head"><center><INPUT type="text" NAME="Observaciones" size="20" MAXLENGTH="27"></center></td>
+       
+      <tr style="border: 1px solid white">
+    </tr>
+    
+    <td id= "head"><center><INPUT type="text" NAME="Docente" size="10" MAXLENGTH="27"></center></td>
+       <td id= "head"><center><INPUT type="text" NAME="Materia" size="16" MAXLENGTH="27"></center></td>
+       <td id= "head"><center><INPUT type="text" NAME="Curso" size="5" MAXLENGTH="10"></center></td>
+       <td id= "head"><center><INPUT type="text" NAME="Año" size="5" MAXLENGTH="10"></center></td>
+       <td id= "head"><center><INPUT type="text" NAME="Horario" size="8" MAXLENGTH="10"></center></td>
+       <td id= "head"><center><INPUT type="text" NAME="Observaciones" size="20" MAXLENGTH="27"></center></td>
+       
+      <tr style="border: 1px solid white">
+    </tr>
+    </td>
+	</tr>
+</table>
+    <br><br><br><br>
+<tr>
+    <INPUT type="submit" name="GRABAR" value="ACEPTAR">
+    <a href="Cartelera.html"><input type=button value="VOLVER" ></a>
+</tr>
+</FORM>
+</div>

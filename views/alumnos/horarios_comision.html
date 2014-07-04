@@ -1,55 +1,47 @@
 {{extend 'layout.html'}}
 
+
 <h1> <center><u> Horarios de Comision</u> </center></h1>
-<div id="div_centrado" class="saraza"><table id="tabla">
-    <tbody><tr>
-        <td id="head"> DIAS </td>
-        <td id="head"> HORARIOS </td>
-        <td id="head"> MATERIAS </td>
-        <td id="head"> DOCENTE </td>
-        <td id="head"> DIVISION </td>
-    </tr>
+
+<div id= "div_centrado">
+
+<TABLE id= "tabla">
+
     <tr>
-        <td id="head"> Lunes </td>
-        <td id="head"> 18:00 20:00 </td>
-        <td id="head"> Administracion de las organizaciones </td>
-        <td id="head"> Claudia Vargas </td>
-        <td id="head"> 1° </td>
+        <td id= "head"> DIAS </td>
+        <td id= "head"> HORARIOS </td>
+        <td id= "head"> MATERIAS </td>
+        <td id= "head"> DOCENTE </td>
+        <td id= "head"> DIVISION </td>
     </tr>
-    <tr>
-        <td id="head"> Lunes </td>
-        <td id="head">20:15 22:15 </td>
-        <td id="head"> Programacion </td>
-        <td id="head"> Hector Amarilla </td>
-        <td id="head"> 1° </td>
+    {{for hora in horarios:}}
+         <tr>
+         <td id= "td">
+             {{=hora.horarios.dia}}
+         </td>
+         <td id= "td">
+             {{=hora.horas.desde}}
+             hasta
+             <br>
+             {{=hora.horas.hasta}}
+             hs.
+         </td>
+         <td id= "td">
+             {{=hora.materias.nombre}}
+         </td>
+         <td id= "td">
+             {{=hora.personal.nombre}}
+         </td>
+         <td id= "td">
+             {{=hora.divisiones.descripcion}}
+         </td>
     </tr>
-    <tr>
-        <td id="head"> Lunes </td>
-        <td id="head"> 18:00 20:00 </td>
-        <td id="head"> Arquitectura del computador </td>
-        <td id="head"> Sosa </td>
-        <td id="head"> 1° </td>
-    </tr>
-    <tr>
-        <td id="head"> Martes </td>
-        <td id="head"> 20:15 22:15 </td>
-        <td id="head"> Analisis matematico </td>>
-        <td id="head"> Jose Gonzalez </td>
-        <td id="head"> 1° </td>
-    </tr>
-    <tr>
-        <td id="head"> Martes </td>
-        <td id="head"> 18:00 20:00 </td>
-        <td id="head"> Metodologia de la investigacion </td>
-        <td id="head"> Luz Medina</td>
-        <td id="head"> 1° </td>
-    </tr>
-    </tbody></table>
+    {{pass}}
+    </TABLE>
 <br>
 <form>
     <center>
-    <a href="index.html"><input type="button" value="Volver"></a>
-    <a href="horarios.html"><input type="button" value="Horario General"></a>
+    <a href="index.html"><input type=button value="Volver" ></a>
+    <a href="horarios.html"><input type=button value="Horario General" ></a>
     </center>
 </form>
-</div>

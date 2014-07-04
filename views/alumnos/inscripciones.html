@@ -1,575 +1,70 @@
 {{extend 'layout.html'}}
-<Center><h1>Inscripcion a cursada</h1></Center>
+<Center>
+	<h1>Inscripcion a cursada</h1>
+</Center>
 <form method="POST">
 <br>
   
 <div id="div_centrado">
 <table id="tabla">
-<tbody><tr>
+<tbody>
+   <tr>
    
-    <td id="head"> AÑO  </td>
+    
     <td id="head"> CODIGO  </td>
     <td id="head">MATERIA  </td>
     <td id="head"> DOCENTE </td>
     <td id="head"> REGULAR </td>
     <td id="head"> LIBRE </td>
-
-</tr>
-    <TD ROWSPAN="11"><P>PRIMERO</P>
-    <tr>
-    <td id="td">
-    158
-</td>
-    <td>
-	<center>ALGEBRA</center>
-</td>
-    <td id="td">
-    Gonzalez Jose
-</td>
-  <td id="td">
-  <Center> 
-    <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center>
-</td>
-	<td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-</tr>
-    
-    
- <tr>
-    <td id="td">
-    159
-</td>
-    <td id="td">
-	<center> ANALISIS MATEMATICO I</center>
-</td>
-    <td id="td">
-    Gonzalez Jose
-</td>
-    <td id="td">
-  <Center> 
-    <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center>
-</td>
-	<td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-</tr>
-   
-    
-    
-    
-    <tr><td id="td">
-    160
-    </td>
-    <td id="td">
-    
-    INGLES TECNICO I
-    </td>
-    <td id="td">
-    Andre Roselli
-    </td>
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td><td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
+	<td id="head"> ESTADO </td>
     </tr>
     
-    
-    
-    <tr><td id="td">
-    161
-    </td>
-    <td id="td">
-    
-    ADM. DE LAS ORGANIZACIONES
-    </td>
-    <td id="td">
-    Vargas Claudia
-    </td>
-    
-    
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td><td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    162
-    </td>
-    <td id="td">
-    
-    METODOLOGIA DE LA INVESTIGACION
-    </td>
-    <td id="td">
-    Aguirre Elena
-    </td>
-    
-    
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td><td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    163
-    </td>
-    <td id="td">
-    
-    PROGRAMACION I
-    </td>
-    <td id="td">
-    Amarilla Hector
-    </td>
-    
+Tenga en cuenta que solo podra rendir 2 libres en cada año   
  
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td><td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-    </tr>
+    #cualquier cosa borrar esto
+    {{for c in comision:}}
     
+<td id= "td">
+    {{=c.materias.materiaid}}
+</td>
     
+<td id= "td">
+    {{=c.materias.nombre}}
+</td>
+<td id= "td">
+    {{=c.personal.nombre}}
+</td>
     
-    <tr><td id="td">
-    164
-    </td>
-    <td id="td"> 
+    <td id= "td">
+    <font color="yellow"> 
+        <input type="radio" name="{{="comision_%s" % c.comisiones.comisionid}}" {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} > 
+       
+ <td id= "td"><input type="radio" name="{{="comision_%s" % c.comisiones.comisionid}}" {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} > 
+ <font color="red">
+              
+ {{='Comision Aprobado' if (c.comisiones.materiaid in aprobada) else ''}} 
+    <td id= "td">
+    <font color="yellow"> 
+        {{='Ya inscripto, pendiente de revision' if (c.comisiones.comisionid in inscripciones) else ''}}
+    </font>
+       
+    <font color="red"> 
+        {{='Comision Aprobado' if (c.comisiones.materiaid in aprobada) else ''}}  
+    </font>
+     </td> 
+    </font>
     
-    INTROD. SISTEMAS DE INFORMACION
-    </td>
-    <td id="td">
-    Medina Luz
-    </td>
-    
-
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td><td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    165
-    </td>
-    <td id="td">
-    
-    ARQUITECTURA DE COMPUTADORES
-    </td>
-    <td id="td">
-    Bravo Angel
-    </td>
-    
-  
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td><td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    166
-    </td>
-    <td id="td"> 
-    
-    EDI I
-    </td>
-    <td id="td">
-    Bravo Angel
-    </td>
-    
-  <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td><td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    167
-    </td>
-    <td id="td"> 
-    
-    PROBABILIDAD Y ESTADISTICA
-
-    <td id="td">
-    Gonzalez Jose
-    </td>
-    
-    
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center> </td> 
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-    </tr></TD>
-    
-    
-    <tr>
-    <TD ROWSPAN="7"><P>SEGUNDO</P></TD>
-    <tr><td id="td">
-    168
-    </td>
-    <td id="td">
-    
-    ANALISIS MATEMATICO II
-    </td>
-    <td id="td">
-    Gonzalez Jose
-    </td>
-    
-   
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center>
-    </td>
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center>
     </td>
     </tr>
     
-    
-
-    
-    <tr>
-    <td id="td">
-    169
-    </td>
-    <td id="td">
-    
-    INGLES TECNICO II
-    </td>
-    <td id="td">
-    Andre Roselli
-    </td>
-    
-  
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td><td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-    </tr>
-    
-    
-   
-    <tr><td id="td">
-    170
-    </td>
-    <td id="td">
-    
-    SISTEMAS DE INFORMACION I
-    </td>
-    <td id="td">
-    Medina Luz
-    </td>
-    
- 
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td><td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    171
-    </td>
-    <td id="td">
-    
-    PROGRAMACION II
-    </td>
-    <td id="td">
-    Amarilla Hector
-    </td>
-    
-   
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td><td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    172
-    </td>
-    <td id="td">
-    
-    SISTEMAS OPERATIVOS
-    </td>
-    <td id="td">
-    Reingart Mariano
-    </td>
-    
-
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td><td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    173
-    </td>
-    <td id="td">
-    
-    BASES DE DATOS
-    </td>
-    <td id="td">
-    Reingart Mariano
-    </td>
-    
-
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td><td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-    </tr>
-    <tr>
-     <TH ROWSPAN="7">TERCERO</TH>
-    
-    <tr><td id="td">
-    175
-    </td>
-    <td id="td"> 
-    
-    INVESTIGACION OPERATIVA
-    </td>
-    <td id="td">
-    Medina Luz
-    </td>
-    
- 
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td><td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-        </tr>
-    
-    
-    <tr><td id="td">
-    176
-    </td>
-    <td id="td">
-    ECONOMIA EMPRESARIAL
-    </td>
-    <td id="td">
-    Vargas Claudia
-    </td>
-    
-
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td><td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    177
-    </td>
-    <td id="td">
-    
-    TELEINFORMATICA
-    </td>
-    <td id="td">
-    Bravo Angel
-    </td>
-    
-
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td><td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    178
-    </td>
-    <td id="td">
-    
-    SISTEMAS DE INFORMACION II
-    </td>
-    <td id="td">
-    Bravo Angel
-    </td>
-    
- 
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td><td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    179
-    </td>
-    <td id="td"> 
-    
-    PRACTICA PROFESIONAL
-    </td>
-    <td id="td">
-    Reingart Mariano
-    </td>
-    
-
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td><td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-    </tr>
-    
-    
-    
-    <tr><td id="td">
-    180
-    </td>
-    <td id="td">
-    
-    EDI III
-    </td>
-    <td id="td">
-    Aguirre Elena
-    </td>
-    
-
-    <td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td><td id="td">
-    <Center> 
-   	 <form name=myform>
-	<input type="radio" name=myradio value="1">
-</Center></td>
-    </tr>
-    
-Tenga en cuenta que solo podra rendir 2 libres en cada año    
-    
-</tbody></table>
+    {{pass}}
+    {{pass}}
+</TABLE>
     </div>
+<br>
+    
+ 
+ 
 <br>
     <center>
     <a href="index.html"><input type="button" value="Volver"></a>

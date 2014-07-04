@@ -245,7 +245,23 @@ def listaparciales():
     for fila in filas:
         notas_1p_map[fila.alumnoid] = fila.nota
 	
-    return{'alumnos':alumnos, "notas_1p_map": notas_1p_map}
+    q = db.notas.alumnoid==db.inscripcionescomision.alumnoid
+    q &= db.inscripcionescomision.comisionid==COMISIONID
+    q &=db.inscripcionescomision.alumnoid==db.alumnos.alumnoid
+    # Busca las comisiones que coincidan
+    ##q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
+    q &= db.inscripcionesexamen.examenid == db.examenes.examenid
+    q &= db.comisiones.materiaid == db.notas.materiaid
+    q &= db.notas.calificacionid == 3 #PARCIAL
+    q &= db.notas.periodoid==27 #1er CUATRIMESTRE
+    filas=db(q).select(db.notas.alumnoid,db.notas.nota)
+	
+    notas_2p_map ={}
+    for fila in filas:
+        notas_2p_map[fila.alumnoid] = fila.nota
+
+    return{'alumnos':alumnos, "notas_1p_map": notas_1p_map,"notas_2p_map": notas_2p_map}
 
 
 @auth.requires_login()

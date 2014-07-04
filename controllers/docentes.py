@@ -217,23 +217,35 @@ def listamaterias():
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 def listaparciales():
-	response.title="Docentes"
-	response.subtitle="Examenes parciales"
-	COMISIONID=76 #PRACTICA pROF
-	MATERIAID=179 #PRACTICA PROFESIONAL
-	q = db.notas.alumnoid==db.inscripcionescomision.alumnoid
-	q &= db.comisiones.comisionid==COMISIONID
-	q &=db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
-	# Busca las comisiones que coincidan
-	q &= db.inscripcionesexamen.condicion == 2 #REGULAR
-	q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
-	q &= db.inscripcionesexamen.examenid == db.examenes.examenid
-	q &= db.examenes.materiaid == db.materias.materiaid
-	q &= db.notas.calificacionid == 3 #PARCIAL
-	q &= db.notas.alumnoid==db.alumnos.alumnoid
-	filas=db(q).select(db.notas.alumnoid,db.notas.nota, orderby=db.notas.alumnoid, distinct=True)
-	nombres=db(q).select(db.alumnos.nombre, distinct=True)
-	return{'filas':filas, 'nombres':nombres}
+    response.title="Docentes"
+    response.subtitle="Examenes parciales"
+    COMISIONID=76 #PRACTICA pROF
+    MATERIAID=179 #PRACTICA PROFESIONAL
+    q = db.comisiones.comisionid==COMISIONID
+    # Busca las comisiones que coincidan
+    ##q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
+    q &= db.comisiones.materiaid == db.materias.materiaid
+    q &= db.inscripcionescomision.alumnoid==db.alumnos.alumnoid
+    alumnos=db(q).select(db.alumnos.alumnoid,db.alumnos.nombre)
+
+    q = db.notas.alumnoid==db.inscripcionescomision.alumnoid
+    q &= db.inscripcionescomision.comisionid==COMISIONID
+    q &=db.inscripcionescomision.alumnoid==db.alumnos.alumnoid
+    # Busca las comisiones que coincidan
+    ##q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
+    q &= db.inscripcionesexamen.examenid == db.examenes.examenid
+    q &= db.comisiones.materiaid == db.notas.materiaid
+    q &= db.notas.calificacionid == 3 #PARCIAL
+    q &= db.notas.periodoid==26 #1er CUATRIMESTRE
+    filas=db(q).select(db.notas.alumnoid,db.notas.nota)
+	
+    notas_1p_map ={}
+    for fila in filas:
+        notas_1p_map[fila.alumnoid] = fila.nota
+	
+    return{'alumnos':alumnos, "notas_1p_map": notas_1p_map}
 
 
 @auth.requires_login()

@@ -23,18 +23,17 @@
     
     </tr>
    
-	{{for fila in filas:}}
+    {{for fila in alumnos:}}
 
     <tr>
-    	<td id= "head"><center>{{=fila.alumnoid}}</center></td>
-    	<td id= "head"><center>{{=nombre.nombre}}</center></td>
-        <td id= "head"><center>{{=fila.nota}}</center> </td>
-    	<td id= "head"><center></center> </td>
-    	<td id= "head"><center></center></td>
-    	<td id= "head"><center></center> </td>
-    	<td id= "head"><center></center></td>
+        <td id= "head"><center>{{=fila.alumnoid}}</center></td>
+        <td id= "head"><center>{{=fila.nombre}}</center> </td>
+        <td id= "head"><center>{{=notas_1p_map.get(fila.alumnoid, "")}}</center> </td>
+        <td id= "head"><center></center></td>
+        <td id= "head"><center></center> </td>
+        <td id= "head"><center></center></td>
     </tr>
-	{{pass}}
+    {{pass}}
 </TABLE>
 <br>
 	<a href="index.html"><input type=button value="Volver" ></a>

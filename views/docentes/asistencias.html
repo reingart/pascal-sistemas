@@ -18,7 +18,7 @@
    <td style="border: 1px solid white"><center>
       <select NAME="{{="tipo_%s" % alumno.alumnoid}}">
           {{for tipoid, desc in tipos_map.items():}}
-          <option value="{{=tipoid}}">{{=desc}}</option>
+          <option value="{{=tipoid}}" {{="selected" if cants_map[tipoid]==1 else''}}>{{=desc}}</option>
 
     	{{pass}}
     	{{pass}}

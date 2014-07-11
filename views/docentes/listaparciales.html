@@ -1,25 +1,17 @@
 {{extend 'layout.html'}}
-<BR><p>
-
-<h1>Listado de examenes parciales </h1>
-<br>
-
+<p>
 <FORM method="POST">
-	<br>
-	<h1><B>Materia:</B>
-		<B>Practica Profesional</B>
-    </h1>
-	<h2>FECHA:    <INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}> 
-    </h2>
+	<center>
+        <h1><B>Practica Profesional - Listado de Parciales</B></h1>
 <TABLE id= "tabla" >
 	    <tr>
     <td id= "head"><B><center>DNI</center></B></td>
-    <td id= "head"><center>Alumno</center></td>
-    <td id= "head"><center>1er Cuatrimestre </center></td>
-    <td id= "head"><center>2do Cuatrimestre</center></td>
-    <td id= "head"><center>Recuperatorio 1 </center></td>
-    <td id= "head"><center>Recuperatorio 2</center></td>
-    <td id= "head"><center>Condicion</center></td>
+    <td id= "head"><center>ALUMNO</center></td>
+    <td id= "head"><center>1ER CUATRIMESTRE </center></td>
+    <td id= "head"><center>2DO CUATRIMESTRE</center></td>
+    <td id= "head"><center>1ER RECUPERATORIO </center></td>
+    <td id= "head"><center>2DO RECUPERATORIO</center></td>
+    <td id= "head"><center>CONDICION</center></td>
     
     </tr>
    
@@ -30,11 +22,18 @@
         <td id= "head"><center>{{=fila.nombre}}</center> </td>
         <td id= "head"><center>{{=notas_1p_map.get(fila.alumnoid, "")}}</center> </td>
         <td id= "head"><center>{{=notas_2p_map.get(fila.alumnoid, "")}}</center></td>
-        <td id= "head"><center></center> </td>
-        <td id= "head"><center></center></td>
-    </tr>
+        <td id= "head"><center>{{=notas_3p_map.get(fila.alumnoid, "")}}</center></td>
+        <td id= "head"><center>{{=notas_4p_map.get(fila.alumnoid, "")}}</center></td>
+        <td id= "head">{{=condicion_map.get(fila.alumnoid, "")}}<center>
+            
+        </center></td>
+    </tr> 
     {{pass}}
 </TABLE>
 <br>
 	<a href="index.html"><input type=button value="Volver" ></a>
+    <a href="examenes_parciales.html"><input type=button value="Cargar Notas" ></a>
+    
+</center>
 </FORM>
+<br>

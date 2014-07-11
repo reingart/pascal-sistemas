@@ -27,12 +27,12 @@ def examenes_parciales():
 	MATERIAID=179 #PRACTICA PROFESIONAL
 	q = db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
 	q &= db.comisiones.comisionid==COMISIONID
-	q &=db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
+	#q &=db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
 	# Busca las comisiones que coincidan
-	q &= db.inscripcionesexamen.condicion == 2 #REGULAR
+	q &= db.inscripcionescomision.condicion == 2 #REGULAR
 	q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
-	q &= db.inscripcionesexamen.examenid == db.examenes.examenid
-	q &= db.examenes.materiaid == db.materias.materiaid
+	#q &= db.inscripcionesexamen.examenid == db.examenes.examenid
+	#q &= db.examenes.materiaid == db.materias.materiaid
 	filas=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre, distinct=True)
 	i=0
 	a=0
@@ -221,9 +221,10 @@ def listaparciales():
     response.subtitle="Examenes parciales"
     COMISIONID=76 #PRACTICA pROF
     MATERIAID=179 #PRACTICA PROFESIONAL
+    condicion="REGULAR"
     q = db.comisiones.comisionid==COMISIONID
     # Busca las comisiones que coincidan
-    ##q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.condicion == 2 #REGULAR
     q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
     q &= db.comisiones.materiaid == db.materias.materiaid
     q &= db.inscripcionescomision.alumnoid==db.alumnos.alumnoid
@@ -233,7 +234,7 @@ def listaparciales():
     q &= db.inscripcionescomision.comisionid==COMISIONID
     q &=db.inscripcionescomision.alumnoid==db.alumnos.alumnoid
     # Busca las comisiones que coincidan
-    ##q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.condicion == 2 #REGULAR
     q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
     q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.comisiones.materiaid == db.notas.materiaid
@@ -249,19 +250,60 @@ def listaparciales():
     q &= db.inscripcionescomision.comisionid==COMISIONID
     q &=db.inscripcionescomision.alumnoid==db.alumnos.alumnoid
     # Busca las comisiones que coincidan
-    ##q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.condicion == 2 #REGULAR
     q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
     q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.comisiones.materiaid == db.notas.materiaid
     q &= db.notas.calificacionid == 3 #PARCIAL
-    q &= db.notas.periodoid==27 #1er CUATRIMESTRE
+    q &= db.notas.periodoid==27 #2do CUATRIMESTRE
     filas=db(q).select(db.notas.alumnoid,db.notas.nota)
 	
     notas_2p_map ={}
     for fila in filas:
         notas_2p_map[fila.alumnoid] = fila.nota
+        
+    q = db.notas.alumnoid==db.inscripcionescomision.alumnoid
+    q &= db.inscripcionescomision.comisionid==COMISIONID
+    q &=db.inscripcionescomision.alumnoid==db.alumnos.alumnoid
+    # Busca las comisiones que coincidan
+    q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
+    q &= db.inscripcionesexamen.examenid == db.examenes.examenid
+    q &= db.comisiones.materiaid == db.notas.materiaid
+    q &= db.notas.calificacionid == 4 #RECUPERATORIO
+    q &= db.notas.periodoid==26 #1er CUATRIMESTRE
+    filas=db(q).select(db.notas.alumnoid,db.notas.nota)
+	
+    notas_3p_map ={}
+    for fila in filas:
+        notas_3p_map[fila.alumnoid] = fila.nota
 
-    return{'alumnos':alumnos, "notas_1p_map": notas_1p_map,"notas_2p_map": notas_2p_map}
+    q = db.notas.alumnoid==db.inscripcionescomision.alumnoid
+    q &= db.inscripcionescomision.comisionid==COMISIONID
+    q &=db.inscripcionescomision.alumnoid==db.alumnos.alumnoid
+    # Busca las comisiones que coincidan
+    q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
+    q &= db.inscripcionesexamen.examenid == db.examenes.examenid
+    q &= db.comisiones.materiaid == db.notas.materiaid
+    q &= db.notas.calificacionid == 4 #RECUPERATORIO
+    q &= db.notas.periodoid==27 #2do CUATRIMESTRE
+    filas=db(q).select(db.notas.alumnoid,db.notas.nota)
+	
+    notas_4p_map ={}
+    condicion_map = {}
+    for fila in filas:
+        notas_4p_map[fila.alumnoid] = fila.nota
+    
+        if notas_1p_map[fila.alumnoid]< 4 and notas_3p_map[fila.alumnoid]< 4:
+            condicion_map[fila.alumnoid]="LIBRE"
+        elif notas_2p_map[fila.alumnoid]< 4 and notas_4p_map[fila.alumnoid]< 4:
+            condicion_map[fila.alumnoid]="LIBRE"
+        else:
+            condicion_map[fila.alumnoid]="REGULAR"
+    # notas_4p_map[fila.alumnoid] notas_4p_map[fila.alumnoid]
+    
+    return{'alumnos':alumnos, "notas_1p_map": notas_1p_map,"notas_2p_map": notas_2p_map,"notas_3p_map": notas_3p_map,"notas_4p_map": notas_4p_map,"condicion_map":condicion_map}
 
 
 @auth.requires_login()

@@ -1,18 +1,18 @@
 {{extend 'layout.html'}}
 <FORM method="POST">
+	<center>
 	<br>
 	<div id="div_centrado">
-
-        <h2>PRÁCTICA PROFESIONAL - PERIODO:
-	<select NAME="condicion">
-		<option value="1">1er CUATRIMESTRE</option>
-		<option value="2">2do CUATRIMESTRE</option>
-   		<option value="1r">1er RECUPERATORIO</option>
-   		<option value="2r">2do RECUPERATORIO</option>
-	</select>
-FECHA:    <INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}> 
-    </h2>
-        <center><h2>CALIFICACIONES</h2>
+        <h2>PRÁCTICA PROFESIONAL</h2> 
+        <b>FECHA:<INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}> 
+            PERIODO:</b>
+	    <select NAME="condicion">
+		    <option value="1">1er CUATRIMESTRE</option>
+		    <option value="2">2do CUATRIMESTRE</option>
+   		    <option value="1r">1er RECUPERATORIO</option>
+   		    <option value="2r">2do RECUPERATORIO</option>
+	    </select>
+        <h2>CALIFICACIONES</h2>
 <TABLE id= "tabla" >
 	<tr>
 		<td id= "head"><B><center>DNI</center> </B></td>

@@ -5,7 +5,6 @@
 </Center>
 <form method="POST">
 <br>
-  
 <div id="div_centrado">
 <table id="tabla">
 <tbody>
@@ -35,9 +34,11 @@
  <font color="red">
     <td id= "td">
     <font color="yellow">
-        {{='Ya inscripto, pendiente de revision' if (c.comisiones.comisionid in inscripciones) else ''}}
+        {{='Inscripto a comision' if (c.comisiones.comisionid in inscripciones) else ''}}
     </font>
-
+    <font color="orange">
+        {{='' if (c.comisiones.comisionid in inscripciones) else 'No inscripto a comision'}}
+    </font>
     <font color="red">
         {{='Comision Aprobado' if (c.comisiones.materiaid in aprobada) else ''}}  
     </font>
@@ -45,7 +46,7 @@
     </font>
 
     </td>
-        <td id= "td"><input type="radio" name="{{="comision_%s" % c.comisiones.comisionid}}" {{='enabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} ></td>
+        <td id= "td"><input type="checkbox" name="{{="final_%s" % c.comisiones.comisionid}}" {{='enabled' if (c.comisiones.comisionid in inscripciones) else 'disabled'}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} ></td>
     </tr>
     {{pass}}
     {{pass}}

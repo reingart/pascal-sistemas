@@ -4,13 +4,10 @@
 </Center>
 <form method="POST">
 <br>
-  
 <div id="div_centrado">
 <table id="tabla">
 <tbody>
    <tr>
-   
-    
     <td id="head"> CODIGO  </td>
     <td id="head">MATERIA  </td>
     <td id="head"> DOCENTE </td>
@@ -18,53 +15,37 @@
     <td id="head"> LIBRE </td>
 	<td id="head"> ESTADO </td>
     </tr>
-    
-Tenga en cuenta que solo podra rendir 2 libres en cada año   
- 
-    #cualquier cosa borrar esto
+Tenga en cuenta que solo podra rendir 2 libres en cada año
     {{for c in comision:}}
-    
 <td id= "td">
     {{=c.materias.materiaid}}
 </td>
-    
 <td id= "td">
     {{=c.materias.nombre}}
 </td>
 <td id= "td">
     {{=c.personal.nombre}}
 </td>
-    
     <td id= "td">
-    <font color="yellow"> 
-        <input type="radio" name="{{="comision_%s" % c.comisiones.comisionid}}" {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} > 
-       
- <td id= "td"><input type="radio" name="{{="comision_%s" % c.comisiones.comisionid}}" {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} > 
- <font color="red">
-              
- {{='Comision Aprobado' if (c.comisiones.materiaid in aprobada) else ''}} 
+        <font color="yellow">
+        <input type="checkbox" name="{{="comision_%s" % c.comisiones.comisionid}}" {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} >
+ <td id= "td"><input type="checkbox" name="{{="comisionl_%s" % c.comisiones.comisionid}}" {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} >
     <td id= "td">
-    <font color="yellow"> 
+    <font color="yellow">
         {{='Ya inscripto, pendiente de revision' if (c.comisiones.comisionid in inscripciones) else ''}}
     </font>
-       
-    <font color="red"> 
-        {{='Comision Aprobado' if (c.comisiones.materiaid in aprobada) else ''}}  
+    <font color="red">
+        {{='Comision Aprobado' if (c.comisiones.materiaid in aprobada) else ''}}
     </font>
-     </td> 
+     </td>
     </font>
-    
     </td>
     </tr>
-    
     {{pass}}
     {{pass}}
 </TABLE>
     </div>
 <br>
-    
- 
- 
 <br>
     <center>
     <a href="index.html"><input type="button" value="Volver"></a>
@@ -74,6 +55,6 @@ Tenga en cuenta que solo podra rendir 2 libres en cada año
     </center>
 </form>
 
-</td> 
-</tr> 
+</td>
+</tr>
 </table>

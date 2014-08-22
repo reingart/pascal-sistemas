@@ -39,13 +39,13 @@
         {{='Materia Aprobada' if (f.examenes.materiaid in aprobadas) else ''}}
     </font>
     <font color="black">
-        {{='Ya Inscripto Al Final' if (f.examenes.materiaid in inscripciones) else ''}}
+        {{='Ya Inscripto Al Final' if (f.examenes.materiaid in inscripto) else ''}}
     </font>
      </td>
     </font>
 
     </td>
-        <td id= "td"><input type="checkbox" name="{{="final_%s" % f.examenes.examenid}}" {{='disabled' if (f.examenes.materiaid in inscripciones) else 'enabled'}} or {{='disabled' if (f.examenes.materiaid in aprobadas) else ''}} or {{='enabled' if (f.examenes.materiaid in cursadas) else 'disabled'}}></td>
+        <td id= "td"><input type="checkbox" name="{{="final_%s" % f.examenes.examenid}}" {{='disabled' if (f.examenes.materiaid in inscripto) else 'enabled'}} or {{='disabled' if (f.examenes.materiaid in aprobadas) else ''}} or {{='enabled' if (f.examenes.materiaid in cursadas) else 'disabled'}}></td>
     </tr>
     {{pass}}
     {{pass}}

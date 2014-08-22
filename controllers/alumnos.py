@@ -380,6 +380,19 @@ def final():
                                 db.inscripcionescomision.alta, )
     for inscripcion in inscripciones:
         cursadas.append(inscripcion.comisiones.materiaid)
+    
+    inscripto=[]
+    o= db.inscripcionesexamen.alumnoid== alumno.alumnoid
+    o&= db.inscripcionesexamen.baja == None
+    o&= db.inscripcionesexamen.examenid== db.examenes.examenid
+    fin= db(o).select(db.examenes.materiaid,
+                      db.inscripcionesexamen.condicion,
+                      db.inscripcionesexamen.alta, )
+    for inscripcion in fin:
+        inscripto.append(inscripcion.examenes.materiaid)
+        
+        
+        
     correlatividades = {}
     c= db().select(db.correlativas.materiacorrelativa, db.correlativas.materiaid)
     for x in c:
@@ -415,7 +428,7 @@ def final():
             msg_aprobada.append("Materia Aprobada")
         msj_aprobada[f.examenes.materiaid] = ', '.join(msg_aprobada)
 
-    return dict ( cursadas=cursadas, final= final, alumno=alumno, inscripciones=inscripciones, aprobadas= aprobadas, desaprobadas= desaprobadas, correlatividades=correlatividades, mensajes=mensajes, msj_aprobada= msj_aprobada, msj_inscripto=msj_inscripto )
+    return dict ( inscripto=inscripto, cursadas=cursadas, final= final, alumno=alumno, inscripciones=inscripciones, aprobadas= aprobadas, desaprobadas= desaprobadas, correlatividades=correlatividades, mensajes=mensajes, msj_aprobada= msj_aprobada, msj_inscripto=msj_inscripto )
 def constancia_final():
     fecha= request.now.date()
     #guardo la fecha actual

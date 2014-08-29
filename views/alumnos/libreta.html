@@ -12,6 +12,7 @@
             <td align="center id=tabla">Libro</td>
             <td align="center" id=tabla>Folio</td>
             <td align="center" id=tabla>Calificacion</td>
+            <td align="center" id=tabla>Periodo</td>
         </tr>
         {{for materia in materias:}}
             {{nota = map_notas.get(materia.id)}}
@@ -34,6 +35,7 @@
                     <OPTION VALUE="9"{{="selected" if nota is not None and nota.nota==9 else "" }}>9</OPTION>
                     <OPTION VALUE="10"{{="selected" if nota is not None and nota.nota==10 else "" }}>10</OPTION>
                     </SELECT> </td>
+
             </tr>
         {{pass}}
     </table>

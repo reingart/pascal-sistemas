@@ -7,7 +7,7 @@
         <TR>
             <TD id= "head"> <center>MATERIA</center> </TD>
             <TD id= "head"><center> NOTA</center></TD>
-            <TD id= "head"><center>PERIODO</center></TD>
+            <TD id= "head"><center>FECHA</center></TD>
             <TD id= "head"><center>CURSO</center></TD>
         </TR>
         {{ n=notas}}
@@ -23,7 +23,7 @@
              {{ =nota.notas.nota}}
              </TD>
              <TD id= "td">
-             {{ =nota.periodos.descripcion}}
+             {{ =nota.notas.fecha}}
              </TD>
              <TD id= "td">
              {{ =nota.cursos.nombre}}

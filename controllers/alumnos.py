@@ -22,7 +22,8 @@ def libreta():
                        db.notas.fecha,
                        db.notas.libro,
                        db.notas.folio,
-                       db.notas.nota)
+                       db.notas.nota,
+                       db.notas.periodoid)
     map_notas = dict([(nota.materiaid, nota) for nota in notas])
 
     if request.vars.Aceptar:
@@ -44,7 +45,6 @@ def libreta():
                                      fecha=fecha,
                                      libro=libro,
                                      folio=folio)
-                        redirect("/practicarepo/alumnos/libreta.html")
                     else:
                         db.notas.insert(alumnoid=alumno.alumnoid, 
                                         materiaid=materia.materiaid,
@@ -53,11 +53,12 @@ def libreta():
                                         fecha=fecha,
                                         libro=libro,
                                         folio=folio)
-                        redirect("/practicarepo/alumnos/libreta.html")
             except ValueError:
                  msg = "Error de datos"
-    return{"materias":materias,
-           "map_notas":map_notas}
+        redirect (URL (f="libreta"))
+    periodos= db(db.periodos).select(db.periodos.periodoid,
+                                     db.periodos.descripcion)
+    return{"materias":materias, "map_notas":map_notas}
 
 @auth.requires_login()
 def index():
@@ -94,11 +95,23 @@ def index():
     q &= db.comisiones.materiaid== db.materias.materiaid
     materias=db(q).select(db.materias.id, db.materias.nombre)
     mat=db(q).select(db.materias.id)
+    
+    o = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
+    o &= db.materias.materiaid== db.comisiones.materiaid
+    o &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
+    o &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
+    o &= db.inscripcionescomision.condicion== db.condiciones.condicionid
+    com=db(o).select(db.materias.id, db.materias.nombre,
+                     db.comisiones.nombre,
+                     db.comisiones.materiaid,
+                     db.condiciones.detalle)
+    
     return dict (fecha_actual=fecha_actual,
                  visible= visible,
                  user=user,
                  usuario=usuario,
-                 materias=materias)
+                 materias=materias,
+                 com=com)
 
 #requiere que haya un usuario logueado
 @auth.requires_login()
@@ -276,8 +289,6 @@ def inasistencias():
     alumno= db(q).select().first()
     #utilizamos los datos de faltas para filtrar las inasistencias del alumno
     q &= db.faltas.alumnoid== db.alumnos.alumnoid
-    q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid
-    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
     q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
     q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
     q &= db.faltas.comisionid== db.comisiones.comisionid
@@ -305,19 +316,16 @@ def examenes():
     #traemos el alumno para notificarlo en la vista
     alumno= db(q).select().first()
     #guardo en la consulta el registro del alumno
-    q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid
-    q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
+    #q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid
+    #q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
     q &= db.notas.alumnoid == db.alumnos.alumnoid
     q &= db.notas.materiaid == db.materias.materiaid
     q &= db.materias.cursoid == db.cursos.cursoid
     q &= db.notas.calificacionid == 5
-    # filtrar solo finales
-    q &= db.notas.periodoid == db.periodos.periodoid
     notas = db(q).select(db.alumnos.nombre,
                          db.materias.nombre,
                          db.notas.nota,
                          db.notas.fecha,
-                         db.periodos.descripcion,
                          db.cursos.nombre)
     return dict (notas= notas,
                  alumno=alumno)

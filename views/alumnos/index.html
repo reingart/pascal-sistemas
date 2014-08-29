@@ -28,25 +28,9 @@
         <td id="tabla">Inasistencias</td>
         <td id="tabla">Porcentaje de presentismo</tdid></td>
     </tr>
+    {{for f in com:}}
     <tr id="tabla">
-        <td id="tabla"></td>><td id="tabla">Regular<td id="tabla">10</td><td id="tabla">%</td>
+        <td id="tabla">{{=f.comisiones.nombre}}<td id="tabla">{{=f.condiciones.detalle}}<td id="tabla">10</td><td id="tabla">%</td>
     </tr>
-    <tr id="tabla">
-        <td id="tabla">Algebra<td id="tabla">Regular<td id="tabla">9</td><td id="tabla">%</td>
-    </tr>
-    <tr id="tabla">
-        <td id="tabla">Ingles<td id="tabla">Regular<td id="tabla">10</td><td id="tabla">%</td>
-    </tr>
-    <tr id="tabla">
-        <td id="tabla">Programacion I<td id="tabla">libre<td id="tabla">10</td><td id="tabla">%</td>
-    </tr>
-    <tr id="tabla">
-        <td id="tabla">E.D.I I<td id="tabla">Regular<td id="tabla">10</td><td id="tabla">%</td>
-    </tr>
-    <tr id="tabla">
-        <td id="tabla">Introduccion a los sistemas de informacion<td id="tabla">Libre<td id="tabla">8</td><td id="tabla">%</td>
-    </tr>
-    <tr id="tabla">
-        <td id="tabla">Analisis Matematicos<td id="tabla">Regular<td id="tabla">8</td><td id="tabla">%</td>
-    </tr>
+    {{pass}}
 </table>

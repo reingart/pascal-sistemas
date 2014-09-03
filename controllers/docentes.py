@@ -380,9 +380,7 @@ def parciales():
     comisiones = db(q).select(db.comisiones.ALL, distinct=True)
     return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}
 
-    
-def asistencia_seleccion():
-    return{}
+
 def parciales_seleccion():
     return{}
 
@@ -727,7 +725,7 @@ def asistencias():
     filas=db(q).select()
 
     if request.vars.fecha:
-        fecha = request.vars.fecha # validar y convertir date
+        fecha = datetime.strptime(request.vars.fecha,'%d/%m/%Y') # validar y convertir date
     else:
         fecha = None
     
@@ -745,6 +743,17 @@ def asistencias():
       
     return{"filas":filas, 'tipos_map': tipos_map, 'cants_map': cants_map}
 
+def listado_inasistencias():
+    response.title="Docentes"
+    response.subtitle= "Lista de Inasistencia"
+    q=db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
+    q&=db.inscripcionescomision.comisionid==76
+    q&=db.faltas.alumnoid==db.alumnos.alumnoid
+    filas=db(q).select(db.alumnos.nombre,
+                       db.faltas.cantidad.sum().with_alias("suma"),
+                       groupby=db.alumnos.nombre)
+    
+    return {"filas":filas}
 
 def acta_volante():
     response.title="Docentes"

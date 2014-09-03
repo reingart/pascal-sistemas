@@ -4,7 +4,7 @@
 	<br>
 	<div id="div_centrado">
         <h2>PRÁCTICA PROFESIONAL</h2> 
-        <b>FECHA:<INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}> 
+        <b>FECHA:<INPUT type="text" Name="fecha" size="11" VALUE= {{=request.now.date().strftime('%d/%m/%Y')}}> 
             PERIODO:</b>
 	    <select NAME="condicion">
 		    <option value="1">1er CUATRIMESTRE</option>

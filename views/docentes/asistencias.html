@@ -2,7 +2,7 @@
 <FORM method="POST"> 
     <center>
         <h1><B>Práctica Profesional - Asistencias</B></h1>
-        FECHA:<INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}> 
+        FECHA:<INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date().strftime('%d/%m/%Y')}}> 
     <br><br>
     <TABLE style="border: 1px solid white">
         <tr style="border: 1px solid white">

@@ -58,6 +58,17 @@ def libreta():
         redirect (URL (f="libreta"))
     periodos= db(db.periodos).select(db.periodos.periodoid,
                                      db.periodos.descripcion)
+    cursadas=[]
+    n = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
+    alumno= db(n).select().first() #traemos el alumno para notificarlo en la vista
+    n= db.inscripcionescomision.alumnoid== alumno.alumnoid
+    n&= db.inscripcionescomision.baja == None
+    n&= db.inscripcionescomision.comisionid== db.comisiones.comisionid
+    inscripciones= db(n).select(db.comisiones.materiaid,
+                                db.inscripcionescomision.condicion,
+                                db.inscripcionescomision.alta, )
+    for inscripcion in inscripciones:
+        cursadas.append(inscripcion.comisiones.materiaid)
     return{"materias":materias, "map_notas":map_notas}
 
 @auth.requires_login()
@@ -105,13 +116,14 @@ def index():
                      db.comisiones.nombre,
                      db.comisiones.materiaid,
                      db.condiciones.detalle)
-    
+    total=db.executesql('select faltas.comisionid, SUM(faltas.cantidad) from faltas group by faltas.comisionid')
     return dict (fecha_actual=fecha_actual,
                  visible= visible,
                  user=user,
                  usuario=usuario,
                  materias=materias,
-                 com=com)
+                 com=com,
+                 total=total)
 
 #requiere que haya un usuario logueado
 @auth.requires_login()

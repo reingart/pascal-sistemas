@@ -21,16 +21,16 @@
 <br>
 </br>
 <TABLE id="tabla"> 
-<TH align="center" id="tabla" COLSPAN=4> Informacion de alumno</TH>
+<TH align="center" id="tabla" COLSPAN=3> Informacion de alumno</TH>
     </tr>
         <td id="tabla">Materia</td>
         <td id="tabla">Cursando</td>
         <td id="tabla">Inasistencias</td>
-        <td id="tabla">Porcentaje de presentismo</tdid></td>
+        </td>
     </tr>
     {{for f in com:}}
     <tr id="tabla">
-        <td id="tabla">{{=f.comisiones.nombre}}<td id="tabla">{{=f.condiciones.detalle}}<td id="tabla">10</td><td id="tabla">%</td>
+        <td id="tabla">{{=f.comisiones.nombre}}<td id="tabla">{{=f.condiciones.detalle}}<td id="tabla"><a href="inasistencias.html" title="Mas detalles."><b><u></>aca van la cantidad de inasistencias de la materia<B><u></a></td>
     </tr>
     {{pass}}
 </table>

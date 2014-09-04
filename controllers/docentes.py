@@ -93,11 +93,12 @@ def busqueda():
 
 #@auth.requires_login()
 def index():
-    #response.title="Docentes"
-    #response.subtitle="Menu Principal"
+    response.title="Docentes"
+    response.subtitle="Menú Principal"
     if request.vars:
         # si me pasan en la URL el docente, lo filtro
         q=db.personal.personalid == request.vars['personalid']
+        
 
         redirect(URL(f=ficha, vars={'personalid': docente.personal.personalid}))
 
@@ -106,7 +107,7 @@ def index():
         # sino, busco todos los docentes
         q=db.personal.personalid>0
         
-    return{}
+    return dict(auth.user)
 
 @auth.requires_login()
 @auth.requires_membership(role='Personal')

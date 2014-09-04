@@ -697,10 +697,11 @@ def muestrafinal():
         redirect(URL(r=request, f='listarfinales'))#redirecciona al controlador principal
 
 
-
     return dict(form=form)
 
+
 def asistencias():
+    from datetime import datetime
     
     response.title="Docentes"
     response.subtitle="Inasistencia"

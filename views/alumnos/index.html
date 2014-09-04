@@ -29,8 +29,9 @@
         </td>
     </tr>
     {{for f in com:}}
+    {{alumno=f.alumnos}}
     <tr id="tabla">
-        <td id="tabla">{{=f.comisiones.nombre}}<td id="tabla">{{=f.condiciones.detalle}}<td id="tabla"><a href="inasistencias.html" title="Mas detalles."><b><u></>aca van la cantidad de inasistencias de la materia<B><u></a></td>
+        <td id="tabla">{{=f.comisiones.nombre}}<td id="tabla">{{=f.condiciones.detalle}}<td id="tabla"><a href="inasistencias.html" title="Mas detalles."><b><u>{{=f.suma}}<B><u></a></td>
     </tr>
     {{pass}}
 </table>

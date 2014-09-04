@@ -129,6 +129,7 @@ cp= 1763,telefono='',email1='',email2='',ingreso='2012-03-14',egreso=None,foto='
     db.carreras.insert(carreraid=4,nombre='Tecnicatura Superior en Laboratorio de An\xc3\xa1lisis Cl\xc3\xadnicos')
     db.carreras.insert(carreraid=5,nombre='Tecnicatura Superior en Radiolog\xc3\xada')
     db.carreras.insert(carreraid=6,nombre='Tecnicatura Superior en Cardiologia')
+    db.carreras.insert(carreraid=7,nombre='Tecnicatura Superior en Redes Informaticas')
     db.planesestudio.insert(planestudioid=1,descripcion='Analista de sistemas 2012',aprobadopor='Resoluci\xc3\xb3n N\xc2\xba5817/03',carreraid=1,desde='2012-03-18',hasta='2012-12-21')
     db.planesestudio.insert(planestudioid=2,descripcion='Radiologia 2012',aprobadopor='Resoluci\xc3\xb3n N\xc2\xb0 3244',carreraid=5,desde='2012-03-18',hasta='2012-12-18')
     db.planesestudio.insert(planestudioid=3,descripcion='Analisis Clinico 2012',aprobadopor='Resolucion N\xc2\xb02134',carreraid=4,desde='2012-03-18',hasta='2012-12-18')

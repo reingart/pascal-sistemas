@@ -1,0 +1,23 @@
+{{extend 'layout.html'}}
+<h1> <center><u> Listado Inasistencia</u> </center></h1>
+<FORM method="POST"> 
+    <center>
+        FECHA:<INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date().strftime('%d/%m/%Y')}}> 
+        <br><br>
+    <TABLE id="table">
+        <tr>
+            <td id= "head"><B><center>Alumno</center></B></td>
+            <td  id= "head"><B><center>Cantidad de Faltas</center></B></td>      
+        </tr>
+		 {{for fila in filas:}}
+        {{alumno=fila.alumnos}}
+        <tr>
+            <td id= "head">{{=alumno.nombre}} </td>
+            <td id= "head";"text-align: right">{{=fila.suma}}</td>
+            
+		{{pass}}
+	</TABLE>        
+	<br>
+<input type=button value="VOLVER" >
+</FORM>
+<br>

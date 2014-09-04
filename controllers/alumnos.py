@@ -59,7 +59,7 @@ def libreta():
     periodos= db(db.periodos).select(db.periodos.periodoid,
                                      db.periodos.descripcion)
     cursadas=[]
-    n = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
+    n = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registr del alumno
     alumno= db(n).select().first() #traemos el alumno para notificarlo en la vista
     n= db.inscripcionescomision.alumnoid== alumno.alumnoid
     n&= db.inscripcionescomision.baja == None
@@ -74,7 +74,7 @@ def libreta():
 @auth.requires_login()
 def index():
     fecha= request.now.date() #guardo la fecha actual
-    fecha_actual= fecha.strftime("%d/%m/%Y") #cambio el formato de fecha a latino-americano
+    fecha_actual= fecha.strftime("%d/%m/%Y") #cambio el formato de fecha a latino-american
     usuario=auth.user_id
     alumnos= db(db.alumnos).select(db.alumnos.user_id,
                                    db.alumnos.alumnoid)

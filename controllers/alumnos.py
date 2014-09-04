@@ -106,10 +106,9 @@ def index():
     q &= db.comisiones.materiaid== db.materias.materiaid
     materias=db(q).select(db.materias.id, db.materias.nombre)
     mat=db(q).select(db.materias.id)
-    
     o = db.alumnos.user_id == auth.user_id    #guardo en la consulta el registro del alumno
-    o &= db.faltas.alumnoid == db.alumnos.alumnoid
-    o &= db.faltas.comisionid == db.comisiones.comisionid
+    #o &= db.faltas.alumnoid == db.alumnos.alumnoid
+    #o &= db.faltas.comisionid == db.comisiones.comisionid
     o &= db.materias.materiaid== db.comisiones.materiaid
     o &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
     o &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
@@ -120,11 +119,30 @@ def index():
                      db.comisiones.materiaid,
                      db.condiciones.detalle,
                      db.alumnos.nombre,
-                     db.faltas.cantidad.sum().with_alias("suma"),
-                     groupby=(db.alumnos.nombre, db.materias.id, db.materias.nombre,                     db.comisiones.nombre,
-                     db.comisiones.materiaid,
-                     db.condiciones.detalle,))
-    return dict (fecha_actual=fecha_actual,
+                    )
+    c = db.alumnos.user_id == auth.user_id    #guardo en la consulta el registro del alumno
+    c &= db.faltas.alumnoid == db.alumnos.alumnoid
+    c &= db.faltas.comisionid == db.comisiones.comisionid
+    c &= db.materias.materiaid== db.comisiones.materiaid
+    c &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
+    c &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
+    c &= db.inscripcionescomision.condicion== db.condiciones.condicionid
+    faltas=db(c).select(db.materias.id,
+                        db.materias.nombre,
+                        db.comisiones.nombre,
+                        db.comisiones.materiaid,
+                        db.condiciones.detalle,
+                        db.alumnos.nombre,
+                        db.faltas.cantidad.sum().with_alias("suma"),
+                        groupby=(db.alumnos.nombre,
+                                 db.materias.id,
+                                 db.materias.nombre,
+                                 db.comisiones.nombre,
+                                 db.comisiones.materiaid,
+                                 db.condiciones.detalle,))
+    faltas_map = dict([(f.comisiones.materiaid, f.suma) for f in faltas])
+    return dict (faltas_map=faltas_map,
+                 fecha_actual=fecha_actual,
                  visible= visible,
                  user=user,
                  usuario=usuario,

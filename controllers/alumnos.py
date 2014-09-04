@@ -1,5 +1,6 @@
 # coding: utf8
 # try something like
+response.title = "Sitio Alumnos"
 
 #requiere que haya un usuario logueado
 @auth.requires_login()
@@ -73,6 +74,7 @@ def libreta():
 
 @auth.requires_login()
 def index():
+    response.subtitle= "Menu de alumnos"
     fecha= request.now.date() #guardo la fecha actual
     fecha_actual= fecha.strftime("%d/%m/%Y") #cambio el formato de fecha a latino-americano
     usuario=auth.user_id

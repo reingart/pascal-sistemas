@@ -93,24 +93,26 @@ def busqueda():
 
 #@auth.requires_login()
 def index():
-    #response.title="Docentes"
-    #response.subtitle="Menu Principal"
-    if request.vars:
+    response.title="Docentes"
+    response.subtitle="Menú Principal"
+    
         # si me pasan en la URL el docente, lo filtro
-        q=db.personal.personalid == request.vars['personalid']
+    usuario=auth.user.id
+    q = db.personal.user_id == usuario
+    docentes=db(q).select(db.personal.nombre,db.personal.personalid)
+    q= db.personal.user_id == usuario
+    q &= db.comisiones.personalid == db.personal.personalid
+    materias=db(q).select(db.comisiones.nombre)
 
-        redirect(URL(f=ficha, vars={'personalid': docente.personal.personalid}))
+        #redirect(URL(f=ficha, vars={'personalid': docente.personal.personalid}))
+    
 
-
-    else:
-        # sino, busco todos los docentes
-        q=db.personal.personalid>0
-        
-    return{}
+    return {"docentes":docentes,"materias":materias}
 
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 # requiere que el logueado pertenezca al rol de personal  y/o doncente
+
 
 def alumnoXcomision():
     comisionid=request.args[0]

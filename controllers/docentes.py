@@ -91,7 +91,8 @@ def busqueda():
     #response.view = "generic.html"  # HACER una vista de verdad
     return dict (form = form)
 
-#@auth.requires_login()
+@auth.requires_login()
+@auth.requires_membership(role='Personal')
 def index():
     response.title="Docentes"
     response.subtitle="Menú Principal"

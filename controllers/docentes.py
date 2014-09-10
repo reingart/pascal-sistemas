@@ -762,4 +762,6 @@ def listado_inasistencias():
 def acta_volante():
     response.title="Docentes"
     response.subtitle="Acta volante"
+    
+    comisionid  = int(request.args[0])
     return{}

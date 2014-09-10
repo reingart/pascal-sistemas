@@ -5,7 +5,6 @@
 </Center>
 <form method="POST">
 <br>
-  
 <div id="div_centrado">
 <table id="tabla">
 <tbody>
@@ -18,34 +17,35 @@
         <td id="head"> ESTADO </td>
        <td id="head"> INSCRIBIR </td>
     </tr>
-    #cualquier cosa borrar esto
-    {{for c in comision:}}
+    {{for f in final:}}
         <td id= "td">
-            {{=c.materias.materiaid}}
+            {{=f.examenes.examenid}}
         </td>
         <td id= "td">
-            {{=c.materias.nombre}}
+            {{=f.materias.nombre}}
         </td>
         <td id= "td">
-            {{=c.personal.nombre}}
+            {{=f.personal.nombre}}
         </td>
     <td id= "td">
-    <font color="yellow">
+            {{=f.examenes.fecha.strftime("%d/%m/%Y")}}
  <td id= "td">
- <font color="red">
+            {{=f.examenes.hora}}
     <td id= "td">
     <font color="yellow">
-        {{='Ya inscripto, pendiente de revision' if (c.comisiones.comisionid in inscripciones) else ''}}
+        {{=' No Inscripto a comision' if not  (f.examenes.materiaid in cursadas) else ''}}
     </font>
-
-    <font color="red">
-        {{='Comision Aprobado' if (c.comisiones.materiaid in aprobada) else ''}}  
+    <font color="green">
+        {{='Materia Aprobada' if (f.examenes.materiaid in aprobadas) else ''}}
+    </font>
+    <font color="black">
+        {{='Ya Inscripto Al Final' if (f.examenes.materiaid in inscripto) else ''}}
     </font>
      </td>
     </font>
 
     </td>
-        <td id= "td"><input type="radio" name="{{="comision_%s" % c.comisiones.comisionid}}" {{='enabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} ></td>
+        <td id= "td"><input type="checkbox" name="{{="final_%s" % f.examenes.examenid}}" {{='disabled' if (f.examenes.materiaid in inscripto) else 'enabled'}} or {{='disabled' if (f.examenes.materiaid in aprobadas) else ''}} or {{='enabled' if (f.examenes.materiaid in cursadas) else 'disabled'}}></td>
     </tr>
     {{pass}}
     {{pass}}

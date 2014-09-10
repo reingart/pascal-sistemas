@@ -1,85 +1,37 @@
 {{extend 'layout.html'}}
-
-
-
-
-            
-
-<h2> Fecha: 14/05/2014</h2>
-
     <h1><u>Menu Alumnos</u></h1>
-
 <ul>
     <!-- si el usuario ya es alumno no muestro la preescripcion. de lo contrario si -->
     {{if usuario not in user:}}
     <li> <a href="ingreso.html" title="Por favor, complete el formulario de Preinscripción. De lo contrario no podra utilizar las siguientes opciones del Campus Web-Alumnos.">Preinscripcion</a></li>
-
      {{pass}}
 	{{if usuario in user:}}
     <li> <a href="ficha.html" title="Perfil del alumno con sus datos personales correspondientes.">Perfil de Alumno</a></li>
-	
-       
     <li> <a href="inscripcioncarrera.html" title="Permite inscribir a una Carrera, lo cual permitira filtrar comisiones en una instancia de inscrip. a comisión. ">Inscripción a Carrera</a></li>
-    
-    
     <li> <a href="libreta.html" title="Suba las calificaciones de finales obtenidas hasta el momento">Completar libreta</a></li>
-    
-    
     <li> <a href="inscripciones.html" title="Permite inscribir a comisión/division de un curso con registro de modalidad de cursada.">Inscripción a Comisiónes</a></li>
-       
-   
     <li> <a href="horarios_comision.html" title="Permite ver el horario completo de la carrera cursada por el alumno.">Horarios de Comisiones</a></li>
-	
-    
     <li> <a href="inasistencias.html" title="Permite ver el conteo de inasistencias del alumno en la cursada de la carrera.">Inasistencias</a></li>
-    
-    
     <li> <a href="examenes.html" title="Lista las notas de los examenes finales rendidos.">Finales</a></li>
-    
-    
     <li> <a href="parciales.html" title ="Lista las notas de los parciales cuatrimestrales rendidos.">Parciales</a></li>
-    
-    
     <li> <a href="final.html" title="Permite inscribir a exámenen final con informacion detallada de la mesa de examen.">Inscripción a Exámenes</a></li>
     {{pass}}
-    
-    
-   
-
 </ul>
 
 <br>
 </br>
-
-
 <TABLE id="tabla"> 
-<TH align="center" id="tabla" COLSPAN=4> Informacion de alumno</TH>
+<TH align="center" id="tabla" COLSPAN=3> Informacion de alumno</TH>
     </tr>
         <td id="tabla">Materia</td>
         <td id="tabla">Cursando</td>
         <td id="tabla">Inasistencias</td>
-        <td id="tabla">Porcentaje de presentismo</tdid></td>
+        </td>
     </tr>
+    {{for f in com:}}
+    {{alumno=f.alumnos}}
     <tr id="tabla">
-        <td id="tabla"></td>><td id="tabla">Regular<td id="tabla">10</td><td id="tabla">%</td>
+        <td id="tabla">{{=f.comisiones.nombre}}<td id="tabla">{{=f.condiciones.detalle}}<td id="tabla"><a href="inasistencias.html" title="Mas detalles."><b><u>{{=f.suma}}<B><u></a></td>
     </tr>
-    <tr id="tabla">
-        <td id="tabla">Algebra<td id="tabla">Regular<td id="tabla">9</td><td id="tabla">%</td>
-    </tr>
-    <tr id="tabla">
-        <td id="tabla">Ingles<td id="tabla">Regular<td id="tabla">10</td><td id="tabla">%</td>
-    </tr>
-    <tr id="tabla">
-        <td id="tabla">Programacion I<td id="tabla">libre<td id="tabla">10</td><td id="tabla">%</td>
-    </tr>
-    <tr id="tabla">
-        <td id="tabla">E.D.I I<td id="tabla">Regular<td id="tabla">10</td><td id="tabla">%</td>
-    </tr>
-    <tr id="tabla">
-        <td id="tabla">Introduccion a los sistemas de informacion<td id="tabla">Libre<td id="tabla">8</td><td id="tabla">%</td>
-    </tr>
-    <tr id="tabla">
-        <td id="tabla">Analisis Matematicos<td id="tabla">Regular<td id="tabla">8</td><td id="tabla">%</td>
-    </tr>
-    
+    {{pass}}
 </table>

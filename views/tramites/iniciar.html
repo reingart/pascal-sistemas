@@ -1,9 +1,8 @@
 {{extend 'layout.html'}}
 <h1>Seleccion De Tramites Del Instituto Superior Blaise Pascal</h1> 
-{{=BEAUTIFY(response._vars)}}
 <html>
-    <p><b> Alumno : Jose Perez 
-    Dni : 37456289 
+    <p><b> Alumno : {{=alumno.nombre}} 
+    Dni : {{=alumno.dni}}
     Carrera : Analisis de Sistemas </b></p> 
     
 <select>

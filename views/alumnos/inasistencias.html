@@ -18,59 +18,24 @@
 	<td id="head"> DESCRIPCIÓN</td>
 	<td id="head"> FECHA </td>
     </tr>
+    {{ f=falta}}
+        {{for falta in f:}}
     <tr>
-	<td id="head"> Ingles</td>
-	<td id="head"> 4</td>
-	<td id="head"> </td>
-        <td id="head"> 12/04/2014 </td>
+	<td id="head">{{ =falta.comisiones.nombre}}</td>
+	<td id="head">{{ =falta.faltas.cantidad}}</td>
+	<td id="head">{{ =falta.inasistencias.descripcion}}</td>
+        <td id="head">{{ =falta.faltas.fecha.strftime("%d/%m/%Y")}}</td>
     </tr>
-    <tr>
-	<td id="head"> Programacion</td>
-	<td id="head"> 2</td>
-	<td id="head"> </td>
-        <td id="head"> 16/05/2014 </td>
-    </tr>
-    <tr>
-	<td id="head"> Introduccion a los sistemas de informacion</td>
-	<td id="head"> 1</td>
-	<td id="head"> </td>
-        <td id="head"> 30/03/2014 </td>
-    </tr>
-    <tr>
-	<td id="head"> E.D.I</td>
-	<td id="head"> 1</td>
-	<td id="head"> </td>
-        <td id="head"> 12/05/2014 </td>
-    </tr>
-    <tr>
-	<td id="head"> Analisis matematico</td>
-	<td id="head"> 2</td>
-	<td id="head"> </td>
-        <td id="head"> 25/05/2014 </td>
-    </tr>
-    <tr>
-	<td id="head"> Algebra</td>
-	<td id="head"> 1</td>
-	<td id="head"> el alumno se encontraba enfermo</td>
-        <td id="head"> 12/04/2014 </td>
-    </tr>
-
-	
-	
-		
-		        
-        
-        
-    		 
+        {{pass}}
     		 <tr>
     		 <td id="td">
              TOTAL
              </td>
     		 <td id="td">
-                 11
+                 {{ =total['suma']}}
              </td>
     </tr>
-    
+
     </tbody></table>
 </div>
     <br>

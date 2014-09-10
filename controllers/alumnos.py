@@ -109,23 +109,29 @@ def index():
     materias=db(q).select(db.materias.id, db.materias.nombre)
     mat=db(q).select(db.materias.id)
     
-    o = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
+    o = db.alumnos.user_id == auth.user_id    #guardo en la consulta el registro del alumno
+    o &= db.faltas.alumnoid == db.alumnos.alumnoid
+    o &= db.faltas.comisionid == db.comisiones.comisionid
     o &= db.materias.materiaid== db.comisiones.materiaid
     o &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
     o &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
     o &= db.inscripcionescomision.condicion== db.condiciones.condicionid
-    com=db(o).select(db.materias.id, db.materias.nombre,
+    com=db(o).select(db.materias.id,
+                     db.materias.nombre,
                      db.comisiones.nombre,
                      db.comisiones.materiaid,
-                     db.condiciones.detalle)
-    total=db.executesql('select faltas.comisionid, SUM(faltas.cantidad) from faltas group by faltas.comisionid')
+                     db.condiciones.detalle,
+                     db.alumnos.nombre,
+                     db.faltas.cantidad.sum().with_alias("suma"),
+                     groupby=(db.alumnos.nombre, db.materias.id, db.materias.nombre,                     db.comisiones.nombre,
+                     db.comisiones.materiaid,
+                     db.condiciones.detalle,))
     return dict (fecha_actual=fecha_actual,
                  visible= visible,
                  user=user,
                  usuario=usuario,
                  materias=materias,
-                 com=com,
-                 total=total)
+                 com=com)
 
 #requiere que haya un usuario logueado
 @auth.requires_login()

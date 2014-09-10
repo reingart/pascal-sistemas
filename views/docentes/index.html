@@ -1,6 +1,6 @@
 {{extend 'layout.html'}} 
 <center>
-    <h2><B><u>MENÚ DOCENTES</u></B></h2>Prof. 
+    <h2><B><u>MENÚ DOCENTES</u></B></h2>Prof. {{for docente in docentes:}}{{=docente.nombre}} {{pass}}
     <B> - Análisis de Sistemas</B> - Tercer Año 
 <BR><BR>
 <FORM method="POST">

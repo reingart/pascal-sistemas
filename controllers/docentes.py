@@ -103,12 +103,12 @@ def index():
     docentes=db(q).select(db.personal.nombre,db.personal.personalid)
     q= db.personal.user_id == usuario
     q &= db.comisiones.personalid == db.personal.personalid
-    materias=db(q).select(db.comisiones.nombre)
+    comisiones=db(q).select(db.comisiones.comisionid,db.comisiones.nombre)
 
         #redirect(URL(f=ficha, vars={'personalid': docente.personal.personalid}))
     
 
-    return {"docentes":docentes,"materias":materias}
+    return {"docentes":docentes,"comisiones":comisiones}
 
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
@@ -722,7 +722,7 @@ def asistencias():
             tipos_map[inaid]= inasistencia.descripcion
             cants_map[inaid]= inasistencia.cantidad
 
-    comisionid  = 76
+    comisionid  = int(request.args[0])
     q=db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
     q&=db.comisiones.comisionid==db.inscripcionescomision.comisionid
     q&=db.comisiones.comisionid==comisionid

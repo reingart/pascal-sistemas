@@ -11,10 +11,10 @@
             <td><B><center>Parciales</center></B></td>
             <td><B><center>Acta Volante</center></B></td>
         </tr>
-    {{for materia in materias:}}
+    {{for comision in comisiones:}}
                     <tr id= "head">
-                        <td id= "head"><B><center>{{=materia.nombre}}</center></B></td>
-            <td><a href="../docentes/index.html"><input type=button value="Cargar"></a></td>
+                        <td id= "head"><B><center>{{=comision.nombre}}</center></B></td>
+                        <td><a href="{{=URL(f="asistencias", args=comision.comisionid)}}"><input type=button value="Cargar"></a></td>
             <td><a href="../docentes/index.html"><input type=button value="Cargar"></a></td>
             <td><a href="../docentes/index.html"><input type=button value="Cargar"></a></td>
         </tr>

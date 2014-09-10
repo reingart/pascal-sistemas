@@ -24,10 +24,10 @@ jQuery(document).ready(function(){
   <body>
 	<div class="header">
         <div class="logo" style="float: left;">
-            <a href="{{=URL(r=request,c='default',f='index')}}"><img src="{{=URL(request.application,'static','logo_pascal.png')}}" border="0"/></a>
+            <a href="{{=URL(r=request,c='default',f='sdfsd')}}"><img src="{{=URL(request.application,'static','logo_pascal.png')}}" border="0"/></a>
         </div>
         <div class="membrete" >
-            <h1><a href="{{=URL(r=request,c='default',f='index')}}">Instituto Superior Tecnológico Blaise Pascal</a></h1>            
+            <h1><a href="{{=URL(r=request,c='default',f='dfs')}}">Instituto Superior Tecnológico Blaise Pascal</a></h1>            
             <div class="statusbar">
                 {{ if 'auth' in globals():}}
                 [ {{if not auth.user:}}
@@ -43,8 +43,8 @@ jQuery(document).ready(function(){
                 {{pass}}
                 {{=T("Language")}}&nbsp;<a href="?lang=es">Español</a>&nbsp;<a href="?lang=en">English</a>
             </div>
-            <h2>{{=request.title or request.controller}}</h2>
-            <h3>{{=request.subtitle or request.function}}</h3>
+            <h2>{{=response.title or request.controller}}</h2>
+            <h3>{{=response.subtitle or request.function}}</h3>
       		</div>
       </div>
       <div class="flash">{{=response.flash or ''}}</div>

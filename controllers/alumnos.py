@@ -1,5 +1,6 @@
 # coding: utf8
 # try something like
+response.title = "Sitio Alumnos"
 
 #requiere que haya un usuario logueado
 @auth.requires_login()
@@ -58,12 +59,24 @@ def libreta():
         redirect (URL (f="libreta"))
     periodos= db(db.periodos).select(db.periodos.periodoid,
                                      db.periodos.descripcion)
+    cursadas=[]
+    n = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registr del alumno
+    alumno= db(n).select().first() #traemos el alumno para notificarlo en la vista
+    n= db.inscripcionescomision.alumnoid== alumno.alumnoid
+    n&= db.inscripcionescomision.baja == None
+    n&= db.inscripcionescomision.comisionid== db.comisiones.comisionid
+    inscripciones= db(n).select(db.comisiones.materiaid,
+                                db.inscripcionescomision.condicion,
+                                db.inscripcionescomision.alta, )
+    for inscripcion in inscripciones:
+        cursadas.append(inscripcion.comisiones.materiaid)
     return{"materias":materias, "map_notas":map_notas}
 
 @auth.requires_login()
 def index():
+    response.subtitle= "Menu de alumnos"
     fecha= request.now.date() #guardo la fecha actual
-    fecha_actual= fecha.strftime("%d/%m/%Y") #cambio el formato de fecha a latino-americano
+    fecha_actual= fecha.strftime("%d/%m/%Y") #cambio el formato de fecha a latino-american
     usuario=auth.user_id
     alumnos= db(db.alumnos).select(db.alumnos.user_id,
                                    db.alumnos.alumnoid)
@@ -95,18 +108,43 @@ def index():
     q &= db.comisiones.materiaid== db.materias.materiaid
     materias=db(q).select(db.materias.id, db.materias.nombre)
     mat=db(q).select(db.materias.id)
-    
-    o = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
+    o = db.alumnos.user_id == auth.user_id    #guardo en la consulta el registro del alumno
+    #o &= db.faltas.alumnoid == db.alumnos.alumnoid
+    #o &= db.faltas.comisionid == db.comisiones.comisionid
     o &= db.materias.materiaid== db.comisiones.materiaid
     o &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
     o &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
     o &= db.inscripcionescomision.condicion== db.condiciones.condicionid
-    com=db(o).select(db.materias.id, db.materias.nombre,
+    com=db(o).select(db.materias.id,
+                     db.materias.nombre,
                      db.comisiones.nombre,
                      db.comisiones.materiaid,
-                     db.condiciones.detalle)
-    
-    return dict (fecha_actual=fecha_actual,
+                     db.condiciones.detalle,
+                     db.alumnos.nombre,
+                    )
+    c = db.alumnos.user_id == auth.user_id    #guardo en la consulta el registro del alumno
+    c &= db.faltas.alumnoid == db.alumnos.alumnoid
+    c &= db.faltas.comisionid == db.comisiones.comisionid
+    c &= db.materias.materiaid== db.comisiones.materiaid
+    c &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
+    c &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
+    c &= db.inscripcionescomision.condicion== db.condiciones.condicionid
+    faltas=db(c).select(db.materias.id,
+                        db.materias.nombre,
+                        db.comisiones.nombre,
+                        db.comisiones.materiaid,
+                        db.condiciones.detalle,
+                        db.alumnos.nombre,
+                        db.faltas.cantidad.sum().with_alias("suma"),
+                        groupby=(db.alumnos.nombre,
+                                 db.materias.id,
+                                 db.materias.nombre,
+                                 db.comisiones.nombre,
+                                 db.comisiones.materiaid,
+                                 db.condiciones.detalle,))
+    faltas_map = dict([(f.comisiones.materiaid, f.suma) for f in faltas])
+    return dict (faltas_map=faltas_map,
+                 fecha_actual=fecha_actual,
                  visible= visible,
                  user=user,
                  usuario=usuario,

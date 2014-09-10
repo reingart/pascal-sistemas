@@ -1,7 +1,7 @@
 {{extend 'layout.html'}} 
 <center>
-<h2><B><u>MENÚ DOCENTES</u></B></h2>Prof. Mariano Reingart
-<B> - Análisis de Sistemas</B> - Tercer Año
+    <h2><B><u>MENÚ DOCENTES</u></B></h2>Prof. {{for docente in docentes:}}{{=docente.nombre}} {{pass}}
+    <B> - Análisis de Sistemas</B> - Tercer Año 
 <BR><BR>
 <FORM method="POST">
     <TABLE id= "tabla">
@@ -11,26 +11,15 @@
             <td><B><center>Parciales</center></B></td>
             <td><B><center>Acta Volante</center></B></td>
         </tr>
-        <tr id= "head">
-            <td id= "head"><B><center>Sistemas Operativos</center></B></td>
-            <td><a href="../docentes/index.html"><input type=button value="Cargar"></a></td>
-            <td><a href="../docentes/index.html"><input type=button value="Cargar"></a></td>
+    {{for comision in comisiones:}}
+                    <tr id= "head">
+                        <td id= "head"><B><center>{{=comision.nombre}}</center></B></td>
+                        <td><a href="{{=URL(f="asistencias", args=comision.comisionid)}}"><input type=button value="Cargar"></a></td>
+            <td><a href="{{=URL(f="examenes_parciales", args=comision.comisionid)}}"><input type=button value="Cargar"></a></td>
             <td><a href="../docentes/index.html"><input type=button value="Cargar"></a></td>
         </tr>
-        <tr id= "head">
-            <td id= "head"><B><center>Practica Profesional</center></B></td>
-            <td><a href="http://127.0.0.1:8000/practicarepo/docentes/asistencia_seleccion.html">
-                <input type=button value="Cargar" >
-                </a>
-            </td>
-            <td><a href="http://127.0.0.1:8000/practicarepo/docentes/examenes_parciales.html">
-                <input type=button value="Cargar"></a>
-            </td>
-            <td><a href="http://127.0.0.1:8000/practicarepo/docentes/acta_volante.html">
-                <input type=button value="Cargar" ></a>
-            </td>
-        </tr>
-    </TABLE>
+{{pass}}
+</TABLE>
 </FORM>
 <br>
 </center>

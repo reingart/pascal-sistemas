@@ -23,7 +23,7 @@ def ingreso():
 def examenes_parciales():
 	response.title="Docentes"
 	response.subtitle="Examenes parciales"
-	COMISIONID=76 #PRACTICA pROF
+	COMISIONID= int(request.args[0])
 	MATERIAID=179 #PRACTICA PROFESIONAL
 	q = db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
 	q &= db.comisiones.comisionid==COMISIONID

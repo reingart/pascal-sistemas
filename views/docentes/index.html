@@ -15,7 +15,7 @@
                     <tr id= "head">
                         <td id= "head"><B><center>{{=comision.nombre}}</center></B></td>
                         <td><a href="{{=URL(f="asistencias", args=comision.comisionid)}}"><input type=button value="Cargar"></a></td>
-            <td><a href="../docentes/index.html"><input type=button value="Cargar"></a></td>
+            <td><a href="{{=URL(f="examenes_parciales", args=comision.comisionid)}}"><input type=button value="Cargar"></a></td>
             <td><a href="../docentes/index.html"><input type=button value="Cargar"></a></td>
         </tr>
 {{pass}}

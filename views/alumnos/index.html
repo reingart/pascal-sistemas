@@ -1,4 +1,9 @@
 {{extend 'layout.html'}}
+
+{{import datetime}}
+
+<h2> Fecha: {{=datetime.date.today()}}</h2>
+
     <h1><u>Menu Alumnos</u></h1>
 <ul>
     <!-- si el usuario ya es alumno no muestro la preescripcion. de lo contrario si -->

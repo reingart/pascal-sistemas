@@ -40,7 +40,7 @@ function web2py_ajax_init() {
   jQuery('input.double').keyup(function(){this.value=this.value.reverse().replace(/[^0-9\-\.]|[\-](?=.)|[\.](?=[0-9]*[\.])/g,'').reverse();});
   jQuery("input[type='checkbox'].delete").each(function(){jQuery(this).click(function() { if(this.checked) if(!confirm("{{=T('Sure you want to delete this object?')}}")) this.checked=false; });});
   try {jQuery("input.date").focus( function() {Calendar.setup({
-     inputField:this.id, ifFormat:"{{=T('%Y-%m-%d')}}", showsTime:false
+     inputField:this.id, ifFormat:"{{=T('%d-%m-%y')}}", showsTime:false
   }); }); } catch(e) {};
   try { jQuery("input.datetime").focus( function() {Calendar.setup({
      inputField:this.id, ifFormat:"{{=T('%Y-%m-%d %H:%M:%S')}}", showsTime: true,timeFormat: "24"

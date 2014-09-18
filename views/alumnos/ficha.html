@@ -1,8 +1,8 @@
 {{extend 'layout.html'}}
 
-<h1> <center><u> PERFIL</u> </center></h1>
 
-<center>{{=IMG(_src=URL(c='default',f='download',args=alumno.foto))}}</center>
+
+<center>{{=IMG(_src=URL(c='default',f='download',args=alumno.foto))}}<center>
 <h2><u> Alumno/a:</u> {{=alumno.nombre}}</h2> 
 <h2><u> Fecha de Nacimiento:</u> {{=alumno.fechanacimiento.strftime("%d/%m/%Y")}} </h2> 
 <h2><u> Estado Civil:</u> {{=alumno.estadocivil}} </h2>

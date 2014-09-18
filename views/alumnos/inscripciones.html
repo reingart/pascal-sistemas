@@ -1,6 +1,6 @@
 {{extend 'layout.html'}}
 <Center>
-	<h1>Inscripcion a cursada</h1>
+	
 </Center>
 <form method="POST">
 <br>
@@ -27,18 +27,33 @@ Tenga en cuenta que solo podra rendir 2 libres en cada año
     {{=c.personal.nombre}}
 </td>
     <td id= "td">
+<<<<<<< local
+    <font color="yellow"> 
+        <input type="radio" name="{{="comision_%s" % c.comisiones.comisionid}}" {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} > 
+       
+ <td id= "td"><input type="radio" name="{{="comision_%s" % c.comisiones.comisionid}}" {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} > 
+ <font color="red">
+              
+     <td id= "td">
+    <font color="yellow"> 
+=======
         <font color="yellow">
         <input type="checkbox" name="{{="comision_%s" % c.comisiones.comisionid}}" {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} >
  <td id= "td"><input type="checkbox" name="{{="comisionl_%s" % c.comisiones.comisionid}}" {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} >
     <td id= "td">
     <font color="yellow">
+>>>>>>> other
         {{='Ya inscripto, pendiente de revision' if (c.comisiones.comisionid in inscripciones) else ''}}
     </font>
     <font color="red">
         {{='Comision Aprobado' if (c.comisiones.materiaid in aprobada) else ''}}
     </font>
+<<<<<<< local
+    
+=======
      </td>
     </font>
+>>>>>>> other
     </td>
     </tr>
     {{pass}}

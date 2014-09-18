@@ -1,12 +1,13 @@
 # coding: utf8
 # try something like
-response.title = "Sitio Alumnos"
+response.title = "Campus Web Pro"
 
 #requiere que haya un usuario logueado
 @auth.requires_login()
 #requiere que haya un usuario logeado e integre el grupo alumnos
 @auth.requires_membership(role='Alumnos')
-def libreta():
+def libreta(): 
+    response.subtitle= "Completar libreta del alumno"
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
     alumno= db(q).select().first() #traemos el alumno para notificarlo en la vista
     q &= db.materias.materiaid== db.asignaturas.materiaid
@@ -158,8 +159,10 @@ def index():
 @auth.requires_membership(role='Alumnos')
 
 def ficha():
+    response.subtitle= "Ficha de Alumno"
     # muestra un perfil personalizado del alumno.
-    q = db.alumnos.user_id== auth.user_id   # obtengo el registro del alumno ya registrado como usuario 
+    q = db.alumnos.user_id== auth.user_id  
+     # obtengo el registro del alumno ya registrado como usuario 
     alumno= db(q).select( db.alumnos.nombre,
                          db.alumnos.fechanacimiento,
                          db.alumnos.estadocivil,
@@ -212,6 +215,7 @@ def ingreso():
  #requiere que haya un usuario logeado
 @auth.requires_login()
 def inscripcioncarrera():
+    response.subtitle= "Inscripcion Carrera"
     q = db.alumnos.user_id== auth.user_id
     alumno= db(q).select().first()
     if request.vars.grabar=="Guardar":
@@ -519,7 +523,8 @@ def parciales():
 #requiere que haya un usuario logeado e integre el grupo alumnos
 #@auth.requires_membership(role='Alumnos')
 def inscripciones():
-     #formulario de inscrip. a comisiones
+    response.subtitle= "Inscripcion a Comisiónes"
+    #formulario de inscrip. a comisiones
     q = db.alumnos.user_id== auth.user_id
     #busca y trae todos los datos del alumno logueado
     alumno= db(q).select().first()

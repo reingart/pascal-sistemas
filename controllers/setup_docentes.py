@@ -30,7 +30,18 @@ def cargar_usuarios():
     response.view="generic.html"
     # Devuelvo una consulta del contenido de la tabla
     return {'filas': db(db.auth_user.id>0).select()}  
-  
+
+def cargar_grupos():
+    # Antes de insertar borramos los registros de la tabla
+    db(db.auth_group.id>0).delete()  
+    db.auth_group.insert(id=1,role='Alumnos',description='Grupo de alumnos ')
+    db.auth_group.insert(id=2,role='Personal',description='Grupo del personal de la institucion ')
+    db.auth_group.insert(id=3,role='Docentes',description='Grupo de docentes de la institucion ')    
+    
+    response.view="generic.html"
+    # Devuelvo una consulta del contenido de la tabla
+    return {'filas': db(db.auth_group.id>0).select()}  
+
 def cargar_docentes():
     
     # Antes de insertar borramos los registros de la tabla

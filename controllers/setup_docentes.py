@@ -273,7 +273,24 @@ def cargar_carreras():
     
     # Devuelvo una consulta del contenido de la tabla
     return {'filas': db(db.carreras.id>0).select()}
- 
+
+def cargar_ciclos():
+    
+    # Antes de insertar borramos los registros de la tabla
+    
+    db(db.ciclos.id>0).delete()  
+
+    # Insertamos los ciclos correspondientes
+    
+    response.view="generic.html"
+    db.ciclos.insert(cicloid=1,nombre='Ciclo Lectivo 2010',anio=2010,detalle=None,desde='2010-01-01',hasta='2010-12-31')
+    db.ciclos.insert(cicloid=2,nombre='Ciclo Lectivo 2011',anio=2011,detalle=None,desde='2011-01-01',hasta='2011-12-31')
+    db.ciclos.insert(cicloid=3,nombre='Ciclo Lectivo 2012',anio=2012,detalle=None,desde='2012-01-01',hasta='2012-12-31')
+    db.ciclos.insert(cicloid=4,nombre='Ciclo Lectivo 2013',anio=2013,detalle=None,desde='2013-01-01',hasta='2013-12-31')
+    db.ciclos.insert(cicloid=5,nombre='Ciclo Lectivo 2014',anio=2014,detalle=None,desde='2014-01-01',hasta='2014-12-31')
+    # Devuelvo una consulta del contenido de la tabla
+    return {'filas': db(db.ciclos.id>0).select()}
+    
 def cargar_horarios():
     
     # Antes de insertar borramos los registros de la tabla

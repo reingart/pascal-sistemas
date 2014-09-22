@@ -42,6 +42,31 @@ def cargar_grupos():
     # Devuelvo una consulta del contenido de la tabla
     return {'filas': db(db.auth_group.id>0).select()}  
 
+def cargar_membrecias():
+    # Antes de insertar borramos los registros de la tabla
+    db(db.auth_membership.id>0).delete()  
+    db.auth_membership.insert(id=1,user_id=1,group_id=3)
+    db.auth_membership.insert(id=2,user_id=2,group_id=3)
+    db.auth_membership.insert(id=3,user_id=3,group_id=3)
+    db.auth_membership.insert(id=4,user_id=4,group_id=3)
+    db.auth_membership.insert(id=5,user_id=5,group_id=3)
+    db.auth_membership.insert(id=6,user_id=6,group_id=3)
+    db.auth_membership.insert(id=7,user_id=7,group_id=3)
+    db.auth_membership.insert(id=8,user_id=8,group_id=3)
+    db.auth_membership.insert(id=50,user_id=50,group_id=1)
+    db.auth_membership.insert(id=51,user_id=51,group_id=1)
+    db.auth_membership.insert(id=52,user_id=52,group_id=1)
+    db.auth_membership.insert(id=53,user_id=53,group_id=1)
+    db.auth_membership.insert(id=54,user_id=54,group_id=1)
+    db.auth_membership.insert(id=55,user_id=55,group_id=1)
+    db.auth_membership.insert(id=56,user_id=56,group_id=1)
+    db.auth_membership.insert(id=57,user_id=57,group_id=1)
+    db.auth_membership.insert(id=58,user_id=58,group_id=1)
+    db.auth_membership.insert(id=59,user_id=59,group_id=1)
+    db.auth_membership.insert(id=60,user_id=60,group_id=1)
+    response.view="generic.html"
+    # Devuelvo una consulta del contenido de la tabla
+    return {'filas': db(db.auth_membership.id>0).select()}  
 def cargar_docentes():
     
     # Antes de insertar borramos los registros de la tabla

@@ -137,17 +137,17 @@ def cargar_alumnos():
     # Insertamos los nombres de los alumnos
     
     #TERCER AÑO
-    db.alumnos.insert(alumnoid=1,nombre='Irusta Agustin', sexo='Masculino', user_id=1)
-    db.alumnos.insert(alumnoid=2,nombre='Luna Diego', sexo='Masculino', user_id=2)
-    db.alumnos.insert(alumnoid=3,nombre='Llanos Romina', sexo='Femenino', user_id=3)
-    db.alumnos.insert(alumnoid=4,nombre='Mendoza Debora', sexo='Femenino', user_id=4)
-    db.alumnos.insert(alumnoid=5,nombre='More Franco', sexo='Masculino', user_id=5)    
-    db.alumnos.insert(alumnoid=6,nombre='Moreyra Diego', sexo='Masculino', user_id=6)    
-    db.alumnos.insert(alumnoid=7,nombre='Olmos Diego', sexo='Masculino', user_id=7)
-    db.alumnos.insert(alumnoid=8,nombre='Retamal Sergio', sexo='Masculino', user_id=8)
-    db.alumnos.insert(alumnoid=9,nombre='Villalba Hugo', sexo='Masculino', user_id=9)
-    db.alumnos.insert(alumnoid=10,nombre='Schiavone Mauro', sexo='Masculino', user_id=10)
-    db.alumnos.insert(alumnoid=11,nombre='Cosentino Nahuel', sexo='Masculino', user_id=11)
+    db.alumnos.insert(alumnoid=1,nombre='Irusta Agustin', sexo='Masculino', user_id=50)
+    db.alumnos.insert(alumnoid=2,nombre='Luna Diego', sexo='Masculino', user_id=51)
+    db.alumnos.insert(alumnoid=3,nombre='Llanos Romina', sexo='Femenino', user_id=52)
+    db.alumnos.insert(alumnoid=4,nombre='Mendoza Debora', sexo='Femenino', user_id=53)
+    db.alumnos.insert(alumnoid=5,nombre='More Franco', sexo='Masculino', user_id=54)    
+    db.alumnos.insert(alumnoid=6,nombre='Moreyra Diego', sexo='Masculino', user_id=55)    
+    db.alumnos.insert(alumnoid=7,nombre='Olmos Diego', sexo='Masculino', user_id=56)
+    db.alumnos.insert(alumnoid=8,nombre='Retamal Sergio', sexo='Masculino', user_id=57)
+    db.alumnos.insert(alumnoid=9,nombre='Villalba Hugo', sexo='Masculino', user_id=58)
+    db.alumnos.insert(alumnoid=10,nombre='Schiavone Mauro', sexo='Masculino', user_id=59)
+    db.alumnos.insert(alumnoid=11,nombre='Cosentino Nahuel', sexo='Masculino', user_id=60)
     #SEGUNDO AÑO
     db.alumnos.insert(alumnoid=12,nombre='Blanco Juan Pablo', sexo='Masculino')
     db.alumnos.insert(alumnoid=13,nombre='Hernando Patricio', sexo='Masculino')

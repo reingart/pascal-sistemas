@@ -23,7 +23,7 @@ def ingreso():
 def examenes_parciales():
 	response.title="Docentes"
 	response.subtitle="Examenes parciales"
-	COMISIONID=76 #PRACTICA pROF
+	COMISIONID= int(request.args[0])
 	MATERIAID=179 #PRACTICA PROFESIONAL
 	q = db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
 	q &= db.comisiones.comisionid==COMISIONID
@@ -91,26 +91,29 @@ def busqueda():
     #response.view = "generic.html"  # HACER una vista de verdad
     return dict (form = form)
 
-#@auth.requires_login()
+@auth.requires_login()
+@auth.requires_membership(role='Personal')
 def index():
-    #response.title="Docentes"
-    #response.subtitle="Menu Principal"
-    if request.vars:
+    response.title="Docentes"
+    response.subtitle="Menú Principal"
+    
         # si me pasan en la URL el docente, lo filtro
-        q=db.personal.personalid == request.vars['personalid']
+    usuario=auth.user.id
+    q = db.personal.user_id == usuario
+    docentes=db(q).select(db.personal.nombre,db.personal.personalid)
+    q= db.personal.user_id == usuario
+    q &= db.comisiones.personalid == db.personal.personalid
+    comisiones=db(q).select(db.comisiones.comisionid,db.comisiones.nombre)
 
-        redirect(URL(f=ficha, vars={'personalid': docente.personal.personalid}))
+        #redirect(URL(f=ficha, vars={'personalid': docente.personal.personalid}))
+    
 
-
-    else:
-        # sino, busco todos los docentes
-        q=db.personal.personalid>0
-        
-    return{}
+    return {"docentes":docentes,"comisiones":comisiones}
 
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 # requiere que el logueado pertenezca al rol de personal  y/o doncente
+
 
 def alumnoXcomision():
     comisionid=request.args[0]
@@ -703,39 +706,26 @@ def muestrafinal():
 def asistencias():
     from datetime import datetime
     
-   
     response.title="Docentes"
-    
     response.subtitle="Inasistencia"
     
     tipos_map={}  
-    
     cants_map={}
     
     q=db.inasistencias.inasistenciaid>0
    
     for inasistencia in db(q).select(db.inasistencias.ALL):
-    
         inaid = inasistencia.inasistenciaid
-        
         if inasistencia.cantidad == 0:
-            
             id_presente = inaid
-            
         else:
-            
             tipos_map[inaid]= inasistencia.descripcion
-            
             cants_map[inaid]= inasistencia.cantidad
 
-    comisionid  = 213
-    
+    comisionid  = int(request.args[0])
     q=db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
-    
     q&=db.comisiones.comisionid==db.inscripcionescomision.comisionid
-    
     q&=db.comisiones.comisionid==comisionid
-    
     filas=db(q).select()
 
     if request.vars.fecha:
@@ -745,7 +735,6 @@ def asistencias():
     
     if request.vars.confirmar:  #agrego esto para que entre al for solo si el usuario presiono "confirmar" y me muestre todos los campos
         for fila in filas:
-            
             valor=request.vars.get("check_%s" % fila.alumnos.alumnoid)
             if fecha:
                 if valor == "on":
@@ -762,7 +751,7 @@ def listado_inasistencias():
     response.title="Docentes"
     response.subtitle= "Lista de Inasistencia"
     q=db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
-    q&=db.inscripcionescomision.comisionid==213
+    q&=db.inscripcionescomision.comisionid==76
     q&=db.faltas.alumnoid==db.alumnos.alumnoid
     filas=db(q).select(db.alumnos.nombre,
                        db.faltas.cantidad.sum().with_alias("suma"),
@@ -773,4 +762,6 @@ def listado_inasistencias():
 def acta_volante():
     response.title="Docentes"
     response.subtitle="Acta volante"
+    
+    comisionid  = int(request.args[0])
     return{}

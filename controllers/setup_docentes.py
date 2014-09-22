@@ -1,3 +1,9 @@
+@auth.requires_login()
+def index():
+    response.title="SETUP Docentes"
+    response.subtitle="Menú de Cargas"
+    return {}
+
 def cargar_usuarios():
     
     # Antes de insertar borramos los registros de la tabla
@@ -588,21 +594,7 @@ def cargar_inasistencias():
     # Devuelvo una consulta del contenido de la tabla
     
     return {'filas': db(db.inasistencias.inasistenciaid>0).select()}
-    
-def cargar_asistencias():
-    
-    # Antes de insertar borramos los registros de la tabla    
-    db(db.faltas.faltaid>0).delete()  
-    # Insertamos los cursos correspondientes
-    db.faltas.insert(faltaid=1, alumnoid=1, comisionid=1, fecha=1, cantidad=1, inasistenciaid=1)
-    
-    response.view="generic.html"
-    
-    # Devuelvo una consulta del contenido de la tabla
-    
-    return {'filas': db(db.inasistencias.inasistenciaid>0).select()}
-
-        
+            
 def cargar_horas():
     
    # Antes de insertar borramos los registros de la tabla    

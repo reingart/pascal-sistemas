@@ -19,7 +19,8 @@ def ingreso():
         response.flash='Por favor, complete el formulario'
 
     return dict (form=form, sub=subtitulo)
-
+@auth.requires_login()
+@auth.requires_membership(role='Docentes')
 def examenes_parciales():
 	response.title="Docentes"
 	response.subtitle="Examenes parciales"
@@ -65,7 +66,7 @@ def examenes_parciales():
 	comisiones = db(q).select(db.comisiones.ALL, distinct=True)
 	return{'filas':filas,'a':a, 'comisiones':comisiones}
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def busqueda():
     # armo un formulario para buscar alumno por su dni y nombre
     form = SQLFORM.factory(
@@ -92,7 +93,7 @@ def busqueda():
     return dict (form = form)
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def index():
     response.title="Docentes"
     response.subtitle="Menú Principal"
@@ -111,7 +112,7 @@ def index():
     return {"docentes":docentes,"comisiones":comisiones}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 # requiere que el logueado pertenezca al rol de personal  y/o doncente
 
 
@@ -158,14 +159,14 @@ def alumnoXcomision():
 
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def horarios():
     q=db.horarios.horarioid>0
     horarios=db(q).select()
     return{'horarios':horarios}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def finales():
 
 
@@ -203,7 +204,7 @@ def finales():
     return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def listamaterias():
 
     q = db.examenes.materiaid == db.materias.materiaid
@@ -218,7 +219,7 @@ def listamaterias():
     return dict (examenes= examenes)
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def listaparciales():
     response.title="Docentes"
     response.subtitle="Examenes parciales"
@@ -310,7 +311,7 @@ def listaparciales():
 
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def libres():
 
     q =db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
@@ -347,7 +348,7 @@ def libres():
     return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def elegir():
     ""
     return{}
@@ -388,7 +389,7 @@ def parciales_seleccion():
     return{}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def apuntes():
 
     if request.vars.GRABAR=="GUARDAR":
@@ -399,7 +400,7 @@ def apuntes():
     return{}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def recursos():
     q = db.profesores.user_id == auth.user_id
     q &= db.profesores.personalid== db.personal.personalid
@@ -420,7 +421,7 @@ def recursos():
     return {'usuario':usuario}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def listar():
     reservas = db().select(db.recursos.recurso,db.recursos.profesor,db.recursos.fecha,db.recursos.cantidad)
     return{'reservas':reservas}
@@ -501,13 +502,13 @@ def cancelar():
     return dict (f=form,a=a)
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def unidad():
     ""
     return{}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def ficha():
     # obtengo el id de la url (primer argumento por posicion):
 
@@ -548,7 +549,7 @@ def ficha():
     return dict (fila=fila, comisiones=comisiones)
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def altas():
     db.personal.user_id.default= auth.user_id
     subtitulo= T ('Complete el formulario por favor...')
@@ -566,7 +567,7 @@ def modificar():
     return{}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def listarfinales():
 
     i=0
@@ -628,7 +629,7 @@ def listarfinales():
     return dict (t=tablaFinal)
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def modificarfinal():
 
      #realiza la consulta. request.args(0) contiene el 'id' seleccionado en 'listarfinales viene como parametro
@@ -666,7 +667,7 @@ def modificarfinal():
     return dict(form=form)
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def muestrafinal():
 
     finalSeleccionado= db(db.notas.id==request.args(0)).select()
@@ -759,6 +760,8 @@ def listado_inasistencias():
     
     return {"filas":filas}
 
+@auth.requires_login()    
+@auth.requires_membership(role='Docentes')
 def acta_volante():
     response.title="Docentes"
     response.subtitle="Acta volante"

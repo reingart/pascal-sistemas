@@ -1,3 +1,36 @@
+def cargar_usuarios():
+    
+    # Antes de insertar borramos los registros de la tabla
+    db(db.auth_user.id>0).delete()  
+
+    # Insertamos los usuarios profesores
+    db.auth_user.insert(id=1,first_name='Mariano', last_name='Reingart', email='reingart@gmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    db.auth_user.insert(id=2,first_name='Hector',last_name='Amarilla',email='roman.amarilla@gmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    db.auth_user.insert(id=3,first_name='Ángel',last_name='Bravo',email='Angelbravo@gmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    db.auth_user.insert(id=4,first_name='Helena',last_name='Aguirre',email='Aguihelena@gmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    db.auth_user.insert(id=5,first_name='Claudia',last_name='Vargas',email='vargasclaudia@gmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    db.auth_user.insert(id=6,first_name='Luz',last_name='Medina',email='Medinaluz@gmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    db.auth_user.insert(id=7,first_name='José',last_name='Gonzalez',email='Josegonzalez@gmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    db.auth_user.insert(id=8,first_name='Andrea',last_name='Roselli',email='roselli@gmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    
+    #Insertamos los usuarios de alumnos
+    db.auth_user.insert(id=50,first_name='Agustin',last_name='Irusta',email='agus354@hotmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    db.auth_user.insert(id=51,first_name='Diego',last_name='Luna',email='diegoluna@gmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    db.auth_user.insert(id=52,first_name='Romina',last_name='Llanos',email='romina9039@gmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    db.auth_user.insert(id=53,first_name='Debora',last_name='Mendoza',email='debomendoza@gmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    db.auth_user.insert(id=54,first_name='Franco',last_name='More',email='franco.more1758@gmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    db.auth_user.insert(id=55,first_name='Diego',last_name='Moreyra',email='diegojmoreyra@gmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    db.auth_user.insert(id=56,first_name='Diego',last_name='Olmos',email='tecnodiego@gmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    db.auth_user.insert(id=57,first_name='Sergio',last_name='Retamal',email='serxx66@gmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    db.auth_user.insert(id=58,first_name='Hugo',last_name='Villalba',email='VillalbaHugo@gmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    db.auth_user.insert(id=59,first_name='Mauro',last_name='Schiavone',email='SchiavoneM@gmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    db.auth_user.insert(id=60,first_name='Nahuel',last_name='Cosentino',email='CosentinoNa@gmail.com', password='sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb')
+    #Insertamos los usuarios del personal
+    
+    response.view="generic.html"
+    # Devuelvo una consulta del contenido de la tabla
+    return {'filas': db(db.auth_user.id>0).select()}  
+  
 def cargar_docentes():
     
     # Antes de insertar borramos los registros de la tabla
@@ -56,6 +89,8 @@ def cargar_docentes():
     # Devuelvo una consulta del contenido de la tabla
    
     return {'filas': db(db.personal.personalid>0).select()}
+
+
 
 def cargar_alumnos():
     

@@ -254,7 +254,26 @@ def cargar_cargos():
     
     return {'filas': db(db.cargos.cargoid>0).select()}
     
+def cargar_carreras():
     
+    # Antes de insertar borramos los registros de la tabla
+    
+    db(db.carreras.id>0).delete()  
+
+    # Insertamos las carreras correspondientes
+    db.carreras.insert(carreraid=1,nombre='Tecnicatura Superior en Analisis de Sistemas')
+    db.carreras.insert(carreraid=2,nombre='Tecnicatura Superior en Enfermer\xc3\xada')
+    db.carreras.insert(carreraid=3,nombre='Tecnicatura Superior en Instrumentaci\xc3\xb3n Quir\xc3\xbargica ')
+    db.carreras.insert(carreraid=4,nombre='Tecnicatura Superior en Laboratorio de An\xc3\xa1lisis Cl\xc3\xadnicos')
+    db.carreras.insert(carreraid=5,nombre='Tecnicatura Superior en Radiolog\xc3\xada')
+    db.carreras.insert(carreraid=6,nombre='Tecnicatura Superior en Cardiologia')
+    db.carreras.insert(carreraid=7,nombre='Tecnicatura Superior en Redes Informaticas')
+
+    response.view="generic.html"
+    
+    # Devuelvo una consulta del contenido de la tabla
+    return {'filas': db(db.carreras.id>0).select()}
+ 
 def cargar_horarios():
     
     # Antes de insertar borramos los registros de la tabla

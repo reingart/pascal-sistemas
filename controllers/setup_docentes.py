@@ -645,7 +645,27 @@ def cargar_comisiones():
     response.view="generic.html"
     # Devuelvo una consulta del contenido de la tabla
     return {'filas': db(db.comisiones.comisionid>0).select()}
+def cargar_condiciones():
+    # Antes de insertar borramos los registros de la tabla
+    db(db.condiciones.condicionid>0).delete()
 
+    db.condiciones.insert(condicionid= 1, detalle="")
+    db.condiciones.insert(condicionid= 2, detalle="Regular")
+    db.condiciones.insert(condicionid= 3, detalle="Libre")
+
+    response.view="generic.html"
+    # Devuelvo una consulta del contenido de la tabla
+    return {'filas': db(db.condiciones.condicionid>0).select()}
+
+def cargar_inscripcion_comisiones():
+    # Antes de insertar borramos los registros de la tabla
+    db(db.inscripcionescomision.id>0).delete()
+
+    db.inscripcionescomision.insert(id= 1, horaid=1, dia="lunes", comisionid=63,detalle="")
+
+    response.view="generic.html"
+    # Devuelvo una consulta del contenido de la tabla
+    return {'filas': db(db.inscripcionescomision.id>0).select()}
 def cargar_horarios():
 
     # Antes de insertar borramos los registros de la tabla

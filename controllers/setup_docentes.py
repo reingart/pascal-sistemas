@@ -84,44 +84,62 @@ def cargar_docentes():
     db.personal.insert(personalid=2,E_mail='reingart@gmail.com',facebook='Mariano Reingart', nombre="Reingart Mariano",dni=111111,nacimiento= "",
     domicilio="Necochea 1132",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=7899765,titulos="ingenieria en sistemas",otorgadospor="pepe alberto",fechaotorgamiento="",
-    apto="nose",nombramiento="",cuil=1234577,cargoid=1,foto='mariano')
+    apto="nose",nombramiento="",cuil=1234577,cargoid=1,foto='mariano', user_id=1)
     
     db.personal.insert(personalid=3,E_mail='HectorAmarilla@gmail.com',facebook='Hector Amarilla', nombre="Amarilla Hector",dni=434343,nacimiento="",
     domicilio="Laprida 4567",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=8568899,titulos="ingenieria en sistemas",otorgadospor="Jose Rodriguez",fechaotorgamiento="",
-    apto="nose",nombramiento="",cuil=8799999,cargoid=2)
+    apto="nose",nombramiento="",cuil=8799999,cargoid=2, user_id=2)
     
     db.personal.insert(personalid=4,E_mail='vargasclaudia@gmail.com',facebook='Maria Claudi Vargas', nombre="Vargas Claudia",dni=4545,nacimiento="",
     domicilio="San Juan 1122",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=7899765,titulos="Contaduria",otorgadospor="Juan Repeto",fechaotorgamiento="",
-    apto="nose",nombramiento="",cuil=7876669,cargoid=2)
+    apto="nose",nombramiento="",cuil=7876669,cargoid=2, user_id=5)
     
     db.personal.insert(personalid=5,E_mail='Angelbravo@gmail.com',facebook='Angel Bravo', nombre="Bravo Angel",dni=9897,nacimiento="",
     domicilio="Rivas 1450",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=7899765,titulos="ingenieria en sistemas",otorgadospor="Norberto Gonzalez",fechaotorgamiento="",
-    apto="nose",nombramiento="",cuil=76969989,cargoid=1)
+    apto="nose",nombramiento="",cuil=76969989,cargoid=1, user_id=3)
     
     db.personal.insert(personalid=6, E_mail='Aguihelena@gmail.com',facebook='Aguirre Helena',nombre="Aguirre Elena",dni=57865,nacimiento="",
     domicilio="Sarmiento 1120",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=6888899,titulos="Psicopedagoga",otorgadospor="Norma Villanueva",fechaotorgamiento="",
-    apto="nose",nombramiento="",cuil=545465456,cargoid=2)
+    apto="nose",nombramiento="",cuil=545465456,cargoid=2, user_id=4)
     
     db.personal.insert(personalid=7,E_mail='Medinaluz@gmail.com',facebook='Luz Medina', nombre="Media Luz",dni=754645657,nacimiento="",
     domicilio="Claudia Sifre 1112",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=436777,titulos="Analisis de sistemas",otorgadospor="Angel Bravo",fechaotorgamiento="",
-    apto="nose",nombramiento="",cuil=9679679,cargoid=1)
+    apto="nose",nombramiento="",cuil=9679679,cargoid=1, user_id=6)
     
     db.personal.insert(personalid=8, E_mail='Josegonzalez@gmail.com',facebook='Jose Gonzalez',nombre="Gonzalez Jose",dni=79588,nacimiento="",
     domicilio="Lasalle 456",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=5474868787,titulos="Profesor matematica",otorgadospor="Ruben Olmedo",fechaotorgamiento="",
-    apto="nose",nombramiento="",cuil=7896969,cargoid=1)
+    apto="nose",nombramiento="",cuil=7896969,cargoid=1, user_id=7)
     
     db.personal.insert(personalid=9, E_mail='roselli@gmail.com',facebook='Andrea Roselli',nombre="Andrea Roselli ",dni=545353,nacimiento="",
     domicilio="Melian  567",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=6576765757,titulos="Profesora de  ingles",otorgadospor="Josefa Rosales",fechaotorgamiento="",
-    apto="nose",nombramiento="",cuil=5476476475,cargoid=1)
+    apto="nose",nombramiento="",cuil=5476476475,cargoid=1, user_id=8)
+    db.personal.insert(personalid=10,E_mail='',facebook='',nombre='FLORES',dni=None,nacimiento=None, domicilio='',localidad='',cp='',provincia='',telefono='',titulos='',otorgadospor='',fechaotorgamiento='',apto='',nombramiento=None,cuil='',foto='',cargoid=2,user_id=None)
+    db.personal.insert(personalid=11,E_mail='',facebook='',nombre='COLLOCA',dni=None,nacimiento=None, domicilio='',localidad='',cp='',provincia='',telefono='',titulos='',otorgadospor='',fechaotorgamiento='',apto='',nombramiento=None,cuil='',foto='',cargoid=2,user_id=None)
+    db.personal.insert(personalid=12,E_mail='',facebook='',nombre='FERNANDEZ',dni=None,nacimiento=None, domicilio='',localidad='',cp='',provincia='',telefono='',titulos='',otorgadospor='',fechaotorgamiento='',apto='',nombramiento=None,cuil='',foto='',cargoid=2,user_id=None)
+    db.personal.insert(personalid=13,E_mail='',facebook='',nombre='GUERRERO',dni=None,nacimiento=None, domicilio='',localidad='',cp='',provincia='',telefono='',titulos='',otorgadospor='',fechaotorgamiento='',apto='',nombramiento=None,cuil='',foto='',cargoid=2,user_id=None)
+    db.personal.insert(personalid=14,E_mail='',facebook='',nombre='BOTTO',dni=None,nacimiento=None, domicilio='',localidad='',cp='',provincia='',telefono='',titulos='',otorgadospor='',fechaotorgamiento='',apto='',nombramiento=None,cuil='',foto='',cargoid=2,user_id=None)
+    db.personal.insert(personalid=15,E_mail='',facebook='',nombre='RODRIGUEZ',dni=None,nacimiento=None, domicilio='',localidad='',cp='',provincia='',telefono='',titulos='',otorgadospor='',fechaotorgamiento='',apto='',nombramiento=None,cuil='',foto='',cargoid=2,user_id=None)
+    db.personal.insert(personalid=16,E_mail='',facebook='',nombre='BORRAS',dni=None,nacimiento=None, domicilio='',localidad='',cp='',provincia='',telefono='',titulos='',otorgadospor='',fechaotorgamiento='',apto='',nombramiento=None,cuil='',foto='',cargoid=2,user_id=None)
+    db.personal.insert(personalid=17,E_mail='',facebook='',nombre='KLEIMAN',dni=None,nacimiento=None, domicilio='',localidad='',cp='',provincia='',telefono='',titulos='',otorgadospor='',fechaotorgamiento='',apto='',nombramiento=None,cuil='',foto='',cargoid=2,user_id=None)
+    db.personal.insert(personalid=18,E_mail='',facebook='',nombre='DIAZ TORRES',dni=None,nacimiento=None, domicilio='',localidad='',cp='',provincia='',telefono='',titulos='',otorgadospor='',fechaotorgamiento='',apto='',nombramiento=None,cuil='',foto='',cargoid=2,user_id=None)
+    db.personal.insert(personalid=19,E_mail='',facebook='',nombre='MELGAREJO',dni=None,nacimiento=None, domicilio='',localidad='',cp='',provincia='',telefono='',titulos='',otorgadospor='',fechaotorgamiento='',apto='',nombramiento=None,cuil='',foto='',cargoid=2,user_id=None)
+    db.personal.insert(personalid=20,E_mail='',facebook='',nombre='BENITEZ',dni=None,nacimiento=None, domicilio='',localidad='',cp='',provincia='',telefono='',titulos='',otorgadospor='',fechaotorgamiento='',apto='',nombramiento=None,cuil='',foto='',cargoid=2,user_id=None)
+    db.personal.insert(personalid=21,E_mail='',facebook='',nombre='PETIT',dni=None,nacimiento=None, domicilio='',localidad='',cp='',provincia='',telefono='',titulos='',otorgadospor='',fechaotorgamiento='',apto='',nombramiento=None,cuil='',foto='',cargoid=2,user_id=None)
+    db.personal.insert(personalid=22,E_mail='',facebook='',nombre='YANSEN',dni=None,nacimiento=None, domicilio='',localidad='',cp='',provincia='',telefono='',titulos='',otorgadospor='',fechaotorgamiento='',apto='',nombramiento=None,cuil='',foto='',cargoid=2,user_id=None)
+    db.personal.insert(personalid=23,E_mail='',facebook='',nombre='RONDAN',dni=None,nacimiento=None, domicilio='',localidad='',cp='',provincia='',telefono='',titulos='',otorgadospor='',fechaotorgamiento='',apto='',nombramiento=None,cuil='',foto='',cargoid=2,user_id=None)
+    db.personal.insert(personalid=24,E_mail='',facebook='',nombre='VERA',dni=None,nacimiento=None, domicilio='',localidad='',cp='',provincia='',telefono='',titulos='',otorgadospor='',fechaotorgamiento='',apto='',nombramiento=None,cuil='',foto='',cargoid=2,user_id=None)
+    db.personal.insert(personalid=25,E_mail='',facebook='',nombre='FIELMARIN',dni=None,nacimiento=None, domicilio='',localidad='',cp='',provincia='',telefono='',titulos='',otorgadospor='',fechaotorgamiento='',apto='',nombramiento=None,cuil='',foto='',cargoid=2,user_id=None)
+    db.personal.insert(personalid=26,E_mail='',facebook='',nombre='MARTINEZ',dni=None,nacimiento=None, domicilio='',localidad='',cp='',provincia='',telefono='',titulos='',otorgadospor='',fechaotorgamiento='',apto='',nombramiento=None,cuil='',foto='',cargoid=2,user_id=None)
+    db.personal.insert(personalid=27,E_mail='',facebook='',nombre='CASTILLO',dni=None,nacimiento=None, domicilio='',localidad='',cp='',provincia='',telefono='',titulos='',otorgadospor='',fechaotorgamiento='',apto='',nombramiento=None,cuil='',foto='',cargoid=2,user_id=None)
     
-    db.personal.insert(personalid=10,E_mail='adriana@gmail.com',facebook='Adriana ', nombre="Adriana",dni=6465464,nacimiento="",
+    db.personal.insert(personalid=28,E_mail='adriana@gmail.com',facebook='Adriana ', nombre="Adriana",dni=6465464,nacimiento="",
     domicilio="Rivera Indarte 567",localidad="gonzalez catan",cp=1759,provincia="Buenos Aires",
     telefono=5474755,titulos="Profesor de historia",otorgadospor="Alberto Pepeto",fechaotorgamiento="",
     apto="nose",nombramiento="",cuil=6587568,cargoid=2)
@@ -477,14 +495,156 @@ def cargar_periodos():
     db.periodos.insert(periodoid=25,descripcion='Ex\xc3\xa1menes Mar/2013',nivelid=1,cicloid=4,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0, codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6020,notaminima=None)
     db.periodos.insert(periodoid=26,descripcion='1\xc2\xba Cuatrimestre 2013',nivelid=1,cicloid=4,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=1,semestre=0,orden=1, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6021,notaminima=None)
     db.periodos.insert(periodoid=27,descripcion='2\xc2\xaa Cuatrimestre 2013',nivelid=1,cicloid=4,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=2,semestre=0,orden=0, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6021,notaminima=None)
-
     db.periodos.insert(periodoid=28,descripcion='Ex\xc3\xa1menes Mar/2014',nivelid=1,cicloid=5,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0, codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6020,notaminima=None)
     db.periodos.insert(periodoid=29,descripcion='Examenes Ago/2014',nivelid=1,cicloid=5,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0, codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6018,notaminima=None)
     db.periodos.insert(periodoid=30,descripcion='Ex\xc3\xa1menes Dic/2014',nivelid=1,cicloid=5,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0, codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6019,notaminima=None)
     db.periodos.insert(periodoid=31,descripcion='1\xc2\xba Cuatrimestre 2014',nivelid=1,cicloid=5,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=1,semestre=0,orden=1, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6021,notaminima=None)
     db.periodos.insert(periodoid=32,descripcion='2\xc2\xaa Cuatrimestre 2014',nivelid=1,cicloid=5,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=2,semestre=0,orden=0, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6021,notaminima=None)
+    db.periodos.insert(periodoid=33,descripcion='A\xc3\xb1o 2014',nivelid=1,cicloid=5,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=0,semestre=0,orden=0, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6017,notaminima=None)
     # Devuelvo una consulta del contenido de la tabla
     return {'filas': db(db.periodos.periodoid>0).select()}
+
+def cargar_comisiones():
+    # Antes de insertar borramos los registros de la tabla
+    db(db.comisiones.comisionid>0).delete()
+    db.comisiones.insert(comisionid=55,nombre='ALGEBRA',divisionid=1,periodoid=33,materiaid=158,personalid=8,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=56,nombre='ANALISIS MATEMATICO I',divisionid=1,periodoid=33,materiaid=159,personalid=8,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=57,nombre='INGLES TECNICO I',divisionid=1,periodoid=33,materiaid=160,personalid=9,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=58,nombre='ADM. DE LAS ORGANIZACIONES',divisionid=1,periodoid=33,materiaid=161,personalid=4,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=59,nombre='METODOLOGIA DE LA INVESTIGACION',divisionid=1,periodoid=33,materiaid=162,personalid=6,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=60,nombre='PROGRAMACION I',divisionid=1,periodoid=33,materiaid=163,personalid=3,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=61,nombre='INTROD. SISTEMAS DE INFORMACION',divisionid=1,periodoid=33,materiaid=164,personalid=7,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=62,nombre='ARQUITECTURA DE COMPUTADORES',divisionid=1,periodoid=33,materiaid=165,personalid=5,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=63,nombre='EDI I',divisionid=1,periodoid=33,materiaid=166,personalid=5,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=64,nombre='PROBABILIDAD Y ESTADISTICA',divisionid=2,periodoid=33,materiaid=167,personalid=8,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=65,nombre='ANALISIS MATEMATICO II',divisionid=2,periodoid=33,materiaid=168,personalid=8,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=66,nombre='INGLES TECNICO II',divisionid=2,periodoid=33,materiaid=169,personalid=9,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=67,nombre='SISTEMAS DE INFORMACION I',divisionid=2,periodoid=33,materiaid=170,personalid=7,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=68,nombre='PROGRAMACION II',divisionid=2,periodoid=33,materiaid=171,personalid=3,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=69,nombre='SISTEMAS OPERATIVOS',divisionid=2,periodoid=33,materiaid=172,personalid=2,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=70,nombre='BASES DE DATOS',divisionid=2,periodoid=33,materiaid=173,personalid=2,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=71,nombre='EDI II',divisionid=2,periodoid=33,materiaid=174,personalid=5,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=72,nombre='INVESTIGACION OPERATIVA',divisionid=3,periodoid=33,materiaid=175,personalid=7,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=73,nombre='ECONOMIA EMPRESARIAL',divisionid=3,periodoid=33,materiaid=176,personalid=4,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=74,nombre='TELEINFORMATICA',divisionid=3,periodoid=33,materiaid=177,personalid=5,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=75,nombre='SISTEMAS DE INFORMACION II',divisionid=3,periodoid=33,materiaid=178,personalid=5,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=76,nombre='PRACTICA PROFESIONAL',divisionid=3,periodoid=33,materiaid=179,personalid=2,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=77,nombre='EDI III',divisionid=3,periodoid=33,materiaid=180,personalid=6,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=78,nombre='SALUD PUBLICA',divisionid=1,periodoid=33,materiaid=47,personalid=10,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=79,nombre='INFORMATICA',divisionid=1,periodoid=33,materiaid=48,personalid=11,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=80,nombre='BIOLOGIA I',divisionid=1,periodoid=33,materiaid=49,personalid=10,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=81,nombre='FUND. DE LAS CIENCIAS EXACTAS',divisionid=1,periodoid=33,materiaid=50,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=82,nombre='PROCESOS TECNOLOGICOS EN SALUD I',divisionid=1,periodoid=33,materiaid=51,personalid=13,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=83,nombre='PROCESOS TECNOLOGICOS EN SALUD II',divisionid=1,periodoid=33,materiaid=52,personalid=13,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=84,nombre='EDI',divisionid=1,periodoid=33,materiaid=53,personalid=10,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=85,nombre='ESPACIO DE LA PRACTICA',divisionid=1,periodoid=33,materiaid=54,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=86,nombre='ORG. Y GESTION DE SERV. DE SALUD',divisionid=2,periodoid=33,materiaid=55,personalid=14,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=87,nombre='BIOLOGIA II',divisionid=2,periodoid=33,materiaid=56,personalid=15,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=88,nombre='METODOLOGIA DE LA INVESTIGACION',divisionid=2,periodoid=33,materiaid=57,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=89,nombre='SEGURIDAD E HIGIENE',divisionid=2,periodoid=33,materiaid=58,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=90,nombre='EDI II',divisionid=2,periodoid=33,materiaid=59,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=91,nombre='CENTRO Y ACTO QUIRURGICO',divisionid=2,periodoid=33,materiaid=60,personalid=14,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=92,nombre='ATENCION DEL PACIENTE QUIRURGICO Y LA EMERGENCIA',divisionid=2,periodoid=33,materiaid=61,personalid=14,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=93,nombre='ANATOMIA Y TECNICA QUIRURGICA I',divisionid=2,periodoid=33,materiaid=62,personalid=17,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=94,nombre='PRACTICA',divisionid=2,periodoid=33,materiaid=63,personalid=18,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=95,nombre='INV. EN SERV. DE SALUD',divisionid=3,periodoid=33,materiaid=64,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=96,nombre='INGLES',divisionid=3,periodoid=33,materiaid=65,personalid=9,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=97,nombre='BIOETICA',divisionid=3,periodoid=33,materiaid=66,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=98,nombre='ANATOMIA Y TECNICA QUIRURGICA II',divisionid=3,periodoid=33,materiaid=67,personalid=17,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=99,nombre='INT. A LA GESTION DEL CENTRO QUIRURG.',divisionid=3,periodoid=33,materiaid=68,personalid=14,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=100,nombre='EDI III',divisionid=3,periodoid=33,materiaid=69,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=101,nombre='PRACTICA',divisionid=3,periodoid=33,materiaid=70,personalid=18,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=102,nombre='SALUD PUBLICA',divisionid=1,periodoid=33,materiaid=71,personalid=10,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=103,nombre='INFORMATICA',divisionid=1,periodoid=33,materiaid=72,personalid=11,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=104,nombre='BIOLOGIA I',divisionid=1,periodoid=33,materiaid=73,personalid=10,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=105,nombre='FUND. DE LAS CIENCIAS EXACTAS',divisionid=1,periodoid=33,materiaid=74,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=106,nombre='PROCESOS TECNOLOGICOS EN SALUD I',divisionid=1,periodoid=33,materiaid=75,personalid=13,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=107,nombre='PROCESOS TECNOLOGICOS EN SALUD II',divisionid=1,periodoid=33,materiaid=76,personalid=13,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=108,nombre='EDI',divisionid=1,periodoid=33,materiaid=77,personalid=10,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=109,nombre='ESPACIO DE LA PRACTICA',divisionid=1,periodoid=33,materiaid=78,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=110,nombre='ORG. Y GESTION DE SERV. DE SALUD',divisionid=2,periodoid=33,materiaid=79,personalid=14,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=111,nombre='BIOLOGIA II',divisionid=2,periodoid=33,materiaid=80,personalid=15,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=112,nombre='METODOLOGIA DE LA INVESTIGACION',divisionid=2,periodoid=33,materiaid=81,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=113,nombre='SEGURIDAD E HIGIENE',divisionid=2,periodoid=33,materiaid=82,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=114,nombre='EDI II',divisionid=2,periodoid=33,materiaid=83,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=115,nombre='QUIMICA BIOLOGICA',divisionid=2,periodoid=33,materiaid=84,personalid=15,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=116,nombre='ADMISION DE PACIENTES I',divisionid=2,periodoid=33,materiaid=85,personalid=19,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=117,nombre='PROCED. TECNICOS NORMALIZADOS',divisionid=2,periodoid=33,materiaid=86,personalid=20,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=118,nombre='PRACTICA',divisionid=2,periodoid=33,materiaid=87,personalid=21,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=119,nombre='INV. EN SERV. DE SALUD',divisionid=3,periodoid=33,materiaid=88,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=120,nombre='INGLES',divisionid=3,periodoid=33,materiaid=89,personalid=9,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=121,nombre='BIOETICA',divisionid=3,periodoid=33,materiaid=90,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=122,nombre='ADMISION DE PACIENTES II',divisionid=3,periodoid=33,materiaid=91,personalid=19,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=123,nombre='PROC. TECNICOS NORMALIZADOS II',divisionid=3,periodoid=33,materiaid=92,personalid=20,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=124,nombre='CONTROL DE CALIDAD',divisionid=3,periodoid=33,materiaid=93,personalid=19,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=125,nombre='GESTION DE LABORATORIO',divisionid=3,periodoid=33,materiaid=94,personalid=15,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=126,nombre='EDI III',divisionid=3,periodoid=33,materiaid=95,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=127,nombre='PRACTICA',divisionid=3,periodoid=33,materiaid=96,personalid=21,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=128,nombre='SALUD PUBLICA',divisionid=1,periodoid=33,materiaid=97,personalid=10,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=129,nombre='INFORMATICA',divisionid=1,periodoid=33,materiaid=98,personalid=11,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=130,nombre='BIOLOGIA I',divisionid=1,periodoid=33,materiaid=99,personalid=10,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=131,nombre='FUND. DE LAS CIENCIAS EXACTAS',divisionid=1,periodoid=33,materiaid=100,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=132,nombre='PROCESOS TECNOLOGICOS EN SALUD I',divisionid=1,periodoid=33,materiaid=101,personalid=13,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=133,nombre='PROCESOS TECNOLOGICOS EN SALUD II',divisionid=1,periodoid=33,materiaid=102,personalid=13,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=134,nombre='EDI',divisionid=1,periodoid=33,materiaid=103,personalid=10,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=135,nombre='ESPACIO DE LA PRACTICA',divisionid=1,periodoid=33,materiaid=104,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=136,nombre='ORG. Y GESTION DE SERV. DE SALUD',divisionid=2,periodoid=33,materiaid=105,personalid=14,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=137,nombre='BIOLOGIA II',divisionid=2,periodoid=33,materiaid=106,personalid=15,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=138,nombre='METODOLOGIA DE LA INVESTIGACION',divisionid=2,periodoid=33,materiaid=107,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=139,nombre='SEGURIDAD E HIGIENE',divisionid=2,periodoid=33,materiaid=108,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=140,nombre='EDI II',divisionid=2,periodoid=33,materiaid=109,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=141,nombre='FUND. DE ANATOMOFISIOLOGIA',divisionid=2,periodoid=33,materiaid=110,personalid=22,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=142,nombre='TECNICAS RADIOLOGICAS I',divisionid=2,periodoid=33,materiaid=111,personalid=23,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=143,nombre='TECNICAS RADIOLOGICAS II',divisionid=2,periodoid=33,materiaid=112,personalid=14,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=144,nombre='RADIOFISICA I',divisionid=2,periodoid=33,materiaid=113,personalid=14,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=145,nombre='FUNDAMENTOS DE PATOLOGIA',divisionid=2,periodoid=33,materiaid=114,personalid=23,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=146,nombre='PRACTICA',divisionid=2,periodoid=33,materiaid=115,personalid=23,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=147,nombre='INV. EN SERV. DE SALUD',divisionid=3,periodoid=33,materiaid=116,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=148,nombre='INGLES',divisionid=3,periodoid=33,materiaid=117,personalid=9,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=149,nombre='BIOETICA',divisionid=3,periodoid=33,materiaid=118,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=150,nombre='RADIOFISICA II',divisionid=3,periodoid=33,materiaid=119,personalid=14,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=151,nombre='TECNOLOGIAS RADIOLOGICAS III',divisionid=3,periodoid=33,materiaid=120,personalid=22,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=152,nombre='TECNOLOGIAS RADIOLOGICAS IV',divisionid=3,periodoid=33,materiaid=121,personalid=22,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=153,nombre='RADIOTERAPIA',divisionid=3,periodoid=33,materiaid=122,personalid=22,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=154,nombre='EDI III',divisionid=3,periodoid=33,materiaid=123,personalid=12,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=155,nombre='PRACTICA',divisionid=3,periodoid=33,materiaid=124,personalid=23,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=156,nombre='SALUD PUBLICA',divisionid=1,periodoid=33,materiaid=125,personalid=None,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=157,nombre='EST. Y FUNCION DEL CUERPO HUMANO',divisionid=1,periodoid=33,materiaid=126,personalid=15,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=158,nombre='BIOFISICA Y BIOQUIMICA',divisionid=1,periodoid=33,materiaid=127,personalid=15,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=159,nombre='MICROBIOLOGIA Y PARASITOLOGIA',divisionid=1,periodoid=33,materiaid=128,personalid=24,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=160,nombre='FUNDAMENTOS DE NUTRICION',divisionid=1,periodoid=33,materiaid=129,personalid=None,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=161,nombre='ENFERM. FUND. PRACT. Y TENDENCIAS',divisionid=1,periodoid=33,materiaid=130,personalid=25,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=162,nombre='ENFERMERIA MATERNO INFANTIL I',divisionid=1,periodoid=33,materiaid=131,personalid=24,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=163,nombre='FARMACOLOGIA EN ENFERMERIA',divisionid=1,periodoid=33,materiaid=132,personalid=15,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=164,nombre='PRACTICA I',divisionid=1,periodoid=33,materiaid=133,personalid=24,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=165,nombre='INT. A LA INVESTIGACION EN SALUD',divisionid=2,periodoid=33,materiaid=134,personalid=25,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=166,nombre='EPIDEMIOLOGIA Y ESTADISTICA EN SALUD',divisionid=2,periodoid=33,materiaid=135,personalid=25,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=167,nombre='INFORMATICA',divisionid=2,periodoid=33,materiaid=136,personalid=11,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=168,nombre='ENFERMERIA DEL ADULTO Y EL ANCIANO',divisionid=2,periodoid=33,materiaid=137,personalid=25,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=169,nombre='DIETETICA EN ENFERMERIA',divisionid=2,periodoid=33,materiaid=138,personalid=None,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=170,nombre='ENFERMERIA EN SALUD MENTAL',divisionid=2,periodoid=33,materiaid=139,personalid=25,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=171,nombre='EDI',divisionid=2,periodoid=33,materiaid=140,personalid=24,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=172,nombre='PRACTICA II',divisionid=2,periodoid=33,materiaid=141,personalid=24,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=173,nombre='EDUCACION EN SALUD',divisionid=3,periodoid=33,materiaid=142,personalid=26,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=174,nombre='ORG. Y GESTION SERV. SALUD',divisionid=3,periodoid=33,materiaid=143,personalid=25,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=175,nombre='INV. Y PLANIF. EN SALUD',divisionid=3,periodoid=33,materiaid=144,personalid=25,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=176,nombre='INGLES',divisionid=3,periodoid=33,materiaid=145,personalid=9,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=177,nombre='ENFERM. MATERNO-INF. II',divisionid=3,periodoid=33,materiaid=146,personalid=24,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=178,nombre='ORG. Y GESTION SERV. DE ENFERM.',divisionid=3,periodoid=33,materiaid=147,personalid=25,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=179,nombre='ENFERM. EN EMERG. Y CATASTROFES',divisionid=3,periodoid=33,materiaid=148,personalid=24,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=180,nombre='ASPECTOS ETICOS Y LEGALES DE LA PRAC. PROF',divisionid=3,periodoid=33,materiaid=149,personalid=25,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=181,nombre='EDI II',divisionid=3,periodoid=33,materiaid=150,personalid=24,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=182,nombre='PRACTICA III',divisionid=3,periodoid=33,materiaid=151,personalid=24,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=183,nombre='CONDICIONES Y MEDIO AMBIENTE DEL TRABAJO',divisionid=1,periodoid=33,materiaid=152,personalid=24,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=184,nombre='SALUD PUBLICA I',divisionid=1,periodoid=33,materiaid=153,personalid=27,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=185,nombre='BIOLOGIA HUMANA',divisionid=1,periodoid=33,materiaid=154,personalid=15,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=186,nombre='FUNDAMENTOS DEL CUIDADO',divisionid=1,periodoid=33,materiaid=155,personalid=25,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=187,nombre='CUIDADOS DE LA SALUD CENTRADOS EN LA COMUNIDAD Y LA FAMILIA',divisionid=1,periodoid=33,materiaid=156, personalid=25,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+    db.comisiones.insert(comisionid=188,nombre='PRACTICA I',divisionid=1,periodoid=33,materiaid=157,personalid=24,faltas1r=None,faltas2r=None,faltaslibre=None,faltasrecursa=None)
+
+    response.view="generic.html"
+    # Devuelvo una consulta del contenido de la tabla
+    return {'filas': db(db.comisiones.comisionid>0).select()}
 
 def cargar_horarios():
 

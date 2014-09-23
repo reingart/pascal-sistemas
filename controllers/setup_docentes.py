@@ -442,10 +442,18 @@ def cargar_materias():
     # Devuelvo una consulta del contenido de la tabla
     return {'filas': db(db.materias.id>0).select()}
 
-def cargar_horarios():
-    
+def cargar_divisiones():
     # Antes de insertar borramos los registros de la tabla
-    
+    db(db.divisiones.divisionid>0).delete()
+    db.divisiones.insert(divisionid=1,descripcion='1\xc2\xba ',codigo='1A06',cursoid=1,cicloid=5,numero=1,letra='A',turno='N',anio=2014)
+    db.divisiones.insert(divisionid=2,descripcion='2\xc2\xb0',codigo='2B06',cursoid=2,cicloid=5,numero=2,letra='B',turno='N',anio=2014)
+    db.divisiones.insert(divisionid=3,descripcion='3\xc2\xba',codigo='3C06',cursoid=3,cicloid=5,numero=3,letra='C',turno='N',anio=2014)
+    # Devuelvo una consulta del contenido de la tabla
+    return {'filas': db(db.divisiones.id>0).select()}
+def cargar_horarios():
+
+    # Antes de insertar borramos los registros de la tabla
+
     db(db.horarios.horarioid>0).delete()  
 
     # Insertamos los horarios correspondientes

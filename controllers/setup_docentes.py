@@ -778,6 +778,20 @@ def cargar_inscripciones_comision():
     response.view="generic.html"
     # Devuelvo una consulta del contenido de la tabla
     return {'filas': db(db.inscripcionescomision.id>0).select()}
+
+def cargar_inasistencias():
+    # Antes de insertar borramos los registros de la tabla
+    db(db.inasistencias.inasistenciaid>0).delete()
+
+    db.inasistencias.insert(inasistenciaid=1, descripcion="Media Falta", cantidad=0.5)
+    db.inasistencias.insert(inasistenciaid=2, descripcion="Tarde", cantidad=0.5)
+    db.inasistencias.insert(inasistenciaid=3, descripcion="Retiro anticipado", cantidad=0.5)
+    db.inasistencias.insert(inasistenciaid=4, descripcion="Ausente", cantidad=1)
+    db.inasistencias.insert(inasistenciaid=5, descripcion="Presente", cantidad=0)
+    response.view="generic.html"
+    # Devuelvo una consulta del contenido de la tabla
+    return {'filas': db(db.inasistencias.inasistenciaid>0).select()}
+
 def cargar_horarios():
 
     # Antes de insertar borramos los registros de la tabla
@@ -908,29 +922,8 @@ def cargar_revista():
     # Devuelvo una consulta del contenido de la tabla
     
     return {'filas': db(db.revistas.revistaid>0).select()}
-    
 
-    
-    
-    
-    
-def cargar_inasistencias():
-    
-    # Antes de insertar borramos los registros de la tabla    
-    
-    db(db.inasistencias.inasistenciaid>0).delete()  
 
-    # Insertamos los cursos correspondientes
-    
-    db.inasistencias.insert(inasistenciaid=1, descripcion="Presente",tarde=False)
-    db.inasistencias.insert(inasistenciaid=2, descripcion="Media falta",tarde=True)
-    
-    response.view="generic.html"
-    
-    # Devuelvo una consulta del contenido de la tabla
-    
-    return {'filas': db(db.inasistencias.inasistenciaid>0).select()}
-            
 def cargar_horas():
     
    # Antes de insertar borramos los registros de la tabla    

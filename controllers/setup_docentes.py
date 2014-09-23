@@ -657,12 +657,124 @@ def cargar_condiciones():
     # Devuelvo una consulta del contenido de la tabla
     return {'filas': db(db.condiciones.condicionid>0).select()}
 
-def cargar_inscripcion_comisiones():
+def cargar_inscripciones_comision():
     # Antes de insertar borramos los registros de la tabla
     db(db.inscripcionescomision.id>0).delete()
+    #COMISIONES 3ER AÑO
+    db.inscripcionescomision.insert(inscripcionid=1, alumnoid=1, comisionid=72, alta='2014-03-01',condicion=2) # INVESTIGACION OPERATIVA
+    db.inscripcionescomision.insert(inscripcionid=2, alumnoid=2, comisionid=72, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=3, alumnoid=3, comisionid=72, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=4, alumnoid=4, comisionid=72, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=5, alumnoid=5, comisionid=72, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=6, alumnoid=6, comisionid=72, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=7, alumnoid=7, comisionid=72, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=8, alumnoid=8, comisionid=72, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=9, alumnoid=1, comisionid=73, alta='2014-03-01',condicion=2) # ECONOMIA EMPRESARIAL
+    db.inscripcionescomision.insert(inscripcionid=10, alumnoid=2, comisionid=73, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=11, alumnoid=3, comisionid=73, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=12, alumnoid=4, comisionid=73, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=13, alumnoid=5, comisionid=73, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=14, alumnoid=6, comisionid=73, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=15, alumnoid=7, comisionid=73, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=16, alumnoid=8, comisionid=73, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=17, alumnoid=1, comisionid=74, alta='2014-03-01',condicion=2) # TELEINFORMATICA
+    db.inscripcionescomision.insert(inscripcionid=18, alumnoid=3, comisionid=74, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=19, alumnoid=5, comisionid=74, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=20, alumnoid=6, comisionid=74, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=21, alumnoid=7, comisionid=74, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=22, alumnoid=8, comisionid=74, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=23, alumnoid=1, comisionid=75, alta='2014-03-01',condicion=2) # SISTEMAS II
+    db.inscripcionescomision.insert(inscripcionid=24, alumnoid=2, comisionid=75, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=25, alumnoid=3, comisionid=75, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=26, alumnoid=4, comisionid=75, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=27, alumnoid=5, comisionid=75, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=28, alumnoid=6, comisionid=75, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=29, alumnoid=7, comisionid=75, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=30, alumnoid=8, comisionid=75, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=31, alumnoid=1, comisionid=76, alta='2014-03-01',condicion=2) # PRACTICA PROF
+    db.inscripcionescomision.insert(inscripcionid=32, alumnoid=3, comisionid=76, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=33, alumnoid=5, comisionid=76, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=34, alumnoid=6, comisionid=76, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=35, alumnoid=7, comisionid=76, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=36, alumnoid=8, comisionid=76, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=37, alumnoid=9, comisionid=76, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=38, alumnoid=10, comisionid=76, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=39, alumnoid=11, comisionid=76, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=40, alumnoid=1, comisionid=77, alta='2014-03-01',condicion=2) # EDI III
+    db.inscripcionescomision.insert(inscripcionid=41, alumnoid=2, comisionid=77, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=42, alumnoid=3, comisionid=77, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=43, alumnoid=4, comisionid=77, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=44, alumnoid=5, comisionid=77, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=45, alumnoid=6, comisionid=77, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=46, alumnoid=7, comisionid=77, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=47, alumnoid=8, comisionid=77, alta='2014-03-01',condicion=2)
 
-    db.inscripcionescomision.insert(id= 1, horaid=1, dia="lunes", comisionid=63,detalle="")
-
+    #COMISIONES 2DO AÑO
+    db.inscripcionescomision.insert(inscripcionid=48, alumnoid=12, comisionid=64, alta='2014-03-01',condicion=2) # 64 PROBABILIDAD Y ESTADISTICA
+    db.inscripcionescomision.insert(inscripcionid=49, alumnoid=13, comisionid=64, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=50, alumnoid=14, comisionid=64, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=51, alumnoid=15, comisionid=64, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=52, alumnoid=16, comisionid=64, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=53, alumnoid=17, comisionid=64, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=54, alumnoid=18, comisionid=64, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=55, alumnoid=19, comisionid=64, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=56, alumnoid=12, comisionid=65, alta='2014-03-01',condicion=2) # 65 ANALISIS MATEMATICO II
+    db.inscripcionescomision.insert(inscripcionid=57, alumnoid=13, comisionid=65, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=58, alumnoid=14, comisionid=65, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=59, alumnoid=15, comisionid=65, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=60, alumnoid=16, comisionid=65, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=61, alumnoid=17, comisionid=65, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=62, alumnoid=18, comisionid=65, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=63, alumnoid=19, comisionid=65, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=64, alumnoid=12, comisionid=66, alta='2014-03-01',condicion=2) # 66 INGLES TECNICO II
+    db.inscripcionescomision.insert(inscripcionid=65, alumnoid=13, comisionid=66, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=66, alumnoid=14, comisionid=66, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=67, alumnoid=15, comisionid=66, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=68, alumnoid=16, comisionid=66, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=69, alumnoid=17, comisionid=66, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=70, alumnoid=18, comisionid=66, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=71, alumnoid=19, comisionid=66, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=72, alumnoid=12, comisionid=67, alta='2014-03-01',condicion=2) # 67 SISTEMAS DE INFORMACION I
+    db.inscripcionescomision.insert(inscripcionid=73, alumnoid=13, comisionid=67, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=74, alumnoid=14, comisionid=67, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=75, alumnoid=15, comisionid=67, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=76, alumnoid=16, comisionid=67, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=77, alumnoid=17, comisionid=67, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=78, alumnoid=18, comisionid=67, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=79, alumnoid=19, comisionid=67, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=80, alumnoid=12, comisionid=68, alta='2014-03-01',condicion=2) # 68 PROGRAMACION II
+    db.inscripcionescomision.insert(inscripcionid=81, alumnoid=13, comisionid=68, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=82, alumnoid=14, comisionid=68, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=83, alumnoid=15, comisionid=68, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=84, alumnoid=16, comisionid=68, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=85, alumnoid=17, comisionid=68, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=86, alumnoid=18, comisionid=68, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=87, alumnoid=19, comisionid=68, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=88, alumnoid=12, comisionid=69, alta='2014-03-01',condicion=2) # 69 SISTEMAS OPERATIVOS
+    db.inscripcionescomision.insert(inscripcionid=89, alumnoid=13, comisionid=69, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=90, alumnoid=14, comisionid=69, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=91, alumnoid=15, comisionid=69, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=92, alumnoid=16, comisionid=69, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=93, alumnoid=17, comisionid=69, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=94, alumnoid=18, comisionid=69, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=95, alumnoid=19, comisionid=69, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=112, alumnoid=1, comisionid=69, alta='2014-03-01',condicion=3)
+    db.inscripcionescomision.insert(inscripcionid=96, alumnoid=12, comisionid=70, alta='2014-03-01',condicion=2) # 70 BASES DE DATOS
+    db.inscripcionescomision.insert(inscripcionid=97, alumnoid=13, comisionid=70, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=98, alumnoid=14, comisionid=70, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=99, alumnoid=15, comisionid=70, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=100, alumnoid=16, comisionid=70, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=101, alumnoid=17, comisionid=70, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=102, alumnoid=18, comisionid=70, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=103, alumnoid=19, comisionid=70, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=104, alumnoid=12, comisionid=71, alta='2014-03-01',condicion=2) # 71 EDI II
+    db.inscripcionescomision.insert(inscripcionid=105, alumnoid=13, comisionid=71, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=106, alumnoid=14, comisionid=71, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=107, alumnoid=15, comisionid=71, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=108, alumnoid=16, comisionid=71, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=109, alumnoid=17, comisionid=71, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=110, alumnoid=18, comisionid=71, alta='2014-03-01',condicion=2)
+    db.inscripcionescomision.insert(inscripcionid=111, alumnoid=19, comisionid=71, alta='2014-03-01',condicion=2)
     response.view="generic.html"
     # Devuelvo una consulta del contenido de la tabla
     return {'filas': db(db.inscripcionescomision.id>0).select()}

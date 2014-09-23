@@ -7,17 +7,31 @@
     <TABLE id="table">
         <tr>
             <td id= "head"><B><center>Alumno</center></B></td>
-            <td  id= "head"><B><center>Cantidad de Faltas</center></B></td>      
+            <td  id= "head"><B><center>Días Hábiles</center></B></td>
+            <td id= "head"><B><center>Presentes</center></B></td>  
+            <td id= "head"><B><center>Ausentes</center></B></td>  
+            <td id= "head"><B><center>Retiros Anticipados</center></B></td>      
+            <td id= "head"><B><center>PORCENTAJE DE ASISTENCIA</center></B></td>
+            <td id= "head"><B><center>CONDICION OBTENIDA</center></B></td>
         </tr>
-		 {{for fila in filas:}}
-        {{alumno=fila.alumnos}}
+		 {{for fila in alumnos:}}
+        
         <tr>
-            <td id= "head">{{=alumno.nombre}} </td>
-            <td id= "head";"text-align: right">{{=fila.suma}}</td>
+        <td id= "head"><center>{{=fila.nombre}}</center> </td>
+        <td id= "head"><center>{{=notas_1p_map.get(fila.alumnoid, "")}}</center> </td>
+        <td id= "head"><center>{{=notas_2p_map.get(fila.alumnoid, "")}}</center></td>
+        <td id= "head"><center>{{=notas_3p_map.get(fila.alumnoid, "")}}</center></td>
+        <td id= "head"><center>{{=notas_4p_map.get(fila.alumnoid, "")}}</center></td>
+        <td id= "head"><center>{{=porcentaje_map.get(fila.alumnoid, "")}} % </center></td>
+        <td id= "head">{{=condicion_map.get(fila.alumnoid, "")}}<center>
             
-		{{pass}}
-	</TABLE>        
+        </center></td>
+    </tr> 
+    {{pass}}
+        
+    </TABLE>        
 	<br>
-<input type=button value="VOLVER" >
+        <input type=button value="VOLVER" >
+    </center>
 </FORM>
 <br>

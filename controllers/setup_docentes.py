@@ -449,7 +449,43 @@ def cargar_divisiones():
     db.divisiones.insert(divisionid=2,descripcion='2\xc2\xb0',codigo='2B06',cursoid=2,cicloid=5,numero=2,letra='B',turno='N',anio=2014)
     db.divisiones.insert(divisionid=3,descripcion='3\xc2\xba',codigo='3C06',cursoid=3,cicloid=5,numero=3,letra='C',turno='N',anio=2014)
     # Devuelvo una consulta del contenido de la tabla
-    return {'filas': db(db.divisiones.id>0).select()}
+    return {'filas': db(db.divisiones.divisionid>0).select()}
+
+def cargar_periodos():
+    # Antes de insertar borramos los registros de la tabla
+    db(db.periodos.periodoid>0).delete()
+    db.periodos.insert(periodoid=1,descripcion='Finales Anteriores',nivelid=1,cicloid=None,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=0,semestre=0,orden=0, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=None,notaminima=None)
+    db.periodos.insert(periodoid=2,descripcion='A\xc3\xb1o 2007',nivelid=1,cicloid=None,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=0,semestre=0,orden=1, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=None,notaminima=None)
+    db.periodos.insert(periodoid=3,descripcion='A\xc3\xb1o 2008',nivelid=1,cicloid=None,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=0,semestre=0,orden=2, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=None,notaminima=None)
+    db.periodos.insert(periodoid=4,descripcion='A\xc3\xb1o 2009',nivelid=1,cicloid=None,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=0,semestre=0,orden=3, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=None,notaminima=None)
+    db.periodos.insert(periodoid=5,descripcion='1\xc2\xb0 Cuatrimestre 2010',nivelid=1,cicloid=1,mes=6,anio=2010,trimestre=0,condicion=None,cuatrimestre=1,semestre=0,orden=4, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6014,notaminima=None)
+    db.periodos.insert(periodoid=6,descripcion='2\xc2\xb0 Cuatrimestre 2010',nivelid=1,cicloid=1,mes=10,anio=2010,trimestre=0,condicion=None,cuatrimestre=2,semestre=0,orden=5, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6014,notaminima=None)
+    db.periodos.insert(periodoid=8,descripcion='Ex\xc3\xa1menes Marzo 2010',nivelid=1,cicloid=1,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0, codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6012,notaminima=None)
+    db.periodos.insert(periodoid=9,descripcion='Ex\xc3\xa1menes Agosto 2010',nivelid=1,cicloid=1,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0, codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6013,notaminima=None)
+    db.periodos.insert(periodoid=10,descripcion='Ex\xc3\xa1menes Dic/2011',nivelid=1,cicloid=2,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0, codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6014,notaminima=None)
+    db.periodos.insert(periodoid=11,descripcion='Examenes Marzo/2011',nivelid=1,cicloid=2,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0, codigo='', inicio=None,cierre=None,tipo=0,dias=0,secuencia=6015,notaminima=None)
+    db.periodos.insert(periodoid=12,descripcion='Examenes Agosto 2011',nivelid=1,cicloid=2,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0, codigo='', inicio=None,cierre=None,tipo=0,dias=0,secuencia=6016,notaminima=None)
+    db.periodos.insert(periodoid=14,descripcion='1\xc2\xba Cuatrimestre 2011',nivelid=1,cicloid=2,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=1,semestre=0,orden=0, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6016,notaminima=None)
+    db.periodos.insert(periodoid=15,descripcion='2\xc2\xba Cuatrimestre 2011',nivelid=1,cicloid=2,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=2,semestre=0,orden=0, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6016,notaminima=None)
+    db.periodos.insert(periodoid=18,descripcion='Ex\xc3\xa1menes Dic/2012',nivelid=1,cicloid=3,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0, codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6016,notaminima=None)
+    db.periodos.insert(periodoid=19,descripcion='Ex\xc3\xa1menes Mar/2012',nivelid=1,cicloid=3,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0, codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6017,notaminima=None)
+    db.periodos.insert(periodoid=20,descripcion='1\xc2\xba Cuatrimestre 2012',nivelid=1,cicloid=3,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=1,semestre=0,orden=1, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6017,notaminima=None)
+    db.periodos.insert(periodoid=21,descripcion='2\xc2\xaa Cuatrimestre 2012',nivelid=1,cicloid=3,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=2,semestre=0,orden=0, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6017,notaminima=None)
+    db.periodos.insert(periodoid=22,descripcion='A\xc3\xb1o 2013',nivelid=1,cicloid=4,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=0,semestre=0,orden=0, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6017,notaminima=None)
+    db.periodos.insert(periodoid=23,descripcion='Examenes Agosto 2013',nivelid=1,cicloid=4,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0, codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6018,notaminima=None)
+    db.periodos.insert(periodoid=24,descripcion='Ex\xc3\xa1menes Dic/2013',nivelid=1,cicloid=4,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0, codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6019,notaminima=None)
+    db.periodos.insert(periodoid=25,descripcion='Ex\xc3\xa1menes Mar/2013',nivelid=1,cicloid=4,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0, codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6020,notaminima=None)
+    db.periodos.insert(periodoid=26,descripcion='1\xc2\xba Cuatrimestre 2013',nivelid=1,cicloid=4,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=1,semestre=0,orden=1, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6021,notaminima=None)
+    db.periodos.insert(periodoid=27,descripcion='2\xc2\xaa Cuatrimestre 2013',nivelid=1,cicloid=4,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=2,semestre=0,orden=0, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6021,notaminima=None)
+
+    db.periodos.insert(periodoid=28,descripcion='Ex\xc3\xa1menes Mar/2014',nivelid=1,cicloid=5,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0, codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6020,notaminima=None)
+    db.periodos.insert(periodoid=29,descripcion='Examenes Ago/2014',nivelid=1,cicloid=5,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0, codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6018,notaminima=None)
+    db.periodos.insert(periodoid=30,descripcion='Ex\xc3\xa1menes Dic/2014',nivelid=1,cicloid=5,mes=0,anio=0,trimestre=0,condicion='',cuatrimestre=0,semestre=0,orden=0, codigo='',inicio=None,cierre=None,tipo=0,dias=0,secuencia=6019,notaminima=None)
+    db.periodos.insert(periodoid=31,descripcion='1\xc2\xba Cuatrimestre 2014',nivelid=1,cicloid=5,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=1,semestre=0,orden=1, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6021,notaminima=None)
+    db.periodos.insert(periodoid=32,descripcion='2\xc2\xaa Cuatrimestre 2014',nivelid=1,cicloid=5,mes=0,anio=0,trimestre=0,condicion=None,cuatrimestre=2,semestre=0,orden=0, codigo=None,inicio=None,cierre=None,tipo=0,dias=0,secuencia=6021,notaminima=None)
+    # Devuelvo una consulta del contenido de la tabla
+    return {'filas': db(db.periodos.periodoid>0).select()}
+
 def cargar_horarios():
 
     # Antes de insertar borramos los registros de la tabla

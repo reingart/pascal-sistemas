@@ -752,59 +752,72 @@ def listado_inasistencias():
     response.title="Docentes"
     response.subtitle= "Listado de Inasistencia"
     COMISIONID=76
-    q=db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
-    q&=db.inscripcionescomision.comisionid==COMISIONID
-    q&=db.faltas.alumnoid==db.alumnos.alumnoid
+    condicion=2 #REGULAR
+    q  = db.alumnos.alumnoid == db.inscripcionescomision.alumnoid
+    q &= db.inscripcionescomision.comisionid == COMISIONID
+    q &= db.inscripcionescomision.condicion == condicion 
+    q &= db.faltas.alumnoid == db.alumnos.alumnoid
     alumnos=db(q).select(db.alumnos.alumnoid,db.alumnos.nombre,groupby=db.alumnos.nombre)
     
-    q=db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
-    q&=db.faltas.alumnoid==db.inscripcionescomision.alumnoid
-    q&=db.inscripcionescomision.comisionid==COMISIONID
-    q&=db.faltas.alumnoid==db.alumnos.alumnoid
-    faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"), groupby=db.alumnos.nombre)#DIAS HABILES
+    q  = db.alumnos.alumnoid == db.inscripcionescomision.alumnoid
+    q &= db.faltas.alumnoid == db.inscripcionescomision.alumnoid
+    q &= db.inscripcionescomision.comisionid == COMISIONID
+    q &= db.inscripcionescomision.alumnoid == db.alumnos.alumnoid
+    q &= db.inscripcionescomision.condicion == condicion 
+    q &= db.faltas.alumnoid == db.alumnos.alumnoid
+    #DIAS HABILES
+    faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),db.alumnos.nombre, groupby=db.alumnos.nombre)
     
     faltas_1p_map ={}
     
     for falta in faltas:
-        faltas_1p_map[falta.alumnoid] = falta.suma   
+        faltas_1p_map[falta.faltas.alumnoid] = falta.suma   
     
-    q=db.faltas.alumnoid==db.inscripcionescomision.alumnoid
-    q&=db.inscripcionescomision.comisionid==COMISIONID                        
-    q&=db.faltas.alumnoid==db.alumnos.alumnoid
-    q&=db.faltas.inasistenciaid==5 #PRESENTES
-    faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma")) #SUMA DE PRESENTES
+    q  = db.faltas.alumnoid == db.inscripcionescomision.alumnoid
+    q &= db.inscripcionescomision.comisionid == COMISIONID                        
+    q &= db.inscripcionescomision.alumnoid == db.alumnos.alumnoid
+    q &= db.inscripcionescomision.condicion == condicion 
+    q &= db.faltas.alumnoid == db.alumnos.alumnoid
+    q &= db.faltas.inasistenciaid == 5 #PRESENTES
+    faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.alumnos.nombre) #SUMA DE PRESENTES
     
     faltas_2p_map ={}
     
     for falta in faltas:
-        faltas_2p_map[falta.alumnoid] = falta.suma
+        faltas_2p_map[falta.faltas.alumnoid] = falta.suma
         
-    q=db.faltas.alumnoid==db.inscripcionescomision.alumnoid
-    q&=db.inscripcionescomision.comisionid==COMISIONID                        
-    q&=db.faltas.alumnoid==db.alumnos.alumnoid
-    q&=db.faltas.inasistenciaid==4 #AUSENTES
-    faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.alumnos.nombre) #SUMA DE AUSENTES
+    q  = db.faltas.alumnoid == db.inscripcionescomision.alumnoid
+    q &= db.inscripcionescomision.comisionid == COMISIONID                        
+    q &= db.inscripcionescomision.alumnoid == db.alumnos.alumnoid
+    q &= db.inscripcionescomision.condicion == condicion 
+    q &= db.faltas.alumnoid == db.alumnos.alumnoid
+    q&=db.faltas.inasistenciaid == 4 #AUSENTES
+    #SUMA DE AUSENTES
+    faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.alumnos.nombre) 
 	
     faltas_3p_map ={}
     for falta in faltas:
-        faltas_3p_map[falta.alumnoid] = falta.suma
+        faltas_3p_map[falta.faltas.alumnoid] = falta.suma
         
-    q=db.faltas.alumnoid==db.inscripcionescomision.alumnoid
-    q&=db.inscripcionescomision.comisionid==COMISIONID                        
-    q&=db.faltas.alumnoid==db.alumnos.alumnoid
-    q&=db.faltas.inasistenciaid<=3 #MEDIA FALTA
-    faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.alumnos.nombre) #SUMA DE MEDIAS FALTAS
+    q  = db.faltas.alumnoid == db.inscripcionescomision.alumnoid
+    q &= db.inscripcionescomision.comisionid == COMISIONID                        
+    q &= db.inscripcionescomision.alumnoid == db.alumnos.alumnoid
+    q &= db.inscripcionescomision.condicion == condicion 
+    q &= db.faltas.alumnoid == db.alumnos.alumnoid
+    q&=db.faltas.inasistenciaid <= 3 #MEDIA FALTA
+    #SUMA DE MEDIAS FALTAS
+    faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.alumnos.nombre) 
 	
     faltas_4p_map ={}
     condicion_map = {}
     porcentaje_map = {}
     for falta in faltas:
-        faltas_4p_map[falta.alumnoid] = falta.suma
-        porcentaje_map[fila.alumnoid]=(faltas_3p_map[falta.alumnoid]+faltas_4p_map[falta.alumnoid]) *100/faltas_1p_map[fila.alumnoid]
-        if porcentaje_map[fila.alumnoid]>20:
-            condicion_map[fila.alumnoid]="LIBRE"
+        faltas_4p_map[falta.faltas.alumnoid] = falta.suma
+        porcentaje_map[falta.faltas.alumnoid] = (faltas_3p_map[falta.faltas.alumnoid]+faltas_4p_map[falta.faltas.alumnoid]) *100/90
+        if porcentaje_map[falta.faltas.alumnoid]>=30:
+            condicion_map[falta.faltas.alumnoid]="LIBRE"
         else:
-            condicion_map[fila.alumnoid]="REGULAR"
+            condicion_map[falta.faltas.alumnoid]="REGULAR"
     
     return{'alumnos':alumnos, "faltas_1p_map": faltas_1p_map,"faltas_2p_map": faltas_2p_map,"faltas_3p_map": faltas_3p_map,"faltas_4p_map": faltas_4p_map,"porcentaje_map":porcentaje_map,"condicion_map":condicion_map}
 

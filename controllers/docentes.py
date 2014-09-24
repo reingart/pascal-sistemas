@@ -19,11 +19,12 @@ def ingreso():
         response.flash='Por favor, complete el formulario'
 
     return dict (form=form, sub=subtitulo)
-
+@auth.requires_login()
+@auth.requires_membership(role='Docentes')
 def examenes_parciales():
 	response.title="Docentes"
 	response.subtitle="Examenes parciales"
-	COMISIONID=76 #PRACTICA pROF
+	COMISIONID= int(request.args[0])
 	MATERIAID=179 #PRACTICA PROFESIONAL
 	q = db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
 	q &= db.comisiones.comisionid==COMISIONID
@@ -60,12 +61,12 @@ def examenes_parciales():
 			#observaciones= request.vars.get("observaciones_%s" % alumno_id, 0)
 			establecimiento= "I.S.T.B.P"
 			a=5
-			db.notas.insert(alumnoid=alumno_id, materiaid=MATERIAID, periodoid=periodo, calificacionid=calificacion, nota=nota ,fecha=fecha, establecimiento=establecimiento)
+			db.notas.insert(alumnoid=alumno_id, materiaid=COMISIONID, periodoid=periodo, calificacionid=calificacion, nota=nota ,fecha=fecha, establecimiento=establecimiento)
 			i= i+1
 	comisiones = db(q).select(db.comisiones.ALL, distinct=True)
 	return{'filas':filas,'a':a, 'comisiones':comisiones}
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def busqueda():
     # armo un formulario para buscar alumno por su dni y nombre
     form = SQLFORM.factory(
@@ -91,26 +92,29 @@ def busqueda():
     #response.view = "generic.html"  # HACER una vista de verdad
     return dict (form = form)
 
-#@auth.requires_login()
+@auth.requires_login()
+@auth.requires_membership(role='Docentes')
 def index():
-    #response.title="Docentes"
-    #response.subtitle="Menu Principal"
-    if request.vars:
+    response.title="Docentes"
+    response.subtitle="Menú Principal"
+    
         # si me pasan en la URL el docente, lo filtro
-        q=db.personal.personalid == request.vars['personalid']
+    usuario=auth.user.id
+    q = db.personal.user_id == usuario
+    docentes=db(q).select(db.personal.nombre,db.personal.personalid)
+    q= db.personal.user_id == usuario
+    q &= db.comisiones.personalid == db.personal.personalid
+    comisiones=db(q).select(db.comisiones.comisionid,db.comisiones.nombre)
 
-        redirect(URL(f=ficha, vars={'personalid': docente.personal.personalid}))
+        #redirect(URL(f=ficha, vars={'personalid': docente.personal.personalid}))
+    
 
-
-    else:
-        # sino, busco todos los docentes
-        q=db.personal.personalid>0
-        
-    return{}
+    return {"docentes":docentes,"comisiones":comisiones}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 # requiere que el logueado pertenezca al rol de personal  y/o doncente
+
 
 def alumnoXcomision():
     comisionid=request.args[0]
@@ -155,14 +159,14 @@ def alumnoXcomision():
 
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def horarios():
     q=db.horarios.horarioid>0
     horarios=db(q).select()
     return{'horarios':horarios}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def finales():
 
 
@@ -200,7 +204,7 @@ def finales():
     return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def listamaterias():
 
     q = db.examenes.materiaid == db.materias.materiaid
@@ -215,12 +219,11 @@ def listamaterias():
     return dict (examenes= examenes)
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def listaparciales():
     response.title="Docentes"
     response.subtitle="Examenes parciales"
-    COMISIONID=76 #PRACTICA pROF
-    MATERIAID=179 #PRACTICA PROFESIONAL
+    COMISIONID= int(request.args[0])
     condicion="REGULAR"
     q = db.comisiones.comisionid==COMISIONID
     # Busca las comisiones que coincidan
@@ -307,7 +310,7 @@ def listaparciales():
 
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def libres():
 
     q =db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
@@ -344,7 +347,7 @@ def libres():
     return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def elegir():
     ""
     return{}
@@ -385,7 +388,7 @@ def parciales_seleccion():
     return{}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def apuntes():
 
     if request.vars.GRABAR=="GUARDAR":
@@ -396,7 +399,7 @@ def apuntes():
     return{}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def recursos():
     q = db.profesores.user_id == auth.user_id
     q &= db.profesores.personalid== db.personal.personalid
@@ -417,7 +420,7 @@ def recursos():
     return {'usuario':usuario}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def listar():
     reservas = db().select(db.recursos.recurso,db.recursos.profesor,db.recursos.fecha,db.recursos.cantidad)
     return{'reservas':reservas}
@@ -498,13 +501,13 @@ def cancelar():
     return dict (f=form,a=a)
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def unidad():
     ""
     return{}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def ficha():
     # obtengo el id de la url (primer argumento por posicion):
 
@@ -545,7 +548,7 @@ def ficha():
     return dict (fila=fila, comisiones=comisiones)
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def altas():
     db.personal.user_id.default= auth.user_id
     subtitulo= T ('Complete el formulario por favor...')
@@ -563,7 +566,7 @@ def modificar():
     return{}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def listarfinales():
 
     i=0
@@ -625,7 +628,7 @@ def listarfinales():
     return dict (t=tablaFinal)
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def modificarfinal():
 
      #realiza la consulta. request.args(0) contiene el 'id' seleccionado en 'listarfinales viene como parametro
@@ -663,7 +666,7 @@ def modificarfinal():
     return dict(form=form)
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def muestrafinal():
 
     finalSeleccionado= db(db.notas.id==request.args(0)).select()
@@ -703,39 +706,26 @@ def muestrafinal():
 def asistencias():
     from datetime import datetime
     
-   
-    response.title="Campus Web Pro"
-    
+    response.title="Docentes"
     response.subtitle="Inasistencia"
     
     tipos_map={}  
-    
     cants_map={}
     
     q=db.inasistencias.inasistenciaid>0
    
     for inasistencia in db(q).select(db.inasistencias.ALL):
-    
         inaid = inasistencia.inasistenciaid
-        
         if inasistencia.cantidad == 0:
-            
             id_presente = inaid
-            
         else:
-            
             tipos_map[inaid]= inasistencia.descripcion
-            
             cants_map[inaid]= inasistencia.cantidad
 
-    comisionid  = 76
-    
+    comisionid  = int(request.args[0])
     q=db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
-    
     q&=db.comisiones.comisionid==db.inscripcionescomision.comisionid
-    
     q&=db.comisiones.comisionid==comisionid
-    
     filas=db(q).select()
 
     if request.vars.fecha:
@@ -745,7 +735,6 @@ def asistencias():
     
     if request.vars.confirmar:  #agrego esto para que entre al for solo si el usuario presiono "confirmar" y me muestre todos los campos
         for fila in filas:
-            
             valor=request.vars.get("check_%s" % fila.alumnos.alumnoid)
             if fecha:
                 if valor == "on":
@@ -759,18 +748,84 @@ def asistencias():
     return{"filas":filas, 'tipos_map': tipos_map, 'cants_map': cants_map}
 
 def listado_inasistencias():
-    response.title="Campus Web Pro"
-    response.subtitle= "Lista de Inasistencia"
-    q=db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
-    q&=db.inscripcionescomision.comisionid==76
-    q&=db.faltas.alumnoid==db.alumnos.alumnoid
-    filas=db(q).select(db.alumnos.nombre,
-                       db.faltas.cantidad.sum().with_alias("suma"),
-                       groupby=db.alumnos.nombre)
+    response.title="Docentes"
+    response.subtitle= "Listado de Inasistencia"
+    COMISIONID= int(request.args[0])
+    condicion=2 #REGULAR
+    q  = db.alumnos.alumnoid == db.inscripcionescomision.alumnoid
+    q &= db.inscripcionescomision.comisionid == COMISIONID
+    q &= db.inscripcionescomision.condicion == condicion 
+    q &= db.faltas.alumnoid == db.alumnos.alumnoid
+    alumnos=db(q).select(db.alumnos.alumnoid,db.alumnos.nombre,groupby=db.alumnos.nombre)
     
-    return {"filas":filas}
+    q  = db.alumnos.alumnoid == db.inscripcionescomision.alumnoid
+    q &= db.faltas.alumnoid == db.inscripcionescomision.alumnoid
+    q &= db.inscripcionescomision.comisionid == COMISIONID
+    q &= db.inscripcionescomision.alumnoid == db.alumnos.alumnoid
+    q &= db.inscripcionescomision.comisionid == db.comisiones.comisionid
+    
+    q &= db.faltas.alumnoid == db.alumnos.alumnoid
+    #DIAS HABILES
+    faltas=db(q).select(db.faltas.alumnoid,db.comisiones.dias_habiles,db.alumnos.nombre, groupby=db.alumnos.nombre)
+    
+    faltas_1p_map ={}
+    
+    for falta in faltas:
+        faltas_1p_map[falta.faltas.alumnoid] = falta.suma   
+    
+    q  = db.faltas.alumnoid == db.inscripcionescomision.alumnoid
+    q &= db.inscripcionescomision.comisionid == COMISIONID                        
+    q &= db.inscripcionescomision.alumnoid == db.alumnos.alumnoid
+    q &= db.inscripcionescomision.condicion == condicion 
+    q &= db.faltas.alumnoid == db.alumnos.alumnoid
+    q &= db.faltas.inasistenciaid == 5 #PRESENTES
+    faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.alumnos.nombre) #SUMA DE PRESENTES
+    
+    faltas_2p_map ={}
+    
+    for falta in faltas:
+        faltas_2p_map[falta.faltas.alumnoid] = falta.suma
+        
+    q  = db.faltas.alumnoid == db.inscripcionescomision.alumnoid
+    q &= db.inscripcionescomision.comisionid == COMISIONID                        
+    q &= db.inscripcionescomision.alumnoid == db.alumnos.alumnoid
+    q &= db.inscripcionescomision.condicion == condicion 
+    q &= db.faltas.alumnoid == db.alumnos.alumnoid
+    q&=db.faltas.inasistenciaid == 4 #AUSENTES
+    #SUMA DE AUSENTES
+    faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.alumnos.nombre) 
+	
+    faltas_3p_map ={}
+    for falta in faltas:
+        faltas_3p_map[falta.faltas.alumnoid] = falta.suma
+        
+    q  = db.faltas.alumnoid == db.inscripcionescomision.alumnoid
+    q &= db.inscripcionescomision.comisionid == COMISIONID                        
+    q &= db.inscripcionescomision.alumnoid == db.alumnos.alumnoid
+    q &= db.inscripcionescomision.condicion == condicion 
+    q &= db.faltas.alumnoid == db.alumnos.alumnoid
+    q&=db.faltas.inasistenciaid <= 3 #MEDIA FALTA
+    #SUMA DE MEDIAS FALTAS
+    faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.alumnos.nombre) 
+	
+    faltas_4p_map ={}
+    condicion_map = {}
+    porcentaje_map = {}
+    for falta in faltas:
+        faltas_4p_map[falta.faltas.alumnoid] = falta.suma
+        porcentaje_map[falta.faltas.alumnoid] = (faltas_3p_map[falta.faltas.alumnoid]+faltas_4p_map[falta.faltas.alumnoid]) *100/90
+        if porcentaje_map[falta.faltas.alumnoid]>=30:
+            condicion_map[falta.faltas.alumnoid]="LIBRE"
+        else:
+            condicion_map[falta.faltas.alumnoid]="REGULAR"
+    
+    return{'alumnos':alumnos, "faltas_1p_map": faltas_1p_map,"faltas_2p_map": faltas_2p_map,"faltas_3p_map": faltas_3p_map,"faltas_4p_map": faltas_4p_map,"porcentaje_map":porcentaje_map,"condicion_map":condicion_map}
 
+@auth.requires_login()    
+@auth.requires_membership(role='Docentes')
 def acta_volante():
-    response.title="Campus Web Pro"
+    response.title="Docentes"
     response.subtitle="Acta volante"
+    
+    comisionid  = int(request.args[0])
     return{}

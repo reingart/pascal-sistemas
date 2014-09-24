@@ -728,7 +728,7 @@ def asistencias():
             
             cants_map[inaid]= inasistencia.cantidad
 
-    comisionid  = 213
+    comisionid  = 76
     
     q=db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
     
@@ -762,7 +762,7 @@ def listado_inasistencias():
     response.title="Campus Web Pro"
     response.subtitle= "Lista de Inasistencia"
     q=db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
-    q&=db.inscripcionescomision.comisionid==213
+    q&=db.inscripcionescomision.comisionid==76
     q&=db.faltas.alumnoid==db.alumnos.alumnoid
     filas=db(q).select(db.alumnos.nombre,
                        db.faltas.cantidad.sum().with_alias("suma"),

@@ -357,6 +357,7 @@ def inasistencias():
 #requiere que haya un usuario logeado e integre el grupo alumnos
 #@auth.requires_membership(role='Alumnos')
 def examenes():
+    response.subtitle= "Examenes Finales Rendidos"
      #litado de examenes finales ya rendidos
     q = db.alumnos.user_id== auth.user_id
     #traemos el alumno para notificarlo en la vista
@@ -381,6 +382,7 @@ def examenes():
 #requiere que haya un usuario logueado e integre el grupo alumnos
 #@auth.requires_membership(role='Alumnos')
 def final():
+   
     #formulario de inscrip a examenes finales
     q = db.alumnos.user_id== auth.user_id
     #busca y trae todos los datos del alumno logueado

@@ -270,6 +270,7 @@ def busqueda():
 #requiere que haya un usuario logueado e integre el grupo alumnos
 #@auth.requires_membership(role='Alumnos') 
 def horarios():
+    response.subtitle= "Inscripcion Carrera"
    #lista los horarios dependiendo de la carrera
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
     alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista
@@ -322,6 +323,7 @@ def horarios_comision():
  #requiere que haya un usuario logueado e integre el grupo alumnos
 #@auth.requires_membership(role='Alumnos')
 def inasistencias():
+    response.subtitle= "Cantidad de inasistencias"
     #lista de inasistencias del alumno
     fecha= request.now.date()
     #guardo la fecha actual

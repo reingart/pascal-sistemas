@@ -61,7 +61,7 @@ def examenes_parciales():
 			#observaciones= request.vars.get("observaciones_%s" % alumno_id, 0)
 			establecimiento= "I.S.T.B.P"
 			a=5
-			db.notas.insert(alumnoid=alumno_id, materiaid=MATERIAID, periodoid=periodo, calificacionid=calificacion, nota=nota ,fecha=fecha, establecimiento=establecimiento)
+			db.notas.insert(alumnoid=alumno_id, materiaid=COMISIONID, periodoid=periodo, calificacionid=calificacion, nota=nota ,fecha=fecha, establecimiento=establecimiento)
 			i= i+1
 	comisiones = db(q).select(db.comisiones.ALL, distinct=True)
 	return{'filas':filas,'a':a, 'comisiones':comisiones}
@@ -223,8 +223,7 @@ def listamaterias():
 def listaparciales():
     response.title="Docentes"
     response.subtitle="Examenes parciales"
-    COMISIONID=76 #PRACTICA pROF
-    MATERIAID=179 #PRACTICA PROFESIONAL
+    COMISIONID= int(request.args[0])
     condicion="REGULAR"
     q = db.comisiones.comisionid==COMISIONID
     # Busca las comisiones que coincidan
@@ -751,7 +750,7 @@ def asistencias():
 def listado_inasistencias():
     response.title="Docentes"
     response.subtitle= "Listado de Inasistencia"
-    COMISIONID=76
+    COMISIONID= int(request.args[0])
     condicion=2 #REGULAR
     q  = db.alumnos.alumnoid == db.inscripcionescomision.alumnoid
     q &= db.inscripcionescomision.comisionid == COMISIONID

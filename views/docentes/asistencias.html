@@ -1,7 +1,7 @@
 {{extend 'layout.html'}} 
 <FORM method="POST"> 
     <center>
-        <h1><B>Práctica Profesional - Asistencias</B></h1>
+        <h1><B>Práctica Profesional</B></h1>
         FECHA:<INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date().strftime('%d/%m/%Y')}}> 
     <br><br>
     <TABLE style="border: 1px solid white">
@@ -31,7 +31,7 @@
         </tr>
     </TABLE>
     <br>
-<INPUT type="submit" value="CONFIRMAR" name= "confirmar">
+<INPUT type="submit" value="GUARDAR" name= "confirmar">
 <a href="http://127.0.0.1:8000/practicarepo/docentes/index.html"><input type=button value="VOLVER" ></a>
 </center>
 </FORM>

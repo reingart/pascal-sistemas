@@ -7,7 +7,7 @@ response.title = "Campus Web Pro"
 #requiere que haya un usuario logeado e integre el grupo alumnos
 @auth.requires_membership(role='Alumnos')
 def libreta(): 
-    response.subtitle= "Completar libreta del alumno"
+    
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
     alumno= db(q).select().first() #traemos el alumno para notificarlo en la vista
     q &= db.materias.materiaid== db.asignaturas.materiaid
@@ -298,7 +298,9 @@ def horarios():
 @auth.requires_membership(role='Alumnos')
 def horarios_comision():
    #lista los horarios dependiendo de la carrera
-    q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
+    response.subtitle= "Horarios de comision"
+    q = db.alumnos.user_id== auth.user_id
+        #guardo en la consulta el registro del alumno
     alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista
     q &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
     q &= db.inscripcionescomision.comisionid== db.comisiones.comisionid

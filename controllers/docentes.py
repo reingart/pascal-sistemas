@@ -281,48 +281,49 @@ def asistencias():
 @auth.requires_login()
 @auth.requires_membership(role='Docentes')
 def examenes_parciales():
-	response.title="Docentes"
-	response.subtitle="Examenes parciales"
-	COMISIONID= (request.args[0])
-	q = db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
-	q &= db.comisiones.comisionid==COMISIONID
+    response.title="Docentes"
+    response.subtitle="Examenes parciales"
+    COMISIONID= (request.args[0])
+    q = db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
+    q &= db.comisiones.comisionid==COMISIONID
 	#q &=db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
 	# Busca las comisiones que coincidan
-	q &= db.inscripcionescomision.condicion == 2 #REGULAR
-	q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
+    q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
 	#q &= db.inscripcionesexamen.examenid == db.examenes.examenid
-	#q &= db.examenes.materiaid == db.materias.materiaid
-	filas=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre, distinct=True)
-	i=0
-	a=0
-	if request.vars.GRABAR:
-		for fila in filas:
-			if request.vars.condicion=="1":
-				calificacion=3 #PARCIAL
-				periodo=26 #PRIMER CUATRIMESTRE
-			elif request.vars.condicion=="2":
-				calificacion=3 #PARCIAL
-				periodo=27 #SEGUNDO CUATRIMESTRE
-			elif request.vars.condicion=="1r":
-				calificacion=4 #RECUPERATORIO
-				periodo=26 #PRIMER CUATRIMESTRE
-			elif request.vars.condicion=="2r":
-				calificacion=4 #RECUPERATORIO
-				periodo=27 #SEGUNDO CUATRIMESTRE
-			fecha= request.vars.fecha
-			alumno_id= fila.alumnoid
+	#q &= db.comisiones.materiaid == db.materias.materiaid
+    filas=db(q).select(db.alumnos.ALL,db.comisiones.materiaid, orderby=db.alumnos.nombre, distinct=True)
+    i=0
+    a=0
+    if request.vars.GRABAR:
+        for fila in filas:
+            if request.vars.condicion=="1":
+                calificacion=3 #PARCIAL
+                periodo=26 #PRIMER CUATRIMESTRE
+            elif request.vars.condicion=="2":
+                calificacion=3 #PARCIAL
+                periodo=27 #SEGUNDO CUATRIMESTRE
+            elif request.vars.condicion=="1r":
+                calificacion=4 #RECUPERATORIO
+                periodo=26 #PRIMER CUATRIMESTRE
+            elif request.vars.condicion=="2r":
+                calificacion=4 #RECUPERATORIO
+                periodo=27 #SEGUNDO CUATRIMESTRE
+            fecha= request.vars.fecha
+            alumno_id= fila.alumnos.alumnoid
+            materiaid=fila.comisiones.materiaid
 			#materia_id = alumno.materiaid
 			# calificacion_id = 1
-			nota = int(request.vars.get("NOTA_%s" % alumno_id, 0))
+            nota = int(request.vars.get("NOTA_%s" % alumno_id, 0))
 			# libro = request.vars.libro
 			# folio =request.vars.folio
 			#observaciones= request.vars.get("observaciones_%s" % alumno_id, 0)
-			establecimiento= "I.S.T.B.P"
-			a=5
-			db.notas.insert(alumnoid=alumno_id, materiaid=materiaid, periodoid=periodo, calificacionid=calificacion, nota=nota ,fecha=fecha, establecimiento=establecimiento)
-			i= i+1
-	comisiones = db(q).select(db.comisiones.ALL, distinct=True)
-	return{'filas':filas,'a':a, 'comisiones':comisiones}
+            establecimiento= "I.S.T.B.P"
+            a=5
+            db.notas.insert(alumnoid=alumno_id, materiaid=materiaid, periodoid=periodo, calificacionid=calificacion, nota=nota ,fecha=fecha, establecimiento=establecimiento)
+            i= i+1
+	
+	return{'filas':filas,'a':a}
 
 @auth.requires_login()
 @auth.requires_membership(role='Docentes')
@@ -738,7 +739,7 @@ def modificarfinal():
 
         #redirecciona al controlador principal
 
-        redirect(URL(r=request, f='listarfinales'))
+        redirect(URL(r=request, f='..'))
 
     #retorna el formulario a la vista
 
@@ -776,7 +777,7 @@ def muestrafinal():
 
         session.flash = "ADVERTENCIA: Los datos modificados se guardaran en la Base de Datos"
 
-        redirect(URL(r=request, f='listarfinales'))#redirecciona al controlador principal
+        redirect(URL(r=request, f='/listafinales/76'))#redirecciona al controlador principal
 
 
     return dict(form=form)

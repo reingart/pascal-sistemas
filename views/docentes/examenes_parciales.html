@@ -4,7 +4,7 @@
 	<br>
 	<div id="div_centrado">
         <h2>PRÁCTICA PROFESIONAL</h2> 
-        <b>FECHA:<INPUT type="text" Name="fecha" size="11" VALUE= {{=request.now.date().strftime('%d/%m/%Y')}}> 
+        <b>FECHA:<INPUT type="text" Name="fecha" size="11" VALUE= {{=request.now.date()}}> 
             PERIODO:</b>
 	    <select NAME="condicion">
 		    <option value="1">1er CUATRIMESTRE</option>
@@ -21,9 +21,9 @@
     </tr>
 	{{for fila in filas:}}
 	<tr>
-		<td id= "head"><center>{{=fila.alumnoid}}</center></td>
-		<td id= "head"><center>{{=fila.nombre}}</center></td>
-		<td id= "head"><center><INPUT type="text" NAME="NOTA_{{=fila.alumnoid}}" size="2" MAXLENGTH="2"></center></td>
+		<td id= "head"><center>{{=fila.alumnos.alumnoid}}</center></td>
+		<td id= "head"><center>{{=fila.alumnos.nombre}}</center></td>
+		<td id= "head"><center><INPUT type="text" NAME="NOTA_{{=fila.alumnos.alumnoid}}" size="2" MAXLENGTH="2"></center></td>
 	</tr>
 	{{pass}}
 </TABLE>

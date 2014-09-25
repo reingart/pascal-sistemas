@@ -346,12 +346,13 @@ def finales():
 
             nota = int(request.vars.get("NOTA_%s" % alumno_id, 0))
             calificacionid=5 #FINALES REGULARES
+            periodoid=30 #EXAMENES DICIEMBRE 2014 FINALES
             libro = request.vars.libro
             folio =request.vars.folio
             establecimiento= "I.S.T.B.P"
             a=5
 
-            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,calificacionid=calificacionid,materiaid=materia_id,libro=libro,folio=folio, establecimiento=establecimiento)
+            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,calificacionid=calificacionid,periodoid=periodoid,materiaid=materia_id,libro=libro,folio=folio, establecimiento=establecimiento)
             i= i+1
 
     comisiones = db(q).select(db.comisiones.ALL, distinct=True)

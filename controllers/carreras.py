@@ -67,3 +67,6 @@ def metodologia():
 
 def teleinformatica():
     return{}
+
+def practica():
+    return{}

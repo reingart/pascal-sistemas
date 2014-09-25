@@ -96,7 +96,6 @@ def listaparciales():
     response.title="Docentes"
     response.subtitle="Examenes parciales"
     COMISIONID= int(request.args[0])
-    condicion="REGULAR"
     q = db.comisiones.comisionid==COMISIONID
     # Busca las comisiones que coincidan
     q &= db.inscripcionescomision.condicion == 2 #REGULAR
@@ -111,10 +110,10 @@ def listaparciales():
     # Busca las comisiones que coincidan
     q &= db.inscripcionescomision.condicion == 2 #REGULAR
     q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
-    q &= db.inscripcionesexamen.examenid == db.examenes.examenid
+    #q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.comisiones.materiaid == db.notas.materiaid
     q &= db.notas.calificacionid == 3 #PARCIAL
-    q &= db.notas.periodoid==26 #1er CUATRIMESTRE
+    q &= db.notas.periodoid==31 #1er CUATRIMESTRE
     filas=db(q).select(db.notas.alumnoid,db.notas.nota)
 
     notas_1p_map ={}
@@ -130,7 +129,7 @@ def listaparciales():
     q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.comisiones.materiaid == db.notas.materiaid
     q &= db.notas.calificacionid == 3 #PARCIAL
-    q &= db.notas.periodoid==27 #2do CUATRIMESTRE
+    q &= db.notas.periodoid==32 #2do CUATRIMESTRE
     filas=db(q).select(db.notas.alumnoid,db.notas.nota)
 
     notas_2p_map ={}
@@ -146,7 +145,7 @@ def listaparciales():
     q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.comisiones.materiaid == db.notas.materiaid
     q &= db.notas.calificacionid == 4 #RECUPERATORIO
-    q &= db.notas.periodoid==26 #1er CUATRIMESTRE
+    q &= db.notas.periodoid==31 #1er CUATRIMESTRE
     filas=db(q).select(db.notas.alumnoid,db.notas.nota)
 
     notas_3p_map ={}
@@ -162,7 +161,7 @@ def listaparciales():
     q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.comisiones.materiaid == db.notas.materiaid
     q &= db.notas.calificacionid == 4 #RECUPERATORIO
-    q &= db.notas.periodoid==27 #2do CUATRIMESTRE
+    q &= db.notas.periodoid==32 #2do CUATRIMESTRE
     filas=db(q).select(db.notas.alumnoid,db.notas.nota)
 
     notas_4p_map ={}
@@ -286,12 +285,13 @@ def examenes_parciales():
     COMISIONID= (request.args[0])
     q = db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
     q &= db.comisiones.comisionid==COMISIONID
+    #q &= db.comisiones.materiaid==db.examenes.materiaid
 	#q &=db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
 	# Busca las comisiones que coincidan
     q &= db.inscripcionescomision.condicion == 2 #REGULAR
     q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
 	#q &= db.inscripcionesexamen.examenid == db.examenes.examenid
-	#q &= db.comisiones.materiaid == db.materias.materiaid
+    q &= db.comisiones.materiaid == db.materias.materiaid
     filas=db(q).select(db.alumnos.ALL,db.comisiones.materiaid, orderby=db.alumnos.nombre, distinct=True)
     i=0
     a=0
@@ -299,16 +299,16 @@ def examenes_parciales():
         for fila in filas:
             if request.vars.condicion=="1":
                 calificacion=3 #PARCIAL
-                periodo=26 #PRIMER CUATRIMESTRE
+                periodo=31 #PRIMER CUATRIMESTRE
             elif request.vars.condicion=="2":
                 calificacion=3 #PARCIAL
-                periodo=27 #SEGUNDO CUATRIMESTRE
+                periodo=32 #SEGUNDO CUATRIMESTRE
             elif request.vars.condicion=="1r":
                 calificacion=4 #RECUPERATORIO
-                periodo=26 #PRIMER CUATRIMESTRE
+                periodo=31 #PRIMER CUATRIMESTRE
             elif request.vars.condicion=="2r":
                 calificacion=4 #RECUPERATORIO
-                periodo=27 #SEGUNDO CUATRIMESTRE
+                periodo=32 #SEGUNDO CUATRIMESTRE
             fecha= request.vars.fecha
             alumno_id= fila.alumnos.alumnoid
             materiaid=fila.comisiones.materiaid
@@ -322,8 +322,7 @@ def examenes_parciales():
             a=5
             db.notas.insert(alumnoid=alumno_id, materiaid=materiaid, periodoid=periodo, calificacionid=calificacion, nota=nota ,fecha=fecha, establecimiento=establecimiento)
             i= i+1
-	
-	return{'filas':filas,'a':a}
+    return{'filas':filas,'a':a}
 
 @auth.requires_login()
 @auth.requires_membership(role='Docentes')

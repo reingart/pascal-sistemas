@@ -1877,7 +1877,24 @@ def cargar_faltas():
     
     return {'filas': db(db.faltas.faltaid>0).select()}
     
+def cargar_calificaciones():
+     # Antes de insertar borramos los registros de la tabla
+    db(db.calificaciones.calificacionid>0).delete()
+    db.calificaciones.insert(calificacionid=1,descripcion='Orientativa',condicion=None,ayuda=None,equivalencia='False',previa='False')
+    db.calificaciones.insert(calificacionid=2,descripcion='TP',condicion=None,ayuda=None,equivalencia='False',previa='False')
+    db.calificaciones.insert(calificacionid=3,descripcion='Parcial',condicion=None,ayuda=None,equivalencia='False',previa='False')
+    db.calificaciones.insert(calificacionid=4,descripcion='Recuperatorio',condicion='Regular',ayuda='Dentro del Mismo Per\xc3\xadodo',equivalencia='False',previa='False')
+    db.calificaciones.insert(calificacionid=5,descripcion='Final',condicion='Regular',ayuda='Anal\xc3\xadtico',equivalencia='False',previa='False')
+    db.calificaciones.insert(calificacionid=6,descripcion='Acreditaci\xc3\xb3n',condicion='Pend.Acred.',ayuda='"Previa"',equivalencia='False',previa='False')
+    db.calificaciones.insert(calificacionid=7,descripcion='Equivalencia',condicion='Equiv.',ayuda=None,equivalencia='True',previa='False')
+    db.calificaciones.insert(calificacionid=8,descripcion='Libre',condicion='Libre',ayuda=None,equivalencia='False',previa='False')
+    db.calificaciones.insert(calificacionid=9,descripcion='Final (No Regular)',condicion='No Regular',ayuda=None,equivalencia='False',previa='False')
+    db.calificaciones.insert(calificacionid=10,descripcion='',condicion='No Regular',ayuda=None,equivalencia='False',previa='False')
+    response.view="generic.html"
     
+    # Devuelvo una consulta del contenido de la tabla
+    
+    return {'filas': db(db.calificaciones.calificacionid>0).select()}
 def cargar_niveles():
     
     # Antes de insertar borramos los registros de la tabla

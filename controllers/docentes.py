@@ -309,33 +309,34 @@ def examenes_parciales():
 	return{'filas':filas,'a':a, 'comisiones':comisiones}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def finales():
-
-    q =db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
+    COMISIONID= int(request.args[0])
+    q = db.alumnos.alumnoid==db.inscripcionesexamen.alumnoid
+    q &= db.inscripcionesexamen.condicion == 2 #REGULAR
+    q &= db.comisiones.comisionid==COMISIONID
+    q &= db.comisiones.materiaid==db.examenes.materiaid
     # Busca las comisiones que coincidan
-    q &= db.inscripcionesexamen.condicion == 1
     #q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
     q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.examenes.materiaid == db.materias.materiaid
 
-    alumnos=db(q).select(db.alumnos.ALL, orderby=db.alumnos.nombre , distinct= True)
+    alumnos=db(q).select(db.alumnos.ALL,db.materias.materiaid, orderby=db.alumnos.nombre , distinct= True)
     i=0
     a=0
     if request.vars.grabar=="GUARDAR":
 
         for alumno in alumnos:
             fecha= request.vars.fecha
-            alumno_id= alumno.alumnoid
-            # materia_id = alumno.materiaid
-            # calificacion_id = 1
+            alumno_id= alumno.alumnos.alumnoid
+            materia_id = alumno.materias.materiaid
             nota = int(request.vars.nota[i])
             libro = request.vars.libro
             folio =request.vars.folio
             establecimiento= "I.S.T.B.P"
             a=5
 
-            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,libro=libro,folio=folio, establecimiento=establecimiento)
+            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,materiaid=materia_id,libro=libro,folio=folio, establecimiento=establecimiento)
             i= i+1
 
     comisiones = db(q).select(db.comisiones.ALL, distinct=True)
@@ -687,7 +688,7 @@ def modificar():
 
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def modificarfinal():
 
      #realiza la consulta. request.args(0) contiene el 'id' seleccionado en 'listarfinales viene como parametro
@@ -725,7 +726,7 @@ def modificarfinal():
     return dict(form=form)
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def muestrafinal():
 
     finalSeleccionado= db(db.notas.id==request.args(0)).select()

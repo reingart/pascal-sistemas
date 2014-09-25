@@ -27,8 +27,8 @@ Alumnos regulares
     
     {{for alumno in alumnos:}}
 	<tr>
-    <td id= "head"><B><center>{{=alumno.dni}}</B></td>
-    <td id= "head"><ul><B><center>{{=alumno.nombre}}</ul></B></td>
+    <td id= "head"><B><center>{{=alumno.alumnos.dni}}</B></td>
+    <td id= "head"><ul><B><center>{{=alumno.alumnos.nombre}}</ul></B></td>
     <td id= "head"><B><INPUT type="text" Name="nota" size="1"></td>
     
     </tr>

@@ -64,3 +64,6 @@ def horarios():
 
 def metodologia():
     return {}
+
+def teleinformatica():
+    return{}

@@ -184,7 +184,18 @@ def listaparciales():
 @auth.requires_membership(role='Docentes')
 def listafinales():
     i=0
-    proyectos = db().select (db.notas.ALL, distinct = True)
+    COMISIONID= int(request.args[0])
+    q = db.alumnos.alumnoid==db.inscripcionesexamen.alumnoid
+    q &= db.inscripcionesexamen.condicion == 2 #REGULAR
+    q &= db.comisiones.comisionid==COMISIONID
+    q &= db.comisiones.materiaid==db.examenes.materiaid
+    # Busca las comisiones que coincidan
+    #q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
+    q &= db.inscripcionesexamen.examenid == db.examenes.examenid
+    q &= db.examenes.materiaid == db.materias.materiaid
+    q &= db.notas.alumnoid==db.alumnos.alumnoid
+    q &= db.notas.calificacionid==5 #FINALES
+    proyectos = db(q).select (db.notas.ALL,db.alumnos.nombre, distinct = True)
     for x in proyectos:
         i=i+1
     lista=[]
@@ -193,19 +204,21 @@ def listafinales():
     lista.append(TABLE(TR(
     TH('Folio',_style='width:20px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
     TH('Libro',_style='width:20px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
+    TH('Alumno',_style='width:20px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
     TH('Nota',_style='width:20px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
      TFOOT(TR(TH('Total de proyectos: ',_style='width:20px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
     TH(i,' Proyectos',_style='width:120px; color:#000; background: #99f; border: 2px solid #cdcdcd'))),
 
     #se agregan las celdas que vinculan los campos "id" y "nombre" contenidos en rows, referenciado mas abajo en el for
-    *[TR(TD(rows.folio,_style='width:200px; color:#000; background: #eef; border: 2px solid #cdcdcd'),
-    TD(rows.libro,_style='width:200px; color:#000; background: #eef; border: 2px solid #cdcdcd'),
+    *[TR(TD(rows.notas.folio,_style='width:200px; color:#000; background: #eef; border: 2px solid #cdcdcd'),
+    TD(rows.notas.libro,_style='width:200px; color:#000; background: #eef; border: 2px solid #cdcdcd'),
 
     # SE AGREGA UNA CELDA PARA LOS HIPERVINCULOS Ver Y Modificar que enlazan con
     #los controladores muestraCarrera y modificarCarrera respectivamente:
-    TD(rows.nota,_style='width:200px; color:#000; background: #eef; border: 2px solid #cdcdcd'),
-    TD(A('Ver',_href=URL(r=request, f='muestrafinal', args=[rows.id]) ) ,' - ',  A('Modificar',_href=URL(r=request, f='modificarfinal',
-    args=[rows.notaid]) ) , _style='width:200px; color:#0C0E9C; background: 063C8E; border: 2px solid #063C8E' ) )
+    TD(rows.alumnos.nombre,_style='width:200px; color:#000; background: #eef; border: 2px solid #cdcdcd'),
+    TD(rows.notas.nota,_style='width:200px; color:#000; background: #eef; border: 2px solid #cdcdcd'),
+    TD(A('Ver',_href=URL(r=request, f='muestrafinal', args=[rows.notas.id]) ) ,' - ',  A('Modificar',_href=URL(r=request, f='modificarfinal',
+    args=[rows.notas.notaid]) ) , _style='width:200px; color:#0C0E9C; background: 063C8E; border: 2px solid #063C8E' ) )
 
     for rows in proyectos]),))
     #se conforma la Tabla resultado:

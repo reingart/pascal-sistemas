@@ -267,7 +267,7 @@ def asistencias():
 def examenes_parciales():
 	response.title="Docentes"
 	response.subtitle="Examenes parciales"
-	COMISIONID= int(request.args[0])
+	COMISIONID= (request.args[0])
 	q = db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
 	q &= db.comisiones.comisionid==COMISIONID
 	#q &=db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
@@ -330,13 +330,15 @@ def finales():
             fecha= request.vars.fecha
             alumno_id= alumno.alumnos.alumnoid
             materia_id = alumno.materias.materiaid
-            nota = int(request.vars.nota[i])
+
+            nota = int(request.vars.get("NOTA_%s" % alumno_id, 0))
+            calificacionid=5 #FINALES REGULARES
             libro = request.vars.libro
             folio =request.vars.folio
             establecimiento= "I.S.T.B.P"
             a=5
 
-            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,materiaid=materia_id,libro=libro,folio=folio, establecimiento=establecimiento)
+            db.notas.insert(nota=nota ,fecha=fecha,alumnoid=alumno_id,calificacionid=calificacionid,materiaid=materia_id,libro=libro,folio=folio, establecimiento=establecimiento)
             i= i+1
 
     comisiones = db(q).select(db.comisiones.ALL, distinct=True)

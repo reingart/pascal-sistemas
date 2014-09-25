@@ -1,4 +1,4 @@
-# coding: utf8
+# -*- coding: utf-8 -*-
 {
 '"update" is an optional expression like "field1=\'newvalue\'". You cannot update or delete the results of a JOIN': '"actualice" es una expresión opcional como "campo1=\'nuevo_valor\'". No se puede actualizar o eliminar resultados de un JOIN',
 '%d-%m-%y': '%d-%m-%y',
@@ -68,6 +68,7 @@
 'Client IP': 'IP del Cliente',
 'compile': 'compilar',
 'compiled application removed': 'aplicación compilada removida',
+'Complete el formulario por favor...': 'Complete el formulario por favor...',
 'Constancias': 'Constancias',
 'Consultar': 'Consultar',
 'Controller': 'Controlador',
@@ -172,6 +173,7 @@
 'Installed applications': 'Aplicaciones instaladas',
 'Institucional': 'Institucional',
 'Instrumentación': 'Instrumentación',
+'Insufficient privileges': 'Insufficient privileges',
 'internal error': 'error interno',
 'Internal State': 'Estado Interno',
 'Invalid action': 'Acción inválida',
@@ -195,6 +197,7 @@
 'Layout': 'Diseño',
 'License for': 'Licencia para',
 'loading...': 'cargando...',
+'Log In': 'Log In',
 'Logged in': 'Sesión iniciada',
 'Logged out': 'Logged out',
 'Login': 'Inicio de sesión',

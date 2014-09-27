@@ -33,7 +33,7 @@ Tenga en cuenta que solo podra rendir 2 libres en cada año
  <font color="red">
 
         <font color="yellow">
-        <input type="checkbox" name="{{="comision_%s" % c.comisiones.comisionid}}" {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} >
+        <input type="checkbox" name="{{="comisionl_%s" % c.comisiones.comisionid}}" {{='disabled' if (c.comisiones.comisionid in inscripciones) else ''}} or {{='disabled' if (c.comisiones.materiaid in aprobada) else ''}} >
  <td id= "td">
       <font color="yellow">
      {{='Ya inscripto, pendiente de revision' if (c.comisiones.comisionid in inscripciones) else ''}}

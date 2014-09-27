@@ -1,7 +1,12 @@
-# coding: utf8
+# coding: utf-8
 {
 '"update" is an optional expression like "field1=\'newvalue\'". You cannot update or delete the results of a JOIN': '"actualice" es una expresión opcional como "campo1=\'nuevo_valor\'". No se puede actualizar o eliminar resultados de un JOIN',
 '%d-%m-%y': '%d-%m-%y',
+'%d-%m-%Y': '%d-%m-%Y',
+'%d-%m-%YY': '%d-%m-%YY',
+'%d-%m-%yy': '%d-%m-%yy',
+'%d-%m-%YYYY': '%d-%m-%YYYY',
+'%dd-%mm-%y': '%dd-%mm-%y',
 '%s rows deleted': '%s filas eliminadas',
 '%s rows updated': '%s filas actualizadas',
 '%Y-%m-%d': '%Y-%m-%d',
@@ -338,8 +343,8 @@
 'View': 'Vista',
 'view': 'vista',
 'Viewing page version: %s': 'Viendo la versión de la página: %s',
-'Views': 'Vistas',
 'views': 'vistas',
+'Views': 'Vistas',
 'web2py is up to date': 'web2py está actualizado',
 'web2py Recent Tweets': 'Tweets Recientes de web2py',
 'WebAdmin': 'WebAdmin',

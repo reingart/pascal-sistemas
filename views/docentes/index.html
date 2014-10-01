@@ -1,7 +1,10 @@
 {{extend 'layout.html'}} 
 <center>
     <h2><B><u>MENÚ DOCENTES</u></B></h2>Prof. {{for docente in docentes:}}{{=docente.nombre}} {{pass}}
-    <B> - Análisis de Sistemas</B> - Tercer Año 
+    <B> - Análisis de Sistemas</B> -   
+                    <a href="{{=URL(f="ficha", args=docente.id)}}">
+                    Ficha
+                    </a>
 <BR><BR>
 <FORM method="POST">
     <TABLE id= "tabla">
@@ -31,7 +34,7 @@
                 </a>
             </td>
             <td>
-                <a href="{{=URL(f="listafinales", args=comision.comisionid)}}">
+                <a href="{{=URL(f="listarfinales", args=comision.comisionid)}}">
                     <input type=button value="Listar">
                 </a>
                 <a href="{{=URL(f="finales", args=comision.comisionid)}}">

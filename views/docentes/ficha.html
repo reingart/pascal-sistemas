@@ -13,19 +13,8 @@
 <BR>
     </div>
 
-    <b><u>Tomar inasistencias:</u></b>
-<br>
-<br>
-{{for comision in comisiones:}}
-
-    <li> <a href="{{=URL(f="alumnoXcomision", args=[comision.comisionid])}}">{{=comision.nombre}}</li>
-{{pass}}
-
-    </table>
-    
-<br>
 
 <form>
 
-<a href="index.html"><input type=button value="Volver" ></a>
+    <a href="../index.html"><input type=button value="Volver" ></a>
 </form>

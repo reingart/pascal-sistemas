@@ -32,15 +32,16 @@ def listado_inasistencias():
     q  = db.alumnos.alumnoid == db.inscripcionescomision.alumnoid
     q &= db.faltas.alumnoid == db.inscripcionescomision.alumnoid
     q &= db.inscripcionescomision.comisionid == COMISIONID
+    q &= db.inscripcionescomision.comisionid == db.comisiones.comisionid
     q &= db.inscripcionescomision.alumnoid == db.alumnos.alumnoid
     q &= db.inscripcionescomision.condicion == condicion
     q &= db.faltas.alumnoid == db.alumnos.alumnoid
     #DIAS HABILES
-    faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),db.alumnos.nombre, groupby=db.alumnos.nombre)
+    faltas=db(q).select(db.faltas.alumnoid,db.comisiones.dias_habiles)
     faltas_1p_map ={}
 
     for falta in faltas:
-        faltas_1p_map[falta.faltas.alumnoid] = falta.suma
+        faltas_1p_map[falta.faltas.alumnoid] = falta.comisiones.dias_habiles
 
     q  = db.faltas.alumnoid == db.inscripcionescomision.alumnoid
     q &= db.inscripcionescomision.comisionid == COMISIONID
@@ -65,9 +66,15 @@ def listado_inasistencias():
     faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.alumnos.nombre) 
 
     faltas_3p_map ={}
+    condicion_map = {}
+    porcentaje_map = {}
     for falta in faltas:
         faltas_3p_map[falta.faltas.alumnoid] = falta.suma
-
+        porcentaje_map[falta.faltas.alumnoid] = (faltas_3p_map[falta.faltas.alumnoid])*100 /faltas_1p_map[falta.faltas.alumnoid]
+        if porcentaje_map[falta.faltas.alumnoid]>=30:
+            condicion_map[falta.faltas.alumnoid]="LIBRE"
+        else:
+            condicion_map[falta.faltas.alumnoid]="REGULAR"
     q  = db.faltas.alumnoid == db.inscripcionescomision.alumnoid
     q &= db.inscripcionescomision.comisionid == COMISIONID
     q &= db.inscripcionescomision.alumnoid == db.alumnos.alumnoid
@@ -78,15 +85,10 @@ def listado_inasistencias():
     faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.alumnos.nombre) 
 
     faltas_4p_map ={}
-    condicion_map = {}
-    porcentaje_map = {}
+    
     for falta in faltas:
         faltas_4p_map[falta.faltas.alumnoid] = falta.suma
-        porcentaje_map[falta.faltas.alumnoid] = (faltas_3p_map[falta.faltas.alumnoid]+faltas_4p_map[falta.faltas.alumnoid]) *100/90
-        if porcentaje_map[falta.faltas.alumnoid]>=30:
-            condicion_map[falta.faltas.alumnoid]="LIBRE"
-        else:
-            condicion_map[falta.faltas.alumnoid]="REGULAR"
+        
 
     return{'alumnos':alumnos, "faltas_1p_map": faltas_1p_map,"faltas_2p_map": faltas_2p_map,"faltas_3p_map": faltas_3p_map,"faltas_4p_map": faltas_4p_map,"porcentaje_map":porcentaje_map,"condicion_map":condicion_map}
 
@@ -181,7 +183,7 @@ def listaparciales():
 
 @auth.requires_login()
 @auth.requires_membership(role='Docentes')
-def listafinales():
+def listarfinales():
     i=0
     COMISIONID= int(request.args[0])
     q = db.alumnos.alumnoid==db.inscripcionesexamen.alumnoid
@@ -363,7 +365,7 @@ def finales():
     return{'alumnos':alumnos,'a':a, 'comisiones':comisiones}
 
 @auth.requires_login()
-@auth.requires_membership(role='Personal')
+@auth.requires_membership(role='Docentes')
 def ficha():
     # obtengo el id de la url (primer argumento por posicion):
 
@@ -392,9 +394,9 @@ def ficha():
 
 
    # return {'docente':docente, 'comisiones':comisiones, 'horario':horario, 'horarios':horarios, 'horas':horas,'hora':hora}
-    q = db.profesores.user_id== auth.user_id   # obtengo el registro del alumno ya registrado como usuario
-    q &= db.profesores.personalid== db.personal.personalid
-    q &= db.personal.personalid== db.comisiones.personalid
+    q = db.personal.user_id== auth.user_id   # obtengo el registro del alumno ya registrado como usuario
+    #q &= db.profesores.personalid== db.personal.personalid
+    #q &= db.personal.personalid== db.comisiones.personalid
 
     fila = db(q).select( db.personal.nombre,db.personal.facebook, db.personal.E_mail, db.personal.foto).first()
     comisiones= db(q).select(db.comisiones.nombre,db.comisiones.comisionid)

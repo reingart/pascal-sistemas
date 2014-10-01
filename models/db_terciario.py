@@ -372,6 +372,7 @@ db.define_table('comisiones',
     Field('faltas2r', type='double'),
     Field('faltaslibre', type='double'),
     Field('faltasrecursa', type='double'),
+    Field('dias_habiles', type='double'),
     format= "%(comisionid)s [%(nombre)s]",
     migrate=migrate)
     

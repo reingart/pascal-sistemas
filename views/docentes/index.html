@@ -1,9 +1,8 @@
 {{extend 'layout.html'}} 
 <center>
     <h2><B><u>MENÚ DOCENTES</u></B></h2>Prof. {{for docente in docentes:}}{{=docente.nombre}} {{pass}}
-    <B> - Análisis de Sistemas</B> -   
                     <a href="{{=URL(f="ficha", args=docente.id)}}">
-                    Ficha
+                    Ficha Personal
                     </a>
 <BR><BR>
 <FORM method="POST">

@@ -6,8 +6,7 @@ response.title = "Campus Web Pro"
 @auth.requires_login()
 #requiere que haya un usuario logeado e integre el grupo alumnos
 @auth.requires_membership(role='Alumnos')
-def libreta(): 
-    
+def libreta():
     q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
     alumno= db(q).select().first() #traemos el alumno para notificarlo en la vista
     q &= db.materias.materiaid== db.asignaturas.materiaid
@@ -436,7 +435,6 @@ def final():
                                 db.inscripcionescomision.alta, )
     for inscripcion in inscripciones:
         cursadas.append(inscripcion.comisiones.materiaid)
-    
     inscripto=[]
     o= db.inscripcionesexamen.alumnoid== alumno.alumnoid
     o&= db.inscripcionesexamen.baja == None
@@ -446,15 +444,12 @@ def final():
                       db.inscripcionesexamen.alta, )
     for inscripcion in fin:
         inscripto.append(inscripcion.examenes.materiaid)
-        
-        
-        
     correlatividades = {}
     c= db().select(db.correlativas.materiacorrelativa, db.correlativas.materiaid)
     for x in c:
         correlatividades.setdefault(x.materiaid, []).append(x.materiacorrelativa)
-
-    q = db.examenes.materiaid== db.materias.materiaid
+    q = db.alumnos.user_id== auth.user_id
+    q &= db.examenes.materiaid== db.materias.materiaid
     q &= db.examenes.personalid1== db.personal.personalid
     q &= db.materias.materiaid== db.asignaturas.materiaid
     q &= db.asignaturas.carreraid== db.carreras.carreraid
@@ -551,6 +546,7 @@ def inscripciones():
                                     alta=fecha,
                                     condicion=2)
                         ok += 1 #creo contador de comisiones insertados/seleccionados por el alumno
+            #en caso de falla agregar las condiciones "libre  y regular" en db.condiciones
             if _name.startswith ("comision_"):
                 comision_id = int(_name[_name.index('_')+1:])
                 # si el valor es on  en el checkbox insertamos los datos en inscripcion a examenes.

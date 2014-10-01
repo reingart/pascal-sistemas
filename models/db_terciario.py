@@ -24,6 +24,8 @@ db.define_table('alumnos',
     format= "%(alumnoid)s [%(nombre)s]",
     migrate=migrate)
 
+db.alumnos.fechanacimiento.requires=IS_DATE('%d-%m-%y')
+db.alumnos.ingreso.requires=IS_DATE('%d-%m-%y')
 db.alumnos.estadocivil.requires=IS_IN_SET(['soltero/a','casado/a','divorciado/a','viudo/a'])
 db.alumnos.sexo.requires=IS_IN_SET(['Masculino','Femenino'])
 db.alumnos.nacionalidad.requires=IS_IN_SET(['Argentino/a',
@@ -91,12 +93,12 @@ db.define_table('cargos',
     format= "%(cargoid)s [%(descripcion)s]",
     migrate=migrate)
     
-db.define_table('manuales',
-    Field('manualid', type='id'),
-    Field('descripcion', type='string', length=50),
-    Field('manual', type='upload'),
-    format= "%(manualid)s [%(descripcion)s]",
-    migrate=migrate)
+#db.define_table('manuales',
+#    Field('manualid', type='id'),
+#    Field('descripcion', type='string', length=50),
+#    Field('manual', type='upload'),
+#    format= "%(manualid)s [%(descripcion)s]",
+#    migrate=migrate)
     
     
 db.define_table('recursos',
@@ -393,7 +395,7 @@ db.define_table('profesores',
     Field('revistaid', db.revistas),
     Field('licencia', type='boolean', default=False),
     Field('detalle', type='string', length=50),
-    Field('ref', type='string', length=1),
+    #Field('ref', type='string', length=1),
     Field('user_id', db.auth_user, readable= False, writable= False),
     format= "%(profesorid)s [%(detalle)s]",
     migrate=migrate)
@@ -432,7 +434,9 @@ db.define_table('faltas',
     Field('detalle', type='string', length=50),
     format= "%(faltaid)s [%(detalle)s]",
     migrate=migrate)
-    
+
+db.faltas.fecha.requires=IS_DATE('%d-%m-%y')
+
 db.define_table('examenes',
     Field('examenid', type='id'),
     Field('materiaid', db.materias),

@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*- 
 
-#########################################################################
-## This scaffolding model makes your app work on Google App Engine too
-#########################################################################
-
 if request.env.web2py_runtime_gae:            # if running on Google App Engine
     db = DAL('gae')                           # connect to Google BigTable
     session.connect(request, response, db=db) # and store sessions and tickets there

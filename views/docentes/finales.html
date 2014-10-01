@@ -4,7 +4,7 @@ Establecimiento: <label for="istbp">I.S.T.B.P</label>
 <br>
 <br>
 
-Alumnos regulares 
+Alumnos Regulares
 
 <br>
 <br>
@@ -15,35 +15,31 @@ Alumnos regulares
     <td> Folio: <INPUT type="text" Name="folio" size="5"></td>  
     <td>Fecha: <INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date()}}></td>
     </table>
-    
+
 <br>
 
     <TABLE id= "tabla">
-    <td id= "head"><B><center>D.N.I</B></td>
+    <td id= "head"><B><center>DNI</B></td>
     <td id= "head"><B><center>Alumno</B></td>
     <td id= "head"><B><center>Nota</B></td>
 
-  
-    
+
+
     {{for alumno in alumnos:}}
 	<tr>
     <td id= "head"><B><center>{{=alumno.alumnos.dni}}</B></td>
     <td id= "head"><ul><B><center>{{=alumno.alumnos.nombre}}</ul></B></td>
     <td id= "head"><B><INPUT type="text" NAME="NOTA_{{=alumno.alumnos.alumnoid}}" size="2" MAXLENGTH="2"></td>
-    
+
     </tr>
     {{pass}}
     <tr>
     </tr>
     </table>
-    
+
 <br>
 <br>
 <INPUT type="submit" name="grabar" value="GUARDAR">
-</FORM>
-<br>
-<br>
-<form>
- <a href="elegir.html"><input type=button value="Volver" ></a> 
+<a href="../index.html"><input type=button value="Volver" ></a>
 </form>
 </div>

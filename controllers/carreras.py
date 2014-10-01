@@ -43,4 +43,30 @@ def redes():
     return {}
     
 def programas():
+    
+    return{}
+
+def index():
+    q=db.horarios.horarioid>0
+    horarios=db(q).select()
+    return{'horarios':horarios}
+
+def horarios():
+
+    horariosid=request.args[0]
+    q= db.horarios.horaid==horarioid
+    q &= db.horarios.horaid==db.hora.horaid
+    q &= db.horarios.comisionid==db.comision.comisionid
+    q &= db.horarios.diaid==db.dia.diaid
+   
+    filas=db(q).select()
+    return{'filas': filas}
+
+def metodologia():
+    return {}
+
+def teleinformatica():
+    return{}
+
+def practica():
     return{}

@@ -2,7 +2,7 @@
 <center>
     <h2><B><u>MENÚ DOCENTES</u></B></h2>Prof. {{for docente in docentes:}}{{=docente.nombre}} {{pass}}
                     <a href="{{=URL(f="ficha", args=docente.id)}}">
-                    Ficha Personal
+                    - Ficha Personal
                     </a>
 <BR><BR>
 <FORM method="POST">

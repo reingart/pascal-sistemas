@@ -398,7 +398,7 @@ def ficha():
     #q &= db.profesores.personalid== db.personal.personalid
     #q &= db.personal.personalid== db.comisiones.personalid
 
-    fila = db(q).select( db.personal.nombre,db.personal.facebook, db.personal.E_mail, db.personal.foto).first()
+    fila = db(q).select( db.personal.ALL).first()
     comisiones= db(q).select(db.comisiones.nombre,db.comisiones.comisionid)
 
 

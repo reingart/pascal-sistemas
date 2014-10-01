@@ -502,7 +502,7 @@ def horarios():
     horarios=db(q).select()
     return{'horarios':horarios}
 
-
+ 
 
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
@@ -518,7 +518,7 @@ def listamaterias():
 
 
     return dict (examenes= examenes)
-
+ 
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 def libres():
@@ -562,7 +562,7 @@ def elegir():
     ""
     return{}
 
-
+ 
 
 def parciales_seleccion():
     return{}
@@ -686,7 +686,7 @@ def unidad():
     ""
     return{}
 
-
+ 
 
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
@@ -778,7 +778,7 @@ def muestrafinal():
 
         session.flash = "ADVERTENCIA: Los datos modificados se guardaran en la Base de Datos"
 
-        redirect(URL(r=request, f='/listafinales/76'))#redirecciona al controlador principal
+        redirect(URL(r=request, f='listarfinales'))#redirecciona al controlador principal
 
 
     return dict(form=form)

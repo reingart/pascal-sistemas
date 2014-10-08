@@ -450,7 +450,9 @@ db.define_table('examenes',
     Field('personalid3', db.personal),
     format= "%(examenid)s [%(llamado)s]",
     migrate=migrate)
-    
+
+db.examenes.fecha.requires=IS_DATE('%d-%m-%y')
+
 db.define_table('inscripcionescarrera',
     Field('inscripcionid', type='id'),
     Field('alumnoid', db.alumnos, readable= False, writable= False),

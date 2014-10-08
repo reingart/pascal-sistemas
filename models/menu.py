@@ -17,9 +17,10 @@ response.title = request.application
 response.menu = [
     [T('Institucional'), False, URL(request.application,'default','index'), [
         [T('Historia'), False, URL(request.application,'info','historia'), []],
-        [T('Por que elegirnos'), False, URL(request.application,'info','por_que_elegirnos'), []],        
-        [T('Plantel Docente'), False, URL(request.application,'info','plantel_docente'), []],
+   [T('Por que elegirnos'), False, URL(request.application,'info','por_que_elegirnos'),[]],              
+      [T('Plantel Docente'), False, URL(request.application,'info','plantel_docente'), []],
         [T('Palabras del Director'), False, URL(request.application,'info','director'), []],
+        [T('Cartelera'), False, URL(request.application,'cartelera','menu'), []]
     ]],
     [T('Carreras'), False, URL(request.application,'carreras','index'), [
         [T('Analista de Sistemas'), False, URL(request.application,'carreras','sistemas'),[]],
@@ -81,5 +82,4 @@ response.menu = [
     ]],   
     
     ]
-
-response.menu_flisol = [T('FLISOL 2010'), False, URL("flisol2010",'default','index'), []]
+response.menu_flisol = [T('FLISOL 2010'), False, URL("flisol2010",'default','index')]

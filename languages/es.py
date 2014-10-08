@@ -189,7 +189,11 @@
 'Installed applications': 'Aplicaciones instaladas',
 'Institucional': 'Institucional',
 'Instrumentación': 'Instrumentación',
+<<<<<<< local
+'Insufficient privileges': 'Insufficient privileges',
+=======
 'Insufficient privileges': 'Privilegios insuficientes',
+>>>>>>> other
 'internal error': 'error interno',
 'Internal State': 'Estado Interno',
 'Invalid action': 'Acción inválida',
@@ -263,9 +267,15 @@
 'Peeking at file': 'Visualizando archivo',
 'Plantel Docente': 'Plantel Docente',
 <<<<<<< local
+=======
+<<<<<<< local
 'please input your password again': 'Por favor, ingrese nuevamente su contraseña',
 =======
+>>>>>>> other
 'please input your password again': 'please input your password again',
+<<<<<<< local
+=======
+>>>>>>> other
 >>>>>>> other
 'Por que elegirnos': 'Por que elegirnos',
 'porcentaje de materias aprobadas': 'porcentaje de materias aprobadas',
@@ -290,12 +300,18 @@
 'Registration key': 'Contraseña de Registro',
 'Registration needs verification': 'Registro de una verificación',
 <<<<<<< local
+=======
+<<<<<<< local
 'Registrese': 'Regístrese',
 'Reincorporacion': 'Reincorporación',
 =======
+>>>>>>> other
 'Registration successful': 'Registration successful',
 'Registrese': 'Registrese',
 'Reincorporacion': 'Reincorporacion',
+<<<<<<< local
+=======
+>>>>>>> other
 >>>>>>> other
 'Remember me (for 30 days)': 'Recordarme (por 30 days)',
 'remove compiled': 'eliminar compiladas',
@@ -345,9 +361,15 @@
 'tipo de certificado': 'tipo de certificado',
 'Title': 'Título',
 <<<<<<< local
+=======
+<<<<<<< local
 'Titulo en Tramite': 'Título en Trámite',
 =======
+>>>>>>> other
 'Titulo en Tramite': 'Titulo en Tramite',
+<<<<<<< local
+=======
+>>>>>>> other
 >>>>>>> other
 'to  previous version.': 'a la versión previa.',
 'Tramites': 'Trámites',
@@ -388,8 +410,11 @@
 'views': 'vistas',
 'Views': 'Vistas',
 <<<<<<< local
+=======
+<<<<<<< local
 'Volver': 'Volver',
 =======
+>>>>>>> other
 >>>>>>> other
 'web2py is up to date': 'web2py está actualizado',
 'web2py Recent Tweets': 'Tweets Recientes de web2py',

@@ -26,7 +26,7 @@ def listado_inasistencias():
     q  = db.alumnos.alumnoid == db.inscripcionescomision.alumnoid
     q &= db.inscripcionescomision.comisionid == COMISIONID
     q &= db.inscripcionescomision.condicion == condicion 
-    q &= db.faltas.alumnoid == db.alumnos.alumnoid
+    #q &= db.faltas.alumnoid == db.alumnos.alumnoid
     alumnos=db(q).select(db.alumnos.alumnoid,db.alumnos.nombre,groupby=db.alumnos.nombre)
 
     q  = db.alumnos.alumnoid == db.inscripcionescomision.alumnoid
@@ -45,9 +45,12 @@ def listado_inasistencias():
 
     q  = db.faltas.alumnoid == db.inscripcionescomision.alumnoid
     q &= db.inscripcionescomision.comisionid == COMISIONID
+    q &= db.inscripcionescomision.comisionid == db.comisiones.comisionid
     q &= db.inscripcionescomision.alumnoid == db.alumnos.alumnoid
     q &= db.inscripcionescomision.condicion == condicion 
+    q &= db.faltas.comisionid == COMISIONID
     q &= db.faltas.alumnoid == db.alumnos.alumnoid
+    
     q &= db.faltas.inasistenciaid == 5 #PRESENTES
     faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.alumnos.nombre) #SUMA DE PRESENTES
 
@@ -61,6 +64,7 @@ def listado_inasistencias():
     q &= db.inscripcionescomision.alumnoid == db.alumnos.alumnoid
     q &= db.inscripcionescomision.condicion == condicion 
     q &= db.faltas.alumnoid == db.alumnos.alumnoid
+    q &= db.faltas.comisionid == COMISIONID
     q&=db.faltas.inasistenciaid == 4 #AUSENTES
     #SUMA DE AUSENTES
     faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.alumnos.nombre) 
@@ -70,7 +74,9 @@ def listado_inasistencias():
     porcentaje_map = {}
     for falta in faltas:
         faltas_3p_map[falta.faltas.alumnoid] = falta.suma
-        porcentaje_map[falta.faltas.alumnoid] = (faltas_3p_map[falta.faltas.alumnoid])*100 /faltas_1p_map[falta.faltas.alumnoid]
+        valor = (faltas_3p_map[falta.faltas.alumnoid])*100 /faltas_1p_map[falta.faltas.alumnoid] #CALCULO EL PORCENTAJE DE INASISTENCIAS
+        porcentaje_redondeado = round (valor,2) #REDONDEO EL RESULTADO CON DOS DECIMALES
+        porcentaje_map[falta.faltas.alumnoid] = porcentaje_redondeado
         if porcentaje_map[falta.faltas.alumnoid]>=30:
             condicion_map[falta.faltas.alumnoid]="LIBRE"
         else:
@@ -80,6 +86,7 @@ def listado_inasistencias():
     q &= db.inscripcionescomision.alumnoid == db.alumnos.alumnoid
     q &= db.inscripcionescomision.condicion == condicion
     q &= db.faltas.alumnoid == db.alumnos.alumnoid
+    q &= db.faltas.comisionid == COMISIONID
     q&=db.faltas.inasistenciaid <= 3 #MEDIA FALTA
     #SUMA DE MEDIAS FALTAS
     faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.alumnos.nombre) 

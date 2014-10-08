@@ -350,7 +350,7 @@
 'Titulo en Tramite': 'Titulo en Tramite',
 >>>>>>> other
 'to  previous version.': 'a la versión previa.',
-'Tramites': 'Tramites',
+'Tramites': 'Trámites',
 'translation strings for the application': 'cadenas de caracteres de traducción para la aplicación',
 'try': 'intente',
 'try something like': 'intente algo como',

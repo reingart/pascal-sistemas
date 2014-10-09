@@ -193,6 +193,7 @@ def listaparciales():
 def listarfinales():
     i=0
     COMISIONID= int(request.args[0])
+    PERIODOID=30 #FINALES DICIEMBRE 2014
     q = db.alumnos.alumnoid==db.inscripcionesexamen.alumnoid
     q &= db.inscripcionesexamen.condicion == 2 #REGULAR
     q &= db.comisiones.comisionid==COMISIONID
@@ -203,7 +204,9 @@ def listarfinales():
     q &= db.examenes.materiaid == db.materias.materiaid
     q &= db.notas.alumnoid==db.alumnos.alumnoid
     q &= db.notas.calificacionid==5 #FINALES
+    q &= db.notas.periodoid==PERIODOID
     q &= db.notas.periodoid==db.periodos.periodoid
+    
     proyectos = db(q).select (db.notas.ALL,db.alumnos.nombre,db.periodos.descripcion, distinct = True)
     for x in proyectos:
         i=i+1

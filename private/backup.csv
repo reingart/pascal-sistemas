@@ -1,53 +1,103 @@
 TABLE auth_user
 auth_user.id,auth_user.first_name,auth_user.last_name,auth_user.email,auth_user.password,auth_user.registration_key,auth_user.reset_password_key,auth_user.registration_id
-1,lucas,gonzalez,luka.jesu12@gmail.com,sha512$ac8b7839cc4d39b9$7bc8eb2f90f6b4083b478292091a4fe1e1768e44f287c8fe969aa504e4e615b3cf7664e37fe10494d77d5a86b6e562223d650b7901c9fa32626478269d64dbf8,,,
-4,sofia,ramirez,sofia-ramirez91@hotmail.es,sha512$97daccdb6f26b147$d61bbb6da1b65baa4d930155bea39613b6eab79bb2cece140c473df24bbef490fae52b2c67e00a9a4cd35792bd5fc5844f7ca128a8ae5f8f14ac471a6da3661c,,,
-5,yanina,alarcon,yani.alarcon@yahoo.com.ar,sha512$bafb07e4da266702$61e6fadcb6fa6928e5bbc44d21caf5ae11521e61717a101301f523196fa8df460e648c64c519aa0e8fc23f131e9b8db316e5bca7794bef127959a971d30d0e7c,,,
-6,yvana,santillo,yvanasabrinasantillo@hotmail.com,sha512$b28dc655ef3b0f98$14e0ca5fd5c972784d2b6b79c1918555ae71688c9611d0ba457d8e46c10b90b4c7d2ff359ce0e98d02e6f390cb02ff661f722e5c201430c5f2e29f6b23b6f5b1,,,
-8,Ezequiel,Villalba,ezevillalba92@gmail.com,sha512$9b2a0bc756f0d97e$db4b69f02b25e8112edce7a3cb32c6e91e588c33ff231bf7c90ae51990fe5081552cca50995cfcbb674d39746cf90f5a4fc0a69be3497f54d680841d8bba8008,,,
-9,hector,calvo,hector2251@yahoo.com.ar,sha512$9a95abaa420aa899$e36eb2238514bcf2c792211a6f865591c7e6781fae7b9f2aa72c3e67a1b1ff91c5d9a6ff61ab1dea95402db44f96ea34823cabbeff1221292e357dc5e5e488a6,,,
-10,Mariano,Reingart,reingart@gmail.com,sha512$83b6570097bc8502$6499af312f1a2fe90526552286ce015c077f66e31e3c8783b0f08a806197d2cb9d4dcb6554e88782d2d65dd859748e0e8394d163c382d442fb9ccfe0c6ace8e9,,,
-11,angel,bravo,angel@gmail.com,sha512$afcfd728cdd6722d$43b4f8c80f9d217b547869b5eadb5a2120a37608c574f0536649c948259f0d700a4f77bc03cba3ef4f10dfa2ba9430a1215f7d331d58b09f3b90ac69a9707435,,,
-12,luz,medina,luz@gmail.com,sha512$9df5facf3c70dcd1$a7ac989efd435f97aac466097b0320a24e93874d73f96dd3c969a420e39fcf454a18e577d0fb838eba713092d4595d4191232f1e178f7dccda18f15a71dbd872,,,
-13,jose,gonzalez,jose@gmail.com,sha512$b65c2293faf6293a$b8dd1ffab8c82694cb3ffc809207c6a9ed52b6756522630f2a00965d6dd39a6caf43370789cb3f69f5fadf06b3d752dfd7c93f842945c9df8ff3bb7bfe4a0dfb,,,
-14,hector,amarilla,amarilla@gmail.com,sha512$b897dbfd883fef10$70bab4bab5bff42d63b4519149b6c8519b63ce050acddf586386767d33adf266fc9e6d127ade06878273ebba5cc1b075efdf428707bd70da7d05480899c83bf0,,,
-15,claudia,vargas,vargas@gmail.com,sha512$850c7713d6eced0d$bcf930107fe8f22fcc401faa98bae1b65aa3f56554f8fe6ea9458221099bbfc6cff115bdaffc919fea74c4a1f5842dd40d9988d454406cf8bdbeabfa7f2f8b85,,,
-16,elena,aguirre,aguirre@gmail.com,sha512$a7aea8e7ebf4dc15$8e135fc710b7aaa0138bc0d99bf5c50fc422621450002aced7d6c5b9566d69366dd1a60890baa3ccc5186332eb865bdd92ad550d206f90ecad12b4de3a21fd8a,,,
-17,andrea,roselli,roselli@gmail.com,sha512$b9f3ab8bf60b03fe$38177cef1f42aa1734979ecd29469d4007de8fcfa192d81d5d0b1baaf2fa24b1a304d4b7ee4d117bd1772283c877dd4a16f4297e37063b816ba16a2dae298df2,,,
-18,mirta,melgarejo,melgarejo@gmail.com,sha512$88c5a96c0faf0e17$e30ab648030ad52a73d5641dec5399e8d9cc52234543bf210e07e00086d58e191b93957d5ac8239170e8790ed68be32d28c1f8b2f40b2f535159be6390de22d3,,,
-19,mariano,reingart,reingart_mariano@gmail.com,sha512$9441c283caf75914$82032b4262f18c8fd07fdad128110e2b5cf48eef18bf75ff453ff3dea61c8031edc202dca5eb2310088994b89bf9aabfc0682da5fd85bb974aae2d08e6c3e9d5,,,
+1,Mariano,Reingart,reingart@gmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+2,Hector,Amarilla,roman.amarilla@gmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+3,Ángel,Bravo,Angelbravo@gmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+4,Helena,Aguirre,Aguihelena@gmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+5,Claudia,Vargas,vargasclaudia@gmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+6,Luz,Medina,Medinaluz@gmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+7,José,Gonzalez,Josegonzalez@gmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+8,Andrea,Roselli,roselli@gmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+50,Agustin,Irusta,agus354@hotmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+51,Diego,Luna,diegoluna@gmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+52,Romina,Llanos,romina9039@gmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+53,Debora,Mendoza,debomendoza@gmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+54,Franco,More,franco.more1758@gmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+55,Diego,Moreyra,diegojmoreyra@gmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+56,Diego,Olmos,tecnodiego@gmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+57,Sergio,Retamal,serxx66@gmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+58,Hugo,Villalba,VillalbaHugo@gmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+59,Mauro,Schiavone,SchiavoneM@gmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+60,Nahuel,Cosentino,CosentinoNa@gmail.com,sha512$aee7cfd38d9c5c15$70cd5500fd85e70464d8ad0ce728e4c85c9e7313c96168d330bf77ea91a281ff997eab9ae07a488adaba2d237680745627075585afeed079c2225b1d843ec7bb,,,
+61,Diego J,Moreyra,diegocarp15@hotmail.com,sha512$9ec50e40a04035d4$376c8c745c8f423ea1931fc1b8bf1605c0a3667d57f93ab4a3cbaff27eec9670745e3e8900b5de1eb5b9800b6e7977116bd0ea9bb5daea79865c6ac5dfa9821b,,,
+62,Franco,Moress,fran1758@hotmail.com,sha512$979d5016aeab6a8b$afb075ce109a91a21f52b5cee3c64b2e1631a01d771ef16e513fd1032a9b9944bb6e3d81f86bd95ece980e2c38048ba28cd66e240fca5d0acfb227a960768d09,,,
 
 
 TABLE auth_group
 auth_group.id,auth_group.role,auth_group.description
 1,Alumnos,Grupo de alumnos 
-3,Personal,Grupo de docentes y personal de la institución 
+2,Personal,Grupo del personal de la institucion 
+3,Docentes,Grupo de docentes de la institucion 
+4,user_61,Group uniquely assigned to user 61
+5,user_62,Group uniquely assigned to user 62
 
 
 TABLE auth_membership
 auth_membership.id,auth_membership.user_id,auth_membership.group_id
-1,1,1
-4,4,1
-5,5,1
-7,6,1
-10,8,1
-12,9,1
-14,11,3
-15,12,3
-22,17,3
-23,15,3
-24,16,3
-25,16,3
-26,14,3
-27,13,3
-28,18,3
-29,19,3
+1,1,3
+2,2,3
+3,3,3
+4,4,3
+5,5,3
+6,6,3
+7,7,3
+8,8,3
+50,50,1
+51,51,1
+52,52,1
+53,53,1
+54,54,1
+55,55,1
+56,56,1
+57,57,1
+58,58,1
+59,59,1
+60,60,1
+61,61,4
+62,61,1
+63,62,5
+64,62,1
 
 
 TABLE auth_permission
 
 
 TABLE auth_event
+auth_event.id,auth_event.time_stamp,auth_event.client_ip,auth_event.user_id,auth_event.origin,auth_event.description
+3,2014-09-23 01:08:17,127.0.0.1,1,auth,User 1 Logged-in
+4,2014-09-23 01:09:34,127.0.0.1,1,auth,User 1 Logged-out
+5,2014-09-23 01:09:43,127.0.0.1,1,auth,User 1 Logged-in
+6,2014-09-23 02:15:36,127.0.0.1,1,auth,User 1 Logged-out
+7,2014-09-23 02:15:47,127.0.0.1,1,auth,User 1 Logged-in
+8,2014-09-23 02:23:27,127.0.0.1,1,auth,User 1 Logged-out
+9,2014-09-23 02:24:00,127.0.0.1,3,auth,User 3 Logged-in
+10,2014-09-23 02:24:27,127.0.0.1,3,auth,User 3 Logged-out
+11,2014-09-23 02:24:57,127.0.0.1,4,auth,User 4 Logged-in
+12,2014-09-23 02:25:04,127.0.0.1,4,auth,User 4 Logged-out
+13,2014-09-23 02:25:32,127.0.0.1,1,auth,User 1 Logged-in
+14,2014-09-25 01:34:14,127.0.0.1,1,auth,User 1 Logged-in
+15,2014-09-25 01:47:33,127.0.0.1,1,auth,User 1 Logged-out
+16,2014-09-25 01:47:59,127.0.0.1,1,auth,User 1 Logged-in
+17,2014-09-25 14:59:24,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+18,2014-09-25 18:17:48,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+19,2014-09-25 19:00:41,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+20,2014-09-25 19:28:58,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+21,2014-09-26 21:20:29,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+22,2014-09-26 21:30:13,127.0.0.1,1,auth,User 1 Logged-out
+23,2014-09-26 21:31:27,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+24,2014-09-26 21:48:16,127.0.0.1,1,auth,User 1 Logged-out
+25,2014-09-26 21:48:37,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+26,2014-09-26 21:57:52,127.0.0.1,1,auth,User 1 Logged-out
+27,2014-09-26 21:58:32,127.0.0.1,<NULL>,auth,Grupo 4 creado
+28,2014-09-26 21:58:32,127.0.0.1,61,auth,Usuario 61 Registrado
+29,2014-10-01 02:34:14,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+30,2014-10-01 02:34:41,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+31,2014-10-01 03:41:21,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+32,2014-10-02 02:02:12,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+33,2014-10-08 18:56:05,127.0.0.1,1,auth,Usuario 1 sesión iniciada
+34,2014-10-08 18:57:04,127.0.0.1,1,auth,User 1 Logged-out
+35,2014-10-08 19:29:21,127.0.0.1,<NULL>,auth,Group 5 created
+36,2014-10-08 19:29:21,127.0.0.1,62,auth,User 62 Registered
 
 
 TABLE auth_cas
@@ -55,12 +105,27 @@ TABLE auth_cas
 
 TABLE alumnos
 alumnos.alumnoid,alumnos.nombre,alumnos.dni,alumnos.sexo,alumnos.fechanacimiento,alumnos.lugarnacimiento,alumnos.estadocivil,alumnos.nacionalidad,alumnos.direccion,alumnos.localidad,alumnos.cp,alumnos.telefono,alumnos.email1,alumnos.email2,alumnos.ingreso,alumnos.egreso,alumnos.foto,alumnos.user_id
-10,Lucas Gonzalez,37144763,Masculino,1992-09-23,Gonzalez Catan,Soltero,Argentino,Bordoy 1123,Gonzalez Catan,1759,5678-9876,luka.jesu12@gmail.com,luks_chizzo@hotmail.com,2011-03-14,<NULL>,alumnos.foto.90039a4598bcd7e8.313030323937335f.jpg,1
-21,Sofia Ramirez,4534523,Femenina,1991-12-20,Gonzalez Catan,Soltera,Argentina,Dragones 3456,Gonzalez Catan,1759,4567345,sofia-ramirez91@hotmail.es,,2011-03-14,<NULL>,,4
-22,Yanina Alarcon,31460842,Femenina,1984-11-13,Gonzalez Catan,Casada,Argentina,Monaco 6419,Gonzalez Catan,1759,456723,yani.alarcon@yahoo.com,,2011-03-14,<NULL>,,5
-23,Ivana Sabrina Santillo,37554250,Femenina,1993-04-08,lanus,soltera,argentina,totoral 365,gonzalez catan,1759,433584,yvanasantillo@yahoo.com,yvanasantillo1993@hotmail.com,2011-03-15,<NULL>,,6
-24,Ezequiel Villalba,36919250,Masculino,1992-07-13,Capital Federal,Soltero,Argentino,Santa Rosa 3723,laferrere,1757,4457-1645,ezevillalba92@gmail.com,,2011-03-07,<NULL>,,8
-25,Hector,23242526,Masculino,2010-02-07,bs as,casado,Argentino,loluu,catan,1212,15-2345-67,hector.calvo@gmail.com,,2011-03-07,<NULL>,,9
+1,Irusta Agustin,11111111,Masculino,<NULL>,,soltero/a,Argentino/a,,Pontevedra,,,,,<NULL>,<NULL>,,50
+2,Luna Diego,22222222,Masculino,<NULL>,,soltero/a,Argentino/a,,Virrey del Pino,,,,,<NULL>,<NULL>,,51
+3,Llanos Romina,33333333,Femenino,<NULL>,,soltero/a,Argentino/a,,González Catán,,,,,<NULL>,<NULL>,,52
+4,Mendoza Debora,<NULL>,Femenino,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,53
+5,More Franco,55555555,Masculino,<NULL>,,soltero/a,Argentino/a,,Gregorio de Laferrere,,,,,<NULL>,<NULL>,,54
+6,Moreyra Diego,36732240,Masculino,<NULL>,,soltero/a,Argentino/a,,Pontevedra,,,,,<NULL>,<NULL>,,55
+7,Olmos Diego,<NULL>,Masculino,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,56
+8,Retamal Sergio,88888888,Masculino,<NULL>,,soltero/a,Argentino/a,,otro,,,,,<NULL>,<NULL>,,57
+9,Villalba Hugo,99999999,Masculino,<NULL>,,soltero/a,Argentino/a,,otro,,,,,<NULL>,<NULL>,,58
+10,Schiavone Mauro,11222233,Masculino,<NULL>,,soltero/a,Argentino/a,,otro,,,,,<NULL>,<NULL>,,59
+11,Cosentino Nahuel,22333444,Masculino,<NULL>,,soltero/a,Argentino/a,,otro,,,,,<NULL>,<NULL>,,60
+12,Blanco Juan Pablo,<NULL>,Masculino,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+13,Hernando Patricio,<NULL>,Masculino,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+14,Mamani Nestor,<NULL>,Masculino,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+15,Zameberlan Paolo,<NULL>,Masculino,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+16,Florentin Claudio,<NULL>,Masculino,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+17,Leguizamon Pedro,<NULL>,Masculino,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+18,Decimo Damian,<NULL>,Masculino,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+19,Ragonese Ruben,<NULL>,Masculino,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+33,Diego Moreyra,36732240,Masculino,1992-05-22,,soltero/a,Argentino/a, oran 4435,Pontevedra,1761,11111111,diegocarp15@hotmail.com,,<NULL>,<NULL>,,61
+34,Frankito,36578449,Masculino,2014-10-05,V.Martelli,soltero/a,Uruguayo/a,azul3872,Ramos Mejía,1759,01112345678,diegojmoreyra@gmail.com,,2014-10-19,<NULL>,,62
 
 
 TABLE cursos
@@ -68,6 +133,9 @@ cursos.cursoid,cursos.nombre,cursos.codigo,cursos.nivel,cursos.anio,cursos.secci
 1,Primer año,1,3,2013,A,4,1
 2,Segundo año,2,3,2013,B,3,2
 3,Tercer año,3,3,2013,C,3,3
+4,Primer año,4,3,2014,A,4,1
+5,Segundo año,5,3,2014,B,3,2
+6,Tercer año,6,3,2014,C,3,3
 
 
 TABLE revistas
@@ -77,6 +145,10 @@ revistas.revistaid,revistas.nombre
 
 
 TABLE condiciones
+condiciones.condicionid,condiciones.detalle
+1,
+2,Regular
+3,Libre
 
 
 TABLE cargos
@@ -84,9 +156,6 @@ cargos.cargoid,cargos.descripcion
 1,Administrativo
 2,Profesor
 3,Porteria
-
-
-TABLE manuales
 
 
 TABLE recursos
@@ -100,14 +169,14 @@ secciones.seccionid,secciones.descripcion
 
 TABLE personal
 personal.personalid,personal.E_mail,personal.facebook,personal.nombre,personal.dni,personal.nacimiento,personal.domicilio,personal.localidad,personal.cp,personal.provincia,personal.telefono,personal.titulos,personal.otorgadospor,personal.fechaotorgamiento,personal.apto,personal.nombramiento,personal.cuil,personal.foto,personal.cargoid,personal.user_id
-2,reingart@gmail.com,mariano.reingart,Reingart Mariano,111111,<NULL>,Necochea 1132,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,pepe alberto,,nose,<NULL>,1234577,personal.foto.846577e02fd2b2a3.6d617269616e6f3.jpg,2,19
-3,hector@hotmail.com,hector.amarilla,Amarilla Hector,434343,<NULL>,Laprida 4567,gonzalez catan,1759,Buenos Aires,8568899,ingenieria en sistemas,Jose Rodriguez,,nose,<NULL>,8799999,personal.foto.bcbf221d67f4794c.616d6172696c6c6.jpg,2,<NULL>
-4,claudia@hotmail.com,mariaclaudia.vargas,Vargas Claudia,4545,<NULL>,San Juan 1122,gonzalez catan,1759,Buenos Aires,7899765,Contaduria,Juan Repeto,,nose,<NULL>,7876669,personal.foto.be7fa2dae636613a.323031332d30382.jpg,2,<NULL>
-5,angelbravo@gmail.com,angel.bravo,Bravo Angel,9897,<NULL>,Rivas 1450,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,Norberto Gonzalez,,nose,<NULL>,76969989,personal.foto.b86d8bebfddda1a5.627261766f2e6a7.jpg,1,<NULL>
-6,agui.elena@live.com,elen.aguirre,Aguirre Elena,57865,<NULL>,Sarmiento 1120,gonzalez catan,1759,Buenos Aires,6888899,Psicopedagoga,Norma Villanueva,,nose,<NULL>,545465456,personal.foto.b6d5339f19c52ba1.68656c656e61206.jpg,2,<NULL>
-7,luzmedina@hotmail.com,luz.pamela,Medina Luz,754645657,<NULL>,Claudia Sifre 1112,gonzalez catan,1759,Buenos Aires,436777,Analisis de sistemas,Angel Bravo,,nose,<NULL>,9679679,personal.foto.8ffc405571829758.37333538355f343.jpg,1,<NULL>
-8,josegonzalez@hotmail.com,jose.gonzalez,Gonzalez Jose,79588,<NULL>,Lasalle 456,gonzalez catan,1759,Buenos Aires,5474868787,Profesor matematica,Ruben Olmedo,,nose,<NULL>,7896969,personal.foto.8ea2bda6b501e36d.313233343933305.jpg,1,<NULL>
-9,roselli@hotmail.com,roselli.andrea,Andre Roselli,545353,<NULL>,Melian  567,gonzalez catan,1759,Buenos Aires,6576765757,Profesora de  ingles,Josefa Rosales,,nose,<NULL>,5476476475,personal.foto.8d0ccb6f6d8da835.3136323831335f3.jpg,2,<NULL>
+2,reingart@gmail.com,Mariano Reingart,Reingart Mariano,111111,<NULL>,,Hurlingham,,Buenos Aires,,Analista Programador,,,,<NULL>,,personal.foto.a74d189b850462f9.303532376463322.jpg,1,1
+3,HectorAmarilla@gmail.com,Hector Amarilla,Amarilla Hector,434343,<NULL>,Laprida 4567,gonzalez catan,1759,Buenos Aires,8568899,ingenieria en sistemas,Jose Rodriguez,,nose,<NULL>,8799999,<NULL>,2,2
+4,vargasclaudia@gmail.com,Maria Claudi Vargas,Vargas Claudia,4545,<NULL>,San Juan 1122,gonzalez catan,1759,Buenos Aires,7899765,Contaduria,Juan Repeto,,nose,<NULL>,7876669,<NULL>,2,5
+5,Angelbravo@gmail.com,Angel Bravo,Bravo Angel,9897,<NULL>,Rivas 1450,gonzalez catan,1759,Buenos Aires,7899765,ingenieria en sistemas,Norberto Gonzalez,,nose,<NULL>,76969989,<NULL>,1,3
+6,Aguihelena@gmail.com,Aguirre Helena,Aguirre Elena,57865,<NULL>,Sarmiento 1120,gonzalez catan,1759,Buenos Aires,6888899,Psicopedagoga,Norma Villanueva,,nose,<NULL>,545465456,<NULL>,2,4
+7,Medinaluz@gmail.com,Luz Medina,Media Luz,754645657,<NULL>,Claudia Sifre 1112,gonzalez catan,1759,Buenos Aires,436777,Analisis de sistemas,Angel Bravo,,nose,<NULL>,9679679,<NULL>,1,6
+8,Josegonzalez@gmail.com,Jose Gonzalez,Gonzalez Jose,79588,<NULL>,Lasalle 456,gonzalez catan,1759,Buenos Aires,5474868787,Profesor matematica,Ruben Olmedo,,nose,<NULL>,7896969,<NULL>,1,7
+9,roselli@gmail.com,Andrea Roselli,Andrea Roselli ,545353,<NULL>,Melian  567,gonzalez catan,1759,Buenos Aires,6576765757,Profesora de  ingles,Josefa Rosales,,nose,<NULL>,5476476475,<NULL>,1,8
 10,,,FLORES,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
 11,,,COLLOCA,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
 12,,,FERNANDEZ,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
@@ -126,6 +195,7 @@ personal.personalid,personal.E_mail,personal.facebook,personal.nombre,personal.d
 25,,,FIELMARIN,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
 26,,,MARTINEZ,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
 27,,,CASTILLO,<NULL>,<NULL>,,,,,,,,,,<NULL>,,,2,<NULL>
+28,adriana@gmail.com,Adriana ,Adriana,6465464,<NULL>,Rivera Indarte 567,gonzalez catan,1759,Buenos Aires,5474755,Profesor de historia,Alberto Pepeto,,nose,<NULL>,6587568,<NULL>,2,<NULL>
 
 
 TABLE niveles
@@ -148,17 +218,10 @@ carreras.carreraid,carreras.nombre
 4,Tecnicatura Superior en Laboratorio de Análisis Clínicos
 5,Tecnicatura Superior en Radiología
 6,Tecnicatura Superior en Cardiologia
+7,Tecnicatura Superior en Redes Informaticas
 
 
 TABLE planesestudio
-planesestudio.planestudioid,planesestudio.descripcion,planesestudio.aprobadopor,planesestudio.carreraid,planesestudio.desde,planesestudio.hasta
-1,Analista de sistemas 2012,Resolución Nº5817/03,1,2012-03-18,2012-12-21
-2,Radiologia 2012,Resolución N° 3244,5,2012-03-18,2012-12-18
-3,Analisis Clinico 2012,Resolucion N°2134,4,2012-03-18,2012-12-18
-4,,,4,2012-03-18,2012-12-18
-5,Enfermeria 2012,Resolución N° 2345,2,2012-03-18,2012-12-21
-6,Instrumentación 2012,Resolución N° 6543,3,2012-03-21,2012-12-21
-7,Cardiologia 2013,Resolución N° 2312,6,2012-03-18,2012-12-21
 
 
 TABLE ciclos
@@ -171,8 +234,6 @@ ciclos.cicloid,ciclos.nombre,ciclos.anio,ciclos.detalle,ciclos.desde,ciclos.hast
 
 
 TABLE catedras
-catedras.catedraid,catedras.nombre,catedras.informe,catedras.boletin,catedras.analitico,catedras.espacio,catedras.abr,catedras.calificacion,catedras.horas,catedras.minutos,catedras.nivelid
-3,catedra,saraza,,,,,,0,0,1
 
 
 TABLE materias
@@ -315,146 +376,12 @@ materias.materiaid,materias.codigo,materias.nombre,materias.resumen,materias.cur
 
 TABLE divisiones
 divisiones.divisionid,divisiones.descripcion,divisiones.codigo,divisiones.cursoid,divisiones.cicloid,divisiones.numero,divisiones.letra,divisiones.turno,divisiones.anio
-1,1º ,1A06,1,4,1,A,N,2013
-2,2°,2B06,2,4,2,B,N,2013
-3,3º,3C06,3,4,3,C,N,2013
+1,1º ,1A06,1,5,1,A,N,2014
+2,2°,2B06,2,5,2,B,N,2014
+3,3º,3C06,3,5,3,C,N,2014
 
 
 TABLE asignaturas
-asignaturas.asignaturaid,asignaturas.nombre,asignaturas.materiaid,asignaturas.cursoid,asignaturas.carreraid,asignaturas.planestudioid,asignaturas.orden,asignaturas.horas,asignaturas.teorica,asignaturas.practica,asignaturas.optativa,asignaturas.faltas1r,asignaturas.faltaslibre,asignaturas.faltasrecursa,asignaturas.cicloid
-88,ALGEBRA,158,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-89,ANALISIS MATEMATICO I,159,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-90,INGLES TECNICO I,160,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-91,ADM. DE LAS ORGANIZACIONES,161,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-92,METODOLOGIA DE LA INVESTIGACION,162,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-93,PROGRAMACION I,163,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-94,INTROD. SISTEMAS DE INFORMACION,164,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-95,ARQUITECTURA DE COMPUTADORES,165,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-96,EDI I,166,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-97,PROBABILIDAD Y ESTADISTICA,167,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-98,ANALISIS MATEMATICO II,168,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-99,INGLES TECNICO II,169,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-100,SISTEMAS DE INFORMACION I,170,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-101,PROGRAMACION II,171,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-102,SISTEMAS OPERATIVOS,172,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-103,BASES DE DATOS,173,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-104,INVESTIGACION OPERATIVA,175,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-105,ECONOMIA EMPRESARIAL,176,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-106,TELEINFORMATICA,177,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-107,SISTEMAS DE INFORMACION II,178,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-108,PRACTICA PROFESIONAL,179,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-109,EDI III,180,1,1,1,0,<NULL>,False,False,False,0,0,0,4
-110,SALUD PUBLICA,47,1,3,6,0,<NULL>,False,False,False,0,0,0,2
-111,INFORMATICA,48,1,3,6,0,<NULL>,False,False,False,0,0,0,2
-112,BIOLOGIA I,49,1,3,6,0,<NULL>,False,False,False,0,0,0,2
-113,FUND. DE LAS CIENCIAS EXACTAS,50,1,3,6,0,<NULL>,False,False,False,0,0,0,2
-114,PROCESOS TECNOLOGICOS EN SALUD I,51,1,3,6,0,<NULL>,False,False,False,0,0,0,2
-115,PROCESOS TECNOLOGICOS EN SALUD II,52,1,3,6,0,<NULL>,False,False,False,0,0,0,2
-116,EDI,53,1,3,6,0,<NULL>,False,False,False,0,0,0,2
-117,ESPACIO DE LA PRACTICA,54,1,3,6,0,<NULL>,False,False,False,0,0,0,2
-118,ORG. Y GESTION DE SERV. DE SALUD,55,2,3,6,0,<NULL>,False,False,False,0,0,0,2
-119,BIOLOGIA II,56,2,3,6,0,<NULL>,False,False,False,0,0,0,2
-120,METODOLOGIA DE LA INVESTIGACION,57,2,3,6,0,<NULL>,False,False,False,0,0,0,2
-121,SEGURIDAD E HIGIENE,58,2,3,6,0,<NULL>,False,False,False,0,0,0,2
-122,EDI II,59,2,3,6,0,<NULL>,False,False,False,0,0,0,2
-123,CENTRO Y ACTO QUIRURGICO,60,2,3,6,0,<NULL>,False,False,False,0,0,0,2
-124,ATENCION DEL PACIENTE QUIRURGICO Y LA EMERGENCIA,61,2,3,6,0,<NULL>,False,False,False,0,0,0,2
-125,ANATOMIA Y TECNICA QUIRURGICA I,62,2,3,6,0,<NULL>,False,False,False,0,0,0,2
-126,PRACTICA,63,2,3,6,0,<NULL>,False,False,False,0,0,0,2
-127,INV. EN SERV. DE SALUD,64,3,3,6,0,<NULL>,False,False,False,0,0,0,2
-128,INGLES,65,3,3,6,0,<NULL>,False,False,False,0,0,0,2
-129,BIOETICA,66,3,3,6,0,<NULL>,False,False,False,0,0,0,2
-130,ANATOMIA Y TECNICA QUIRURGICA II,67,3,3,6,0,<NULL>,False,False,False,0,0,0,2
-131,INT. A LA GESTION DEL CENTRO QUIRURG.,68,3,3,6,0,<NULL>,False,False,False,0,0,0,2
-132,EDI III,69,3,3,6,0,<NULL>,False,False,False,0,0,0,2
-133,PRACTICA,70,3,3,6,0,<NULL>,False,False,False,0,0,0,2
-134,SALUD PUBLICA,71,1,4,3,0,<NULL>,False,False,False,0,0,0,2
-135,INFORMATICA,72,1,4,4,0,<NULL>,False,False,False,0,0,0,2
-136,BIOLOGIA I,73,1,4,4,0,<NULL>,False,False,False,0,0,0,2
-137,FUND. DE LAS CIENCIAS EXACTAS,74,1,4,4,0,<NULL>,False,False,False,0,0,0,2
-138,PROCESOS TECNOLOGICOS EN SALUD I,75,1,4,4,0,<NULL>,False,False,False,0,0,0,2
-139,PROCESOS TECNOLOGICOS EN SALUD II,76,1,4,4,0,<NULL>,False,False,False,0,0,0,2
-140,EDI,77,1,4,4,0,<NULL>,False,False,False,0,0,0,2
-141,ESPACIO DE LA PRACTICA,78,1,4,4,0,<NULL>,False,False,False,0,0,0,2
-142,ORG. Y GESTION DE SERV. DE SALUD,79,2,4,4,0,<NULL>,False,False,False,0,0,0,2
-143,BIOLOGIA II,80,2,4,4,0,<NULL>,False,False,False,0,0,0,2
-144,METODOLOGIA DE LA INVESTIGACION,81,2,4,4,0,<NULL>,False,False,False,0,0,0,2
-145,SEGURIDAD E HIGIENE,82,2,4,4,0,<NULL>,False,False,False,0,0,0,2
-146,EDI II,83,2,4,4,0,<NULL>,False,False,False,0,0,0,2
-147,QUIMICA BIOLOGICA,84,2,4,4,0,<NULL>,False,False,False,0,0,0,2
-148,ADMISION DE PACIENTES I,85,2,4,4,0,<NULL>,False,False,False,0,0,0,2
-149,PROCED. TECNICOS NORMALIZADOS,86,2,4,4,0,<NULL>,False,False,False,0,0,0,2
-150,PRACTICA,87,2,4,4,0,<NULL>,False,False,False,0,0,0,2
-151,INVEST. DE LOS SERV. DE SALUD,88,3,4,4,0,<NULL>,False,False,False,0,0,0,2
-152,INGLES,89,3,4,4,0,<NULL>,False,False,False,0,0,0,2
-153,BIOETICA,90,3,4,4,0,<NULL>,False,False,False,0,0,0,2
-154,ADMISION DE PACIENTES II,91,3,4,4,0,<NULL>,False,False,False,0,0,0,2
-155,PROC. TECNICOS NORMALIZADOS II,92,3,4,4,0,<NULL>,False,False,False,0,0,0,2
-156,CONTROL DE CALIDAD,93,3,4,4,0,<NULL>,False,False,False,0,0,0,2
-157,GESTION DE LABORATORIO,94,3,4,4,0,<NULL>,False,False,False,0,0,0,2
-158,EDI III,95,3,4,4,0,<NULL>,False,False,False,0,0,0,2
-159,PRACTICA,96,3,4,4,0,<NULL>,False,False,False,0,0,0,2
-160,SALUD PUBLICA,97,1,5,4,0,<NULL>,False,False,False,0,0,0,2
-161,INFORMATICA,98,1,5,4,0,<NULL>,False,False,False,0,0,0,2
-162,BIOLOGIA I,99,1,5,4,0,<NULL>,False,False,False,0,0,0,2
-163,FUND. DE LAS CIENCIAS EXACTAS,100,1,5,4,0,<NULL>,False,False,False,0,0,0,2
-164,PROCESOS TECNOLOGICOS EN SALUD I,101,1,5,4,0,<NULL>,False,False,False,0,0,0,2
-165,PROCESOS TECNOLOGICOS EN SALUD II,102,1,5,4,0,<NULL>,False,False,False,0,0,0,2
-166,EDI,103,1,5,4,0,<NULL>,False,False,False,0,0,0,2
-167,ESPACIO DE LA PRACTICA,104,1,5,4,0,<NULL>,False,False,False,0,0,0,2
-168,ORG. Y GESTION DE SERV. DE SALUD,105,2,5,4,0,<NULL>,False,False,False,0,0,0,2
-169,BIOLOGIA II,106,2,5,4,0,<NULL>,False,False,False,0,0,0,2
-170,METODOLOGIA DE LA INVESTIGACION,107,2,5,4,0,<NULL>,False,False,False,0,0,0,2
-171,SEGURIDAD E HIGIENE,108,2,5,4,0,<NULL>,False,False,False,0,0,0,2
-172,EDI II,109,2,5,4,0,<NULL>,False,False,False,0,0,0,2
-173,FUND. DE ANATOMOFISIOLOGIA,110,2,5,4,0,<NULL>,False,False,False,0,0,0,2
-174,TECNICAS RADIOLOGICAS I,111,2,5,4,0,<NULL>,False,False,False,0,0,0,2
-175,TECNICAS RADIOLOGICAS II,112,2,5,4,0,<NULL>,False,False,False,0,0,0,2
-176,RADIOFISICA I,113,2,5,4,0,<NULL>,False,False,False,0,0,0,2
-177,FUNDAMENTOS DE PATOLOGIA,114,2,5,4,0,<NULL>,False,False,False,0,0,0,2
-178,PRACTICA,115,2,5,4,0,<NULL>,False,False,False,0,0,0,2
-179,INV. EN SERV. DE SALUD,116,3,5,4,0,<NULL>,False,False,False,0,0,0,2
-180,INGLES,117,3,5,4,0,<NULL>,False,False,False,0,0,0,2
-181,BIOETICA,118,3,5,4,0,<NULL>,False,False,False,0,0,0,2
-182,RADIOFISICA II,119,3,5,4,0,<NULL>,False,False,False,0,0,0,2
-183,TECNOLOGIAS RADIOLOGICAS III,120,3,5,4,0,<NULL>,False,False,False,0,0,0,2
-184,TECNOLOGIAS RADIOLOGICAS IV,121,3,5,4,0,<NULL>,False,False,False,0,0,0,2
-185,RADIOTERAPIA,122,3,5,4,0,<NULL>,False,False,False,0,0,0,2
-186,EDI III,123,3,5,4,0,<NULL>,False,False,False,0,0,0,2
-187,PRACTICA,124,3,5,4,0,<NULL>,False,False,False,0,0,0,2
-188,SALUD PUBLICA,125,1,2,4,0,<NULL>,False,False,False,0,0,0,2
-189,EST. Y FUNCION DEL CUERPO HUMANO,126,1,2,4,0,<NULL>,False,False,False,0,0,0,2
-190,BIOFISICA Y BIOQUIMICA,127,1,2,4,0,<NULL>,False,False,False,0,0,0,2
-191,MICROBIOLOGIA Y PARASITOLOGIA,128,1,2,4,0,<NULL>,False,False,False,0,0,0,2
-192,FUNDAMENTOS DE NUTRICION,129,1,2,4,0,<NULL>,False,False,False,0,0,0,2
-193,ENFERM. FUND. PRACT. Y TENDENCIAS,130,1,2,4,0,<NULL>,False,False,False,0,0,0,2
-194,ENFERMERIA MATERNO INFANTIL I,131,1,2,4,0,<NULL>,False,False,False,0,0,0,2
-195,FARMOCOLOGIA EN ENFERMERIA,132,1,2,4,0,<NULL>,False,False,False,0,0,0,2
-196,PRACTICA I,133,1,2,4,0,<NULL>,False,False,False,0,0,0,2
-197,INT. A LA INVESTIGACION EN SALUD,134,2,2,4,0,<NULL>,False,False,False,0,0,0,2
-198,EPIDEMIOLOGIA Y ESTADISTICA EN SALUD,135,2,2,4,0,<NULL>,False,False,False,0,0,0,2
-199,INFORMATICA,136,2,2,4,0,<NULL>,False,False,False,0,0,0,2
-200,ENFERMERIA DELADULTO Y EL ANCIANO,137,2,2,4,0,<NULL>,False,False,False,0,0,0,2
-201,DIETETICA EN ENFERMERIA,138,2,2,4,0,<NULL>,False,False,False,0,0,0,2
-202,ENFERMERIA EN SALUD MENTAL,139,2,2,4,0,<NULL>,False,False,False,0,0,0,2
-203,EDI,140,2,2,4,0,<NULL>,False,False,False,0,0,0,2
-204,PRACTICA II,141,2,2,4,0,<NULL>,False,False,False,0,0,0,2
-205,EDUCACION EN SALUD,142,3,2,4,0,<NULL>,False,False,False,0,0,0,2
-206,ORG. Y GESTION SERV. SALUD,143,3,2,4,0,<NULL>,False,False,False,0,0,0,2
-207,INV. Y PLANIF. EN SALUD,144,3,2,4,0,<NULL>,False,False,False,0,0,0,2
-208,INGLES,145,3,2,4,0,<NULL>,False,False,False,0,0,0,2
-209,ENFERM. MATERNO-INF. II,146,3,2,4,0,<NULL>,False,False,False,0,0,0,2
-210,ORG. Y GESTION SERV. DE ENFERM.,147,3,2,4,0,<NULL>,False,False,False,0,0,0,2
-211,ENFERM. EN EMERG. Y CATASTROFES,148,3,2,4,0,<NULL>,False,False,False,0,0,0,2
-212,ASPECTOS ETICOS Y LEGALES DE LA PRAC. PROF,149,3,2,4,0,<NULL>,False,False,False,0,0,0,2
-213,EDI II,150,3,2,4,0,<NULL>,False,False,False,0,0,0,2
-214,PRACTICA III,151,3,2,4,0,<NULL>,False,False,False,0,0,0,2
-215,CONDICIONES Y MEDIO AMBIENTE DEL TRABAJO,152,1,2,4,0,<NULL>,False,False,False,0,0,0,2
-216,SALUD PUBLICA I,153,1,2,4,0,<NULL>,False,False,False,0,0,0,2
-217,BIOLOGIA HUMANA,154,1,2,4,0,<NULL>,False,False,False,0,0,0,2
-218,FUNDAMENTOS DEL CUIDADO,155,1,2,4,0,<NULL>,False,False,False,0,0,0,2
-219,CUIDADOS DE LA SALUD CENTRADOS EN LA COMUNIDAD Y LA FAMILIA,156,1,2,4,0,<NULL>,False,False,False,0,0,0,2
-220,PRACTICA I,157,1,2,4,0,<NULL>,False,False,False,0,0,0,2
 
 
 TABLE calendarios
@@ -477,51 +404,34 @@ TABLE calificaciones
 calificaciones.calificacionid,calificaciones.descripcion,calificaciones.condicion,calificaciones.ayuda,calificaciones.equivalencia,calificaciones.previa
 1,Orientativa,<NULL>,<NULL>,False,False
 2,TP,<NULL>,<NULL>,False,False
-3,Exámenes,<NULL>,<NULL>,False,False
-4,Definitiva,Regular,Dentro del Mismo Período,False,False
+3,Parcial,<NULL>,<NULL>,False,False
+4,Recuperatorio,Regular,Dentro del Mismo Período,False,False
 5,Final,Regular,Analítico,False,False
 6,Acreditación,Pend.Acred.,"""Previa""",False,False
 7,Equivalencia,Equiv.,<NULL>,True,False
 8,Libre,Libre,<NULL>,False,False
 9,Final (No Regular),No Regular,<NULL>,False,False
+10,,No Regular,<NULL>,False,False
 
 
 TABLE correlativas
-correlativas.correlativaid,correlativas.materiaid,correlativas.materiacorrelativa,correlativas.planestudioid
-38,167,158,1
-39,167,159,1
-40,169,160,1
-41,170,161,1
-42,170,164,1
-43,171,163,1
-44,172,165,1
-45,173,163,1
-46,175,167,1
-47,175,168,1
-48,175,171,1
-49,176,170,1
-50,177,172,1
-51,178,170,1
-52,179,162,1
-53,179,171,1
-54,179,173,1
-55,179,170,1
 
 
 TABLE horas
 horas.horaid,horas.hora,horas.desde,horas.hasta,horas.nivelid
-1,1,18:00,19:00,1
-2,2,19:00,20:00,1
-3,3,20:15,21:15,1
-4,4,21:15,22:15,1
+1,1,18,19,1
+2,2,19,20:10,1
+3,3,20:20,21,1
+4,4,21,22:30,1
 
 
 TABLE inasistencias
-inasistencias.inasistenciaid,inasistencias.descripcion
-6,Media falta
-7,Tarde
-8,Retiro Anticipado
-9,Completa
+inasistencias.inasistenciaid,inasistencias.descripcion,inasistencias.cantidad
+1,Media Falta,0.5
+2,Tarde,0.5
+3,Retiro anticipado,0.5
+4,Ausente,1.0
+5,Presente,0.0
 
 
 TABLE periodos
@@ -554,541 +464,273 @@ periodos.periodoid,periodos.descripcion,periodos.nivelid,periodos.cicloid,period
 30,Exámenes Dic/2014,1,5,0,0,0,,0,0,0,,<NULL>,<NULL>,0,0,6019,<NULL>
 31,1º Cuatrimestre 2014,1,5,0,0,0,<NULL>,1,0,1,<NULL>,<NULL>,<NULL>,0,0,6021,<NULL>
 32,2ª Cuatrimestre 2014,1,5,0,0,0,<NULL>,2,0,0,<NULL>,<NULL>,<NULL>,0,0,6021,<NULL>
+33,Año 2014,1,5,0,0,0,<NULL>,0,0,0,<NULL>,<NULL>,<NULL>,0,0,6017,<NULL>
 
 
 TABLE notas
 notas.notaid,notas.alumnoid,notas.materiaid,notas.periodoid,notas.calificacionid,notas.nota,notas.descripcion,notas.establecimiento,notas.observaciones,notas.fecha,notas.libro,notas.folio,notas.alta,notas.web,notas.turno
-54,10,158,10,5,7.0,,I.S.T.B.P,,2011-12-14,1,2,2013-11-13,False,
-55,10,159,10,5,7.0,,I.S.T.B.P,,2011-12-15,1,2,2013-11-13,False,
-59,22,158,22,5,7.0,,I.S.T.B.P,,2011-12-15,1,2,2013-11-13,False,
-60,24,158,10,5,4.0,,I.S.T.B.P,,2013-11-20,1,2,2013-11-20,False,
-61,24,159,10,5,5.0,,I.S.T.B.P,,2013-11-20,1,2,2013-11-20,False,
-62,10,160,10,5,6.0,,I.S.T.B.P,,2013-11-20,1,2,2013-11-20,False,
-63,10,161,10,5,8.0,,I.S.T.B.P,,2013-11-20,1,2,2013-11-20,False,
-64,10,162,10,5,9.0,,I.S.T.B.P,,2011-12-15,,<NULL>,2013-11-25,False,
-65,10,163,10,5,6.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-66,10,164,10,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-67,10,165,10,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-68,10,166,10,5,6.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-69,10,167,18,5,9.0,,I.S.T.B.P,,2012-12-19,,<NULL>,2013-11-25,False,
-70,10,168,18,5,5.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-71,10,169,18,5,8.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-72,10,170,18,5,6.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-73,10,171,18,5,8.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-74,10,172,18,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-75,10,173,18,5,5.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-76,10,174,18,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-77,21,158,10,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-78,21,159,10,5,6.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-79,21,160,10,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-80,21,161,10,5,8.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-81,21,162,10,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-82,21,163,10,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-83,21,164,10,5,5.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-84,21,165,10,5,6.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-85,21,166,10,5,8.0,,,,<NULL>,,<NULL>,2013-11-25,False,
-86,21,167,18,5,8.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-87,21,168,18,5,6.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-88,21,169,18,5,8.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-89,21,170,18,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-90,21,171,18,5,8.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-91,21,172,18,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-92,21,173,18,5,4.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-93,21,174,18,5,6.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-94,22,159,10,5,6.0,,,,<NULL>,,<NULL>,2013-11-25,False,
-95,22,160,10,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-96,22,161,10,5,8.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-97,22,162,10,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-98,22,163,10,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-99,22,164,10,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-100,22,165,10,5,6.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-101,22,166,10,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-102,22,167,18,5,9.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-103,22,168,18,5,5.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-104,22,169,18,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-105,22,170,18,5,4.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-106,22,171,18,5,8.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-107,22,172,18,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-108,22,173,18,5,6.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-109,22,174,18,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-110,24,160,10,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-111,24,161,10,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-112,24,162,10,5,8.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-113,24,167,18,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-114,24,163,10,5,6.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-115,24,164,10,5,6.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-116,24,165,10,5,4.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-117,24,166,10,5,5.0,,,,<NULL>,,<NULL>,2013-11-25,False,
-118,23,158,10,5,6.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-119,23,159,10,5,6.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-120,23,160,10,5,8.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-121,23,161,10,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-122,25,158,10,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-123,25,159,10,5,7.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-124,25,160,10,5,8.0,,I.S.T.B.P,,<NULL>,,<NULL>,2013-11-25,False,
-161,21,158,14,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-162,21,159,14,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-163,21,160,14,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-164,21,161,14,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-165,21,162,14,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-166,21,163,14,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-167,21,164,14,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-168,21,165,14,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-169,21,166,14,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-170,21,158,15,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-171,21,159,15,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-172,21,160,15,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-173,21,161,15,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-174,21,162,15,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-175,21,163,15,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-176,21,164,15,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-177,21,165,15,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-178,21,166,15,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-179,10,158,14,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-180,10,159,14,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-181,10,160,14,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-182,10,161,14,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-183,10,162,14,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-184,10,163,14,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-185,10,164,14,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-186,10,165,14,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-187,10,166,14,3,7.0,,,,<NULL>,,<NULL>,2013-11-25,False,
-188,10,158,15,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-189,10,159,15,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-190,10,160,15,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-191,10,161,15,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-192,10,162,15,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-193,10,163,15,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-194,10,164,15,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-195,10,165,15,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-196,10,166,15,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-197,22,158,14,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-198,22,159,14,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-199,22,160,14,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-200,22,161,14,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-201,22,162,14,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-202,22,163,14,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-203,22,164,14,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-204,22,165,14,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-205,22,166,14,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-206,22,158,15,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-207,22,159,15,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-208,22,160,15,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-209,22,161,15,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-210,22,162,15,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-211,22,163,15,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-212,22,164,15,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-213,22,165,15,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-214,22,166,15,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-215,23,158,14,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-216,23,159,14,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-217,23,160,14,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-218,23,161,14,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-219,23,162,14,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-220,23,163,14,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-221,23,164,14,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-222,23,165,14,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-223,23,166,14,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-224,23,158,15,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-225,23,159,15,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-226,23,160,15,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-227,23,161,15,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-228,23,162,15,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-229,23,163,15,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-230,23,164,15,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-231,23,165,15,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-232,23,166,15,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-233,24,158,14,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-234,24,159,14,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-235,24,160,14,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-236,24,161,14,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-237,24,162,14,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-238,24,163,14,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-239,24,164,14,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-240,24,165,14,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-241,24,166,14,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-242,24,158,15,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-243,24,159,15,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-244,24,160,15,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-245,24,161,15,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-246,24,162,15,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-247,24,163,15,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-248,24,164,15,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-249,24,165,15,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-250,24,166,15,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-251,25,158,14,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-252,25,159,14,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-253,25,160,14,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-254,25,161,14,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-255,25,162,14,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-256,25,163,14,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-257,25,164,14,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-258,25,165,14,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-259,25,166,14,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-260,25,158,15,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-261,25,159,15,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-262,25,160,15,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-263,25,161,15,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-264,25,162,15,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-265,25,163,15,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-266,25,164,15,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-267,25,165,15,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-268,25,166,15,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-269,10,167,20,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-270,10,168,20,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-271,10,169,20,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-272,10,170,20,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-273,10,171,20,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-274,10,172,20,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-275,10,173,20,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-276,10,174,20,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-277,10,167,21,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-278,10,168,21,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-279,10,169,21,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-280,10,170,21,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-281,10,171,21,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-282,10,172,21,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-283,10,173,21,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-284,10,174,21,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-285,21,167,20,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-286,21,168,20,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-287,21,169,20,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-288,21,170,20,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-289,21,171,20,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-290,21,172,20,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-291,21,173,20,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-292,21,174,20,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-293,21,167,21,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-294,21,168,21,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-295,21,169,21,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-296,21,170,21,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-297,21,171,21,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-298,21,172,21,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-299,21,173,21,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-300,21,174,21,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-301,22,167,20,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-302,22,168,20,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-303,22,169,20,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-304,22,170,20,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-305,22,171,20,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-306,22,172,20,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-307,22,173,20,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-308,22,174,20,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-309,22,167,21,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-310,22,168,21,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-311,22,169,21,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-312,22,170,21,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-313,22,171,21,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-314,22,172,21,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-315,22,173,21,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-316,22,174,21,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-317,23,167,20,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-318,23,168,20,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-319,23,169,20,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-320,23,170,20,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-321,23,171,20,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-322,23,172,20,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-323,23,173,20,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-324,23,174,20,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-325,23,167,21,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-326,23,168,21,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-327,23,169,21,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-328,23,170,21,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-329,23,171,21,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-330,23,172,21,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-331,23,173,21,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-332,23,174,21,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-333,24,167,20,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-334,24,168,20,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-335,24,169,20,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-336,24,170,20,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-337,24,171,20,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-338,24,172,20,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-339,24,173,20,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-340,24,174,20,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-341,24,167,21,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-342,24,168,21,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-343,24,169,21,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-344,24,170,21,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-345,24,171,21,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-346,24,172,21,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-347,24,173,21,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-348,24,174,21,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-349,25,167,20,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-350,25,168,20,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-351,25,169,20,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-352,25,170,20,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-353,25,171,20,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-354,25,172,20,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-355,25,173,20,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-356,25,174,20,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-357,25,167,21,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-358,25,168,21,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-359,25,169,21,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-360,25,170,21,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-361,25,171,21,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-362,25,172,21,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-363,25,173,21,3,4.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-364,25,174,21,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-365,10,175,26,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-366,10,176,26,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-367,10,177,26,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-368,10,178,26,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-369,10,179,26,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-370,10,180,26,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-371,10,175,27,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-372,10,176,27,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-373,10,177,27,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-374,10,178,27,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-375,10,179,27,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-376,10,180,27,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-377,21,175,26,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-378,21,176,26,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-379,21,177,26,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-380,21,178,26,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-381,21,179,26,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-382,21,180,26,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-383,21,175,27,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-384,21,176,27,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-385,21,177,27,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-386,21,178,27,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-387,21,179,27,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-388,21,180,27,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-389,22,175,26,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-390,22,176,26,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-391,22,177,26,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-392,22,178,26,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-393,22,179,26,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-394,22,180,26,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-395,22,175,27,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-396,22,176,27,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-397,22,177,27,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-398,22,178,27,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-399,22,179,27,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-400,22,180,27,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-401,23,175,26,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-402,23,176,26,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-403,23,177,26,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-404,23,178,26,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-405,23,179,26,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-406,23,180,26,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-407,23,175,27,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-408,23,176,27,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-409,23,177,27,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-410,23,178,27,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-411,23,179,27,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-412,23,180,27,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-413,24,175,26,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-414,24,176,26,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-415,24,177,26,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-416,24,178,26,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-417,24,179,26,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-418,24,180,26,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-419,24,175,27,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-420,24,176,27,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-421,24,177,27,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-422,24,178,27,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-423,24,179,27,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-424,24,180,27,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-425,25,175,26,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-426,25,176,26,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-427,25,177,26,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-428,25,178,26,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-429,25,179,26,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-430,25,180,26,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-431,25,175,27,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-432,25,176,27,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-433,25,177,27,3,8.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-434,25,178,27,3,7.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-435,25,179,27,3,9.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
-436,25,180,27,3,6.0,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,2013-11-25,False,<NULL>
+708,11,179,30,5,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,33,33,2014-09-25,False,<NULL>
+709,3,179,30,5,3,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,33,33,2014-09-25,False,<NULL>
+710,5,179,30,5,10,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,33,33,2014-09-25,False,<NULL>
+711,6,179,30,5,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,33,33,2014-09-25,False,<NULL>
+712,8,179,30,5,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,33,33,2014-09-25,False,<NULL>
+713,10,179,30,5,7,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,33,33,2014-09-25,False,<NULL>
+714,9,179,30,5,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,33,33,2014-09-25,False,<NULL>
+715,11,179,31,3,7,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+716,1,179,31,3,7,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+717,3,179,31,3,7,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+718,5,179,31,3,7,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+719,6,179,31,3,7,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+720,7,179,31,3,7,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+721,8,179,31,3,7,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+722,10,179,31,3,7,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+723,9,179,31,3,7,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+724,11,179,32,3,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+725,1,179,32,3,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+726,3,179,32,3,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+727,5,179,32,3,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+728,6,179,32,3,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+729,7,179,32,3,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+730,8,179,32,3,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+731,10,179,32,3,3,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+732,9,179,32,3,7,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+733,11,179,31,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+734,1,179,31,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+735,3,179,31,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+736,5,179,31,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+737,6,179,31,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+738,7,179,31,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+739,8,179,31,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+740,10,179,31,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+741,9,179,31,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+742,11,179,32,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+743,1,179,32,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+744,3,179,32,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+745,5,179,32,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+746,6,179,32,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+747,7,179,32,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+748,8,179,32,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+749,10,179,32,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+750,9,179,32,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+751,12,173,31,3,7,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+752,18,173,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+753,16,173,31,3,5,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+754,13,173,31,3,2,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+755,17,173,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+756,14,173,31,3,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+757,19,173,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+758,15,173,31,3,7,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+759,12,173,32,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+760,18,173,32,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+761,16,173,32,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+762,13,173,32,3,7,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+763,17,173,32,3,2,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+764,14,173,32,3,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+765,19,173,32,3,4,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+766,15,173,32,3,6,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+767,12,173,31,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+768,18,173,31,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+769,16,173,31,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+770,13,173,31,4,2,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+771,17,173,31,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+772,14,173,31,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+773,19,173,31,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+774,15,173,31,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+775,12,173,32,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+776,18,173,32,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+777,16,173,32,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+778,13,173,32,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+779,17,173,32,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+780,14,173,32,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+781,19,173,32,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+782,15,173,32,4,0,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+783,12,173,30,5,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,1234,1234,2014-09-25,False,<NULL>
+784,18,173,30,5,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,1234,1234,2014-09-25,False,<NULL>
+785,16,173,30,5,7,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,1234,1234,2014-09-25,False,<NULL>
+786,13,173,30,5,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,1234,1234,2014-09-25,False,<NULL>
+787,17,173,30,5,5,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,1234,1234,2014-09-25,False,<NULL>
+788,2,173,30,5,6,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,1234,1234,2014-09-25,False,<NULL>
+789,14,173,30,5,4,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,1234,1234,2014-09-25,False,<NULL>
+790,19,173,30,5,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,1234,1234,2014-09-25,False,<NULL>
+791,15,173,30,5,5,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,1234,1234,2014-09-25,False,<NULL>
+792,11,179,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+793,1,179,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+794,3,179,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+795,5,179,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+796,6,179,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+797,7,179,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+798,8,179,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+799,10,179,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+800,9,179,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+801,11,179,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+802,1,179,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+803,3,179,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+804,5,179,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+805,6,179,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+806,7,179,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+807,8,179,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+808,10,179,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+809,9,179,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-25,<NULL>,<NULL>,2014-09-25,False,<NULL>
+810,12,172,31,3,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-26,<NULL>,<NULL>,2014-09-26,False,<NULL>
+811,18,172,31,3,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-26,<NULL>,<NULL>,2014-09-26,False,<NULL>
+812,16,172,31,3,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-26,<NULL>,<NULL>,2014-09-26,False,<NULL>
+813,13,172,31,3,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-26,<NULL>,<NULL>,2014-09-26,False,<NULL>
+814,17,172,31,3,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-26,<NULL>,<NULL>,2014-09-26,False,<NULL>
+815,14,172,31,3,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-26,<NULL>,<NULL>,2014-09-26,False,<NULL>
+816,19,172,31,3,3,<NULL>,I.S.T.B.P,<NULL>,2014-09-26,<NULL>,<NULL>,2014-09-26,False,<NULL>
+817,15,172,31,3,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-26,<NULL>,<NULL>,2014-09-26,False,<NULL>
+818,12,172,31,3,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-26,<NULL>,<NULL>,2014-09-26,False,<NULL>
+819,18,172,31,3,6,<NULL>,I.S.T.B.P,<NULL>,2014-09-26,<NULL>,<NULL>,2014-09-26,False,<NULL>
+820,16,172,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-26,<NULL>,<NULL>,2014-09-26,False,<NULL>
+821,13,172,31,3,5,<NULL>,I.S.T.B.P,<NULL>,2014-09-26,<NULL>,<NULL>,2014-09-26,False,<NULL>
+822,17,172,31,3,8,<NULL>,I.S.T.B.P,<NULL>,2014-09-26,<NULL>,<NULL>,2014-09-26,False,<NULL>
+823,14,172,31,3,7,<NULL>,I.S.T.B.P,<NULL>,2014-09-26,<NULL>,<NULL>,2014-09-26,False,<NULL>
+824,19,172,31,3,2,<NULL>,I.S.T.B.P,<NULL>,2014-09-26,<NULL>,<NULL>,2014-09-26,False,<NULL>
+825,15,172,31,3,9,<NULL>,I.S.T.B.P,<NULL>,2014-09-26,<NULL>,<NULL>,2014-09-26,False,<NULL>
 
 
 TABLE titulos
-titulos.tituloid,titulos.nombre,titulos.planestudioid,titulos.carreraid,titulos.cursoid
-1,Técnico Superior en Análisis de Sistemas,1,1,3
-2,Técnico Superior en Enfermería,5,2,2
-3,Técnico Superior en Instrumentación Quirúrgica ,6,3,2
-4,Técnico Superior en Laboratorio de Análisis Clínicos,3,4,2
-5,Técnico Superior en Radiología,2,5,3
-6,Técnico Superior en Cardiologia,7,6,1
 
 
 TABLE comisiones
-comisiones.comisionid,comisiones.nombre,comisiones.divisionid,comisiones.periodoid,comisiones.materiaid,comisiones.personalid,comisiones.faltas1r,comisiones.faltas2r,comisiones.faltaslibre,comisiones.faltasrecursa
-55,ALGEBRA,1,22,158,8,<NULL>,<NULL>,<NULL>,<NULL>
-56,ANALISIS MATEMATICO I,1,22,159,8,<NULL>,<NULL>,<NULL>,<NULL>
-57,INGLES TECNICO I,1,22,160,9,<NULL>,<NULL>,<NULL>,<NULL>
-58,ADM. DE LAS ORGANIZACIONES,1,22,161,4,<NULL>,<NULL>,<NULL>,<NULL>
-59,METODOLOGIA DE LA INVESTIGACION,1,22,162,6,<NULL>,<NULL>,<NULL>,<NULL>
-60,PROGRAMACION I,1,22,163,3,<NULL>,<NULL>,<NULL>,<NULL>
-61,INTROD. SISTEMAS DE INFORMACION,1,22,164,7,<NULL>,<NULL>,<NULL>,<NULL>
-62,ARQUITECTURA DE COMPUTADORES,1,22,165,5,<NULL>,<NULL>,<NULL>,<NULL>
-63,EDI I,1,22,166,5,<NULL>,<NULL>,<NULL>,<NULL>
-64,PROBABILIDAD Y ESTADISTICA,2,22,167,8,<NULL>,<NULL>,<NULL>,<NULL>
-65,ANALISIS MATEMATICO II,2,22,168,8,<NULL>,<NULL>,<NULL>,<NULL>
-66,INGLES TECNICO II,2,22,169,9,<NULL>,<NULL>,<NULL>,<NULL>
-67,SISTEMAS DE INFORMACION I,2,22,170,7,<NULL>,<NULL>,<NULL>,<NULL>
-68,PROGRAMACION II,2,22,171,3,<NULL>,<NULL>,<NULL>,<NULL>
-69,SISTEMAS OPERATIVOS,2,22,172,2,<NULL>,<NULL>,<NULL>,<NULL>
-70,BASES DE DATOS,2,22,173,2,<NULL>,<NULL>,<NULL>,<NULL>
-71,EDI II,2,22,174,5,<NULL>,<NULL>,<NULL>,<NULL>
-72,INVESTIGACION OPERATIVA,3,22,175,7,<NULL>,<NULL>,<NULL>,<NULL>
-73,ECONOMIA EMPRESARIAL,3,22,176,4,<NULL>,<NULL>,<NULL>,<NULL>
-74,TELEINFORMATICA,3,22,177,5,<NULL>,<NULL>,<NULL>,<NULL>
-75,SISTEMAS DE INFORMACION II,3,22,178,5,<NULL>,<NULL>,<NULL>,<NULL>
-76,PRACTICA PROFESIONAL,3,22,179,2,<NULL>,<NULL>,<NULL>,<NULL>
-77,EDI III,3,22,180,6,<NULL>,<NULL>,<NULL>,<NULL>
-78,SALUD PUBLICA,1,22,47,10,<NULL>,<NULL>,<NULL>,<NULL>
-79,INFORMATICA,1,22,48,11,<NULL>,<NULL>,<NULL>,<NULL>
-80,BIOLOGIA I,1,22,49,10,<NULL>,<NULL>,<NULL>,<NULL>
-81,FUND. DE LAS CIENCIAS EXACTAS,1,22,50,12,<NULL>,<NULL>,<NULL>,<NULL>
-82,PROCESOS TECNOLOGICOS EN SALUD I,1,22,51,13,<NULL>,<NULL>,<NULL>,<NULL>
-83,PROCESOS TECNOLOGICOS EN SALUD II,1,22,52,13,<NULL>,<NULL>,<NULL>,<NULL>
-84,EDI,1,22,53,10,<NULL>,<NULL>,<NULL>,<NULL>
-85,ESPACIO DE LA PRACTICA,1,12,54,12,<NULL>,<NULL>,<NULL>,<NULL>
-86,ORG. Y GESTION DE SERV. DE SALUD,2,22,55,14,<NULL>,<NULL>,<NULL>,<NULL>
-87,BIOLOGIA II,2,22,56,15,<NULL>,<NULL>,<NULL>,<NULL>
-88,METODOLOGIA DE LA INVESTIGACION,2,22,57,12,<NULL>,<NULL>,<NULL>,<NULL>
-89,SEGURIDAD E HIGIENE,2,22,58,12,<NULL>,<NULL>,<NULL>,<NULL>
-90,EDI II,2,22,59,12,<NULL>,<NULL>,<NULL>,<NULL>
-91,CENTRO Y ACTO QUIRURGICO,2,22,60,14,<NULL>,<NULL>,<NULL>,<NULL>
-92,ATENCION DEL PACIENTE QUIRURGICO Y LA EMERGENCIA,2,22,61,14,<NULL>,<NULL>,<NULL>,<NULL>
-93,ANATOMIA Y TECNICA QUIRURGICA I,2,22,62,17,<NULL>,<NULL>,<NULL>,<NULL>
-94,PRACTICA,2,22,63,18,<NULL>,<NULL>,<NULL>,<NULL>
-95,INV. EN SERV. DE SALUD,3,22,64,12,<NULL>,<NULL>,<NULL>,<NULL>
-96,INGLES,3,22,65,9,<NULL>,<NULL>,<NULL>,<NULL>
-97,BIOETICA,3,22,66,12,<NULL>,<NULL>,<NULL>,<NULL>
-98,ANATOMIA Y TECNICA QUIRURGICA II,3,22,67,17,<NULL>,<NULL>,<NULL>,<NULL>
-99,INT. A LA GESTION DEL CENTRO QUIRURG.,3,22,68,14,<NULL>,<NULL>,<NULL>,<NULL>
-100,EDI III,3,22,69,12,<NULL>,<NULL>,<NULL>,<NULL>
-101,PRACTICA,3,22,70,18,<NULL>,<NULL>,<NULL>,<NULL>
-102,SALUD PUBLICA,1,22,71,10,<NULL>,<NULL>,<NULL>,<NULL>
-103,INFORMATICA,1,22,72,11,<NULL>,<NULL>,<NULL>,<NULL>
-104,BIOLOGIA I,1,22,73,10,<NULL>,<NULL>,<NULL>,<NULL>
-105,FUND. DE LAS CIENCIAS EXACTAS,1,22,74,12,<NULL>,<NULL>,<NULL>,<NULL>
-106,PROCESOS TECNOLOGICOS EN SALUD I,1,22,75,13,<NULL>,<NULL>,<NULL>,<NULL>
-107,PROCESOS TECNOLOGICOS EN SALUD II,1,22,76,13,<NULL>,<NULL>,<NULL>,<NULL>
-108,EDI,1,22,77,10,<NULL>,<NULL>,<NULL>,<NULL>
-109,ESPACIO DE LA PRACTICA,1,22,78,12,<NULL>,<NULL>,<NULL>,<NULL>
-110,ORG. Y GESTION DE SERV. DE SALUD,2,22,79,14,<NULL>,<NULL>,<NULL>,<NULL>
-111,BIOLOGIA II,2,22,80,15,<NULL>,<NULL>,<NULL>,<NULL>
-112,METODOLOGIA DE LA INVESTIGACION,2,22,81,12,<NULL>,<NULL>,<NULL>,<NULL>
-113,SEGURIDAD E HIGIENE,2,22,82,12,<NULL>,<NULL>,<NULL>,<NULL>
-114,EDI II,2,22,83,12,<NULL>,<NULL>,<NULL>,<NULL>
-115,QUIMICA BIOLOGICA,2,22,84,15,<NULL>,<NULL>,<NULL>,<NULL>
-116,ADMISION DE PACIENTES I,2,22,85,19,<NULL>,<NULL>,<NULL>,<NULL>
-117,PROCED. TECNICOS NORMALIZADOS,2,22,86,20,<NULL>,<NULL>,<NULL>,<NULL>
-118,PRACTICA,2,22,87,21,<NULL>,<NULL>,<NULL>,<NULL>
-119,INV. EN SERV. DE SALUD,3,22,88,12,<NULL>,<NULL>,<NULL>,<NULL>
-120,INGLES,3,22,89,9,<NULL>,<NULL>,<NULL>,<NULL>
-121,BIOETICA,3,22,90,12,<NULL>,<NULL>,<NULL>,<NULL>
-122,ADMISION DE PACIENTES II,3,22,91,19,<NULL>,<NULL>,<NULL>,<NULL>
-123,PROC. TECNICOS NORMALIZADOS II,3,22,92,20,<NULL>,<NULL>,<NULL>,<NULL>
-124,CONTROL DE CALIDAD,3,22,93,19,<NULL>,<NULL>,<NULL>,<NULL>
-125,GESTION DE LABORATORIO,3,22,94,15,<NULL>,<NULL>,<NULL>,<NULL>
-126,EDI III,3,22,95,12,<NULL>,<NULL>,<NULL>,<NULL>
-127,PRACTICA,3,22,96,21,<NULL>,<NULL>,<NULL>,<NULL>
-128,SALUD PUBLICA,1,22,97,10,<NULL>,<NULL>,<NULL>,<NULL>
-129,INFORMATICA,1,22,98,11,<NULL>,<NULL>,<NULL>,<NULL>
-130,BIOLOGIA I,1,22,99,10,<NULL>,<NULL>,<NULL>,<NULL>
-131,FUND. DE LAS CIENCIAS EXACTAS,1,22,100,12,<NULL>,<NULL>,<NULL>,<NULL>
-132,PROCESOS TECNOLOGICOS EN SALUD I,1,22,101,13,<NULL>,<NULL>,<NULL>,<NULL>
-133,PROCESOS TECNOLOGICOS EN SALUD II,1,22,102,13,<NULL>,<NULL>,<NULL>,<NULL>
-134,EDI,1,22,103,10,<NULL>,<NULL>,<NULL>,<NULL>
-135,ESPACIO DE LA PRACTICA,1,22,104,12,<NULL>,<NULL>,<NULL>,<NULL>
-136,ORG. Y GESTION DE SERV. DE SALUD,2,22,105,14,<NULL>,<NULL>,<NULL>,<NULL>
-137,BIOLOGIA II,2,22,106,15,<NULL>,<NULL>,<NULL>,<NULL>
-138,METODOLOGIA DE LA INVESTIGACION,2,22,107,12,<NULL>,<NULL>,<NULL>,<NULL>
-139,SEGURIDAD E HIGIENE,2,22,108,12,<NULL>,<NULL>,<NULL>,<NULL>
-140,EDI II,2,22,109,12,<NULL>,<NULL>,<NULL>,<NULL>
-141,FUND. DE ANATOMOFISIOLOGIA,2,22,110,22,<NULL>,<NULL>,<NULL>,<NULL>
-142,TECNICAS RADIOLOGICAS I,2,22,111,23,<NULL>,<NULL>,<NULL>,<NULL>
-143,TECNICAS RADIOLOGICAS II,2,22,112,14,<NULL>,<NULL>,<NULL>,<NULL>
-144,RADIOFISICA I,2,22,113,14,<NULL>,<NULL>,<NULL>,<NULL>
-145,FUNDAMENTOS DE PATOLOGIA,2,22,114,23,<NULL>,<NULL>,<NULL>,<NULL>
-146,PRACTICA,2,22,115,23,<NULL>,<NULL>,<NULL>,<NULL>
-147,INV. EN SERV. DE SALUD,3,22,116,12,<NULL>,<NULL>,<NULL>,<NULL>
-148,INGLES,3,22,117,9,<NULL>,<NULL>,<NULL>,<NULL>
-149,BIOETICA,3,22,118,12,<NULL>,<NULL>,<NULL>,<NULL>
-150,RADIOFISICA II,3,22,119,14,<NULL>,<NULL>,<NULL>,<NULL>
-151,TECNOLOGIAS RADIOLOGICAS III,3,22,120,22,<NULL>,<NULL>,<NULL>,<NULL>
-152,TECNOLOGIAS RADIOLOGICAS IV,3,22,121,22,<NULL>,<NULL>,<NULL>,<NULL>
-153,RADIOTERAPIA,3,22,122,22,<NULL>,<NULL>,<NULL>,<NULL>
-154,EDI III,3,22,123,12,<NULL>,<NULL>,<NULL>,<NULL>
-155,PRACTICA,3,22,124,23,<NULL>,<NULL>,<NULL>,<NULL>
-156,SALUD PUBLICA,1,22,125,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
-157,EST. Y FUNCION DEL CUERPO HUMANO,1,22,126,15,<NULL>,<NULL>,<NULL>,<NULL>
-158,BIOFISICA Y BIOQUIMICA,1,22,127,15,<NULL>,<NULL>,<NULL>,<NULL>
-159,MICROBIOLOGIA Y PARASITOLOGIA,1,22,128,24,<NULL>,<NULL>,<NULL>,<NULL>
-160,FUNDAMENTOS DE NUTRICION,1,22,129,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
-161,ENFERM. FUND. PRACT. Y TENDENCIAS,1,22,130,25,<NULL>,<NULL>,<NULL>,<NULL>
-162,ENFERMERIA MATERNO INFANTIL I,1,22,131,24,<NULL>,<NULL>,<NULL>,<NULL>
-163,FARMACOLOGIA EN ENFERMERIA,1,22,132,15,<NULL>,<NULL>,<NULL>,<NULL>
-164,PRACTICA I,1,22,133,24,<NULL>,<NULL>,<NULL>,<NULL>
-165,INT. A LA INVESTIGACION EN SALUD,2,22,134,25,<NULL>,<NULL>,<NULL>,<NULL>
-166,EPIDEMIOLOGIA Y ESTADISTICA EN SALUD,2,22,135,25,<NULL>,<NULL>,<NULL>,<NULL>
-167,INFORMATICA,2,22,136,11,<NULL>,<NULL>,<NULL>,<NULL>
-168,ENFERMERIA DEL ADULTO Y EL ANCIANO,2,22,137,25,<NULL>,<NULL>,<NULL>,<NULL>
-169,DIETETICA EN ENFERMERIA,2,2,138,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
-170,ENFERMERIA EN SALUD MENTAL,2,22,139,25,<NULL>,<NULL>,<NULL>,<NULL>
-171,EDI,2,22,140,24,<NULL>,<NULL>,<NULL>,<NULL>
-172,PRACTICA II,2,22,141,24,<NULL>,<NULL>,<NULL>,<NULL>
-173,EDUCACION EN SALUD,3,22,142,26,<NULL>,<NULL>,<NULL>,<NULL>
-174,ORG. Y GESTION SERV. SALUD,3,22,143,25,<NULL>,<NULL>,<NULL>,<NULL>
-175,INV. Y PLANIF. EN SALUD,3,22,144,25,<NULL>,<NULL>,<NULL>,<NULL>
-176,INGLES,3,22,145,9,<NULL>,<NULL>,<NULL>,<NULL>
-177,ENFERM. MATERNO-INF. II,3,22,146,24,<NULL>,<NULL>,<NULL>,<NULL>
-178,ORG. Y GESTION SERV. DE ENFERM.,3,22,147,25,<NULL>,<NULL>,<NULL>,<NULL>
-179,ENFERM. EN EMERG. Y CATASTROFES,3,22,148,24,<NULL>,<NULL>,<NULL>,<NULL>
-180,ASPECTOS ETICOS Y LEGALES DE LA PRAC. PROF,3,22,149,25,<NULL>,<NULL>,<NULL>,<NULL>
-181,EDI II,3,22,150,24,<NULL>,<NULL>,<NULL>,<NULL>
-182,PRACTICA III,3,22,151,24,<NULL>,<NULL>,<NULL>,<NULL>
-183,CONDICIONES Y MEDIO AMBIENTE DEL TRABAJO,1,22,152,24,<NULL>,<NULL>,<NULL>,<NULL>
-184,SALUD PUBLICA I,1,22,153,27,<NULL>,<NULL>,<NULL>,<NULL>
-185,BIOLOGIA HUMANA,1,22,154,15,<NULL>,<NULL>,<NULL>,<NULL>
-186,FUNDAMENTOS DEL CUIDADO,1,22,155,25,<NULL>,<NULL>,<NULL>,<NULL>
-187,CUIDADOS DE LA SALUD CENTRADOS EN LA COMUNIDAD Y LA FAMILIA,1,22,156,25,<NULL>,<NULL>,<NULL>,<NULL>
-188,PRACTICA I,1,22,157,24,<NULL>,<NULL>,<NULL>,<NULL>
+comisiones.comisionid,comisiones.nombre,comisiones.divisionid,comisiones.periodoid,comisiones.materiaid,comisiones.personalid,comisiones.faltas1r,comisiones.faltas2r,comisiones.faltaslibre,comisiones.faltasrecursa,comisiones.dias_habiles
+55,ALGEBRA,1,33,158,8,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+56,ANALISIS MATEMATICO I,1,33,159,8,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+57,INGLES TECNICO I,1,33,160,9,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+58,ADM. DE LAS ORGANIZACIONES,1,33,161,4,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+59,METODOLOGIA DE LA INVESTIGACION,1,33,162,6,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+60,PROGRAMACION I,1,33,163,3,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+61,INTROD. SISTEMAS DE INFORMACION,1,33,164,7,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+62,ARQUITECTURA DE COMPUTADORES,1,33,165,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+63,EDI I,1,33,166,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+64,PROBABILIDAD Y ESTADISTICA,2,33,167,8,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+65,ANALISIS MATEMATICO II,2,33,168,8,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+66,INGLES TECNICO II,2,33,169,9,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+67,SISTEMAS DE INFORMACION I,2,33,170,7,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+68,PROGRAMACION II,2,33,171,3,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+69,SISTEMAS OPERATIVOS,2,33,172,2,<NULL>,<NULL>,<NULL>,<NULL>,28.0
+70,BASES DE DATOS,2,33,173,2,<NULL>,<NULL>,<NULL>,<NULL>,26.0
+71,EDI II,2,33,174,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+72,INVESTIGACION OPERATIVA,3,33,175,7,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+73,ECONOMIA EMPRESARIAL,3,33,176,4,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+74,TELEINFORMATICA,3,33,177,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+75,SISTEMAS DE INFORMACION II,3,33,178,5,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+76,PRACTICA PROFESIONAL,3,33,179,2,<NULL>,<NULL>,<NULL>,<NULL>,82.0
+77,EDI III,3,33,180,6,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+78,SALUD PUBLICA,1,33,47,10,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+79,INFORMATICA,1,33,48,11,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+80,BIOLOGIA I,1,33,49,10,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+81,FUND. DE LAS CIENCIAS EXACTAS,1,33,50,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+82,PROCESOS TECNOLOGICOS EN SALUD I,1,33,51,13,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+83,PROCESOS TECNOLOGICOS EN SALUD II,1,33,52,13,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+84,EDI,1,33,53,10,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+85,ESPACIO DE LA PRACTICA,1,33,54,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+86,ORG. Y GESTION DE SERV. DE SALUD,2,33,55,14,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+87,BIOLOGIA II,2,33,56,15,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+88,METODOLOGIA DE LA INVESTIGACION,2,33,57,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+89,SEGURIDAD E HIGIENE,2,33,58,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+90,EDI II,2,33,59,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+91,CENTRO Y ACTO QUIRURGICO,2,33,60,14,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+92,ATENCION DEL PACIENTE QUIRURGICO Y LA EMERGENCIA,2,33,61,14,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+93,ANATOMIA Y TECNICA QUIRURGICA I,2,33,62,17,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+94,PRACTICA,2,33,63,18,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+95,INV. EN SERV. DE SALUD,3,33,64,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+96,INGLES,3,33,65,9,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+97,BIOETICA,3,33,66,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+98,ANATOMIA Y TECNICA QUIRURGICA II,3,33,67,17,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+99,INT. A LA GESTION DEL CENTRO QUIRURG.,3,33,68,14,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+100,EDI III,3,33,69,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+101,PRACTICA,3,33,70,18,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+102,SALUD PUBLICA,1,33,71,10,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+103,INFORMATICA,1,33,72,11,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+104,BIOLOGIA I,1,33,73,10,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+105,FUND. DE LAS CIENCIAS EXACTAS,1,33,74,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+106,PROCESOS TECNOLOGICOS EN SALUD I,1,33,75,13,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+107,PROCESOS TECNOLOGICOS EN SALUD II,1,33,76,13,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+108,EDI,1,33,77,10,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+109,ESPACIO DE LA PRACTICA,1,33,78,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+110,ORG. Y GESTION DE SERV. DE SALUD,2,33,79,14,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+111,BIOLOGIA II,2,33,80,15,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+112,METODOLOGIA DE LA INVESTIGACION,2,33,81,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+113,SEGURIDAD E HIGIENE,2,33,82,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+114,EDI II,2,33,83,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+115,QUIMICA BIOLOGICA,2,33,84,15,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+116,ADMISION DE PACIENTES I,2,33,85,19,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+117,PROCED. TECNICOS NORMALIZADOS,2,33,86,20,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+118,PRACTICA,2,33,87,21,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+119,INV. EN SERV. DE SALUD,3,33,88,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+120,INGLES,3,33,89,9,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+121,BIOETICA,3,33,90,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+122,ADMISION DE PACIENTES II,3,33,91,19,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+123,PROC. TECNICOS NORMALIZADOS II,3,33,92,20,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+124,CONTROL DE CALIDAD,3,33,93,19,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+125,GESTION DE LABORATORIO,3,33,94,15,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+126,EDI III,3,33,95,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+127,PRACTICA,3,33,96,21,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+128,SALUD PUBLICA,1,33,97,10,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+129,INFORMATICA,1,33,98,11,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+130,BIOLOGIA I,1,33,99,10,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+131,FUND. DE LAS CIENCIAS EXACTAS,1,33,100,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+132,PROCESOS TECNOLOGICOS EN SALUD I,1,33,101,13,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+133,PROCESOS TECNOLOGICOS EN SALUD II,1,33,102,13,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+134,EDI,1,33,103,10,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+135,ESPACIO DE LA PRACTICA,1,33,104,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+136,ORG. Y GESTION DE SERV. DE SALUD,2,33,105,14,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+137,BIOLOGIA II,2,33,106,15,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+138,METODOLOGIA DE LA INVESTIGACION,2,33,107,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+139,SEGURIDAD E HIGIENE,2,33,108,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+140,EDI II,2,33,109,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+141,FUND. DE ANATOMOFISIOLOGIA,2,33,110,22,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+142,TECNICAS RADIOLOGICAS I,2,33,111,23,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+143,TECNICAS RADIOLOGICAS II,2,33,112,14,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+144,RADIOFISICA I,2,33,113,14,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+145,FUNDAMENTOS DE PATOLOGIA,2,33,114,23,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+146,PRACTICA,2,33,115,23,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+147,INV. EN SERV. DE SALUD,3,33,116,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+148,INGLES,3,33,117,9,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+149,BIOETICA,3,33,118,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+150,RADIOFISICA II,3,33,119,14,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+151,TECNOLOGIAS RADIOLOGICAS III,3,33,120,22,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+152,TECNOLOGIAS RADIOLOGICAS IV,3,33,121,22,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+153,RADIOTERAPIA,3,33,122,22,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+154,EDI III,3,33,123,12,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+155,PRACTICA,3,33,124,23,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+156,SALUD PUBLICA,1,33,125,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+157,EST. Y FUNCION DEL CUERPO HUMANO,1,33,126,15,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+158,BIOFISICA Y BIOQUIMICA,1,33,127,15,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+159,MICROBIOLOGIA Y PARASITOLOGIA,1,33,128,24,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+160,FUNDAMENTOS DE NUTRICION,1,33,129,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+161,ENFERM. FUND. PRACT. Y TENDENCIAS,1,33,130,25,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+162,ENFERMERIA MATERNO INFANTIL I,1,33,131,24,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+163,FARMACOLOGIA EN ENFERMERIA,1,33,132,15,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+164,PRACTICA I,1,33,133,24,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+165,INT. A LA INVESTIGACION EN SALUD,2,33,134,25,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+166,EPIDEMIOLOGIA Y ESTADISTICA EN SALUD,2,33,135,25,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+167,INFORMATICA,2,33,136,11,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+168,ENFERMERIA DEL ADULTO Y EL ANCIANO,2,33,137,25,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+169,DIETETICA EN ENFERMERIA,2,33,138,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+170,ENFERMERIA EN SALUD MENTAL,2,33,139,25,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+171,EDI,2,33,140,24,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+172,PRACTICA II,2,33,141,24,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+173,EDUCACION EN SALUD,3,33,142,26,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+174,ORG. Y GESTION SERV. SALUD,3,33,143,25,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+175,INV. Y PLANIF. EN SALUD,3,33,144,25,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+176,INGLES,3,33,145,9,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+177,ENFERM. MATERNO-INF. II,3,33,146,24,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+178,ORG. Y GESTION SERV. DE ENFERM.,3,33,147,25,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+179,ENFERM. EN EMERG. Y CATASTROFES,3,33,148,24,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+180,ASPECTOS ETICOS Y LEGALES DE LA PRAC. PROF,3,33,149,25,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+181,EDI II,3,33,150,24,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+182,PRACTICA III,3,33,151,24,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+183,CONDICIONES Y MEDIO AMBIENTE DEL TRABAJO,1,33,152,24,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+184,SALUD PUBLICA I,1,33,153,27,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+185,BIOLOGIA HUMANA,1,33,154,15,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+186,FUNDAMENTOS DEL CUIDADO,1,33,155,25,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+187,CUIDADOS DE LA SALUD CENTRADOS EN LA COMUNIDAD Y LA FAMILIA,1,33,156,25,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
+188,PRACTICA I,1,33,157,24,<NULL>,<NULL>,<NULL>,<NULL>,<NULL>
 
 
 TABLE horarios
-horarios.horarioid,horarios.horaid,horarios.comisionid,horarios.dia,horarios.detalle
-1,1,63,lunes,
-2,2,62,lunes,
-3,3,60,lunes,
-4,4,60,lunes,
-5,1,57,martes,
-6,2,57,martes,
-7,3,62,martes,
-8,4,62,martes,
-9,1,59,miercoles,
-10,2,59,miercoles,
-11,3,61,miercoles,
-12,4,61,miercoles,
-13,1,56,jueves,
-14,2,56,jueves,
-15,3,60,jueves,
-16,4,60,jueves,
-17,1,58,viernes,
-18,2,58,viernes,
-19,3,55,viernes,
-20,4,55,viernes,
-21,1,68,lunes,
-22,2,68,lunes,
-23,3,71,lunes,
-24,4,71,lunes,
-25,3,66,martes,
-26,4,66,martes,
-27,1,67,miercoles,
-28,2,67,miercoles,
-29,3,70,miercoles,
-30,4,70,miercoles,
-31,1,68,jueves,
-32,2,68,jueves,
-33,3,65,jueves,
-34,4,65,jueves,
-35,1,64,<NULL>,<NULL>
 
 
 TABLE profesores
@@ -1101,21 +743,990 @@ TABLE situaciones
 
 
 TABLE faltas
+faltas.faltaid,faltas.alumnoid,faltas.comisionid,faltas.inasistenciaid,faltas.fecha,faltas.cantidad,faltas.justificado,faltas.detalle
+1,12,69,5,2014-03-27,1.0,False,
+2,13,69,4,2014-03-27,1.0,False,
+3,14,69,5,2014-03-27,1.0,False,
+4,15,69,4,2014-03-27,1.0,False,
+5,16,69,4,2014-03-27,1.0,False,
+6,17,69,5,2014-03-27,1.0,False,
+7,18,69,5,2014-03-27,1.0,False,
+8,19,69,5,2014-03-27,1.0,False,
+9,2,69,4,2014-03-27,1.0,False,
+10,4,69,4,2014-03-27,1.0,False,
+11,12,69,5,2014-04-03,1.0,False,
+12,13,69,4,2014-04-03,1.0,False,
+13,14,69,4,2014-04-03,1.0,False,
+14,15,69,4,2014-04-03,1.0,False,
+15,16,69,5,2014-04-03,1.0,False,
+16,17,69,5,2014-04-03,1.0,False,
+17,18,69,4,2014-04-03,1.0,False,
+18,19,69,4,2014-04-03,1.0,False,
+19,2,69,5,2014-04-03,1.0,False,
+20,4,69,5,2014-04-03,1.0,False,
+21,12,69,4,2014-04-10,1.0,False,
+22,13,69,4,2014-04-10,1.0,False,
+23,14,69,4,2014-04-10,1.0,False,
+24,15,69,4,2014-04-10,1.0,False,
+25,16,69,4,2014-04-10,1.0,False,
+26,17,69,4,2014-04-10,1.0,False,
+27,18,69,4,2014-04-10,1.0,False,
+28,19,69,4,2014-04-10,1.0,False,
+29,2,69,4,2014-04-10,1.0,False,
+30,4,69,4,2014-04-10,1.0,False,
+31,12,69,5,2014-04-24,1.0,False,
+32,13,69,4,2014-04-24,1.0,False,
+33,14,69,5,2014-04-24,1.0,False,
+34,15,69,5,2014-04-24,1.0,False,
+35,16,69,4,2014-04-24,1.0,False,
+36,17,69,5,2014-04-24,1.0,False,
+37,18,69,4,2014-04-24,1.0,False,
+38,19,69,5,2014-04-24,1.0,False,
+39,2,69,4,2014-04-24,1.0,False,
+40,4,69,5,2014-04-24,1.0,False,
+41,12,69,4,2014-05-08,1.0,False,
+42,13,69,5,2014-05-08,1.0,False,
+43,14,69,5,2014-05-08,1.0,False,
+44,15,69,5,2014-05-08,1.0,False,
+45,16,69,5,2014-05-08,1.0,False,
+46,17,69,5,2014-05-08,1.0,False,
+47,18,69,5,2014-05-08,1.0,False,
+48,19,69,4,2014-05-08,1.0,False,
+49,2,69,5,2014-05-08,1.0,False,
+50,4,69,5,2014-05-08,1.0,False,
+51,12,69,5,2014-05-15,1.0,False,
+52,13,69,4,2014-05-15,1.0,False,
+53,14,69,4,2014-05-15,1.0,False,
+54,15,69,5,2014-05-15,1.0,False,
+55,16,69,4,2014-05-15,1.0,False,
+56,17,69,5,2014-05-15,1.0,False,
+57,18,69,4,2014-05-15,1.0,False,
+58,19,69,4,2014-05-15,1.0,False,
+59,2,69,5,2014-05-15,1.0,False,
+60,4,69,4,2014-05-15,1.0,False,
+61,12,69,4,2014-05-22,1.0,False,
+62,13,69,4,2014-05-22,1.0,False,
+63,14,69,5,2014-05-22,1.0,False,
+64,15,69,5,2014-05-22,1.0,False,
+65,16,69,4,2014-05-22,1.0,False,
+66,17,69,5,2014-05-22,1.0,False,
+67,18,69,4,2014-05-22,1.0,False,
+68,19,69,5,2014-05-22,1.0,False,
+69,2,69,4,2014-05-22,1.0,False,
+70,4,69,4,2014-05-22,1.0,False,
+71,12,69,5,2014-05-29,1.0,False,
+72,13,69,4,2014-05-29,1.0,False,
+73,14,69,5,2014-05-29,1.0,False,
+74,15,69,5,2014-05-29,1.0,False,
+75,16,69,5,2014-05-29,1.0,False,
+76,17,69,5,2014-05-29,1.0,False,
+77,18,69,4,2014-05-29,1.0,False,
+78,19,69,5,2014-05-29,1.0,False,
+79,2,69,5,2014-05-29,1.0,False,
+80,4,69,4,2014-05-29,1.0,False,
+81,12,69,4,2014-06-05,1.0,False,
+82,13,69,4,2014-06-05,1.0,False,
+83,14,69,4,2014-06-05,1.0,False,
+84,15,69,5,2014-06-05,1.0,False,
+85,16,69,4,2014-06-05,1.0,False,
+86,17,69,4,2014-06-05,1.0,False,
+87,18,69,5,2014-06-05,1.0,False,
+88,19,69,4,2014-06-05,1.0,False,
+89,2,69,5,2014-06-05,1.0,False,
+90,4,69,4,2014-06-05,1.0,False,
+91,12,69,5,2014-06-12,1.0,False,
+92,13,69,4,2014-06-12,1.0,False,
+93,14,69,4,2014-06-12,1.0,False,
+94,15,69,5,2014-06-12,1.0,False,
+95,16,69,4,2014-06-12,1.0,False,
+96,17,69,4,2014-06-12,1.0,False,
+97,18,69,4,2014-06-12,1.0,False,
+98,19,69,4,2014-06-12,1.0,False,
+99,2,69,4,2014-06-12,1.0,False,
+100,4,69,4,2014-06-12,1.0,False,
+101,12,69,5,2014-06-19,1.0,False,
+102,13,69,4,2014-06-19,1.0,False,
+103,14,69,4,2014-06-19,1.0,False,
+104,15,69,5,2014-06-19,1.0,False,
+105,16,69,5,2014-06-19,1.0,False,
+106,17,69,4,2014-06-19,1.0,False,
+107,18,69,5,2014-06-19,1.0,False,
+108,19,69,5,2014-06-19,1.0,False,
+109,2,69,5,2014-06-19,1.0,False,
+110,4,69,4,2014-06-19,1.0,False,
+111,12,69,4,2014-06-26,1.0,False,
+112,13,69,4,2014-06-26,1.0,False,
+113,14,69,5,2014-06-26,1.0,False,
+114,15,69,5,2014-06-26,1.0,False,
+115,16,69,4,2014-06-26,1.0,False,
+116,17,69,4,2014-06-26,1.0,False,
+117,18,69,5,2014-06-26,1.0,False,
+118,19,69,4,2014-06-26,1.0,False,
+119,2,69,5,2014-06-26,1.0,False,
+120,4,69,4,2014-06-26,1.0,False,
+121,12,69,4,2014-07-03,1.0,False,
+122,13,69,4,2014-07-03,1.0,False,
+123,14,69,4,2014-07-03,1.0,False,
+124,15,69,5,2014-07-03,1.0,False,
+125,16,69,5,2014-07-03,1.0,False,
+126,17,69,5,2014-07-03,1.0,False,
+127,18,69,5,2014-07-03,1.0,False,
+128,19,69,4,2014-07-03,1.0,False,
+129,2,69,5,2014-07-03,1.0,False,
+130,4,69,4,2014-07-03,1.0,False,
+131,12,69,4,2014-07-10,1.0,False,
+132,13,69,4,2014-07-10,1.0,False,
+133,14,69,4,2014-07-10,1.0,False,
+134,15,69,4,2014-07-10,1.0,False,
+135,16,69,4,2014-07-10,1.0,False,
+136,17,69,4,2014-07-10,1.0,False,
+137,18,69,4,2014-07-10,1.0,False,
+138,19,69,4,2014-07-10,1.0,False,
+139,2,69,4,2014-07-10,1.0,False,
+140,4,69,4,2014-07-10,1.0,False,
+141,12,69,4,2014-07-17,1.0,False,
+142,13,69,4,2014-07-17,1.0,False,
+143,14,69,4,2014-07-17,1.0,False,
+144,15,69,4,2014-07-17,1.0,False,
+145,16,69,4,2014-07-17,1.0,False,
+146,17,69,4,2014-07-17,1.0,False,
+147,18,69,4,2014-07-17,1.0,False,
+148,19,69,4,2014-07-17,1.0,False,
+149,2,69,4,2014-07-17,1.0,False,
+150,4,69,4,2014-07-17,1.0,False,
+151,12,69,5,2014-08-21,1.0,False,
+152,13,69,4,2014-08-21,1.0,False,
+153,14,69,5,2014-08-21,1.0,False,
+154,15,69,5,2014-08-21,1.0,False,
+155,16,69,5,2014-08-21,1.0,False,
+156,17,69,5,2014-08-21,1.0,False,
+157,18,69,5,2014-08-21,1.0,False,
+158,19,69,4,2014-08-21,1.0,False,
+159,2,69,5,2014-08-21,1.0,False,
+160,4,69,4,2014-08-21,1.0,False,
+161,12,69,5,2014-08-28,1.0,False,
+162,13,69,4,2014-08-28,1.0,False,
+163,14,69,4,2014-08-28,1.0,False,
+164,15,69,5,2014-08-28,1.0,False,
+165,16,69,4,2014-08-28,1.0,False,
+166,17,69,5,2014-08-28,1.0,False,
+167,18,69,4,2014-08-28,1.0,False,
+168,19,69,4,2014-08-28,1.0,False,
+169,2,69,5,2014-08-28,1.0,False,
+170,4,69,4,2014-08-28,1.0,False,
+171,12,69,5,2014-09-04,1.0,False,
+172,13,69,4,2014-09-04,1.0,False,
+173,14,69,4,2014-09-04,1.0,False,
+174,15,69,5,2014-09-04,1.0,False,
+175,16,69,4,2014-09-04,1.0,False,
+176,17,69,5,2014-09-04,1.0,False,
+177,18,69,4,2014-09-04,1.0,False,
+178,19,69,4,2014-09-04,1.0,False,
+179,2,69,5,2014-09-04,1.0,False,
+180,4,69,4,2014-09-04,1.0,False,
+181,12,70,5,2014-03-26,1.0,False,
+182,13,70,4,2014-03-26,1.0,False,
+183,14,70,5,2014-03-26,1.0,False,
+184,15,70,4,2014-03-26,1.0,False,
+185,16,70,5,2014-03-26,1.0,False,
+186,17,70,5,2014-03-26,1.0,False,
+187,18,70,5,2014-03-26,1.0,False,
+188,19,70,5,2014-03-26,1.0,False,
+189,2,70,4,2014-03-26,1.0,False,
+190,4,70,4,2014-03-26,1.0,False,
+191,12,70,5,2014-04-09,1.0,False,
+192,13,70,4,2014-04-09,1.0,False,
+193,14,70,4,2014-04-09,1.0,False,
+194,15,70,5,2014-04-09,1.0,False,
+195,16,70,5,2014-04-09,1.0,False,
+196,17,70,5,2014-04-09,1.0,False,
+197,18,70,4,2014-04-09,1.0,False,
+198,19,70,4,2014-04-09,1.0,False,
+199,2,70,5,2014-04-09,1.0,False,
+200,4,70,4,2014-04-09,1.0,False,
+201,12,70,5,2014-04-16,1.0,False,
+202,13,70,4,2014-04-16,1.0,False,
+203,14,70,4,2014-04-16,1.0,False,
+204,15,70,5,2014-04-16,1.0,False,
+205,16,70,5,2014-04-16,1.0,False,
+206,17,70,4,2014-04-16,1.0,False,
+207,18,70,5,2014-04-16,1.0,False,
+208,19,70,4,2014-04-16,1.0,False,
+209,2,70,5,2014-04-16,1.0,False,
+210,4,70,4,2014-04-16,1.0,False,
+211,12,70,4,2014-04-30,1.0,False,
+212,13,70,5,2014-04-30,1.0,False,
+213,14,70,4,2014-04-30,1.0,False,
+214,15,70,5,2014-04-30,1.0,False,
+215,16,70,5,2014-04-30,1.0,False,
+216,17,70,4,2014-04-30,1.0,False,
+217,18,70,5,2014-04-30,1.0,False,
+218,19,70,5,2014-04-30,1.0,False,
+219,2,70,5,2014-04-30,1.0,False,
+220,4,70,4,2014-04-30,1.0,False,
+221,12,70,5,2014-05-07,1.0,False,
+222,13,70,4,2014-05-07,1.0,False,
+223,14,70,5,2014-05-07,1.0,False,
+224,15,70,5,2014-05-07,1.0,False,
+225,16,70,4,2014-05-07,1.0,False,
+226,17,70,5,2014-05-07,1.0,False,
+227,18,70,4,2014-05-07,1.0,False,
+228,19,70,4,2014-05-07,1.0,False,
+229,2,70,5,2014-05-07,1.0,False,
+230,4,70,5,2014-05-07,1.0,False,
+231,12,70,4,2014-05-14,1.0,False,
+232,13,70,5,2014-05-14,1.0,False,
+233,14,70,5,2014-05-14,1.0,False,
+234,15,70,5,2014-05-14,1.0,False,
+235,16,70,4,2014-05-14,1.0,False,
+236,17,70,5,2014-05-14,1.0,False,
+237,18,70,4,2014-05-14,1.0,False,
+238,19,70,5,2014-05-14,1.0,False,
+239,2,70,5,2014-05-14,1.0,False,
+240,4,70,4,2014-05-14,1.0,False,
+241,12,70,4,2014-05-21,1.0,False,
+242,13,70,4,2014-05-21,1.0,False,
+243,14,70,4,2014-05-21,1.0,False,
+244,15,70,5,2014-05-21,1.0,False,
+245,16,70,4,2014-05-21,1.0,False,
+246,17,70,5,2014-05-21,1.0,False,
+247,18,70,4,2014-05-21,1.0,False,
+248,19,70,4,2014-05-21,1.0,False,
+249,2,70,5,2014-05-21,1.0,False,
+250,4,70,4,2014-05-21,1.0,False,
+251,12,70,5,2014-05-28,1.0,False,
+252,13,70,5,2014-05-28,1.0,False,
+253,14,70,4,2014-05-28,1.0,False,
+254,15,70,5,2014-05-28,1.0,False,
+255,16,70,5,2014-05-28,1.0,False,
+256,17,70,5,2014-05-28,1.0,False,
+257,18,70,5,2014-05-28,1.0,False,
+258,19,70,4,2014-05-28,1.0,False,
+259,2,70,4,2014-05-28,1.0,False,
+260,4,70,5,2014-05-28,1.0,False,
+261,12,70,5,2014-06-04,1.0,False,
+262,13,70,4,2014-06-04,1.0,False,
+263,14,70,5,2014-06-04,1.0,False,
+264,15,70,5,2014-06-04,1.0,False,
+265,16,70,5,2014-06-04,1.0,False,
+266,17,70,4,2014-06-04,1.0,False,
+267,18,70,5,2014-06-04,1.0,False,
+268,19,70,4,2014-06-04,1.0,False,
+269,2,70,5,2014-06-04,1.0,False,
+270,4,70,4,2014-06-04,1.0,False,
+271,12,70,4,2014-06-11,1.0,False,
+272,13,70,4,2014-06-11,1.0,False,
+273,14,70,4,2014-06-11,1.0,False,
+274,15,70,5,2014-06-11,1.0,False,
+275,16,70,5,2014-06-11,1.0,False,
+276,17,70,4,2014-06-11,1.0,False,
+277,18,70,5,2014-06-11,1.0,False,
+278,19,70,4,2014-06-11,1.0,False,
+279,2,70,5,2014-06-11,1.0,False,
+280,4,70,4,2014-06-11,1.0,False,
+281,12,70,5,2014-06-18,1.0,False,
+282,13,70,4,2014-06-18,1.0,False,
+283,14,70,4,2014-06-18,1.0,False,
+284,15,70,5,2014-06-18,1.0,False,
+285,16,70,5,2014-06-18,1.0,False,
+286,17,70,4,2014-06-18,1.0,False,
+287,18,70,4,2014-06-18,1.0,False,
+288,19,70,4,2014-06-18,1.0,False,
+289,2,70,4,2014-06-18,1.0,False,
+290,4,70,4,2014-06-18,1.0,False,
+291,12,70,4,2014-07-02,1.0,False,
+292,13,70,4,2014-07-02,1.0,False,
+293,14,70,4,2014-07-02,1.0,False,
+294,15,70,5,2014-07-02,1.0,False,
+295,16,70,4,2014-07-02,1.0,False,
+296,17,70,5,2014-07-02,1.0,False,
+297,18,70,4,2014-07-02,1.0,False,
+298,19,70,4,2014-07-02,1.0,False,
+299,2,70,5,2014-07-02,1.0,False,
+300,4,70,4,2014-07-02,1.0,False,
+301,12,70,4,2014-07-16,1.0,False,
+302,13,70,4,2014-07-16,1.0,False,
+303,14,70,4,2014-07-16,1.0,False,
+304,15,70,5,2014-07-16,1.0,False,
+305,16,70,5,2014-07-16,1.0,False,
+306,17,70,5,2014-07-16,1.0,False,
+307,18,70,5,2014-07-16,1.0,False,
+308,19,70,4,2014-07-16,1.0,False,
+309,2,70,5,2014-07-16,1.0,False,
+310,4,70,4,2014-07-16,1.0,False,
+311,12,70,5,2014-08-20,1.0,False,
+312,13,70,4,2014-08-20,1.0,False,
+313,14,70,4,2014-08-20,1.0,False,
+314,15,70,5,2014-08-20,1.0,False,
+315,16,70,4,2014-08-20,1.0,False,
+316,17,70,5,2014-08-20,1.0,False,
+317,18,70,5,2014-08-20,1.0,False,
+318,19,70,4,2014-08-20,1.0,False,
+319,2,70,4,2014-08-20,1.0,False,
+320,4,70,4,2014-08-20,1.0,False,
+321,12,70,5,2014-08-27,1.0,False,
+322,13,70,4,2014-08-27,1.0,False,
+323,14,70,4,2014-08-27,1.0,False,
+324,15,70,5,2014-08-27,1.0,False,
+325,16,70,5,2014-08-27,1.0,False,
+326,17,70,5,2014-08-27,1.0,False,
+327,18,70,4,2014-08-27,1.0,False,
+328,19,70,4,2014-08-27,1.0,False,
+329,2,70,5,2014-08-27,1.0,False,
+330,4,70,4,2014-08-27,1.0,False,
+331,12,70,5,2014-09-03,1.0,False,
+332,13,70,4,2014-09-03,1.0,False,
+333,14,70,4,2014-09-03,1.0,False,
+334,15,70,5,2014-09-03,1.0,False,
+335,16,70,4,2014-09-03,1.0,False,
+336,17,70,5,2014-09-03,1.0,False,
+337,18,70,4,2014-09-03,1.0,False,
+338,19,70,4,2014-09-03,1.0,False,
+339,2,70,5,2014-09-03,1.0,False,
+340,4,70,4,2014-09-03,1.0,False,
+341,1,76,4,2014-03-26,1.0,False,
+342,3,76,5,2014-03-26,1.0,False,
+343,5,76,5,2014-03-26,1.0,False,
+344,6,76,4,2014-03-26,1.0,False,
+345,7,76,5,2014-03-26,1.0,False,
+346,8,76,5,2014-03-26,1.0,False,
+347,9,76,4,2014-03-26,1.0,False,
+348,10,76,4,2014-03-26,1.0,False,
+349,11,76,4,2014-03-26,1.0,False,
+350,1,76,4,2014-03-27,1.0,False,
+351,3,76,5,2014-03-27,1.0,False,
+352,5,76,5,2014-03-27,1.0,False,
+353,6,76,5,2014-03-27,1.0,False,
+354,7,76,5,2014-03-27,1.0,False,
+355,8,76,5,2014-03-27,1.0,False,
+356,9,76,4,2014-03-27,1.0,False,
+357,10,76,4,2014-03-27,1.0,False,
+358,11,76,4,2014-03-27,1.0,False,
+359,1,76,5,2014-03-28,1.0,False,
+360,3,76,5,2014-03-28,1.0,False,
+361,5,76,5,2014-03-28,1.0,False,
+362,6,76,5,2014-03-28,1.0,False,
+363,7,76,5,2014-03-28,1.0,False,
+364,8,76,5,2014-03-28,1.0,False,
+365,9,76,5,2014-03-28,1.0,False,
+366,10,76,5,2014-03-28,1.0,False,
+367,11,76,5,2014-03-28,1.0,False,
+377,1,76,5,2014-04-03,1.0,False,
+378,3,76,5,2014-04-03,1.0,False,
+379,5,76,5,2014-04-03,1.0,False,
+380,6,76,4,2014-04-03,1.0,False,
+381,7,76,5,2014-04-03,1.0,False,
+382,8,76,5,2014-04-03,1.0,False,
+383,9,76,4,2014-04-03,1.0,False,
+384,10,76,4,2014-04-03,1.0,False,
+385,11,76,4,2014-04-03,1.0,False,
+386,1,76,5,2014-04-04,1.0,False,
+387,3,76,5,2014-04-04,1.0,False,
+388,5,76,5,2014-04-04,1.0,False,
+389,6,76,5,2014-04-04,1.0,False,
+390,7,76,5,2014-04-04,1.0,False,
+391,8,76,5,2014-04-04,1.0,False,
+392,9,76,5,2014-04-04,1.0,False,
+393,10,76,5,2014-04-04,1.0,False,
+394,11,76,5,2014-04-04,1.0,False,
+395,1,76,4,2014-04-09,1.0,False,
+396,3,76,5,2014-04-09,1.0,False,
+397,5,76,5,2014-04-09,1.0,False,
+398,6,76,5,2014-04-09,1.0,False,
+399,7,76,4,2014-04-09,1.0,False,
+400,8,76,4,2014-04-09,1.0,False,
+401,9,76,5,2014-04-09,1.0,False,
+402,10,76,4,2014-04-09,1.0,False,
+403,11,76,4,2014-04-09,1.0,False,
+404,1,76,5,2014-04-11,1.0,False,
+405,3,76,5,2014-04-11,1.0,False,
+406,5,76,5,2014-04-11,1.0,False,
+407,6,76,5,2014-04-11,1.0,False,
+408,7,76,5,2014-04-11,1.0,False,
+409,8,76,5,2014-04-11,1.0,False,
+410,9,76,5,2014-04-11,1.0,False,
+411,10,76,5,2014-04-11,1.0,False,
+412,11,76,5,2014-04-11,1.0,False,
+413,1,76,5,2014-04-16,1.0,False,
+414,3,76,5,2014-04-16,1.0,False,
+415,5,76,5,2014-04-16,1.0,False,
+416,6,76,5,2014-04-16,1.0,False,
+417,7,76,5,2014-04-16,1.0,False,
+418,8,76,5,2014-04-16,1.0,False,
+419,9,76,4,2014-04-16,1.0,False,
+420,10,76,4,2014-04-16,1.0,False,
+421,11,76,4,2014-04-16,1.0,False,
+422,1,76,5,2014-04-24,1.0,False,
+423,3,76,4,2014-04-24,1.0,False,
+424,5,76,5,2014-04-24,1.0,False,
+425,6,76,4,2014-04-24,1.0,False,
+426,7,76,5,2014-04-24,1.0,False,
+427,8,76,5,2014-04-24,1.0,False,
+428,9,76,5,2014-04-24,1.0,False,
+429,10,76,4,2014-04-24,1.0,False,
+430,11,76,4,2014-04-24,1.0,False,
+431,1,76,5,2014-04-25,1.0,False,
+432,3,76,5,2014-04-25,1.0,False,
+433,5,76,5,2014-04-25,1.0,False,
+434,6,76,5,2014-04-25,1.0,False,
+435,7,76,5,2014-04-25,1.0,False,
+436,8,76,5,2014-04-25,1.0,False,
+437,9,76,5,2014-04-25,1.0,False,
+438,10,76,5,2014-04-25,1.0,False,
+439,11,76,5,2014-04-25,1.0,False,
+440,1,76,5,2014-04-30,1.0,False,
+441,3,76,5,2014-04-30,1.0,False,
+442,5,76,5,2014-04-30,1.0,False,
+443,6,76,5,2014-04-30,1.0,False,
+445,7,76,5,2014-04-30,1.0,False,
+446,8,76,4,2014-04-30,1.0,False,
+447,9,76,5,2014-04-30,1.0,False,
+448,10,76,4,2014-04-30,1.0,False,
+449,11,76,4,2014-04-30,1.0,False,
+450,1,76,5,2014-05-02,1.0,False,
+451,3,76,5,2014-05-02,1.0,False,
+452,5,76,5,2014-05-02,1.0,False,
+453,6,76,5,2014-05-02,1.0,False,
+454,7,76,5,2014-05-02,1.0,False,
+455,8,76,5,2014-05-02,1.0,False,
+456,9,76,5,2014-05-02,1.0,False,
+457,10,76,5,2014-05-02,1.0,False,
+458,11,76,5,2014-05-02,1.0,False,
+459,1,76,4,2014-05-07,1.0,False,
+460,3,76,5,2014-05-07,1.0,False,
+461,5,76,5,2014-05-07,1.0,False,
+462,6,76,4,2014-05-07,1.0,False,
+463,7,76,5,2014-05-07,1.0,False,
+464,8,76,5,2014-05-07,1.0,False,
+465,9,76,5,2014-05-07,1.0,False,
+466,10,76,5,2014-05-07,1.0,False,
+467,11,76,5,2014-05-07,1.0,False,
+468,1,76,5,2014-05-08,1.0,False,
+469,3,76,5,2014-05-08,1.0,False,
+470,5,76,5,2014-05-08,1.0,False,
+471,6,76,5,2014-05-08,1.0,False,
+472,7,76,5,2014-05-08,1.0,False,
+473,8,76,5,2014-05-08,1.0,False,
+474,9,76,4,2014-05-08,1.0,False,
+475,10,76,5,2014-05-08,1.0,False,
+476,11,76,5,2014-05-08,1.0,False,
+477,1,76,5,2014-05-09,1.0,False,
+478,3,76,5,2014-05-09,1.0,False,
+479,5,76,5,2014-05-09,1.0,False,
+480,6,76,5,2014-05-09,1.0,False,
+481,7,76,5,2014-05-09,1.0,False,
+482,8,76,5,2014-05-09,1.0,False,
+483,9,76,5,2014-05-09,1.0,False,
+484,10,76,5,2014-05-09,1.0,False,
+485,11,76,5,2014-05-09,1.0,False,
+486,1,76,5,2014-05-14,1.0,False,
+487,3,76,5,2014-05-14,1.0,False,
+488,5,76,5,2014-05-14,1.0,False,
+489,6,76,4,2014-05-14,1.0,False,
+490,7,76,5,2014-05-14,1.0,False,
+491,8,76,5,2014-05-14,1.0,False,
+492,9,76,5,2014-05-14,1.0,False,
+493,10,76,4,2014-05-14,1.0,False,
+494,11,76,4,2014-05-14,1.0,False,
+495,1,76,4,2014-05-15,1.0,False,
+496,3,76,4,2014-05-15,1.0,False,
+497,5,76,5,2014-05-15,1.0,False,
+498,6,76,5,2014-05-15,1.0,False,
+499,7,76,5,2014-05-15,1.0,False,
+500,8,76,5,2014-05-15,1.0,False,
+501,9,76,5,2014-05-15,1.0,False,
+502,10,76,4,2014-05-15,1.0,False,
+503,11,76,4,2014-05-15,1.0,False,
+504,1,76,5,2014-05-16,1.0,False,
+505,3,76,5,2014-05-16,1.0,False,
+506,5,76,5,2014-05-16,1.0,False,
+507,6,76,5,2014-05-16,1.0,False,
+508,7,76,5,2014-05-16,1.0,False,
+509,8,76,5,2014-05-16,1.0,False,
+510,9,76,5,2014-05-16,1.0,False,
+511,10,76,5,2014-05-16,1.0,False,
+512,11,76,5,2014-05-16,1.0,False,
+513,1,76,5,2014-05-21,1.0,False,
+514,3,76,5,2014-05-21,1.0,False,
+515,5,76,5,2014-05-21,1.0,False,
+516,6,76,5,2014-05-21,1.0,False,
+517,7,76,4,2014-05-21,1.0,False,
+518,8,76,5,2014-05-21,1.0,False,
+519,9,76,4,2014-05-21,1.0,False,
+520,10,76,5,2014-05-21,1.0,False,
+521,11,76,5,2014-05-21,1.0,False,
+522,1,76,5,2014-05-22,1.0,False,
+523,3,76,5,2014-05-22,1.0,False,
+524,5,76,5,2014-05-22,1.0,False,
+525,6,76,5,2014-05-22,1.0,False,
+526,7,76,5,2014-05-22,1.0,False,
+527,8,76,5,2014-05-22,1.0,False,
+528,9,76,4,2014-05-22,1.0,False,
+529,10,76,5,2014-05-22,1.0,False,
+530,11,76,5,2014-05-22,1.0,False,
+531,1,76,5,2014-05-23,1.0,False,
+532,3,76,5,2014-05-23,1.0,False,
+533,5,76,5,2014-05-23,1.0,False,
+534,6,76,5,2014-05-23,1.0,False,
+535,7,76,5,2014-05-23,1.0,False,
+536,8,76,5,2014-05-23,1.0,False,
+537,9,76,5,2014-05-23,1.0,False,
+538,10,76,5,2014-05-23,1.0,False,
+539,11,76,5,2014-05-23,1.0,False,
+540,1,76,5,2014-05-28,1.0,False,
+541,3,76,5,2014-05-28,1.0,False,
+542,5,76,5,2014-05-28,1.0,False,
+543,6,76,5,2014-05-28,1.0,False,
+544,7,76,4,2014-05-28,1.0,False,
+545,8,76,5,2014-05-28,1.0,False,
+546,9,76,5,2014-05-28,1.0,False,
+548,10,76,4,2014-05-28,1.0,False,
+549,11,76,5,2014-05-28,1.0,False,
+550,1,76,5,2014-05-29,1.0,False,
+551,3,76,4,2014-05-29,1.0,False,
+552,5,76,5,2014-05-29,1.0,False,
+553,6,76,5,2014-05-29,1.0,False,
+554,7,76,5,2014-05-29,1.0,False,
+555,8,76,5,2014-05-29,1.0,False,
+556,9,76,5,2014-05-29,1.0,False,
+557,10,76,4,2014-05-29,1.0,False,
+558,11,76,5,2014-05-29,1.0,False,
+559,1,76,5,2014-05-30,1.0,False,
+560,3,76,5,2014-05-30,1.0,False,
+561,5,76,5,2014-05-30,1.0,False,
+562,6,76,5,2014-05-30,1.0,False,
+563,7,76,5,2014-05-30,1.0,False,
+564,8,76,5,2014-05-30,1.0,False,
+565,9,76,5,2014-05-30,1.0,False,
+566,10,76,5,2014-05-30,1.0,False,
+567,11,76,5,2014-05-30,1.0,False,
+568,1,76,5,2014-06-04,1.0,False,
+569,3,76,5,2014-06-04,1.0,False,
+570,5,76,4,2014-06-04,1.0,False,
+571,6,76,5,2014-06-04,1.0,False,
+572,7,76,4,2014-06-04,1.0,False,
+573,8,76,5,2014-06-04,1.0,False,
+574,9,76,5,2014-06-04,1.0,False,
+575,10,76,4,2014-06-04,1.0,False,
+576,11,76,4,2014-06-04,1.0,False,
+577,1,76,4,2014-06-05,1.0,False,
+578,3,76,5,2014-06-05,1.0,False,
+579,5,76,5,2014-06-05,1.0,False,
+580,6,76,5,2014-06-05,1.0,False,
+581,7,76,4,2014-06-05,1.0,False,
+582,8,76,5,2014-06-05,1.0,False,
+583,9,76,5,2014-06-05,1.0,False,
+584,10,76,4,2014-06-05,1.0,False,
+585,11,76,4,2014-06-05,1.0,False,
+586,1,76,5,2014-06-06,1.0,False,
+587,3,76,5,2014-06-06,1.0,False,
+588,5,76,5,2014-06-06,1.0,False,
+589,6,76,5,2014-06-06,1.0,False,
+590,7,76,4,2014-06-06,1.0,False,
+591,8,76,5,2014-06-06,1.0,False,
+592,9,76,5,2014-06-06,1.0,False,
+593,10,76,5,2014-06-06,1.0,False,
+594,11,76,5,2014-06-06,1.0,False,
+595,1,76,4,2014-06-11,1.0,False,
+596,3,76,5,2014-06-11,1.0,False,
+597,5,76,4,2014-06-11,1.0,False,
+598,6,76,5,2014-06-11,1.0,False,
+599,7,76,4,2014-06-11,1.0,False,
+600,8,76,4,2014-06-11,1.0,False,
+607,9,76,5,2014-06-11,1.0,False,
+608,10,76,4,2014-06-11,1.0,False,
+609,11,76,4,2014-06-11,1.0,False,
+610,1,76,5,2014-06-12,1.0,False,
+611,3,76,4,2014-06-12,1.0,False,
+612,5,76,4,2014-06-12,1.0,False,
+613,6,76,5,2014-06-12,1.0,False,
+614,7,76,4,2014-06-12,1.0,False,
+615,8,76,4,2014-06-12,1.0,False,
+616,9,76,4,2014-06-12,1.0,False,
+617,10,76,4,2014-06-12,1.0,False,
+618,11,76,4,2014-06-12,1.0,False,
+619,1,76,5,2014-06-13,1.0,False,
+620,3,76,5,2014-06-13,1.0,False,
+621,5,76,5,2014-06-13,1.0,False,
+622,6,76,5,2014-06-13,1.0,False,
+623,7,76,4,2014-06-13,1.0,False,
+624,8,76,5,2014-06-13,1.0,False,
+625,9,76,5,2014-06-13,1.0,False,
+626,10,76,5,2014-06-13,1.0,False,
+627,11,76,5,2014-06-13,1.0,False,
+628,1,76,4,2014-06-18,1.0,False,
+629,3,76,5,2014-06-18,1.0,False,
+630,5,76,5,2014-06-18,1.0,False,
+631,6,76,5,2014-06-18,1.0,False,
+632,7,76,4,2014-06-18,1.0,False,
+633,8,76,5,2014-06-18,1.0,False,
+634,9,76,4,2014-06-18,1.0,False,
+635,10,76,4,2014-06-18,1.0,False,
+636,11,76,4,2014-06-18,1.0,False,
+637,1,76,5,2014-06-19,1.0,False,
+638,3,76,5,2014-06-19,1.0,False,
+639,5,76,5,2014-06-19,1.0,False,
+640,6,76,4,2014-06-19,1.0,False,
+641,7,76,4,2014-06-19,1.0,False,
+642,8,76,4,2014-06-19,1.0,False,
+643,9,76,5,2014-06-19,1.0,False,
+644,10,76,5,2014-06-19,1.0,False,
+645,11,76,5,2014-06-19,1.0,False,
+646,1,76,5,2014-06-20,1.0,False,
+647,3,76,5,2014-06-20,1.0,False,
+648,5,76,5,2014-06-20,1.0,False,
+649,6,76,5,2014-06-20,1.0,False,
+650,7,76,4,2014-06-20,1.0,False,
+651,8,76,5,2014-06-20,1.0,False,
+652,9,76,5,2014-06-20,1.0,False,
+653,10,76,5,2014-06-20,1.0,False,
+654,11,76,5,2014-06-20,1.0,False,
+655,1,76,4,2014-06-25,1.0,False,
+656,3,76,5,2014-06-25,1.0,False,
+657,5,76,4,2014-06-25,1.0,False,
+658,6,76,4,2014-06-25,1.0,False,
+659,7,76,4,2014-06-25,1.0,False,
+660,8,76,5,2014-06-25,1.0,False,
+661,9,76,5,2014-06-25,1.0,False,
+662,10,76,4,2014-06-25,1.0,False,
+663,11,76,4,2014-06-25,1.0,False,
+664,1,76,4,2014-06-26,1.0,False,
+665,3,76,5,2014-06-26,1.0,False,
+666,5,76,4,2014-06-26,1.0,False,
+667,6,76,5,2014-06-26,1.0,False,
+668,7,76,4,2014-06-26,1.0,False,
+669,8,76,4,2014-06-26,1.0,False,
+670,9,76,4,2014-06-26,1.0,False,
+671,10,76,4,2014-06-26,1.0,False,
+672,11,76,4,2014-06-26,1.0,False,
+673,1,76,5,2014-06-27,1.0,False,
+674,3,76,5,2014-06-27,1.0,False,
+675,5,76,5,2014-06-27,1.0,False,
+676,6,76,5,2014-06-27,1.0,False,
+677,7,76,4,2014-06-27,1.0,False,
+678,8,76,5,2014-06-27,1.0,False,
+679,9,76,5,2014-06-27,1.0,False,
+680,10,76,5,2014-06-27,1.0,False,
+681,11,76,5,2014-06-27,1.0,False,
+682,1,76,5,2014-07-02,1.0,False,
+683,3,76,5,2014-07-02,1.0,False,
+684,5,76,5,2014-07-02,1.0,False,
+685,6,76,5,2014-07-02,1.0,False,
+686,7,76,4,2014-07-02,1.0,False,
+687,8,76,5,2014-03-02,1.0,False,
+688,9,76,4,2014-03-02,1.0,False,
+689,10,76,4,2014-03-02,1.0,False,
+690,11,76,4,2014-03-02,1.0,False,
+691,1,76,4,2014-07-03,1.0,False,
+692,3,76,4,2014-07-03,1.0,False,
+693,5,76,5,2014-07-03,1.0,False,
+694,6,76,5,2014-07-03,1.0,False,
+695,7,76,4,2014-07-03,1.0,False,
+696,8,76,4,2014-07-03,1.0,False,
+697,9,76,5,2014-07-03,1.0,False,
+698,10,76,4,2014-07-03,1.0,False,
+699,11,76,5,2014-07-03,1.0,False,
+700,1,76,5,2014-07-04,1.0,False,
+701,3,76,5,2014-07-04,1.0,False,
+702,5,76,5,2014-07-04,1.0,False,
+703,6,76,5,2014-07-04,1.0,False,
+704,7,76,4,2014-07-04,1.0,False,
+705,8,76,5,2014-07-04,1.0,False,
+706,9,76,5,2014-07-04,1.0,False,
+707,10,76,5,2014-07-04,1.0,False,
+708,11,76,5,2014-07-04,1.0,False,
+709,1,76,4,2014-07-10,1.0,False,
+710,3,76,5,2014-07-10,1.0,False,
+711,5,76,4,2014-07-10,1.0,False,
+712,6,76,5,2014-07-10,1.0,False,
+713,7,76,4,2014-07-10,1.0,False,
+714,8,76,5,2014-07-10,1.0,False,
+715,9,76,4,2014-07-10,1.0,False,
+716,10,76,4,2014-07-10,1.0,False,
+717,11,76,4,2014-07-10,1.0,False,
+718,1,76,5,2014-07-11,1.0,False,
+719,3,76,5,2014-07-11,1.0,False,
+720,5,76,5,2014-07-11,1.0,False,
+721,6,76,5,2014-07-11,1.0,False,
+722,7,76,4,2014-07-11,1.0,False,
+723,8,76,5,2014-07-11,1.0,False,
+724,9,76,5,2014-07-11,1.0,False,
+725,10,76,5,2014-07-11,1.0,False,
+726,11,76,5,2014-07-11,1.0,False,
+727,1,76,5,2014-07-16,1.0,False,
+728,3,76,5,2014-07-16,1.0,False,
+729,5,76,5,2014-07-16,1.0,False,
+730,6,76,5,2014-07-16,1.0,False,
+731,7,76,4,2014-07-16,1.0,False,
+732,8,76,5,2014-07-16,1.0,False,
+733,9,76,5,2014-07-16,1.0,False,
+734,10,76,4,2014-07-16,1.0,False,
+735,11,76,4,2014-07-16,1.0,False,
+736,1,76,5,2014-07-17,1.0,False,
+737,3,76,5,2014-07-17,1.0,False,
+738,5,76,5,2014-07-17,1.0,False,
+739,6,76,5,2014-07-17,1.0,False,
+740,7,76,4,2014-07-17,1.0,False,
+741,8,76,5,2014-07-17,1.0,False,
+742,9,76,4,2014-07-17,1.0,False,
+743,10,76,4,2014-07-17,1.0,False,
+744,11,76,4,2014-07-17,1.0,False,
+745,1,76,5,2014-07-18,1.0,False,
+746,3,76,5,2014-07-18,1.0,False,
+747,5,76,5,2014-07-18,1.0,False,
+748,6,76,5,2014-07-18,1.0,False,
+749,7,76,4,2014-07-18,1.0,False,
+750,8,76,5,2014-07-18,1.0,False,
+751,9,76,5,2014-07-18,1.0,False,
+752,10,76,5,2014-07-18,1.0,False,
+753,11,76,5,2014-07-18,1.0,False,
+754,1,76,4,2014-08-20,1.0,False,
+755,3,76,4,2014-08-20,1.0,False,
+756,5,76,5,2014-08-20,1.0,False,
+757,6,76,5,2014-08-20,1.0,False,
+758,7,76,4,2014-08-20,1.0,False,
+759,8,76,4,2014-08-20,1.0,False,
+760,9,76,5,2014-08-20,1.0,False,
+761,10,76,4,2014-08-20,1.0,False,
+762,11,76,4,2014-08-20,1.0,False,
+763,1,76,5,2014-08-21,1.0,False,
+764,3,76,5,2014-08-21,1.0,False,
+765,5,76,5,2014-08-21,1.0,False,
+766,6,76,5,2014-08-21,1.0,False,
+777,7,76,4,2014-08-21,1.0,False,
+778,8,76,5,2014-08-21,1.0,False,
+779,9,76,5,2014-08-21,1.0,False,
+780,10,76,4,2014-08-21,1.0,False,
+781,11,76,5,2014-08-21,1.0,False,
+782,1,76,5,2014-08-23,1.0,False,
+783,3,76,5,2014-08-23,1.0,False,
+784,5,76,5,2014-08-23,1.0,False,
+785,6,76,5,2014-08-23,1.0,False,
+786,7,76,4,2014-08-23,1.0,False,
+787,8,76,5,2014-08-23,1.0,False,
+788,9,76,5,2014-08-23,1.0,False,
+789,10,76,5,2014-08-23,1.0,False,
+790,11,76,5,2014-08-23,1.0,False,
+791,1,76,4,2014-08-27,1.0,False,
+792,3,76,5,2014-08-27,1.0,False,
+793,5,76,5,2014-08-27,1.0,False,
+794,6,76,5,2014-08-27,1.0,False,
+795,7,76,4,2014-08-27,1.0,False,
+796,8,76,5,2014-08-27,1.0,False,
+797,9,76,5,2014-08-27,1.0,False,
+798,10,76,4,2014-08-27,1.0,False,
+799,11,76,4,2014-08-27,1.0,False,
+809,1,76,5,2014-08-29,1.0,False,
+810,3,76,5,2014-08-29,1.0,False,
+811,5,76,5,2014-08-29,1.0,False,
+812,6,76,5,2014-08-29,1.0,False,
+813,7,76,4,2014-08-29,1.0,False,
+814,8,76,5,2014-08-29,1.0,False,
+815,9,76,5,2014-08-29,1.0,False,
+816,10,76,5,2014-08-29,1.0,False,
+817,11,76,5,2014-08-29,1.0,False,
+818,1,76,5,2014-09-03,1.0,False,
+819,3,76,5,2014-09-03,1.0,False,
+820,5,76,4,2014-09-03,1.0,False,
+821,6,76,4,2014-09-03,1.0,False,
+822,7,76,4,2014-09-03,1.0,False,
+823,8,76,4,2014-09-03,1.0,False,
+824,9,76,4,2014-09-03,1.0,False,
+825,10,76,5,2014-09-03,1.0,False,
+826,11,76,5,2014-09-03,1.0,False,
+827,1,76,5,2014-09-04,1.0,False,
+828,3,76,5,2014-09-04,1.0,False,
+829,5,76,5,2014-09-04,1.0,False,
+830,6,76,5,2014-09-04,1.0,False,
+831,7,76,4,2014-09-04,1.0,False,
+832,8,76,5,2014-09-04,1.0,False,
+833,9,76,4,2014-09-04,1.0,False,
+834,10,76,5,2014-09-04,1.0,False,
+835,11,76,4,2014-09-04,1.0,False,
+836,1,76,5,2014-09-05,1.0,False,
+837,3,76,5,2014-09-05,1.0,False,
+838,5,76,5,2014-09-05,1.0,False,
+839,6,76,5,2014-09-05,1.0,False,
+840,7,76,4,2014-09-05,1.0,False,
+841,8,76,5,2014-09-05,1.0,False,
+842,9,76,5,2014-09-05,1.0,False,
+843,10,76,5,2014-09-05,1.0,False,
+844,11,76,5,2014-09-05,1.0,False,
+845,1,76,4,2014-09-10,1.0,False,
+846,3,76,5,2014-09-10,1.0,False,
+847,5,76,4,2014-09-10,1.0,False,
+848,6,76,5,2014-09-10,1.0,False,
+849,7,76,4,2014-09-10,1.0,False,
+850,8,76,4,2014-09-10,1.0,False,
+851,9,76,5,2014-09-10,1.0,False,
+852,10,76,5,2014-09-10,1.0,False,
+853,11,76,5,2014-09-10,1.0,False,
 
 
 TABLE examenes
+examenes.examenid,examenes.materiaid,examenes.periodoid,examenes.llamado,examenes.turno,examenes.fecha,examenes.hora,examenes.personalid1,examenes.personalid2,examenes.personalid3
+2,179,30,1,tarde,2014-12-17,19,2,3,8
+3,172,30,1,2,2014-12-19,19,2,3,5
+4,173,30,1,2,2014-12-20,19,2,5,8
 
 
 TABLE inscripcionescarrera
+inscripcionescarrera.inscripcionid,inscripcionescarrera.alumnoid,inscripcionescarrera.carreraid,inscripcionescarrera.alta,inscripcionescarrera.baja
+1,33,1,2014-09-26,<NULL>
+2,33,1,2014-09-26,<NULL>
+3,33,1,2014-09-26,<NULL>
+4,33,1,2014-09-26,<NULL>
 
 
 TABLE inscripcionescomision
+inscripcionescomision.inscripcionid,inscripcionescomision.alumnoid,inscripcionescomision.comisionid,inscripcionescomision.alta,inscripcionescomision.baja,inscripcionescomision.condicion
+1,1,72,2014-03-01,<NULL>,2
+2,2,72,2014-03-01,<NULL>,2
+3,3,72,2014-03-01,<NULL>,2
+4,4,72,2014-03-01,<NULL>,2
+5,5,72,2014-03-01,<NULL>,2
+6,6,72,2014-03-01,<NULL>,2
+7,7,72,2014-03-01,<NULL>,2
+8,8,72,2014-03-01,<NULL>,2
+9,1,73,2014-03-01,<NULL>,2
+10,2,73,2014-03-01,<NULL>,2
+11,3,73,2014-03-01,<NULL>,2
+12,4,73,2014-03-01,<NULL>,2
+13,5,73,2014-03-01,<NULL>,2
+14,6,73,2014-03-01,<NULL>,2
+15,7,73,2014-03-01,<NULL>,2
+16,8,73,2014-03-01,<NULL>,2
+17,1,74,2014-03-01,<NULL>,2
+18,3,74,2014-03-01,<NULL>,2
+19,5,74,2014-03-01,<NULL>,2
+20,6,74,2014-03-01,<NULL>,2
+21,7,74,2014-03-01,<NULL>,2
+22,8,74,2014-03-01,<NULL>,2
+23,1,75,2014-03-01,<NULL>,2
+24,2,75,2014-03-01,<NULL>,2
+25,3,75,2014-03-01,<NULL>,2
+26,4,75,2014-03-01,<NULL>,2
+27,5,75,2014-03-01,<NULL>,2
+28,6,75,2014-03-01,<NULL>,2
+29,7,75,2014-03-01,<NULL>,2
+30,8,75,2014-03-01,<NULL>,2
+31,1,76,2014-03-01,<NULL>,2
+32,3,76,2014-03-01,<NULL>,2
+33,5,76,2014-03-01,<NULL>,2
+34,6,76,2014-03-01,<NULL>,2
+35,7,76,2014-03-01,<NULL>,2
+36,8,76,2014-03-01,<NULL>,2
+37,9,76,2014-03-01,<NULL>,2
+38,10,76,2014-03-01,<NULL>,2
+39,11,76,2014-03-01,<NULL>,2
+40,1,77,2014-03-01,<NULL>,2
+41,2,77,2014-03-01,<NULL>,2
+42,3,77,2014-03-01,<NULL>,2
+43,4,77,2014-03-01,<NULL>,2
+44,5,77,2014-03-01,<NULL>,2
+45,6,77,2014-03-01,<NULL>,2
+46,7,77,2014-03-01,<NULL>,2
+47,8,77,2014-03-01,<NULL>,2
+48,12,64,2014-03-01,<NULL>,2
+49,13,64,2014-03-01,<NULL>,2
+50,14,64,2014-03-01,<NULL>,2
+51,15,64,2014-03-01,<NULL>,2
+52,16,64,2014-03-01,<NULL>,2
+53,17,64,2014-03-01,<NULL>,2
+54,18,64,2014-03-01,<NULL>,2
+55,19,64,2014-03-01,<NULL>,2
+56,12,65,2014-03-01,<NULL>,2
+57,13,65,2014-03-01,<NULL>,2
+58,14,65,2014-03-01,<NULL>,2
+59,15,65,2014-03-01,<NULL>,2
+60,16,65,2014-03-01,<NULL>,2
+61,17,65,2014-03-01,<NULL>,2
+62,18,65,2014-03-01,<NULL>,2
+63,19,65,2014-03-01,<NULL>,2
+64,12,66,2014-03-01,<NULL>,2
+65,13,66,2014-03-01,<NULL>,2
+66,14,66,2014-03-01,<NULL>,2
+67,15,66,2014-03-01,<NULL>,2
+68,16,66,2014-03-01,<NULL>,2
+69,17,66,2014-03-01,<NULL>,2
+70,18,66,2014-03-01,<NULL>,2
+71,19,66,2014-03-01,<NULL>,2
+72,12,67,2014-03-01,<NULL>,2
+73,13,67,2014-03-01,<NULL>,2
+74,14,67,2014-03-01,<NULL>,2
+75,15,67,2014-03-01,<NULL>,2
+76,16,67,2014-03-01,<NULL>,2
+77,17,67,2014-03-01,<NULL>,2
+78,18,67,2014-03-01,<NULL>,2
+79,19,67,2014-03-01,<NULL>,2
+80,12,68,2014-03-01,<NULL>,2
+81,13,68,2014-03-01,<NULL>,2
+82,14,68,2014-03-01,<NULL>,2
+83,15,68,2014-03-01,<NULL>,2
+84,16,68,2014-03-01,<NULL>,2
+85,17,68,2014-03-01,<NULL>,2
+86,18,68,2014-03-01,<NULL>,2
+87,19,68,2014-03-01,<NULL>,2
+88,12,69,2014-03-01,<NULL>,2
+89,13,69,2014-03-01,<NULL>,2
+90,14,69,2014-03-01,<NULL>,2
+91,15,69,2014-03-01,<NULL>,2
+92,16,69,2014-03-01,<NULL>,2
+93,17,69,2014-03-01,<NULL>,2
+94,18,69,2014-03-01,<NULL>,2
+95,19,69,2014-03-01,<NULL>,2
+96,12,70,2014-03-01,<NULL>,2
+97,13,70,2014-03-01,<NULL>,2
+98,14,70,2014-03-01,<NULL>,2
+99,15,70,2014-03-01,<NULL>,2
+100,16,70,2014-03-01,<NULL>,2
+101,17,70,2014-03-01,<NULL>,2
+102,18,70,2014-03-01,<NULL>,2
+103,19,70,2014-03-01,<NULL>,2
+104,12,71,2014-03-01,<NULL>,2
+105,13,71,2014-03-01,<NULL>,2
+106,14,71,2014-03-01,<NULL>,2
+107,15,71,2014-03-01,<NULL>,2
+108,16,71,2014-03-01,<NULL>,2
+109,17,71,2014-03-01,<NULL>,2
+110,18,71,2014-03-01,<NULL>,2
+111,19,71,2014-03-01,<NULL>,2
+112,1,69,2014-03-01,<NULL>,3
+113,2,69,2014-03-01,<NULL>,2
+114,4,69,2014-03-01,<NULL>,2
 
 
 TABLE inscripcionesdivision
 
 
 TABLE inscripcionesexamen
+inscripcionesexamen.inscripcionid,inscripcionesexamen.alumnoid,inscripcionesexamen.examenid,inscripcionesexamen.condicion,inscripcionesexamen.alta,inscripcionesexamen.baja,inscripcionesexamen.confirmar,inscripcionesexamen.valido
+8,3,2,2,2014-09-25,<NULL>,True,True
+9,5,2,2,2014-09-25,<NULL>,True,True
+10,6,2,2,2014-09-25,<NULL>,True,True
+11,8,2,2,<NULL>,<NULL>,True,True
+12,9,2,2,2014-09-25,<NULL>,True,True
+13,10,2,2,2014-09-25,<NULL>,True,True
+14,11,2,2,2014-09-25,<NULL>,True,True
+15,12,3,2,2014-09-25,<NULL>,True,True
+16,13,3,2,2014-09-25,<NULL>,True,True
+17,14,3,2,2014-09-25,<NULL>,True,True
+18,15,3,2,2014-09-25,<NULL>,True,True
+19,16,3,2,2014-09-25,<NULL>,True,True
+20,17,3,2,2014-09-25,<NULL>,True,True
+21,18,3,2,2014-09-25,<NULL>,True,True
+22,19,3,2,2014-09-25,<NULL>,True,True
+23,2,3,2,2014-09-25,<NULL>,True,True
+24,1,3,3,2014-09-25,<NULL>,True,True
+25,2,4,2,2014-09-25,<NULL>,True,True
+26,12,4,2,2014-09-25,<NULL>,True,True
+27,13,4,2,2014-09-25,<NULL>,True,True
+28,14,4,2,2014-09-25,<NULL>,True,True
+29,15,4,2,2014-09-25,<NULL>,True,True
+30,16,4,2,2014-09-25,<NULL>,True,True
+31,17,4,2,2014-09-25,<NULL>,True,True
+32,18,4,2,2014-09-25,<NULL>,True,True
+33,19,4,2,2014-09-25,<NULL>,True,True
 
 
 TABLE constancia_modelo

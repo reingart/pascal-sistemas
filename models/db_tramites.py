@@ -1,4 +1,4 @@
-# coding: utf8
+##db = DAL("postgres://reingart:clave@localhost:5432/terciario", pool_size=10)
 
 migrate = True
 

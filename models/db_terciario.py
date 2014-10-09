@@ -505,3 +505,12 @@ db.define_table('constancia',
     Field('fecha_alta', type='date'),
     Field('valido', type='boolean', default=False),
     migrate=migrate)
+
+
+db.define_table('unidades',
+    Field('materiaid'),
+    Field('carrera'),
+    Field('unidad_nro'),
+    Field('titulo'),
+    Field('contenidos'),
+    migrate=migrate)

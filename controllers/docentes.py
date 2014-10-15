@@ -283,7 +283,7 @@ def asistencias():
                 else:
                     tipo = int (request.vars.get("tipo_%s" % fila.alumnos.alumnoid))  #a tipo tengo que convertir a entero con "IN"
                     cant = cants_map[tipo]
-                db.faltas.insert(alumnoid=fila.alumnos.alumnoid, comisionid=comisionid, fecha=fecha, cantidad=cant, inasistenciaid=tipo)
+                db.faltas.insert(alumnoid=fila.alumnos.alumnoid, comisionid=COMISIONID, fecha=fecha, cantidad=cant, inasistenciaid=tipo)
 
     return{"filas":filas, 'tipos_map': tipos_map, 'cants_map': cants_map}
 

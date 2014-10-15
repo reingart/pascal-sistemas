@@ -34,11 +34,10 @@
 'application "%s" uninstalled': 'aplicación "%s" desinstalada',
 'application compiled': 'aplicación compilada',
 'application is compiled and cannot be designed': 'la aplicación está compilada y no puede ser modificada',
-<<<<<<< local
+
 'Apply changes': 'Cambios Aplicados',
-=======
 'Apply changes': 'Apply changes',
->>>>>>> other
+
 'Are you sure you want to delete file "%s"?': '¿Está seguro que desea eliminar el archivo "%s"?',
 'Are you sure you want to uninstall application "%s"': '¿Está seguro que desea desinstalar la aplicación "%s"',
 'Are you sure you want to uninstall application "%s"?': '¿Está seguro que desea desinstalar la aplicación "%s"?',
@@ -131,11 +130,11 @@
 'Enter a number between %(min)g and %(max)g': 'Introduzca un número entre %(min)g y %(max)g',
 'Enter an integer between %(min)g and %(max)g': 'Introduzca un número entero entre %(min)g y %(max)g',
 'enter an integer between %(min)g and %(max)g': 'introducir un número entero entre %(min)g y %(max)g',
-<<<<<<< local
+
 'Enter date as %(format)s': 'Enter date as %(format)s',
-=======
+
 'enter date as %(format)s': 'enter date as %(format)s',
->>>>>>> other
+
 'Error logs for "%(app)s"': 'Bitácora de errores en "%(app)s"',
 'errors': 'errores',
 'export as csv file': 'exportar como archivo CSV',
@@ -146,11 +145,11 @@
 'Fecha': 'Fecha',
 'Fecha De Entrega': 'Fecha De Entrega',
 'Fecha De Inicio': 'Fecha De Inicio',
-<<<<<<< local
+
 'file': 'archivo',
-=======
+
 'file': 'file',
->>>>>>> other
+
 'file "%(filename)s" created': 'archivo "%(filename)s" creado',
 'file "%(filename)s" deleted': 'archivo "%(filename)s" eliminado',
 'file "%(filename)s" uploaded': 'archivo "%(filename)s" subido',
@@ -189,11 +188,8 @@
 'Installed applications': 'Aplicaciones instaladas',
 'Institucional': 'Institucional',
 'Instrumentación': 'Instrumentación',
-<<<<<<< local
 'Insufficient privileges': 'Insufficient privileges',
-=======
 'Insufficient privileges': 'Privilegios insuficientes',
->>>>>>> other
 'internal error': 'error interno',
 'Internal State': 'Estado Interno',
 'Invalid action': 'Acción inválida',
@@ -266,17 +262,11 @@
 'Password reset': 'restablecimiento de contraseña',
 'Peeking at file': 'Visualizando archivo',
 'Plantel Docente': 'Plantel Docente',
-<<<<<<< local
-=======
-<<<<<<< local
+
 'please input your password again': 'Por favor, ingrese nuevamente su contraseña',
-=======
->>>>>>> other
+
 'please input your password again': 'please input your password again',
-<<<<<<< local
-=======
->>>>>>> other
->>>>>>> other
+
 'Por que elegirnos': 'Por que elegirnos',
 'porcentaje de materias aprobadas': 'porcentaje de materias aprobadas',
 'Powered by': 'Este sitio usa',
@@ -299,20 +289,14 @@
 'Registration is pending approval': 'El registro está pendiente de aprobación',
 'Registration key': 'Contraseña de Registro',
 'Registration needs verification': 'Registro de una verificación',
-<<<<<<< local
-=======
-<<<<<<< local
+
 'Registrese': 'Regístrese',
 'Reincorporacion': 'Reincorporación',
-=======
->>>>>>> other
+
 'Registration successful': 'Registration successful',
 'Registrese': 'Registrese',
 'Reincorporacion': 'Reincorporacion',
-<<<<<<< local
-=======
->>>>>>> other
->>>>>>> other
+
 'Remember me (for 30 days)': 'Recordarme (por 30 days)',
 'remove compiled': 'eliminar compiladas',
 'Reset Password key': 'Reestablecer clave de contraseña',
@@ -360,17 +344,8 @@
 'Timestamp': 'Fecha y hora',
 'tipo de certificado': 'tipo de certificado',
 'Title': 'Título',
-<<<<<<< local
-=======
-<<<<<<< local
 'Titulo en Tramite': 'Título en Trámite',
-=======
->>>>>>> other
 'Titulo en Tramite': 'Titulo en Tramite',
-<<<<<<< local
-=======
->>>>>>> other
->>>>>>> other
 'to  previous version.': 'a la versión previa.',
 'Tramites': 'Trámites',
 'translation strings for the application': 'cadenas de caracteres de traducción para la aplicación',
@@ -409,13 +384,7 @@
 'Viewing page version: %s': 'Viendo la versión de la página: %s',
 'views': 'vistas',
 'Views': 'Vistas',
-<<<<<<< local
-=======
-<<<<<<< local
 'Volver': 'Volver',
-=======
->>>>>>> other
->>>>>>> other
 'web2py is up to date': 'web2py está actualizado',
 'web2py Recent Tweets': 'Tweets Recientes de web2py',
 'WebAdmin': 'WebAdmin',

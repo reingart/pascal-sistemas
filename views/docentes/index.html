@@ -1,10 +1,10 @@
 {{extend 'layout.html'}} 
 <center>
-    <h2><B><u>MENÚ DOCENTES</u></B></h2>Prof. {{for docente in docentes:}}{{=docente.nombre}} {{pass}}
-                    <a href="{{=URL(f="ficha", args=docente.id)}}">
+    <h3><B><u>MENÚ DOCENTES</u></B></h3>Prof. {{for docente in docentes:}}{{=docente.nombre}} {{pass}}
+                    <h2><a href="{{=URL(f="ficha", args=docente.id)}}">
                     - Ficha Personal
-                    </a>
-<BR><BR>
+                    </a></h2>
+<BR>
 <FORM method="POST">
     <TABLE id= "tabla">
         <tr id= "head">
@@ -44,5 +44,6 @@
 {{pass}}
 </TABLE>
 </FORM>
+<br>
 <br>
 </center>

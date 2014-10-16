@@ -24,10 +24,10 @@ jQuery(document).ready(function(){
   <body>
 	<div class="header">
         <div class="logo" style="float: left;">
-            <a href="{{=URL(r=request,c='default',f='sdfsd')}}"><img src="{{=URL(request.application,'static','logo_pascal.png')}}" border="0"/></a>
+            <a href="{{=URL(r=request,c='default',f='index.html')}}"><img src="{{=URL(request.application,'static','logo_pascal.png')}}" border="0"/></a>
         </div>
         <div class="membrete" >
-            <h1><a href="{{=URL(r=request,c='default',f='dfs')}}">Instituto Superior Tecnológico Blaise Pascal</a></h1>   
+            <h1><a href="{{=URL(r=request,c='default',f='index.html')}}">Instituto Superior Tecnológico Blaise Pascal</a></h1>   
             <div class="statusbar">
                 {{ if 'auth' in globals():}}
                 [ {{if not auth.user:}}

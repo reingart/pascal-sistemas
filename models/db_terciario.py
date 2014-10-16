@@ -382,7 +382,7 @@ db.define_table('horarios',
     Field('horarioid', type='id'),
     Field('horaid', db.horas),
     Field('comisionid', db.comisiones),
-    Field('dia', type='string', length=1),
+    Field('dia', type='string', length=16),
     Field('detalle', type='string', length=25),
     format= "%(horarioid)s [%(detalle)s]",
     migrate=migrate)

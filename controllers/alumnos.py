@@ -536,11 +536,15 @@ def inscripciones():
         fecha = request.now.date()
         ok = 0
         condicion_id= 1
+        libres=[]
         for _name,_value in request.vars.items():
             if _name.startswith ("comisionl_"):
                     comision_id = int(_name[_name.index('_')+1:])
                     # si el valor es on  en el checkbox insertamos los datos en inscripcion a cursada.
                     if _value== "on":
+                        libres.append(_value)
+                    cantidad = len(libres)
+                    if cantidad < 2:
                         db.inscripcionescomision.insert(alumnoid= alumno.alumnoid,
                                     comisionid= comision_id,
                                     alta=fecha,

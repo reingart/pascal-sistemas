@@ -1,3 +1,4 @@
+DESARROLLO = False
 # -*- coding: utf-8 -*- 
 
 if request.env.web2py_runtime_gae:            # if running on Google App Engine
@@ -7,9 +8,11 @@ if request.env.web2py_runtime_gae:            # if running on Google App Engine
     # from gluon.contrib.memdb import MEMDB
     # from google.appengine.api.memcache import Client
     # session.connect(request, response, db=MEMDB(Client())
-else:                                         # else use a normal relational database
+elif DESARROLLO:                                         # else use a normal relational database
     db = DAL('sqlite://storage.sqlite')       # if not, use SQLite or other DB
-## if no need for session
+else:
+    db = DAL("postgres://web2py:123@localhost:5432/practica", pool_size=10)
+    ## if no need for session
 # session.forget()
 
 #########################################################################
@@ -35,33 +38,6 @@ service=Service(globals())                   # for json, xml, jsonrpc, xmlrpc, a
 ## This scaffolding model makes your app work on Google App Engine too
 #########################################################################
 
-if request.env.web2py_runtime_gae:            # if running on Google App Engine
-    db = DAL('gae')                           # connect to Google BigTable
-    session.connect(request, response, db=db) # and store sessions and tickets there
-    ### or use the following lines to store sessions in Memcache
-    # from gluon.contrib.memdb import MEMDB
-    # from google.appengine.api.memcache import Client
-    # session.connect(request, response, db=MEMDB(Client())
-else:                                         # else use a normal relational database
-    db = DAL('sqlite://storage.sqlite')       # if not, use SQLite or other DB
-## if no need for session
-# session.forget()
-
-#########################################################################
-## Here is sample code if you need for 
-## - email capabilities
-## - authentication (registration, login, logout, ... )
-## - authorization (role based authorization)
-## - services (xml, csv, json, xmlrpc, jsonrpc, amf, rss)
-## - crud actions
-## comment/uncomment as needed
-
-from gluon.tools import *
-auth=Auth(globals(),db)                      # authentication/authorization
-auth.settings.hmac_key='sha512:b13de948-def0-4fd4-baf6-bef3f83b5d88'
-auth.define_tables()                         # creates all needed tables
-crud=Crud(globals(),db)                      # for CRUD helpers using auth
-service=Service(globals())                   # for json, xml, jsonrpc, xmlrpc, amfrpc
 
 # crud.settings.auth=auth                      # enforces authorization on crud
 mail=Mail()                                  # mailer

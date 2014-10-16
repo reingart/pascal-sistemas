@@ -191,6 +191,8 @@ def listaparciales():
 @auth.requires_login()
 @auth.requires_membership(role='Docentes')
 def listarfinales():
+    response.title="Docentes"
+    response.subtitle="Exámenes Finales"
     i=0
     COMISIONID= int(request.args[0])
     PERIODOID=30 #FINALES DICIEMBRE 2014
@@ -219,10 +221,7 @@ def listarfinales():
     TH('Alumno',_style='width:20px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
     TH('Periodo',_style='width:20px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
     TH('Nota',_style='width:20px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
-     TFOOT(TR(TH('Total de proyectos: ',_style='width:20px; color:#000; background: #99f; border: 2px solid #cdcdcd'),
-    TH(i,' Proyectos',_style='width:120px; color:#000; background: #99f; border: 2px solid #cdcdcd'))),
-
-    #se agregan las celdas que vinculan los campos "id" y "nombre" contenidos en rows, referenciado mas abajo en el for
+        #se agregan las celdas que vinculan los campos "id" y "nombre" contenidos en rows, referenciado mas abajo en el for
     *[TR(TD(rows.notas.folio,_style='width:200px; color:#000; background: #eef; border: 2px solid #cdcdcd'),
     TD(rows.notas.libro,_style='width:200px; color:#000; background: #eef; border: 2px solid #cdcdcd'),
 
@@ -230,15 +229,14 @@ def listarfinales():
     #los controladores muestraCarrera y modificarCarrera respectivamente:
     TD(rows.alumnos.nombre,_style='width:200px; color:#000; background: #eef; border: 2px solid #cdcdcd'),
     TD(rows.periodos.descripcion,_style='width:200px; color:#000; background: #eef; border: 2px solid #cdcdcd'),
-    TD(rows.notas.nota,_style='width:200px; color:#000; background: #eef; border: 2px solid #cdcdcd'),
-    TD(A('Ver',_href=URL(r=request, f='muestrafinal', args=[rows.notas.id]) ) ,' - ',  A('Modificar',_href=URL(r=request, f='modificarfinal',
-    args=[rows.notas.notaid]) ) , _style='width:200px; color:#0C0E9C; background: 063C8E; border: 2px solid #063C8E' ) )
+    TD(rows.notas.nota,_style='width:200px; color:#000; background: #eef; border: 2px solid #cdcdcd') )
 
     for rows in proyectos]),))
     #se conforma la Tabla resultado:
     tablaFinal = DIV(lista)
     #se retorna la tabla a la vista:
     return dict (t=tablaFinal)
+
 
 @auth.requires_login()
 @auth.requires_membership(role='Docentes')
@@ -285,7 +283,7 @@ def asistencias():
                 else:
                     tipo = int (request.vars.get("tipo_%s" % fila.alumnos.alumnoid))  #a tipo tengo que convertir a entero con "IN"
                     cant = cants_map[tipo]
-                db.faltas.insert(alumnoid=fila.alumnos.alumnoid, comisionid=comisionid, fecha=fecha, cantidad=cant, inasistenciaid=tipo)
+                db.faltas.insert(alumnoid=fila.alumnos.alumnoid, comisionid=COMISIONID, fecha=fecha, cantidad=cant, inasistenciaid=tipo)
 
     return{"filas":filas, 'tipos_map': tipos_map, 'cants_map': cants_map}
 

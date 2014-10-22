@@ -11,7 +11,7 @@ if request.env.web2py_runtime_gae:            # if running on Google App Engine
 elif DESARROLLO:                                         # else use a normal relational database
     db = DAL('sqlite://storage.sqlite')       # if not, use SQLite or other DB
 else:
-    db = DAL("postgres://web2py:123@localhost:5432/practica", pool_size=10)
+    db = DAL(DB_URI, pool_size=10)
     ## if no need for session
 # session.forget()
 

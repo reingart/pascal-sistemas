@@ -275,6 +275,11 @@ def asistencias():
 
     COMISIONID= int(request.args[0])
 
+    q = db.comisiones.comisionid==COMISIONID
+    # Busca las comisiones que coincidan
+    q &= db.comisiones.materiaid == db.materias.materiaid
+    materias=db(q).select(db.materias.nombre)
+    
     q=db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
     q&=db.comisiones.comisionid==db.inscripcionescomision.comisionid
     q&=db.comisiones.comisionid==COMISIONID
@@ -298,7 +303,7 @@ def asistencias():
                     cant = cants_map[tipo]
                 db.faltas.insert(alumnoid=fila.alumnos.alumnoid, comisionid=COMISIONID, fecha=fecha, cantidad=cant, inasistenciaid=tipo)
 
-    return{"filas":filas, 'tipos_map': tipos_map, 'cants_map': cants_map}
+    return{"materias":materias, "filas":filas, 'tipos_map': tipos_map, 'cants_map': cants_map}
 
 @auth.requires_login()
 @auth.requires_membership(role='Docentes')

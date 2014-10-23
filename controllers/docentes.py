@@ -311,6 +311,12 @@ def examenes_parciales():
     response.title="Docentes"
     response.subtitle="Examenes parciales"
     COMISIONID= (request.args[0])
+    
+    q = db.comisiones.comisionid==COMISIONID
+    # Busca las comisiones que coincidan
+    q &= db.comisiones.materiaid == db.materias.materiaid
+    materias=db(q).select(db.materias.nombre) 
+    
     q = db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
     q &= db.comisiones.comisionid==COMISIONID
     #q &= db.comisiones.materiaid==db.examenes.materiaid
@@ -350,7 +356,7 @@ def examenes_parciales():
             a=5
             db.notas.insert(alumnoid=alumno_id, materiaid=materiaid, periodoid=periodo, calificacionid=calificacion, nota=nota ,fecha=fecha, establecimiento=establecimiento)
             i= i+1
-    return{'filas':filas,'a':a}
+    return{"materias":materias, 'filas':filas,'a':a}
 
 @auth.requires_login()
 @auth.requires_membership(role='Docentes')

@@ -1,4 +1,4 @@
-# coding: utf-8
+# coding: utf8
 {
 '"update" is an optional expression like "field1=\'newvalue\'". You cannot update or delete the results of a JOIN': '"actualice" es una expresión opcional como "campo1=\'nuevo_valor\'". No se puede actualizar o eliminar resultados de un JOIN',
 '%d-%m-%y': '%d-%m-%y',
@@ -34,10 +34,7 @@
 'application "%s" uninstalled': 'aplicación "%s" desinstalada',
 'application compiled': 'aplicación compilada',
 'application is compiled and cannot be designed': 'la aplicación está compilada y no puede ser modificada',
-
-'Apply changes': 'Cambios Aplicados',
 'Apply changes': 'Apply changes',
-
 'Are you sure you want to delete file "%s"?': '¿Está seguro que desea eliminar el archivo "%s"?',
 'Are you sure you want to uninstall application "%s"': '¿Está seguro que desea desinstalar la aplicación "%s"',
 'Are you sure you want to uninstall application "%s"?': '¿Está seguro que desea desinstalar la aplicación "%s"?',
@@ -59,6 +56,7 @@
 'cannot upload file "%(filename)s"': 'no es posible subir archivo "%(filename)s"',
 'Cardiología': 'Cardiología',
 'Carreras': 'Carreras',
+'Cartelera': 'Cartelera',
 'certificado de alumno regular': 'certificado de alumno regular',
 'Change Password': 'Cambie Contraseña',
 'change password': 'cambiar contraseña',
@@ -130,11 +128,8 @@
 'Enter a number between %(min)g and %(max)g': 'Introduzca un número entre %(min)g y %(max)g',
 'Enter an integer between %(min)g and %(max)g': 'Introduzca un número entero entre %(min)g y %(max)g',
 'enter an integer between %(min)g and %(max)g': 'introducir un número entero entre %(min)g y %(max)g',
-
 'Enter date as %(format)s': 'Enter date as %(format)s',
-
 'enter date as %(format)s': 'enter date as %(format)s',
-
 'Error logs for "%(app)s"': 'Bitácora de errores en "%(app)s"',
 'errors': 'errores',
 'export as csv file': 'exportar como archivo CSV',
@@ -145,11 +140,7 @@
 'Fecha': 'Fecha',
 'Fecha De Entrega': 'Fecha De Entrega',
 'Fecha De Inicio': 'Fecha De Inicio',
-
-'file': 'archivo',
-
 'file': 'file',
-
 'file "%(filename)s" created': 'archivo "%(filename)s" creado',
 'file "%(filename)s" deleted': 'archivo "%(filename)s" eliminado',
 'file "%(filename)s" uploaded': 'archivo "%(filename)s" subido',
@@ -188,7 +179,6 @@
 'Installed applications': 'Aplicaciones instaladas',
 'Institucional': 'Institucional',
 'Instrumentación': 'Instrumentación',
-'Insufficient privileges': 'Insufficient privileges',
 'Insufficient privileges': 'Privilegios insuficientes',
 'internal error': 'error interno',
 'Internal State': 'Estado Interno',
@@ -262,11 +252,7 @@
 'Password reset': 'restablecimiento de contraseña',
 'Peeking at file': 'Visualizando archivo',
 'Plantel Docente': 'Plantel Docente',
-
-'please input your password again': 'Por favor, ingrese nuevamente su contraseña',
-
 'please input your password again': 'please input your password again',
-
 'Por que elegirnos': 'Por que elegirnos',
 'porcentaje de materias aprobadas': 'porcentaje de materias aprobadas',
 'Powered by': 'Este sitio usa',
@@ -289,14 +275,9 @@
 'Registration is pending approval': 'El registro está pendiente de aprobación',
 'Registration key': 'Contraseña de Registro',
 'Registration needs verification': 'Registro de una verificación',
-
-'Registrese': 'Regístrese',
-'Reincorporacion': 'Reincorporación',
-
 'Registration successful': 'Registration successful',
 'Registrese': 'Registrese',
 'Reincorporacion': 'Reincorporacion',
-
 'Remember me (for 30 days)': 'Recordarme (por 30 days)',
 'remove compiled': 'eliminar compiladas',
 'Reset Password key': 'Reestablecer clave de contraseña',
@@ -344,7 +325,6 @@
 'Timestamp': 'Fecha y hora',
 'tipo de certificado': 'tipo de certificado',
 'Title': 'Título',
-'Titulo en Tramite': 'Título en Trámite',
 'Titulo en Tramite': 'Titulo en Tramite',
 'to  previous version.': 'a la versión previa.',
 'Tramites': 'Trámites',

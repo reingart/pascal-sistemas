@@ -1,4 +1,4 @@
-# coding: utf8
+# -*- coding: utf-8 -*-
 {
 '"update" is an optional expression like "field1=\'newvalue\'". You cannot update or delete the results of a JOIN': '"actualice" es una expresión opcional como "campo1=\'nuevo_valor\'". No se puede actualizar o eliminar resultados de un JOIN',
 '%d-%m-%y': '%d-%m-%y',
@@ -356,6 +356,7 @@
 'User %(id)s Verification email sent': 'User %(id)s Verification email sent',
 'User ID': 'ID de Usuario',
 'Usuarios': 'Usuarios',
+'Value not in database': 'Value not in database',
 'value not in database': 'value not in database',
 'Verify Password': 'Verificar contraseña',
 'versioning': 'versiones',

@@ -23,6 +23,12 @@ def listado_inasistencias():
     response.subtitle= "Listado de Inasistencia"
     COMISIONID= int(request.args[0])
     condicion=5 #REGULAR
+    
+    q = db.comisiones.comisionid==COMISIONID
+    # Busca las comisiones que coincidan
+    q &= db.comisiones.materiaid == db.materias.materiaid
+    materias=db(q).select(db.materias.nombre)
+    
     q  = db.alumnos.alumnoid == db.inscripcionescomision.alumnoid
     q &= db.inscripcionescomision.comisionid == COMISIONID
     q &= db.inscripcionescomision.condicion == condicion
@@ -97,7 +103,7 @@ def listado_inasistencias():
         faltas_4p_map[falta.faltas.alumnoid] = falta.suma
 
 
-    return{'alumnos':alumnos, "faltas_1p_map": faltas_1p_map,"faltas_2p_map": faltas_2p_map,"faltas_3p_map": faltas_3p_map,"faltas_4p_map": faltas_4p_map,"porcentaje_map":porcentaje_map,"condicion_map":condicion_map}
+    return{'materias':materias, 'alumnos':alumnos, "faltas_1p_map": faltas_1p_map,"faltas_2p_map": faltas_2p_map,"faltas_3p_map": faltas_3p_map,"faltas_4p_map": faltas_4p_map,"porcentaje_map":porcentaje_map,"condicion_map":condicion_map}
 
 @auth.requires_login()
 @auth.requires_membership(role='Docentes')

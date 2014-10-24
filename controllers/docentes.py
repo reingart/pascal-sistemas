@@ -119,7 +119,7 @@ def listaparciales():
 
     q = db.comisiones.comisionid==COMISIONID
     # Busca las comisiones que coincidan
-    q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.condicion == 5 #REGULAR
     q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
     q &= db.comisiones.materiaid == db.materias.materiaid
     q &= db.inscripcionescomision.alumnoid==db.alumnos.alumnoid
@@ -322,7 +322,7 @@ def examenes_parciales():
     #q &= db.comisiones.materiaid==db.examenes.materiaid
 	#q &=db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
 	# Busca las comisiones que coincidan
-    q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.condicion == 5 #REGULAR
     q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
 	#q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.comisiones.materiaid == db.materias.materiaid

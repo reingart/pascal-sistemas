@@ -100,7 +100,7 @@ def listado_inasistencias():
     faltas_4p_map ={}
 
     for falta in faltas:
-        faltas_4p_map[falta.faltas.alumnoid] = falta.suma
+        faltas_4p_map[falta.faltas.alumnoid] = int(falta.suma/0.5)#SUMO LAS MEDIA FALTA Y MULTIPLICO x 0,5 para obtener la cantidad de media faltas.
 
 
     return{'materias':materias, 'alumnos':alumnos, "faltas_1p_map": faltas_1p_map,"faltas_2p_map": faltas_2p_map,"faltas_3p_map": faltas_3p_map,"faltas_4p_map": faltas_4p_map,"porcentaje_map":porcentaje_map,"condicion_map":condicion_map}
@@ -130,7 +130,7 @@ def listaparciales():
     q &= db.inscripcionescomision.comisionid==COMISIONID
     q &=db.inscripcionescomision.alumnoid==db.alumnos.alumnoid
     # Busca las comisiones que coincidan
-    q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.condicion == 5 #REGULAR
     q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
     #q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.comisiones.materiaid == db.notas.materiaid
@@ -146,7 +146,7 @@ def listaparciales():
     q &= db.inscripcionescomision.comisionid==COMISIONID
     q &=db.inscripcionescomision.alumnoid==db.alumnos.alumnoid
     # Busca las comisiones que coincidan
-    q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.condicion == 5 #REGULAR
     q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
     q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.comisiones.materiaid == db.notas.materiaid
@@ -162,7 +162,7 @@ def listaparciales():
     q &= db.inscripcionescomision.comisionid==COMISIONID
     q &=db.inscripcionescomision.alumnoid==db.alumnos.alumnoid
     # Busca las comisiones que coincidan
-    q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.condicion == 5 #REGULAR
     q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
     q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.comisiones.materiaid == db.notas.materiaid
@@ -178,7 +178,7 @@ def listaparciales():
     q &= db.inscripcionescomision.comisionid==COMISIONID
     q &=db.inscripcionescomision.alumnoid==db.alumnos.alumnoid
     # Busca las comisiones que coincidan
-    q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.condicion == 5 #REGULAR
     q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
     q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.comisiones.materiaid == db.notas.materiaid
@@ -210,7 +210,7 @@ def listarfinales():
     COMISIONID= int(request.args[0])
     PERIODOID=30 #FINALES DICIEMBRE 2014
     q = db.alumnos.alumnoid==db.inscripcionesexamen.alumnoid
-    q &= db.inscripcionesexamen.condicion == 2 #REGULAR
+    q &= db.inscripcionesexamen.condicion == 5 #REGULAR
     q &= db.comisiones.comisionid==COMISIONID
     q &= db.comisiones.materiaid==db.examenes.materiaid
     # Busca las comisiones que coincidan

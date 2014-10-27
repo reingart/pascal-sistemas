@@ -26,7 +26,7 @@
         <td style="border: 1px solid white">{{=fila.cursos.nombre}}</td>
         <td style="border: 1px solid white"><B>{{=fila.examenes.fecha}}</B></td>
         <td style="border: 1px solid white"><B>{{=fila.examenes.hora}}</B></td> 
-        <td style="border: 1px solid white">{{=fila.correlativas.materiacorrelativa}}</td>
+        <td style="border: 1px solid white">{{=correla_map.get(fila.materias.codigo, "")}}</td>
     <td style="border: 1px solid white">{{=fila.personal.nombre}}</td>
     </tr>
     {{pass}}

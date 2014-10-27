@@ -43,6 +43,11 @@ def examenes():
     q&=db.comisiones.periodoid==COMISION_PERIODO
     q&=db.comisiones.personalid==db.personal.personalid
     filas=db(q).select(db.materias.codigo,db.materias.nombre,db.cursos.nombre, db.examenes.fecha,db.examenes.hora,db.correlativas.materiacorrelativa,db.personal.nombre)
-    
-    
-    return {'filas':filas}
+    correla_map ={}
+    for fila in filas:
+        MATERIA=fila.correlativas.materiacorrelativa
+        q=db.materias.materiaid==MATERIA
+        materias=db(q).select(db.materias.codigo)
+        for materia in materias:
+            correla_map[fila.materias.codigo] = materia.codigo
+    return {'filas':filas,'correla_map':correla_map}

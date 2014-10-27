@@ -20,8 +20,8 @@ def novedades():
 
 
 def examenes():
-    response.title = "cartelera"
-    response.subtitle="Examenes"   
+    response.title = "Cartelera"
+    response.subtitle="Exámenes Finales"   
     CARRERAID=1 #analisis de sistemas
     CICLOID=5 #ciclo lectivo 2014
     LLAMADO=1 #PRIMER LLAMADO

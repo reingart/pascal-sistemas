@@ -49,5 +49,8 @@ def examenes():
         q=db.materias.materiaid==MATERIA
         materias=db(q).select(db.materias.codigo)
         for materia in materias:
-            correla_map[fila.materias.codigo] = materia.codigo
+            if fila.materias.codigo==materia.codigo: #SI EL COD DE MATERIA = COD DE CORRELA 
+                correla_map[fila.materias.codigo] = '---' 
+            else:
+                correla_map[fila.materias.codigo] = materia.codigo
     return {'filas':filas,'correla_map':correla_map}

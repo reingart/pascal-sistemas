@@ -9,10 +9,25 @@ def menu():
    
     
 def horarios():
-    response.title = "cartelera"
-	   
-    return {}
+    response.title = "Cartelera"
+    response.subtitle="Horarios de las materias"   
+    CARRERAID=1 #analisis de sistemas
+    ANIO=1 #PRIMER AÑO
+    CICLOID=5 #ciclo lectivo 2014
+    q=db.materias.cursoid==ANIO
+    q&=db.asignaturas.carreraid==CARRERAID
+    q&=db.asignaturas.cicloid==CICLOID
+    q&=db.asignaturas.materiaid==db.materias.materiaid
+    q=db.materias.cursoid==ANIO
+    q&=db.materias.materiaid==db.comisiones.materiaid
+    q&=db.comisiones.comisionid==db.horarios.comisionid
+    q&=db.horarios.horaid==db.horas.horaid
+    q&=db.comisiones.personalid==db.personal.personalid
+    filas=db(q).select(db.materias.nombre,db.horarios.dia,db.horas.desde,db.horas.hasta,db.personal.nombre)
+
     
+    return {'filas':filas}
+        
 def novedades():
     response.title = "cartelera"
     response.subtitle="Novedades"   

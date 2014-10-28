@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding: utf8
 {
 '"update" is an optional expression like "field1=\'newvalue\'". You cannot update or delete the results of a JOIN': '"actualice" es una expresión opcional como "campo1=\'nuevo_valor\'". No se puede actualizar o eliminar resultados de un JOIN',
 '%d-%m-%y': '%d-%m-%y',
@@ -130,6 +130,7 @@
 'enter an integer between %(min)g and %(max)g': 'introducir un número entero entre %(min)g y %(max)g',
 'Enter date as %(format)s': 'Enter date as %(format)s',
 'enter date as %(format)s': 'enter date as %(format)s',
+'enter from %(min)g to %(max)g characters': 'enter from %(min)g to %(max)g characters',
 'Error logs for "%(app)s"': 'Bitácora de errores en "%(app)s"',
 'errors': 'errores',
 'export as csv file': 'exportar como archivo CSV',

@@ -1,11 +1,20 @@
 {{extend 'layout.html'}}
-
-  
+    <table>
+    <td id= "head">Libro: </td>
+    <td id= "head"> Folio: </td>  
+    <td id= "head">Fecha: </td>
+    </table>
+{{for fila in filas:}}  
 <br>
 <div id= "div_centrado">
+    {{=fila.notas.folio}}
+    {{=fila.notas.libro}}
+    {{=fila.alumnos.nombre}}
+    {{=fila.periodos.descripcion}}
+    {{=fila.notas.nota}}
 
-{{=t}}
 <br>
+    {{pass}}
     <form>
   <a href="../index.html"><input type=button value="Volver" ></a>
 </form>

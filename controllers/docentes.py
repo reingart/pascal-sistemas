@@ -222,6 +222,34 @@ def listarfinales():
     q &= db.notas.periodoid==PERIODOID
     q &= db.notas.periodoid==db.periodos.periodoid
 
+    filas = db(q).select (db.notas.ALL,db.alumnos.nombre,db.periodos.descripcion, distinct = True)
+
+
+    return {'filas':filas}
+
+
+
+@auth.requires_login()
+@auth.requires_membership(role='Docentes')
+def listarfinales_viejo():
+    response.title="Docentes"
+    response.subtitle="Exámenes Finales"
+    i=0
+    COMISIONID= int(request.args[0])
+    PERIODOID=30 #FINALES DICIEMBRE 2014
+    q = db.alumnos.alumnoid==db.inscripcionesexamen.alumnoid
+    q &= db.inscripcionesexamen.condicion == 5 #REGULAR
+    q &= db.comisiones.comisionid==COMISIONID
+    q &= db.comisiones.materiaid==db.examenes.materiaid
+    # Busca las comisiones que coincidan
+    #q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
+    q &= db.inscripcionesexamen.examenid == db.examenes.examenid
+    q &= db.examenes.materiaid == db.materias.materiaid
+    q &= db.notas.alumnoid==db.alumnos.alumnoid
+    q &= db.notas.calificacionid==5 #FINALES
+    q &= db.notas.periodoid==PERIODOID
+    q &= db.notas.periodoid==db.periodos.periodoid
+
     proyectos = db(q).select (db.notas.ALL,db.alumnos.nombre,db.periodos.descripcion, distinct = True)
     for x in proyectos:
         i=i+1
@@ -253,6 +281,9 @@ def listarfinales():
 
 @auth.requires_login()
 @auth.requires_membership(role='Docentes')
+
+# coding: utf8
+# intente algo como
 def asistencias():
     from datetime import datetime
     response.title="Campus Web Pro"
@@ -283,7 +314,6 @@ def asistencias():
     q=db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
     q&=db.comisiones.comisionid==db.inscripcionescomision.comisionid
     q&=db.comisiones.comisionid==COMISIONID
-
     filas=db(q).select()
 
     if request.vars.fecha:

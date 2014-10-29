@@ -22,8 +22,9 @@ def horarios():
     q&=db.materias.materiaid==db.comisiones.materiaid
     q&=db.comisiones.comisionid==db.horarios.comisionid
     q&=db.horarios.horaid==db.horas.horaid
-    q&=db.comisiones.personalid==db.personal.personalid
+    q&=db.comisiones.personalid==db.personal.personalid 
     filas=db(q).select(db.materias.nombre,db.horarios.dia,db.horas.desde,db.horas.hasta,db.personal.nombre)
+
 
     
     return {'filas':filas}

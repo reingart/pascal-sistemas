@@ -225,31 +225,31 @@ def cargar_profesores():
     # Insertamos los cursos correspondientes
     
     db.profesores.insert(profesorid= 1, personalid=2, comisionid=1, cargoid=1, revistaid=1,
-    licencia=True, detalle="nose que poner aca", ref=",modelo",id=1)
+    licencia=True, detalle="nose que poner aca", id=1)
     
     db.profesores.insert(profesorid= 2, personalid=3, comisionid=2, cargoid=2, revistaid=1, 
-    licencia=True, detalle="nose que poner aca", ref=",modelo",id=1)
+    licencia=True, detalle="nose que poner aca", id=1)
     
     db.profesores.insert(profesorid= 3, personalid=4, comisionid=4, cargoid=1, revistaid=1, 
-    licencia=True, detalle="nose que poner aca", ref=",modelo",id=1)
+    licencia=True, detalle="nose que poner aca", id=1)
     
     db.profesores.insert(profesorid= 4, personalid=5, comisionid=5, cargoid=1, revistaid=1, 
-    licencia=True, detalle="nose que poner aca", ref=",modelo",id=1)
+    licencia=True, detalle="nose que poner aca", id=1)
     
     db.profesores.insert(profesorid= 5, personalid=6, comisionid=6, cargoid=1, revistaid=1, 
-    licencia=True, detalle="nose que poner aca", ref=",modelo",id=1)
+    licencia=True, detalle="nose que poner aca", id=1)
     
     db.profesores.insert(profesorid= 6, personalid=7, comisionid=7, cargoid=1, revistaid=1, 
-    licencia=True, detalle="nose que poner aca", ref=",modelo",id=1)
+    licencia=True, detalle="nose que poner aca", id=1)
     
     db.profesores.insert(profesorid= 7, personalid=8, comisionid=8, cargoid=1, revistaid=1, 
-    licencia=True, detalle="nose que poner aca", ref=",modelo",id=1)
+    licencia=True, detalle="nose que poner aca", id=1)
     
     db.profesores.insert(profesorid= 8, personalid=9, comisionid=9, cargoid=2, revistaid=1, 
-    licencia=True, detalle="nose que poner aca", ref=",modelo",id=1)
+    licencia=True, detalle="nose que poner aca", id=1)
     
     db.profesores.insert(profesorid= 9, personalid=10, comisionid=10, cargoid=1, revistaid=1, 
-    licencia=True, detalle="nose que poner aca", ref=",modelo",id=1)
+    licencia=True, detalle="nose que poner aca", id=1)
     
 
     response.view="generic.html"

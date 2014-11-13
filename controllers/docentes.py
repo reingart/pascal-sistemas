@@ -22,12 +22,18 @@ def listado_inasistencias():
     response.title="Docentes"
     response.subtitle= "Listado de Inasistencia"
     COMISIONID= int(request.args[0])
-    condicion=2 #REGULAR
+    condicion=5 #REGULAR
+    
+    q = db.comisiones.comisionid==COMISIONID
+    # Busca las comisiones que coincidan
+    q &= db.comisiones.materiaid == db.materias.materiaid
+    materias=db(q).select(db.materias.nombre)
+    
     q  = db.alumnos.alumnoid == db.inscripcionescomision.alumnoid
     q &= db.inscripcionescomision.comisionid == COMISIONID
-    q &= db.inscripcionescomision.condicion == condicion 
+    q &= db.inscripcionescomision.condicion == condicion
     #q &= db.faltas.alumnoid == db.alumnos.alumnoid
-    alumnos=db(q).select(db.alumnos.alumnoid,db.alumnos.nombre,groupby=db.alumnos.nombre)
+    alumnos=db(q).select(db.alumnos.alumnoid,db.alumnos.nombre,groupby=db.alumnos.alumnoid)
 
     q  = db.alumnos.alumnoid == db.inscripcionescomision.alumnoid
     q &= db.faltas.alumnoid == db.inscripcionescomision.alumnoid
@@ -47,12 +53,12 @@ def listado_inasistencias():
     q &= db.inscripcionescomision.comisionid == COMISIONID
     q &= db.inscripcionescomision.comisionid == db.comisiones.comisionid
     q &= db.inscripcionescomision.alumnoid == db.alumnos.alumnoid
-    q &= db.inscripcionescomision.condicion == condicion 
+    q &= db.inscripcionescomision.condicion == condicion
     q &= db.faltas.comisionid == COMISIONID
     q &= db.faltas.alumnoid == db.alumnos.alumnoid
-    
+
     q &= db.faltas.inasistenciaid == 5 #PRESENTES
-    faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.alumnos.nombre) #SUMA DE PRESENTES
+    faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.faltas.alumnoid) #SUMA DE PRESENTES
 
     faltas_2p_map ={}
 
@@ -62,12 +68,12 @@ def listado_inasistencias():
     q  = db.faltas.alumnoid == db.inscripcionescomision.alumnoid
     q &= db.inscripcionescomision.comisionid == COMISIONID
     q &= db.inscripcionescomision.alumnoid == db.alumnos.alumnoid
-    q &= db.inscripcionescomision.condicion == condicion 
+    q &= db.inscripcionescomision.condicion == condicion
     q &= db.faltas.alumnoid == db.alumnos.alumnoid
     q &= db.faltas.comisionid == COMISIONID
     q&=db.faltas.inasistenciaid == 4 #AUSENTES
     #SUMA DE AUSENTES
-    faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.alumnos.nombre) 
+    faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.faltas.alumnoid)
 
     faltas_3p_map ={}
     condicion_map = {}
@@ -89,35 +95,42 @@ def listado_inasistencias():
     q &= db.faltas.comisionid == COMISIONID
     q&=db.faltas.inasistenciaid <= 3 #MEDIA FALTA
     #SUMA DE MEDIAS FALTAS
-    faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.alumnos.nombre) 
+    faltas=db(q).select(db.faltas.alumnoid,db.faltas.cantidad.sum().with_alias("suma"),groupby=db.faltas.alumnoid)
 
     faltas_4p_map ={}
-    
-    for falta in faltas:
-        faltas_4p_map[falta.faltas.alumnoid] = falta.suma
-        
 
-    return{'alumnos':alumnos, "faltas_1p_map": faltas_1p_map,"faltas_2p_map": faltas_2p_map,"faltas_3p_map": faltas_3p_map,"faltas_4p_map": faltas_4p_map,"porcentaje_map":porcentaje_map,"condicion_map":condicion_map}
+    for falta in faltas:
+        faltas_4p_map[falta.faltas.alumnoid] = int(falta.suma/0.5)#SUMO LAS MEDIA FALTA Y MULTIPLICO x 0,5 para obtener la cantidad de media faltas.
+
+
+    return{'materias':materias, 'alumnos':alumnos, "faltas_1p_map": faltas_1p_map,"faltas_2p_map": faltas_2p_map,"faltas_3p_map": faltas_3p_map,"faltas_4p_map": faltas_4p_map,"porcentaje_map":porcentaje_map,"condicion_map":condicion_map}
 
 @auth.requires_login()
 @auth.requires_membership(role='Docentes')
 def listaparciales():
     response.title="Docentes"
-    response.subtitle="Examenes parciales"
+    response.subtitle="Exámenes Parciales"
     COMISIONID= int(request.args[0])
+
     q = db.comisiones.comisionid==COMISIONID
     # Busca las comisiones que coincidan
-    q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.comisiones.materiaid == db.materias.materiaid
+    materias=db(q).select(db.materias.nombre)
+
+    q = db.comisiones.comisionid==COMISIONID
+    # Busca las comisiones que coincidan
+    q &= db.inscripcionescomision.condicion == 5 #REGULAR
     q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
     q &= db.comisiones.materiaid == db.materias.materiaid
     q &= db.inscripcionescomision.alumnoid==db.alumnos.alumnoid
     alumnos=db(q).select(db.alumnos.alumnoid,db.alumnos.nombre)
 
+
     q = db.notas.alumnoid==db.inscripcionescomision.alumnoid
     q &= db.inscripcionescomision.comisionid==COMISIONID
     q &=db.inscripcionescomision.alumnoid==db.alumnos.alumnoid
     # Busca las comisiones que coincidan
-    q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.condicion == 5 #REGULAR
     q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
     #q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.comisiones.materiaid == db.notas.materiaid
@@ -133,7 +146,7 @@ def listaparciales():
     q &= db.inscripcionescomision.comisionid==COMISIONID
     q &=db.inscripcionescomision.alumnoid==db.alumnos.alumnoid
     # Busca las comisiones que coincidan
-    q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.condicion == 5 #REGULAR
     q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
     q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.comisiones.materiaid == db.notas.materiaid
@@ -149,7 +162,7 @@ def listaparciales():
     q &= db.inscripcionescomision.comisionid==COMISIONID
     q &=db.inscripcionescomision.alumnoid==db.alumnos.alumnoid
     # Busca las comisiones que coincidan
-    q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.condicion == 5 #REGULAR
     q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
     q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.comisiones.materiaid == db.notas.materiaid
@@ -165,7 +178,7 @@ def listaparciales():
     q &= db.inscripcionescomision.comisionid==COMISIONID
     q &=db.inscripcionescomision.alumnoid==db.alumnos.alumnoid
     # Busca las comisiones que coincidan
-    q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.condicion == 5 #REGULAR
     q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
     q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.comisiones.materiaid == db.notas.materiaid
@@ -186,7 +199,7 @@ def listaparciales():
             condicion_map[fila.alumnoid]="REGULAR"
     # notas_4p_map[fila.alumnoid] notas_4p_map[fila.alumnoid]
 
-    return{'alumnos':alumnos, "notas_1p_map": notas_1p_map,"notas_2p_map": notas_2p_map,"notas_3p_map": notas_3p_map,"notas_4p_map": notas_4p_map,"condicion_map":condicion_map}
+    return{'materias':materias, 'alumnos':alumnos, "notas_1p_map": notas_1p_map,"notas_2p_map": notas_2p_map,"notas_3p_map": notas_3p_map,"notas_4p_map": notas_4p_map,"condicion_map":condicion_map}
 
 @auth.requires_login()
 @auth.requires_membership(role='Docentes')
@@ -197,7 +210,7 @@ def listarfinales():
     COMISIONID= int(request.args[0])
     PERIODOID=30 #FINALES DICIEMBRE 2014
     q = db.alumnos.alumnoid==db.inscripcionesexamen.alumnoid
-    q &= db.inscripcionesexamen.condicion == 2 #REGULAR
+    q &= db.inscripcionesexamen.condicion == 5 #REGULAR
     q &= db.comisiones.comisionid==COMISIONID
     q &= db.comisiones.materiaid==db.examenes.materiaid
     # Busca las comisiones que coincidan
@@ -208,7 +221,7 @@ def listarfinales():
     q &= db.notas.calificacionid==5 #FINALES
     q &= db.notas.periodoid==PERIODOID
     q &= db.notas.periodoid==db.periodos.periodoid
-    
+
     proyectos = db(q).select (db.notas.ALL,db.alumnos.nombre,db.periodos.descripcion, distinct = True)
     for x in proyectos:
         i=i+1
@@ -262,6 +275,11 @@ def asistencias():
 
     COMISIONID= int(request.args[0])
 
+    q = db.comisiones.comisionid==COMISIONID
+    # Busca las comisiones que coincidan
+    q &= db.comisiones.materiaid == db.materias.materiaid
+    materias=db(q).select(db.materias.nombre)
+    
     q=db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
     q&=db.comisiones.comisionid==db.inscripcionescomision.comisionid
     q&=db.comisiones.comisionid==COMISIONID
@@ -285,7 +303,7 @@ def asistencias():
                     cant = cants_map[tipo]
                 db.faltas.insert(alumnoid=fila.alumnos.alumnoid, comisionid=COMISIONID, fecha=fecha, cantidad=cant, inasistenciaid=tipo)
 
-    return{"filas":filas, 'tipos_map': tipos_map, 'cants_map': cants_map}
+    return{"materias":materias, "filas":filas, 'tipos_map': tipos_map, 'cants_map': cants_map}
 
 @auth.requires_login()
 @auth.requires_membership(role='Docentes')
@@ -293,12 +311,18 @@ def examenes_parciales():
     response.title="Docentes"
     response.subtitle="Examenes parciales"
     COMISIONID= (request.args[0])
+    
+    q = db.comisiones.comisionid==COMISIONID
+    # Busca las comisiones que coincidan
+    q &= db.comisiones.materiaid == db.materias.materiaid
+    materias=db(q).select(db.materias.nombre) 
+    
     q = db.alumnos.alumnoid==db.inscripcionescomision.alumnoid
     q &= db.comisiones.comisionid==COMISIONID
     #q &= db.comisiones.materiaid==db.examenes.materiaid
 	#q &=db.inscripcionesexamen.alumnoid==db.alumnos.alumnoid
 	# Busca las comisiones que coincidan
-    q &= db.inscripcionescomision.condicion == 2 #REGULAR
+    q &= db.inscripcionescomision.condicion == 5 #REGULAR
     q &= db.inscripcionescomision.comisionid ==  db.comisiones.comisionid
 	#q &= db.inscripcionesexamen.examenid == db.examenes.examenid
     q &= db.comisiones.materiaid == db.materias.materiaid
@@ -332,7 +356,7 @@ def examenes_parciales():
             a=5
             db.notas.insert(alumnoid=alumno_id, materiaid=materiaid, periodoid=periodo, calificacionid=calificacion, nota=nota ,fecha=fecha, establecimiento=establecimiento)
             i= i+1
-    return{'filas':filas,'a':a}
+    return{"materias":materias, 'filas':filas,'a':a}
 
 @auth.requires_login()
 @auth.requires_membership(role='Docentes')
@@ -510,7 +534,7 @@ def horarios():
     horarios=db(q).select()
     return{'horarios':horarios}
 
- 
+
 
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
@@ -526,7 +550,7 @@ def listamaterias():
 
 
     return dict (examenes= examenes)
- 
+
 @auth.requires_login()
 @auth.requires_membership(role='Personal')
 def libres():
@@ -570,7 +594,7 @@ def elegir():
     ""
     return{}
 
- 
+
 
 def parciales_seleccion():
     return{}
@@ -694,7 +718,7 @@ def unidad():
     ""
     return{}
 
- 
+
 
 @auth.requires_login()
 @auth.requires_membership(role='Personal')

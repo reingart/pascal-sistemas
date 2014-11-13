@@ -220,6 +220,7 @@ db.define_table('materias',
     Field('optativa', type='boolean', default=False),
     Field('analitico', type='string', length=250),
     Field('requerida', type='boolean', default=False),
+    Field('profesor'),
     format= "%(materiaid)s [%(nombre)s]",
     migrate=migrate)
 
@@ -508,7 +509,7 @@ db.define_table('constancia',
 
 
 db.define_table('unidades',
-    Field('materiaid'),
+    Field('materiaid', type='id'),
     Field('carrera'),
     Field('unidad_nro'),
     Field('titulo'),

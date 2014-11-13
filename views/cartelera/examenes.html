@@ -1,37 +1,35 @@
 {{extend 'layout.html'}}
-<h1>Examenes Finales</h1>
-{{=BEAUTIFY(response._vars)}}
+<h1>Exámenes Finales - Diciembre 2014</h1>
 <div id= "div_centrado">
 <br>
-<tr>
-    <td id= "head"><B>Materia:</B></td>
-      <td id= "head"><B>Practica Profesional</B></td>
-     </tr>
+<tr>      
 <FORM ACTION="">
-EXÀMENES FINALES
+    <h2>TECNICATURA SUPERIOR EN ANÁLISIS DE SISTEMA</h2>
 <TABLE  style="border: 1px solid white">
     <tr style="border: 1px solid white">
-    <td style="border: 1px solid white"><B> Còdigo  </B></td>
+    <td style="border: 1px solid white"><B> Código  </B></td>
     <td style="border: 1px solid white"><B>Materia  </B></td>
     <td style="border: 1px solid white"><B>Curso </B></td>
-        <td style="border: 1px solid white"><B> </B></td>
-        <td style="border: 1px solid white"><B>Llamado</B></td>
+        <td style="border: 1px solid white"><B>Año </B></td>
+        <td style="border: 1px solid white"><B>1er Llamado</B></td>
         <td style="border: 1px solid white"><B>Horario</B></td>
-    <td style="border: 1px solid white"><B>Correlativa  </B></td>
-    <td style="border: 1px solid white"><B>Docente  </B></td>
+    <td style="border: 1px solid white"><B>Correlativa</B></td>
+    <td style="border: 1px solid white"><B>Docentes  </B></td>
     
     </tr>
+    {{for fila in filas:}}
     
     <tr style="border: 1px solid white">
-    <td style="border: 1px solid white">500</td>
-    <td style="border: 1px solid white">ALGEBRA </td>
+        <td style="border: 1px solid white">{{=fila.materias.codigo}}</td>
+        <td style="border: 1px solid white">{{=fila.materias.nombre}}</td>
     <td style="border: 1px solid white">Anual </td>
-        <td style="border: 1px solid white">1º  </td>
-        <td style="border: 1px solid white"><B>1ª llamado</B></td>
-        <td style="border: 1px solid white"><B>20:00</B></td> 
-        <td style="border: 1px solid white">------ </td>
-    <td style="border: 1px solid white">GONZALEZ </td>
+        <td style="border: 1px solid white">{{=fila.cursos.nombre}}</td>
+        <td style="border: 1px solid white"><B>{{=fila.examenes.fecha}}</B></td>
+        <td style="border: 1px solid white"><B>{{=fila.examenes.hora}}</B></td> 
+        <td style="border: 1px solid white">{{=fila.correlativas.materiacorrelativa}}</td>
+    <td style="border: 1px solid white">{{=fila.personal.nombre}}</td>
     </tr>
+    {{pass}}
     <tr>
 	
     <tr style="border: 1px solid white">

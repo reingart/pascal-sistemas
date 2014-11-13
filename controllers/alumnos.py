@@ -1,25 +1,25 @@
 # coding: utf8
 # try something like
 response.title = "Campus Web Pro"
-
 #requiere que haya un usuario logueado
 @auth.requires_login()
+
 #requiere que haya un usuario logeado e integre el grupo alumnos
 @auth.requires_membership(role='Alumnos')
 def libreta():
-    q = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registro del alumno
-    alumno= db(q).select().first() #traemos el alumno para notificarlo en la vista
+    response.subtitle= "Completar Libreta"#titulo que sale en el subtitulo de la vista
+    q = db.alumnos.user_id== auth.user_id #guardo en la consulta el registro del alumno
+    alumno= db(q).select().first() #metemos en una variable al alumno para notificarlo en la vista
     q &= db.materias.materiaid== db.asignaturas.materiaid
     q &= db.asignaturas.carreraid== db.carreras.carreraid
     q &= db.inscripcionescarrera.alumnoid== db.alumnos.alumnoid
     q &= db.inscripcionescarrera.carreraid== db.carreras.carreraid
     q &= db.comisiones.materiaid== db.materias.materiaid
-    materias=db(q).select(db.materias.id, db.materias.nombre)
-    mat=db(q).select(db.materias.id)
+    materias=db(q).select(db.materias.id, db.materias.nombre) #seleccionamos los registros de materias que pertenescan a la carrera del alumno
 
     q =db.alumnos.user_id== auth.user_id
     q &= db.alumnos.alumnoid==db.notas.alumnoid
-    notas=db(q).select(db.notas.materiaid,
+    notas=db(q).select(db.notas.materiaid,#asignamos a la variable nota la consulta de registros de la tabla nota del alumno.
                        db.notas.fecha,
                        db.notas.libro,
                        db.notas.folio,
@@ -28,15 +28,12 @@ def libreta():
     map_notas = dict([(nota.materiaid, nota) for nota in notas])
 
     if request.vars.Aceptar:
-        n = 0
         for materia in materias:
             try:
                 nota = int(request.vars.get("nota_%s" % materia.id))
                 fecha = request.vars.get("fecha_%s" % materia.id)
-                #validar valores de foliio, libro y fecha el formato
                 libro = request.vars.get("libro_%s" % materia.id)
                 folio = request.vars.get("folio_%s" % materia.id)
-                # validar datos
                 if 1 <= nota <= 10:
                     if materia.id in map_notas:
                         q = db.notas.alumnoid==alumno.alumnoid
@@ -47,7 +44,7 @@ def libreta():
                                      libro=libro,
                                      folio=folio)
                     else:
-                        db.notas.insert(alumnoid=alumno.alumnoid, 
+                        db.notas.insert(alumnoid=alumno.alumnoid,
                                         materiaid=materia.materiaid,
                                         calificacionid=5,
                                         nota=nota,
@@ -57,19 +54,6 @@ def libreta():
             except ValueError:
                  msg = "Error de datos"
         redirect (URL (f="libreta"))
-    periodos= db(db.periodos).select(db.periodos.periodoid,
-                                     db.periodos.descripcion)
-    cursadas=[]
-    n = db.alumnos.user_id== auth.user_id    #guardo en la consulta el registr del alumno
-    alumno= db(n).select().first() #traemos el alumno para notificarlo en la vista
-    n= db.inscripcionescomision.alumnoid== alumno.alumnoid
-    n&= db.inscripcionescomision.baja == None
-    n&= db.inscripcionescomision.comisionid== db.comisiones.comisionid
-    inscripciones= db(n).select(db.comisiones.materiaid,
-                                db.inscripcionescomision.condicion,
-                                db.inscripcionescomision.alta, )
-    for inscripcion in inscripciones:
-        cursadas.append(inscripcion.comisiones.materiaid)
     return{"materias":materias, "map_notas":map_notas}
 
 @auth.requires_login()
@@ -108,13 +92,15 @@ def index():
     q &= db.comisiones.materiaid== db.materias.materiaid
     materias=db(q).select(db.materias.id, db.materias.nombre)
     mat=db(q).select(db.materias.id)
+
     o = db.alumnos.user_id == auth.user_id    #guardo en la consulta el registro del alumno
-    #o &= db.faltas.alumnoid == db.alumnos.alumnoid
-    #o &= db.faltas.comisionid == db.comisiones.comisionid
-    o &= db.materias.materiaid== db.comisiones.materiaid
-    o &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
+    o &= db.materias.materiaid== db.comisiones.materiaid 
+    o &= db.inscripcionescomision.comisionid== db.comisiones.comisionid 
     o &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
     o &= db.inscripcionescomision.condicion== db.condiciones.condicionid
+#filtra las comisiones q esta inscripto, detallando el modo q las cursa libre o regular
+    
+#para los registros filtrados los guarda en la variable com y selecciona los sigientes campos
     com=db(o).select(db.materias.id,
                      db.materias.nombre,
                      db.comisiones.nombre,
@@ -122,33 +108,37 @@ def index():
                      db.condiciones.detalle,
                      db.alumnos.nombre,
                     )
-    c = db.alumnos.user_id == auth.user_id    #guardo en la consulta el registro del alumno
+#nuevamente trae al alumno que usa el sistema
+    c = db.alumnos.user_id == auth.user_id   
+#filtra las faltas del alumno para cada comicion inscipto
     c &= db.faltas.alumnoid == db.alumnos.alumnoid
     c &= db.faltas.comisionid == db.comisiones.comisionid
     c &= db.materias.materiaid== db.comisiones.materiaid
     c &= db.inscripcionescomision.comisionid== db.comisiones.comisionid
     c &= db.inscripcionescomision.alumnoid== db.alumnos.alumnoid
     c &= db.inscripcionescomision.condicion== db.condiciones.condicionid
+#asigna a la varible faltas la seleccion de los sigienntes campos
     faltas=db(c).select(db.materias.id,
                         db.materias.nombre,
                         db.comisiones.nombre,
                         db.comisiones.materiaid,
                         db.condiciones.detalle,
                         db.alumnos.nombre,
-                        db.faltas.cantidad.sum().with_alias("suma"),
+                        db.faltas.cantidad.sum().with_alias("suma"),#suma la cantidad total de faltas por la comicion
                         groupby=(db.alumnos.nombre,
                                  db.materias.id,
                                  db.materias.nombre,
                                  db.comisiones.nombre,
                                  db.comisiones.materiaid,
                                  db.condiciones.detalle,))
+#crea diccionario que se completa con el id de la comicion y la cantidad total de faltas
     faltas_map = dict([(f.comisiones.materiaid, f.suma) for f in faltas])
-    return dict (faltas_map=faltas_map,
-                 fecha_actual=fecha_actual,
+    return dict (fecha_actual=fecha_actual,
                  visible= visible,
                  user=user,
                  usuario=usuario,
                  materias=materias,
+                 faltas_map=faltas_map,
                  com=com)
 
 #requiere que haya un usuario logueado

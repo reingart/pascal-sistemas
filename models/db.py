@@ -1,4 +1,4 @@
-DESARROLLO = False
+DESARROLLO = True
 # -*- coding: utf-8 -*- 
 
 if request.env.web2py_runtime_gae:            # if running on Google App Engine

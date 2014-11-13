@@ -1,7 +1,7 @@
 {{extend 'layout.html'}} 
 <FORM method="POST"> 
     <center>
-        <h1><B>Práctica Profesional</B></h1>
+        <h1><B>{{for materia in materias:}}{{=materia.nombre}}{{pass}}</B></h1>
         FECHA:<INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date().strftime('%d/%m/%Y')}}> 
     <br><br>
     <TABLE style="border: 1px solid white">

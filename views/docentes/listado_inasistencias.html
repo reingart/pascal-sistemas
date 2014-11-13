@@ -1,5 +1,5 @@
 {{extend 'layout.html'}}
-<h1> <center><u> Listado Inasistencia</u> </center></h1>
+<h1> <center><u>{{for materia in materias:}}{{=materia.nombre}}{{pass}}</u> </center></h1>
 <FORM method="POST"> 
     <center>
         FECHA:<INPUT type="text" Name="fecha" size="11" VALUE={{=request.now.date().strftime('%d/%m/%Y')}}> 

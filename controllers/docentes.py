@@ -153,7 +153,8 @@ def listaparciales():
     q &= db.notas.calificacionid == 3 #PARCIAL
     q &= db.notas.periodoid==32 #2do CUATRIMESTRE
     filas=db(q).select(db.notas.alumnoid,db.notas.nota)
-
+    response.flash='Nota de 1er cuatrimestre guardada'
+    
     notas_2p_map ={}
     for fila in filas:
         notas_2p_map[fila.alumnoid] = fila.nota
@@ -207,10 +208,10 @@ def listarfinales():
     response.title="Docentes"
     response.subtitle="Exámenes Finales"
     i=0
-    COMISIONID= int(request.args[0])
+    COMISIONID=int(request.args[0])
     PERIODOID=30 #FINALES DICIEMBRE 2014
     q = db.alumnos.alumnoid==db.inscripcionesexamen.alumnoid
-    q &= db.inscripcionesexamen.condicion == 5 #REGULAR
+    #q &= db.inscripcionesexamen.condicion == 5 #REGULAR
     q &= db.comisiones.comisionid==COMISIONID
     q &= db.comisiones.materiaid==db.examenes.materiaid
     # Busca las comisiones que coincidan
@@ -221,8 +222,8 @@ def listarfinales():
     q &= db.notas.calificacionid==5 #FINALES
     q &= db.notas.periodoid==PERIODOID
     q &= db.notas.periodoid==db.periodos.periodoid
-
-    filas = db(q).select (db.notas.ALL,db.alumnos.nombre,db.periodos.descripcion, distinct = True)
+    
+    filas = db(q).select (db.notas.ALL,db.examenes.fecha, db.alumnos.nombre,db.periodos.descripcion, distinct = True)
 
 
     return {'filas':filas}
@@ -334,6 +335,9 @@ def asistencias():
                 db.faltas.insert(alumnoid=fila.alumnos.alumnoid, comisionid=COMISIONID, fecha=fecha, cantidad=cant, inasistenciaid=tipo)
 
     return{"materias":materias, "filas":filas, 'tipos_map': tipos_map, 'cants_map': cants_map}
+
+
+ 
 
 @auth.requires_login()
 @auth.requires_membership(role='Docentes')

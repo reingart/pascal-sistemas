@@ -1,20 +1,25 @@
 {{extend 'layout.html'}}
+<form>
     <table>
-    <td id= "head">Libro: </td>
-    <td id= "head"> Folio: </td>  
-    <td id= "head">Fecha: </td>
-    </table>
+	<tr>
+        <td id= "head">Libro: </td>
+        <td id= "head"> Folio: </td>  
+        <td id= "head">Fecha: </td>
+        <td id= "head">Período: </td>
+        <td id= "head">Nombre: </td>
+        <td id= "head">Nota: </td>
+    </tr>   
 {{for fila in filas:}}  
-<br>
-<div id= "div_centrado">
-    {{=fila.notas.folio}}
-    {{=fila.notas.libro}}
-    {{=fila.alumnos.nombre}}
-    {{=fila.periodos.descripcion}}
-    {{=fila.notas.nota}}
-
-<br>
+	<tr>
+        <td id= "head">{{=fila.notas.libro}}</td>
+        <td id= "head">{{=fila.notas.folio}}</td>
+        
+        <td id= "head">{{=fila.examenes.fecha}}</td>
+        <td id= "head">{{=fila.periodos.descripcion}}</td>
+        <td id= "head">{{=fila.alumnos.nombre}}</td>
+        <td id= "head">{{=fila.notas.nota}}</td>
+    </tr>	
     {{pass}}
-    <form>
+</table>    
   <a href="../index.html"><input type=button value="Volver" ></a>
 </form>

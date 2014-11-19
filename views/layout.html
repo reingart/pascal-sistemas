@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transiftional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="{{=T.accepted_language or 'en'}}">
   <head>
-    <title>{{=response.subtitle or request.function}} - {{=response.title or request.controller}} - Instituto Superior Tecnológico Blaise Pascal</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />     
+    <title>{{=response.subtitle or request.function}}  - Instituto Superior Tecnológico Blaise Pascal</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     {{response.files.append(URL(request.application,'static','base.css'))}}
     {{include 'web2py_ajax.html'}}
 <script type="text/javascript">
@@ -31,17 +31,17 @@ jQuery(document).ready(function(){
             <div class="statusbar">
                 {{ if 'auth' in globals():}}
                 [ {{if not auth.user:}}
-                <a href="{{=URL(r=request,c='default',f='user/login')}}">{{=T('login')}}</a> |
-                <a href="{{=URL(r=request,c='default',f='user/register')}}">{{=T('register')}}</a> |
-                <a href="{{=URL(r=request,c='default',f='user/request_reset_password')}}">{{=T('lost password')}}</a>
+                <a href="{{=URL(r=request,c='default',f='user/login')}}">{{=T('logearse')}}</a> |
+                <a href="{{=URL(r=request,c='default',f='user/register')}}">{{=T('registrarse')}}</a> |
+                <a href="{{=URL(r=request,c='default',f='user/request_reset_password')}}">{{=T('olvide mi contraseña')}}</a>
                 {{else:}}
                 {{=auth.user.first_name}} |
-                <a href="{{=URL(r=request,c='default',f='user/logout')}}">{{=T('logout')}}</a> |
-                <a href="{{=URL(r=request,c='default',f='user/change_password')}}">{{=T('change password')}}</a> |
-                <a href="{{=URL(r=request,c='default',f='user/profile')}}">{{=T('edit profile')}}</a>
+                <a href="{{=URL(r=request,c='default',f='user/logout')}}">{{=T('deslogearse')}}</a> |
+                <a href="{{=URL(r=request,c='default',f='user/change_password')}}">{{=T('cambiar contraseña')}}</a> |
+                <a href="{{=URL(r=request,c='default',f='user/profile')}}">{{=T('editar perfil')}}</a>
                 {{pass}} ]
                 {{pass}}
-                {{=T("Language")}}&nbsp;<a href="?lang=es">Español</a>&nbsp;<a href="?lang=en">English</a>
+                {{=T("Lenguaje")}}&nbsp;<a href="?lang=es">Español</a>&nbsp;<a href="?lang=en">English</a>
             </div>
             
             <h2>{{=response.title or request.controller}}</h2>

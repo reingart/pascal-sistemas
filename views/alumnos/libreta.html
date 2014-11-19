@@ -1,8 +1,10 @@
 {{extend 'layout.html'}}
+<link type="text/css" rel="stylesheet" href="dhtmlgoodies_calendar/dhtmlgoodies_calendar.css?random=20051112" media="screen"></LINK>
+	<SCRIPT type="text/javascript" src="dhtmlgoodies_calendar/dhtmlgoodies_calendar.js?random=20060118"></script>
 
 <form method="post">
 
-    <table id=tabla align="center" cellspacing="2" cellpadding="2" border="1" > 
+    <table id=tabla align="center" cellspacing="2" cellpadding="2" border="1" >
         <tr id=tabla>
             <td  align="center" id=tabla>Curso</td>
             <td  align="center" id=tabla>Materia</td>
@@ -14,7 +16,7 @@
         {{for materia in materias:}}
             {{nota = map_notas.get(materia.id)}}
             <tr id=tabla>
-                <td id=tabla><H2 align=center></H2></td>
+                <td id=tabla><H2 align=center>1°</H2></td>
                 <td>{{=materia.nombre}}</td>
                 <td align="center" id=tabla><input type="date"  name="fecha_{{=materia.id}}" value="{{=nota.fecha if nota else "24.12.2000"}}">
                     <td align="center" id=tabla><input type="text" name="libro_{{=materia.id}}" size="5" value={{=nota.libro if nota else ""}}> </td>

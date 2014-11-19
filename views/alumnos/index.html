@@ -25,12 +25,9 @@
 
 <br>
 </br>
-<br>
-</br>
-<TABLE id="tabla">
-<TH align="center" id="tabla" COLSPAN=3> Informacion de alumno</TH>
+<TABLE id="tabla"> 
+<TH align="center" id="tabla" COLSPAN=3> Información de alumno</TH>
     </tr>
-
         <td id="tabla">Materia</td>
         <td id="tabla">Cursando</td>
         <td id="tabla">Inasistencias</td>
@@ -40,9 +37,7 @@
     {{alumno=f.alumnos}}
     {{falta = faltas_map.get(f.comisiones.materiaid)}}
     <tr id="tabla">
-        <td id="tabla">{{=f.comisiones.nombre}}
-	<td id="tabla">{{=f.condiciones.detalle}}
-	<td id="tabla"><a href="inasistencias.html" title="Mas detalles."><b><u>{{=falta if falta is not None else ""}}<B><u></a></td>
+        <td id="tabla">{{=f.comisiones.nombre}}<td id="tabla">{{=f.condiciones.detalle}}<td id="tabla"><a href="inasistencias.html" title="Mas detalles."><b><u>{{=falta if falta is not None else ""}}<B><u></a></td>
     </tr>
     {{pass}}
 </table>

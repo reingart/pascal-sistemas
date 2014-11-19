@@ -335,10 +335,6 @@
 'WebAdmin': 'WebAdmin',
 'Welcome to web2py': 'Bienvenido a web2py',
 'YES': 'SI',
-}
-=======
-# coding: utf8
-{
 '"update" is an optional expression like "field1=\'newvalue\'". You cannot update or delete the results of a JOIN': '"actualice" es una expresión opcional como "campo1=\'nuevo_valor\'". No se puede actualizar o eliminar resultados de un JOIN',
 '%s rows deleted': '%s filas eliminadas',
 '%s rows updated': '%s filas actualizadas',

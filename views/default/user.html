@@ -1,5 +1,5 @@
 {{extend 'layout.html'}}
-<h2>{{=request.args(0).replace('_',' ').capitalize()}}</h2>
+<h2></h2>
 {{=form}}
 {{if request.args(0)=='login':}}
 <a href="{{=URL(r=request,args='register')}}">Registrarse</a><br />

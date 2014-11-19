@@ -31,14 +31,14 @@ jQuery(document).ready(function(){
             <div class="statusbar">
                 {{ if 'auth' in globals():}}
                 [ {{if not auth.user:}}
-                <a href="{{=URL(r=request,c='default',f='user/login')}}">{{=T('logearse')}}</a> |
-                <a href="{{=URL(r=request,c='default',f='user/register')}}">{{=T('registrarse')}}</a> |
-                <a href="{{=URL(r=request,c='default',f='user/request_reset_password')}}">{{=T('olvide mi contraseña')}}</a>
+                <a href="{{=URL(r=request,c='default',f='user/login')}}">{{=T('Iniciar seción')}}</a> |
+                <a href="{{=URL(r=request,c='default',f='user/register')}}">{{=T('Registrarse')}}</a> |
+                <a href="{{=URL(r=request,c='default',f='user/request_reset_password')}}">{{=T('Olvide mi contraseña')}}</a>
                 {{else:}}
                 {{=auth.user.first_name}} |
-                <a href="{{=URL(r=request,c='default',f='user/logout')}}">{{=T('deslogearse')}}</a> |
-                <a href="{{=URL(r=request,c='default',f='user/change_password')}}">{{=T('cambiar contraseña')}}</a> |
-                <a href="{{=URL(r=request,c='default',f='user/profile')}}">{{=T('editar perfil')}}</a>
+                <a href="{{=URL(r=request,c='default',f='user/logout')}}">{{=T('Cerrar cesión')}}</a> |
+                <a href="{{=URL(r=request,c='default',f='user/change_password')}}">{{=T('Cambiar contraseña')}}</a> |
+                <a href="{{=URL(r=request,c='default',f='user/profile')}}">{{=T('Editar perfil')}}</a>
                 {{pass}} ]
                 {{pass}}
                 {{=T("Lenguaje")}}&nbsp;<a href="?lang=es">Español</a>&nbsp;<a href="?lang=en">English</a>

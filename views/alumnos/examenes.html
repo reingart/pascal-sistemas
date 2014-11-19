@@ -8,7 +8,8 @@
             <TD id= "head"> <center>MATERIA</center> </TD>
             <TD id= "head"><center> NOTA</center></TD>
             <TD id= "head"><center>FECHA</center></TD>
-            <TD id= "head"><center>CURSO</center></TD>
+            <TD id= "head"><center>LIBRO</center></TD>
+            <TD id= "head"><center>FOLIO</center></TD>
         </TR>
         {{ n=notas}}
          {{for nota in n:}}
@@ -26,7 +27,10 @@
              {{ =nota.notas.fecha}}
              </TD>
              <TD id= "td">
-             {{ =nota.cursos.nombre}}
+             {{ =nota.notas.libro}}
+        	 </TD>
+             <TD id= "td">
+             {{ =nota.notas.folio}}
         	 </TD>
     		 </TR>
     		  {{pass}}

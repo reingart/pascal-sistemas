@@ -7,7 +7,7 @@
             <TD id= "head"> <center>MATERIA</center> </TD>
             <TD id= "head"><center> NOTA</center></TD>
             <TD id= "head"><center>PERIODO</center></TD>
-            <TD id= "head"><center>CURSO</center></TD>
+            <TD id= "head"><center>FECHA</center></TD>
         </TR>
         {{ n=notas}}
          {{for nota in n:}}
@@ -25,13 +25,12 @@
              {{ =nota.periodos.descripcion}}
              </TD>
              <TD id= "td">
-             {{ =nota.cursos.nombre}}
+             {{ =nota.notas.fecha}}
         	 </TD>
     		 </TR>
     		  {{pass}}
     </TABLE>
 </div>
-     {{pass}}
     <br>
     <form>
         <center><a href="index.html"><input type=button value="Volver" ></a></center>

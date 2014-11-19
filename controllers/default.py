@@ -22,6 +22,8 @@ def main():
     return plugin_flatpage()
 
 def user():
+    response.title= "Campus Web pro"
+    response.subtitle= "Logeo y registro de usuarios"
     """
     exposes:
     http://..../[app]/default/user/login 

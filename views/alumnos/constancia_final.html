@@ -1,12 +1,17 @@
 <TABLE style="border: 1px solid black">
-<TR>
-    <td>{{=IMG(_src=URL(c='static', f='logo_plano.png'),_width='30px')}}<h3><center> CONSTANCIA DE INSCRIPCION A EXAMENES FINALES </center></h3> </td>
+    <TR>
+        <td>
+        {{=IMG(_src=URL(c='static', f='logo_plano.png'),_width='30px')}}
+        </td>
+        <td aling:center>
+        <h4><u>CONSTANCIA DE INSCRIPCIÓN A FINALES<u></h4>
+        </td> 
     </TR>
     <TR>
-    <td> 
-        Alumno/a: {{=alumno.nombre}}<br>
-		DNI: {{=alumno.dni}}<br>
-		Carrera: {{=carrera.nombre}}<br>
+        <td> 
+        Alumno/a: {{=alumno.nombre if alumno else ""}}<br>
+		DNI: {{=alumno.dni if alumno else ""}}<br>
+		Carrera: {{=carrera.nombre if carrera is not None else ""}}<br>
 		Fecha: {{=fecha_actual}}
         </td>
     </TR>

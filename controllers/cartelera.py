@@ -9,26 +9,10 @@ def menu():
    
     
 def horarios():
-    response.title = "Cartelera"
-    response.subtitle="Horarios de las materias"   
-    CARRERAID=1 #analisis de sistemas
-    ANIO=1 #PRIMER AÑO
-    CICLOID=5 #ciclo lectivo 2014
-    q=db.materias.cursoid==ANIO
-    q&=db.asignaturas.carreraid==CARRERAID
-    q&=db.asignaturas.cicloid==CICLOID
-    q&=db.asignaturas.materiaid==db.materias.materiaid
-    q=db.materias.cursoid==ANIO
-    q&=db.materias.materiaid==db.comisiones.materiaid
-    q&=db.comisiones.comisionid==db.horarios.comisionid
-    q&=db.horarios.horaid==db.horas.horaid
-    q&=db.comisiones.personalid==db.personal.personalid 
-    filas=db(q).select(db.materias.nombre,db.horarios.dia,db.horas.desde,db.horas.hasta,db.personal.nombre)
-
-
+    response.title = "cartelera"
+	   
+    return {}
     
-    return {'filas':filas}
-        
 def novedades():
     response.title = "cartelera"
     response.subtitle="Novedades"   
@@ -36,8 +20,8 @@ def novedades():
 
 
 def examenes():
-    response.title = "Cartelera"
-    response.subtitle="Exámenes Finales"   
+    response.title = "cartelera"
+    response.subtitle="Examenes"   
     CARRERAID=1 #analisis de sistemas
     CICLOID=5 #ciclo lectivo 2014
     LLAMADO=1 #PRIMER LLAMADO
@@ -59,14 +43,6 @@ def examenes():
     q&=db.comisiones.periodoid==COMISION_PERIODO
     q&=db.comisiones.personalid==db.personal.personalid
     filas=db(q).select(db.materias.codigo,db.materias.nombre,db.cursos.nombre, db.examenes.fecha,db.examenes.hora,db.correlativas.materiacorrelativa,db.personal.nombre)
-    correla_map ={}
-    for fila in filas:
-        MATERIA=fila.correlativas.materiacorrelativa
-        q=db.materias.materiaid==MATERIA
-        materias=db(q).select(db.materias.codigo)
-        for materia in materias:
-            if fila.materias.codigo==materia.codigo: #SI EL COD DE MATERIA = COD DE CORRELA 
-                correla_map[fila.materias.codigo] = '---' 
-            else:
-                correla_map[fila.materias.codigo] = materia.codigo
-    return {'filas':filas,'correla_map':correla_map}
+    
+    
+    return {'filas':filas}

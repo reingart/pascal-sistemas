@@ -1,5 +1,11 @@
-DESARROLLO = True
 # -*- coding: utf-8 -*- 
+###########################################################
+DESARROLLO = False
+if request.vars.lang: session.lang=request.vars.lang
+T.force(session.lang or "es")
+
+T.current_languages=['es','es-ar','es-es']
+###################################################
 
 if request.env.web2py_runtime_gae:            # if running on Google App Engine
     db = DAL('gae')                           # connect to Google BigTable
@@ -23,6 +29,10 @@ else:
 ## - services (xml, csv, json, xmlrpc, jsonrpc, amf, rss)
 ## - crud actions
 ## comment/uncomment as needed
+#from gluon.tools import Auth, Crud, Service, PluginManager, prettydate
+#auth = Auth(db)
+#crud, service, plugins = Crud(db), Service(), PluginManager()
+
 
 from gluon.tools import *
 auth=Auth(globals(),db)                      # authentication/authorization
@@ -31,7 +41,8 @@ auth.define_tables()                         # creates all needed tables
 crud=Crud(globals(),db)                      # for CRUD helpers using auth
 service=Service(globals())                   # for json, xml, jsonrpc, xmlrpc, amfrpc
 
-# crud.settings.auth=auth                      # enforces authorization on crud
+crud.settings.auth=auth                      # enforces authorization on crud
+
 # -*- coding: utf-8 -*- 
 
 #########################################################################
@@ -43,11 +54,18 @@ service=Service(globals())                   # for json, xml, jsonrpc, xmlrpc, a
 mail=Mail()                                  # mailer
 mail.settings.server='localhost:25'    # your SMTP server
 mail.settings.sender='info@institutopascal.edu.ar'         # your email
-# mail.settings.login='username:password'      # your credentials or None
+mail.settings.login='username:password'      # your credentials or None
 auth.settings.mailer=mail                    # for user email verification
 auth.settings.registration_requires_verification = False
 auth.settings.registration_requires_approval = False
 auth.messages.verify_email = 'Presione en el enlace http://'+request.env.http_host+URL(r=request,c='default',f='user',args=['verify_email'])+'/%(key)s para verificar su cuenta de correo electrónico.'
+
+auth.messages.verify_password = 'Verificar Contraseña'
+auth.messages.label_remember_me = 'Recordarme (30 dias)'
+auth.messages.verify_password_comment = 'Ingrese su contraseña nuevamente'
+auth.messages.register_button = 'Registrarse'
+auth.messages.login_button = 'Loguearse'
+
 auth.settings.reset_password_requires_verification = True
 auth.messages.reset_password = 'Presione en el enlace http://'+request.env.http_host+URL(r=request,c='default',f='user',args=['reset_password'])+'/%(key)s para reestablecer su contraseña'
 

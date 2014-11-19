@@ -2,31 +2,21 @@
 En este sitio se describen los horarios de las materias con sus correspondientes horarios
 <h1>Materias de Análisis de sistemas </h1>
 
-<br>
-<tr>      
-<FORM ACTION="">
-
+{{=BEAUTIFY(response._vars)}}
 Duracion de la carrera: 3 años
 <TABLE  style="border: 1px solid white">
     <tr style="border: 1px solid white">
     <td style="border: 1px solid white"><B>Primer año</B></td>
     <td style="border: 1px solid white"><B>Día</B></td>
     <td style="border: 1px solid white"><B>Horarios</B></td>
-    <td style="border: 1px solid white"><B>Docente</B></td>
-    
-    </tr>
-    {{for fila in filas:}}
-     
+        <td style="border: 1px solid white"><B>Docente</B></td>
+    </tr>    
     <tr style="border: 1px solid white">
-    <td style="border: 1px solid white">{{=fila.materias.nombre}}</td>
-    <td style="border: 1px solid white"><B>{{=fila.horarios.dia}}</B></td>
-    <td style="border: 1px solid white"><B>{{=fila.horas.desde}} a {{=fila.horas.hasta}}</B></td>          
-    <td style="border: 1px solid white">{{=fila.personal.nombre}}</td>
-    </tr>
-    {{pass}}
-        
-        
-       
+    <td style="border: 1px solid white">Algebra</td>
+    <td style="border: 1px solid white"><B>Lunes</B></td>
+        <td style="border: 1px solid white"><B>6:00 a 20:00</B></td>          
+        <td style="border: 1px solid white">Jose Gonzalez  </td>
+    </tr>   
     <tr style="border: 1px solid white">
     <td style="border: 1px solid white">Analisis matematico</td>
     <td id= "head"><center><INPUT type="text" NAME="dia" size="8" MAXLENGTH="10"></center></td> 

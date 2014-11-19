@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 ##db = DAL("postgres://reingart:clave@localhost:5432/terciario", pool_size=10)
 
 migrate = True
@@ -193,6 +194,10 @@ db.define_table('ciclos',
     format= "%(cicloid)s [%(nombre)s]",
     migrate=migrate)
 
+
+db.ciclos.desde.requires=IS_DATE('%d-%m-%y')
+db.ciclos.hasta.requires=IS_DATE('%d-%m-%y')
+
 db.define_table('catedras',
     Field('catedraid', type='id'),
     Field('nombre', type='string', length=150),
@@ -353,7 +358,7 @@ db.define_table('notas',
     format= "%(notaid)s [%(nota)s]",
     migrate=migrate)
 
-
+db.notas.fecha.requires=IS_DATE('%d-%m-%y')
     
 db.define_table('titulos',
     Field('tituloid', type='id'),

@@ -8,22 +8,20 @@
     </td> 
     </TR>
     <TR>
-    <td> 
-        Alumno/a: {{=alumno.nombre}}<br>
-		DNI: {{=alumno.dni}}<br>
-		Carrera: {{=carrera.nombre}}<br>
+        <td> 
+        Alumno/a: {{=alumno.nombre if alumno else ""}}<br>
+		DNI: {{=alumno.dni if alumno else ""}}<br>
+		Carrera: {{=carrera.nombre if carrera is not None else ""}}<br>
 		Fecha: {{=fecha_actual}}
         </td>
     </TR>
     <TR>
-        
     	<td style="border: 1px solid black">MATERIA</td>
     	<td style="border: 1px solid black">CÓDIGO</td>
     	<td style="border: 1px solid black">DIVISIÓN</td>
     	<td style="border: 1px solid black">PERÍODO</td>
     	<td style="border: 1px solid black">ESTADO</td>
     </TR>
-    
         <TR>
         {{for x in inscripcion:}}
         	

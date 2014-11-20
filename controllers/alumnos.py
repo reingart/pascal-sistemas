@@ -454,7 +454,8 @@ def final():
     correlatividades = {}
     c= db().select(db.correlativas.materiacorrelativa, db.correlativas.materiaid)
     for x in c:
-        correlatividades.setdefault(x.materiaid, []).append(x.materiacorrelativa)
+        lista_correlativas = correlatividades.setdefault(x.materiaid, [])
+        lista_correlativas.append(x.materiacorrelativa)
 ###########################################################################
     q = db.alumnos.user_id== auth.user_id
     q &= db.examenes.materiaid== db.materias.materiaid
@@ -470,6 +471,7 @@ def final():
     mensajes = {}
     msj_inscripto = {}
     msj_disponible = {}
+    debe_correlativas= []
     for f in final:
         msg_aprobada=[]
         msg = []
@@ -480,6 +482,7 @@ def final():
             correlativas = correlatividades[f.examenes.materiaid]
             for correlativa in correlativas:
                 if correlativa not in aprobadas:
+                    debe_correlativas.append(f.examenes.materiaid)
                     msg.append("Materia %s No Aprobada" % correlativa)
             mensajes[f.examenes.materiaid] = ', '.join(msg)
 
@@ -487,7 +490,8 @@ def final():
             msg_aprobada.append("Materia Aprobada")
         msj_aprobada[f.examenes.materiaid] = ', '.join(msg_aprobada)
 
-    return dict (inscripto=inscripto,
+    return dict (debe_correlativas=debe_correlativas,
+                 inscripto=inscripto,
                  cursadas=cursadas,
                  final= final,
                  alumno=alumno,

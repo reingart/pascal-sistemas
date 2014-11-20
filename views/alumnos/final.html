@@ -42,13 +42,13 @@
         {{='Ya Inscripto Al Final' if (f.examenes.materiaid in inscripto) else ''}}
     </font>
     <font color="orange">
-        aca va la de correlativa
+        {{='Debe correlativas' if (f.examenes.materiaid in debe_correlativas) else ''}}
     </font>
      </td>
     </font>
 
     </td>
-        <td id= "td"><input type="checkbox" name="{{="final_%s" % f.examenes.examenid}}" {{='disabled' if (f.examenes.materiaid in inscripto) else 'enabled'}} or {{='disabled' if (f.examenes.materiaid in aprobadas) else ''}} or {{='enabled' if (f.examenes.materiaid in cursadas) else 'disabled'}}></td>
+        <td id= "td"><input type="checkbox" name="{{="final_%s" % f.examenes.examenid}}" {{='disabled' if (f.examenes.materiaid in inscripto) else 'enabled'}} or {{='disabled' if (f.examenes.materiaid in aprobadas) else ''}} or {{='enabled' if (f.examenes.materiaid in cursadas) else 'disabled'}} or  {{='enabled' if (f.examenes.materiaid not in debe_correlativas) else 'disabled'}}></td>
     </tr>
     {{pass}}
     {{pass}}

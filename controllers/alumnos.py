@@ -19,6 +19,7 @@ def libreta():
 
     q =db.alumnos.user_id== auth.user_id
     q &= db.alumnos.alumnoid==db.notas.alumnoid
+    q &= db.notas.calificacionid== 5
     notas=db(q).select(db.notas.materiaid,#asignamos a la variable nota la consulta de registros de la tabla nota del alumno.
                        db.notas.fecha,
                        db.notas.libro,
@@ -303,7 +304,7 @@ def horarios():
 @auth.requires_membership(role='Alumnos')
 def horarios_comision():
    #lista los horarios dependiendo de la carrera
-    response.subtitle= "Horarios de comision"
+    response.subtitle= "Horarios de comisión"
     q = db.alumnos.user_id== auth.user_id
         #guardo en la consulta el registro del alumno
     alumno= db(q).select().first()     #traemos el alumno para notificarlo en la vista

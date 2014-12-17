@@ -35,9 +35,9 @@
     <font color="yellow">
         {{=' No Inscripto a comisión' if not  (f.examenes.materiaid in cursadas) else ''}}
     </font>
-    <font color="green">
+    <font color="white"><b>
         {{='Materia Aprobada' if (f.examenes.materiaid in aprobadas) else ''}}
-    </font>
+        </b></font>
     <font color="white">
         {{='Ya Inscripto Al Final' if (f.examenes.materiaid in inscripto) else ''}}
     </font>
